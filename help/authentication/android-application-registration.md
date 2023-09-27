@@ -2,9 +2,9 @@
 title: Enregistrement d’applications Android
 description: Enregistrement d’applications Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '585'
 ht-degree: 0%
 
 ---
@@ -23,35 +23,49 @@ Pour plus d’informations, voir [Enregistrement du client dynamique](/help/auth
 
 ## Qu’est-ce qu’une déclaration logicielle ? {#what}
 
-Une instruction logicielle est un jeton JWT qui contient des informations sur votre application. Chaque application doit avoir une instruction logicielle unique utilisée par nos serveurs pour identifier l’application dans le système d’Adobe. L’instruction logicielle doit être transmise lorsque vous initialisez le SDK AccessEnabler et elle sera utilisée pour enregistrer l’application avec Adobe. Lors de l’enregistrement, le SDK reçoit un identifiant client et un secret client qui seront utilisés pour obtenir un jeton d’accès. Tout appel du SDK à nos serveurs nécessite un jeton d’accès valide. Le SDK est chargé d’enregistrer l’application, d’obtenir et d’actualiser le jeton d’accès.
+Une instruction logicielle est un jeton JWT qui contient des informations sur votre application. Chaque application doit disposer d’une instruction logicielle unique utilisée par nos serveurs pour identifier l’application dans le système d’Adobe.
+
+L’instruction logicielle doit être transmise lorsque vous initialisez la variable `AccessEnabler` SDK. Il est utilisé pour enregistrer la demande auprès de Adobe. Lors de l’enregistrement, le SDK reçoit un ID client et un secret client, qui est utilisé pour obtenir un jeton d’accès. Tout appel du SDK aux serveurs Adobe nécessite un jeton d’accès valide. Le SDK est responsable de l’enregistrement de l’application, de l’obtention et de l’actualisation du jeton d’accès.
 
 >[!NOTE]
 >
 >Les instructions de logiciel sont spécifiques à l’application et une instruction logicielle individuelle ne peut pas être utilisée pour plusieurs applications. Notez que les instructions logicielles au niveau du programmeur ont la même contrainte. Elles ne peuvent être utilisées que pour une seule application, qu’il s’agisse d’un seul canal ou d’un multicanal.
 
-## Comment obtenir un relevé logiciel ? {#how-to-get-ss}
+## Comment obtenir un relevé logiciel {#how-to-get-ss}
 
-### Si vous avez accès au tableau de bord TVE d’Adobe :
+Vous trouverez ci-dessous des moyens d’obtenir un relevé logiciel.
 
-* Ouvrez votre navigateur et accédez à [Tableau de bord Adobe Pass TVE](https://console.auth.adobe.com).
-* Accédez à `Channels` et sélectionnez votre canal.
-* Accédez à `Registered Applications` Onglet.
-* Cliquez sur `Add new application`.
-* Attribuez un nom et une version à votre application et sélectionnez les plateformes sur lesquelles elle sera disponible. Android dans notre cas.
-* Indiquez un nom de domaine en effectuant une sélection dans une liste de domaines déjà configurés pour votre programmeur.
-* Envoyez vos modifications au serveur, puis revenez à l’onglet Applications enregistrées de votre canal.
-* Une liste devrait s’afficher avec toutes les applications enregistrées. Sélectionnez la variable **Télécharger** sur l’application que vous venez de créer. Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle ne soit prête à être téléchargée.
-* Un fichier texte sera téléchargé. Utilisez son contenu comme déclaration logicielle.
+### Si vous avez accès au tableau de bord TVE d’Adobe
+
+1. Ouvrez votre navigateur et accédez à [Tableau de bord Adobe Pass TVE](https://console.auth.adobe.com).
+
+1. Accédez à **[!UICONTROL Channels]** , puis sélectionnez votre canal.
+
+1. Accédez au **[!UICONTROL Registered Applications]** .
+
+1. Cliquez sur **[!UICONTROL Add new application]**.
+
+1. Nommez l’application et spécifiez une version.
+
+1. Sélectionnez les plateformes sur lesquelles l’application sera disponible (Android, dans ce cas).
+
+1. Fournissez une **[!UICONTROL Domain Name]** en choisissant parmi une liste de domaines déjà configurés pour votre programmeur.
+
+1. Poussez vos modifications sur le serveur, puis revenez au de vos canaux **[!UICONTROL Registered Applications]** .
+
+   Vous devriez voir une liste contenant toutes les applications enregistrées. Sélectionner **[!UICONTROL Download]** sur l’application que vous avez créée. Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle ne soit prête à être téléchargée.
+
+   Téléchargements d’un fichier texte. Utilisez son contenu comme déclaration logicielle.
 
 Pour plus d’informations, voir [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md)
 
-### Si vous n’avez pas accès au tableau de bord TVE d’Adobe :
+### Si vous n’avez pas accès au tableau de bord TVE d’Adobe
 
-Envoyer un ticket à `tve-support@adobe.com`. Veuillez inclure toutes les informations nécessaires, telles que le canal, le nom de l’application, la version et les plateformes. Une personne de notre équipe d’assistance créera une déclaration logicielle pour vous.
+Envoyer un ticket à `tve-support@adobe.com`. Incluez les informations nécessaires telles que le canal, le nom de l’application, la version et les plateformes. Une personne de notre équipe de support créera une déclaration logicielle pour vous.
 
-## Comment utiliser l’instruction logicielle ? {#how-to-use-ss}
+## Utilisation de l’instruction logicielle {#how-to-use-ss}
 
-Après avoir obtenu votre instruction logicielle, vous devez la transmettre en tant que paramètre dans le constructeur Access Enabler. Nous vous recommandons d’héberger l’instruction logicielle sur un emplacement distant. Ainsi, vous pouvez facilement révoquer et modifier l’instruction logicielle sans publier une nouvelle version de votre application.
+Après avoir obtenu votre instruction logicielle, vous devez la transmettre en tant que paramètre dans le constructeur Access Enabler. Nous vous recommandons d’héberger l’instruction logicielle sur un emplacement distant. Ainsi, vous pouvez facilement révoquer et modifier l’instruction logicielle sans publier de nouvelle version de votre application.
 
 ## Création et utilisation d’un lien profond pour votre application {#create}
 

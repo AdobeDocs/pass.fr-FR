@@ -2,7 +2,7 @@
 title: Guide pas à pas du SDK Android
 description: Guide pas à pas du SDK Android
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1685'
 ht-degree: 0%
@@ -32,10 +32,13 @@ La solution de droit d’authentification Adobe Pass pour Android est finalement
 
 L’objectif du domaine AccessEnabler est de masquer toutes les complexités des workflows de droits et de fournir à l’application de couche supérieure (via la bibliothèque AccessEnabler) un ensemble de primitives de droits simples avec lesquelles vous implémentez les workflows de droits :
 
-1. Définition de l’identité du demandeur
-1. Vérifier et obtenir une authentification auprès d’un fournisseur d’identité particulier
-1. Obtention de l’autorisation d’une ressource spécifique
-1. Déconnexion
+1. Définissez l’identité du demandeur.
+
+1. Vérifiez et obtenez une authentification auprès d’un fournisseur d’identité particulier.
+
+1. Vérifiez et obtenez l’autorisation d’une ressource particulière.
+
+1. Déconnectez-vous.
 
 L’activité réseau d’AccessEnabler a lieu dans un autre thread, de sorte que le thread d’interface utilisateur n’est jamais bloqué. Par conséquent, le canal de communication bidirectionnel entre les deux domaines d’application doit suivre un modèle entièrement asynchrone :
 
@@ -50,8 +53,6 @@ L’activité réseau d’AccessEnabler a lieu dans un autre thread, de sorte qu
 1. [Flux d’autorisation](#authz_flow)
 1. [Afficher le flux du média](#media_flow)
 1. [Flux de connexion](#logout_flow)
-
-
 
 ### A. Conditions préalables {#prereqs}
 
@@ -137,8 +138,6 @@ L’activité réseau d’AccessEnabler a lieu dans un autre thread, de sorte qu
 
    - **Triggers :** rappel setAuthenticationStatus()
 
-
-
 ### C. Flux d’authentification {#authn_flow}
 
 1. Appeler [`getAuthentication()`](#$getAuthN) pour lancer le flux d’authentification ou pour obtenir la confirmation que l’utilisateur est déjà authentifié.\
@@ -151,7 +150,6 @@ L’activité réseau d’AccessEnabler a lieu dans un autre thread, de sorte qu
 1. Une fois que l’utilisateur a sélectionné un fournisseur, obtenez l’URL du MVPD de l’utilisateur à partir de la variable `navigateToUrl()` rappel.  Ouvrez un WebView et redirigez ce contrôle WebView vers l’URL.
 
 1. Par le biais de WebView instancié à l’étape précédente, l’utilisateur accède à la page de connexion du MVPD et saisit les informations de connexion. Plusieurs opérations de redirection ont lieu dans WebView.
-
 
    **Remarque :** À ce stade, l’utilisateur a la possibilité d’annuler le flux d’authentification. Si cela se produit, votre couche d’interface utilisateur est chargée d’informer AccessEnabler de cet événement en appelant `setSelectedProvider()` avec `null` comme paramètre. Cela permet à AccessEnabler de nettoyer son état interne et de réinitialiser le flux d’authentification.
 

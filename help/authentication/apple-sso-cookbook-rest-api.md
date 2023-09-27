@@ -2,7 +2,7 @@
 title: Guide pas à pas Apple SSO (API REST)
 description: Guide pas à pas Apple SSO (API REST)
 exl-id: cb27c4b7-bdb4-44a3-8f84-c522a953426f
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1435'
 ht-degree: 0%
@@ -21,13 +21,9 @@ L’API REST d’authentification Adobe Pass peut prendre en charge l’authenti
 
 Veuillez noter que ce document agit comme une extension de la documentation de l’API REST existante, qui se trouve [here](/help/authentication/rest-api-reference.md).
 
-</br>
-
 ## Cookbooks {#Cookbooks}
 
 Pour bénéficier de l’expérience utilisateur SSO d’Apple, une application doit intégrer la fonction [Compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) la structure développée par Apple, tout en ce qui concerne la communication de l’API REST d’authentification Adobe Pass, elle doit suivre la séquence des conseils présentés ci-dessous.
-
-</br>
 
 ### Authentification {#Authentication}
 
@@ -44,10 +40,8 @@ Pour bénéficier de l’expérience utilisateur SSO d’Apple, une application 
 - [Poursuivre avec les flux d’autorisation](#Proceed_with_authorization_flows)
 
 
-
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/qu/platform-sso.jpeg)
 
-</br>
 
 #### Étape : &quot;Existe-t-il un jeton d’authentification d’Adobe valide ?&quot; {#Is_there_a_valid_Adobe_authentication_token}
 
@@ -55,7 +49,6 @@ Pour bénéficier de l’expérience utilisateur SSO d’Apple, une application 
 >
 > **<u>Conseil :</u>** Mettez en oeuvre ceci via la méthode de [Authentification Adobe Pass](/help/authentication/check-authentication-token.md) service.
 
-</br>
 
 #### Étape : &quot;L’utilisateur est-il connecté via la connexion unique à Platform ?&quot; {#Is_the_user_logged_in_via_Platform_SSO}
 
@@ -127,8 +120,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 ...  
 ```
 
-</br>
-
 #### Étape : &quot;Récupérer la configuration des Adobes&quot; {#Fetch_Adobe_configuration}
 
 >[!TIP]
@@ -139,8 +130,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >[!TIP]
 >
 > **<u>Conseil Pro :</u>** Tenez compte des propriétés MVPD : *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* et prêtez une attention particulière aux commentaires présentés dans les fragments de code d’autres étapes.
-
-</br>
 
 #### Étape &quot;Lancement du workflow SSO Platform avec configuration Adobe&quot; {#Initiate_Platform_SSO_workflow_with_Adobe_config}
 
@@ -263,8 +252,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Conseil Pro :</u>** Prenez connaissance du fragment de code de la section [&quot;Lancement du processus d’authentification unique de Platform avec configuration Adobe&quot;](#Initiate_Platform_SSO_workflow_with_Adobe_config) étape . La connexion de l’utilisateur a réussi si la variable *`vsaMetadata!.accountProviderIdentifier`* contient une valeur valide et la date actuelle n’a pas dépassé la valeur *`vsaMetadata!.authenticationExpirationDate`* .
 
-</br>
-
 #### Étape &quot;Obtention d’une requête de profil de l’Adobe pour le MVPD sélectionné&quot; {#Obtain_a_profile_request_from_Adobe_for_the_selected_MVPD}
 
 >[!TIP]
@@ -274,8 +261,6 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >[!TIP]
 >
 > **<u>Conseil Pro :</u>** Sachez que l’identifiant du fournisseur obtenu à partir de la structure du compte d’abonné vidéo représente la variable *`platformMappingId`* en termes de configuration de l’authentification Adobe Pass. Par conséquent, l’application doit déterminer la valeur de la propriété ID MVPD, en utilisant la variable *`platformMappingId`* par le biais de l’authentification Adobe Pass [Fournir la liste MVPD](/help/authentication/provide-mvpd-list.md) service.
-
-</br>
 
 #### Étape : &quot;Transfert de la demande d’Adobe vers Platform SSO pour obtenir le profil&quot; {#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile}
 

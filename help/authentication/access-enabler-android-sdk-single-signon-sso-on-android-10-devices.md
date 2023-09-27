@@ -2,9 +2,9 @@
 title: Accéder à l’authentification unique (SSO) du SDK Android sur les applications Android 10
 description: Accéder à l’authentification unique (SSO) du SDK Android sur les applications Android 10
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '374'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Voir [Présentation de Roku SSO](/help/authentication/roku-sso-overview.md).
 
 ## Comportement
 
-Selon le **niveau du SDK cible** ou l’utilisation de **android:requestLegacyExternalStorage** L’attribut manifest est l’authentification unique (SSO) proposée par le SDK Access Enabler Android version 3.2.1 (dernière version) et les versions précédentes se comportent actuellement comme suit :
+Selon le **[!UICONTROL target SDK level]** ou l’utilisation de **android:requestLegacyExternalStorage** L’attribut manifest est l’authentification unique (SSO) proposée par le SDK Access Enabler Android version 3.2.1 (dernière version) et les versions précédentes se comportent actuellement comme suit :
 
 - Vos cibles d’application **Android 9 (niveau API 28)** ou inférieur **-\>** Authentification unique (SSO) **fonctionnera**
 - Vos cibles d’application **Android 10** **(niveau API 29)** et fait **set** la valeur de **requestLegacyExternalStorage sur true** dans le fichier manifeste de votre application **-\>** Authentification unique (SSO) **fonctionnera**

@@ -2,9 +2,9 @@
 title: Chemin de mise à niveau d’AccessEnabler iOS/tvOS 3.7.0
 description: Chemin de mise à niveau d’AccessEnabler iOS/tvOS 3.7.0
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '294'
 ht-degree: 0%
 
 ---
@@ -28,15 +28,20 @@ Certaines limitations, décrites ci-dessous, peuvent être rencontrées par les 
 
 1. L’authentification unique régulière (par Adobe) ne fonctionnera pas entre une application utilisant AccessEnabler version 3.7.0 et une application utilisant AccessEnabler version(s) inférieure(s) à 3.7.0, même pour les applications développées par le même fournisseur.
 
-   - **Important :**
-      - La connexion unique au niveau du système (Apple) ne sera pas affectée.
-      - La connexion unique régulière (par Adobe) continuera à fonctionner si les deux applications sont développées par le même fournisseur et utilisent la ou les versions d’AccessEnabler antérieures à la version 3.7.0 !
-      - La connexion unique (par Adobe) régulière fonctionnera si les deux applications sont développées par le même fournisseur et utilisent AccessEnabler version 3.7.0 !
+   >[!IMPORTANT]
+   >
+   >* La connexion unique au niveau du système (Apple) ne sera pas affectée.
+   >
+   >* La connexion unique régulière (par Adobe) continuera à fonctionner si les deux applications sont développées par le même fournisseur et utilisent la ou les versions d’AccessEnabler antérieures à la version 3.7.0 !
+   >
+   >* La connexion unique (par Adobe) régulière fonctionnera si les deux applications sont développées par le même fournisseur et utilisent AccessEnabler version 3.7.0 !
+
 
 1. Dans le cas de la mise à niveau d&#39;une application utilisant la version 3.7.0 d&#39;AccessEnabler vers une version inférieure d&#39;AccessEnabler, les nouveaux jetons générés ne seront pas migrés. Par conséquent, les utilisateurs finaux risquent de subir la perte des sessions d’authentification/d’autorisation, sans s’y attendre.
 
-   - **Important :**
-      - Les utilisateurs finaux authentifiés par le biais de la connexion unique au niveau du système (Apple) ne seront pas affectés.
-      - Les utilisateurs finaux qui étaient déjà authentifiés avant la mise à jour vers la nouvelle application à l’aide de la version 3.7.0 d’AccessEnabler ne seront pas affectés.
+   >[!IMPORTANT]
+   >
+   >* Les utilisateurs finaux authentifiés par le biais de la connexion unique au niveau du système (Apple) ne seront pas affectés.
+   >* Les utilisateurs finaux qui étaient déjà authentifiés avant la mise à jour vers la nouvelle application à l’aide de la version 3.7.0 d’AccessEnabler ne seront pas affectés.
 
 1. Dans le cas de la mise à niveau d&#39;une application utilisant la version 3.7.0 d&#39;AccessEnabler vers une version inférieure d&#39;AccessEnabler, les jetons supprimés ne seront pas reconnus. Par conséquent, les utilisateurs finaux peuvent rencontrer la présence de sessions d’authentification/d’autorisation, sans s’y attendre.

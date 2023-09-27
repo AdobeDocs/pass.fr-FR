@@ -2,7 +2,7 @@
 title: Présentation du SDK Android
 description: Présentation du SDK Android
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '2720'
 ht-degree: 0%
@@ -14,9 +14,6 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
-
-</br>
-
 
 ## Introduction {#intro}
 
@@ -34,8 +31,6 @@ Les workflows clients natifs sont généralement identiques à ceux des clients 
 - [Processus d’authentification initiale générique](#generic)
 - [Processus de déconnexion](#logout)
 
-
-
 ### Processus de post-initialisation {#post-init}
 
 Tous les workflows de droits pris en charge par AccessEnabler supposent que vous avez précédemment appelé [`setRequestor()`](#setRequestor) pour établir votre identité. Vous effectuez cet appel pour ne fournir votre ID de demandeur qu’une seule fois, généralement pendant la phase d’initialisation/de configuration de votre application.
@@ -50,8 +45,6 @@ Avec les clients natifs (Android, par exemple), après votre premier appel à [`
 - Ou les deux.
 
 C’est à vous de décider d’attendre ou non la notification du succès de [`setRequestor()`](#setRequestor) ou de dépendre du mécanisme de file d’attente d’appels d’AccessEnabler. Comme toutes les demandes d’autorisation et d’authentification suivantes ont besoin de l’identifiant du demandeur et des informations de configuration associées, la variable [`setRequestor()`](#setRequestor) bloque efficacement tous les appels de l’API d’authentification et d’autorisation jusqu’à ce que l’initialisation soit terminée.
-
-
 
 ### Processus d’authentification initiale générique {#generic}
 
