@@ -2,9 +2,9 @@
 title: Référence de l’API iOS/tvOS
 description: Référence de l’API iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '7010'
+source-wordcount: '7018'
 ht-degree: 0%
 
 ---
@@ -365,7 +365,8 @@ Si appelé sans la variable `serviceProviders` , la bibliothèque récupère la 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
 **Description :** Vérifie l’état d’authentification de l’utilisateur actuel.
-Pour ce faire, il recherche un jeton d’authentification valide dans l’espace de stockage du jeton local. L’appel de cette méthode n’effectue aucun appel réseau. Il est utilisé par l’application pour interroger l’état d’authentification de l’utilisateur et mettre à jour l’interface utilisateur en conséquence (c’est-à-dire mettre à jour l’interface utilisateur de connexion/déconnexion). L&#39;état d&#39;authentification est communiqué à l&#39;application via le [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) rappel.
+Pour ce faire, il recherche un jeton d’authentification valide dans l’espace de stockage du jeton local. Cette méthode n&#39;effectue aucun appel réseau et nous vous recommandons de l&#39;appeler sur le thread principal.
+Il est utilisé par l’application pour interroger l’état d’authentification de l’utilisateur et mettre à jour l’interface utilisateur en conséquence (c’est-à-dire mettre à jour l’interface utilisateur de connexion/déconnexion). L&#39;état d&#39;authentification est communiqué à l&#39;application via le [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) rappel.
 
 
 <table class="pass_api_table">

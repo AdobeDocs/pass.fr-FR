@@ -2,9 +2,9 @@
 title: Référence de l’API du SDK Android
 description: Référence de l’API du SDK Android
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '4518'
+source-wordcount: '4526'
 ht-degree: 0%
 
 ---
@@ -165,7 +165,7 @@ Les valeurs seront transmises au serveur indépendamment du flux actuel (authent
 
 ### checkAuthentication {#checkAuthN}
 
-**Description :** Vérifie l’état d’authentification. Pour ce faire, il recherche un jeton d’authentification valide dans l’espace de stockage du jeton local. L’appel de cette méthode n’effectue aucun appel réseau. Il est utilisé par l’application pour interroger l’état d’authentification de l’utilisateur et mettre à jour l’interface utilisateur en conséquence (c’est-à-dire mettre à jour l’interface utilisateur de connexion/déconnexion). L&#39;état d&#39;authentification est communiqué à l&#39;application via le [*setAuthenticationStatus()*](#setAuthNStatus) rappel.
+**Description :** Vérifie l’état d’authentification. Pour ce faire, il recherche un jeton d’authentification valide dans l’espace de stockage du jeton local. Cette méthode n&#39;effectue aucun appel réseau et nous vous recommandons de l&#39;appeler sur le thread principal. Il est utilisé par l’application pour interroger l’état d’authentification de l’utilisateur et mettre à jour l’interface utilisateur en conséquence (c’est-à-dire mettre à jour l’interface utilisateur de connexion/déconnexion). L&#39;état d&#39;authentification est communiqué à l&#39;application via le [*setAuthenticationStatus()*](#setAuthNStatus) rappel.
 
 Si un MVPD prend en charge la fonction &quot;Authentification par demandeur&quot;, plusieurs jetons d’authentification peuvent être stockés sur un appareil.  Pour plus d’informations sur cette fonctionnalité, voir [Instructions de mise en cache](#$caching) dans la section Présentation technique d’Android.
 
@@ -624,7 +624,7 @@ Deux types de métadonnées sont disponibles pour les programmeurs :
    - *simpleResult*: chaîne qui représente la valeur de métadonnées lorsque la demande a été effectuée pour l’authentification TTL, l’autorisation TTL ou l’identifiant de périphérique. Cette valeur est nulle si la requête a été effectuée pour les métadonnées utilisateur.
 
    - *userMetadataResult*: objet contenant la représentation Java d’une payload de métadonnées utilisateur JSON.\
-     Par exemple :
+     Par exemple :
 
 ```json
           '{
