@@ -2,17 +2,17 @@
 product: adobe primetime
 feature: Concurrency Monitoring
 audience: end-user
-user-guide-title: Surveillance de la simultanéité dans Adobe Pass
+user-guide-title: Surveillance de la simultanéité dans Adobe Pass
 user-guide-description: Découvrez comment définir et appliquer des limites à l’utilisation simultanée dans plusieurs applications.
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
 source-wordcount: '141'
-ht-degree: 0%
+ht-degree: 17%
 
 ---
 
 
-# Aide de la surveillance de la simultanéité dans Adobe Pass {#cm}
+# Surveillance de la simultanéité dans Adobe Pass help {#cm}
 
 + [Introduction de la surveillance de la simultanéité](cm-home.md)
 + [Glossaire de surveillance de la simultanéité](cm-glossary.md)
