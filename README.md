@@ -2,7 +2,7 @@
 source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
 workflow-type: tm+mt
 source-wordcount: '505'
-ht-degree: 0%
+ht-degree: 5%
 
 ---
 # Article sur les contributions
@@ -11,7 +11,7 @@ Nous acceptons les contributions de notre communauté ainsi que des employés d�
 
 ## Adobe de code de conduite Open Source
 
-Ce projet a adopté la méthode [Adobe de code de conduite Open Source](code-of-conduct.md) ou le [Code de conduite .NET Foundation](https://dotnetfoundation.org/code-of-conduct). Pour plus d’informations, voir [Contribution](contributing.md) article.
+Ce projet respecte le [Code de conduite d’Adobe Open Source](code-of-conduct.md) ou le [Code de conduite .NET Foundation](https://dotnetfoundation.org/code-of-conduct). Pour plus d’informations, consultez l’article [Contribution](contributing.md).
 
 ## Comment contribuer à l’Adobe de contenu
 
