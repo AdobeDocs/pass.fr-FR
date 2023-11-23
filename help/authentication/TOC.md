@@ -4,10 +4,10 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 68e572797a39327682ea7f491ef2109374fadc2e
+source-git-commit: 4ae0b17eff2dfcf0aaa5d11129dfd60743f6b467
 workflow-type: tm+mt
-source-wordcount: '790'
-ht-degree: 4%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -124,6 +124,7 @@ ht-degree: 4%
    + Temp pass {#temp-pass}
       + [Temp pass](temp-pass.md)
       + [Passe temporaire promotionnelle](promotional-temp-pass.md)
+      + [Réinitialiser le transfert temporaire](reset-temp-pass.md)
    + Authentification unique {#sso}
       + [Prise en charge de la connexion unique](sso-support.md)
       + [SSO via authentification passive](sso-passive-authn.md)
