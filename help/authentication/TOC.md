@@ -4,10 +4,10 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 4ae0b17eff2dfcf0aaa5d11129dfd60743f6b467
+source-git-commit: c8b596f156c1a992b31101302412b2d52213a5ef
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '798'
+ht-degree: 4%
 
 ---
 
@@ -68,6 +68,7 @@ ht-degree: 0%
             + [Enregistrement de l’application iOS/tvOS](iostvos-application-registration.md)
             + Instructions de migration {#migration-guidelines}
                + [Guide de migration d’iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
+            + [Vérifications de l’intégrité du stockage iOS/tvOS](iostvos-sdk-storage-integrity-checks.md)
          + API iOS/tvOS {#ios-tvos-api}
             + [Préautoriser](preauthorize.md)
       + SDK Android {#androidsdk}
