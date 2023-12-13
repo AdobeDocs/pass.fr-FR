@@ -4,15 +4,15 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: c8b596f156c1a992b31101302412b2d52213a5ef
+source-git-commit: 97928c231d5e3d4b36fb2967452b01cb8af86072
 workflow-type: tm+mt
-source-wordcount: '798'
-ht-degree: 4%
+source-wordcount: '832'
+ht-degree: 3%
 
 ---
 
 
-# Authentification Adobe Pass Aide {#authentication}
+# Aide sur l’authentification Adobe Pass {#authentication}
 
 + [Présentation de l’authentification Adobe Pass](home.md)
 + Concepts d’authentification Adobe Pass {#authentication-concepts}
@@ -165,6 +165,7 @@ ht-degree: 4%
    + [Notes de mise à jour de l’authentification Adobe Pass 2.63](auth-rn-263.md)
    + [Notes de mise à jour d’Adobe Pass Authentication 2.62.1](auth-rn-2621.md)
    + Notes de mise à jour du SDK iOS/tvOS  {#release-notes-ios}
+      + [Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.8.3](authn-rn-ios-tvos-383.md)
       + [Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.8.2](authn-rn-ios-tvos-382.md)
       + [Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.8.1](authn-rn-ios-tvos-381.md)
       + [Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.7.0](authn-rn-ios-tvos-370.md)
