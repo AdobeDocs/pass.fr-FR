@@ -2,9 +2,9 @@
 title: Référence de l’API iOS/tvOS
 description: Référence de l’API iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '7018'
+source-wordcount: '6933'
 ht-degree: 0%
 
 ---
@@ -41,67 +41,67 @@ Documentation associée :
 
 * **[OBSOLÈTE]** [init](#init) - Instancie l’objet AccessEnabler.
 
-* [setOptions:options:](#setOptions) - Configure les options du SDK global telles que profile ou visitorID.
+* [`setOptions:options:`](#setOptions) - Configure les options du SDK global telles que profile ou visitorID.
 
-* [setRequestor:](#setReqV3)[requestorID](#setReqV3),[setRequestor:requestorID:serviceProviders :](#setReqV3) - Établit l’identité du programmeur.
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Établit l’identité du programmeur.
 
-* **[OBSOLÈTE]** [setRequestor:signedRequestorId:](#setReq),[setRequestor:signedRequestorId:serviceProviders :](#setReq) - Établit l’identité du programmeur.
+* **[OBSOLÈTE]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Établit l’identité du programmeur.
 
-* **[OBSOLÈTE]** [setRequestor:signedRequestorId:secret:publicKey](#setReq_tvos), [setRequestor:signedRequestorId:serviceProviders:secret:publicKey](#setReq_tvos)- Établit l’identité du programmeur.
+* **[OBSOLÈTE]** [`setRequestor:signedRequestorId:secret:publicKey`](#setReq_tvos), [`setRequestor:signedRequestorId:serviceProviders:secret:publicKey`](#setReq_tvos)- Établit l’identité du programmeur.
 
-* [setRequestorComplete :](#setReqComplete) - Informe votre application que la phase de configuration est terminée.
+* [`setRequestorComplete:`](#setReqComplete) - Informe votre application que la phase de configuration est terminée.
 
-* [checkAuthentication](#checkAuthN) - Vérifie l’état d’authentification de l’utilisateur actuel.
+* [`checkAuthentication`](#checkAuthN) - Vérifie l’état d’authentification de l’utilisateur actuel.
 
-* [getAuthentication](#getAuthN), [getAuthentication:withData:](#getAuthN) - Démarre le workflow d’authentification complète.
+* [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) - Démarre le workflow d’authentification complète.
 
-* [getAuthentication:filter](#getAuthN_filter),[getAuthentication:withData:](#getAuthN)[andFilter](#getAuthN_filter) - Démarre le workflow d’authentification complète.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) - Démarre le workflow d’authentification complète.
 
-* [displayProviderDialog:](#dispProvDialog) - Informe votre application d’instancier les éléments d’IU appropriés pour que l’utilisateur puisse sélectionner un MVPD.
+* [`displayProviderDialog:`](#dispProvDialog) - Informe votre application d’instancier les éléments d’IU appropriés pour que l’utilisateur puisse sélectionner un MVPD.
 
-* [setSelectedProvider:](#setSelProv) - Informe le AccessEnabler de la sélection MVPD de l’utilisateur.
+* [`setSelectedProvider:`](#setSelProv) - Informe le AccessEnabler de la sélection MVPD de l’utilisateur.
 
-* [navigateToUrl :](#nav2url) - Informe votre application que l’utilisateur doit se voir présenter la page de connexion MVPD.
+* [`navigateToUrl:`](#nav2url) - Informe votre application que l’utilisateur doit se voir présenter la page de connexion MVPD.
 
-* [navigateToUrl:useSVC:](#nav2urlSVC) - Informe votre application que l’utilisateur doit se voir présenter la page de connexion MVPD, à l’aide de SFSafariViewController
+* [`navigateToUrl:useSVC:`](#nav2urlSVC) - Informe votre application que l’utilisateur doit se voir présenter la page de connexion MVPD, à l’aide de SFSafariViewController
 
-* [handleExternalURL:url](#handleExternalURL) - Termine le flux d’authentification/de déconnexion.
+* [`handleExternalURL:url`](#handleExternalURL) - Termine le flux d’authentification/de déconnexion.
 
-* **[OBSOLÈTE]** [getAuthenticationToken](#getAuthNToken) - Demande le jeton d’authentification auprès du serveur principal.
+* **[OBSOLÈTE]** [`getAuthenticationToken`](#getAuthNToken) - Demande le jeton d’authentification auprès du serveur principal.
 
-* [setAuthenticationStatus:errorCode:](#setAuthNStatus) - Informe votre application de l’état du flux d’authentification.
+* [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) - Informe votre application de l’état du flux d’authentification.
 
-* [checkPreauthorizedResources :](#checkPreauth) - Détermine si l’utilisateur est déjà autorisé à afficher des ressources protégées spécifiques.
+* [`checkPreauthorizedResources:`](#checkPreauth) - Détermine si l’utilisateur est déjà autorisé à afficher des ressources protégées spécifiques.
 
-* [checkPreauthorizedResources:cache:](#checkPreauthCache) - Détermine si l’utilisateur est déjà autorisé à afficher des ressources protégées spécifiques.
+* [`checkPreauthorizedResources:cache:`](#checkPreauthCache) - Détermine si l’utilisateur est déjà autorisé à afficher des ressources protégées spécifiques.
 
-* [preauthorizedResources:](#preauthResources) - Fournit une liste des ressources que l’utilisateur est déjà autorisé à afficher.
+* [`preauthorizedResources:`](#preauthResources) - Fournit une liste des ressources que l’utilisateur est déjà autorisé à afficher.
 
-* [checkAuthorization:](#checkAuthZ), [checkAuthorization:withData:](#checkAuthZ) - Vérifie l’état d’autorisation de l’utilisateur actuel.
+* [`checkAuthorization:`](#checkAuthZ), [`checkAuthorization:withData:`](#checkAuthZ) - Vérifie l’état d’autorisation de l’utilisateur actuel.
 
-* [getAuthorization:](#getAuthZ), [getAuthorization:withData:](#getAuthZ) - Lance le flux d’autorisation.
+* [`getAuthorization:`](#getAuthZ), [`getAuthorization:withData:`](#getAuthZ) - Lance le flux d’autorisation.
 
-* [setToken:forResource:](#setToken) - Informe votre application que le flux d’autorisation a bien été terminé.
+* [`setToken:forResource:`](#setToken) - Informe votre application que le flux d’autorisation a bien été terminé.
 
-* [tokenRequestFailed:errorCode:errorDescription:](#tokenReqFailed) - Indique à votre application que le flux d’autorisation a échoué.
+* [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed) - Indique à votre application que le flux d’autorisation a échoué.
 
-* [déconnexion](#logout) - Lance le flux de déconnexion.
+* [`logout`](#logout) - Lance le flux de déconnexion.
 
-* [getSelectedProvider](#getSelProv) - Détermine le fournisseur actuellement sélectionné.
+* [`getSelectedProvider`](#getSelProv) - Détermine le fournisseur actuellement sélectionné.
 
-* [selectedProvider :](#selProv) - Fournit des informations sur le MVPD actuellement sélectionné à votre application.
+* [`selectedProvider:`](#selProv) - Fournit des informations sur le MVPD actuellement sélectionné à votre application.
 
-* [getMetadata :](#getMeta) - Récupère les informations exposées en tant que métadonnées par la bibliothèque AccessEnabler.
+* [`getMetadata:`](#getMeta) - Récupère les informations exposées en tant que métadonnées par la bibliothèque AccessEnabler.
 
-* [presentTvProviderDialog:](#presentTvDialog) - Informe votre application d’afficher la boîte de dialogue SSO Apple.
+* [`presentTvProviderDialog:`](#presentTvDialog) - Informe votre application d’afficher la boîte de dialogue SSO Apple.
 
-* [dismissTvProviderDialog:](#dismissTvDialog) - Informe votre application de masquer la boîte de dialogue SSO Apple.
+* [`dismissTvProviderDialog:`](#dismissTvDialog) - Informe votre application de masquer la boîte de dialogue SSO Apple.
 
-* [setMetadataStatus:encrypted:forKey:andArguments:](#setMetaStatus) - Fournit les métadonnées demandées par un [getMetadata :](#getMeta) appelez .
+* [`setMetadataStatus:encrypted:forKey:andArguments:`](#setMetaStatus) - Fournit les métadonnées demandées par un [`getMetadata:`](#getMeta) appelez .
 
-* [sendTrackingData:forEventType:](#sendTracking) - Fournit des informations de suivi sur les données.
+* [`sendTrackingData:forEventType:`](#sendTracking) - Fournit des informations de suivi sur les données.
 
-* [MVPD](#mvpd) - Classe MVPD. [Contient des informations sur le MVPD]
+* [`MVPD`](#mvpd) - Classe MVPD. [Contient des informations sur le MVPD]
 
 ### init:softwareStatement {#initWithSoftwareStatement}
 
@@ -170,7 +170,7 @@ Documentation associée :
 [Retour au sommet...](#apis)
 
 
-### setRequestor:requestorID, setRequestor:requestorID:serviceProviders : {#setReqV3}
+### `setRequestor:requestorID`, `setRequestor:requestorID:serviceProviders:` {#setReqV3}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
@@ -212,7 +212,7 @@ Si une valeur est fournie pour la variable `urls` , l’appel réseau obtenu cib
 
 </br>
 
-### setRequestor:setSignedRequestorId:, setRequestor:setSignedRequestorId:serviceProviders : - [OBSOLÈTE] {#setReq}
+### `setRequestor:setSignedRequestorId:`, `setRequestor:setSignedRequestorId:serviceProviders:` - [OBSOLÈTE] {#setReq}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
@@ -249,7 +249,7 @@ Si une valeur est fournie pour la variable `urls` , l’appel réseau obtenu cib
 
 [Retour au sommet...](#apis)
 
-### setRequestor:setSignedRequestorId:secret:publicKey, setRequestor:setSignedRequestorId:serviceProviders:secret:publicKey - [OBSOLÈTE] {#setReq_tvos}
+### `setRequestor:setSignedRequestorId:secret:publicKey`, `setRequestor:setSignedRequestorId:serviceProviders:secret:publicKey` - [OBSOLÈTE] {#setReq_tvos}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
@@ -354,6 +354,7 @@ Si appelé sans la variable `serviceProviders` , la bibliothèque récupère la 
    * `ACCESS_ENABLER_STATUS_ERROR` - échec de la phase de configuration
 
 **Déclenché par :**
+
 `setRequestor:setSignedRequestorId:, `[`setRequestor:setSignedRequestorId:serviceProviders:`](#setReq)
 
 [Retour au sommet...](#apis)
@@ -396,7 +397,7 @@ Il est utilisé par l’application pour interroger l’état d’authentificati
 
 </br>
 
-### getAuthentication, getAuthentication:withData: {#getAuthN}
+### `getAuthentication`, `getAuthentication:withData:` {#getAuthN}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
@@ -407,7 +408,7 @@ Il est utilisé par l’application pour interroger l’état d’authentificati
 
 Comme les informations d’identification de l’utilisateur sont vérifiées sur la page de connexion MVPD, votre application est requise pour surveiller les multiples opérations de redirection qui ont lieu pendant que l’utilisateur s’authentifie sur la page de connexion du MVPD. Lorsque les informations d’identification correctes sont saisies, le contrôle WebView est redirigé vers une URL personnalisée définie par la variable `ADOBEPASS_REDIRECT_URL` constante. Cette URL n’est pas destinée à être chargée par le WebView. L’application doit intercepter cette URL et interpréter cet événement comme un signal indiquant que la phase de connexion est terminée. Il doit ensuite céder le contrôle à AccessEnabler pour terminer le flux d’authentification (en appelant la fonction [handleExternalURL](#handleExternalURL) ).
 
-Enfin, l&#39;état d&#39;authentification est communiqué à l&#39;application via le [setAuthenticationStatus:errorCode:](#setAuthNStatus) rappel.
+Enfin, l&#39;état d&#39;authentification est communiqué à l&#39;application via le [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) rappel.
 
 <table class="pass_api_table">
 <colgroup>
@@ -456,23 +457,23 @@ Enfin, l&#39;état d&#39;authentification est communiqué à l&#39;application v
 * *forceAuthn*: indicateur qui spécifie si le flux d’authentification doit être démarré, que l’utilisateur soit déjà authentifié ou non.
 * *data*: dictionnaire composé de paires clé-valeur à envoyer au service de passe de télévision payante. Adobe peut utiliser ces données pour activer les fonctionnalités futures sans modifier le SDK.
 
-**Rappels déclenchés :** ` setAuthenticationStatus:errorCode:, `[`displayProviderDialog:`](#dispProvDialog)`,`` sendTrackingData:forEventType:`
+**Rappels déclenchés :** `setAuthenticationStatus:errorCode:`, [`displayProviderDialog:`](#dispProvDialog), `sendTrackingData:forEventType:`
 
 
 [Retour au sommet...](#apis)
 
 </br>
 
-### getAuthentication:filter, getAuthentication:withData:andFilter {#getAuthN_filter}
+### `getAuthentication:filter`, `getAuthentication:withData:andFilter` {#getAuthN_filter}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
 **Description :** Démarre le workflow d’authentification complète. Il commence par vérifier l’état d’authentification. Si elle n’est pas déjà authentifiée, la machine à états du flux d’authentification est démarrée :
 
 * [presentTvProviderDialog()](#presentTvDialog) sera appelé si le demandeur actuel possède au moins un MVPD qui prend en charge l’authentification unique. Si aucun MVPD ne prend en charge la fonction SSO, le flux d’authentification classique commence et le paramètre de filtre est ignoré.
-* Une fois que l’utilisateur a terminé le flux d’authentification unique Apple [dismissTvProviderDialog()](#dismissTvDialog) sera déclenché et le processus d’authentification sera terminé.
+* Une fois que l’utilisateur a terminé le flux d’authentification unique Apple [`dismissTvProviderDialog()`](#dismissTvDialog) sera déclenché et le processus d’authentification sera terminé.
 
-Enfin, l&#39;état d&#39;authentification est communiqué à l&#39;application via le [setAuthenticationStatus:errorCode:](#setAuthNStatus) rappel.
+Enfin, l&#39;état d&#39;authentification est communiqué à l&#39;application via le [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) rappel.
 
 **Disponibilité :** v2.4+
 
@@ -509,8 +510,7 @@ Enfin, l&#39;état d&#39;authentification est communiqué à l&#39;application v
                   withData:(NSDictionary* )data
                  andFilter:(NSDictionary *)filter;</code></pre>
 <div>
-
-</div></td>
+ </div></td>
 </tr>
 </tbody>
 </table>
@@ -615,7 +615,7 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 
 * *mvpds*: liste des objets MVPD contenant des informations relatives au MVPD que l’application peut utiliser pour créer les éléments d’IU de sélection du MVPD.
 
-**Déclenché par :** ` getAuthentication, `[getAuthentication:withData:](#getAuthN),` getAuthorization:, `[getAuthorization:withData:](#getAuthZ)
+**Déclenché par :** `getAuthentication`, [`getAuthentication:withData:`](#getAuthN),`getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ)
 
 
 [Retour au sommet...](#apis)
@@ -632,7 +632,7 @@ Si le MVPD sélectionné est un MVPD TempPass , il s’authentifiera automatique
 
 Veuillez noter que ceci n’est pas possible pour la transmission temporaire de conversion où des paramètres supplémentaires sont donnés sur la méthode getAuthentication() .
 
-Lorsque la variable *null* en tant que paramètre, Access Enabler suppose que l’utilisateur a annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton &quot;Précédent&quot;) et répond en réinitialisant la machine-état d’authentification et en appelant la fonction [setAuthenticationStatus:errorCode:](#setAuthNStatus) avec le rappel `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` code d’erreur.
+Lorsque la variable *null* en tant que paramètre, Access Enabler suppose que l’utilisateur a annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton &quot;Précédent&quot;) et répond en réinitialisant la machine-état d’authentification et en appelant la fonction [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) avec le rappel `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` code d’erreur.
 
 <table class="pass_api_table">
 <colgroup>
@@ -654,7 +654,7 @@ Lorsque la variable *null* en tant que paramètre, Access Enabler suppose que l�
 
 **Paramètres :** Aucun
 
-**Rappels déclenchés :** ` setAuthenticationStatus:errorCode:,sendTrackingData:forEventType:,  `[`navigateToUrl:`](#nav2url)
+**Rappels déclenchés :** `setAuthenticationStatus:errorCode:`,`sendTrackingData:forEventType:`,  [`navigateToUrl:`](#nav2url)
 
 [Retour au sommet...](#apis)
 
@@ -700,7 +700,7 @@ Comme UIWebView/WKWebView` `Le contrôleur traverse plusieurs redirections. Votr
 
 </br>
 
-#### navigateToUrl:useSVC: {#nav2urlSVC}
+#### `navigateToUrl:useSVC:` {#nav2urlSVC}
 
 **Fichier :** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -812,7 +812,7 @@ Dans le cas du flux d’authentification, AccessEnabler complète le flux en ré
 
 &lt;/br
 
-#### setAuthenticationStatus:errorCode: {#setAuthNStatus}
+#### `setAuthenticationStatus:errorCode:` {#setAuthNStatus}
 
 **Fichier :** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -848,7 +848,7 @@ Dans le cas du flux d’authentification, AccessEnabler complète le flux en ré
    * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler a réinitialisé l’ordinateur-état d’authentification une fois l’application de couche supérieure transmise. *null* to [`setSelectedProvider:`](#setSelProv) pour interrompre le flux d’authentification.  L’utilisateur a probablement annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton &quot;Retour&quot;).
    * `GENERIC_AUTHENTICATION_ERROR` - Le flux d’authentification a échoué pour des raisons telles que l’indisponibilité du réseau ou l’utilisateur a explicitement annulé le flux d’authentification.
 
-**Déclenché par :** ` checkAuthentication, getAuthentication, `[getAuthentication:withData:](#getAuthN),` checkAuthorization:, `[checkAuthorization:withData:](#checkAuthZ)
+**Déclenché par :** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ)
 
 [Retour au sommet...](#apis)
 
@@ -889,7 +889,7 @@ Dans le cas du flux d’authentification, AccessEnabler complète le flux en ré
 
 </br>
 
-### checkPreauthorizedResources:cache: {#checkPreauthCache}
+### `checkPreauthorizedResources:cache:` {#checkPreauthCache}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
@@ -964,11 +964,11 @@ Dans le cas du flux d’authentification, AccessEnabler complète le flux en ré
 
 </br>
 
-### checkAuthorization:, checkAuthorization:withData: {#checkAuthZ}
+### `checkAuthorization:`, `checkAuthorization:withData:` {#checkAuthZ}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
-**Description :** Cette méthode est utilisée par l’application pour vérifier l’état de l’autorisation. Il commence par vérifier l’état d’authentification. Si elle n’est pas authentifiée, la variable [tokenRequestFailed:errorCode:errorDescription:](#tokenReqFailed) callback est déclenché et la méthode se ferme. Si l’utilisateur est authentifié, il déclenche également le flux d’autorisation. Voir les détails de la variable [`getAuthorization:`](#getAuthZ) .
+**Description :** Cette méthode est utilisée par l’application pour vérifier l’état de l’autorisation. Il commence par vérifier l’état d’authentification. Si elle n’est pas authentifiée, la variable [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed) callback est déclenché et la méthode se ferme. Si l’utilisateur est authentifié, il déclenche également le flux d’autorisation. Voir les détails de la variable [`getAuthorization:`](#getAuthZ) .
 
 
 <table class="pass_api_table">
@@ -1014,17 +1014,18 @@ Dans le cas du flux d’authentification, AccessEnabler complète le flux en ré
 * *data*: dictionnaire composé de paires clé-valeur à envoyer au service de passe de télévision payante. Adobe peut utiliser ces données pour activer les fonctionnalités futures sans modifier le SDK.
 
 **Rappels déclenchés :**
-[tokenRequestFailed:errorCode:errorDescription:](#tokenReqFailed)`,setToken:forResource:, sendTrackingData:forEventType:, setAuthenticationStatus:errorCode:`
+
+[`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed),`setToken:forResource:`, `sendTrackingData:forEventType:`, `setAuthenticationStatus:errorCode:`
 
 [Retour au sommet...](#apis)
 
 </br>
 
-### getAuthorization:, getAuthorization:withData: {#getAuthZ}
+### `getAuthorization:`, `getAuthorization:withData:` {#getAuthZ}
 
 **Fichier :** AccessEnabler/headers/AccessEnabler.h
 
-**Description :** Cette méthode est utilisée par l’application pour lancer le flux d’autorisation. Si l’utilisateur n’est pas déjà authentifié, il lance également le flux d’authentification. Si l’utilisateur est authentifié, AccessEnabler émet des requêtes pour le jeton d’autorisation (si aucun jeton d’autorisation valide n’est présent dans le cache de jeton local) et pour le jeton multimédia de courte durée. Une fois le jeton multimédia court obtenu, le flux d’autorisation est considéré comme terminé. La variable [setToken:forResource:](#setToken) callback est déclenché et le jeton multimédia court est diffusé en tant que paramètre à l’application. Si, pour une raison quelconque, l’autorisation échoue, la variable [tokenRequestFailed:forEventType:](#tokenReqFailed) est déclenché et le code d’erreur/les détails sont fournis.
+**Description :** Cette méthode est utilisée par l’application pour lancer le flux d’autorisation. Si l’utilisateur n’est pas déjà authentifié, il lance également le flux d’authentification. Si l’utilisateur est authentifié, AccessEnabler émet des requêtes pour le jeton d’autorisation (si aucun jeton d’autorisation valide n’est présent dans le cache de jeton local) et pour le jeton multimédia de courte durée. Une fois le jeton multimédia court obtenu, le flux d’autorisation est considéré comme terminé. La variable [`setToken:forResource:`](#setToken) callback est déclenché et le jeton multimédia court est diffusé en tant que paramètre à l’application. Si, pour une raison quelconque, l’autorisation échoue, la variable [`tokenRequestFailed:forEventType:`](#tokenReqFailed) est déclenché et le code d’erreur/les détails sont fournis.
 
 <table class="pass_api_table">
 <colgroup>
@@ -1075,13 +1076,15 @@ Dans le cas du flux d’authentification, AccessEnabler complète le flux en ré
 **Rappels supplémentaires déclenchés :**\
 Cette méthode peut également déclencher les rappels suivants (si le flux d’authentification est également lancé) : `setAuthenticationStatus:errorCode:`, `displayProviderDialog:`
 
-**REMARQUE : Veuillez utiliser checkAuthorization: / checkAuthorization:withData: au lieu de getAuthorization: / getAuthorization:withData: dans la mesure du possible. getAuthorization: / getAuthorization:withData: démarre un flux d’authentification complet (si l’utilisateur n’est pas authentifié), ce qui peut entraîner une mise en oeuvre compliquée du côté du programmeur.**
+>[!NOTE]
+>
+>Veuillez utiliser `checkAuthorization:` / `checkAuthorization:withData:` au lieu de `getAuthorization:` / `getAuthorization:withData:` dans la mesure du possible. La variable `getAuthorization:` / `getAuthorization:withData:` démarre un flux d’authentification complet (si l’utilisateur n’est pas authentifié), ce qui peut entraîner une mise en oeuvre compliquée du côté du programmeur.
 
 [Retour au sommet...](#apis)
 
 </br>
 
-### setToken:forResource: {#setToken}
+### `setToken:forResource:` {#setToken}
 
 **Fichier :** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -1112,13 +1115,13 @@ Cette méthode peut également déclencher les rappels suivants (si le flux d’
 * *token*: jeton multimédia de courte durée
 * *resource*: la ressource pour laquelle l’autorisation a été obtenue
 
-**Déclenché par :** [checkAuthorization:](#checkAuthZ)` , `[checkAuthorization:withData:](#checkAuthZ),` `[getAuthorization:](#getAuthZ), [getAuthorization:withData:](#getAuthZ)
+**Déclenché par :** [`checkAuthorization:`](#checkAuthZ) , [`checkAuthorization:withData:`](#checkAuthZ), [`getAuthorization:`](#getAuthZ), [`getAuthorization:withData:`](#getAuthZ)
 
 [Retour au sommet...](#apis)
 
 </br>
 
-### tokenRequestFailed:errorCode:errorDescription: {#tokenReqFailed}
+### `tokenRequestFailed:errorCode:errorDescription:` {#tokenReqFailed}
 
 **Fichier :** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -1152,7 +1155,7 @@ Cette méthode peut également déclencher les rappels suivants (si le flux d’
 * *description*: détails supplémentaires sur le scénario d’échec. Si cette chaîne descriptive n’est disponible pour aucune raison, l’authentification Adobe Pass envoie une chaîne vide. **(&quot;&quot;)**.\
   Cette chaîne peut être utilisée par un MVPD pour transmettre des messages d’erreur personnalisés ou des messages liés aux ventes. Par exemple, si l’autorisation d’une ressource est refusée à un abonné, le MVPD peut envoyer un message tel que : &quot;Vous n’avez actuellement pas accès à ce canal dans votre package. Si vous souhaitez mettre à niveau votre package, cliquez sur **here**.&quot; Le message est transmis par l’authentification Adobe Pass via ce rappel au programmeur, qui a la possibilité de l’afficher ou de l’ignorer. L’authentification Adobe Pass peut également utiliser ce paramètre pour fournir une notification de la condition qui a pu entraîner une erreur. Par exemple, &quot;Une erreur de réseau s’est produite lors de la communication avec le service d’autorisation du fournisseur&quot;.
 
-**Déclenché par :** ` checkAuthorization:, `[checkAuthorization:withData:](#checkAuthZ), `getAuthorization:, `[getAuthorization:withData:](#getAuthZ)
+**Déclenché par :** `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ), `getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ)
 
 [Retour au sommet...](#apis)
 
@@ -1195,7 +1198,7 @@ Au fur et à mesure de plusieurs redirections, votre application doit surveiller
 
 **Paramètres :** Aucun
 
-**Rappels déclenchés :** `navigateToUrl:, `[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
+**Rappels déclenchés :** `navigateToUrl:`, [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 
 
@@ -1396,7 +1399,7 @@ Deux types de métadonnées sont disponibles pour les programmeurs :
 
 </br>
 
-### setMetadataStatus:encrypted:forKey:andArguments: {#setMetaStatus}
+### `setMetadataStatus:encrypted:forKey:andArguments:` {#setMetaStatus}
 
 **Fichier :** AccessEnabler/headers/EntitlementDelegate.h
 
@@ -1525,7 +1528,7 @@ AccessEnabler déclenche un rappel supplémentaire qui n’est pas nécessaireme
    * **mvpdSelection:** lorsque l’utilisateur sélectionne un MVPD dans le formulaire de sélection du MVPD (l’événement est `TRACKING_GET_SELECTED_PROVIDER`)
 * *data*: données supplémentaires associées à l’événement signalé. Ces données sont présentées sous la forme d&#39;une liste de valeurs.
 
-**Déclenché par :** `checkAuthentication, getAuthentication, `[getAuthentication:withData:](#getAuthN), `checkAuthorization:, `[checkAuthorization:withData:](#checkAuthZ), `getAuthorization:, `[getAuthorization:withData:](#getAuthZ), `setSelectedProvider:`
+**Déclenché par :** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ), `getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ), `setSelectedProvider:`
 
 Instructions pour l’interprétation des valeurs dans la variable *data* tableau :
 

@@ -2,9 +2,9 @@
 title: SSO sur iOS lors de l’utilisation de l’activateur d’accès à l’authentification Adobe Pass
 description: SSO sur iOS lors de l’utilisation de l’activateur d’accès à l’authentification Adobe Pass
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 </br>
 
-## Présentation
+## Vue d’ensemble
 
 L’authentification unique (SSO) entre les applications Adobe Pass Authentification fonctionne de différentes manières selon le système d’exploitation sous-jacent.
 
@@ -38,7 +38,7 @@ Le comportement de l’authentification unique est le suivant :
    - **Important :** Veuillez noter que la version 1.9.4 du SDK iOS a [augmentation de la cible de déploiement iOS minimale à iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 et versions ultérieures**: SSO fonctionnera dans les conditions suivantes :
 
-1. Les applications sont publiées à l’aide du même profil de distribution Apple ou des profils appartenant à la même équipe. C’est la seule façon pour les applications de partager des tableaux de bord personnalisés sur iOS 7 et les versions ultérieures. Dans tous les autres scénarios, le tableau de bord est un environnement de test par application. De [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[UIPasteboard pasteboardWithName:create:\] et +\[UIPasteboard pasteboardWithUniqueName\] sont désormais uniques au nom donné pour permettre uniquement aux applications du même groupe d’applications d’accéder au tableau de bord. Si le développeur tente de créer un tableau de bord avec un nom qui existe déjà et qu’il ne fait pas partie de la même suite d’applications, il obtient son propre tableau de bord privé unique. Notez que cela n’a aucune incidence sur les tableaux de bord fournis par le système, ainsi que sur les informations générales et la recherche.
+1. Les applications sont publiées à l’aide du même profil de distribution Apple ou des profils appartenant à la même équipe. C’est la seule façon pour les applications de partager des tableaux de bord personnalisés sur iOS 7 et les versions ultérieures. Dans tous les autres scénarios, le tableau de bord est un environnement de test par application. De [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] et +\[`UIPasteboard pasteboardWithUniqueName`\] maintenant unique le nom donné pour autoriser uniquement les applications du même groupe d’applications à accéder au tableau de bord. Si le développeur tente de créer un tableau de bord avec un nom qui existe déjà et qu’il ne fait pas partie de la même suite d’applications, il obtient son propre tableau de bord privé unique. Notez que cela n’a aucune incidence sur les tableaux de bord fournis par le système, ainsi que sur les informations générales et la recherche.
 
 1. Les applications comportent le même préfixe Bundle ID (tous les composants sauf le dernier). Seules les applications qui partagent le même préfixe Bundle ID calculeront le même IDFV. De [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor): sur IOS 7, tous les composants du lot, à l’exception du dernier composant, sont utilisés pour générer l’identifiant du fournisseur. Si l’ID de lot ne comporte qu’un seul composant, l’ID de lot entier est utilisé.
 
