@@ -2,9 +2,9 @@
 title: Lancer l’autorisation
 description: Lancer l’autorisation
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!NOTE]
+>
+> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 

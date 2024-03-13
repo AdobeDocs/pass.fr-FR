@@ -2,9 +2,9 @@
 title: Récupération du jeton d’autorisation
 description: Récupération du jeton d’autorisation
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '330'
+source-wordcount: '340'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!NOTE]
+>
+> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 

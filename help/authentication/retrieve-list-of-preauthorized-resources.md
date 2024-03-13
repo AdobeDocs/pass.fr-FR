@@ -2,9 +2,9 @@
 title: Récupérer la liste des ressources préautorisées
 description: Récupérer la liste des ressources préautorisées
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!NOTE]
+>
+> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 

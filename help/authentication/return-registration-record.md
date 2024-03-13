@@ -2,10 +2,10 @@
 title: Enregistrement des retours
 description: Enregistrement des retours
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '243'
-ht-degree: 0%
+source-wordcount: '252'
+ht-degree: 2%
 
 ---
 
@@ -15,6 +15,9 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
+>[!NOTE]
+>
+> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
@@ -42,7 +45,7 @@ Renvoie l’enregistrement du code d’enregistrement contenant le code d’enre
 
 | Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur  </br>    (composant Chemin)</br>2.  code d&#39;enregistrement  </br>    (composant Chemin) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir schéma et exemple ci-dessous. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur  </br>    (composant Chemin)</br>2.  code d&#39;enregistrement  </br>    (composant Chemin) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir schéma et exemple ci-dessous. | 200 |
 
 {style="table-layout:auto"}
 

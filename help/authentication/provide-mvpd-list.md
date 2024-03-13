@@ -2,10 +2,10 @@
 title: Fournir la liste MVPD
 description: Fournir la liste MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '230'
-ht-degree: 0%
+source-wordcount: '232'
+ht-degree: 2%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!NOTE]
+>
+> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
@@ -35,7 +39,7 @@ Renvoie la liste des MVPD configurés pour le demandeur.
 
 | Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>Par exemple :</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Authentification Adobe Pass | 1. Demandeur</br>    (composant Chemin)</br>_2.  deviceType (désapprouvé)_ | GET | XML ou JSON contenant la liste des MVPD. | 200 |
+| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>Par exemple :</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Authentification Adobe Pass | 1. Demandeur</br>    (composant Chemin)</br>_2.  deviceType (désapprouvé)_ | GET | XML ou JSON contenant la liste des MVPD. | 200 |
 
 {style="table-layout:auto"}
 

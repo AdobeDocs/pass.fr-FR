@@ -2,9 +2,9 @@
 title: Guide pas à pas de l’API REST (serveur à serveur)
 description: Redéfinissez le serveur de livre de cuisine de l’API sur le serveur .
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -16,10 +16,13 @@ ht-degree: 0%
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 
-## Présentation {#overview}
+## Vue d’ensemble {#overview}
 
 L’objectif de ce guide est de décrire en détail les bonnes pratiques pour implémenter l’authentification Adobe Pass à l’aide des architectures serveur à serveur.  Il fournit des exigences de base, une implémentation de flux détaillée et des considérations générales pour les environnements de production et le fonctionnement.
 
+### Mécanisme de ralentissement
+
+L’API REST d’authentification Adobe Pass est régie par une [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md).
 
 
 ## Composants {#components}

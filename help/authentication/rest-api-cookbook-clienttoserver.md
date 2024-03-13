@@ -2,9 +2,9 @@
 title: Guide pas à pas de l'API REST (client à serveur)
 description: Client du guide pas à pas de l’API REST sur le serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
@@ -16,12 +16,16 @@ ht-degree: 0%
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 
-## Présentation {#overview}
+## Vue d’ensemble {#overview}
 
 Ce document fournit des instructions détaillées à l’équipe d’ingénierie d’un programmeur afin qu’elle intègre un &quot;appareil intelligent&quot; (console de jeu, application de télévision dynamique, décodeur, etc.). avec l’authentification Adobe Pass à l’aide des services d’API REST. Cette approche client-serveur, qui utilise des API REST plutôt qu’un SDK client, permet une prise en charge plus large de différentes plateformes pour lesquelles le développement d’un nombre important de SDK uniques ne serait pas possible. Pour une présentation technique générale du fonctionnement de la solution sans client, voir la section [Présentation technique sans client](/help/authentication/rest-api-overview.md).
 
 
 Cette approche nécessite deux composants (application en continu et application AuthN) pour effectuer les flux requis : démarrage, enregistrement, autorisation et flux d’affichage multimédia dans l’application en continu, ainsi que le flux d’authentification dans votre application AuthN.
+
+### Mécanisme de ralentissement
+
+L’API REST d’authentification Adobe Pass est régie par une [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md).
 
 ## Composants {#components}
 

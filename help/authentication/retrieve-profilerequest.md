@@ -2,10 +2,10 @@
 title: Récupération de la requête de profil SSO Platform
 description: Récupération de la requête de profil SSO Platform
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '183'
-ht-degree: 0%
+source-wordcount: '189'
+ht-degree: 1%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!NOTE]
+>
+> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
