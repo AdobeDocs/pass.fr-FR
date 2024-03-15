@@ -1,7 +1,7 @@
 ---
 title: Mécanisme de ralentissement
 description: Découvrez le mécanisme de limitation utilisé dans l’authentification Adobe Pass. Consultez un aperçu de ce mécanisme dans cette page.
-source-git-commit: 036fe2be0981e21e5b82022348cba03dca0b33d3
+source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -34,8 +34,7 @@ L’authentification par transmission est basée sur l’identification de l’u
 
 ### Mécanisme d&#39;identification des périphériques
 
-Le mécanisme de ralentissement proposé utilise les périphériques identifiés individuellement, à l’aide de l’en-tête &quot;X-Forwarded-For&quot;.
-Les limites seront appliquées de la même manière pour chaque appareil.
+Le mécanisme de ralentissement proposé utilise les périphériques identifiés individuellement, à l’aide de l’en-tête &quot;X-Forwarded-For&quot;. Les limites seront appliquées de la même manière pour chaque appareil.
 
 ### Mises à jour requises
 
@@ -45,8 +44,7 @@ Vous trouverez plus d’informations sur la manière de transmettre l’en-tête
 
 ### Limites et points de fin réels
 
-Actuellement, la limite par défaut autorise un maximum de 1 requête par seconde, avec une première rafale de 3 requêtes (allocation unique lors de la première interaction du client identifié, ce qui devrait permettre à l’initialisation de se terminer avec succès).
-Cela ne devrait affecter aucune analyse de performances classique de tous nos clients.
+Actuellement, la limite par défaut autorise un maximum de 1 requête par seconde, avec une première rafale de 3 requêtes (allocation unique lors de la première interaction du client identifié, ce qui devrait permettre à l’initialisation de se terminer avec succès). Cela ne devrait affecter aucune analyse de performances classique de tous nos clients.
 
 Le mécanisme de ralentissement sera activé sur les points de terminaison suivants :
 
