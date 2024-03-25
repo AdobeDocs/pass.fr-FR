@@ -1,7 +1,7 @@
 ---
 title: Accès à l’API CMU
 description: Accès à l’API CMU
-source-git-commit: 30631ac006b7944cb2eb8996c2c165343b6be5fe
+source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -16,8 +16,7 @@ ht-degree: 0%
 
 ## Présentation des procédures d’accès {#api-access-procedure-overview}
 
-Nous avons mis à jour l’accès aux rapports CMU pour qu’il soit compatible avec le protocole d’enregistrement dynamique du client OAuth 2.0.
-Un serveur d’autorisation OAuth 2.0 personnalisé est déployé pour répondre aux besoins de l’application de surveillance de la simultanéité. \
+Nous avons mis à jour l’accès aux rapports CMU pour qu’il soit compatible avec le protocole d’enregistrement dynamique du client OAuth 2.0. Un serveur d’autorisation OAuth 2.0 personnalisé est déployé pour répondre aux besoins de l’application de surveillance de la simultanéité. \
 Pour que les applications clientes utilisent l’autorisation OAuth 2.0, le serveur doit s’enregistrer dynamiquement afin d’obtenir des informations spécifiques (informations d’identification du client) pour pouvoir interagir avec celle-ci. Dans le cadre du processus d’enregistrement, le client doit présenter un ensemble de métadonnées intégrées au point de terminaison d’enregistrement du client.
 Ces métadonnées sont communiquées sous la forme d’une instruction logicielle, qui contient un &quot;software_id&quot; pour permettre à notre serveur d’autorisations de mettre en corrélation différentes instances d’une application à l’aide de la même instruction logicielle.
 Une instruction logicielle est un jeton Web JSON (JWT) qui affirme les valeurs de métadonnées du logiciel client sous la forme d’un lot. Lorsqu’elle est présentée au serveur d’autorisations dans le cadre d’une demande d’enregistrement du client, l’instruction logicielle doit être signée numériquement ou au format MAC à l’aide de la signature web JSON (JWS). \
@@ -28,7 +27,7 @@ Suivez les étapes des sections ci-dessous pour y accéder.
 
 1. posséder une application enregistrée sur le serveur Adobe Pass DCR. Pour cette étape, veuillez contacter notre [Équipe d’assistance](mailto:tve-support@adobe.com).
 2. Obtention de l’instruction logicielle
-   1. Accéder au tableau de bord TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pré-prod </a> ou <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Accéder au tableau de bord TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pré-prod </a>  ou <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
    2. Sélectionner un programmeur
    3. Accéder à l’onglet Applications
    4. Sélectionner une application
