@@ -50,7 +50,7 @@ ht-degree: 3%
          + [Lancement de la déconnexion](initiate-logout.md)
          + [Métadonnées utilisateur](user-metadata.md)
          + [Récupération de la requête de profil](retrieve-profilerequest.md)
-         + [Échange de jetons](token-exchange.md)
+         + [Exchange du jeton](token-exchange.md)
          + [Aperçu gratuit pour la transmission temporaire et la transmission temporaire promotionnelle](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + SDK AccessEnabler {#accessenabler-sdk}
       + SDK JavaScript {#javascriptsdk}
@@ -109,8 +109,8 @@ ht-degree: 3%
    + [Autorisation](authz-usecase.md)
    + [Autorisation de contrôle en amont](mvpd-preflight-authz.md)
    + [Déconnexion MVPD](usecase-mvpd-logout.md)
-   + [Échange de métadonnées de contenu](mvpd-content-metadata-exchange.md)
-   + [Échange de métadonnées utilisateur](mvpd-user-metadata-exchng.md)
+   + [Exchange de métadonnées de contenu](mvpd-content-metadata-exchange.md)
+   + [Exchange de métadonnées utilisateur](mvpd-user-metadata-exchng.md)
    + [Service Web MVPD de proxy](proxy-mvpd-webserv.md)
    + [Intégration SAML du proxy MVPD](proxy-mvpd-saml-int.md)
    + [Portée du fournisseur de services](serv-provider-scoping.md)

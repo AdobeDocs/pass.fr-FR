@@ -2,9 +2,9 @@
 title: Prise en main d’ [!UICONTROL Account IQ]
 description: Découvrez l’intégration, les conditions préalables et comment commencer à utiliser [!UICONTROL Account IQ].
 exl-id: 840ab081-0073-492f-86b2-ba174ae93256
-source-git-commit: 3e5bcee38151c88d3538cdbdbf2d07010be929cd
+source-git-commit: a7a37ffea0169a302890ee50b2e2202ddf58d021
 workflow-type: tm+mt
-source-wordcount: '214'
+source-wordcount: '209'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 1. Affectez des utilisateurs de l’entreprise à **[!UICONTROL TVE Dashboard Read-Write]** ou **[!UICONTROL TVE Dashboard Read Only]** profils dans [Adobe Admin Console](https://adminconsole.adobe.com/).
 
-   Les administrateurs de votre entreprise peuvent créer des utilisateurs et leur accorder l’accès à [!UICONTROL Account IQ Dashboard and Reports]. Pour accorder aux utilisateurs de l’organisation l’accès à [!UICONTROL Account I]Q., les administrateurs de l’organisation doivent :
+   Les administrateurs de votre entreprise peuvent créer des utilisateurs et leur accorder l’accès à [!UICONTROL Account IQ Dashboard and Reports]. Pour accorder aux utilisateurs de l’organisation l’accès à [!UICONTROL Account IQ], les administrateurs de l’organisation doivent :
 
    1. Connexion à [Adobe Admin Console](https://adminconsole.adobe.com/).
 

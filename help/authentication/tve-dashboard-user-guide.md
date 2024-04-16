@@ -2,9 +2,9 @@
 title: Guide d’utilisation du tableau de bord Primetime TVE
 description: Guide d’utilisation du tableau de bord Primetime TVE
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
-source-wordcount: '4386'
+source-wordcount: '4377'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ Pour passer d’un environnement à l’autre, l’utilisateur peut cliquer sur 
 *Figure 2 : Menu déroulant des environnements du tableau de bord Adobe Pass TVE*
 
 >[!IMPORTANT]
+>
 >Il est très important de noter que lorsque vous apportez des modifications administratives à votre configuration de l’authentification Adobe Pass par le biais du tableau de bord TVE, nous vous conseillons vivement de suivre la séquence ci-dessous afin d’assurer le bon fonctionnement.
 
 Pour apporter des modifications administratives à la configuration de l’authentification Adobe Pass par le biais du tableau de bord TVE :
@@ -69,6 +70,7 @@ Pour apporter des modifications administratives à la configuration de l’authe
 * Effectuez les modifications dans [Publication de la production et validation](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
+>
 >Pour que les modifications administratives soient mises en ligne, les utilisateurs doivent accéder à la section &quot;Révision et Push des modifications&quot; en cliquant sur le bouton qui s’affiche dans la partie inférieure gauche de la barre latérale. Pour passer en revue les modifications, ajoutez une description des modifications nouvellement créées et confirmez la mise à jour de la configuration en sélectionnant &quot;Configuration Push&quot;.
 
 ![Tve Dashboard passe en revue une notification push](assets/tve-review-push-notifications.png)

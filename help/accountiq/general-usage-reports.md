@@ -1,97 +1,71 @@
 ---
-title: Rapports d’utilisation générale
-description: Rapports d’utilisation générale
+title: Rapports d’utilisation généraux
+description: En savoir plus sur les rapports d’utilisation généraux
 exl-id: 1272073a-61fe-47ec-aced-2e8055b6b11e
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 4a8a73d6c67508e88ba3ffbb9033b7e339f4fe8f
 workflow-type: tm+mt
-source-wordcount: '1275'
+source-wordcount: '1055'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL General Usage] rapports {#general-usage-reports}
+# [!UICONTROL General usage] rapports {#general-usage-reports}
 
-[!UICONTROL Account IQ] les rapports sont des outils d’analyse et des rapports de base qui vous permettent d’analyser vos données pour isoler les données. [cohortes](/help/accountiq/product-concepts.md#segmet-def), identifiez les anomalies et apportez-vous une compréhension des caractéristiques de votre compte.
+[!UICONTROL Account IQ] les rapports sont des outils d’analyse de base qui vous permettent d’explorer vos données pour les isoler. [cohortes](/help/accountiq/product-concepts.md#segmet-def), identifiez les anomalies et apportez-vous une compréhension des caractéristiques de votre compte.
 
-[!UICONTROL General Usage] la page rapports fournit des outils pour créer des sous-groupes de mesures en fonction du nombre d’appareils de compte utilisés, des adresses IP détectées et des codes postaux respectifs.
+[!UICONTROL General usage] la page rapports fournit des outils pour créer des mesures de sous-groupe en fonction du nombre d’appareils de compte utilisés, des adresses IP détectées et de leurs codes postaux respectifs.
 
-<!--Divide the content in cohorts.
+Les rapports reposent tous sur le segment actuel sélectionné dans la variable [Segments et intervalle de temps](/help/accountiq/segments-timeinterval.md) du panneau. Vous pouvez affiner votre sélection et la réduire davantage en spécifiant les seuils (nombre d’appareils, nombre d’adresses IP et nombre de codes postaux) dans la variable [Aperçu des instantanés - Comptes au-dessus des seuils](#snapshot-overview) du panneau.
 
-Content filters
-device filters
+## Lire les requêtes et les abonnés uniques {#playreq-uniquesubs}
 
-segment and definition replicate to cohorts. Number of people and number of account that ......
-content consumption.....-->
+Les graphiques linéaires présentent ici les modifications au fil du temps des valeurs, telles que les requêtes de lecture et les abonnés uniques dans un intervalle de temps sélectionné pour le segment défini.
 
-Les rapports reposent tous sur le segment actuel sélectionné à l’aide de la variable [Segments et période](/help/accountiq/howto-select-segment-timeframe.md) du panneau. Vous pouvez affiner votre sélection et la réduire davantage en spécifiant les seuils (nombre d’appareils, nombre d’adresses IP et nombre de codes postaux) dans [Aperçu des instantanés - Comptes au-dessus des seuils](#snapshot-overview) du panneau.
++++ Services D2C : Lire les requêtes/abonnés uniques
 
-<!--To view General Usage Reports:
+![](assets/d2c-line-graph-gu.png)
 
-1. Select the desired MVPDs from the **MVPDs in Segment** option.
 
-2. Select the desired programmer channels from the **Channels in Segment** Option.
+*Lire les requêtes/abonnements uniques pour les services D2C*
 
-3. Select an appropriate time frame from the **Granularity and time frame** option.
++++
 
-   Using the above options you have defined segments for your analysis. Based on your segment selection, following graphs and reports are displayed.
-
-4. You can fine tune your selection and further narrow it down by specifying (number of devices, number of IPs, and number of zip codes) thresholds in [Snapshot Overview - Accounts above thresholds](#snapshot-overview) widget/panel.-->
-
-## AuthN OK / AuthZ OK / Lire les requêtes / Abonnés uniques {#authn-authz-playreq-uniquesubs}
-
-Les graphiques linéaires présentent ici les changements au fil du temps dans les valeurs AuthN OK, AuthZ OK, Lire les requêtes et Abonnés uniques au cours d’une période sélectionnée pour le segment défini.
-
-+++Programmer- **AuthN OK / AuthZ OK / Lire les requêtes / Abonnés uniques**
++++Programmeurs : Lire les requêtes/abonnés uniques
 
 ![](assets/progr-line-graph-gu.png)
 
 
-*Figure : AuthN OK / AuthZ OK / Lire les requêtes / Abonnés uniques pour l’utilisateur programmeur*
-
+*Lire les requêtes/abonnements uniques pour les programmeurs*
 
 +++
 
-
-+++MVPD- **AuthN OK / AuthZ OK / Abonnés uniques**
++++MVPD : abonnés uniques
 
 ![](assets/mvpd-line-graph-gu.png)
 
-
-*Figure : AuthN OK / AuthZ OK / Abonnés uniques pour l’utilisateur MVPD*
-
+*Abonnés uniques pour les MVPD*
 
 +++
 
-L’axe X présente les unités au cours de la période actuelle et l’axe Y représente les mesures de base de l’activité des abonnés au cours de cette période. Les graphiques linéaires vous permettent de comparer les valeurs suivantes pour les abonnés des distributeurs multicanaux et les canaux que vous avez sélectionnés dans le panneau de sélection de segments :
+<br/>
 
-* **AuthN OK**
+L’axe X représente la durée selon l’intervalle actuel et l’axe Y représente les mesures de base de l’activité des abonnés au cours de cette période. Les graphiques linéaires vous aident à visualiser et comparer l’activité des abonnés dans le segment actuel. Selon la version du compte IQ, les mesures incluent :
 
-  AuthN OK est le nombre d’authentifications réussies. Pour plus d’informations et de définition, voir [Concepts du produit : AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK**: nombre d’authentifications réussies. En savoir plus sur [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
 
-* **AuthZ OK**
+* **AuthZ OK**: nombre d’autorisations réussies. En savoir plus sur [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-  AuthZ OK est le nombre d’autorisations réussies. Pour plus d’informations et de définition, voir [Concepts du produit : AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
+* **Lire les requêtes**: nombre de requêtes de lecture. En savoir plus sur [Lecture des requêtes](/help/accountiq/product-concepts.md#play-requests-def).
 
-* **Lire les requêtes**
+* **Abonnés uniques**: nombre d’abonnés uniques réussis. En savoir plus sur [Abonnés uniques](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
-  Les requêtes de lecture correspondent au nombre de requêtes de lecture. Pour plus d’informations et de définition, voir [Concepts de produit : requêtes de lecture](/help/accountiq/product-concepts.md#play-requests-def)
-
-  >[!NOTE]
-  >
-  >Le graphique linéaire de demandes de lecture n’est pas disponible pour les utilisateurs MVPD.
-
-
-* **Abonnés uniques**
-
-  Les abonnés uniques sont le nombre d’abonnés uniques réussis. Pour plus d’informations et de définition, voir [Concepts de produit : abonnés uniques](/help/accountiq/product-concepts.md#unique-subscriber-def)
-
-  >[!NOTE]
-  >
-  >Le nombre total d’abonnés uniques inclut également le nombre de périphériques uniques si l’utilisation par un programmeur de TempPass (aperçu gratuit) d’un Adobe fait partie du segment.
+>[!NOTE]
+>
+>La disponibilité des mesures varie en fonction de la version du compte IQ.
 
 ## Aperçu des instantanés - Comptes au-dessus des seuils {#snapshot-overview}
 
-Affinez vos analyses et rapports à l’aide de ce filtre supplémentaire afin de définir différents seuils d’utilisation. Une fois que vous avez défini votre segment (ou cohorte) pour analyse en sélectionnant le(s) MVPD(s) et les canaux souhaités, vous pouvez également utiliser les filtres suivants pour analyser le comportement des abonnés :
+Affinez vos analyses et rapports à l’aide de ce filtre supplémentaire afin de définir différents seuils d’utilisation. Une fois que vous avez sélectionné un segment, vous pouvez également utiliser les filtres suivants pour analyser davantage le comportement des abonnés :
 
 * Nombre seuil de périphériques
 
@@ -99,7 +73,7 @@ Affinez vos analyses et rapports à l’aide de ce filtre supplémentaire afin d
 
 * Nombre seuil de codes postaux
 
-Lorsque vous mettez à jour les valeurs de seuil dans [Segment de comptes - en fonction des seuils sélectionnés](#account-segments-basedon-segments) vous pouvez afficher l’effet dans :
+Lorsque vous mettez à jour les valeurs de seuil dans [Segment de compte d’après les seuils sélectionnés](#account-segments-basedon-segments) , vous pouvez afficher l’effet dans :
 
 * [Périphériques par semaine (ou mois), par compte](#devices-week-account)
 
@@ -111,25 +85,23 @@ Lorsque vous mettez à jour les valeurs de seuil dans [Segment de comptes - en f
 
 >[!NOTE]
 >
->La valeur par défaut de chacun des seuils est 4. En d’autres termes, la page Utilisation générale affiche l’analyse des MVPD avec abonnés utilisant quatre (et plus de quatre) appareils, consommant du contenu provenant de quatre (et plus) emplacements géographiques différents et quatre (et plus) codes postaux différents.
+>Chaque seuil est défini sur une valeur par défaut de 4. En d’autres termes, la page Utilisation générale présente l’analyse pour les abonnés utilisant plus de quatre appareils, consommant du contenu provenant de plus de quatre adresses IP différentes, *et* plus de quatre codes postaux différents.
 
-### Segment de comptes - en fonction des seuils sélectionnés {#account-segments-basedon-segments}
+### Segment de comptes en fonction des seuils sélectionnés {#account-segments-basedon-segments}
 
-La variable **Segment de comptes - en fonction des seuils sélectionnés** vous donne la possibilité de définir des seuils (entre 1 et 10) pour le nombre d’appareils, le nombre d’adresses IP et le nombre de codes postaux.
+La variable **Segment de compte d’après les seuils sélectionnés** vous donne la possibilité de définir des seuils (entre 1 et 10) pour le nombre d’appareils, le nombre d’adresses IP et le nombre de codes postaux.
 
 Le graphique vous montre les éléments suivants :
 
-* nombre absolu de comptes d’abonnés, et
+* Nombre absolu de comptes abonnés.
 
-* pourcentage sur le total des comptes abonnés de ce segment,
-
-  qui utilisent X nombre d’appareils, Y nombre d’adresses IP et Z nombre de codes postaux pour consommer du contenu de votre canal pour les MVPD (segment défini de), pendant une période.
+* Pourcentage du nombre total de comptes d&#39;abonnés dans le segment qui utilisent le nombre d&#39;appareils, par rapport au nombre d&#39;IP, dans le nombre de codes postaux tel que défini par les seuils.
 
 ![](assets/select-thresholds.png)
 
-## Périphériques par semaine (ou mois) par compte {#devices-week-account}
+## Périphériques par semaine (ou mois), par compte {#devices-week-account}
 
-La variable **graphique en barres** fournit des informations sur le comportement d’utilisation en ce qui concerne la manière dont les abonnés utilisent leurs appareils pour accéder au contenu.
+Ce graphique à barres fournit des informations sur le comportement d’utilisation en termes de la manière dont les abonnés utilisent leurs appareils pour accéder au contenu.
 
 L’axe X trace le nombre de comptes et l’axe Y trace le nombre de périphériques. En fonction du seuil que vous définissez pour le nombre d’appareils par compte, il marque le nombre absolu de comptes abonnés qui consomment du contenu d’un nombre spécifique d’appareils au cours d’une semaine.
 
@@ -143,64 +115,54 @@ Le graphique marque également les points suivants :
 
 * Une ligne verte permettant de marquer la moyenne des différents appareils utilisés par un compte abonné par semaine (ou par mois).
 
-Vous pouvez comparer le niveau de seuil avec la moyenne hebdomadaire du nombre de différents appareils utilisés par un compte, afin d’évaluer le niveau de partage.
-
-Le graphique donne également un aperçu du pourcentage des comptes abonnés qui utilisent plus de périphériques que le seuil défini.
-
-Le graphique en anneau vous aide à évaluer, d’un seul coup d’oeil, l’ampleur des comptes abonnés qui consomment du contenu de canal avec des appareils plus que le seuil défini (dans un délai).
+L’anneau fournit une autre vue des appareils utilisés par les comptes dans le segment actuel au-dessus du seuil défini.
 
 ![](assets/donut-devices-w-acc.png)
 
 ## Emplacements par semaine (ou mois) par compte {#locations-week-account}
 
-Comme [Périphériques par semaine (ou mois) par compte](#devices-week-account), la mesure Emplacements par semaine (ou mois) et par compte vous aide à analyser l’utilisation du compte d’abonné à partir de différents emplacements afin d’identifier plus précisément le partage de mot de passe. L’axe X trace le nombre de comptes et l’axe Y trace le nombre d’emplacements.
-
-Résultats de cette mesure combinés au nombre [Périphériques par semaine (ou mois) par compte](#devices-week-account) et nombre de [IP par semaine (ou mois) par compte](#ip-week-account) vous aide à juger plus précisément les instances de partage de mot de passe, de sorte que les utilisateurs authentiques ne soient pas comptabilisés.
+Similaire à la mesure pour [Périphériques par semaine (ou mois), par compte](#devices-week-account), la mesure Emplacements par semaine (ou mois) par compte vous permet d’analyser l’utilisation du compte d’abonné à différents endroits. L’axe X trace le nombre de comptes et l’axe Y trace le nombre d’emplacements.
 
 ![](assets/graph-loc-week-acc.png)
 
-Une fois que vous avez défini un segment et défini le seuil du nombre d’emplacements, vous pouvez identifier à partir du graphique :
+Une fois que vous avez défini le seuil du nombre d’emplacements, vous pouvez utiliser le graphique pour identifier les éléments suivants :
 
 * Nombre (et pourcentage) d’abonnés qui consomment du contenu à partir (d’un emplacement spécifique) x nombre d’emplacements au cours d’une semaine.
 
 * Pourcentage du nombre total de comptes d’abonnés qui visualisent du contenu à partir de plus d’emplacements que le seuil.
 
-* Comparez la moyenne hebdomadaire (nombre d’emplacements différents pour un compte) au seuil.
+* Comparez la moyenne hebdomadaire (nombre d’emplacements différents pour un compte) avec le seuil.
 
-## IP par semaine (ou mois) par compte {#ip-week-account}
+## Ips par semaine (ou mois) par compte {#ip-week-account}
 
-Similaire à [Périphériques par semaine (ou mois) par compte](#devices-week-account) et [Emplacements par semaine (ou mois) par compte](#locations-week-account), la variable **Nombre d’adresses IP par semaine et par compte** vous permet d’analyser plus précisément et avec plus de granularité le partage des mots de passe.
+Similaire à la mesure pour **Nombre d’emplacements par semaine et par compte**, la variable **Nombre d’adresses IP par semaine et par compte** vous permet d’évaluer la quantité de changement à la source de la diffusion en continu pour le segment actuel.
 
 L’axe X trace Nombre de comptes et l’axe Y trace Nombre d’adresses IP.
 
 ![](assets/graph-ip-week-acc.png)
 
-Une fois que vous avez défini un segment (en sélectionnant les MVPD et les canaux) et défini le seuil du nombre d’adresses IP, vous pouvez l’identifier à partir du graphique :
+Une fois que vous avez défini un segment et défini le seuil du nombre d’adresses IP, vous pouvez utiliser le graphique pour identifier les éléments suivants :
 
-* Nombre (et pourcentage) d’abonnés qui consomment du contenu à partir (d’un nombre spécifique) x nombre d’adresses IP dans une semaine.
+* Nombre (et pourcentage) d’abonnés qui consomment du contenu d’un nombre spécifique d’adresses IP au cours d’une semaine.
 
 * Pourcentage du nombre total de comptes d’abonnés qui visualisent le contenu à partir d’un plus grand nombre d’adresses IP que le seuil.
 
 * Comparez la moyenne hebdomadaire (nombre d’adresses IP différentes pour un compte) avec le seuil.
 
-## Segment de comptes - Vue Historique {#account-segment-historical-view}
+## Vue de l’historique des segments des comptes {#account-segment-historical-view}
 
-Le graphique à barres Aperçu historique vous permet de comparer les mesures d’utilisation sur différentes périodes. Il répertorie également collectivement les différentes mesures d’utilisation, telles que [Périphériques par semaine (ou mois) par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account), et [IP par semaine (ou mois) par compte](#ip-week-account).
+Le graphique à barres Affichage historique vous permet de comparer les mesures d’utilisation à différents intervalles de temps. Il répertorie également collectivement les différentes mesures d’utilisation, telles que [Périphériques par semaine (ou mois), par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account), et [IP par semaine (ou mois) par compte](#ip-week-account).
 
-* L’axe X trace la période et l’axe Y trace le nombre de comptes d’abonnés, de périphériques, d’emplacements et d’adresses IP.
+* L’axe X trace l’intervalle de temps et l’axe Y trace le nombre de comptes d’abonnés, de périphériques, d’emplacements et d’adresses IP.
 
-* Les barres de couleur orange représentent des segments dans différentes périodes.
+* Les barres de couleur orange représentent des segments à différents intervalles de temps.
 
-* Le graphique linéaire trace les modifications dans [Périphériques par semaine (ou mois) par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account), et [IP par semaine (ou mois) par compte](#ip-week-account) sur toute la période en fonction du seuil.
+* Le graphique linéaire trace les modifications dans [Périphériques par semaine (ou mois), par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account), et [IP par semaine (ou mois) par compte](#ip-week-account) sur l’intervalle de temps en fonction du seuil.
 
 ![](assets/historical-view.png)
 
-* Les barres bleues représentent le nombre total d’abonnés actifs dans l’ensemble du secteur pendant une période.
+* Les barres bleues représentent le nombre total d’abonnés actifs dans l’ensemble du secteur pendant un intervalle de temps.
 
 * Vous pouvez sélectionner des légendes spécifiques qui vous aideront à mettre le graphique à l’échelle.
 
 ![](assets/historical-view-total.png)
-
->[!MORELIKETHIS]
->
->* Découvrez comment exporter des rapports pour les 1 000 premiers abonnés du segment sélectionné à l’aide de filtres dans le rapport Utilisation générale à l’aide des [Exporter les 1 000 premiers comptes](/help/accountiq/export-acc-information.md) .

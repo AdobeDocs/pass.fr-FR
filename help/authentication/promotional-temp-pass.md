@@ -2,9 +2,9 @@
 title: Transmet temporaire promouvant
 description: Transmet temporaire promouvant
 exl-id: 705c1ba9-0430-4e3b-add1-d9e4da3f82d1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c88fba76b1805dd88fccb68b13bde11b1b8ea181
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ En fonction de l’identifiant de l’appareil et des informations fournies par 
 
 * Clé d’informations fournie par l’utilisateur (par exemple, courrier électronique)
 * Nombre de ressources que l’utilisateur est autorisé à consommer
-* TTL : période pendant laquelle l’utilisateur est autorisé à consommer le nombre configuré de ressources.
+* TTL : intervalle dans lequel l’utilisateur est autorisé à consommer le nombre configuré de ressources.
 
 ### Métadonnées utilisateur {#user-metadata}
 
