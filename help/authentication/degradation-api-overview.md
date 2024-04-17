@@ -2,9 +2,9 @@
 title: Présentation de l’API de dégradation
 description: Présentation de l’API de dégradation
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
 workflow-type: tm+mt
-source-wordcount: '367'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,17 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Pour utiliser l’API de dégradation, vous devez :
+>- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
+>- obtenir un jeton d’accès en fonction de [Enregistrement du client dynamique](dynamic-client-registration.md)
+> 
+
+>[!NOTE]
+>
+>Pour utiliser l’API de dégradation, vous devez :
+>- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
+>- obtenir un jeton d’accès en fonction de [Enregistrement du client dynamique](dynamic-client-registration.md)
+> 
 
 ## Informations générales {#general_info}
 
@@ -29,9 +40,9 @@ Une règle de dégradation n’est appliquée que pour une période fixe. Bien q
 
 Notes de mise à niveau :
 
-* Cette fonctionnalité est conçue pour être utilisée avec l’API de surveillance de l’utilisation, qui fournit des informations en temps réel sur le nombre d’authentifications et d’autorisations par MVPD, la latence d’autorisation moyenne et d’autres mesures nécessaires pour une présentation complète du service.
-* Cette fonctionnalité ne permet pas de contourner le service d’authentification Adobe Primetim. Si l’authentification Adobe Pass est en panne, aucun mécanisme au sein du service ne peut être utilisé pour permettre aux utilisateurs de voir le contenu. Les sites ou les applications peuvent, cependant, contourner l’authentification Adobe Pass par eux-mêmes.
-* Actuellement, l’Adobe ne déclenche pas directement la dégradation : la décision doit toujours résider avec un programmeur spécifique qui a accepté de telles conditions avec les MVPD. À l’avenir, l’authentification Adobe Pass pourrait être proactive dans le déclenchement des règles de dégradation si des accords (protection SLA) peuvent être conclus avec des distributeurs multicanaux de programmes audiovisuels.
+- Cette fonctionnalité est conçue pour être utilisée avec l’API de surveillance de l’utilisation, qui fournit des informations en temps réel sur le nombre d’authentifications et d’autorisations par MVPD, la latence d’autorisation moyenne et d’autres mesures nécessaires pour une présentation complète du service.
+- Cette fonctionnalité ne permet pas de contourner le service d’authentification Adobe Primetim. Si l’authentification Adobe Pass est en panne, aucun mécanisme au sein du service ne peut être utilisé pour permettre aux utilisateurs de voir le contenu. Les sites ou les applications peuvent, cependant, contourner l’authentification Adobe Pass par eux-mêmes.
+- Actuellement, l’Adobe ne déclenche pas directement la dégradation. La décision doit toujours résider avec un programmeur spécifique qui a accepté de telles conditions avec les MVPD. À l’avenir, l’authentification Adobe Pass pourrait être proactive dans le déclenchement des règles de dégradation si des accords (protection SLA) peuvent être conclus avec des distributeurs multicanaux de programmes audiovisuels.
 
 <!--
 ## Related Information {#related}
