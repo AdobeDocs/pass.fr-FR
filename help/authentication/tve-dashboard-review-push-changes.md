@@ -1,0 +1,57 @@
+---
+title: Révision et notification push des modifications
+description: Découvrez comment passer en revue et pousser les modifications dans le tableau de bord TVE.
+source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+workflow-type: tm+mt
+source-wordcount: '250'
+ht-degree: 0%
+
+---
+
+# Révision et notification push des modifications
+
+>[!NOTE]
+>
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+Le tableau de bord TVE vous permet d’examiner les modifications apportées à la configuration actuelle, puis de les déployer sur le serveur. Chaque fois que vous modifiez la configuration actuelle, une notification s’affiche à l’écran, vous invitant à examiner et à transmettre ces modifications.
+
+Suivez ces étapes pour passer en revue et pousser les modifications.
+
+1. Recherchez la notification de révision et de modification push dans la partie inférieure de l’écran.
+
+   ![Notification des modifications de révision et de notification push](assets/review-changes.png)
+
+   *Zone de notification des modifications de révision et de notification push*
+
+1. Sélectionner **Modifications des révisions** de la **révision et notification push des modifications** boîte de notification.
+
+1. Saisissez une brève description de la modification dans **Description de la configuration** pour suivre et comprendre efficacement l’objectif de chaque modification.
+
+   ![Ajout d’une description de configuration](assets/add-conf-desc.png)
+
+   *Ajout d’une description de configuration*
+
+1. Accédez au **Modifications de configuration** pour afficher un résumé des modifications.
+
+1. Pointez sur la modification que vous souhaitez réviser.
+
+1. Sélectionner **Affichage** pour passer en revue les valeurs précédentes et nouvelles associées à une modification de configuration.
+
+   ![Afficher les modifications de configuration](assets/view-configuration-changes.png)
+
+   *Afficher les modifications de configuration*
+
+1. Une fois que vous avez examiné toutes les modifications et que tout semble correct, sélectionnez **Modifications push** pour appliquer la configuration mise à jour au serveur.
+
+   >[!NOTE]
+   >
+   >La variable **Modifications push** devient actif uniquement après l’ajout d’un **Description de la configuration**.
+
+   ![Modifications push](assets/push-changes.png)
+
+   *Modifications push*
+
+   Vous pouvez également sélectionner **Ignorer les modifications** si vous souhaitez annuler toutes les modifications de configuration répertoriées.
+
+
