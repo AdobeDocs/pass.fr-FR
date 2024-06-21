@@ -1,13 +1,13 @@
 ---
 title: Présentation des API
 description: API - Aperçu de la surveillance de la simultanéité
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
+source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
-
 
 # Présentation de l’API {#api-overview}
 
@@ -101,6 +101,24 @@ Utilisez les mêmes paramètres pour l’appel que pour la pulsation de session.
 * 202 ACCEPTÉ pour une réponse réussie
 * 410 GONE si la session était déjà arrêtée.
 
+#### Obtenir tous les flux d’exécution {#get-all-running-streams}
+
+Ce point de terminaison offre toutes les sessions en cours d’exécution pour un client spécifique sur toutes ses applications. Utilisation **subject** et **idp** paramètres de l’appel :
+
+![](assets/get-all-running-streams-parameters.png)
+
+Lorsque vous effectuez l’appel, vous obtenez la réponse suivante :
+
+![](assets/get-all-running-streams-success.png)
+
+Veuillez noter que **Expires** en-tête . C’est l’heure à laquelle la première session doit expirer, sauf si une pulsation est envoyée. OtherStreams a la valeur 0, car aucun autre flux n’est en cours d’exécution pour cet utilisateur sur les applications d’un autre client.
+Le champ de métadonnées contient toutes les métadonnées envoyées au démarrage de la session. Nous ne le filtrons pas, vous recevrez tout ce que vous avez envoyé.
+S’il n’existe aucune session en cours d’exécution pour un utilisateur spécifique lorsque vous effectuez l’appel, vous obtenez cette réponse :
+
+![](assets/get-all-running-streams-empty.png)
+
+Notez également que dans ce cas, la variable **Expires** L’en-tête n’est pas présent.
+
 #### Rompre la politique {#breaking-policy-app-first}
 
 
@@ -157,4 +175,3 @@ Afin de rompre la règle qui figure dans la stratégie affectée à cette applic
 Si nous utilisons des valeurs différentes pour les métadonnées de canal chaque fois que nous créons une nouvelle session, tous les appels réussiront car le seuil de 2 est inclus individuellement à chaque valeur.
 
 Comme dans le premier exemple, nous pouvons utiliser le code de terminaison afin d’arrêter à distance les flux en conflit ou nous pouvons attendre que l’un des flux arrive à expiration, en supposant qu’aucune pulsation ne sera utilisée sur eux.
-
