@@ -2,9 +2,9 @@
 title: Récupération du jeton d’authentification
 description: Récupération du jeton d’authentification
 exl-id: 7fb03854-edad-41e7-b218-1858fc071876
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '274'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Récupère le jeton d’authentification (AuthN).
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn</br></br>Par exemple :</br></br>&lt;sp_fqdn>/api/v1/tokens/authn | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  _deviceType_ (Obsolète)</br>5.  _deviceUser_ (Obsolète)</br>6.  _appId_ (Obsolète) | GET | XML ou JSON contenant des informations d’authentification ou des détails d’erreur en cas d’échec. | 200 - Réussite.  </br>404 - Jeton introuvable  </br>410 - Jeton expiré |
+| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/tokens/authn | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  _deviceType_ (obsolète)</br>5.  _deviceUser_ (obsolète)</br>6.  _appId_ (obsolète) | GET | XML ou JSON contenant des informations d’authentification ou des détails d’erreur en cas d’échec. | 200 - Réussite.  </br>404 - Jeton introuvable </br>410 - Jeton expiré |
 
 {style="table-layout:auto"}
 
@@ -48,10 +48,10 @@ Récupère le jeton d’authentification (AuthN).
 | --- | --- |
 | demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’identifiant de l’appareil. |
-| device_info/</br></br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br>**Remarque**: cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>**Remarque**: device_info remplace ce paramètre. |
-| _deviceUser_ | Identifiant de l’utilisateur de l’appareil.</br></br>**Remarque**: s’il est utilisé, deviceUser doit avoir les mêmes valeurs que dans la variable [Créer un code d’enregistrement](/help/authentication/registration-code-request.md) requête. |
-| _appId_ | ID/nom de l’application. </br></br>**Remarque**: device_info remplace ce paramètre. En cas d’utilisation, `appId` doivent avoir les mêmes valeurs que dans la variable [Créer un code d’enregistrement](/help/authentication/registration-code-request.md) requête. |
+| device_info/</br></br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br>**Remarque** : cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br></br>Pour plus d&#39;informations, reportez-vous à la section [Transmission des informations de périphérique et de connexion](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>**Remarque** : device_info remplace ce paramètre. |
+| _deviceUser_ | Identifiant de l’utilisateur de l’appareil.</br></br>**Remarque** : Si elle est utilisée, deviceUser doit avoir les mêmes valeurs que dans la requête [Create Registration Code](/help/authentication/registration-code-request.md) . |
+| _appId_ | ID/nom de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. S’il est utilisé, `appId` doit avoir les mêmes valeurs que dans la requête [Create Registration Code](/help/authentication/registration-code-request.md) . |
 
 {style="table-layout:auto"}
 
@@ -76,7 +76,7 @@ Récupère le jeton d’authentification (AuthN).
 ```
 
 
-**JSON :**
+**JSON:**
 
 ```JSON
     {
@@ -104,7 +104,7 @@ Récupère le jeton d’authentification (AuthN).
 ```
 
 
-**JSON :**
+**JSON:**
 
 ```JSON
     {

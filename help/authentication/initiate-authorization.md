@@ -2,9 +2,9 @@
 title: Lancer l’autorisation
 description: Lancer l’autorisation
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Obtient la réponse d’autorisation.
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authorized | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  resource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Obsolète)</br>7.  _appId_ (Obsolète)</br>8.  Paramètres supplémentaires (facultatif) | GET | XML ou JSON contenant les détails de l’autorisation ou les détails de l’erreur en cas d’échec. Voir les exemples ci-dessous. | 200 - Succès  </br>403 - Pas de succès |
+| &lt;SP_FQDN>/api/v1/allow | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  resource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6.  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète)</br>8.  Paramètres supplémentaires (facultatif) | GET | XML ou JSON contenant les détails de l’autorisation ou les détails de l’erreur en cas d’échec. Voir les exemples ci-dessous. | 200 - Succès </br>403 - Pas de succès |
 
 {style="table-layout:auto"}
 
@@ -51,24 +51,24 @@ Obtient la réponse d’autorisation.
 | demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’identifiant de l’appareil. |
 | resource | Chaîne contenant un resourceId (ou fragment MRSS), identifiant le contenu demandé par un utilisateur et reconnu par les points de terminaison d’autorisation MVPD. |
-| device_info/</br></br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br>**Remarque**: cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est correctement défini, ESM propose des mesures qui sont [ventilation par type d’appareil](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyses puissent être effectués pour Roku, Apple TV, Xbox, etc.</br></br>Voir [Avantages du paramètre de type d’appareil sans client dans les mesures de transmission ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque**: device_info remplace ce paramètre. |
+| device_info/</br></br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br>**Remarque** : cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br></br>Pour plus d&#39;informations, reportez-vous à la section [Transmission des informations de périphérique et de connexion](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM offre des mesures [ventilées par type d’appareil](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyses puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br>Voir [Avantages du paramètre de type d’appareil sans client dans les mesures de transmission ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : l’info_périphérique remplacera ce paramètre. |
 | _deviceUser_ | Identifiant de l’utilisateur de l’appareil. |
-| _appId_ | ID/nom de l’application. </br></br>**Remarque**: device_info remplace ce paramètre. |
-| paramètres supplémentaires | L&#39;appel peut également contenir des paramètres facultatifs qui permettent d&#39;accéder à d&#39;autres fonctionnalités, telles que :</br></br>* generic_data - permet l’utilisation de [TempPass Promotionnel](/help/authentication/promotional-temp-pass.md)</br></br>Exemple : `generic_data=("email":"email@domain.com")` |
+| _appId_ | ID/nom de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. |
+| paramètres supplémentaires | L’appel peut également contenir des paramètres facultatifs qui activent d’autres fonctionnalités telles que :</br></br>* generic_data - permet l’utilisation de [PromotiontempPass](/help/authentication/promotional-temp-pass.md)</br></br>Exemple : `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 
 >[!CAUTION]
 >
->**Adresse IP du périphérique de diffusion**</br>
->Pour les mises en oeuvre client-serveur, l’adresse IP du périphérique en flux continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où la variable **regcode** L’appel est effectué par le service de programmation et non par le périphérique de diffusion en continu, l’en-tête suivant est nécessaire pour transmettre l’adresse IP du périphérique de diffusion en continu :</br></br>
+>**Adresse IP du périphérique de diffusion en continu**</br>
+>Pour les mises en oeuvre client-serveur, l’adresse IP du périphérique en flux continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué par le service de programmation et non par le périphérique de diffusion en continu, l’en-tête suivant est nécessaire pour transmettre l’adresse IP du périphérique de diffusion en continu :</br></br>
 >
 >```
 >X-Forwarded-For : <streaming\_device\_ip>
 >```
 >
->where `<streaming\_device\_ip>` est l’adresse IP publique du périphérique de diffusion en continu.</br></br>
+>où `<streaming\_device\_ip>` est l’adresse IP publique de l’appareil en flux continu.</br></br>
 >Exemple :</br>
 >
 >```
@@ -91,13 +91,13 @@ Obtient la réponse d’autorisation.
     &lt;expires>1348148289000&lt;/expires>
     &lt;mvpd>sampleMvpdId&lt;/mvpd>
     &lt;requestor>sampleRequestorId&lt;/requestor>
-    &lt;resource>sampleResourceId&lt;/resource>
+    &lt;sample>sample ResourceId&lt;/resource>
     &lt;/authorization>
     &quot;
 
 
 
-* **JSON :**
+* **JSON:**
 
   ```JSON
   {
@@ -114,7 +114,7 @@ Obtient la réponse d’autorisation.
 
 
 
-* **2e cas : autorisation refusée**
+* **Cas 2 : autorisation refusée**
 
 
   ```JSON

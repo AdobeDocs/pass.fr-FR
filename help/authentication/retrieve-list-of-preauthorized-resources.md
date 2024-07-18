@@ -2,9 +2,9 @@
 title: Récupérer la liste des ressources préautorisées
 description: Récupérer la liste des ressources préautorisées
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '369'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -40,9 +40,9 @@ Demande d’authentification Adobe Pass pour obtenir la liste des ressources pr�
 Il existe deux ensembles d’API : un ensemble pour l’application de diffusion en continu ou le service de programmation et un ensemble pour l’application web du deuxième écran. Cette page décrit l’API de l’application de diffusion en continu ou du service de programmation.
 
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/preauthorized | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  liste de ressources (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Obsolète)</br>7.  _appId_ (Obsolète) | GET | XML ou JSON contenant des décisions de préautorisation ou des détails d’erreur individuels. Voir les exemples ci-dessous. | 200 - Succès</br></br>400 - Mauvaise requête</br></br>401 - Non autorisé</br></br>405 - Méthode non autorisée  </br></br>412 - Echec de la précondition</br></br>500 - Erreur interne du serveur |
+| &lt;SP_FQDN>/api/v1/preallow | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  liste de ressources (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6.  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète) | GET | XML ou JSON contenant des décisions de préautorisation ou des détails d’erreur individuels. Voir les exemples ci-dessous. | 200 - Succès</br></br>400 - Bad request</br></br>401 - Unauthorized</br></br>405 - Méthode non autorisée </br></br>412 - Échec de la précondition</br></br>500 - Erreur interne du serveur |
 
 
 | Paramètre d’entrée | Description |
@@ -50,10 +50,10 @@ Il existe deux ensembles d’API : un ensemble pour l’application de diffusion
 | demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’identifiant de l’appareil. |
 | liste de ressources | Chaîne contenant une liste délimitée par des virgules de resourceIds qui identifie le contenu pouvant être accessible à un utilisateur et reconnu par les points de terminaison d’autorisation MVPD. |
-| device_info/</br></br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br>**Remarque**: cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est correctement défini, ESM propose des mesures qui sont [ventilation par type d’appareil](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyses puissent être effectués, par exemple, Roku, Apple TV et Xbox.</br></br>Voir [avantages de l’utilisation d’un paramètre de type appareil sans client dans les mesures de transmission ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque**: la valeur `device_info` remplacera ce paramètre. |
+| device_info/</br></br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br>**Remarque** : cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br></br>Pour plus d&#39;informations, reportez-vous à la section [Transmission des informations de périphérique et de connexion](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM offre des mesures [ventilées par type d’appareil](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Sans client, de sorte que différents types d’analyses puissent être effectués, par exemple, Roku, Apple TV et Xbox.</br></br>Voir [ avantages de l’utilisation d’un paramètre de type d’appareil sans client dans les mesures de transmission ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : `device_info` remplacera ce paramètre. |
 | _deviceUser_ | Identifiant de l’utilisateur de l’appareil. |
-| _appId_ | ID/nom de l’application. </br></br>**Remarque**: device_info remplace ce paramètre. |
+| _appId_ | ID/nom de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. |
 
 
 
@@ -92,7 +92,7 @@ Content-Type: application/xml; charset=utf-8
 
 </br>
 
-**JSON :**
+**JSON:**
 
 ```JSON
 HTTP/1.1 200 OK
