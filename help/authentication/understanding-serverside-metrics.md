@@ -4,7 +4,7 @@ description: Présentation des mesures côté serveur
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2232'
 ht-degree: 0%
 
 ---
@@ -24,22 +24,23 @@ Ce document décrit les mesures côté serveur d’authentification Adobe Pass g
 
 Du point de vue du serveur d’authentification Adobe Pass, les événements suivants sont générés :
 
-* **Événements générés dans le flux d’authentification**(Une connexion réelle avec le MVPD)
+* **Événements générés dans le flux d’authentification** (connexion réelle avec le MVPD)
 
    * Notification de la tentative AuthN : cette opération est générée lorsque l’utilisateur est envoyé au site de connexion MVPD.
-   * Notification d’AuthN en attente : si l’utilisateur parvient à se connecter avec son MVPD, celui-ci est généré lorsque l’utilisateur est redirigé vers l’authentification Adobe Pass.
+   * Notification d’AuthN en attente : si l’utilisateur parvient à se connecter avec son MVPD, celui-ci est généré lorsque l’utilisateur est        redirigé vers l’authentification Adobe Pass.
    * Notification d’AuthN accordée : elle est générée lorsque l’utilisateur est de retour sur le site du programmeur et a récupéré le jeton d’authentification à partir de l’authentification Adobe Pass.
-* **Flux d’autorisation** (Juste une vérification de l’autorisation avec un MVPD)\
+* **Flux d’autorisation** (Il suffit de vérifier l’autorisation avec une
+MVPD)\
   *Condition préalable requise :* Jeton AuthN valide
    * Notification d’une tentative AuthZ
    * Notification d’AuthZ accordée
-* **Requête de lecture réussie**\
-  *Condition préalable requise :* Jetons AuthN et AuthZ valides
+* **Requête De Lecture Réussie**\
+  *Condition préalable requise :* jetons AuthN et AuthZ valides
    * Notification d’une vérification avec l’authentification Adobe Pass
    * Une requête de lecture nécessite une authentification accordée et une autorisation accordée.
 
 
-Le nombre d’utilisateurs uniques est présenté en détail dans la section [Utilisateurs uniques](#unique-users) ci-dessous. En règle générale, comme les réponses d’authentification et d’autorisation accordées sont généralement mises en cache, les formules suivantes s’appliquent :
+Le nombre d’utilisateurs uniques est décrit en détail dans la section [Utilisateurs uniques](#unique-users) ci-dessous. En règle générale, comme les réponses d’authentification et d’autorisation accordées sont généralement mises en cache, les formules suivantes s’appliquent :
 
 * Nombre de tentatives AuthN \> Nombre de tentatives AuthN accordées
 * Nombre de tentatives AuthZ \> Nombre de tentatives AuthZ accordées
@@ -49,9 +50,10 @@ Le nombre d’utilisateurs uniques est présenté en détail dans la section [Ut
 
 ### Exemple {#example}
 
-L’exemple suivant montre les mesures côté serveur pour un mois pour une marque :
+L’exemple suivant montre les mesures côté serveur pendant un mois pour
+une marque :
 
-| Mesure | MVPD 1 | MVPD 2 | … | MVPD | Total |
+| Mesure | MVPD 1 | MVPD 2 | .. | MVPD | Total |
 | -------------------------- | ------ | ------ | - | ------ | ---------------------------------------------- |
 | Authentifications réussies | 1125 | 2892 |   | 2203 | SUM(MVP1+...MVPD n) |
 | Autorisations réussies | 2527 | 5603 |   | 5904 | SUM(MVP1+...MVPD n) |
@@ -88,14 +90,15 @@ Une fois le flux terminé, les jetons Authentification et Autorisation sont mis 
 
 ### Utilisateur récurrent - Jetons AuthZ et AuthN mis en cache
 
-Pour les utilisateurs qui disposent de jetons AuthZ et AuthN valides mis en cache, les étapes suivantes se produisent :
+Pour les utilisateurs qui disposent de jetons AuthZ et AuthN valides mis en cache, les éléments suivants
+les étapes se produisent :
 
 
 ![](assets/ae-flow-tokens-cached-web.png)
 
 
 
-Cela se déclenche automatiquement lors de l’appel de `getAuthorization()`et implique uniquement des vérifications avec l’authentification Adobe Pass. Le MVPD n’est pas impliqué dans ce flux.
+Cela est déclenché automatiquement lors de l&#39;appel de `getAuthorization()` et implique uniquement des vérifications avec l&#39;authentification Adobe Pass. Le MVPD n’est pas impliqué dans ce flux.
 
 
 | Événements côté serveur déclenchés | * Requête de lecture réussie |
@@ -136,7 +139,7 @@ Cet événement se produit lorsque le processus de redirection vers l’authenti
 
 L&#39;utilisateur est un abonné connu du MVPD, généralement avec un abonnement à la télévision payante, mais parfois avec seulement un accès Internet. Une authentification réussie peut se produire soit parce que l’utilisateur a explicitement saisi des informations d’identification valides avec son MVPD, soit parce qu’il a précédemment saisi des informations d’identification valides et que l’option &quot;Mémoriser&quot; a été cochée (et que la session précédente n’avait pas expiré).
 
-Le MVPD envoie donc une réponse positive à l’authentification Adobe Pass et l’authentification Adobe Pass crée une *Jeton AuthN*.
+Le MVPD envoie donc une réponse positive à l’authentification Adobe Pass et l’authentification Adobe Pass crée un *jeton AuthN*.
 
 * L’authentification est généralement mise en cache pendant une longue période (un mois ou plus). De ce fait, les événements d’authentification ne seront plus présents tant que le jeton n’expire pas et que le flux n’est pas redémarré.
 * La connexion à partir d’un autre site/application par le biais de l’authentification unique ne déclenche pas d’événements d’authentification.
@@ -149,11 +152,12 @@ Comcast a un flux AuthN différent du reste des MVPD.
 
 Les fonctions suivantes décrivent les différences :
 
-* **Comportement du cookie de session**: cela entraîne la suppression complète des jetons d’authentification une fois que l’utilisateur a fermé le navigateur. Cette fonctionnalité est présente sur le web uniquement. L’objectif principal est de vous assurer que votre session Comcast n’est pas conservée sur les ordinateurs non sécurisés/partagés. L’impact est qu’il y aura plus de tentatives d’authentification/flux attribués que pour le reste des MVPD.
+* **Comportement du cookie de session** : cela entraîne la suppression complète des jetons d’authentification une fois que l’utilisateur a fermé le navigateur. Cette fonctionnalité est présente sur le web uniquement. L’objectif principal est de vous assurer que votre session Comcast n’est pas conservée sur les ordinateurs non sécurisés/partagés. L’impact est qu’il y aura plus de tentatives d’authentification/flux attribués que pour le reste des MVPD.
 
-* **AuthN par requestorID**: Comcast ne permet pas que l’état AuthN soit mis en cache d’un ID de demandeur à un autre. Pour cette raison, chaque site/application doit accéder à Comcast pour obtenir un jeton d’authentification. Outre les considérations d’expérience utilisateur, l’impact, comme ci-dessus, est que davantage de tentatives d’authentification / d’événements attribués seront générés.
+* **AuthN par requestorID** : Comcast ne permet pas que l’état AuthN soit mis en cache d’un ID de demandeur à un autre. Pour cette raison, chaque site/application doit accéder à Comcast pour obtenir un jeton d’authentification. Outre les considérations d’expérience utilisateur, l’impact, comme ci-dessus, est que davantage de tentatives d’authentification / d’événements attribués seront générés.
 
-* **Authentification passive**: afin d’améliorer l’expérience utilisateur tout en conservant la fonctionnalité AuthN par requestorID , un flux d’authentification passive se produit dans un iFrame masqué. L’utilisateur ne voit rien, mais les événements seront toujours déclenchés comme auparavant.
+* **Authentification passive** : pour améliorer l’expérience utilisateur, mais
+conserve la fonctionnalité AuthN par requestorID , un flux d’authentification passive se produit dans un iFrame masqué. L’utilisateur ne voit rien, mais les événements seront toujours déclenchés comme auparavant.
 
 Si l’utilisateur clique sur &quot;Mémoriser&quot; dans la page de connexion Comcast, les visites suivantes sur cette page (dans une période de 2 semaines) ne seront qu’une redirection rapide. Dans le cas contraire, les utilisateurs devront s’authentifier sur la page.
 
@@ -207,7 +211,7 @@ Un utilisateur authentifié et autorisé est autorisé à afficher du contenu pr
 
 Lors d’une demande de lecture réussie, l’authentification Adobe Pass génère un jeton multimédia de courte durée affirmant que l’utilisateur est autorisé à regarder la vidéo demandée. Le programmeur utilise ce jeton multimédia pour une validation ultérieure de la visionneuse potentielle. Les jetons multimédia sont suivis en tant que requêtes de lecture réussies.
 
-* L’authentification Adobe Pass fonctionne *not* vérifiez si la lecture vidéo a réellement commencé après la génération du jeton multimédia. Par exemple, en cas de géolocalisation du contenu, la transaction compte toujours comme une requête de lecture réussie, même si le flux ne commence jamais réellement.
+* L’authentification Adobe Pass effectue le suivi *et non* de la façon dont la lecture vidéo a réellement commencé après la génération du jeton multimédia. Par exemple, en cas de géolocalisation du contenu, la transaction compte toujours comme une requête de lecture réussie, même si le flux ne commence jamais réellement.
 * Puisque les jetons AuthN et AuthZ mettent en cache la réponse MVPD pendant une période donnée, l’événement de requête de lecture réussi est l’événement le plus fréquent des mesures.
 
 ## Utilisateurs uniques {#unique-users}
@@ -274,9 +278,10 @@ Dans certains cas, le nombre d’utilisateurs uniques peut être supérieur au n
 
 ### Comparaison des utilisateurs uniques côté client et côté serveur {#comparing-client-side-and-server-side-unique-users}
 
-Si la valeur de l’ID utilisateur de `sendTrackingData()` est utilisé côté client pour comptabiliser les utilisateurs uniques, les numéros côté client et côté serveur doivent correspondre.
+Si la valeur de l’ID utilisateur de `sendTrackingData()` est utilisée côté client pour compter les utilisateurs uniques, les nombres côté client et côté serveur doivent correspondre.
 
-Si les différences sont importantes, les raisons suivantes expliquent généralement la différence :
+Si les différences sont importantes, les raisons suivantes expliquent généralement la variable
+difference :
 
 * Valeurs uniques de lecture vidéo par rapport à tous les événements uniques. Comme mentionné, l’authentification Adobe Pass comptabilise les utilisateurs uniques pour tous les événements, à l’exception des tentatives AuthN. En d’autres termes, si l’utilisateur s’authentifie uniquement (sur la page) mais ne regarde pas de vidéo, une augmentation du nombre d’utilisateurs uniques est toujours déclenchée.
 

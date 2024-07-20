@@ -15,11 +15,11 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-La documentation officielle décrivant les environnements d’Adobe est disponible. [Configuration de votre environnement et test dans Pre-Qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md):
+La documentation officielle décrivant les environnements d’Adobe est disponible à l’adresse [Configuration de votre environnement et test dans Pre-qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md) :
 
 Les environnements d&#39;Adobe, résumés en quelques mots :
 
-Adobe comporte deux environnements : **Préqualification** et **Version**.
+Adobe comporte deux environnements : **Pré-qualification** et **Version**.
 
 * Dans l&#39;environnement de préqualification, nous préparons le nouveau build à sortir.
 

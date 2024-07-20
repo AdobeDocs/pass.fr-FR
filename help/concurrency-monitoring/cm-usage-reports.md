@@ -1,13 +1,13 @@
 ---
 title: Rapports d’utilisation de surveillance de la simultanéité
 description: Rapports d’utilisation de surveillance de la simultanéité
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '757'
 ht-degree: 0%
 
 ---
-
 
 # Rapports d’utilisation de surveillance de la simultanéité {#cm-usage-reports}
 
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 
 
-## Présentation {#usage-rep-overview}
+## Vue d’ensemble {#usage-rep-overview}
 
-La variable **Rapports d’utilisation de surveillance de la simultanéité** Le service est disponible via une API REST qui fournit des informations sur l’utilisation simultanée comme indiqué par les applications du client.
+Le service **Rapports d’utilisation de surveillance de la simultanéité** est disponible via une API REST qui fournit des informations sur l’utilisation simultanée comme indiqué par les applications du client.
 
 ## Conditions préalables {#usage-rep-prerequisites}
 
-Pour accéder au produit Rapports d’utilisation de surveillance de la simultanéité , un client doit d’abord contacter la surveillance de la simultanéité . [Équipe d’assistance](mailto:tve-support@adobe.com) et ils exécuteront les étapes nécessaires pour vous permettre d’accéder au produit API.
+Pour accéder au produit Rapports d’utilisation de surveillance de la simultanéité , un client doit d’abord contacter l’ [équipe d’assistance](mailto:tve-support@adobe.com) pour la surveillance de la simultanéité et il prendra les mesures nécessaires pour vous permettre d’accéder au produit de l’API.
 
 ## Mesures et ventilations des rapports généraux {#general-rep-metrics-breakdown}
 
@@ -68,7 +68,7 @@ Pour accéder au produit Rapports d’utilisation de surveillance de la simultan
 
 ## Mesures et ventilations des rapports simultanés {#concurrency-reports-metrics-breakdown}
 
-À compter de la version 2.9.0 de la surveillance de la simultanéité, nous avons introduit un nouveau rapport pour comprendre l’utilisation simultanée : un histogramme pour **niveau d’accès simultané** et **niveau d’activité**.
+Depuis la version 2.9.0 de la surveillance de la simultanéité, nous avons introduit un nouveau rapport pour comprendre l’utilisation simultanée : un histogramme pour **simultanency-level** et **activity-level**.
 
 Le principal objectif de ce rapport est de vous aider à comprendre l’impact de la définition d’une stratégie avec une certaine limite de simultanéité et de vous donner suffisamment d’informations pour décider si vous devez augmenter la limite.
 
@@ -85,6 +85,6 @@ Le principal objectif de ce rapport est de vous aider à comprendre l’impact d
 | year | Année à 4 chiffres |
 | month | Mois de l’année (1-12) |
 | day | Jour du mois (1-31) |
-| niveau d’accès simultané | Représente n’importe quel **activité de flux qui a été approuvée lors de la phase d’initialisation de la session** pour un utilisateur afin de pouvoir observer combien de flux simultanés **ouvert** par un utilisateur et pour comprendre l’impact de l’application d’une certaine limite de simultanéité |
-| niveau d’activité | Représente n’importe quel **activité de diffusion (quel que soit son état : démarrée, active, arrêtée, rejetée)** pour un utilisateur afin de pouvoir observer combien de flux simultanés un utilisateur a tenté d’ouvrir et de comprendre l’impact de l’application d’une certaine limite de simultanéité |
+| niveau d’accès simultané | Représente toute activité de flux **distincte qui a été approuvée lors de la phase d’initialisation de la session** pour un utilisateur afin de pouvoir observer le nombre de flux simultanés **ouverts** par un utilisateur et comprendre l’impact de l’application d’une certaine limite de simultanéité. |
+| niveau d’activité | Représente toute activité de flux **distincte (quel que soit son état : démarré, actif, arrêté, rejeté)** pour un utilisateur afin de pouvoir observer le nombre de flux simultanés qui ont été essayés par un utilisateur et de comprendre l’impact de l’application d’une certaine limite de simultanéité. |
 | mvpd | MVPD fourni lors de la gestion des sessions |

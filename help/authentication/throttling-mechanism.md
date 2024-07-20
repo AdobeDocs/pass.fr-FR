@@ -1,13 +1,13 @@
 ---
 title: Mécanisme de ralentissement
 description: Découvrez le mécanisme de limitation utilisé dans l’authentification Adobe Pass. Consultez un aperçu de ce mécanisme dans cette page.
-source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
+exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
 
 ---
-
 
 # Mécanisme de ralentissement {#throttling-mechanism}
 
@@ -40,7 +40,7 @@ Le mécanisme de ralentissement proposé utilise les périphériques identifiés
 
 Les implémentations serveur à serveur doivent transférer les adresses IP de leur client à l’aide du mécanisme d’en-tête &quot;X-Forwarded-For&quot;.
 
-Vous trouverez plus d’informations sur la manière de transmettre l’en-tête X-Forwarded-For [here](rest-api-cookbook-servertoserver.md).
+Vous trouverez plus d’informations sur la manière de transmettre l’en-tête X-Forwarded-For [ici](rest-api-cookbook-servertoserver.md).
 
 ### Limites et points de fin réels
 
@@ -76,19 +76,19 @@ Les clients qui utilisent les SDK fournis par l’authentification Adobe Pass n�
 
 #### setRequestor
 
-Lorsque vous atteignez la limite de ralentissement en utilisant `setRequestor` à partir du SDK, le SDK renvoie un code d’erreur CFG429 via `errorHandler` rappel.
+Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `setRequestor` du SDK, le SDK renvoie un code d’erreur CFG429 via le rappel `errorHandler`.
 
 #### getAuthorization
 
-Lorsque vous atteignez la limite de ralentissement en utilisant `getAuthorization` à partir du SDK, le SDK renvoie un code d’erreur Z100 via `errorHandler` rappel.
+Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `getAuthorization` du SDK, le SDK renvoie un code d’erreur Z100 via un rappel `errorHandler`.
 
 #### checkPreauthorizedResources
 
-Lorsque vous atteignez la limite de ralentissement en utilisant `checkPreauthorizedResources` à partir du SDK, le SDK renvoie un code d’erreur P100 via `errorHandler` rappel.
+Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `checkPreauthorizedResources` du SDK, le SDK renvoie un code d’erreur P100 via un rappel `errorHandler`.
 
 #### getMetadata
 
-Lorsque vous atteignez la limite de ralentissement en utilisant `getMetadata` à partir du SDK, le SDK renvoie une réponse vide via `setMetadataStatus` rappel.
+Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `getMetadata` du SDK, le SDK renvoie une réponse vide via le rappel `setMetadataStatus`.
 
 Pour chaque détail de mise en oeuvre spécifique, reportez-vous à la documentation spécifique du SDK.
 
@@ -135,7 +135,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 Les clients qui utilisent une mise en oeuvre personnalisée (y compris de serveur à serveur) pour interagir avec l’API Pass Authentication doivent s’assurer qu’ils peuvent capturer leur adresse IP utilisateur et la transférer correctement, en utilisant l’en-tête X-Forwarded-For plus loin dans l’API Pass Authentication.
 
-Voir [here](rest-api-cookbook-servertoserver.md) pour plus d’informations.
+Voir [ici](rest-api-cookbook-servertoserver.md) pour plus de détails.
 
 ### Réaction au nouveau code de réponse
 

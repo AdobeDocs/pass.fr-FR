@@ -1,14 +1,13 @@
 ---
 title: Métadonnées personnalisées
 description: Métadonnées personnalisées
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
-
-
 
 # Métadonnées personnalisées {#cm}
 
@@ -40,10 +39,9 @@ En fonction de ces clés/valeurs envoyées, différentes règles peuvent être �
 
 1. Le client décide d’envoyer le groupe de paramètres, qui aura comme valeurs &quot;SPORTS&quot; et &quot;KIDS&quot;.
 1. Ensuite, l’application doit procéder comme suit :
-   * Pour les canaux sportifs, lors de l’initialisation de la diffusion, l’application envoie ***type=SPORTS*** comme paramètre de requête
-   * Pour les canaux avec du contenu lié aux enfants, lors de l’initialisation de la diffusion, l’application envoie ***type=KIDS*** comme paramètre de requête
+   * Pour les canaux sportifs, lors de l’initialisation du flux, l’application enverrait ***type=SPORTS*** comme paramètre de requête.
+   * Pour les canaux avec du contenu lié aux enfants, lors de l’initialisation du flux, l’application enverrait ***type=KIDS*** comme paramètre de requête.
 1. Une stratégie de ce type peut ensuite être définie :
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
 1. Cela signifie essentiellement que lorsqu’un utilisateur regarde du sport, il ne peut pas le faire sur plus d’un appareil. Toutefois, lorsque l’utilisateur regarde le contenu des enfants, l’affichage est autorisé sur les appareils 3 max.
-

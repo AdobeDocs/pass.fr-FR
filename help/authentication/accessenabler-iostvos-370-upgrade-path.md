@@ -4,7 +4,7 @@ description: Chemin de mise à niveau d’AccessEnabler iOS/tvOS 3.7.0
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 </br>
 
-Modifications du stockage du trousseau à partir de [new AccessEnabler version 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) sont incompatibles avec l’implémentation du stockage Keychain de la version d’AccessEnabler inférieure à 3.7.0.
+Les modifications apportées au stockage des chaînes de clés par la [nouvelle version d’AccessEnabler 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) sont incompatibles avec l’implémentation du stockage des chaînes de clés par la version inférieure à 3.7.0 d’AccessEnabler.
 
-Le chemin de mise à niveau d’une application adoptant la nouvelle version 3.7.0 d’AccessEnabler migre tous les jetons de la ou des versions précédentes de l’espace de stockage Keychain. Par conséquent, les utilisateurs finaux **ne doit pas entraîner de perte des sessions d’authentification/d’autorisation** lors du processus de mise à jour de la structure AccessEnabler.
+Le chemin de mise à niveau d’une application adoptant la nouvelle version 3.7.0 d’AccessEnabler migre tous les jetons de la ou des versions précédentes de l’espace de stockage Keychain. Par conséquent, les utilisateurs finaux **ne doivent pas subir de perte de sessions d’authentification/d’autorisation** pendant le processus de mise à jour de la structure AccessEnabler.
 
 ## Limites connues
 

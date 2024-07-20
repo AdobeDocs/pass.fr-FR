@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # [!UICONTROL General usage] rapports {#general-usage-reports}
 
-[!UICONTROL Account IQ] les rapports sont des outils d’analyse de base qui vous permettent d’explorer vos données pour les isoler. [cohortes](/help/accountiq/product-concepts.md#segmet-def), identifiez les anomalies et apportez-vous une compréhension des caractéristiques de votre compte.
+Les rapports [!UICONTROL Account IQ] sont des outils d’analyse de base qui vous permettent d’analyser vos données pour isoler [cohortes](/help/accountiq/product-concepts.md#segmet-def), identifier les anomalies et créer une compréhension des caractéristiques de votre compte.
 
-[!UICONTROL General usage] la page rapports fournit des outils pour créer des mesures de sous-groupe en fonction du nombre d’appareils de compte utilisés, des adresses IP détectées et de leurs codes postaux respectifs.
+La page de rapports [!UICONTROL General usage] fournit des outils pour créer des mesures de sous-groupe en fonction du nombre de périphériques de compte utilisés, des adresses IP détectées et de leurs codes postaux respectifs.
 
-Les rapports reposent tous sur le segment actuel sélectionné dans la variable [Segments et intervalle de temps](/help/accountiq/segments-timeinterval.md) du panneau. Vous pouvez affiner votre sélection et la réduire davantage en spécifiant les seuils (nombre d’appareils, nombre d’adresses IP et nombre de codes postaux) dans la variable [Aperçu des instantanés - Comptes au-dessus des seuils](#snapshot-overview) du panneau.
+Les rapports sont tous basés sur le segment actuel sélectionné dans le panneau [Segments et intervalle de temps](/help/accountiq/segments-timeinterval.md) . Vous pouvez affiner votre sélection et la réduire davantage en spécifiant les seuils (nombre d’appareils, nombre d’adresses IP et nombre de codes postaux) dans le panneau [Aperçu de l’instantané-Comptes au-dessus des seuils](#snapshot-overview).
 
 ## Lire les requêtes et les abonnés uniques {#playreq-uniquesubs}
 
@@ -26,7 +26,7 @@ Les graphiques linéaires présentent ici les modifications au fil du temps des 
 ![](assets/d2c-line-graph-gu.png)
 
 
-*Lire les requêtes/abonnements uniques pour les services D2C*
+*Lire les requêtes/abonnés uniques pour les services D2C*
 
 +++
 
@@ -35,7 +35,7 @@ Les graphiques linéaires présentent ici les modifications au fil du temps des 
 ![](assets/progr-line-graph-gu.png)
 
 
-*Lire les requêtes/abonnements uniques pour les programmeurs*
+*Lire les requêtes/abonnés uniques pour les programmeurs*
 
 +++
 
@@ -43,25 +43,25 @@ Les graphiques linéaires présentent ici les modifications au fil du temps des 
 
 ![](assets/mvpd-line-graph-gu.png)
 
-*Abonnés uniques pour les MVPD*
+*Abonnés uniques pour MVPD*
 
 +++
 
 <br/>
 
-L’axe X représente la durée selon l’intervalle actuel et l’axe Y représente les mesures de base de l’activité des abonnés au cours de cette période. Les graphiques linéaires vous aident à visualiser et comparer l’activité des abonnés dans le segment actuel. Selon la version du compte IQ, les mesures incluent :
+L’axe X représente la durée selon l’intervalle actuel et l’axe Y représente les mesures de base de l’activité des abonnés au cours de cette période. Les graphiques linéaires vous aident à visualiser et comparer l’activité des abonnés dans le segment actuel. Selon la version d’Account IQ, les mesures incluent :
 
-* **AuthN OK**: nombre d’authentifications réussies. En savoir plus sur [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK** : nombre d’authentifications réussies. En savoir plus sur [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
 
-* **AuthZ OK**: nombre d’autorisations réussies. En savoir plus sur [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
+* **AuthZ OK** : nombre d’autorisations réussies. En savoir plus sur [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-* **Lire les requêtes**: nombre de requêtes de lecture. En savoir plus sur [Lecture des requêtes](/help/accountiq/product-concepts.md#play-requests-def).
+* **Lire les requêtes** : nombre de requêtes de lecture. En savoir plus sur les [requêtes de lecture](/help/accountiq/product-concepts.md#play-requests-def).
 
-* **Abonnés uniques**: nombre d’abonnés uniques réussis. En savoir plus sur [Abonnés uniques](/help/accountiq/product-concepts.md#unique-subscriber-def).
+* **Abonnés uniques** : nombre d’abonnés uniques réussis. En savoir plus sur les [abonnés uniques](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
 >[!NOTE]
 >
->La disponibilité des mesures varie en fonction de la version du compte IQ.
+>La disponibilité des mesures varie en fonction de la version d’Account IQ.
 
 ## Aperçu des instantanés - Comptes au-dessus des seuils {#snapshot-overview}
 
@@ -73,7 +73,7 @@ Affinez vos analyses et rapports à l’aide de ce filtre supplémentaire afin d
 
 * Nombre seuil de codes postaux
 
-Lorsque vous mettez à jour les valeurs de seuil dans [Segment de compte d’après les seuils sélectionnés](#account-segments-basedon-segments) , vous pouvez afficher l’effet dans :
+Lorsque vous mettez à jour les valeurs de seuil dans le panneau [Segment de comptes basé sur les seuils sélectionnés](#account-segments-basedon-segments), vous verrez l’effet dans :
 
 * [Périphériques par semaine (ou mois), par compte](#devices-week-account)
 
@@ -85,11 +85,11 @@ Lorsque vous mettez à jour les valeurs de seuil dans [Segment de compte d’apr
 
 >[!NOTE]
 >
->Chaque seuil est défini sur une valeur par défaut de 4. En d’autres termes, la page Utilisation générale présente l’analyse pour les abonnés utilisant plus de quatre appareils, consommant du contenu provenant de plus de quatre adresses IP différentes, *et* plus de quatre codes postaux différents.
+>Chaque seuil est défini sur une valeur par défaut de 4. En d’autres termes, la page Utilisation générale présente l’analyse pour les abonnés utilisant plus de quatre appareils, consommant du contenu provenant de plus de quatre adresses IP différentes, *et* de plus de quatre codes postaux différents.
 
 ### Segment de comptes en fonction des seuils sélectionnés {#account-segments-basedon-segments}
 
-La variable **Segment de compte d’après les seuils sélectionnés** vous donne la possibilité de définir des seuils (entre 1 et 10) pour le nombre d’appareils, le nombre d’adresses IP et le nombre de codes postaux.
+Le panneau **Segment de compte basé sur les seuils sélectionnés** vous donne la possibilité de définir des seuils (entre 1 et 10) pour le nombre d’appareils, le nombre d’adresses IP et le nombre de codes postaux.
 
 Le graphique vous montre les éléments suivants :
 
@@ -121,7 +121,7 @@ L’anneau fournit une autre vue des appareils utilisés par les comptes dans le
 
 ## Emplacements par semaine (ou mois) par compte {#locations-week-account}
 
-Similaire à la mesure pour [Périphériques par semaine (ou mois), par compte](#devices-week-account), la mesure Emplacements par semaine (ou mois) par compte vous permet d’analyser l’utilisation du compte d’abonné à différents endroits. L’axe X trace le nombre de comptes et l’axe Y trace le nombre d’emplacements.
+Comme pour la mesure [Périphériques par semaine (ou mois) par compte](#devices-week-account), la mesure Emplacements par semaine (ou mois) par compte vous permet d’analyser l’utilisation du compte d’abonné à partir de différents emplacements. L’axe X trace le nombre de comptes et l’axe Y trace le nombre d’emplacements.
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -135,7 +135,7 @@ Une fois que vous avez défini le seuil du nombre d’emplacements, vous pouvez 
 
 ## Ips par semaine (ou mois) par compte {#ip-week-account}
 
-Similaire à la mesure pour **Nombre d’emplacements par semaine et par compte**, la variable **Nombre d’adresses IP par semaine et par compte** vous permet d’évaluer la quantité de changement à la source de la diffusion en continu pour le segment actuel.
+Tout comme la mesure **Nombre d’emplacements par semaine par compte**, la mesure **Nombre d’adresses IP par semaine par compte** vous permet d’évaluer la quantité de changement à la source de la diffusion en continu pour le segment actuel.
 
 L’axe X trace Nombre de comptes et l’axe Y trace Nombre d’adresses IP.
 
@@ -151,13 +151,13 @@ Une fois que vous avez défini un segment et défini le seuil du nombre d’adre
 
 ## Vue de l’historique des segments des comptes {#account-segment-historical-view}
 
-Le graphique à barres Affichage historique vous permet de comparer les mesures d’utilisation à différents intervalles de temps. Il répertorie également collectivement les différentes mesures d’utilisation, telles que [Périphériques par semaine (ou mois), par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account), et [IP par semaine (ou mois) par compte](#ip-week-account).
+Le graphique à barres Affichage historique vous permet de comparer les mesures d’utilisation à différents intervalles de temps. En outre, il répertorie collectivement les différentes mesures d’utilisation, telles que [Périphériques par semaine (ou mois) par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account) et [IP par semaine (ou mois) par compte](#ip-week-account).
 
 * L’axe X trace l’intervalle de temps et l’axe Y trace le nombre de comptes d’abonnés, de périphériques, d’emplacements et d’adresses IP.
 
 * Les barres de couleur orange représentent des segments à différents intervalles de temps.
 
-* Le graphique linéaire trace les modifications dans [Périphériques par semaine (ou mois), par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account), et [IP par semaine (ou mois) par compte](#ip-week-account) sur l’intervalle de temps en fonction du seuil.
+* Le graphique linéaire trace les modifications dans les valeurs [Périphériques par semaine (ou mois) par compte](#devices-week-account), [Emplacements par semaine (ou mois) par compte](#locations-week-account) et [IP par semaine (ou mois) par compte](#ip-week-account) sur l’intervalle de temps basé sur le seuil.
 
 ![](assets/historical-view.png)
 

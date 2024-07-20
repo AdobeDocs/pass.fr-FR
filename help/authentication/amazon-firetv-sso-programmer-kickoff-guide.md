@@ -4,7 +4,7 @@ description: Amazon fireTV SSO - Guide de démarrage du programmeur
 exl-id: cf9ba614-57ad-46c3-b154-34204b38742d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Introduction {#intro}
 
-Ce document décrit les informations nécessaires à l’intégration de la nouvelle **SDK FireTV de l’authentification Adobe Pass** dans votre application fireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme Amazon FireTV pour offrir **Authentification unique** la prise en charge. Pour bénéficier de l’authentification unique, votre côté doit faire quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK FireTV. Des modifications seront apportées aux flux d’authentification, qui seront présentés ci-dessous.
+Ce document décrit les informations nécessaires à l’intégration du nouveau **SDK FireTV de l’authentification Adobe Pass** dans votre application FireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme Amazon fireTV, offrant ainsi la prise en charge de l’authentification unique **.** Pour bénéficier de l’authentification unique, votre côté doit faire quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK FireTV. Des modifications seront apportées aux flux d’authentification, qui seront présentés ci-dessous.
 
 ## Intégration de haut niveau à l’architecture et au niveau du système d’exploitation {#high}
 
@@ -43,39 +43,39 @@ Par rapport à l’application sans API cliente, avec le nouveau SDK FireTV, l�
 
 Pour ce faire, les programmeurs doivent ajouter un sélecteur MVPD dans leurs applications afin que les utilisateurs puissent choisir leur fournisseur de télévision directement sur le périphérique FireTV. Lors de la sélection de MVPD, l’utilisateur voit apparaître la page de connexion MVPD sur l’appareil FireTV.
 
-Vous trouverez des maquettes des flux d’utilisateurs qui décrivent les scénarios standard, d’adaptateur et d’authentification unique sur fireTV à l’adresse [Amazon Fire TV - Flux d’utilisateur de connexion MVPD](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/).
+Les maquettes des flux d’utilisateurs qui décrivent les scénarios standard, d’adaptateur et d’authentification unique sur fireTV se trouvent à l’adresse [Amazon Fire TV - flux d’utilisateur de connexion MVPD](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/).
 
 ## Migration de l’application basée sur le SDK Android vers l’application basée sur le SDK FireTV {#migra2}
 
-Ce nouveau SDK FireTV est très similaire à notre SDK Android existant et à la documentation actuelle que nous avons pour **intégration de notre SDK Android** <!--http://tve.helpdocsonline.com/android-technical-overview-->peut être utilisé jusqu’à ce que les documents du SDK FireTV soient prêts. Si vous disposez déjà d’applications Android qui utilisent notre SDK Android, l’intégration du SDK FireTV dans votre application FireTV doit être simple.
+Ce nouveau SDK FireTV est très similaire à notre SDK Android existant et la documentation actuelle que nous avons pour **l’intégration de notre SDK Android** <!--http://tve.helpdocsonline.com/android-technical-overview--> peut être utilisée jusqu’à ce que les documents du SDK FireTV soient prêts. Si vous disposez déjà d’applications Android qui utilisent notre SDK Android, l’intégration du SDK FireTV dans votre application FireTV doit être simple.
 
 Par rapport au SDK Android existant, le processus d’authentification sera plus simple à développer sur le SDK FireTV, car les tâches de gestion/présentation de la page de connexion MVPD et de récupération du jeton AuthN seront effectuées en interne par la bibliothèque AccessEnabler.
 
 ## Questions fréquentes {#faq}
 
-1. Comment la variable **SSO** travail ?
+1. Comment fonctionnera **SSO** ?
 
    * SSO fonctionnera dans toutes les applications de programmeur optimisées par l’authentification Adobe Pass qui utilisent le nouveau SDK FireTV sur le même appareil FireTV Amazon.
-   * SSO entre les applications de programmation implémentées sur l’API REST sans client et les applications implémentées sur le SDK FireTV **ne sera PAS pris en charge**
+   * La connexion unique entre les applications de programmeur implémentées sur l’API REST sans client et les applications implémentées sur le SDK FireTV **ne sera PAS prise en charge**
 
 1. Quelle est la couverture MVPD de fireTV SSO ?
 
-   * **Tous les MVPD** intégré par l’authentification Adobe Pass sera techniquement pris en charge par SSO sur le SDK fireTV.
+   * **Tous les MVPD** intégrés par l’authentification Adobe Pass seront techniquement pris en charge par SSO sur le SDK fireTV.
 
-1. Outre l’utilisation du nouveau SDK, et d’autres **modifications de workflow** Les programmeurs devraient-ils être conscients ?
+1. Outre l’utilisation du nouveau SDK, quelles autres **modifications de workflow** les programmeurs doivent-ils connaître ?
 
    * Les programmeurs doivent mettre en oeuvre un sélecteur MVPD pour la plateforme fireTV.
 
-1. L’authentification sera-t-elle modifiée ? **TTL**?
+1. Y aura-t-il une modification à l&#39;authentification **TTLs** ?
 
    * Il n’y a aucun changement de comportement concernant les TTL d’authentification.
    * Le premier jeton d’authentification valide sera utilisé pour effectuer l’authentification unique. Dans ce cas, toutes les autres applications qui seront authentifiées via l’authentification unique utiliseront le même TTL jusqu’à son expiration. Ainsi, lorsque vous naviguez d’une application à l’autre, la deuxième application partage la durée de vie de la première application qui s’authentifie.
 
-1. Comment **API de dégradation** travail ?
+1. Comment fonctionne l&#39;**API de dégradation** ?
 
    * Aucune modification n’est nécessaire pour l’API de dégradation. L’expérience utilisateur sera la même que sur les appareils Android.
 
-1. Comment **TempPass** les flux sont affectés ?
+1. Comment les flux **TempPass** sont-ils affectés ?
 
    * Les flux TempPass sont un seul écran et se comportent comme sur tout autre appareil natif.
 

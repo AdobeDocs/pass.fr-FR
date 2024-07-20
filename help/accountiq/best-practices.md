@@ -1,6 +1,6 @@
 ---
 title: Bonnes pratiques relatives à Account IQ
-description: En savoir plus [!UICONTROL Account IQ] dans Adobe Pass.
+description: Découvrez [!UICONTROL Account IQ] dans Adobe Pass.
 exl-id: 55901f5d-d9c1-4ee5-9349-afa28445b324
 source-git-commit: 60aeba449cae1c4dc510a23aaf1ba793a7a60db0
 workflow-type: tm+mt
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # Bonnes pratiques {#aiq-best-practices}
 
-[!UICONTROL Account IQ] vous permet d’identifier le partage des informations d’identification, de mesurer sa portée et son impact, de segmenter les cohortes pertinentes et de suivre l’effet des actions ciblées. Il offre divers outils, graphiques et rapports utilisés pour comprendre et gérer les comptes partagés, qui peuvent être utilisés de n’importe quelle manière. Chaque service de diffusion en continu aborde ce comportement et développe des processus qui correspondent à leurs objectifs uniques, et le produit est conçu pour répondre de manière flexible à ces besoins.  Cependant, certaines règles de pratiques générales peuvent s’appliquer à un large éventail de scénarios.
+[!UICONTROL Account IQ] vous permet d’identifier le partage des informations d’identification, de mesurer sa portée et son impact, de segmenter les cohortes et de suivre l’effet des actions ciblées. Il offre divers outils, graphiques et rapports utilisés pour comprendre et gérer les comptes partagés, qui peuvent être utilisés de n’importe quelle manière. Chaque service de diffusion en continu aborde ce comportement et développe des processus qui correspondent à leurs objectifs uniques, et le produit est conçu pour répondre de manière flexible à ces besoins.  Cependant, certaines règles de pratiques générales peuvent s’appliquer à un large éventail de scénarios.
 
 ## Analyse et compréhension {#analyze-understand}
 
-[!UICONTROL Account IQ] ces outils vous aident à comprendre la nature et l’ampleur du partage des informations d’identification dans votre entreprise, depuis les graphiques de niveau supérieur qui affichent le pourcentage de comptes partagés jusqu’aux exportations de niveau inférieur qui rapportent les caractéristiques de chaque compte. En particulier au début, utilisez ces outils pour explorer les données et identifier des cohortes ou des schémas comportementaux inhabituels ou intéressants, indiquant par exemple des niveaux élevés de partage. Ensuite, les segments représentant une opportunité ou un objectif spécifique peuvent être identifiés.
+Les outils [!UICONTROL Account IQ] aident à comprendre la nature et l’ampleur du partage des informations d’identification sur votre entreprise, depuis les graphiques de niveau supérieur qui affichent le pourcentage de comptes partagés jusqu’aux exportations de niveau le plus bas qui rapportent les caractéristiques de chaque compte. En particulier au début, utilisez ces outils pour explorer les données et identifier des cohortes ou des schémas comportementaux inhabituels ou intéressants, indiquant par exemple des niveaux élevés de partage. Ensuite, les segments représentant une opportunité ou un objectif spécifique peuvent être identifiés.
 
 Pour comprendre la nature et l’impact du partage sur votre entreprise :
 

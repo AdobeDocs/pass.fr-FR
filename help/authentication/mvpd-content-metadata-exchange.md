@@ -1,21 +1,21 @@
 ---
-title: Échange de métadonnées de contenu MVPD
-description: Échange de métadonnées de contenu MVPD
+title: Exchange de métadonnées de contenu MVPD
+description: Exchange de métadonnées de contenu MVPD
 exl-id: d17e60dc-6c61-4ca2-bad8-1840c95261e0
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '402'
 ht-degree: 0%
 
 ---
 
-# Échange de métadonnées de contenu MVPD
+# Exchange de métadonnées de contenu MVPD
 
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-## Présentation {#content-metadat-exchange-overview}
+## Vue d’ensemble {#content-metadat-exchange-overview}
 
 Cette page décrit deux mises en oeuvre standard qu’Adobe Pass Authentication utilise pour envoyer des données structurées aux MVPD sur la demande d’autorisation.  Les données structurées représentent la ressource (le programmeur) qui effectue la requête et, éventuellement, des données supplémentaires telles que l’évaluation du contenu.
 

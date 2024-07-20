@@ -1,13 +1,13 @@
 ---
 title: Canaux
 description: Découvrez les canaux et leurs différentes configurations dans le tableau de bord TVE.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '1140'
 ht-degree: 0%
 
 ---
-
 
 # Canaux {#channels}
 
@@ -15,25 +15,25 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-La variable **Canaux** La section du tableau de bord TVE vous permet d’afficher et de gérer les paramètres des canaux associés à un programmeur spécifique. Vous pouvez également [ajouter un nouveau canal](#add-new-channel) selon vos besoins.
+La section **Canaux** du tableau de bord TVE vous permet d’afficher et de gérer les paramètres des canaux associés à un programmeur spécifique. Vous pouvez également [ajouter un nouveau canal](#add-new-channel) selon vos besoins.
 
-La variable **Canaux** dans le panneau de gauche affiche une liste des canaux liés avec les détails suivants :
+L’onglet **Canaux** du panneau de gauche affiche une liste des canaux liés avec les détails suivants :
 
-* **Nom d’affichage**: nom de marque du canal utilisé à des fins commerciales.
-* **Identifiant de canal**: un identifiant unique, également appelé identifiant du demandeur.
-* **Intégrations**: nombre de connexions établies avec [MVPD](/help/authentication/glossary.md#mvpd).
+* **Nom d’affichage** : nom de marque du canal utilisé à des fins commerciales.
+* **Identifiant de canal** : un identifiant unique, également appelé identifiant de demandeur.
+* **Intégrations** : nombre de connexions établies avec [MVPDs](/help/authentication/glossary.md#mvpd).
 
 ![Liste des canaux existants](assets/channels-list.png)
 
 *Liste des canaux existants*
 
-Saisissez le nom du canal dans la variable **Rechercher** au-dessus de la liste pour en savoir plus sur le canal.
+Saisissez le nom du canal dans la barre **Rechercher** située au-dessus de la liste pour en savoir plus sur le canal.
 
 ## Gestion des configurations de canal {#manage-channel-conf}
 
 Suivez les étapes de gestion des différents paramètres d’un canal spécifique.
 
-1. Sélectionnez la variable **Canaux** dans le panneau de gauche.
+1. Sélectionnez l’onglet **Channels** (Canaux) dans le panneau de gauche.
 1. Sélectionnez le canal dans la liste disponible.
 1. Sélectionnez l’un des onglets suivants pour afficher et modifier les paramètres correspondants du canal sélectionné :
 
@@ -44,27 +44,27 @@ Suivez les étapes de gestion des différents paramètres d’un canal spécifiq
    * [Applications enregistrées](#registered-applications)
    * [Schémas personnalisés](#custom-schemes)
 
-   ![Paramètres des canaux](assets/channel-settings.png)
+   ![Paramètres du canal](assets/channel-settings.png)
 
-   *Paramètres des canaux*
+   *Paramètres du canal*
 
 >[!IMPORTANT]
 >
-> Affichage [Révision et notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md) pour plus d’informations sur l’activation des modifications de configuration.
+> Afficher [Réviser et pousser les modifications](/help/authentication/tve-dashboard-review-push-changes.md) pour plus d’informations sur l’activation des modifications de configuration.
 
 ### Paramètres généraux {#general-settings}
 
-Cet onglet présente **Informations sur le canal** et **Configuration Analytics**.
+Cet onglet présente les **informations sur le canal** et la **configuration Analytics**.
 
 #### Informations sur les canaux {#channel-information}
 
 Dans cette section, vous pouvez modifier les détails suivants :
 
-* **Nom d’affichage**: nom de marque du canal utilisé à des fins commerciales.
+* **Nom d’affichage** : nom de marque du canal utilisé à des fins commerciales.
 
-* **URL de redirection par défaut**: URL de redirection de sauvegarde pour l’authentification et la déconnexion.
+* **URL de redirection par défaut** : URL de redirection de sauvegarde pour l’authentification et la déconnexion.
 
-* **Rapport d’erreurs**: lors de la sélection **Oui**, les SDK Adobe Pass envoient des rapports d’erreur au serveur principal Adobe Pass pour les analyses.
+* **Rapport d’erreurs** : lorsque vous sélectionnez **Oui**, les SDK Adobe Pass envoient des rapports d’erreur au serveur principal Adobe Pass pour les analyses.
 
 ![Modifier les informations sur le canal](assets/channel-information.png)
 
@@ -74,19 +74,19 @@ Dans cette section, vous pouvez modifier les détails suivants :
 
 Cette section vous permet de configurer le transfert des événements d’authentification Adobe Pass vers Adobe Analytics.
 
-Pour activer **Configuration Analytics**, contactez votre gestionnaire de compte technique (TAM) pour plus d’informations sur la configuration de l’identifiant de suite de rapports (RSID).
+Pour activer la **configuration Analytics**, contactez votre gestionnaire de compte technique (TAM) pour plus d’informations sur la configuration de l’identifiant de suite de rapports (RSID).
 
-![Activation des configurations Analytics](assets/channel-analytical-conf.png)
+![Activer les configurations Analytics](assets/channel-analytical-conf.png)
 
-*Activation des configurations Analytics*
+*Activer les configurations Analytics*
 
-Sélectionner **Ajout d’une nouvelle configuration d’analyse** pour ajouter plusieurs configurations.
+Sélectionnez **Ajouter une nouvelle configuration d’analyse** pour ajouter plusieurs configurations.
 
-Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser la nouvelle configuration d’analyse de la **Configuration Analytics** , passez à la section [révision et notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md) flux.
+Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser la nouvelle configuration d’analyse de la section **Configuration d’Analytics**, passez au flux [ de  modifications de révision et de notification push](/help/authentication/tve-dashboard-review-push-changes.md).
 
 ### Intégrations {#integrations}
 
-Cet onglet affiche une liste des intégrations disponibles entre le canal actuellement sélectionné et les MVPD. La liste présente chaque intégration avec son état, indiquant si elle est activée ou non. Sélectionnez une intégration spécifique dans cette liste pour accéder aux informations détaillées de la section [Intégrations](tve-dashboard-integrations.md) .
+Cet onglet affiche une liste des intégrations disponibles entre le canal actuellement sélectionné et les MVPD. La liste présente chaque intégration avec son état, indiquant si elle est activée ou non. Sélectionnez une intégration spécifique dans cette liste pour accéder à des informations détaillées dans la section [Intégrations](tve-dashboard-integrations.md) .
 
 ![Liste des intégrations disponibles](assets/channel-integrations.png)
 
@@ -94,9 +94,9 @@ Cet onglet affiche une liste des intégrations disponibles entre le canal actuel
 
 ### Certificats {#certificates}
 
-Cet onglet affiche une liste de [certificats disponibles](#available-certificates) et [certificats disponibles hérités](#inherited-avail-certificates) utilisé dans les flux de chiffrement des métadonnées utilisateur. Il affiche des détails sur chaque certificat qui comprend :
+Cet onglet affiche la liste des [certificats disponibles](#available-certificates) et des [ certificats disponibles hérités](#inherited-avail-certificates) utilisés dans les flux de chiffrement des métadonnées utilisateur. Il affiche des détails sur chaque certificat qui comprend :
 
-* État (activé ou non pour **cryptage des métadonnées utilisateur** usage ou non)
+* État (activé ou non pour l’utilisation du **chiffrement des métadonnées utilisateur**)
 * Numéro de série
 * Nom de l’organisation émettrice
 * Nom de l’organisation concernée
@@ -116,39 +116,39 @@ Vous pouvez apporter les modifications suivantes dans la section certificats dis
 
 Pour ajouter un nouveau certificat, procédez comme suit :
 
-1. Sélectionner **Ajouter un nouveau certificat** en haut de la page **Certificats disponibles** .
+1. Sélectionnez **Ajouter un nouveau certificat** en haut de la section **Certificats disponibles** .
 
    ![Ajouter un nouveau certificat](assets/add-new-certificate.png)
 
    *Ajouter un nouveau certificat*
 
-1. Collez la clé publique de votre certificat dans le **Nouveau certificat** de la boîte de dialogue
-1. Sélectionner **Ajout d’un certificat**.
+1. Collez la clé publique de votre certificat dans la boîte de dialogue **Nouveau certificat**.
+1. Sélectionnez **Ajouter un certificat**.
 
-   Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser le nouveau certificat répertorié dans la variable **Certificats disponibles** , passez à la section [révision et notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md) flux.
+   Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser le nouveau certificat répertorié dans la section **Certificats disponibles**, passez au flux [ de  modifications de révision et de notification push](/help/authentication/tve-dashboard-review-push-changes.md).
 
-1. Localisez le nouveau certificat dans la liste de **Certificats disponibles**.
+1. Recherchez le nouveau certificat dans la liste de **certificats disponibles**.
 
    >[!IMPORTANT]
    >
    > Assurez-vous que vos systèmes sont à jour et prêts à utiliser le nouveau certificat.
 
-1. Sélectionner **Oui** de **Utilisé pour les métadonnées utilisateur chiffrées** pour activer un nouveau certificat.
+1. Sélectionnez **Oui** dans le menu déroulant **Utilisé pour les métadonnées utilisateur chiffrées** pour activer un nouveau certificat.
 
 ##### Suppression de certificat {#delete-certificate}
 
 Pour supprimer un certificat, procédez comme suit.
 
-1. Pointez sur le certificat que vous souhaitez supprimer de la liste de **Certificats disponibles**.
-1. Sélectionner **Supprimer**.
+1. Pointez sur le certificat que vous souhaitez supprimer de la liste des **certificats disponibles**.
+1. Sélectionnez **Supprimer**.
 
    ![Supprimer le certificat sélectionné](assets/channel-delete-certificate.png)
 
    *Supprimer le certificat sélectionné*
 
-1. Sélectionner **Supprimer** de la **Suppression d’un certificat actif** de la boîte de dialogue
+1. Sélectionnez **Supprimer** dans la boîte de dialogue **Supprimer le certificat actif**.
 
-Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Le certificat sera supprimé de la **Certificats disponibles** section uniquement après [révision et notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md).
+Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Le certificat sera supprimé de la section **Certificats disponibles** uniquement après [la révision et la notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md).
 
 #### Certificats disponibles hérités {#inherited-avail-certificates}
 
@@ -175,59 +175,58 @@ Vous pouvez apporter les modifications suivantes aux domaines :
 
 Pour ajouter un domaine, procédez comme suit.
 
-1. Sélectionner **Ajouter un nouveau domaine** dans le coin supérieur droit du **Domaines disponibles** .
+1. Sélectionnez **Ajouter un nouveau domaine** dans le coin supérieur droit de la section **Domaines disponibles** .
 
    ![Ajouter un nouveau domaine](assets/add-new-domain.png)
 
    *Ajouter un nouveau domaine*
 
-1. Saisissez le nom de votre domaine dans le champ **Nouveau domaine** de la boîte de dialogue
+1. Saisissez le nom de votre domaine dans la boîte de dialogue **Nouveau domaine**.
 
-1. Sélectionner **Ajouter un domaine** pour ajouter un nouveau domaine pour le canal sélectionné.
+1. Sélectionnez **Ajouter un domaine** pour ajouter un nouveau domaine pour le canal sélectionné.
 
-Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser le nouveau domaine répertorié dans le **Domaines disponibles** , passez à la section [révision et notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md) flux.
+Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser le nouveau domaine répertorié dans la section **Domaines disponibles**, passez au flux [ de  modifications de révision et de notification push](/help/authentication/tve-dashboard-review-push-changes.md).
 
 #### Supprimer le domaine {#delete-domain}
 
 Pour supprimer un domaine, procédez comme suit.
 
-1. Pointez sur le domaine que vous souhaitez supprimer de la liste de **Domaines disponibles**.
-1. Sélectionner **Supprimer**.
+1. Pointez sur le domaine que vous souhaitez supprimer de la liste de **domaines disponibles**.
+1. Sélectionnez **Supprimer**.
 
    ![Supprimer le domaine sélectionné](assets/remove-domain.png)
 
    *Supprimer le domaine sélectionné*
 
-1. Sélectionner **Supprimer** sur le **Supprimer le domaine** de la boîte de dialogue
+1. Sélectionnez **Supprimer** dans la boîte de dialogue **Supprimer le domaine**.
 
-Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Le domaine sera supprimé de la variable **Domaines disponibles** section uniquement après [révision et notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md).
+Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Le domaine sera supprimé de la section **Domaines disponibles** uniquement après [la révision et la notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md).
 
 Le domaine sélectionné n’est plus disponible. Par conséquent, l’application associée à ce domaine perd l’accès aux services d’authentification Adobe Pass.
 
 ### Applications enregistrées {#registered-applications}
 
-Cet onglet fournit une liste d’inscriptions aux applications. Affichage [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md) pour plus d’informations.
+Cet onglet fournit une liste d’inscriptions aux applications. Pour plus d’informations, voir [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md) .
 
 ### Schémas personnalisés {#custom-schemes}
 
-Cet onglet affiche une liste des schémas personnalisés. Affichage [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md) pour plus d’informations.
+Cet onglet affiche une liste des schémas personnalisés. Pour plus d’informations, consultez les sections [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion de l’enregistrement du client dynamique](/help/authentication/dynamic-client-registration-management.md) .
 
 ## Ajouter un nouveau canal {#add-new-channel}
 
 Pour ajouter un nouveau canal, procédez comme suit.
 
-1. Sélectionnez la variable **Canaux** dans le panneau de gauche.
-1. Sélectionner **Ajouter un nouveau canal** dans le coin supérieur droit du **Canaux** .
+1. Sélectionnez l’onglet **Channels** (Canaux) dans le panneau de gauche.
+1. Sélectionnez **Ajouter un nouveau canal** dans le coin supérieur droit de la section **Canaux** .
 
    ![Ajouter un nouveau canal](assets/add-new-channel.png)
 
    *Ajouter un nouveau canal*
 
-1. Sélectionner **Identifiant du programmeur** dans le menu déroulant de la fonction **Nouveau canal** de la boîte de dialogue
+1. Sélectionnez **ID de programmeur** dans le menu déroulant de la boîte de dialogue **Nouveau canal**.
 
 1. Saisissez un identifiant unique dans **Identifiant de canal**.
-1. Saisissez le nom de la marque du canal utilisé à des fins commerciales dans la variable **Nom d’affichage**.
-1. Sélectionner **Ajouter un canal**.
+1. Saisissez le nom de marque du canal utilisé à des fins commerciales dans le **Nom d’affichage**.
+1. Sélectionnez **Ajouter un canal**.
 
-Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser le nouveau canal répertorié dans la variable **Canaux** , passez à la section [révision et notification push des modifications](/help/authentication/tve-dashboard-review-push-changes.md) flux.
-
+Un nouveau changement de configuration a été créé et est prêt pour la mise à jour du serveur. Pour utiliser le nouveau canal répertorié dans la section **Channels** (Canaux), passez au flux [review and push changes](/help/authentication/tve-dashboard-review-push-changes.md) (revoir et pousser les modifications).

@@ -1,5 +1,5 @@
 ---
-title: Prise en main d’ [!UICONTROL Account IQ]
+title: Prise en main de [!UICONTROL Account IQ]
 description: Découvrez l’intégration, les conditions préalables et comment commencer à utiliser [!UICONTROL Account IQ].
 exl-id: 840ab081-0073-492f-86b2-ba174ae93256
 source-git-commit: a7a37ffea0169a302890ee50b2e2202ddf58d021
@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# Prise en main d’ [!UICONTROL Account IQ] {#onboard}
+# Prise en main de [!UICONTROL Account IQ] {#onboard}
 
-[!UICONTROL Account IQ] est une application web hébergée. Pour commencer à utiliser cet outil d’analyse en tant que fournisseur, programmeur ou distributeur D2C (MVPD) et limiter le partage des informations d’identification, vous devez intégrer votre organisation dans les organisations Adobe Experience Cloud et affecter des utilisateurs de l’organisation à **[!UICONTROL Primetime Account IQ]** profile sur [Adobe Admin Console](https://adminconsole.adobe.com/). Lisez la suite pour connaître les conditions préalables et les détails à intégrer.
+[!UICONTROL Account IQ] est une application web hébergée. Pour commencer à utiliser cet outil d’analyse en tant que fournisseur, programmeur ou distributeur D2C (MVPD) et limiter le partage des informations d’identification, vous devez intégrer votre organisation dans les organisations Adobe Experience Cloud et affecter des utilisateurs de l’organisation à un profil **[!UICONTROL Primetime Account IQ]** sur [Adobe Admin Console](https://adminconsole.adobe.com/). Lisez la suite pour connaître les conditions préalables et les détails à intégrer.
 
 ## Conditions préalables du navigateur {#browser-prerequisites}
 
@@ -23,26 +23,26 @@ ht-degree: 0%
 
 ## Étapes à intégrer {#steps-to-onboard}
 
-1. Pour que votre organisation soit enregistrée dans **Adobe Experience Cloud** coordonnées des organisations **Adobe** en envoyant un email à tve-support@adobe.com.
+1. Pour que votre organisation soit enregistrée dans **Adobe Experience Cloud**, contactez **Adobe** en envoyant un e-mail à tve-support@adobe.com.
 
-1. Affectez des utilisateurs de l’entreprise à **[!UICONTROL TVE Dashboard Read-Write]** ou **[!UICONTROL TVE Dashboard Read Only]** profils dans [Adobe Admin Console](https://adminconsole.adobe.com/).
+1. Affectez des utilisateurs de l&#39;organisation à des profils **[!UICONTROL TVE Dashboard Read-Write]** ou **[!UICONTROL TVE Dashboard Read Only]** dans [Adobe Admin Console](https://adminconsole.adobe.com/).
 
-   Les administrateurs de votre entreprise peuvent créer des utilisateurs et leur accorder l’accès à [!UICONTROL Account IQ Dashboard and Reports]. Pour accorder aux utilisateurs de l’organisation l’accès à [!UICONTROL Account IQ], les administrateurs de l’organisation doivent :
+   Les utilisateurs administrateurs de votre entreprise peuvent créer des utilisateurs et leur accorder l’accès à [!UICONTROL Account IQ Dashboard and Reports]. Pour accorder aux utilisateurs de l’organisation l’accès à [!UICONTROL Account IQ], les administrateurs de l’organisation doivent :
 
-   1. Connexion à [Adobe Admin Console](https://adminconsole.adobe.com/).
+   1. Connectez-vous à [Adobe Admin Console](https://adminconsole.adobe.com/).
 
 
       ![](assets/admin-console.png)
 
-   1. Sélectionner **[!UICONTROL Adobe Primetime]** de **[!UICONTROL Products and services]**.
+   1. Sélectionnez **[!UICONTROL Adobe Primetime]** dans **[!UICONTROL Products and services]**.
 
-   1. De **[!UICONTROL Product Profiles]**, sélectionnez **[!UICONTROL TVE Dashboard Read-Write]** ou **[!UICONTROL TVE Dashboard Read Only]** profile.
+   1. À partir de **[!UICONTROL Product Profiles]**, sélectionnez le profil **[!UICONTROL TVE Dashboard Read-Write]** ou **[!UICONTROL TVE Dashboard Read Only]**.
 
       ![](assets/product-profiles.png)
 
       >[!NOTE]
       >
-      >Dans un proche avenir, Primetime [!UICONTROL Account IQ] est divisé par [!UICONTROL TVE Dashboard].
+      >Dans un proche avenir, Primetime [!UICONTROL Account IQ] se divisera de [!UICONTROL TVE Dashboard].
 
    1. Vous pouvez ensuite créer des groupes d’utilisateurs ou sélectionner des groupes existants auxquels ajouter des utilisateurs.
 
@@ -52,4 +52,4 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Si vos utilisateurs ne peuvent pas accéder à [!UICONTROL Account IQ] tableau de bord, contactez l’assistance Adobe pour vous assurer que l’ID de votre organisation est mis en liste blanche dans [!UICONTROL Account IQ].
+>Si vos utilisateurs ne peuvent pas accéder au tableau de bord [!UICONTROL Account IQ], contactez l’assistance Adobe pour vous assurer que l’ID de votre organisation est autorisé dans [!UICONTROL Account IQ].

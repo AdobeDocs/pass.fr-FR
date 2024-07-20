@@ -1,10 +1,11 @@
 ---
 title: Mécanisme de contrôle de l’intégrité du stockage iOS/tvOS
 description: Mécanisme de vérification de l’intégrité iOS/tvOS
-source-git-commit: 444a81ad18afcb26dcf3ae8b41f4d02c465f4655
+exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
+source-git-commit: e8a9e53f8bb0a06379d90a91a57335d2897342b0
 workflow-type: tm+mt
-source-wordcount: '327'
-ht-degree: 1%
+source-wordcount: '323'
+ht-degree: 2%
 
 ---
 
@@ -68,5 +69,5 @@ L’énumération IntegrityCheckType est exposée à l’application cliente et 
 | Valeur | Vérifications effectuées | Stockage effacé | Description | Cas d’utilisation recommandé |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Aucun | Jamais | Aucune vérification de l’intégrité n’est effectuée lors de l’initialisation du stockage | Lorsque les flux de SDK fonctionnent comme prévu |
-| INTEGRITY_CHECK_ALL | Fonctionnement du stockage <br/> Validité des valeurs stockées | Échec de la vérification | Toutes les vérifications d’intégrité disponibles sont effectuées lors de l’initialisation du stockage. | Lorsque la corruption du stockage du SDK est suspectée. <br/> En cas d’échec des contrôles d’intégrité, l’utilisateur est déconnecté. |
+| INTEGRITY_CHECK_ALL | Opérabilité de stockage <br/> Validité des valeurs stockées | Échec de la vérification | Toutes les vérifications d’intégrité disponibles sont effectuées lors de l’initialisation du stockage. | Lorsque la corruption du stockage du SDK est suspectée. <br/> En cas d’échec des contrôles d’intégrité, l’utilisateur est déconnecté. |
 | INTEGRITY_CHECK_CLEAR | Aucun | Toujours | Le stockage est effacé lors de l’initialisation du stockage. | Lorsque les flux de SDK ne peuvent pas être terminés comme prévu |

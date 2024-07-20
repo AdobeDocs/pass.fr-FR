@@ -4,7 +4,7 @@ description: Enregistrement de l’application Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -35,31 +35,31 @@ Une instruction logicielle est un jeton JWT qui contient des informations sur vo
 
 1. Ouvrez votre navigateur et accédez à `https://console.auth.adobe.com`.
 
-1. Accédez au **[!UICONTROL Channels]** , puis sélectionnez votre canal.
+1. Accédez à la section **[!UICONTROL Channels]** , puis sélectionnez votre canal.
 
-1. Accédez au **[!UICONTROL Registered Applications]** .
+1. Accédez à l’onglet **[!UICONTROL Registered Applications]** .
 
 1. Cliquez sur **[!UICONTROL Add new application]**.
 
 1. Attribuez un nom et une version à votre application, puis sélectionnez les plateformes sur lesquelles elle sera disponible (Android, par exemple).
 
-1. Fournissez une **[!UICONTROL Domain Name]** en choisissant parmi une liste de domaines déjà configurés pour votre programmeur.
+1. Fournissez un **[!UICONTROL Domain Name]** en choisissant parmi une liste de domaines déjà configurés pour votre programmeur.
 
-1. Envoyez vos modifications au serveur, puis revenez au **[!UICONTROL Registered Applications]** .
+1. Poussez vos modifications sur le serveur, puis revenez à l’onglet **[!UICONTROL Registered Applications]** de votre canal.
 
    Vous devriez voir une liste contenant toutes les applications enregistrées.
 
-1. Cliquez sur **[!UICONTROL Download]** sur l’application que vous venez de créer.
+1. Cliquez sur **[!UICONTROL Download]** dans l’application que vous venez de créer.
 
    Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle ne soit prête au téléchargement.
 
    Téléchargements d’un fichier texte. Utilisez son contenu comme déclaration logicielle.
 
-Pour plus d’informations, voir [Gestion de l’enregistrement du client dynamique](/help/authentication/dynamic-client-registration-management.md)
+Pour plus d’informations, voir [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md)
 
 ### Si vous n’avez pas accès au tableau de bord TVE d’Adobe :
 
-Envoyer un ticket à [tve-support@adobe.com](mailto:tve-support@adobe.com). Incluez toutes les informations nécessaires, y compris le canal, le nom de l’application, la version et les plateformes, et une personne de notre équipe d’assistance créera une déclaration logicielle pour vous.
+Envoyez un ticket à [tve-support@adobe.com](mailto:tve-support@adobe.com). Incluez toutes les informations nécessaires, y compris le canal, le nom de l’application, la version et les plateformes, et une personne de notre équipe d’assistance créera une déclaration logicielle pour vous.
 
 ## Utilisation de l’instruction logicielle {#use}
 
@@ -67,7 +67,7 @@ Après avoir obtenu votre instruction logicielle, vous devez la transmettre en t
 
 ## Utilisation de l’instruction logicielle {#use-both}
 
-Dans le fichier de ressources de votre application `strings.xml` ajoutez le code suivant :
+Dans le fichier de ressources de votre application `strings.xml`, ajoutez le code suivant :
 
 ```XML
 <string name="software_statement">softwarestatement value</string>

@@ -18,14 +18,14 @@ ht-degree: 0%
 
 ## Vue d’ensemble {#overview}
 
-Ce document fournit des instructions détaillées à l’équipe d’ingénierie d’un programmeur afin qu’elle intègre un &quot;appareil intelligent&quot; (console de jeu, application de télévision dynamique, décodeur, etc.). avec l’authentification Adobe Pass à l’aide des services d’API REST. Cette approche client-serveur, qui utilise des API REST plutôt qu’un SDK client, permet une prise en charge plus large de différentes plateformes pour lesquelles le développement d’un nombre important de SDK uniques ne serait pas possible. Pour une présentation technique générale du fonctionnement de la solution sans client, voir la section [Présentation technique sans client](/help/authentication/rest-api-overview.md).
+Ce document fournit des instructions détaillées à l’équipe d’ingénierie d’un programmeur afin qu’elle intègre un &quot;appareil intelligent&quot; (console de jeu, application de télévision dynamique, décodeur, etc.). avec l’authentification Adobe Pass à l’aide des services d’API REST. Cette approche client-serveur, qui utilise des API REST plutôt qu’un SDK client, permet une prise en charge plus large de différentes plateformes pour lesquelles le développement d’un nombre important de SDK uniques ne serait pas possible. Pour une présentation technique générale du fonctionnement de la solution sans client, consultez la [présentation technique sans client](/help/authentication/rest-api-overview.md).
 
 
 Cette approche nécessite deux composants (application en continu et application AuthN) pour effectuer les flux requis : démarrage, enregistrement, autorisation et flux d’affichage multimédia dans l’application en continu, ainsi que le flux d’authentification dans votre application AuthN.
 
 ### Mécanisme de ralentissement
 
-L’API REST d’authentification Adobe Pass est régie par une [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md).
+L’API REST d’authentification Adobe Pass est régie par un [mécanisme de limitation](/help/authentication/throttling-mechanism.md).
 
 ## Composants {#components}
 
@@ -44,7 +44,7 @@ Dans une solution client à serveur opérationnelle, les composants suivants son
 
 
 
-Les termes supplémentaires utilisés dans le flux sont définis dans la variable [Glossaire](/help/authentication/glossary.md).
+Les termes supplémentaires utilisés dans le flux sont définis dans le [Glossaire](/help/authentication/glossary.md).
 
 ## Flux{#flows}
 
@@ -65,7 +65,7 @@ Adobe Pass utilise DCR pour sécuriser les communications client entre une appli
 
 3. Envoyez un appel de vérification d’authentification pour voir si l’appareil est déjà authentifié.  Par exemple : [`<SP_FQDN>/api/v1/checkauthn [device ID]`](/help/authentication/check-authentication-token.md)
 
-4. Si la variable `checkauthn` L’appel réussit, passez au flux d’autorisation à partir de l’étape 2.  En cas d’échec, démarrez le flux d’enregistrement.
+4. Si l’appel `checkauthn` réussit, passez au flux d’autorisation à partir de l’étape 2.  En cas d’échec, démarrez le flux d’enregistrement.
 
 
 
@@ -83,7 +83,7 @@ Adobe Pass utilise DCR pour sécuriser les communications client entre une appli
 
 #### Flux d’autorisation
 
-1. L’utilisateur revient de l’application du deuxième écran et appuie sur le bouton &quot;Continuer&quot; sur votre appareil. Vous pouvez également mettre en oeuvre un mécanisme d’interrogation pour vérifier l’état d’authentification, mais l’authentification Adobe Pass recommande la méthode du bouton Continuer sur l’interrogation. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Par exemple : [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
+1. L’utilisateur revient de l’application du deuxième écran et appuie sur le bouton &quot;Continuer&quot; sur votre appareil. Vous pouvez également mettre en oeuvre un mécanisme d’interrogation pour vérifier l’état d’authentification, mais l’authentification Adobe Pass recommande la méthode du bouton Continuer sur l’interrogation. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Par exemple : [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
 
 2. Envoyez une demande de GET au service d’autorisation d’authentification Adobe Pass pour lancer l’autorisation. Par exemple : `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
@@ -109,9 +109,11 @@ Adobe Pass utilise DCR pour sécuriser les communications client entre une appli
 
    a. Votre application vérifie si le média est protégé.
 
-   b. Si le média est protégé, votre application lance le flux d’autorisation (AuthZ) ci-dessus.
+   b. Si le média est protégé, votre application démarre l’autorisation
+(AuthZ) Flux ci-dessus.
 
-   c. Si le média n’est pas protégé, lisez-le pour l’utilisateur.
+   c. Si le média n’est pas protégé, lisez-le pour la variable
+utilisateur.
 
 3. Lecture du média.
 
@@ -139,7 +141,7 @@ Certaines plateformes prennent en charge la connexion unique (SSO). Les détails
 
 Pour les implémentations TempPass et TempPass de promotion dans le cas où l’utilisateur n’est pas tenu de saisir des informations d’identification, l’authentification peut être mise en oeuvre directement dans l’application de diffusion en continu.
 
-**Pour utiliser cette API, l’application de diffusion en continu doit s’assurer que l’identifiant de l’appareil est unique, car il est utilisé pour identifier le jeton, ainsi que les données supplémentaires facultatives.**
+**Pour utiliser cette API, l’application de diffusion en continu doit s’assurer que l’identifiant unique de l’appareil est utilisé pour identifier le jeton, ainsi que les données supplémentaires facultatives.**
 
 
 ![](assets/temp-pass-promo-temppass.png)

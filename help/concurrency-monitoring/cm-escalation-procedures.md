@@ -1,32 +1,32 @@
 ---
 title: Procédures de réaffectation de la surveillance de la simultanéité
 description: Procédures de réaffectation de la surveillance de la simultanéité
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
-
 
 # Procédures de réaffectation de la surveillance de la simultanéité {#esc-procedures}
 
 >[!NOTE]
 >
->Appelez la hotline : +1-205-693-9813 et envoyez un email à `tve-support@adobe.com` y compris &quot;URGENT - INCIDENT&quot; dans la ligne d’objet.
+>Appelez la hotline : +1-205-693-9813 et envoyez un email à `tve-support@adobe.com` incluant &quot;URGENT - INCIDENT&quot; dans l&#39;objet.
 
 
 ## Introduction {#cm-escalation-intro}
 
-Ce document décrit les procédures d’assistance pour les incidents majeurs (**SEVERITY 1** niveau) affectant l’authentification Adobe Pass, la surveillance de la simultanéité Adobe Pass et ses partenaires.
+Ce document décrit les procédures de prise en charge pour les incidents majeurs (**niveau SEVERITY 1**) affectant l’authentification Adobe Pass, la surveillance de la simultanéité Adobe Pass et ses partenaires.
 
 ## Définition du niveau de gravité 1 de réaffectation {#defn-escl-sevrityone-level}
 
-A **SEVERITY 1** un incident de niveau **LIVE** situation, **survenant dans l’environnement de production**, qui ne permet pas l’achèvement des flux d’authentification et/ou d’autorisation pour un canal et un MVPD, affectant un grand nombre d’abonnés du MVPD exécutant le flux.
+Un incident de niveau **SEVERITY 1** est une situation **LIVE**, **se produisant dans l’environnement de production**, qui ne permet pas la fin des flux d’authentification et/ou d’autorisation pour un canal et un MVPD, affectant un grand nombre d’abonnés du MVPD exécutant le flux.
 
 ## Exemples d’incidents de gravité 1 {#exampl-sevone-incident}
 
-* L’activation d’accès en production hébergée à l’adresse <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> n’est pas disponible.
+* L’activateur d’accès en production hébergé à <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> n’est pas disponible.
 
 * Pour un MVPD spécifique, l’Adobe ne redirige/n’affiche plus la page de connexion, une fois que l’utilisateur a sélectionné le MVPD (dans l’un des navigateurs pris en charge).
 
@@ -35,14 +35,14 @@ A **SEVERITY 1** un incident de niveau **LIVE** situation, **survenant dans l’
 * Pendant le processus d’authentification, l’utilisateur est bloqué sur une page d’erreur d’Adobe sans possibilité de relancer le flux d’authentification/d’autorisation.
 
 
-## Exemples de *NOT* un incident de gravité 1 {#exampl-not-sev1}
+## Exemples d’incident *NOT* a Severity 1 {#exampl-not-sev1}
 
-*Pour les problèmes de ce type, l’Adobe fournira un soutien pour les enquêtes, mais il ne s’agit pas d’incidents de gravité 1 :*
+*Pour les problèmes de ce type, Adobe va fournir une assistance pour les enquêtes, mais il ne s&#39;agit pas d&#39;incidents de gravité 1 :*
 
 * Un ou plusieurs abonnés ne sont pas en mesure d’effectuer le flux en raison d’un problème de version de Flash (Flash manquant, bloqueurs de Flashs, version de Flash incorrecte).
 * Un ou plusieurs abonnés ne peuvent pas s’authentifier et restent sur la page de connexion MVPD.
 * Un ou plusieurs abonnés sont authentifiés mais ne peuvent pas lire de vidéos.
-* Un/plusieurs/tous les abonnés rencontrent une erreur JavaScript sur le site du programmeur.
+* Un ou plusieurs abonnés/tous rencontrent une erreur JavaScript sur le site du programmeur.
 
 ## Flux de réaffectation de gravité 1 {#sevone-escalation-flows}
 
@@ -79,11 +79,11 @@ Les incidents de gravité 1 peuvent être initiés par un Adobe ou un partenaire
 1. Adobe travaille à la résolution de l&#39;incident et tient informés tous les partenaires concernés.
 
 
-**...pour un problème de partenaire (Programmeur/MVPD)**
+**...pour un problème de partenaire (programmeur/MVPD)**
 
 1. Adobe identifie un problème lié à l’intégration à un MVPD ou à l’un des sites du programmeur.
 
-1. Adobe informe le partenaire concerné **suivre les procédures d&#39;assistance en place avec ce partenaire ;** et ouvre un ticket auprès de l’organisation d’assistance du partenaire.
+1. Adobe avertit le partenaire concerné **en suivant les procédures d’assistance en place avec ce partenaire** et ouvre un ticket auprès de l’organisation d’assistance du partenaire.
 
 1. Si, lors de l’analyse de l’impact, l’Adobe identifie que la question appartient à l’une des décisions prévalant dans les scénarios d’incident (voir la section &quot;Décisions prévalidées dans les scénarios d’incident&quot; ci-dessous), il agira en conséquence sans attendre le partenaire1. Entrée de .
 

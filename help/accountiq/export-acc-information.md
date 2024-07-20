@@ -11,21 +11,21 @@ ht-degree: 1%
 
 # Exporter des informations pour les comptes avec un score de partage élevé {#export-account-info-high-score}
 
-[!UICONTROL Account IQ] vous permet d’exporter les détails du partage de compte pour les 1 000 premiers comptes abonnés en fonction de leurs [probabilités de partage](/help/accountiq/product-concepts.md#account-sharing-probability-def). Vous pouvez exporter les informations de partage de compte pour la [segment](/help/accountiq/product-concepts.md#segment-def) et [intervalle de temps spécifié](/help/accountiq/product-concepts.md#time-interval-def) sur le [Rapports sur les comptes partagés](/help/accountiq/shared-acc-reports.md) page.
+[!UICONTROL Account IQ] vous permet d’exporter les détails du partage de compte pour les 1 000 premiers comptes abonnés en fonction de leurs [probabilités de partage](/help/accountiq/product-concepts.md#account-sharing-probability-def). Vous pouvez exporter les informations de partage de compte pour le [segment](/help/accountiq/product-concepts.md#segment-def) et l&#39;[intervalle de temps spécifié](/help/accountiq/product-concepts.md#time-interval-def) actuel sur la page [Rapports sur les comptes partagés](/help/accountiq/shared-acc-reports.md) .
 
 Suivez les étapes pour exporter les informations de partage de compte des comptes abonnés pour un segment spécifique.
 
 1. Connectez-vous à l’aide de vos informations d’identification.
-1. Accédez au **Comptes partagés** sous **Rapports** .
-1. Sélectionnez le segment et l’intervalle dans le panneau Segment et intervalle de temps. Formation [comment sélectionner un segment et un intervalle de temps](segments-timeinterval.md).
+1. Accédez à l’onglet **Comptes partagés** sous la section **Rapports** .
+1. Sélectionnez le segment et l’intervalle dans le panneau Segment et intervalle de temps. Découvrez [comment sélectionner un segment et un intervalle de temps](segments-timeinterval.md).
 
-   Si nécessaire, reportez-vous aux instructions pour [création d’un segment](work-with-segments.md#create-new-segment) ou [modification d’un segment](work-with-segments.md#edit-segment).
+   Si nécessaire, reportez-vous aux instructions de [création d’un segment](work-with-segments.md#create-new-segment) ou de [modification d’un segment](work-with-segments.md#edit-segment).
 
-1. Sélectionner **[!UICONTROL Export top 1000 accounts]** situé dans le coin supérieur droit du panneau segment et intervalle de temps.
+1. Sélectionnez **[!UICONTROL Export top 1000 accounts]** dans le coin supérieur droit du panneau du segment et de l’intervalle de temps.
 
    ![Exporter les 1 000 premiers comptes](assets/export-top-1000-accounts.png)
 
-   *Sélectionnez l’option Exporter les 1 000 premiers comptes .*
+   *Sélectionner l’option Exporter les 1 000 premiers comptes*
 
 Le fichier sera automatiquement téléchargé sur votre ordinateur local au format .csv.
 
@@ -33,15 +33,15 @@ Ce fichier contient les données des 1000 premiers comptes en fonction des proba
 
 Voici un exemple du fichier .csv exporté.
 
-![données exportées dans le fichier .csv](assets/exported-csv.png)
+![données exportées dans un fichier .csv](assets/exported-csv.png)
 
-*Données exportées dans le fichier .csv*
+*Données exportées dans un fichier .csv*
 
 ## Colonnes du rapport exporté {#columns-in-export}
 
 **Semaine/Mois**
 
-La semaine ou le mois sélectionné dans la variable **[!UICONTROL Granularity and Time Interval]** dans le sélecteur de segments.
+Semaine ou mois sélectionné dans l’option **[!UICONTROL Granularity and Time Interval]** du sélecteur de segments.
 
 **MVPD**
 
@@ -49,13 +49,13 @@ Si vous êtes programmeur, la colonne indique le distributeur avec lequel le com
 
 >[!NOTE]
 >
-> La variable **MVPD** n’est disponible que pour les versions TV partout.
+> La colonne **MVPD** n’est disponible que pour les versions TV partout.
 
 **ID d’abonné**
 
 Identifiant unique du compte spécifique.
 
-**Nombre minimal d’appareils**
+**Minimum # Devices**
 
 Nombre minimum d’appareils sur lesquels les utilisateurs diffusent activement du contenu.
 
@@ -89,7 +89,7 @@ Nombre d’états où l’activité de diffusion en continu a eu lieu.
 
 **[!UICONTROL # Clusters]**
 
-Le nombre de variables distinctes [grappes](/help/accountiq/product-concepts.md#cluster-def) où la diffusion en continu a eu lieu.
+Nombre de [clusters](/help/accountiq/product-concepts.md#cluster-def) distincts où la diffusion en continu a eu lieu.
 
 **[!UICONTROL Geographic span (miles)]**
 
@@ -101,7 +101,7 @@ Nombre d’identifications effectuées par les utilisateurs au cours de la péri
 
 >[!NOTE]
 >
-> Certains services D2C peuvent ne pas voir **[!UICONTROL # AuthN OK]** données, car elles peuvent ne pas être incluses dans les données de leur entreprise.
+> Certains services D2C peuvent ne pas voir les données **[!UICONTROL # AuthN OK]**, car elles peuvent ne pas être incluses dans les données de leur entreprise.
 
 **[!UICONTROL # AuthZ OK]**
 
@@ -113,7 +113,7 @@ Nombre de fois où un MVPD a autorisé un flux ou accordé l’accès au contenu
 
 >[!NOTE]
 >
->Pour TV partout, **[!UICONTROL # AuthZ OK]** est corrélé avec le nombre de **[# Lecture de requêtes](/help/accountiq/product-concepts.md##play-requests-def)**. Elle sera toujours inférieure à **[!UICONTROL # Play Requests]** car Adobe met généralement les autorisations des MVPD en cache pendant environ 24 heures.
+>Pour TV partout, **[!UICONTROL # AuthZ OK]** est corrélé avec le nombre de **[# Requêtes de lecture](/help/accountiq/product-concepts.md##play-requests-def)**. Il sera toujours inférieur à **[!UICONTROL # Play Requests]**, car Adobe met généralement en cache les autorisations des MVPD pendant environ 24 heures.
 
 
 **[!UICONTROL # Play Requests]**
@@ -122,7 +122,7 @@ Le nombre réel de diffusions s’est produit au cours d’une période donnée.
 
 >[!NOTE]
 >
->La variable [# Lecture de requêtes](/help/accountiq/product-concepts.md##play-requests-def) n’est pas disponible dans la version MVPD de TV Everywhere.
+>La colonne [# Requêtes de lecture](/help/accountiq/product-concepts.md##play-requests-def) n’est pas disponible dans la version TV Everywhere MVPD.
 
 **[!UICONTROL # Channels]**
 
@@ -130,7 +130,7 @@ Nombre total de canaux que le compte a visionnés au cours d’une période donn
 
 >[!NOTE]
 >
-> Pour les services D2C **[!UICONTROL # Channels]** équivaut au nombre de **[!UICONTROL # Video categories]**.
+> Pour les services D2C **[!UICONTROL # Channels]**, c’est-à-dire le nombre de **[!UICONTROL # Video categories]**.
 
 >[!NOTE]
 >
@@ -198,7 +198,7 @@ Les valeurs de ces colonnes servent d’identifiants correspondant à l’un des
     </tbody>
   </table>
 
-*Identifiants de modèle d’utilisation dans le mappage .csv exporté avec des modèles d’utilisation*
+*Identifiants de modèle d’utilisation dans le mappage .csv exporté avec des schémas d’utilisation*
 
 **Probabilité de partage**
 
@@ -206,4 +206,4 @@ La probabilité qu’un compte spécifique partage ses informations d’identifi
 
 >[!NOTE]
 >
-> La moyenne de la probabilité de partage de tous les comptes dans le segment sélectionné est utilisée pour calculer la valeur [niveau de partage](/help/accountiq/data-panels.md#sharing-level) de [note de partage moyenne](/help/accountiq/data-panels.md#aggregated-sharing).
+> La moyenne de la probabilité de partage de tous les comptes du segment sélectionné est utilisée pour calculer le [niveau de partage](/help/accountiq/data-panels.md#sharing-level) de la [ note de partage moyenne](/help/accountiq/data-panels.md#aggregated-sharing).

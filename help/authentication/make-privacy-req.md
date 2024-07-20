@@ -4,7 +4,7 @@ description: Comment effectuer une demande d’accès à des informations person
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ nous vous fournirons un fichier JSON qui contient un résumé du nombre total de
 tous ces événements sont filtrés par client.
 
 
-**Exemple de requête**
+**Demander un exemple**
 
 Vous devez charger un fichier JSON avec les identifiants d’authentification Adobe Pass pour lesquels vous envoyez la demande d’accès aux données. Pour voir à quoi ressemble un fichier JSON bien formé, reportez-vous à cet exemple :
 
@@ -134,7 +134,7 @@ Vous devez charger un fichier JSON avec les identifiants d’authentification Ad
 
 Vous devez charger un fichier JSON avec les identifiants d’authentification Adobe Pass pour lesquels vous envoyez la demande de suppression de données. Pour voir à quoi ressemble un fichier JSON bien formé, reportez-vous à cet exemple :
 
-**Exemple de requête**
+**Demander un exemple**
 
 ```JSON
 {
@@ -221,12 +221,12 @@ Pour une demande de suppression :
 
 Deux options permettent aux clients d’envoyer des demandes d’accès à des informations personnelles à Adobe :
 
-* **manuellement** - en utilisant [Interface utilisateur du Privacy Service](#privacy-service-ui)
-* **automatiquement** - en utilisant [API PRIVACY SERVICE](#privacy-service-api)
+* **manuellement** - à l’aide de [l’interface utilisateur du Privacy Service](#privacy-service-ui)
+* **automatiquement** - à l’aide de [l’API Privacy Service](#privacy-service-api)
 
 ### Utilisation de l’interface utilisateur de Privacy Service {#privacy-service-ui}
 
-A [tutoriel complet](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sur l’accès et l’utilisation de l’interface utilisateur de Privacy Service sont disponibles en ligne via les services Adobe I/O. En outre, les clients peuvent utiliser ce lien pour accéder à la bibliothèque de vidéos et d’articles sur la réglementation de la confidentialité. Cliquez sur le menu Adobe Experience Cloud et RGPD . Cela ouvre un certain nombre de vidéos - &quot;Comment utiliser l’interface utilisateur en vertu du RGPD&quot; explique comment l’utiliser.
+Un [tutoriel complet](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sur l&#39;accès et l&#39;utilisation de l&#39;interface utilisateur du Privacy Service est disponible en ligne via les services Adobe I/O. En outre, les clients peuvent utiliser ce lien pour accéder à la bibliothèque de vidéos et d’articles sur la réglementation de la confidentialité. Cliquez sur le menu Adobe Experience Cloud et RGPD . Cela ouvre un certain nombre de vidéos - &quot;Comment utiliser l’interface utilisateur en vertu du RGPD&quot; explique comment l’utiliser.
 
 Dans l’interface utilisateur, les clients doivent charger leur propre IMSOrgID et un fichier JSON contenant les détails des demandes en vertu du RGPD pour chaque produit.
 
@@ -234,16 +234,16 @@ Dans l’interface utilisateur, les clients doivent charger leur propre IMSOrgID
 
 Adobe Experience Platform Privacy Service offre une facilitation centralisée et commune des demandes d’accès/de suppression et des demandes d’opposition à la vente des données privées.
 
-La variable **Documentation de l’API Privacy Service** Décrit en détail la manière dont un client Adobe peut s’intégrer à l’API Adobe.
+La **documentation de l’API Privacy Service** explique en détail comment un client Adobe peut s’intégrer à l’API Adobe.
 
-**Visualisez les appels d’API avec Postman (un logiciel tiers gratuit) :**
+**Visualiser les appels API avec Postman (un logiciel tiers gratuit) :**
 
-* [Collection Postman d’API Privacy Service sur GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [ Collection Postman de l&#39;API Privacy Service sur GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
 * [Guide vidéo pour la création de l’environnement Postman](https://video.tv.adobe.com/v/28832)
-* [Procédure d’importation d’environnements et de collections dans Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
+* [ Étapes pour importer des environnements et des collections dans Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
-**Chemins d’accès aux API :**
+**Chemins d’accès API :**
 
 * URL de la passerelle PLATFORM : `https://platform.adobe.io/`
 * Chemin d’accès de base pour cette API : `/data/core/privacy/jobs`
@@ -252,8 +252,8 @@ La variable **Documentation de l’API Privacy Service** Décrit en détail la m
 
 **En-têtes requis :**
 
-* Tous les appels nécessitent des en-têtes `Authorization`, `x-gw-ims-org-id`, et `x-api-key`. Pour plus d’informations sur l’obtention de ces valeurs, voir la section **tutoriel sur l’authentification**.
-* Toutes les requêtes comportant un payload dans le corps de la requête (comme les appels POST, PUT et PATCH) doivent inclure l’en-tête . `Content-Type` avec la valeur de `application/json`.
+* Tous les appels nécessitent les en-têtes `Authorization`, `x-gw-ims-org-id` et `x-api-key`. Pour plus d’informations sur la manière d’obtenir ces valeurs, consultez le **tutoriel sur l’authentification**.
+* Toutes les requêtes avec un payload dans le corps de la requête (comme les appels de POST, de PUT et de PATCH) doivent inclure l’en-tête `Content-Type` avec une valeur `application/json`.
 
 <!--
 

@@ -4,8 +4,8 @@ description: Transmission des informations client (appareil, connexion et applic
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '1681'
-ht-degree: 0%
+source-wordcount: '1643'
+ht-degree: 2%
 
 ---
 
@@ -27,35 +27,35 @@ Les avantages de fournir des informations sur le client sont les suivants :
 * La possibilité d’agréger correctement les mesures commerciales dans des rapports ventilés entre types d’appareils à l’aide du contrôle du service de droits (ESM).
 * Débloque la possibilité d’appliquer correctement diverses règles de fonctionnement (par exemple, dégradation) sur des types d’appareils spécifiques.
 
-## Présentation {#pass-client-info-overview}
+## Vue d’ensemble {#pass-client-info-overview}
 
 Les informations du client sont les suivantes :
 
-* **Appareil** informations sur les attributs matériels et logiciels de l’appareil à partir duquel l’utilisateur tente d’utiliser le contenu du programmeur.
-* **Connexion** des informations sur les attributs de connexion de l’appareil à partir duquel l’utilisateur se connecte aux services d’authentification Adobe Pass et/ou aux services de programmeur (par exemple, implémentations serveur à serveur).
+* **Device** - Informations sur les attributs matériels et logiciels de l’appareil à partir duquel l’utilisateur tente d’utiliser le contenu du programmeur.
+* **Connexion** informations sur les attributs de connexion de l’appareil à partir duquel l’utilisateur se connecte aux services d’authentification Adobe Pass et/ou aux services de programmeur (par exemple, implémentations serveur à serveur).
 * **Application** informations sur l’application enregistrée à partir de laquelle l’utilisateur tente d’utiliser le contenu du programmeur.
 
 Les informations client sont un objet JSON créé avec des clés présentées dans le tableau suivant.
 
 >[!NOTE]
 >
->Les éléments suivants **keys** are **mandatory** à envoyer dans l’objet JSON d’informations client : **model**, **osName**.
+>Les **keys** suivants sont **mandatory** à envoyer dans l’objet JSON d’informations client : **model**, **osName**.
 >
->Les clés suivantes sont **Restriction** values : `primaryHardwareType`, `osName`, `osFamily`, `browserName`, `browserVendor`, `connectionSecure`.
+>Les clés suivantes ont des valeurs **restricted** : `primaryHardwareType`, `osName`, `osFamily`, `browserName`, `browserVendor`, `connectionSecure`.
 
 |   | Clé | Restricted | Description | Valeurs possibles |
 |---|---|---|---|---|
-|            | primaryHardwareType | # Oui | Type matériel principal de l’appareil. | # Les valeurs sont restreintes : Camera DataCollectionTerminal Desktop EmbeddedNetworkModule eReader GamesConsole GéolocationTracker Lunettes MediaPlayer MobilePhone paiementTerminal PluginModem SetTopBox TV Tablet WirelessHotspot Wristwatch Inconnu |
+|            | primaryHardwareType | # Oui | Type matériel principal de l’appareil. | # Les valeurs sont restreintes :                                                                     Appareil photo                                                      DataCollectionTerminal                                                      Bureau                                                      EmbeddedNetworkModule                                                      eReader                                                      GamesConsole                                                      GeolocationTracker                                                      Lunettes                                                      MediaPlayer                                                      MobilePhone                                                      PayTerminal                                                      PluginModem                                                      SetTopBox                                                      TV                                                      Tablette                                                      WirelessHotspot                                                      Wistwatch                                                      Inconnu |
 | #mandatory | model | Non | Nom du modèle de l’appareil. | par exemple iPhone, SM-G930V, Apple TV, etc. |
 |            | version | Non | Version de l’appareil. | par exemple, 2.0.1, etc. |
 |            | manufacturer | Non | Entreprise/organisation de fabrication de l’appareil. | Par exemple, Samsung, LG, ZTE, Huawei, Motorola, Apple, etc. |
 |            | vendor | Non | Entreprise/organisation de vente de l’appareil. | par exemple Apple, Samsung, LG, Google, etc. |
-| #mandatory | osName | # Oui | Nom du système d’exploitation du périphérique. | # Les valeurs sont restreintes : Android Chrome OS Linux Mac OS X OpenBSD Roku OS Windows iOS tvOS webOS |
-|            | osFamily | Oui | Nom du groupe Système d’exploitation du périphérique. | # Les valeurs sont restreintes : Android BSD Linux PlayStation OS Roku OS Symbian Tizen Windows iOS macOS tvOS webOS |
-|            | osVendor | Non | Fournisseur du système d’exploitation du périphérique. | Amazon Apple Google LG Microsoft Mozilla Nintendo Nokia Roku Samsung Projet Sony Tizen |
+| #mandatory | osName | # Oui | Nom du système d’exploitation du périphérique. | # Les valeurs sont restreintes :                                                   Android                   CHROME OS                   Linux                   MAC OS                   OS X                   OpenBSD                   Roku OS                   Windows                   iOS                   tvOS                   webOS |
+|            | osFamily | Oui | Nom du groupe Système d’exploitation du périphérique. | # Les valeurs sont restreintes :                                                   Android                   BSD                   Linux                   SE PlayStation                   Roku OS                   Symbian                   Tizen                   Windows                   iOS                   macOS                   tvOS                   webOS |
+|            | osVendor | Non | Fournisseur du système d’exploitation du périphérique. | Amazon                   Apple                   Google                   LG                   Microsoft                   Mozilla                   Nintendo                   Nokia                   Roku                   Samsung                   Sony                   Projet Tizen |
 |            | osVersion | Non | Version du système d’exploitation du périphérique. | par exemple, 10.2, 9.0.1, etc. |
-|            | browserName | # Oui | Nom du navigateur. | # Les valeurs sont restreintes : navigateur Android Chrome Edge Firefox Internet Explorer Opera Safari SeaMonkey Symbian Browser |
-|            | browserVendor | # Oui | Entreprise/organisation de construction du navigateur. | # Les valeurs sont restreintes : Amazon Apple Google Microsoft Motorola Mozilla Netscape Nintendo Nokia Samsung Sony Ericsson |
+|            | browserName | # Oui | Nom du navigateur. | # Les valeurs sont restreintes :                                                   Explorateur Android                   Chrome                   Edge                   Firefox                   Internet Explorer                   Opera                   Safari                   SeaMonkey                   Navigateur Symbian |
+|            | browserVendor | # Oui | Entreprise/organisation de construction du navigateur. | # Les valeurs sont restreintes :                                                   Amazon                   Apple                   Google                   Microsoft                   Motorola                   Mozilla                   Netscape                   Nintendo                   Nokia                   Samsung                   Sony Ericsson |
 |            | browserVersion | Non | Version du navigateur de l’appareil. | par exemple, 60.0.3112 |
 |            | userAgent | Non | L’agent utilisateur de l’appareil. | Par exemple, Mozilla/5.0 (Macintosh ; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, comme Gecko) Version/10.0.3 Safari/602.4.8 |
 |            | displayWidth | Non | Largeur d’écran physique de l’appareil. |                                                                                                                                                                                                                                                                                                                                                           |
@@ -65,7 +65,7 @@ Les informations client sont un objet JSON créé avec des clés présentées da
 |            | connectionIp | Non | Adresse IP de l’appareil utilisée pour envoyer des requêtes HTTP. | par exemple, 8.8.4.4 |
 |            | connectionPort | Non | Port de l’appareil utilisé pour envoyer des requêtes HTTP. | Par exemple, 53124 |
 |            | connectionType | Non | Type de connexion réseau. | Par exemple, Wi-Fi, LAN, 3G, 4G, 5G |
-|            | connectionSecure | # Oui | État de sécurité de la connexion réseau. | # Les valeurs sont restreintes : true - dans le cas d’un réseau sécurisé false - dans le cas d’une zone réactive publique |
+|            | connectionSecure | # Oui | État de sécurité de la connexion réseau. | # Les valeurs sont restreintes :                                                   true - dans le cas d’un réseau sécurisé                   false - dans le cas d’une zone réactive publique |
 |            | applicationId | Non | Identifiant unique de l’application. | Par exemple, CNN |
 
 ## Références API {#api-ref}
@@ -76,52 +76,52 @@ Cette section présente l’API chargée de gérer les informations sur les clie
 
 Les services d’authentification Adobe Pass prennent en charge la réception des informations client de la manière suivante :
 
-* Comme **header: &quot;X-Device-Info&quot;**
-* Comme **Paramètre de requête : &quot;device_info&quot;**
-* Comme **Paramètre post : &quot;device_info&quot;**
+* En tant qu’en-tête **: &quot;X-Device-Info&quot;**
+* En tant que **paramètre de requête : &quot;device_info&quot;**
+* En tant que paramètre **post : &quot;device_info&quot;**
 
 >[!IMPORTANT]
 >
->Dans les trois scénarios, la charge utile de l’en-tête ou du paramètre doit être **Codé en Base64 et encodé en URL**.
+>Dans les trois scénarios, la charge utile de l’en-tête ou du paramètre doit être **encodée en base64 et encodée en URL**.
 
 **SDK**
 
-#### SDK JavaScript {#js-sdk}
+#### SDK JAVASCRIPT {#js-sdk}
 
 Le SDK JavaScript AccessEnabler crée par défaut un objet JSON d’informations client, qui sera transmis aux services d’authentification Adobe Pass, sauf s’il est remplacé.
 
-Le SDK JavaScript AccessEnabler prend en charge **remplacement uniquement** la clé &quot;applicationId&quot; de l’objet JSON d’informations client via l’objet [setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))&#39;s *applicationId* paramètre options .
+Le SDK JavaScript AccessEnabler prend en charge **en remplaçant uniquement** la clé &quot;applicationId&quot; de l’objet JSON d’informations client par le paramètre d’options *applicationId* de [setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)).
 
 >[!CAUTION]
 >
->La variable `applicationId` La valeur du paramètre doit être une valeur Chaîne en texte brut.
+>La valeur du paramètre `applicationId` doit être une valeur String en texte brut.
 >Si l’application de programmation décide de transmettre l’applicationId, le reste des clés d’informations client sera toujours calculé par le SDK JavaScript AccessEnabler.
 
 #### SDK iOS/tvOS {#ios-tvos-sdk}
 
 Le SDK AccessEnabler iOS/tvOS crée par défaut un objet JSON d’informations client, qui sera transmis aux services d’authentification Adobe Pass, sauf s’il est remplacé.
 
-Le SDK AccessEnabler iOS/tvOS prend en charge **remplacer l’ensemble** objet JSON d’informations client via [setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions)Paramètre device_info de .
+Le SDK AccessEnabler iOS/tvOS prend en charge **le remplacement de l’objet JSON d’informations client** entier par le paramètre device_info de [setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions).
 
 >[!CAUTION]
 >
->La variable *device_info* La valeur du paramètre doit être **Codé en Base64** *NSString* .
+>La valeur du paramètre *device_info* doit être une valeur **Base64 encoded** *NSString* .
 >
->Si l’application de programmation décide de transmettre la variable *device_info*, toutes les clés d’informations client calculées par le SDK AccessEnabler iOS/tvOS seront remplacées. Il est donc très important de calculer et de transmettre les valeurs pour autant de clés que possible. Pour plus d’informations sur l’implémentation, voir [Présentation](#pass-client-info-overview) et le [Manuel iOS/tvOS](#ios-tvos).
+>Si l’application de programmation décide de transmettre *device_info*, toutes les clés d’informations client calculées par le SDK AccessEnabler iOS/tvOS seront remplacées. Il est donc très important de calculer et de transmettre les valeurs pour autant de clés que possible. Pour plus d’informations sur l’implémentation, consultez la table [Overview](#pass-client-info-overview) et le [livre de cuisine iOS/tvOS](#ios-tvos).
 
 #### SDK Android/FireOS {#and-fire-os-sdk}
 
-La variable `AccessEnabler` Le SDK Android/FireOS crée par défaut un objet JSON d’informations client, qui sera transmis aux services d’authentification Adobe Pass, sauf s’il est remplacé.
+Le SDK Android/FireOS `AccessEnabler` crée par défaut un objet JSON d’informations client, qui sera transmis aux services d’authentification Adobe Pass, sauf s’il est remplacé.
 
-La variable `AccessEnabler` Le SDK Android/FireOS prend en charge **remplacer l’ensemble** objet JSON d’informations client via [setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)&#39;s/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption)&#39;s `device_info` .
+Le SDK `AccessEnabler` Android/FireOS prend en charge **le remplacement de l’objet JSON d’informations client** complet par le paramètre [setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)&#39;s/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption) du `device_info`.
 
 >[!NOTE]
 >
->La variable `device_info` La valeur du paramètre doit être **Codé en Base64** Valeur de chaîne.
+>La valeur du paramètre `device_info` doit être une valeur de chaîne **Base64 encoded** .
 
 >[!IMPORTANT]
 >
->Si l’application de programmation décide de transmettre la variable `device_info`, puis toutes les clés d’informations client calculées par la variable `AccessEnabler` Le SDK Android/FireOS sera remplacé. Il est donc très important de calculer et de transmettre les valeurs pour autant de clés que possible. Pour plus d’informations sur l’implémentation, voir [Présentation](#pass-client-info-overview) et le [Android](#android) et [FireOS](#fire-tv) livre de cuisine.
+>Si l&#39;application de programmation décide de transmettre le `device_info`, alors toutes les clés d&#39;informations client calculées par le SDK `AccessEnabler` Android/FireOS seront remplacées. Il est donc très important de calculer et de transmettre les valeurs pour autant de clés que possible. Pour plus d’informations sur l’implémentation, consultez la table [Overview](#pass-client-info-overview) et le guide pas à pas [Android](#android) et [FireOS](#fire-tv).
 
 ## Cookbooks {#cookbooks}
 
@@ -129,7 +129,7 @@ Cette section présente un guide pas à pas pour créer l’objet JSON d’infor
 
 >[!IMPORTANT]
 >
->Les clés marquées de  **!** sont obligatoires pour être envoyés.
+>Les clés qui sont marquées avec **!** sont obligatoires pour être envoyés.
 
 ### Android {#android}
 
@@ -161,7 +161,7 @@ Les informations de l’application peuvent être construites comme suit :
 
 >[!IMPORTANT]
 >
-Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Ensuite, l’objet obtenu doit être **Codé en Base64**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être **encodé URL**.
+Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Par la suite, l’objet obtenu doit être **Base64 encoded**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être **URL encodée**.
 
 **Exemple de code**
 
@@ -241,7 +241,7 @@ private JSONObject computeClientInformation() {
 >[!NOTE]
 >
 **Ressources :**
-* classe publique [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} dans la documentation destinée aux développeurs Java.
+* classe publique [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} dans la documentation des développeurs Java.
 
 ### FireTV {#fire-tv}
 
@@ -273,7 +273,7 @@ Les informations de l’application peuvent être construites comme suit :
 
 >[!IMPORTANT]
 >
-Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Ensuite, l’objet obtenu doit être **Codé en Base64**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être **encodé URL**.
+Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Par la suite, l’objet obtenu doit être **Base64 encoded**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être **URL encodée**.
 
 >[!NOTE]
 >
@@ -294,13 +294,13 @@ Les informations sur l’appareil peuvent être construites comme suit :
 |   | displayWidth | UIScreen.mainScreen | 320 |
 |   | displayHeight | UIScreen.mainScreen | 568 |
 | ! | osName | UIDevice.systemName | iOS |
-| ! | osVersion | UIDevice.systemVersion | 10.2 |
+| ! | osVersion | UIDevice.systemVersion | 10,2 |
 
 Les informations de connexion peuvent être construites comme suit :
 
 |   | Clé | Source | Valeur (exemple) |
 |---|------------------|-------------------------------------------|--------------|
-| ! | connectionType | [currentReachabilityStatus] |              |
+| ! | connectionType | [Reachability currentReachabilityStatus] |              |
 |   | connectionSecure |                                           |              |
 
 
@@ -419,7 +419,7 @@ Les informations de l’application peuvent être construites comme suit :
 
 >[!IMPORTANT]
 >
-Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Ensuite, l’objet obtenu doit être **Codé en Base64**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être en codage URL.
+Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Par la suite, l’objet obtenu doit être **Base64 encoded**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être en codage URL.
 
 >[!NOTE]
 >
@@ -455,9 +455,9 @@ Les informations de l’application peuvent être construites comme suit :
 
 >[!IMPORTANT]
 >
-Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Ensuite, l’objet obtenu doit être **Codé en Base64**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être **encodé URL**.
+Les informations sur l’appareil, la connexion et l’application doivent être ajoutées au même objet JSON. Par la suite, l’objet obtenu doit être **Base64 encoded**. En outre, dans le cas des API REST d’authentification Adobe Pass, la valeur doit être **URL encodée**.
 
-**Ressources**
+**Resources**
 
 * [Classe EasClientDeviceInformation](https://docs.microsoft.com/en-us/uwp/api/windows.security.exchangeactivesyncprovisioning.easclientdeviceinformation?view=winrt-22000)
 * [Classe DisplayInformation](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.display.displayinformation?view=winrt-22000)

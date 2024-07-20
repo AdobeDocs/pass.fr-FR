@@ -19,9 +19,9 @@ L’API de préautorisation peut être utilisée pour obtenir une décision de p
 
 >[!IMPORTANT]
 >
->API d’autorisation **must** doit être utilisé avant d’accorder à l’utilisateur l’accès aux ressources spécifiées.
+>L’API d’autorisation **doit** être utilisée avant d’accorder à l’utilisateur l’accès aux ressources spécifiées.
 
-Si le résultat de la réponse de l’API de préautorisation contient une ou plusieurs ressources avec une décision de préautorisation refusée, des informations d’erreur supplémentaires peuvent être incluses. **(voir la remarque ci-dessous)** pour chaque ressource affectée.
+Si le résultat de la réponse de l’API de préautorisation contient une ou plusieurs ressources avec une décision de préautorisation refusée, des informations d’erreur supplémentaires peuvent être incluses **(voir la note ci-dessous)** pour chaque ressource affectée.
 
 >[!IMPORTANT]
 >
@@ -169,7 +169,7 @@ Cette section décrit la structure JSON de certains objets PreauthorizedResponse
 
 >[!IMPORTANT]
 >
->La liste des erreurs supplémentaires possibles, récupérées à l’aide de la fonction améliorée de reporting des erreurs, est présentée dans la section [Rapports d’erreurs avancés](/help/authentication/enhanced-error-codes.md).
+>La liste des erreurs supplémentaires possibles récupérées à l’aide de la fonction améliorée de création de rapports d’erreurs est documentée dans la [création de rapports d’erreurs avancés](/help/authentication/enhanced-error-codes.md).
 
 #### Réussite
 
@@ -377,7 +377,7 @@ Le SDK d’authentification Adobe Pass rencontre une erreur lors du traitement d
 
 <br>
 
-## **Classe Decision** {#decision}
+## **class Decision** {#decision}
 
 ```
     ///

@@ -1,7 +1,8 @@
 ---
 title: Notes de mise à jour de l’authentification Adobe Pass 2.70
 description: Notes de mise à jour de l’authentification Adobe Pass 2.70
-source-git-commit: 30e2507c0622b882744cf8291525c388575df32f
+exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
+source-git-commit: 6d46beb688299aeef2a7dbb013b3eca7b4509593
 workflow-type: tm+mt
 source-wordcount: '141'
 ht-degree: 0%
@@ -23,7 +24,7 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 ### Numéro de build {#build-number-270}
 
-Authentification Adobe Pass : adobe-pass-**2,70**
+Authentification Adobe Pass : adobe-pass-**2.70**
 Date de publication : **04/23/2024 - 04/25/2024**
 
 ### Nouvelles fonctionnalités {#new-features-270}

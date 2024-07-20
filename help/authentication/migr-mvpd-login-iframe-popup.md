@@ -4,7 +4,7 @@ description: Comment migrer la page de connexion MVPD de l’iFrame à la fenêt
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Certains utilisateurs ont rencontré des problèmes de cookies tiers avec l’im
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
 * [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
 
-L’équipe d’authentification Adobe Pass **recommande de mettre en oeuvre la fenêtre contextuelle/la nouvelle page de connexion à la fenêtre.** plutôt que la version iFrame sous Firefox et Safari.  Cependant, si vous mettez en oeuvre une page de connexion pour Internet Explorer, vous pouvez rencontrer des problèmes avec la mise en oeuvre de la fenêtre contextuelle. Les problèmes d’IE sont dus au fait que, une fois que l’utilisateur s’est authentifié avec son MVPD dans la fenêtre contextuelle, l’authentification Adobe Pass force une redirection de page parente, qui est considérée comme un bloqueur de fenêtres contextuelles par Internet Explorer. L’équipe d’authentification Adobe Pass **recommande de mettre en oeuvre la connexion à l’iFrame pour Internet Explorer.**.
+L’équipe d’authentification Adobe Pass **recommande de mettre en oeuvre la fenêtre contextuelle/la nouvelle page de connexion à la fenêtre** plutôt que la version iFrame sous Firefox et Safari.  Cependant, si vous mettez en oeuvre une page de connexion pour Internet Explorer, vous pouvez rencontrer des problèmes avec la mise en oeuvre de la fenêtre contextuelle. Les problèmes d’IE sont dus au fait que, une fois que l’utilisateur s’est authentifié avec son MVPD dans la fenêtre contextuelle, l’authentification Adobe Pass force une redirection de page parente, qui est considérée comme un bloqueur de fenêtres contextuelles par Internet Explorer. L’équipe d’authentification Adobe Pass **recommande de mettre en oeuvre la connexion à l’iFrame pour Internet Explorer**.
 
 L’exemple de code présenté dans cette note technique utilise une implémentation hybride d’iFrame et de fenêtre contextuelle : ouverture d’un iFrame sur Internet Explorer et d’une fenêtre contextuelle sur les autres navigateurs.
 
@@ -32,7 +32,7 @@ L’exemple de code présenté dans cette note technique utilise une implémenta
 
 ## Sélecteur MVPD avec page de connexion dans un iFrame {#mvpd-pickr-iframe}
 
-Les exemples de code précédents présentaient une page de HTML contenant la variable &lt;div> balise dans laquelle l’iFrame doit être créé avec le bouton Fermer l’iFrame :
+Les exemples de code précédents présentaient une page d’HTML contenant la balise &lt;div> dans laquelle l’iFrame devait être créé, ainsi que le bouton Fermer l’iFrame :
 
 ```HTML
 <body> 
@@ -48,7 +48,7 @@ Les exemples de code précédents présentaient une page de HTML contenant la va
 </body>
 ```
 
-Voici le **JavaScript** code :
+Voici le code **JavaScript** associé :
 
 ```JavaScript
 /*
@@ -105,7 +105,7 @@ function setSelectedProvider(providerID) {
 
 ## Sélecteur MVPD avec page de connexion dans une fenêtre contextuelle {#mvpd-pickr-popup}
 
-Puisque nous n’utiliserons pas un **iFrame** le code du HTML ne contient plus l’iFrame ni le bouton permettant de fermer l’iFrame. La balise div qui contenait auparavant l’iFrame - **mvpddiv** - sera conservé et utilisé pour les éléments suivants :
+Puisque nous n’utiliserons plus d’iFrame **iFrame**, le code de l’HTML ne contiendra pas l’iFrame ni le bouton permettant de fermer l’iFrame. La balise div qui contenait auparavant l’iFrame - **mvpddiv** - sera conservée et utilisée pour les opérations suivantes :
 
 * pour informer l’utilisateur que la page de connexion MVPD est déjà ouverte si la sélection contextuelle est perdue
 * pour fournir un lien permettant de se concentrer à nouveau sur la fenêtre contextuelle
@@ -134,9 +134,9 @@ Puisque nous n’utiliserons pas un **iFrame** le code du HTML ne contient plus 
 </body>
 ```
 
-La liste des MVPD s’affiche dans la balise div appelée **sélecteur** comme sélection **-mvpdList**.
+La liste des MVPD s’affiche dans la balise div appelée **picker** en tant que select **-mvpdList**.
 
-Un nouveau rappel API sera utilisé - **setConfig(configXML)**. Le rappel est déclenché après l’appel de la fonction setRequestor(requestorID) . Ce rappel renvoie la liste des MVPD qui sont intégrés avec l’ID du demandeur précédemment défini. Dans la méthode de rappel, le code XML entrant est analysé et la liste des MVPD mis en cache. Le sélecteur MVPD est également créé, mais pas affiché.
+Un nouveau rappel API sera utilisé : **setConfig(configXML)**. Le rappel est déclenché après l’appel de la fonction setRequestor(requestorID) . Ce rappel renvoie la liste des MVPD qui sont intégrés avec l’ID du demandeur précédemment défini. Dans la méthode de rappel, le code XML entrant est analysé et la liste des MVPD mis en cache. Le sélecteur MVPD est également créé, mais pas affiché.
 
 ```JavaScript
 var mvpdList;  // The list of cached MVPDs
@@ -187,7 +187,7 @@ Dans l’implémentation de l’iFrame, la réinitialisation du flux d’authent
 "<a href="javascript:mvpdWindow.focus();">Click here to open it.</a>".
 ```
 
-Sur le rappel createIFrame() , la fonction **mvpddiv** div s’affiche.
+Sur le rappel createIFrame() , la balise div **mvpddiv** s’affiche.
 
 ```JavaScript
 function createIFrame(width, height) {
@@ -231,4 +231,4 @@ function checkClosed() {
 >* L’exemple de code contient une variable codée en dur pour l’ID de demandeur utilisé - &#39;REF&#39; qui doit être remplacée par un ID de demandeur de programmeur réel.
 >* L’exemple de code ne s’exécute correctement qu’à partir d’un domaine whitelisté associé à l’ID de demandeur utilisé.
 >* L’ensemble du code pouvant être téléchargé, le code présenté dans cette note technique a été tronqué. Pour obtenir un exemple complet, reportez-vous à la section **Exemple d’iFrame JS ou de fenêtre contextuelle**.
->* Les bibliothèques JavaScript externes ont été liées à partir de [Services hébergés Google](https://developers.google.com/speed/libraries/).
+>* Les bibliothèques JavaScript externes ont été liées à partir des [Services hébergés Google](https://developers.google.com/speed/libraries/).

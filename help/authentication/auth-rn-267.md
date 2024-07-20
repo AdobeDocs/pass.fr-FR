@@ -1,9 +1,10 @@
 ---
 title: Notes de mise à jour de l’authentification Adobe Pass 2.67
 description: Notes de mise à jour de l’authentification Adobe Pass 2.67
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: d899fe96-a273-4681-90a5-bde54cc2f3b3
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '125'
+source-wordcount: '131'
 ht-degree: 0%
 
 ---
@@ -35,7 +36,7 @@ Date de publication : **09/12/2023 - 09/14/2023**
 
 ### Mises à jour MVPD {#mvpd-updates-267}
 
-* Mises à jour pour **DirectTV Porto Rico** intégration à Adobe. Pour plus d’informations, contactez votre TAM.
+* Mises à jour de l&#39;intégration de **DirectTV Puerto Rico** avec Adobe. Pour plus d’informations, contactez votre TAM.
 
 #### Correctifs {#bug-fixes-267}
 

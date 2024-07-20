@@ -10,11 +10,11 @@ ht-degree: 28%
 
 ---
 
-# Aide de Account IQ {#aiq-help}
+# Aide d’Account IQ {#aiq-help}
 
-+ [Présentation du compte IQ](/help/accountiq/home.md)
-+ [Versions du compte IQ](/help/accountiq/versions-aiq.md)
-+ [Prise en main de Account IQ](/help/accountiq/get-started.md)
++ [Présentation d’Account IQ](/help/accountiq/home.md)
++ [Versions d’Account IQ](/help/accountiq/versions-aiq.md)
++ [Prise en main d’Account IQ](/help/accountiq/get-started.md)
 + [Utilisation des segments](/help/accountiq/work-with-segments.md)
 + Tableau de bord {#dashboard}
    + [Présentation du tableau de bord](/help/accountiq/introduction-dashboard.md)

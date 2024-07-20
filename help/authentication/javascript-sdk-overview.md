@@ -4,7 +4,7 @@ description: Présentation du SDK JavaScript
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,9 @@ ht-degree: 0%
 
 Adobe recommande vivement de migrer vers la dernière version JS v4.x de la bibliothèque AccessEnabler.
 
-L’intégration JavaScript d’authentification Adobe Pass offre aux programmeurs une solution TV-Everywhere dans l’environnement de développement d’applications web JS familier. Les principaux composants de l’intégration sont votre application de &quot;haut niveau&quot; (interaction utilisateur, présentation vidéo), et la bibliothèque AccessEnabler de &quot;bas niveau&quot; fournie par l’Adobe, qui fournit votre entrée aux flux de droits, et gère la communication avec les serveurs d’authentification Adobe Pass.
+L’intégration Adobe Pass Authentication JavaScript offre aux programmeurs une solution TV-Everywhere dans l’environnement de développement d’applications web JS familier. Les principaux composants de l’intégration sont votre application de &quot;haut niveau&quot; (interaction utilisateur, présentation vidéo), et la bibliothèque AccessEnabler de &quot;bas niveau&quot; fournie par l’Adobe, qui fournit votre entrée aux flux de droits, et gère la communication avec les serveurs d’authentification Adobe Pass.
 
-Le flux général de droits d’authentification Adobe Pass est présenté dans la section [Flux de droits du programmeur](/help/authentication/entitlement-flow.md)et le guide pas à pas d’intégration JavaScript vous guide tout au long de l’implémentation. Les sections suivantes contiennent des descriptions et des exemples spécifiques à l’intégration JavaScript AccessEnabler.
+Le flux général de droits d’authentification Adobe Pass est traité dans [Flux de droits du programmeur](/help/authentication/entitlement-flow.md), et le guide pas à pas d’intégration JavaScript vous guide tout au long de l’implémentation. Les sections suivantes contiennent des descriptions et des exemples spécifiques à l’intégration de JavaScript AccessEnabler.
 
 >[!IMPORTANT]
 >
@@ -31,13 +31,13 @@ Le flux général de droits d’authentification Adobe Pass est présenté dans 
 
 Pour qu’un utilisateur se connecte à son MVPD et s’authentifie, votre page ou lecteur doit fournir à l’utilisateur un moyen d’identifier son MVPD. Une version par défaut d’une boîte de dialogue de sélection MVPD est fournie pour le développement. Pour une utilisation en production, vous devez mettre en oeuvre votre propre sélecteur MVPD.
 
-Si vous connaissez déjà le fournisseur du client, vous pouvez [définir le MVPD par programmation ;](/help/authentication/home.md), sans interaction de l’utilisateur. La technique est la même, mais ignore l’étape d’appel de la boîte de dialogue du sélecteur de fournisseur et de sélection du MVPD par le client.
+Si vous savez déjà qui est le fournisseur du client, vous pouvez [définir le MVPD par programmation ](/help/authentication/home.md), sans interaction de l’utilisateur. La technique est la même, mais ignore l’étape d’appel de la boîte de dialogue du sélecteur de fournisseur et de sélection du MVPD par le client.
 
 ## Affichage du fournisseur de services {#displaying-the-service-provider}
 
 L’exemple de code suivant montre comment découvrir et afficher le fournisseur de services pour le client actuel :
 
-**HTML** - Cette page ajoute une section à la page qui affiche le fournisseur choisi par le client, s’il est déjà connecté :
+**HTML** - Cette page ajoute une section à la page qui affiche le fournisseur choisi du client, s’il est déjà connecté :
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -197,7 +197,7 @@ L’exemple de code suivant montre comment découvrir et afficher le fournisseur
 
 ## Déconnexion {#logout}
 
-Appeler `logout()` pour lancer le processus de déconnexion. Cette méthode ne prend aucun argument. Il déconnecte l’utilisateur actuel, efface toutes les informations d’authentification et d’autorisation pour cet utilisateur et supprime tous les jetons AuthN et AuthZ du système local.
+Appelez `logout()` pour lancer le processus de déconnexion. Cette méthode ne prend aucun argument. Il déconnecte l’utilisateur actuel, efface toutes les informations d’authentification et d’autorisation pour cet utilisateur et supprime tous les jetons AuthN et AuthZ du système local.
 
 Dans certains cas, votre lecteur n’est pas responsable de la gestion des déconnexions des utilisateurs :
 

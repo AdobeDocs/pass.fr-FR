@@ -4,7 +4,7 @@ description: Autorisation MVPD
 exl-id: 215780e4-12b6-4ba6-8377-4d21b63b6975
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-## Présentation {#mvpd-authz-overview}
+## Vue d’ensemble {#mvpd-authz-overview}
 
 L’autorisation (AuthZ) est effectuée par le biais de communications back-channel (serveur à serveur) entre un serveur principal hébergé par l’Adobe et le point d’entrée MVPD AuthZ.
 
@@ -25,7 +25,7 @@ Pour les requêtes AuthZ, le point de terminaison d’autorisation doit pouvoir 
 
 * **ID de ressource**. Chaîne identifiant une ressource de contenu donnée. Cet identifiant de ressource est spécifié par le programmeur, et le MVPD doit renforcer les règles métier sur ces ressources (par exemple, en vérifiant que l’utilisateur est abonné à un certain canal).
 
-En plus de déterminer si l’utilisateur est autorisé, la réponse doit inclure la durée de vie (TTL) de cette autorisation, c’est-à-dire le moment où l’autorisation expire. Si la durée de vie n’est pas définie, la requête AuthZ échoue.  Pour cette raison, **le délai d’activation est un paramètre de configuration obligatoire du côté de l’authentification Adobe Pass.**, afin de couvrir le cas où un MVPD n’inclut pas le TTL dans sa requête.
+En plus de déterminer si l’utilisateur est autorisé, la réponse doit inclure la durée de vie (TTL) de cette autorisation, c’est-à-dire le moment où l’autorisation expire. Si la durée de vie n’est pas définie, la requête AuthZ échoue.  Pour cette raison, **la durée de vie est un paramètre de configuration obligatoire du côté de l’authentification Adobe Pass**, afin de couvrir le cas lorsqu’un MVPD n’inclut pas la durée de vie dans sa requête.
 
 ## La demande d’autorisation {#authz-req}
 
@@ -106,15 +106,15 @@ La réponse à la requête AuthZ intervient après que le MVPD a évalué la req
 
 Voici une liste des obligations DENY que l’authentification Adobe Pass prend en charge et permet aux programmeurs de remplir :
 
-* **urn:tve:xacml:2.0:obligations:restricted-pc** - L&#39;abonné n&#39;a pas effectué de contrôle parental et le SP doit prendre les mesures appropriées pour restreindre l&#39;accès à ce contenu.
+* **urn:tve:xacml:2.0:obligations:restricted-pc** - L’abonné n’a pas effectué de contrôle parental et le SP doit prendre les mesures appropriées pour restreindre l’accès à ce contenu.
 
 * **urn:tve:xacml:2.0:obligations:upgrade** - L&#39;abonné ne dispose pas d&#39;un niveau d&#39;abonnement approprié.  Abonnement à la mise à niveau nécessaire pour accéder au contenu.
 
-L’authentification Adobe Pass prend en charge les **PERMIT** Les obligations et permettent aux programmeurs de les remplir :
+L’authentification Adobe Pass prend en charge les obligations **PERMIT** suivantes et permet aux programmeurs de les remplir :
 
-* **urn:cablelabs:olca:1.0:obligations:log** - Adobe Pass consigne la transaction et peut la rendre disponible via le mécanisme de reporting convenu.
+* **urn:cablelabs:olca:1.0:obligations:log** - Adobe Pass consigne la transaction et peut la rendre disponible via le mécanisme de création de rapports convenu.
 
-* **urn:cablelabs:olca:1.0:obligations:re-authz** - L’authentification Adobe Pass actualise à nouveau l’autorisation en n secondes (spécifiée en tant qu’argument de l’obligation via une Attribution XACML - voir Spécification de base XACML , Section 5.46).
+* **urn:cablelabs:olca:1.0:obligations:re-authz** - L’authentification Adobe Pass actualise à nouveau l’autorisation en n secondes (spécifiée en tant qu’argument de l’obligation via un AttributAssignment XACML - voir Spécification XACML de base , Section 5.46).
 
 <!--
 >![RelatedInformation]

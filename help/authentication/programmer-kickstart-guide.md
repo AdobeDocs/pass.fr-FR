@@ -4,7 +4,7 @@ description: Guide de démarrage rapide du programmeur
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '972'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Bienvenue dans l’authentification Adobe Pass pour TV partout. Nous nous réjou
 
 >[!NOTE]
 >
->Il s’agit du Guide de démarrage rapide pour les programmeurs (fournisseurs de contenu). Si vous utilisez un distributeur de programmation vidéo multicanal (MVPD), veillez à voir la variable [Guide de démarrage rapide MVPD](/help/authentication/mvpd-kickstart-guide.md).
+>Il s’agit du Guide de démarrage rapide pour les programmeurs (fournisseurs de contenu). Si vous utilisez un distributeur de programmation vidéo multicanal (MVPD), veillez à consulter le [guide de démarrage rapide MVPD](/help/authentication/mvpd-kickstart-guide.md).
 
 
 Identifiants d’authentification Adobe Pass :
@@ -50,7 +50,7 @@ En supposant qu’aucun problème critique ne soit survenu au cours de la pério
 L’Adobe fournira :
 
 * Guide de déploiement : **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
-* Accès à notre système d’assistance clientèle Zendesk. C’est également là que vous trouverez des exemples, des informations et des tutoriels vidéo sur certains processus. Pour accéder à ce document sur Zendesk, ainsi qu’aux autres documents qui y sont publiés, vous devez vous enregistrer et créer un compte à l’adresse `https://tve.zendesk.com/home`. Le nombre d’utilisateurs que vous pouvez enregistrer n’est pas limité.  Vous pouvez afficher et partager des commentaires sur n’importe quel ticket déposé. Toutes les questions relatives à l’assistance doivent être adressées à `tve-support@adobe.com`.
+* Accès à notre système d’assistance clientèle Zendesk. C’est également là que vous trouverez des exemples, des informations et des tutoriels vidéo sur certains processus. Pour accéder à ce document sur Zendesk, ainsi qu’aux autres documents qui y sont publiés, vous devez vous enregistrer et créer un compte sur `https://tve.zendesk.com/home`. Le nombre d’utilisateurs que vous pouvez enregistrer n’est pas limité.  Vous pouvez afficher et partager des commentaires sur n’importe quel ticket déposé. Toutes les questions relatives à l&#39;assistance doivent être adressées à `tve-support@adobe.com`.
 * [Guide d’intégration de programmeur](/help/authentication/programmer-integration-guide-overview.md)
 * Bibliothèque du vérificateur de jeton multimédia : `https://tve.zendesk.com/entries/471323-media-token-validator-library`.
 
@@ -74,22 +74,22 @@ Cette section décrit ce dont vous avez besoin lorsque vous migrez du site de te
 
 Vous fournirez (via MVPD) :
 
-* **Deux jeux d’informations d’identification**:
+* **Deux jeux d’informations d’identification** :
    * AuthN + AuthZ : login/mot de passe pour un utilisateur authentifié et autorisé
    * AuthN + Non-AuthZ : login/mot de passe pour un utilisateur authentifié mais non autorisé
 * **ID de ressource**. Il s’agit d’un identifiant de contenu spécifique qui sera validé avec un MVPD au-dessus du protocole AuthZ. Il peut s’agir du canal, du spectacle, de l’épisode ou de la ressource ; il doit être convenu avec votre MVPD.
 
 L’authentification Adobe Pass prend en charge un schéma de métadonnées basé sur MRSS, ce qui signifie que les ID de ressource peuvent être aussi spécifiques que nécessaire et peuvent inclure des identifiants qui peuvent être uniques à un MVPD spécifique.
 
-**NOUVELLE intégration MVPD**: il est important de se rappeler que le MVPD de votre choix joue un rôle essentiel dans l’achèvement de toute intégration. Adobe doit écrire du code pour chaque MVPD en fonction de leurs spécifications. Tant que ces étapes ne sont pas terminées, vous ne pourrez pas sélectionner ce MVPD dans la boîte de dialogue ni terminer vos tests de produit. Adobe doit planifier ce travail à l’avance pour l’adapter au prochain sprint disponible. (Pour plus d’informations sur le calendrier actuel, reportez-vous au Calendrier des versions.)
+**NOUVELLE intégration MVPD** : il est important de se rappeler que le MVPD de votre choix joue un rôle essentiel dans l’achèvement de toute intégration. Adobe doit écrire du code pour chaque MVPD en fonction de leurs spécifications. Tant que ces étapes ne sont pas terminées, vous ne pourrez pas sélectionner ce MVPD dans la boîte de dialogue ni terminer vos tests de produit. Adobe doit planifier ce travail à l’avance pour l’adapter au prochain sprint disponible. (Pour plus d’informations sur le calendrier actuel, reportez-vous au Calendrier des versions.)
 
-**Intégrations MVPD existantes**: si le MVPD de votre choix est déjà configuré avec Adobe, les étapes de connectivité doivent être beaucoup plus simples (plus rapides) et la connectivité peut souvent être obtenue par le biais de modifications de configuration.
+**Intégrations MVPD existantes** : si le MVPD de votre choix est déjà configuré avec l’Adobe, les étapes de connectivité doivent être beaucoup plus simples (plus rapides) et la connectivité peut souvent être réalisée par le biais de modifications de configuration.
 
 >[!NOTE]
 >
 >Le MVPD devra TOUJOURS activer le programmeur, et signer tous les accords commerciaux pertinents.
 
-**QE avec MVPD**: toutes les intégrations impliquent un QE commun, et comme l’utilisateur final est finalement client du MVPD, beaucoup ont défini des cycles de test avant de passer à &quot;live&quot;. Comme cela implique la planification des ressources MVPD, il peut y avoir des retards.
+**QE avec MVPDs** : toutes les intégrations impliquent un QE commun, et comme l’utilisateur final est finalement client du MVPD, beaucoup ont défini des cycles de test avant de passer à &quot;live&quot;. Comme cela implique la planification des ressources MVPD, il peut y avoir des retards.
 
 <!--
 >[RELATEDINFORMATION]

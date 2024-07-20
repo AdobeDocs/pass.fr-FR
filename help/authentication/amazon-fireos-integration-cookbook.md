@@ -4,7 +4,7 @@ description: Guide d’intégration Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
@@ -20,27 +20,27 @@ ht-degree: 0%
 
 ## Introduction {#intro}
 
-Ce document décrit les processus de droits que l’application de niveau supérieur d’un programmeur peut implémenter via les API exposées par Amazon FireOS `AccessEnabler` bibliothèque .
+Ce document décrit les processus de droits que l’application de niveau supérieur d’un programmeur peut mettre en oeuvre via les API exposées par la bibliothèque Amazon FireOS `AccessEnabler`.
 
 La solution de droit d’authentification Adobe Pass pour Amazon FireOS est finalement divisée en deux domaines :
 
-- Domaine de l’interface utilisateur : il s’agit de la couche d’application de niveau supérieur qui implémente l’interface utilisateur et utilise les services fournis par la fonction `AccessEnabler` pour permettre l’accès au contenu restreint.
-- La variable `AccessEnabler` domain : c’est là que les workflows de droits sont implémentés sous la forme :
+- Domaine de l’interface utilisateur : il s’agit de la couche supérieure de l’application qui implémente l’interface utilisateur et utilise les services fournis par la bibliothèque `AccessEnabler` pour fournir l’accès à un contenu restreint.
+- Domaine `AccessEnabler` : c’est là que les workflows de droits sont implémentés sous la forme :
    - Appels réseau effectués sur les serveurs principaux d’Adobe
    - Règles de logique métier liées aux workflows d’authentification et d’autorisation
    - Gestion de diverses ressources et traitement de l’état du workflow (comme le cache de jeton)
 
-L’objectif de la variable `AccessEnabler` Le domaine permet de masquer toutes les complexités des workflows de droits et de fournir à l’application de couche supérieure (via l’ `AccessEnabler` (Bibliothèque) un ensemble de primitives de droits simples. Ce processus permet de mettre en oeuvre les workflows de droits :
+L’objectif du domaine `AccessEnabler` est de masquer toutes les complexités des workflows de droits et de fournir à l’application de couche supérieure (via la bibliothèque `AccessEnabler`) un ensemble de primitives de droits simples. Ce processus permet de mettre en oeuvre les workflows de droits :
 
 1. Définissez l’identité du demandeur.
 1. Vérifiez et obtenez une authentification auprès d’un fournisseur d’identité particulier.
 1. Vérifiez et obtenez l’autorisation d’une ressource particulière.
 1. Déconnectez-vous.
 
-La variable `AccessEnabler`L’activité réseau de se produit dans un autre thread, de sorte que le thread d’interface utilisateur n’est jamais bloqué. Par conséquent, le canal de communication bidirectionnel entre les deux domaines d’application doit suivre un modèle entièrement asynchrone :
+L’activité réseau de `AccessEnabler` a lieu dans un autre thread afin que le thread d’interface utilisateur ne soit jamais bloqué. Par conséquent, le canal de communication bidirectionnel entre les deux domaines d’application doit suivre un modèle entièrement asynchrone :
 
-- La couche de l’application de l’interface utilisateur envoie des messages à la fonction `AccessEnabler` domaine via les appels API exposés par la fonction `AccessEnabler` bibliothèque .
-- La variable `AccessEnabler` répond à la couche de l’interface utilisateur par le biais des méthodes de rappel incluses dans la variable `AccessEnabler` protocole que la couche de l’interface utilisateur enregistre auprès de la fonction `AccessEnabler` bibliothèque .
+- La couche d’application de l’interface utilisateur envoie des messages au domaine `AccessEnabler` via les appels d’API exposés par la bibliothèque `AccessEnabler`.
+- `AccessEnabler` répond à la couche de l’interface utilisateur par le biais des méthodes de rappel incluses dans le protocole `AccessEnabler` que la couche de l’interface utilisateur enregistre avec la bibliothèque `AccessEnabler`.
 
 ## Flux de droits {#entitlement}
 
@@ -60,7 +60,7 @@ La variable `AccessEnabler`L’activité réseau de se produit dans un autre thr
 
    - [displayProviderDialog(mvpds)](#$displayProviderDialog)
 
-      - Déclenché par `getAuthentication()` uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié. La variable `mvpds` est un tableau de fournisseurs mis à la disposition de l’utilisateur.
+      - Déclenché par `getAuthentication()` uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié. Le paramètre `mvpds` est un tableau de fournisseurs mis à la disposition de l’utilisateur.
 
    - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
@@ -70,37 +70,37 @@ La variable `AccessEnabler`L’activité réseau de se produit dans un autre thr
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - Ignorée dans le SDK AmazonFireOS, la méthode est utilisée sur les plateformes Android où est déclenché par `getAuthentication()` une fois que l’utilisateur a sélectionné un MVPD.  La variable `url` fournit l’emplacement de la page de connexion du MVPD.
+      - Ignorée dans le SDK AmazonFireOS, la méthode est utilisée sur les plateformes Android où est déclenché par `getAuthentication()` après que l’utilisateur a sélectionné un MVPD.  Le paramètre `url` fournit l’emplacement de la page de connexion du MVPD.
 
    - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
       - Déclenché par `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
-La variable `event` indique quel événement de droit s’est produit ; `data` est une liste de valeurs relatives à l’événement.
+Le paramètre `event` indique quel événement de droit s’est produit ; le paramètre `data` est une liste de valeurs relatives à l’événement.
 
    - [`setToken(jeton, ressource)`](#$setToken)
 
       - Déclenché par `checkAuthorization()` et `getAuthorization()` après une autorisation réussie d’affichage d’une ressource.
-      - La variable `token` est le jeton multimédia de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
+      - Le paramètre `token` est le jeton multimédia de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
 
    - [`tokenRequestFailed(ressource, code, description)`](#$tokenRequestFailed)
 
       - Déclenché par `checkAuthorization()` et `getAuthorization()` après une autorisation manquée.
-      - La variable `resource` est le contenu que l’utilisateur tentait d’afficher ; le paramètre `code` est le code d’erreur indiquant le type d’échec qui s’est produit ; le paramètre `description` décrit l’erreur associée au code d’erreur.
+      - Le paramètre `resource` est le contenu que l’utilisateur tentait de consulter ; le paramètre `code` est le code d’erreur indiquant le type d’échec survenu ; le paramètre `description` décrit l’erreur associée au code d’erreur.
 
    - [`selectedProvider(mvpd)`](#$selectedProvider)
 
       - Déclenché par `getSelectedProvider()`.
-      - La variable `mvpd` fournit des informations sur le fournisseur sélectionné par l’utilisateur.
+      - Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par l’utilisateur.
 
    - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
       - Déclenché par `getMetadata().`
-      - La variable `metadata` fournit les données spécifiques demandées ; le paramètre `key` est la clé utilisée dans la variable `getMetadata()` et la demande `arguments` est le même dictionnaire que celui qui a été transmis à `getMetadata()`.
+      - Le paramètre `metadata` fournit les données spécifiques que vous avez demandées ; le paramètre `key` est la clé utilisée dans la requête `getMetadata()` ; et le paramètre `arguments` est le même dictionnaire qui a été transmis à `getMetadata()`.
 
    - [`preauthorizedResources(resources)`](#$preauthResources)
 
       - Déclenché par `checkPreauthorizedResources()`.
-      - La variable `authorizedResources` présente les ressources que l’utilisateur est autorisé à afficher.
+      - Le paramètre `authorizedResources` présente les ressources que l’utilisateur est autorisé à afficher.
 
 
 ![](assets/android-entitlement-flows.png)
@@ -111,36 +111,36 @@ La variable `event` indique quel événement de droit s’est produit ; `data` e
 1. Démarrez l’application de niveau supérieur.
 1. Lancer l’authentification Adobe Pass.
 
-   1. Appeler [`getInstance`](#$getInstance) pour créer une instance unique de l’authentification Adobe Pass `AccessEnabler`.
+   1. Appelez [`getInstance`](#$getInstance) pour créer une instance unique de l’authentification Adobe Pass `AccessEnabler`.
 
-      - **Dépendance :** Bibliothèque Adobe Pass Authentication Native Amazon FireOS (`AccessEnabler`)
+      - **Dépendance :** Authentification Adobe Pass Bibliothèque FireOS native Amazon (`AccessEnabler`)
 
-   1. Appeler` setRequestor()` pour établir l&#39;identification du programmeur ; transmettez la variable `requestorID` et (éventuellement) un tableau de points de terminaison d’authentification Adobe Pass.
+   1. Appelez ` setRequestor()` pour établir l’identification du programmeur ; transmettez dans le `requestorID` du programmeur et (éventuellement) un tableau de points de terminaison d’authentification Adobe Pass.
 
-      - **Dépendance :** Identifiant de demandeur d’authentification Adobe Pass valide (demandez à votre gestionnaire de compte d’authentification Adobe Pass d’organiser cela.)
+      - **Dépendance :** Demandeur d’authentification Adobe Pass valide (travaillez avec votre gestionnaire de compte d’authentification Adobe Pass pour arranger cela.)
 
-      - **Triggers :** rappel setRequestorComplete()
+      - **Triggers:** rappel setRequestorComplete()
 
-   Aucune demande de droit ne peut être effectuée tant que l’identité du demandeur n’a pas été entièrement établie. Cela signifie effectivement que, pendant que setRequestor() est toujours en cours d’exécution, toutes les demandes de droits suivantes (par exemple,`checkAuthentication()`) sont bloquées.
+   Aucune demande de droit ne peut être effectuée tant que l’identité du demandeur n’a pas été entièrement établie. Cela signifie que, pendant que setRequestor() est toujours en cours d’exécution, toutes les demandes de droits suivantes (par exemple,`checkAuthentication()`) sont bloquées.
 
    Vous disposez de deux options d’implémentation : une fois que les informations d’identification du demandeur sont envoyées au serveur principal, la couche d’application de l’interface utilisateur peut choisir l’une des deux approches suivantes :</p>
 
-   1. Attendez le déclenchement de la fonction `setRequestorComplete()` rappel (fait partie de la fonction `AccessEnabler` delegate).  Cette option permet de déterminer avec la plus grande certitude que `setRequestor()` terminé. Il est donc recommandé pour la plupart des mises en oeuvre.
-   1. Continuez sans attendre le déclenchement de la fonction `setRequestorComplete()` et commencez à émettre des demandes de droits. Ces appels (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sont placés en file d’attente par la fonction `AccessEnabler` qui effectue les appels réseau après l’événement `setRequestor()`. Cette option peut parfois être perturbée si, par exemple, la connexion réseau est instable.
+   1. Attendez le déclenchement du rappel `setRequestorComplete()` (partie du délégué `AccessEnabler`).  Cette option garantit la plus grande certitude que `setRequestor()` a été effectuée. Elle est donc recommandée pour la plupart des mises en oeuvre.
+   1. Continuez sans attendre le déclenchement du rappel `setRequestorComplete()` et commencez à émettre des demandes de droits. Ces appels (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sont placés en file d’attente par la bibliothèque `AccessEnabler`, qui effectuera les appels réseau réels après le `setRequestor()`. Cette option peut parfois être perturbée si, par exemple, la connexion réseau est instable.
 
-1. Appeler [checkAuthentication()](#$checkAuthN) pour rechercher une authentification existante sans initialiser le flux d’authentification complet.  Si cet appel réussit, vous pouvez passer directement au flux d’autorisation.  Si ce n’est pas le cas, passez au flux d’authentification.
+1. Appelez [checkAuthentication()](#$checkAuthN) pour rechercher une authentification existante sans initialiser le flux d’authentification complet.  Si cet appel réussit, vous pouvez passer directement au flux d’autorisation.  Si ce n’est pas le cas, passez au flux d’authentification.
 
-- **Dépendance :** Un appel réussi à `setRequestor()` (cette dépendance s’applique également à tous les appels suivants).
+- **Dépendance :** Appel réussi à `setRequestor()` (cette dépendance s’applique également à tous les appels suivants).
 
-- **Triggers :** rappel setAuthenticationStatus()
+- **Triggers:** rappel setAuthenticationStatus()
 
 ### C. Flux d’authentification {#authn_flow}
 
-1. Appeler [`getAuthentication()`](#$getAuthN) pour lancer le flux d’authentification ou pour obtenir la confirmation que l’utilisateur est déjà authentifié.
+1. Appelez [`getAuthentication()`](#$getAuthN) pour lancer le flux d’authentification ou pour obtenir la confirmation que l’utilisateur est déjà authentifié.
 
    **Triggers :**
 
-   - Rappel setAuthenticationStatus() , si l’utilisateur est déjà authentifié.  Dans ce cas, accédez directement à la [Flux d’autorisation](#authz_flow).
+   - Rappel setAuthenticationStatus() , si l’utilisateur est déjà authentifié.  Dans ce cas, accédez directement au [flux d’autorisation](#authz_flow).
    - Rappel displayProviderDialog() , si l’utilisateur n’est pas encore authentifié.
 
 1. Présenter à l’utilisateur la liste des fournisseurs envoyés à `displayProviderDialog()`.
@@ -148,37 +148,37 @@ La variable `event` indique quel événement de droit s’est produit ; `data` e
 
    >[!NOTE]
    >
-   >À ce stade, l’utilisateur a la possibilité d’annuler le flux d’authentification. Si cela se produit, la variable `AccessEnabler` nettoie son état interne et réinitialise le flux d’authentification.
+   >À ce stade, l’utilisateur a la possibilité d’annuler le flux d’authentification. Si cela se produit, le `AccessEnabler` nettoie son état interne et réinitialise le flux d’authentification.
 
 1. Si l’utilisateur parvient à se connecter, WebView se ferme.
-1. appel `getAuthenticationToken(),` qui indique à la fonction `AccessEnabler` pour récupérer le jeton d’authentification à partir du serveur principal.
-1. [Facultatif] Appeler [`checkPreauthorizedResources(resources)`](#$checkPreauth) pour vérifier les ressources que l’utilisateur est autorisé à afficher. La variable `resources` est un tableau de ressources protégées associées au jeton d’authentification de l’utilisateur.
+1. appel `getAuthenticationToken(),` qui demande à `AccessEnabler` de récupérer le jeton d&#39;authentification du serveur principal.
+1. [Facultatif] Appelez [`checkPreauthorizedResources(resources)`](#$checkPreauth) pour vérifier les ressources que l’utilisateur est autorisé à afficher. Le paramètre `resources` est un tableau de ressources protégées associées au jeton d’authentification de l’utilisateur.
 
-   **Triggers :** `preAuthorizedResources()` callback\
-   **Point d&#39;exécution :** Une fois le flux d’authentification terminé
+   **Triggers:** `preAuthorizedResources()` callback\
+   **Point d’exécution :** après le flux d’authentification terminé
 
 1. Si l’authentification a réussi, passez au flux d’autorisation.
 
 
 ### D. Flux d’autorisation {#authz_flow}
 
-1. Appeler [`getAuthorization()`](#$getAuthZ) pour lancer le flux d’autorisation.
+1. Appelez [`getAuthorization()`](#$getAuthZ) pour lancer le flux d’autorisation.
 
    Dépendance : ID de ressource valide convenu avec le ou les MVPD.
 
-   **Remarque :** Les ResourceID doivent être identiques à ceux utilisés sur d’autres appareils ou plateformes et seront identiques pour tous les MVPD.
+   **Remarque :** Les ResourceID doivent être identiques à ceux utilisés sur d’autres appareils ou plateformes et seront identiques sur plusieurs MVPD.
 
 1. Validez l’authentification et l’autorisation.
 
-   - Si la variable `getAuthorization()` L’appel réussit : l’utilisateur dispose de jetons AuthN et AuthZ valides (l’utilisateur est authentifié et autorisé à regarder le média demandé).
-   - If `getAuthorization()` échec : examinez l’exception générée pour déterminer son type (AuthN, AuthZ, etc.) :
+   - Si l’appel `getAuthorization()` réussit : l’utilisateur dispose de jetons AuthN et AuthZ valides (l’utilisateur est authentifié et autorisé à regarder le média demandé).
+   - Si `getAuthorization()` échoue : examinez l’exception générée pour déterminer son type (AuthN, AuthZ, etc.) :
       - S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
       - S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur de ce type doit s’afficher à l’utilisateur.
       - En cas d&#39;erreur d&#39;un autre type (erreur de connexion, erreur réseau, etc.) puis afficher un message d’erreur approprié à l’utilisateur.
 
 1. Validez le jeton de média court.
 
-   Utilisez la bibliothèque du vérificateur de jeton multimédia d’authentification Adobe Pass pour vérifier le jeton multimédia de courte durée renvoyé par le `getAuthorization()` Appel ci-dessus :
+   Utilisez la bibliothèque du vérificateur de jeton multimédia d’authentification Adobe Pass pour vérifier le jeton multimédia de courte durée renvoyé par l’appel `getAuthorization()` ci-dessus :
 
    - Si la validation réussit : lisez le média demandé pour l’utilisateur.
    - Si la validation échoue : le jeton AuthZ n’était pas valide, la demande de média doit être refusée et un message d’erreur doit s’afficher à l’utilisateur.
@@ -189,11 +189,11 @@ La variable `event` indique quel événement de droit s’est produit ; `data` e
 
 1. L’utilisateur sélectionne le média à afficher.
 1. Les médias sont-ils protégés ?  Votre application vérifie si le média sélectionné est protégé :
-   - Si le média sélectionné est protégé, votre application démarre la fonction [Flux d’autorisation](#authz_flow) ci-dessus.
+   - Si le média sélectionné est protégé, votre application démarre le [flux d’autorisation](#authz_flow) ci-dessus.
    - Si le média sélectionné n’est pas protégé, lisez-le pour l’utilisateur.
 
 ### F. Flux de déconnexion {#logout_flow}
 
-1. Appeler [`logout()`](#$logout) pour déconnecter l’utilisateur. La variable `AccessEnabler` efface toutes les valeurs et tous les jetons mis en cache obtenus par l’utilisateur pour le MVPD actuel sur tous les demandeurs partageant la connexion par l’authentification unique. Après avoir vidé le cache, la variable `AccessEnabler` effectue un appel au serveur pour nettoyer les sessions côté serveur.  Puisque l’appel au serveur peut entraîner une redirection SAML vers l’IdP (cela permet le nettoyage de session du côté IdP), cet appel doit suivre toutes les redirections. C’est pourquoi cet appel est géré dans un contrôle WebView, invisible pour l’utilisateur.
+1. Appelez [`logout()`](#$logout) pour déconnecter l’utilisateur. `AccessEnabler` efface toutes les valeurs et tous les jetons mis en cache obtenus par l’utilisateur pour le MVPD actuel sur tous les demandeurs partageant la connexion par l’authentification unique. Après avoir vidé le cache, `AccessEnabler` effectue un appel serveur pour nettoyer les sessions côté serveur.  Puisque l’appel au serveur peut entraîner une redirection SAML vers l’IdP (cela permet le nettoyage de session du côté IdP), cet appel doit suivre toutes les redirections. C’est pourquoi cet appel est géré dans un contrôle WebView, invisible pour l’utilisateur.
 
    **Remarque :** Le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir de quelque manière que ce soit avec WebView. Il est donc possible (et recommandé) de rendre le contrôle WebView invisible (c’est-à-dire masqué) pendant le processus de déconnexion.

@@ -34,7 +34,7 @@ Utilisé comme raccourci pour &quot;autorisation&quot;, comme dans &quot;Jeton A
 
 ## Jeton AuthZ {#authz-token}
 
-Jeton d’autorisation, généré par l’authentification Adobe Pass après qu’un utilisateur a été autorisé à afficher du contenu protégé. Le jeton AuthZ est stocké sur les serveurs d’authentification Adobe Pass et est utilisé pour générer un [Jeton de média de courte durée](#short-lived-token).
+Jeton d’autorisation, généré par l’authentification Adobe Pass après qu’un utilisateur a été autorisé à afficher du contenu protégé. Le jeton AuthZ est stocké sur les serveurs d’authentification Adobe Pass et est utilisé pour générer un [jeton multimédia de courte durée](#short-lived-token).
 
 ## Identifiant de canal (obsolète) {#channel_id}
 
@@ -56,7 +56,7 @@ Terme utilisé dans la documentation d’authentification Adobe Pass pour désig
 
 ## GUID {#guid}
 
-Voir [Identifiant utilisateur](#user-id).
+Voir [ID utilisateur](#user-id).
 
 ## IdP {#idp}
 
@@ -72,7 +72,7 @@ Distributeur de programmation vidéo multicanal ; synonyme de &quot;fournisseur 
 
 ## MVPD ID {#mvpd-id}
 
-Voir [Identifiant utilisateur](#user-id).
+Voir [ID utilisateur](#user-id).
 
 ## Identifiant du partenaire {#partner-id}
 
@@ -96,15 +96,15 @@ Un MVPD qui ne dispose pas d’une intégration directe avec le SP d’Adobe, ma
 
 ## Identifiant du demandeur {#requestor-id}
 
-Identifie de manière unique un [Programmeur](#programmer) (un compte, une marque, un canal ou une propriété) dans l’authentification Adobe Pass. Cet identifiant est déterminé entre le programmeur et l’Adobe lors de la configuration initiale du compte. Sur le web, l’identifiant du demandeur est associé à un ensemble de domaines placés sur liste blanche ; tout appel utilisant un identifiant provenant d’un domaine externe sera refusé. Les programmeurs utilisent également l’identifiant du demandeur pour les analyses. Il n’y a généralement qu’un seul identifiant de demandeur par programmeur. Une autre fonctionnalité liée à l’identifiant du demandeur est que le programmeur doit fournir à l’Adobe un certificat public, car l’appel de l’API setRequestor attend l’envoi de données chiffrées, utilisées pour authentifier le programmeur dans le système d’authentification Adobe Pass.
+Identifie de manière unique un [programmeur](#programmer) (compte, marque, canal ou propriété) dans l’authentification Adobe Pass. Cet identifiant est déterminé entre le programmeur et l’Adobe lors de la configuration initiale du compte. Sur le web, l’identifiant du demandeur est associé à un ensemble de domaines placés sur liste blanche ; tout appel utilisant un identifiant provenant d’un domaine externe sera refusé. Les programmeurs utilisent également l’identifiant du demandeur pour les analyses. Il n’y a généralement qu’un seul identifiant de demandeur par programmeur. Une autre fonctionnalité liée à l’identifiant du demandeur est que le programmeur doit fournir à l’Adobe un certificat public, car l’appel de l’API setRequestor attend l’envoi de données chiffrées, utilisées pour authentifier le programmeur dans le système d’authentification Adobe Pass.
 
 ## ID de ressource {#resource-id}
 
-Chaîne ou ressource mRSS qui identifie une [Programmeur](#programmer) aux MVPD. Il est convenu entre le programmeur et les MVPD ; l’authentification Adobe Pass transmet l’ID de ressource sans modification, de sorte qu’il doit être le même pour tous les MVPD. Un programmeur peut utiliser plusieurs ID de ressource tant que les MVPD savent ce que chaque ID représente.
+Chaîne ou ressource mRSS qui identifie un [programmeur](#programmer) aux MVPD. Il est convenu entre le programmeur et les MVPD ; l’authentification Adobe Pass transmet l’ID de ressource sans modification, de sorte qu’il doit être le même pour tous les MVPD. Un programmeur peut utiliser plusieurs ID de ressource tant que les MVPD savent ce que chaque ID représente.
 
 ## SessionGUID {#sessionGUID}
 
-Voir [Identifiant utilisateur](#user-id).
+Voir [ID utilisateur](#user-id).
 
 ## Jeton de média de courte durée {#short-lived-token}
 
@@ -116,7 +116,7 @@ Terme utilisé dans la documentation d’authentification d’Adobe Pass pour fa
 
 ## SP{#sp}
 
-Fournisseur de services ; il s’agit généralement de la variable *rôle* de SP, joué par l’authentification Adobe Pass, agissant pour le compte d’un programmeur dans une intégration avec une [MVPD](#mvpd).
+Fournisseur de services ; il fait généralement référence au *rôle* de SP, joué par l’authentification Adobe Pass, agissant pour le compte d’un programmeur dans une intégration avec un [MVPD](#mvpd).
 
 ## Temp Pass {#temp-pass}
 
@@ -132,7 +132,7 @@ La Télévision Partout.
 
 ## Identifiant utilisateur {#user-id}
 
-Identifie de manière unique l’utilisateur de l’application d’un programmeur, mais provient du MVPD. Disponible dans différents formulaires pour différents cas pratiques. Voir [Présentation des identifiants utilisateur dans le programme](/help/authentication/programmer-overview.md#user-ids).
+Identifie de manière unique l’utilisateur de l’application d’un programmeur, mais provient du MVPD. Disponible dans différents formulaires pour différents cas pratiques. Voir [Présentation des ID utilisateur dans la présentation du programmeur](/help/authentication/programmer-overview.md#user-ids).
 
 ## Liste autorisée {#whitelist}
 

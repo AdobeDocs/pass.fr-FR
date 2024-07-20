@@ -4,7 +4,7 @@ description: Utilisation de l’ID Experience Cloud dans l’authentification Ad
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Après avoir obtenu l’ECID (expliqué ci-dessus), vous devez transmettre ces i
 
 ### SDK JS {#js-sdk}
 
-Pour JavaScript, vous devez transmettre l’ECID dans une carte en tant que troisième paramètre à l’appel setRequestor .
+Pour JavaScript, vous devez transmettre l’ECID dans un mappage en tant que troisième paramètre à l’appel setRequestor .
 
 **Exemple d’utilisation :**
 
@@ -76,7 +76,7 @@ accessEnabler.setOptions(options);
 
 ### API sans client {#clientless-api}
 
-Lors de l’utilisation d’Adobe Pass via son API REST, la variable **ECID** doit être envoyée. **sur toutes les API** comme paramètre nommé **&#39;ap_vi&#39;**.
+Lors de l’utilisation d’Adobe Pass via son API REST, la valeur **ECID** doit être envoyée **sur toutes les API** en tant que paramètre nommé **&#39;ap_vi&#39;**.
 
 **Exemple d’utilisation :**
 

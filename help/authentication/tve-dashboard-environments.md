@@ -1,7 +1,8 @@
 ---
 title: Environnements du tableau de bord TVE
 description: Comprendre l’utilisation et le fonctionnement de différents environnements dans le tableau de bord TVE.
-source-git-commit: 06c2e1e54515a2ec47722ba1f360467dadd1f73b
+exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -16,15 +17,15 @@ ht-degree: 0%
 
 Le tableau de bord TVE fournit différents environnements personnalisés à des fins spécifiques dans l’authentification Adobe Pass. Il existe deux environnements principaux :
 
-* **Préqual**: l’environnement de préqualification sert de terrain de test pour préparer et tester de nouvelles versions avant le déploiement en production.
+* **Prequal** : l’environnement de préqualification sert de terrain de test pour la préparation et le test de nouvelles versions avant le déploiement en production.
 
-* **Version**: l’environnement de version héberge les versions finalisées et testées pour la production.
+* **Version** : l’environnement de version héberge les versions finalisées et testées pour la production.
 
 Dans chaque environnement, il existe deux profils différents :
 
-* **Évaluation**: le profil d’évaluation se connecte au serveur d’évaluation du MVPD pour le test et la validation des intégrations avant leur mise en ligne.
+* **Staging** : le profil intermédiaire se connecte au serveur intermédiaire du MVPD pour le test et la validation des intégrations avant leur mise en ligne.
 
-* **Production**: le profil de production se connecte au profil de production du MVPD pour les activités de production réelles.
+* **Production** : le profil de production se connecte au profil de production du MVPD pour les activités de production réelles.
 
 ## Cas d’utilisation
 
@@ -56,13 +57,12 @@ Les environnements du tableau de bord TVE présentent divers cas d’utilisation
 Suivez les étapes pour basculer entre les environnements de tableau de bord TVE d’authentification Adobe Pass.
 
 1. Connectez-vous à l’aide de vos informations d’identification de programmeur.
-1. Sélectionnez l’environnement d’évaluation ou de production requis dans la **Environnement** menu déroulant en haut du panneau de gauche.
+1. Sélectionnez l’environnement d’évaluation ou de production requis dans le menu déroulant **Environnement** en haut du panneau de gauche.
 
-   ![Liste déroulante Environnements du tableau de bord TVE](assets/tve-dashboard-env.png)
+   ![Liste déroulante des environnements de tableau de bord TVE](assets/tve-dashboard-env.png)
 
    *Menu déroulant de l’environnement du tableau de bord TVE d’authentification Adobe Pass*
 
 >[!NOTE]
 >
 > Les configurations peuvent varier dans chaque environnement en fonction de vos paramètres.
-

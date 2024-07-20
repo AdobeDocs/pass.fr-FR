@@ -23,7 +23,7 @@ Les clients peuvent utiliser [Nagios](http://www.nagios.org) ou d’autres outil
 
 ### Points de terminaison que vous pouvez surveiller {#endpoints-to-monitor}
 
-* Le point de terminaison de configuration pour toutes les plateformes : `https://sp.auth.adobe.com/adobe-services/config/[your-config-ID]`- Il est disponible via HTTP ou HTTPS (selon le choix effectué par le développeur du fournisseur de contenu). Si ce point de terminaison est manquant, cela signifie que votre contenu ne sera pas disponible sur toutes les plateformes et tous les MVPD. Pour l’API REST sans client, nous disposons également du point de terminaison suivant :  `https://api.auth.adobe.com/adobe-services/config your-config-ID]`.
+* Le point de terminaison de configuration pour toutes les plateformes : `https://sp.auth.adobe.com/adobe-services/config/[your-config-ID]` - Il est disponible en HTTP ou HTTPS (selon le choix effectué par le développeur du fournisseur de contenu). Si ce point de terminaison est manquant, cela signifie que votre contenu ne sera pas disponible sur toutes les plateformes et tous les MVPD. Pour l’API REST sans client, nous avons également le point de terminaison suivant : `https://api.auth.adobe.com/adobe-services/config your-config-ID]`.
 
 * Les points de terminaison suivants font partie du SDK Web d’authentification Adobe Pass.  S&#39;il manque, cela signifie que la payTVpass est désactivé pour tous les programmeurs et toutes les propriétés web :
 
@@ -37,6 +37,6 @@ Les clients peuvent utiliser [Nagios](http://www.nagios.org) ou d’autres outil
 
   Vous obtiendrez toujours une erreur 503, car ce point de terminaison nécessite une réponse SAML MVPD.
 
-* Autres points de terminaison des droits - `adobe-services/1.0/authenticate/`, `adobe-services/1.0/deviceShortAuthorize`, `adobe-services/1.0/authorize`
+* Autres points de terminaison de droits - `adobe-services/1.0/authenticate/`, `adobe-services/1.0/deviceShortAuthorize`, `adobe-services/1.0/authorize`
 
 Vous ne pouvez pas surveiller ces points de terminaison car ils ont besoin d’une charge utile pour une réponse appropriée.

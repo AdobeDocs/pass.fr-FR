@@ -22,7 +22,7 @@ Vous devez empêcher l’affichage de MVPD spécifiques à (&quot;liste bloquée
 
 ## Solution {#solution-prevent-mvpd-sel-dialog}
 
-La solution consiste à créer une liste bloquée lors de la `displayProviderDialog()` est appelée.
+La solution consiste à créer une liste bloquée lorsque `displayProviderDialog()` est appelé.
 
 Par exemple, si vous souhaitez que CableCompany_1 et CableCompany_2 ne s’affichent pas dans le sélecteur MVPD, vous effectuez une opération similaire à celle présentée dans l’exemple suivant.
 

@@ -4,7 +4,7 @@ description: Notes de mise à jour de l’authentification Adobe Pass 2.63
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 ### Numéro de build {#build-number-263}
 
-Authentification Adobe Pass : adobe-pass-**2,63**
+Authentification Adobe Pass : adobe-pass-**2.63**
 Date de publication : **09/20/2022 - 09/22/2022**
 
 ### Nouvelles fonctionnalités {#new-features-263}
@@ -54,5 +54,5 @@ Dans cette version, nous avons corrigé un problème en raison duquel authN ou a
 
 #### SDK JavaScript 4.6.0 {#js-sdk}
 
-* Suppression de l’utilisation de `eval` , rendant ainsi le SDK compatible avec la stratégie de sécurité du contenu.
+* Suppression de l’utilisation de la fonction `eval`, rendant ainsi le SDK compatible avec la stratégie de sécurité du contenu.
 * Correction d’un problème qui empêchait la fin du flux d’authentification lorsque le stockage local du navigateur était explicitement effacé par une application partenaire.

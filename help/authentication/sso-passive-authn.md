@@ -4,7 +4,7 @@ description: SSO via l’authentification passive
 exl-id: ce45899f-6e94-4bb0-a2c1-51f03bd66d8d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,8 @@ Le diagramme suivant illustre le flux amélioré et l’authentification passive
 
 
 
-Exemple de requête SAML Voici un exemple de requête SAML pour le flux authN passif :
+Exemple de requête SAML
+Voici un exemple de requête SAML pour le flux authN passif :
 
 
 ```xml
@@ -101,7 +102,7 @@ Exemple de requête SAML Voici un exemple de requête SAML pour le flux authN pa
 </saml2p:AuthnRequest>
 ```
 
-## Règles de fonctionnement
+## Règles commerciales
 
 Les MVPD ont des restrictions de domaine de portée d’authentification unique spécifiques. Par exemple, seuls certains domaines peuvent être autorisés par certains MVPD (SSO pour la même société de médias, mais pas entre plusieurs entreprises).
 Certains MVPD peuvent nécessiter l’application de règles d’authentification différentes. Par exemple, les MVPD peuvent avoir des TTL d’authentification différents par réseau. En outre, les MVPD peuvent activer l’authentification à domicile pour certains réseaux, mais pas pour d’autres (les cas d’utilisation du contrôle parental sont fortement représentés ici).

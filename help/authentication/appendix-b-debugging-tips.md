@@ -4,7 +4,7 @@ description: Annexe B "Conseils de débogage"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ Il est fiable pour le navigateur, mais dans Firefox : &quot;Outils&quot; -\> &qu
 
 ## Effacement du cache des LSOs {#clearing-lsos-cache}
 
-Accédez au [Aide de Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Accédez à l’ [aide de Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-Sélectionnez la variable ```entitlement.\*``` (en fonction des tests) et cliquez sur &quot;Supprimer le site web&quot;.
+Sélectionnez le ```entitlement.\*``` (en fonction de ses tests) et cliquez sur &quot;Supprimer le site web&quot;.
 
 
 ## Outils de débogage {#tools}

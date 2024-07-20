@@ -1,13 +1,13 @@
 ---
 title: Comment faire la distinction entre contenu VOD et contenu réel dans la surveillance de la simultanéité
 description: Comment faire la distinction entre contenu VOD et contenu réel dans la surveillance de la simultanéité
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 51ba686a-7c1f-4403-9e8e-cd247bf9e345
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '221'
 ht-degree: 0%
 
 ---
-
 
 # Comment : distinguer le contenu VOD du contenu en direct dans la surveillance simultanée {#dist-vod-live}
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 
 
-**A :** La surveillance simultanée ne peut pas directement faire la distinction entre le contenu en direct et la vidéo à la demande (VOD). Le lecteur vidéo doit connaître le type de contenu en cours de lecture et envoyer ces informations lors de la [appel d’initialisation de session](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (requis pour la surveillance de la simultanéité). Le workflow normal ressemble à ceci :
+**A :** La surveillance de la simultanéité ne peut pas directement faire la distinction entre le contenu en direct et la vidéo à la demande (VOD). Le lecteur vidéo doit connaître le type de contenu en cours de lecture et envoyer ces informations lors de l’ [appel d’initialisation de session](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (requis pour la surveillance de la simultanéité). Le workflow normal ressemble à ceci :
 
 1. Les clients de surveillance de la simultanéité définissent un ensemble de métadonnées sur lesquelles ils souhaitent que des règles soient implémentées (par exemple, content-type=live|vod, device-type=mobile|console|bureau).
 1. L’équipe de surveillance de la simultanéité met en oeuvre la stratégie souhaitée. Exemple :

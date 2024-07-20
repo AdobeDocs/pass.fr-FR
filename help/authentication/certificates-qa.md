@@ -4,7 +4,7 @@ description: Questions et réponses sur les certificats
 exl-id: d4e493b0-4467-42b1-9758-16c5941d8051
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '245'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 </br>
 
-**Q1 :** Est-il possible d’enregistrer des certificats sur iOS et Android ?
+**Q1 :** Est-il possible d’enregistrer des certificats dans iOS et Android ?
 
 **A :** Le certificat pour iOS et Android est le même dans la configuration actuelle. Le certificat natif est utilisé pour les deux plateformes.
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 **Q2 :** Les mêmes certificats iOS peuvent-ils être utilisés comme certificats de Principal et de sauvegarde dans les environnements de production et d’évaluation ? Si ce n’est pas recommandé, pouvez-vous fournir une explication ?
 
-**A :** Il n’est pas utile de configurer le même certificat que le certificat de Principal et le certificat de sauvegarde. Nous avons le concept de certificats de Principal et de sauvegarde afin de pouvoir configurer plusieurs certificats pour un programmeur en cas d’expiration ou de révocation du certificat du Principal. Disposer d’un certificat de sauvegarde donnera aux programmeurs le temps de modifier le Principal sans affecter l’environnement de publication. Vous pouvez toutefois utiliser le même ensemble de certificats de Principal et de sauvegarde pour les profils de production et d’évaluation.
+**A :** La configuration du même certificat ne sert à rien que le certificat de Principal et le certificat de sauvegarde. Nous avons le concept de certificats de Principal et de sauvegarde afin de pouvoir configurer plusieurs certificats pour un programmeur en cas d’expiration ou de révocation du certificat du Principal. Disposer d’un certificat de sauvegarde donnera aux programmeurs le temps de modifier le Principal sans affecter l’environnement de publication. Vous pouvez toutefois utiliser le même ensemble de certificats de Principal et de sauvegarde pour les profils de production et d’évaluation.
 
 </br>
 

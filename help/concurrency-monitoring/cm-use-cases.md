@@ -1,13 +1,13 @@
 ---
 title: Cas d’utilisation
 description: Cas d’utilisation de la surveillance simultanée.
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
 
 ---
-
 
 # Cas d’utilisation {#use-cases}
 
@@ -17,8 +17,8 @@ Pour surveiller l’utilisation par les abonnés, un service centralisé peut ag
 
 Les principaux cas d’utilisation pris en charge par ce service centralisé doivent être les suivants :
 
-1. Dès qu’un abonné commence à regarder une vidéo, l’application peut **initialisation d’une session de diffusion en continu** et démarrez **activité de reporting** data.
-1. Dans le même service central, une autre instance recevra ***Décisions de CM*** - si l’application a une ou plusieurs stratégies enregistrées dans le service CM, le service répond avec une décision d’accès basée sur l’activité actuelle.
+1. Dès qu’un abonné commence à regarder une vidéo, l’application peut **initialiser une session de diffusion en continu** et lancer des données **d’activité de création de rapports**.
+1. Dans le même service central, une autre instance recevra ***décisions de CM*** : si l’application a une ou plusieurs stratégies enregistrées dans le service CM, le service répondra avec la décision d’accès en fonction de l’activité actuelle.
 
 
 ## Création d’une session {#create-session}

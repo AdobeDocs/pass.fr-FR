@@ -1,13 +1,13 @@
 ---
 title: Glossaire
 description: Glossaire des termes de la surveillance simultanée
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
-
 
 # Glossaire {#glossary}
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Action {#action-defn}
 
-* Le type d’accès demandé par le sujet ; les valeurs possibles pour CM sont ***lancer*** ou ***continue*** une session de diffusion en continu.
+* Le type d’accès que le sujet demande ; les valeurs possibles pour CM sont ***initiate*** ou ***continue*** une session de diffusion en continu.
 
 ## Flux actif {#active-stream-defn}
 
@@ -28,15 +28,15 @@ ht-degree: 0%
 ## Application {#application-defn}
 
 * Développé par le tenant pour l’accès au contenu vidéo
-* prend et applique des décisions concernant l’accès au contenu en fonction des informations fournies par le service de surveillance de la simultanéité (cette information est valide dans la variable [Point d’informations sur la stratégie](/help/concurrency-monitoring/policy-info-pt-versionone.md) case)
-* Comportera une variable **ID d’application** fourni par Adobe.
+* prend et applique des décisions sur l’accès au contenu en fonction des informations fournies par le service de surveillance de la simultanéité (cela est valide dans le cas du [Point d’information sur la stratégie](/help/concurrency-monitoring/policy-info-pt-versionone.md)) ;
+* Disposera d’un **ID d’application** unique fourni par Adobe.
 
 ## Service de surveillance de la simultanéité {#cm-service-defn}
 
 * Agit comme un système de surveillance pour les abonnés, soutenant les programmes multivariés et les programmeurs dans leurs exigences d’application des politiques inter-applications.
 * Reçoit les pulsations qui indiquent l’activité du flux.
-* Agit comme _Point de décision politique_ en évaluant les demandes d’autorisation en fonction de l’activité de l’utilisateur et en fournissant une réponse d’autorisation/de refus.
-* Agit comme _Point d’informations sur la stratégie_ en signalant le nombre de diffusions actives (et les métadonnées de diffusion supplémentaires) pour un abonné.
+* Agit comme un _point de décision de stratégie_ en évaluant les demandes d’autorisation en fonction de l’activité de l’utilisateur et en fournissant une réponse d’autorisation/de refus.
+* Agit comme un _point d’informations sur la stratégie_ en signalant le nombre de diffusions actives (et de métadonnées de diffusion supplémentaires) pour un abonné.
 
 ## Environnement {#env-defn}
 
@@ -78,7 +78,7 @@ ht-degree: 0%
 
   *Q : Pourquoi le programmeur et non l’identifiant du demandeur comme dans le reste de l’authentification Adobe Pass ?*
 
-  *R : La raison est de permettre aux programmeurs d’utiliser ce paramètre de manière flexible pour transmettre ou isoler des données entre leurs propriétés en fonction de leurs cas d’utilisation.*
+  *A : La raison est de permettre aux programmeurs d&#39;utiliser ce paramètre de manière flexible pour transmettre ou isoler des données entre leurs propriétés en fonction de leurs cas d&#39;utilisation.*
 
 ## Ressource {#resource-defn}
 

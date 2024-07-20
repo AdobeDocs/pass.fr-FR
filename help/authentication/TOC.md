@@ -67,7 +67,7 @@ ht-degree: 3%
          + [Référence de l’API du SDK iOS/tvOS](iostvos-sdk-api-reference.md)
          + Instructions {#ios-tvos-sdk-guidelines}
             + [Enregistrement de l’application iOS/tvOS](iostvos-application-registration.md)
-            + Instructions de migration {#migration-guidelines}
+            + Directives de migration {#migration-guidelines}
                + [Guide de migration d’iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
             + [Vérifications de l’intégrité du stockage iOS/tvOS](iostvos-sdk-storage-integrity-checks.md)
          + API iOS/tvOS {#ios-tvos-api}
@@ -77,8 +77,8 @@ ht-degree: 3%
          + [Guide pas à pas du SDK Android](android-sdk-cookbook.md)
          + [Référence de l’API du SDK Android](android-sdk-api-reference.md)
          + Instructions {#androidguidelines}
-            + [Enregistrement d’applications Android](android-application-registration.md)
-            + [SDK Android avec enregistrement du client dynamique](android-sdk-with-dynamic-client-registration.md)
+            + [Enregistrement d’une application Android](android-application-registration.md)
+            + [SDK Android avec enregistrement de client dynamique](android-sdk-with-dynamic-client-registration.md)
          + API Android{#androidapi}
             + [Préautoriser](preauthorize-android.md)
       + SDK Amazon FireOS {#fireossdk}
@@ -90,7 +90,7 @@ ht-degree: 3%
          + [Enregistrement de l’application Amazon FireOS](amazon-fireos-application-registration.md)
          + [SDK FireOS avec enregistrement de client dynamique](fireos-sdk-with-dynamic-client-registration.md)
    + SSO de la plateforme {#platform-sso}
-      + APPLE SSO {#apple-sso}
+      + Apple SSO {#apple-sso}
          + [Présentation d’Apple SSO](apple-sso-overview.md)
          + [Guide pas à pas Apple SSO (API REST)](apple-sso-cookbook-rest-api.md)
          + [Guide pas à pas Apple SSO (SDK iOS/tvOS)](apple-sso-cookbook-iostvos-sdk.md)
@@ -116,21 +116,21 @@ ht-degree: 3%
    + [Portée du fournisseur de services](serv-provider-scoping.md)
    + [Adresses IP autorisées MVPD](mvpd-listing-ip-addres.md)
 + Fonctionnalités d’authentification Adobe Pass {#auth-features}
-   + Intégration d’Adobe Analytics {#analytics-int}
+   + Intégration Adobe Analytics {#analytics-int}
       + [Intégration des données côté serveur d’authentification Adobe Pass dans Adobe Analytics](integrate-authn-servr-data-analytics.md)
       + [Utilisation de l’ID Experience Cloud dans l’authentification Adobe Pass](exp-cloud-id-authn.md)
    + Surveillance du service de droits {#entitlement-service-monitoring}
       + [Présentation de la surveillance du service de droits](entitlement-service-monitoring-overview.md)
       + [API de surveillance du service de droits](entitlement-service-monitoring-api.md)
       + [Mesures côté serveur](understanding-serverside-metrics.md)
-   + Temp pass {#temp-pass}
+   + Passe temporaire {#temp-pass}
       + [Temp pass](temp-pass.md)
       + [Passe temporaire promotionnelle](promotional-temp-pass.md)
       + [Réinitialiser le transfert temporaire](reset-temp-pass.md)
    + Authentification unique {#sso}
       + [Prise en charge de la connexion unique](sso-support.md)
       + [SSO via authentification passive](sso-passive-authn.md)
-   + Authentification par domicile {#home-based-auth}
+   + Authentification basée sur la maison {#home-based-auth}
       + [Authentification basée sur la maison pour TV partout](home-based-authn-tve.md)
       + [État de l’adaptateur de bus hôte pour les MVPD](hba-status-mvpds.md)
    + Métadonnées utilisateur {#user-metadat}
@@ -167,7 +167,7 @@ ht-degree: 3%
    + [Notes de mise à jour de l’authentification Adobe Pass 2.64](auth-rn-264.md)
    + [Notes de mise à jour de l’authentification Adobe Pass 2.63](auth-rn-263.md)
    + [Notes de mise à jour d’Adobe Pass Authentication 2.62.1](auth-rn-2621.md)
-   + Notes de mise à jour du SDK JavaScript  {#release-notes-javascript}
+   + Notes de mise à jour du SDK JavaScript {#release-notes-javascript}
       + [Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)
       + [Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.6.0](authn-rn-javascript-460.md)
       + [Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.4.0](authn-rn-javascript-440.md)
@@ -176,7 +176,7 @@ ht-degree: 3%
       + [Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.1.0](authn-rn-javascript-410.md)
       + [Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.0.0](authn-rn-javascript-400.md)
       + [Notes de mise à jour d’Adobe Pass Authentication JavaScript 3.5.0](authn-rn-javascript-350.md)
-   + Notes de mise à jour du SDK iOS/tvOS  {#release-notes-ios}
+   + Notes de mise à jour du SDK iOS/tvOS {#release-notes-ios}
       + [Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.9.2](authn-rn-ios-tvos-392.md)
       + [Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.8.4](authn-rn-ios-tvos-384.md)
       + [Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.8.3](authn-rn-ios-tvos-383.md)
@@ -190,11 +190,11 @@ ht-degree: 3%
       + [Questions et réponses sur les certificats](certificates-qa.md)
       + SDK JavaScript {#javascript}
          + [Évaluation de la prévention du suivi - Apple Safari](tracking-prevention-assessment-apple-safari.md)
-         + [Évaluation de la prévention du suivi - Google Chrome](tracking-prevention-assessment-google-chrome.md)
+         + [Évaluation de la prévention du suivi - Chrome Google](tracking-prevention-assessment-google-chrome.md)
          + [Mises à jour des cookies : indicateurs samesite et sécurisé](cookies-updates-samesite-and-secure-flags.md)
       + SDK Android {#android}
-         + [Accéder à l’authentification unique (SSO) du SDK Android sur les applications Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
-         + [Authentification Adobe Pass et nouveau modèle d’autorisations Android 6 &quot;Marshmallow&quot;](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
+         + [Accès à l’authentification unique (SSO) du SDK Android sur les applications Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
+         + [Authentification Adobe Pass et nouveau modèle d’autorisations &quot;Marshmallow&quot; d’Android 6](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
       + SDK iOS/tvOS {#iostvos}
          + [Prise en charge de WKWebView sur le SDK iOS 3.1+](wkwebview-support-on-ios-sdk-31.md)
          + [Prise en charge de SFSafariViewController sur le SDK iOS 3.2+](sfsafariviewcontroller-support-on-ios-sdk-32.md)
@@ -202,8 +202,8 @@ ht-degree: 3%
          + [Erreur d’authentification iOS - Impossible de trouver adobepass.ios.app](ios-authentication-error-adobepassiosapp-cannot-be-found.md)
          + [Réinitialiser le transfert temporaire sur iOS](reset-temp-pass-on-ios.md)
          + [Débogage du SDK AccessEnabler iOS/tvOS à l’aide des journaux d’application de la console](debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-         + [Chemin de mise à niveau d’AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
-   + Transmission d’environnements d’authentification {#primetime-authentication-environments}
+         + [Chemin de mise à niveau AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
+   + Transmettre des environnements d’authentification {#primetime-authentication-environments}
       + [Présentation des environnements Adobe](understanding-the-adobe-environments.md)
       + [Configuration de votre environnement et test dans un environnement de préqualification](setting-up-your-environment-and-testing-in-prequal.md)
       + [Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe](test-authn-authz-flows-using-adobes-api-test-site.md)
@@ -219,7 +219,7 @@ ht-degree: 3%
    + Outils et utilitaires {#tools-and-utilities}
       + [Utilisation du proxy Charles](using-charles-proxy.md)
    + Concepts {#concepts}
-      + [Présentation des ID utilisateur](understanding-user-ids.md)
+      + [Comprendre les identifiants utilisateur](understanding-user-ids.md)
 + [Guide d’utilisation du tableau de bord TVE](tve-dashboard-user-guide.md)
 + Nouveau guide d’utilisation du tableau de bord TVE {#user-guide}
    + [Présentation du tableau de bord TVE](/help/authentication/tve-dashboard-overview.md)

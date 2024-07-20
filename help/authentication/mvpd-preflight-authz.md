@@ -4,7 +4,7 @@ description: Autorisation de contrôle en amont MVPD
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -21,8 +21,8 @@ ht-degree: 0%
 
 L’authentification Adobe Pass peut actuellement prendre en charge l’autorisation de contrôle en amont de deux manières pour les MVPD, soit par l’intermédiaire des attributs de réponse AuthN, soit par une requête AuthZ multicanal.  Les scénarios suivants décrivent les coûts et les avantages des différentes façons dont vous pouvez mettre en oeuvre l’autorisation de contrôle en amont :
 
-* **Scénario de cas idéal** - Le MVPD fournit la liste des ressources préautorisées pendant la phase d’autorisation (AuthZ multicanal).
-* **Scénario du pire cas** - Si un MVPD ne prend en charge aucune forme d’autorisation de ressources multiples, le serveur d’authentification Adobe Pass effectue un appel d’autorisation au MVPD pour chaque ressource de la liste des ressources. Ce scénario a un impact (proportionnel au nombre de ressources) sur le temps de réponse de la demande d’autorisation de contrôle en amont. Cela peut augmenter la charge sur les serveurs Adobe et MVPD, ce qui entraîne des problèmes de performances. En outre, il génère des requêtes d’autorisation/événements de réponse sans avoir à effectuer une lecture.
+* **Meilleur scénario de cas** - Le MVPD fournit la liste des ressources préautorisées pendant la phase d’autorisation (AuthZ multicanal).
+* **Pire scénario** - Si un MVPD ne prend en charge aucune forme d’autorisation de ressources multiples, le serveur d’authentification Adobe Pass effectue un appel d’autorisation au MVPD pour chaque ressource de la liste des ressources. Ce scénario a un impact (proportionnel au nombre de ressources) sur le temps de réponse de la demande d’autorisation de contrôle en amont. Cela peut augmenter la charge sur les serveurs Adobe et MVPD, ce qui entraîne des problèmes de performances. En outre, il génère des requêtes d’autorisation/événements de réponse sans avoir à effectuer une lecture.
 * **Obsolète** - Le MVPD fournit la liste des ressources préautorisées pendant la phase d’authentification. Il n’y aura donc aucun appel réseau nécessaire, pas même la demande de contrôle en amont, puisque la liste est mise en cache sur le client.
 
 Bien que les MVPD n’aient pas à prendre en charge l’autorisation de contrôle en amont, les sections suivantes décrivent certaines méthodes d’autorisation de contrôle en amont que l’authentification Adobe Pass peut prendre en charge, avant de revenir au pire scénario ci-dessus.
@@ -123,7 +123,7 @@ Adobe peut également prendre en charge l’autorisation de plusieurs canaux san
 
 Le tableau suivant répertorie les MVPD qui prennent en charge l’autorisation de contrôle en amont, ainsi que le type de contrôle en amont qu’ils prennent en charge et les limites connues :
 
-| Approche de contrôle en amont | MVPD | Remarques |
+| Approche de contrôle en amont | MVPD | Notes |
 |:-------------------------------:|:--------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------:|
 | AuthZ multicanal | Composer AT&amp;T Proxy Clearleap Charter_Direct Proxy GLDS Verizon OSN Bell Optimum AlticeOne |                                                                    |
 | Liaison de canaux dans les métadonnées utilisateur | Suddenlink HTC | Toutes les intégrations directes de Synacor peuvent également prendre en charge cette approche. |

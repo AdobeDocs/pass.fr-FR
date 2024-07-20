@@ -4,7 +4,7 @@ description: Présentation pour les programmeurs
 exl-id: 64a12e49-0ecb-4b81-977d-60c10925bb59
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '4273'
+source-wordcount: '4274'
 ht-degree: 0%
 
 ---
@@ -27,18 +27,18 @@ Déterminer les droits d’un observateur n’est pas toujours simple pour un pr
 
 ![](assets/user-ent-by-progr.png)
 
-*Figure : Droit Utilisateur Déterminé Directement Par Le Programmeur*
+*Figure : Droit De L’Utilisateur Déterminé Directement Par Le Programmeur*
 
 L’authentification Adobe Pass pour TV partout permet d’arbitrer en toute sécurité ces transactions de droits entre les programmeurs et les MVPD. L’authentification Adobe Pass permet aux programmeurs de fournir facilement, rapidement et en toute sécurité du contenu protégé à des clients valides :
 
 ![](assets/user-ent-mediatedby-authn.png)
 
-*Figure : Droit des utilisateurs avec authentification Adobe Pass*
+*Figure : Droits de l’utilisateur médiatisés par l’authentification Adobe Pass*
 
-L’authentification Adobe Pass agit comme votre proxy dans les échanges avec les MVPD participants, de sorte que vous pouvez présenter vos visionneuses avec une interface intersite cohérente. L’authentification Adobe Pass vous permet également de fournir aux visionneuses l’authentification et l’autorisation de connexion unique (SSO). L’authentification et l’autorisation sont suivies pour tous les services participants, de sorte qu’un abonné n’ait pas à se reconnecter après sa première authentification sur son propre système.
+L’authentification Adobe Pass agit comme votre proxy dans exchange avec les MVPD participants, de sorte que vous pouvez présenter vos visionneuses avec une interface intersite cohérente. L’authentification Adobe Pass vous permet également de fournir aux visionneuses l’authentification et l’autorisation de connexion unique (SSO). L’authentification et l’autorisation sont suivies pour tous les services participants, de sorte qu’un abonné n’ait pas à se reconnecter après sa première authentification sur son propre système.
 
 * **Authentification** - Processus de confirmation avec un MVPD qu’un utilisateur donné est un client connu.
-* **Autorisation** - Processus de confirmation avec un MVPD qu’un utilisateur authentifié possède un abonnement valide à une ressource spécifiée.
+* **Authorization** - Processus de confirmation avec un MVPD qu’un utilisateur authentifié possède un abonnement valide à une ressource spécifiée.
 
 ### Fonctionnement de l’authentification Adobe Pass {#HowItWorks}
 
@@ -73,13 +73,13 @@ Pour plus d’informations sur les jetons, reportez-vous aux sections suivantes 
 
 Trois types de jetons sont émis lors des workflows d’authentification et d’autorisation. Les jetons AuthN et AuthZ sont de &quot;longue durée&quot;, ce qui assure la continuité de l’expérience de visionnage de l’utilisateur. Le jeton multimédia est un jeton de courte durée qui fournit une assistance pour les bonnes pratiques du secteur afin de prévenir la fraude par le biais de l’extraction de flux. Les programmeurs spécifient les valeurs de durée de vie (TTL) pour chaque type de jeton en fonction des accords conclus avec les MVPD. Les programmeurs décident d’une valeur TTL qui convient le mieux à votre entreprise et à vos clients.
 
-* **Jeton AuthN** (&quot;Longue durée&quot;) : lors d’une authentification réussie, l’authentification Adobe Pass crée un jeton AuthN associé à l’appareil demandeur et un identifiant unique global (GUID).
+* **Jeton AuthN** (&quot;De longue durée&quot;) : Une fois l’authentification réussie, l’authentification Adobe Pass crée un jeton AuthN associé à l’appareil demandeur et à un identifiant unique global (GUID).
    * L’authentification Adobe Pass envoie le jeton AuthN à l’activateur d’accès, qui le met en cache de manière sécurisée sur le système du client.  Bien que le jeton AuthN soit présent et non expiré, il est disponible pour toutes les applications qui utilisent l’authentification Adobe Pass. L’activateur d’accès utilise le jeton AuthN pour le flux d’autorisation.
    * À tout moment, un seul jeton AuthN est mis en cache. Chaque fois qu’un nouveau jeton AuthN est émis et qu’un ancien existe déjà, l’authentification Adobe Pass remplace le jeton mis en cache.
-* **Jeton AuthZ** (&quot;De longue durée&quot;) : une fois l’autorisation effectuée, l’authentification Adobe Pass crée un jeton AuthZ associé à l’appareil demandeur et à une ressource protégée spécifique.  La ressource protégée est identifiée par un identifiant de ressource unique.
+* **Jeton AuthZ** (&quot;De longue durée&quot;) : Une fois l’autorisation effectuée, l’authentification Adobe Pass crée un jeton AuthZ associé à l’appareil demandeur et à une ressource protégée spécifique.  La ressource protégée est identifiée par un identifiant de ressource unique.
    * L’authentification Adobe Pass envoie le jeton AuthZ à l’activateur d’accès, qui le met en cache de manière sécurisée sur le système local. L’activateur d’accès utilise ensuite le jeton AuthZ pour créer le jeton de média de courte durée utilisé pour l’accès réel à l’affichage.
    * A tout moment, un seul jeton AuthZ par ressource est mis en cache. L’authentification Adobe Pass peut mettre en cache plusieurs jetons AuthZ, à condition qu’ils soient associés à différentes ressources. Chaque fois qu’un nouveau jeton AuthZ est émis et qu’un ancien existe déjà pour la même ressource, l’authentification Adobe Pass remplace le jeton mis en cache.
-* **Jeton de média** (&quot;De courte durée&quot;) : Access Enabler utilise le jeton AuthZ pour générer un jeton multimédia de courte durée (par défaut : 7 minutes). Il s’agit du moment où une requête de lecture réussie est considérée comme ayant eu lieu.
+* **Jeton multimédia** (&quot;De courte durée&quot;) : l’activateur d’accès utilise le jeton AuthZ pour générer un jeton multimédia de courte durée (par défaut : 7 minutes). Il s’agit du moment où une requête de lecture réussie est considérée comme ayant eu lieu.
    * Avant de permettre l’accès à la ressource protégée, votre serveur multimédia doit utiliser un composant d’authentification Adobe Pass, le Vérificateur de jeton multimédia, pour valider le jeton multimédia.
    * Comme le jeton multimédia n’est pas lié à l’appareil, sa durée de vie est nettement plus courte (par défaut : 7 minutes) que celle des jetons AuthN et AuthZ de longue durée.
    * Le jeton multimédia de courte durée est limité à une utilisation unique et n’est jamais mis en cache. Elle est récupérée à partir du serveur d’authentification Adobe Pass chaque fois qu’une API d’autorisation est appelée.
@@ -88,20 +88,20 @@ Trois types de jetons sont émis lors des workflows d’authentification et d’
 
 Access Enabler stocke les jetons de longue durée (AuthN et AuthZ) dans des emplacements spécifiques à son environnement :
 
-* **Flash 10.1** (ou supérieur) : les jetons de longue durée sont stockés sous la forme d’objets partagés locaux.
-* **HTML5**: les jetons de longue durée sont conservés en toute sécurité dans le magasin local du navigateur HTML5.
-* **iOS**: les jetons de longue durée sont stockés sur un tableau de bord persistant, où ils sont accessibles par d’autres applications clientes d’authentification Adobe Pass.
-* **Android**: les jetons de longue durée sont stockés dans un fichier de base de données partagé, où ils sont accessibles par d’autres applications clientes d’authentification Adobe Pass.
-* **Appareils API sans client**: les jetons sont stockés sur les serveurs d’authentification Adobe Pass.
+* **Flash 10.1** (ou supérieur) : les jetons de longue durée sont stockés en tant qu’objets partagés locaux.
+* **HTML5** : les jetons de longue durée sont conservés en toute sécurité dans la boutique locale du navigateur HTML5.
+* **iOS** : les jetons de longue durée sont stockés sur un tableau de bord persistant, où ils sont accessibles par d’autres applications clientes d’authentification Adobe Pass.
+* **Android** : les jetons de longue durée sont stockés dans un fichier de base de données partagé, où ils sont accessibles par d’autres applications clientes d’authentification Adobe Pass.
+* **Appareils API sans client** : les jetons sont stockés sur les serveurs d’authentification Adobe Pass.
 
 ### Sécurité des jetons {#token-security}
 
 Le serveur d’authentification Adobe Pass signe numériquement tous les jetons de longue durée à l’aide de l’identifiant d’appareil (dérivé des caractéristiques matérielles de l’appareil). La signature numérique diffère de la manière dont elle est générée, protégée et validée selon l’environnement :
 
-* **Flash 10.1** (ou version ultérieure) : l’identifiant de l’appareil repose sur les informations d’identification de l’appareil, un certificat unique émis par le serveur Adobe Individualization. Cette sécurité équivaut à la technologie DRM de FAXS. Cette validation côté serveur compare l’identifiant unique de l’appareil dans le jeton avec les informations d’identification de l’appareil (qui sont communiquées en toute sécurité du Flash Player à l’authentification Adobe Pass). Les informations d’identification de l’appareil identifient également la version du client FAXS et la version de Flash Player (ou AIR) à laquelle il a été émis. La liaison de l’appareil est plus forte qu’avec HTML5. Par conséquent, la durée de vie (TTL) des jetons est généralement plus longue avec Flash.
-* **HTML5** - L’appareil est personnalisé côté client. Il utilise les caractéristiques disponibles par le biais de JavaScript pour produire un ID de pseudo-appareil qui inclut les versions du navigateur et du système d’exploitation, une adresse IP et un GUID de cookie du navigateur (identifiant unique global). Cet identifiant d’appareil de jeton est comparé à l’identifiant pseudo-appareil actuel de l’appareil. L’adresse IP pouvant changer lors d’une utilisation normale, même au cours d’une même session, l’authentification Adobe Pass stocke les jetons HTML5 à deux emplacements : localStorage et sessionStorage. Si l’IP change et que le jeton sessionStorage est toujours valide, la session est conservée. Avec HTML5, la liaison de l’appareil n’est pas aussi forte. Par conséquent, la durée de vie des jetons est généralement plus courte que celle des Flashs.
+* **Flash 10.1** (ou supérieur) - L’identifiant de l’appareil repose sur les informations d’identification de l’appareil, un certificat unique émis par le serveur d’individualisation de l’Adobe. Cette sécurité équivaut à la technologie DRM de FAXS. Cette validation côté serveur compare l’identifiant unique de l’appareil dans le jeton avec les informations d’identification de l’appareil (qui sont communiquées en toute sécurité du Flash Player à l’authentification Adobe Pass). Les informations d’identification de l’appareil identifient également la version du client FAXS et la version de Flash Player (ou AIR) à laquelle il a été émis. La liaison de l’appareil est plus forte qu’avec HTML5. Par conséquent, la durée de vie des jetons est généralement plus longue avec Flash.
+* **HTML5** - L’appareil est personnalisé côté client. Il utilise les caractéristiques disponibles par le biais de JavaScript pour produire un identifiant pseudo-périphérique qui inclut les versions du navigateur et du système d’exploitation, une adresse IP et un GUID de cookie du navigateur (identifiant unique global). Cet identifiant d’appareil de jeton est comparé à l’identifiant pseudo-appareil actuel de l’appareil. L’adresse IP pouvant changer lors d’une utilisation normale, même au cours d’une même session, l’authentification Adobe Pass stocke les jetons HTML5 à deux emplacements : localStorage et sessionStorage. Si l’IP change et que le jeton sessionStorage est toujours valide, la session est conservée. Avec HTML5, la liaison de l’appareil n’est pas aussi forte. Par conséquent, la durée de vie des jetons est généralement plus courte que celle des Flashs.
 * **Clients natifs** (iOS et Android) - Les jetons de longue durée contiennent des informations d’individualisation des identifiants d’appareil natifs et sont donc liés à l’appareil demandeur. Les demandes d’authentification et d’autorisation sont envoyées via HTTPS et les informations d’identification de l’appareil sont numériquement signées par la bibliothèque Access Enabler avant de les envoyer aux serveurs principaux. Côté serveur, les informations d’identifiant de l’appareil sont validées par rapport à sa signature numérique associée.
-* **Clients API sans client** - La solution d’API sans client dispose de son ensemble de protocoles de sécurité qui impliquent la signature numérique de tous les appels d’API. Les jetons générés pendant les flux de droits sont stockés de manière sécurisée sur les serveurs d’authentification Adobe Pass.
+* **Clients API sans client** - La solution API sans client possède un ensemble de protocoles de sécurité qui impliquent la signature numérique de tous les appels API. Les jetons générés pendant les flux de droits sont stockés de manière sécurisée sur les serveurs d’authentification Adobe Pass.
 
 L’authentification Adobe Pass valide chaque jeton de longue durée afin de s’assurer que l’appareil accédant au contenu est identique à celui qui a émis le jeton. Pour tous les jetons, une validation côté client garantit que la signature numérique est intacte et que l’intégrité du jeton est préservée. Lorsque la validation de l’identifiant d’appareil échoue, la session d’authentification est invalidée et l’utilisateur est invité à se reconnecter, ce qui réinitialise les jetons.
 
@@ -109,8 +109,8 @@ L’authentification Adobe Pass valide chaque jeton de longue durée afin de s�
 
 Les applications sur différentes plateformes ne partagent pas de jetons. Il existe plusieurs raisons à cela, notamment :
 
-* Comme décrit dans [Stockage des jetons](#token-storage), la méthode de stockage des jetons varie selon les plateformes (par exemple, Objets partagés locaux pour le Flash, Stockage WebStorage pour JavaScript).
-* Le degré de sécurité des jetons varie d’une plate-forme à l’autre. Par exemple, les jetons de Flash sont fortement liés à un appareil à l’aide de FAXS. Dans un environnement JavaScript pur, les jetons ne bénéficient pas du même niveau de prise en charge DRM que dans Flash.  Le partage de jetons JS avec des applications de Flash augmenterait la possibilité que des jetons moins sécurisés exploitent un environnement plus sécurisé.
+* Comme décrit dans [Stockage de jeton](#token-storage), la méthode de stockage des jetons varie selon les plateformes (par exemple, Objets partagés locaux pour le Flash, Stockage WebStorage pour JavaScript).
+* Le degré de sécurité des jetons varie d’une plate-forme à l’autre. Par exemple, les jetons de Flash sont fortement liés à un appareil à l’aide de FAXS. Dans un environnement JavaScript pur, les jetons ne bénéficient pas du même niveau de prise en charge DRM qu’en Flash.  Le partage de jetons JS avec des applications de Flash augmenterait la possibilité que des jetons moins sécurisés exploitent un environnement plus sécurisé.
 
 ## Cycle de vie de l’intégration de programmeur {#prog-integ-lifecycle}
 
@@ -127,15 +127,15 @@ L’organigramme suivant présente le processus global de confirmation des droit
 
 ![](assets/ent-flowchart.png)
 
-*Figure : Processus de confirmation du droit*
+*Figure : Processus de confirmation des droits*
 
 ### Étapes d’authentification {#authn-steps}
 
 Les étapes suivantes présentent un exemple du flux d’authentification de l’authentification Adobe Pass.  Il s’agit de la partie du processus de droit dans laquelle un programmeur détermine si l’utilisateur est un client valide d’un MVPD.  Dans ce scénario, l’utilisateur est un abonné valide à un MVPD.  L’utilisateur tente d’afficher du contenu protégé à l’aide d’une application de Flash du programmeur :
 
-1. L’utilisateur accède à la page web du programmeur, qui charge l’application de Flash du programmeur et les composants Adobe Pass Authentication Access Enabler sur la machine de l’utilisateur. L’application de Flash utilise Access Enabler pour définir l’identification du programmeur avec l’authentification Adobe Pass, et l’authentification Adobe Pass prime l’activation d’accès avec la configuration et les données d’état pour ce programmeur (le &quot;demandeur&quot;). L’activateur d’accès doit recevoir ces données du serveur avant d’effectuer tout autre appel API. Remarque technique : le programmeur a défini son identité avec le `setRequestor()` ; pour plus d’informations, voir [Guide d’intégration de programmeur](/help/authentication/programmer-integration-guide-overview.md).
+1. L’utilisateur accède à la page web du programmeur, qui charge l’application de Flash du programmeur et les composants Adobe Pass Authentication Access Enabler sur la machine de l’utilisateur. L’application de Flash utilise Access Enabler pour définir l’identification du programmeur avec l’authentification Adobe Pass, et l’authentification Adobe Pass prime l’activation d’accès avec la configuration et les données d’état pour ce programmeur (le &quot;demandeur&quot;). L’activateur d’accès doit recevoir ces données du serveur avant d’effectuer tout autre appel API. Remarque technique : le programmeur a défini son identité avec la méthode `setRequestor()` d’Access Enabler ; pour plus d’informations, consultez le [Guide d’intégration du programmeur](/help/authentication/programmer-integration-guide-overview.md).
 1. Lorsque l’utilisateur tente d’afficher le contenu protégé du programmeur, l’application du programmeur présente à l’utilisateur une liste de MVPD, à partir de laquelle l’utilisateur sélectionne un fournisseur.
-1. L’utilisateur est redirigé vers un serveur d’authentification Adobe Pass, où un [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) La requête pour le MVPD sélectionné par l’utilisateur est créée. Cette requête est envoyée en tant que requête d’authentification au nom du programmeur au MVPD. Selon le système du MVPD, le navigateur de l’utilisateur est alors redirigé vers le site du MVPD pour se connecter ou un iFrame de connexion est créé dans l’application du programmeur.
+1. L’utilisateur est redirigé vers un serveur d’authentification Adobe Pass, où est créée une requête [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) chiffrée pour le MVPD sélectionné par l’utilisateur. Cette requête est envoyée en tant que requête d’authentification au nom du programmeur au MVPD. Selon le système du MVPD, le navigateur de l’utilisateur est alors redirigé vers le site du MVPD pour se connecter ou un iFrame de connexion est créé dans l’application du programmeur.
 1. Dans les deux cas (redirection ou iFrame), le MVPD accepte la demande et affiche sa page de connexion.
 1. L’utilisateur se connecte avec le MVPD, le MVPD valide le statut de l’utilisateur en tant que client payant, puis le MVPD crée sa propre session HTTP.
 1. Lorsque l’utilisateur est validé, le MVPD crée une réponse (SAML et cryptée), que le MVPD renvoie à l’authentification Adobe Pass.
@@ -146,9 +146,9 @@ Les étapes suivantes présentent un exemple du flux d’authentification de l�
 
 ### Étapes d’autorisation {#authz-steps}
 
-Les étapes suivantes se poursuivent à partir de la [Étapes d’authentification](#authn-steps):
+Les étapes suivantes continuent à partir des [étapes d’authentification](#authn-steps) :
 
-1. Lorsque l’utilisateur tente d’accéder au contenu protégé du programmeur, l’application du programmeur commence par rechercher un jeton AuthN sur l’ordinateur ou l’appareil local de l’utilisateur.  Si ce jeton n’est pas présent, la variable [Étapes d’authentification](#authn-steps) ci-dessus sont suivis.  Si le jeton AuthN est présent, le flux d’autorisation se poursuit avec l’application du programmeur initiant un appel à l’activateur d’accès avec une requête pour obtenir les droits d’affichage de l’utilisateur pour un élément spécifique de contenu protégé.
+1. Lorsque l’utilisateur tente d’accéder au contenu protégé du programmeur, l’application du programmeur commence par rechercher un jeton AuthN sur l’ordinateur ou l’appareil local de l’utilisateur.  Si ce jeton n’est pas présent, les [étapes d’authentification](#authn-steps) ci-dessus sont suivies.  Si le jeton AuthN est présent, le flux d’autorisation se poursuit avec l’application du programmeur initiant un appel à l’activateur d’accès avec une requête pour obtenir les droits d’affichage de l’utilisateur pour un élément spécifique de contenu protégé.
 1. L’élément spécifique du contenu protégé est représenté par un &quot;identifiant de ressource&quot;.  Il peut s’agir d’une chaîne simple ou d’une structure plus complexe, mais dans tous les cas, la nature de l’identifiant de la ressource est convenue à l’avance entre le programmeur et le MVPD.  L’application du programmeur transmet l’identifiant de ressource à l’activateur d’accès.  Access Enabler recherche un jeton AuthZ sur l’ordinateur ou l’appareil local de l’utilisateur.  Si le jeton AuthZ n’est pas présent, Access Enabler transmet la demande au serveur d’authentification Adobe Pass principal.
 1. Le serveur d’authentification Adobe Pass communique avec le point de terminaison d’autorisation des MVPD à l’aide de protocoles normalisés.  Si la réponse du MVPD indique que l’utilisateur est autorisé à afficher le contenu protégé, le serveur d’authentification Adobe Pass crée un jeton AuthZ et le transmet à l’Activateur d’accès, qui stocke le jeton AuthZ sur l’ordinateur de l’utilisateur.
 1. Avec un jeton AuthZ stocké sur l’ordinateur ou l’appareil de l’utilisateur, l’application du programmeur appelle l’activateur d’accès pour obtenir un jeton multimédia à partir du serveur d’authentification Adobe Pass et fournit ce jeton à l’application du programmeur.
@@ -177,7 +177,7 @@ L’identifiant du demandeur identifie de manière unique le client du programme
 
 >[!TIP]
 >
->Si vous utilisez le Open Source Media Framework d’Adobe (&quot;OSMF&quot;) pour le développement de votre lecteur multimédia, le moyen le plus rapide d’utiliser l’authentification Adobe Pass est d’intégrer le module externe OSMF. *(Obsolète)* dans le code de votre lecteur.
+>Si vous utilisez le Open Source Media Framework d’Adobe (&quot;OSMF&quot;) pour le développement de votre lecteur multimédia, le moyen le plus rapide d’utiliser l’authentification Adobe Pass est d’intégrer le module OSMF *(obsolète)* dans le code de votre lecteur.
 >
 ><!--For details, see [Adobe Pass Authentication Plugin For OSMF](https://tve.helpdocsonline.com/9-2-2) in the Programmer Integration Guide.-->
 
@@ -195,11 +195,11 @@ La première étape consiste à vous enregistrer auprès d’un Adobe ou d’un 
 
 L’étape suivante consiste à intégrer Access Enabler à l’application ou à la page web existante de votre lecteur multimédia :
 
-* Vous pouvez incorporer la version de Flash, `AccessEnabler.swf`, dans un lecteur vidéo basé sur un Flash, ou vous pouvez l’incorporer directement dans le HTML de votre page web. Vous pouvez communiquer avec le SWF Access Enabler dans ActionScript ou JavaScript. L’API de base est ActionScript, mais si vous préférez travailler avec JavaScript, une bibliothèque wrapper complète peut être incluse sur vos pages.
+* Vous pouvez incorporer la version par Flash, `AccessEnabler.swf`, dans un lecteur vidéo basé sur un Flash, ou l’incorporer directement dans l’HTML de votre page web. Vous pouvez communiquer avec le SWF Access Enabler dans ActionScript ou dans JavaScript. L’API de base est ActionScript, mais si vous préférez travailler avec JavaScript, une bibliothèque wrapper complète peut être incluse sur vos pages.
 * Pour les environnements hors Flash, vous pouvez :
    * Utilisez la version HTML5/JavaScript, AccessEnabler.js, et communiquez avec elle via l’API JavaScript.
    * Utilisation de l’extension native AIR pour l’authentification Adobe Pass pour combiner du code natif avec des classes d’ActionScript intégrées
-   * Utilisation de l’une des versions clientes natives de la bibliothèque Access Enabler (iOS ou Android)
+   * Utilisez l’une des versions clientes natives de la bibliothèque Access Enabler (iOS ou Android).
 
 ### 2. Gestion de l’authentification et de l’autorisation {#authn-authz}
 
@@ -212,17 +212,17 @@ La communication entre Access Enabler et votre application web de page ou de lec
 
 >[!NOTE]
 >
->* L’authentification se produit en tant qu’échange SAML, entre l’authentification Adobe Pass en tant que fournisseur de services (SP) et le MVPD en tant que fournisseur d’identité (IdP).
+>* L’authentification se produit en tant qu’exchange SAML, entre l’authentification Adobe Pass en tant que fournisseur de service (SP) et le MVPD en tant que fournisseur d’identité (IdP).
 >
->* L’autorisation utilise un échange de service Web back-channel (serveur à serveur) entre l’authentification Adobe Pass (le SP) et un MVPD (le IdP).
+>* L’autorisation utilise un exchange de service Web back-channel (serveur à serveur) entre l’authentification Adobe Pass (le SP) et un MVPD (l’IdP).
 
 
 #### 2b. Fournir Une Interface Utilisateur De Droit {#entitlement-ui}
 
 Vous fournissez votre propre interface utilisateur pour permettre à l’utilisateur d’accéder à votre contenu. Certains éléments, tels que le processus de connexion réel, sont fournis par le MVPD et certains éléments sont éventuellement disponibles dans le cadre de l’authentification Adobe Pass. Au minimum, vous procédez comme suit :
 
-* **Mise en oeuvre d’une interface de sélection MVPD qui permet à un nouvel utilisateur d’identifier son MVPD et de se connecter pour la première fois**. Pour le développement, Access Enabler fournit une interface utilisateur de base qui donne au client le choix des MVPD et lance le processus de connexion. Pour la production, vous devez mettre en oeuvre votre propre boîte de dialogue Sélecteur MVPD . Certains MVPD redirigent vers leur propre site pour se connecter et d’autres requièrent l’affichage de leurs pages de connexion dans un iFrame. Vous devez mettre en oeuvre un rappel qui crée cet iFrame pour gérer les cas où le MVPD de l’utilisateur affiche sa page de connexion dans un iFrame.
-* **Identification du contenu protégé**. Le contenu protégé nécessite une autorisation d’accès. Votre interface doit indiquer le contenu protégé et le contenu autorisé.  L’état d’autorisation est souvent indiqué avec les icônes &quot;déverrouillé&quot; et &quot;verrouillé&quot;.
+* **Mettez en oeuvre une interface de sélection MVPD qui permet à un nouvel utilisateur d’identifier son MVPD et de se connecter pour la première fois**. Pour le développement, Access Enabler fournit une interface utilisateur de base qui donne au client le choix des MVPD et lance le processus de connexion. Pour la production, vous devez mettre en oeuvre votre propre boîte de dialogue Sélecteur MVPD . Certains MVPD redirigent vers leur propre site pour se connecter et d’autres requièrent l’affichage de leurs pages de connexion dans un iFrame. Vous devez mettre en oeuvre un rappel qui crée cet iFrame pour gérer les cas où le MVPD de l’utilisateur affiche sa page de connexion dans un iFrame.
+* **Identifiez le contenu protégé**. Le contenu protégé nécessite une autorisation d’accès. Votre interface doit indiquer le contenu protégé et le contenu autorisé.  L’état d’autorisation est souvent indiqué avec les icônes &quot;déverrouillé&quot; et &quot;verrouillé&quot;.
 * **Afficher qu’un utilisateur est authentifié**. Vous devez indiquer l’état d’authentification d’un utilisateur comme faisant partie de tous les moyens que vous utilisez pour identifier le contenu protégé. Vous pouvez interroger Access Enabler pour déterminer si le client a déjà été authentifié.
 
 #### 2c. Intégration du vérificateur de jeton multimédia {#int-media-token-ver}
@@ -249,13 +249,13 @@ Le sessionGUID dans le jeton de média court est la forme sécurisée de l’ID 
 
 Voici les différentes manières dont l’ID utilisateur est représenté dans les API d’authentification Adobe Pass :
 
-* `sendTrackingData()` Propriété GUID : il s’agit de la version hachée Adobe de l’ID utilisateur MVPD.  Il est haché de sorte que cet ID utilisateur ne puisse pas être redirigé vers la source à partir du MVPD.   Cet identifiant est unique et généralement persistant, mais il ne peut pas être partagé avec le MVPD pour comparer le comportement d’utilisation spécifique à ce que les MVPD ont de leur côté.   Il n’est pas signé numériquement, il n’est donc pas insondable pour la prévention de la fraude, mais il est suffisant pour l’analyse.  Ce formulaire d’identifiant utilisateur est fourni côté client pour tous les événements générés par l’authentification Adobe Pass dans le flux AuthN/AuthZ.
-* Jeton de média court `sessionGUID` Propriété : identique à l’ID utilisateur via `sendTrackingData()`, cependant, celui-ci est signé numériquement pour protéger son intégrité.  Cela rend cette valeur suffisante pour le suivi des fraudes d’utilisation simultanée. Il est destiné à être traité côté serveur après l’utilisation de notre bibliothèque de validateurs et peut être analysé à la recherche de modèles de fraude avant de publier le flux vidéo sur le client.  Faire l&#39;une de ces tâches dépend du programmeur.
-* `getMetadata() userID `Propriété : cette propriété permet à Adobe d’exposer l’identifiant utilisateur MVPD source au programmeur. Il sera crypté avec la clé publique du certificat que nous avons du Programmeur, de sorte qu&#39;il ne soit pas exposé au client clairement. Cela donne au programmeur le UserID réel du MVPD, il peut donc être utilisé pour la liaison de comptes ou l’enquête sur la fraude directement avec le MVPD.
+* `sendTrackingData()` Propriété du GUID : il s’agit de la version hachée Adobe de l’identifiant utilisateur MVPD.  Il est haché de sorte que cet ID utilisateur ne puisse pas être redirigé vers la source à partir du MVPD.   Cet identifiant est unique et généralement persistant, mais il ne peut pas être partagé avec le MVPD pour comparer le comportement d’utilisation spécifique à ce que les MVPD ont de leur côté.   Il n’est pas signé numériquement, il n’est donc pas insondable pour la prévention de la fraude, mais il est suffisant pour l’analyse.  Ce formulaire d’identifiant utilisateur est fourni côté client pour tous les événements générés par l’authentification Adobe Pass dans le flux AuthN/AuthZ.
+* Propriété `sessionGUID` du jeton de média court : identique à l’ID utilisateur via `sendTrackingData()`. Cependant, celui-ci est signé numériquement pour protéger son intégrité.  Cela rend cette valeur suffisante pour le suivi des fraudes d’utilisation simultanée. Il est destiné à être traité côté serveur après l’utilisation de notre bibliothèque de validateurs et peut être analysé à la recherche de modèles de fraude avant de publier le flux vidéo sur le client.  Faire l&#39;une de ces tâches dépend du programmeur.
+* `getMetadata() userID `property - Cette propriété permet à Adobe d’exposer l’identifiant utilisateur MVPD source au programmeur. Il sera crypté avec la clé publique du certificat que nous avons du Programmeur, de sorte qu&#39;il ne soit pas exposé au client clairement. Cela donne au programmeur le UserID réel du MVPD, il peut donc être utilisé pour la liaison de comptes ou l’enquête sur la fraude directement avec le MVPD.
 
 **En conclusion**
 
-* L’identifiant utilisateur MVPD est un identifiant unique persistant, mais généralement non garanti, qui est **généré à partir des MVPD et transmis à Adobe lors d’une authentification réussie**. Il est généralement cohérent sur tous les réseaux, à quelques exceptions près.
+* L’identifiant utilisateur MVPD est un identifiant unique persistant généralement, bien que non garanti, qui est **généré à partir des MVPD et transmis à l’Adobe lors d’une authentification réussie**. Il est généralement cohérent sur tous les réseaux, à quelques exceptions près.
 * L’identifiant utilisateur MVPD ne contient pas de PII et il ne s’agit PAS d’un numéro de compte. Il n’est pas nécessaire d’être exposé sous une forme chiffrée, car nous avons validé avec tous les MVPD qu’aucune PII n’est envoyée.
 
 

@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -38,9 +38,9 @@ ht-degree: 0%
 Cette API doit être utilisée par la seconde application web de connexion à l’écran pour confirmer que l’authentification Adobe Pass a reconnu la connexion réussie de MVPD. Nous vous recommandons d’appeler cette API avant d’afficher un message de réussite à l’utilisateur final qui lui indique de passer à la console de l’appareil pour continuer les workflows.
 
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{code d’enregistrement} | Application Web de connexion | 1. code d’enregistrement  </br>    (composant Chemin)</br>2.  demandeur  </br>    (obligatoire) | GET | XML ou JSON contenant les détails d’erreur en cas d’échec. | 200 - Succès   </br>403 - Interdit |
+| SP_FQDN/api/v1/checkauthn/{code d’enregistrement} | Application Web de connexion | 1. code d&#39;enregistrement </br>    (Composant Chemin)</br>2.  requestor </br>    (obligatoire) | GET | XML ou JSON contenant les détails d’erreur en cas d’échec. | 200 - Succès   </br>403 - Interdit |
 
 </br>
 

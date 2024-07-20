@@ -1,9 +1,10 @@
 ---
 title: Réinitialiser le transfert temporaire
 description: Réinitialiser le transfert temporaire
-source-git-commit: 4ae0b17eff2dfcf0aaa5d11129dfd60743f6b467
+exl-id: ab39e444-eab2-4338-8d09-352a1d5135b6
+source-git-commit: 28d432891b7d7855e83830f775164973e81241fc
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
@@ -16,20 +17,20 @@ ht-degree: 0%
 >
 >Pour utiliser l’API Reset Temp Pass, vous devez :
 >- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
->- obtenir un jeton d’accès en fonction de [Enregistrement du client dynamique](dynamic-client-registration.md)
+>- Obtention d’un jeton d’accès basé sur l’[ enregistrement du client dynamique](dynamic-client-registration.md)
 > 
 
-Pour **réinitialisation d’une transmission temporaire spécifique**, l’authentification Adobe Pass fournit aux programmeurs une *public* API web :
+Pour **réinitialiser un Temp Pass** spécifique, Adobe Pass Authentication fournit aux programmeurs une API web *public* :
 
-- **Environnement :** indique le point d’entrée du serveur de passe de la télévision payante Adobe qui recevra l’appel réseau de réinitialisation de la transmission temporaire. Valeurs possibles : **Préqual** (*mgmt-prequal.auth.adobe.com*), **Version** (*mgmt.auth.adobe.com*) ou **Personnalisé** (réservé aux tests internes d’Adobe).
-- **Jeton d’accès OAuth2 :** le jeton OAuth2 est nécessaire pour autoriser le programmeur pour l’authentification payante par Adobe. Un tel jeton peut être obtenu à partir de [Enregistrement du client dynamique](dynamic-client-registration.md).
+- **Environnement :** spécifie le point de terminaison du serveur de passe de télévision payante Adobe qui recevra l’appel réseau de réinitialisation de la passe temporaire. Valeurs possibles : **Préqual** (*mgmt-prequal.auth.adobe.com*), **Version** (*mgmt.auth.adobe.com*) ou **Personnalisé** (réservé pour les tests internes d’Adobe).
+- **Jeton d’accès OAuth2 :** le jeton OAuth2 est nécessaire pour autoriser le programmeur pour l’authentification payante Adobe. Un tel jeton peut être obtenu à partir de l’[enregistrement du client dynamique](dynamic-client-registration.md).
 - **ID de transmission temporaire :** l’identifiant unique du MVPD de transmission temporaire à réinitialiser.(un programmeur peut utiliser plusieurs MVPD de transmission de température et souhaite réinitialiser un MVPD spécifique)
-- **Clé générique :** quelques MVPD de transmission temporaire (c.-à-d. [Passe temporaire promotionnelle](promotional-temp-pass.md)).
+- **Clé générique :** certains MVPD de transmission de température (c’est-à-dire [pass temporaire de promotion](promotional-temp-pass.md)).
 
-Tous les paramètres ci-dessus (sauf le *Clé générique*) sont obligatoires. Voici un exemple de paramètres et de l’appel réseau associé (l’exemple se présente sous la forme d’une commande *curl*) :
+Tous les paramètres ci-dessus (à l’exception de la *clé générique*) sont obligatoires. Voici un exemple de paramètres et de l’appel réseau associé (l’exemple se présente sous la forme d’une commande *curl*) :
 
 - **Environnement :** Version (*mgmt.auth.adobe.com*)
-- **Jeton d’accès OAuth2 :** &lt;access_token> de [Enregistrement du client dynamique](dynamic-client-registration.md)
+- **Jeton d’accès OAuth2 :** &lt;jeton_accès> à partir de l’ [enregistrement du client dynamique](dynamic-client-registration.md)
 - **Identifiant du programmeur :** REF
 - **ID de transmission temporaire :** TempPassREF
 - **Clé générique :** null (aucune valeur fournie)
@@ -38,11 +39,14 @@ Tous les paramètres ci-dessus (sauf le *Clé générique*) sont obligatoires. V
 curl -X DELETE -H "Authorization:Bearer <access_token_here>" "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
 ```
 
-une requête HTTP DELETE sera envoyée à la variable **/reset** point d’entrée, transmission de *Jeton d’accès OAuth2* dans l’en-tête d’autorisation et dans la variable *ID de périphérique*, *Identifiant du demandeur* et *ID de transfert temporaire (MVPD ID)* comme paramètres.
+une requête HTTP DELETE sera envoyée au point de terminaison **/reset**, en transmettant le *jeton d’accès OAuth2* dans l’en-tête d’autorisation et les paramètres *ID de périphérique*, *ID de demandeur* et *ID de transmission temporaire (ID MVPD)* comme paramètres.
 
-Si le programmeur fournit une valeur pour la variable *Clé générique*, un autre appel HTTP sera effectué (cette fois à la fonction **/reset/generic** (point de terminaison), transmission de la variable *Clé générique* dans la variable *key* paramètre de requête .
+Si le programmeur fournit une valeur pour la *Clé générique*, un autre appel HTTP sera effectué (cette fois au point de terminaison **/reset/generic**), en transmettant la *Clé générique* à l’intérieur du paramètre de requête *key*.
 
-Par exemple, la définition de la variable *Clé générique* à un hachage d’adresse électronique (pour les MVPD de transmission temporaire qui prennent en charge ce type de fonctionnalités) générera l’appel HTTP suivant (le courriel est `user@domain.com` son hachage SHA-256 est `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`) :
+Par exemple, définissez la *Clé générique* sur un hachage d’adresse électronique (pour
+Les MVPD de transmission de température qui prennent en charge ce type de fonctionnalités) généreront le
+appel HTTP suivant (le courriel est `user@domain.com` son SHA-256
+hash est `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`) :
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>"
@@ -50,7 +54,7 @@ curl -X DELETE -H "Authorization:Bearer <access_token_here>"
 ```
 
 
-Pour **réinitialisation d’une transmission temporaire spécifique pour tous les appareils**, l’authentification Adobe Pass fournit aux programmeurs une *public* API web :
+Pour **réinitialiser une transmission temporaire spécifique pour tous les appareils**, l’authentification Adobe Pass fournit aux programmeurs une API web *publique* :
 
 ```url
 DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset
@@ -63,7 +67,7 @@ DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset
 - **Hôte :**
    - Version : mgmt.auth.adobe.com
    - Préqualification - mgmt-prequal.auth.adobe.com
-- **Chemin :** /resettempass/v3/reset
+- **Chemin d’accès :** /reset-tempass/v3/reset
 - **Paramètres de requête :** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
 - **En-têtes :** Autorisation : porteur &lt;access_token_here>
 - **Réponse :**

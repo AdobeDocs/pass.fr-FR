@@ -1,7 +1,8 @@
 ---
 title: Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.8.3
 description: Notes de mise à jour d’Adobe Pass Authentication iOS / tvOS 3.8.3
-source-git-commit: 97928c231d5e3d4b36fb2967452b01cb8af86072
+exl-id: d465f895-ebc0-4f8d-9172-bcc868741820
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '127'
 ht-degree: 0%
@@ -26,11 +27,11 @@ Date de publication : 11/16/2023
 
 ## Présentation des versions {#overview-ios-tvos-sdk-383}
 
-* Amélioration des contrôles d’intégrité du stockage lors de l’initialisation d’AccessEnabler. Informations supplémentaires [here](/help/authentication/iostvos-sdk-storage-integrity-checks.md).
+* Amélioration des contrôles d’intégrité du stockage lors de l’initialisation d’AccessEnabler. Plus d&#39;informations [ici](/help/authentication/iostvos-sdk-storage-integrity-checks.md).
 * Modification du mécanisme UrlSession afin de permettre les rappels AccessEnabler lorsque l’application était inactive pendant une longue période.
 * Mise à jour de la documentation publique afin d’inclure des recommandations pour l’utilisation de l’API checkAuthentication
 
 
 ## Package de version {#rel-pkg-iostvos383}
 
-Vous pouvez télécharger le SDK iOS/tvOS v3.8.3 à partir de [here](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).
+Vous pouvez télécharger le SDK iOS/tvOS v3.8.3 à partir de [ici](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).

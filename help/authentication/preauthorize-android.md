@@ -34,9 +34,10 @@ En cas d’erreur inattendue (par exemple, problème réseau, point d’entrée 
 
 **Paramètres :**
 
-- *PreauthorizedRequest*: objet de créateur utilisé pour définir la requête.
+- *PreauthorizedRequest* : objet Créateur utilisé pour définir la requête
 - AccessEnablerCallback : rappel utilisé pour renvoyer la réponse de l’API
-- PreauthorizedResponse : objet utilisé pour renvoyer le contenu de réponse de l’API.
+- PreauthorizedResponse : objet utilisé pour renvoyer l’API
+contenu de la réponse
 
 
 ### public class PreauthorizedRequest {#androidpreauthorizerequest}
@@ -62,7 +63,7 @@ En cas d’erreur inattendue (par exemple, problème réseau, point d’entrée 
     ///
 ```
 
-**public Builder setResources(List\&lt;string> resources)**
+**Ressources publiques du créateur setResources(Liste\&lt;Chaîne\>)**
 
 ```
     ///
@@ -84,7 +85,7 @@ En cas d’erreur inattendue (par exemple, problème réseau, point d’entrée 
 ```
 
 
-**public Builder disableFeatures(Set\&lt;preauthorizerequest.feature>
+**public Builder disableFeatures(Set\&lt;PreauthorizedRequest.Feature\>
 features)**
 
 ```
@@ -226,7 +227,7 @@ features)**
 
 </br>
 
->**Classe Decision** {#decision}
+>**class Decision** {#decision}
 
 ```
     ///

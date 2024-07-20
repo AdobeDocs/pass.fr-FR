@@ -5,7 +5,7 @@ exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
 source-wordcount: '711'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 1%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-## Présentation {#overview-proxy-mvpd-saml-int}
+## Vue d’ensemble {#overview-proxy-mvpd-saml-int}
 
 Ce document décrit le flux d’authentification SAML pour les intégrations de proxy.  Ces flux dépendent des données de configuration du proxy présentes dans la configuration du serveur d’authentification Adobe Pass. Le MVPD du proxy envoie ses données de configuration du proxy au serveur d’authentification Adobe Pass via le service Web proxy d’authentification Adobe Pass.
 

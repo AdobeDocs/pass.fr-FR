@@ -1,6 +1,6 @@
 ---
-title: Enregistrement d’applications Android
-description: Enregistrement d’applications Android
+title: Enregistrement d’une application Android
+description: Enregistrement d’une application Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Enregistrement d’applications Android {#android-application-registration}
+# Enregistrement d’une application Android {#android-application-registration}
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ Pour plus d’informations, voir [Enregistrement du client dynamique](/help/auth
 
 Une instruction logicielle est un jeton JWT qui contient des informations sur votre application. Chaque application doit disposer d’une instruction logicielle unique utilisée par nos serveurs pour identifier l’application dans le système d’Adobe.
 
-L’instruction logicielle doit être transmise lorsque vous initialisez la variable `AccessEnabler` SDK. Il est utilisé pour enregistrer la demande auprès de Adobe. Lors de l’enregistrement, le SDK reçoit un ID client et un secret client, qui est utilisé pour obtenir un jeton d’accès. Tout appel du SDK aux serveurs Adobe nécessite un jeton d’accès valide. Le SDK est responsable de l’enregistrement de l’application, de l’obtention et de l’actualisation du jeton d’accès.
+L’instruction logicielle doit être transmise lorsque vous initialisez le SDK `AccessEnabler`. Il est utilisé pour enregistrer la demande auprès de Adobe. Lors de l’enregistrement, le SDK reçoit un ID client et un secret client, qui est utilisé pour obtenir un jeton d’accès. Tout appel du SDK aux serveurs Adobe nécessite un jeton d’accès valide. Le SDK est responsable de l’enregistrement de l’application, de l’obtention et de l’actualisation du jeton d’accès.
 
 >[!NOTE]
 >
@@ -39,29 +39,29 @@ Vous trouverez ci-dessous des moyens d’obtenir un relevé logiciel.
 
 1. Ouvrez votre navigateur et accédez à [Tableau de bord Adobe Pass TVE](https://console.auth.adobe.com).
 
-1. Accédez à **[!UICONTROL Channels]** , puis sélectionnez votre canal.
+1. Accédez à la section **[!UICONTROL Channels]**, puis sélectionnez votre canal.
 
-1. Accédez au **[!UICONTROL Registered Applications]** .
+1. Accédez à l’onglet **[!UICONTROL Registered Applications]** .
 
 1. Cliquez sur **[!UICONTROL Add new application]**.
 
 1. Nommez l’application et spécifiez une version.
 
-1. Sélectionnez les plateformes sur lesquelles l’application sera disponible (Android, dans ce cas).
+1. Sélectionnez les plateformes sur lesquelles l’application sera disponible (dans le cas présent, Android).
 
-1. Fournissez une **[!UICONTROL Domain Name]** en choisissant parmi une liste de domaines déjà configurés pour votre programmeur.
+1. Fournissez un **[!UICONTROL Domain Name]** en choisissant parmi une liste de domaines déjà configurés pour votre programmeur.
 
-1. Poussez vos modifications sur le serveur, puis revenez au de vos canaux **[!UICONTROL Registered Applications]** .
+1. Poussez vos modifications sur le serveur, puis revenez à l’onglet **[!UICONTROL Registered Applications]** de votre canal.
 
-   Vous devriez voir une liste contenant toutes les applications enregistrées. Sélectionner **[!UICONTROL Download]** sur l’application que vous avez créée. Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle ne soit prête à être téléchargée.
+   Vous devriez voir une liste contenant toutes les applications enregistrées. Sélectionnez **[!UICONTROL Download]** sur l’application que vous avez créée. Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle ne soit prête à être téléchargée.
 
    Téléchargements d’un fichier texte. Utilisez son contenu comme déclaration logicielle.
 
-Pour plus d’informations, voir [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md)
+Pour plus d’informations, voir [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md)
 
 ### Si vous n’avez pas accès au tableau de bord TVE d’Adobe
 
-Envoyer un ticket à `tve-support@adobe.com`. Incluez les informations nécessaires telles que le canal, le nom de l’application, la version et les plateformes. Une personne de notre équipe de support créera une déclaration logicielle pour vous.
+Envoyez un ticket à `tve-support@adobe.com`. Incluez les informations nécessaires telles que le canal, le nom de l’application, la version et les plateformes. Une personne de notre équipe de support créera une déclaration logicielle pour vous.
 
 ## Utilisation de l’instruction logicielle {#how-to-use-ss}
 
@@ -75,7 +75,7 @@ La valeur du lien profond créé doit être unique sur l’appareil Android. Lor
 
 ## Utilisation de l’instruction logicielle et du lien profond {#use-both}
 
-Dans le fichier de ressources de votre application `strings.xml` ajoutez le code suivant :
+Dans le fichier de ressources de votre application `strings.xml`, ajoutez le code suivant :
 
 ```JAVA
     <string name="software_statement">softwarestatement value</string>

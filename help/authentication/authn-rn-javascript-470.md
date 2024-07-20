@@ -1,7 +1,8 @@
 ---
 title: Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.7.0
 description: Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.7.0
-source-git-commit: 9c491478a5560d1f9208e786de285733997bb24b
+exl-id: 07f90270-e64a-4c6b-a072-183af0f53352
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%

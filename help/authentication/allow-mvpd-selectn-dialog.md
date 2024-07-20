@@ -4,7 +4,7 @@ description: Autorisation des MVPD dans la boîte de dialogue de sélection
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '129'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Le programmeur peut vouloir tester ou vérifier l’expérience utilisateur des 
 
 ## Solution {#solution}
 
-Dans le `displayProviderDialog()` callback, l’authentification Adobe Pass renvoie tous les MVPD intégrés au programmeur sélectionné (ID de demandeur). Mais le programmeur peut appliquer un filtre sur le tableau de retour des MVPD et afficher uniquement ceux qui se trouvent dans les deux listes.
+Dans le rappel `displayProviderDialog()`, l’authentification Adobe Pass renvoie tous les MVPD intégrés au programmeur sélectionné (identifiant du demandeur). Mais le programmeur peut appliquer un filtre sur le tableau de retour des MVPD et afficher uniquement ceux qui se trouvent dans les deux listes.
 
 ## Exemple {#example}
 

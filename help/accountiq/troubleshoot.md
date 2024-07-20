@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Résolution des problèmes liés à Account IQ {#troubleshoot}
+# Résolution des problèmes dans Account IQ {#troubleshoot}
 
 Si vous rencontrez des retards au niveau du chargement des données et des graphiques, des difficultés lors de l’exportation des rapports ou tout autre problème lié aux mesures ou aux graphiques, continuez la lecture pour obtenir une aide rapide à la résolution des problèmes.
 
@@ -17,6 +17,6 @@ Si vous rencontrez des retards au niveau du chargement des données et des graph
 
   ![](assets/troubleshoot.png)
 
-* Si vous ne parvenez pas à voir les données ou les graphiques même après l’actualisation, déconnectez-vous de Account IQ, puis reconnectez-vous.
+* Si vous ne parvenez pas à afficher les données ou les graphiques même après l’actualisation, déconnectez-vous d’Account IQ, puis reconnectez-vous.
 
 * Si aucune des méthodes de dépannage ci-dessus n’aide, ou si vous avez d’autres questions relatives aux données ou si vous ne parvenez pas à exporter des statistiques, contactez l’assistance Adobe en envoyant un courrier électronique à <tve-support@adobe.com>.

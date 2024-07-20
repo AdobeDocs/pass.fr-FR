@@ -1,7 +1,8 @@
 ---
 title: Panneaux de données sur le tableau de bord
 description: Le tableau de bord vous aide à identifier les instances de partage de mot de passe en analysant un large éventail de données d’abonnés.
-source-git-commit: 88b11527b2a432c2cd27bf9e29fd286969036eb0
+exl-id: 12abba05-7422-4bcc-8b11-76aca4911c0b
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '889'
 ht-degree: 0%
@@ -12,15 +13,15 @@ ht-degree: 0%
 
 Une fois que vous avez sélectionné un segment et un intervalle de temps, le tableau de bord affiche différents panneaux de données, tableaux et graphiques qui reflètent une vue de haut niveau de l’activité de partage au sein du segment sélectionné.
 
-Le tableau ci-dessous décrit la disponibilité et les différences entre les panneaux de données dans différents [versions](/help/accountiq/versions-aiq.md) de Account IQ :
+Le tableau ci-dessous décrit la disponibilité et les différences entre les panneaux de données dans différentes [versions](/help/accountiq/versions-aiq.md) d’Account IQ :
 
 | Panneaux de données | Services D2C | Programmeurs TVE | TVE MVPD |
 |---|---|---|---|
 | [Score de partage moyen agrégé pour le segment actuel](#aggregated-sharing) | Disponible et cohérent | Disponible et cohérent | Disponible et cohérent |
-| [Catégories de vidéos dans un segment](#video-categories-segment) | Disponible avec de légères variations | Disponible avec de légères variations | Disponible avec de légères variations |
+| [Catégories de vidéos dans le segment](#video-categories-segment) | Disponible avec de légères variations | Disponible avec de légères variations | Disponible avec de légères variations |
 | [Score de partage par canaux et MVPD](#sharin-score-by-channels-and-mvpds) | Non disponible | Disponible | Non disponible |
-| [Probabilité de partage des comptes](#accounts-sharing-probability) | Disponible et cohérent | Disponible et cohérent | Disponible et cohérent |
-| [Nombre de comptes et d’utilisations en partageant le niveau de probabilité](#number-of-accounts-usage-sharing-probability) | Disponible et cohérent | Disponible et cohérent | Disponible et cohérent |
+| [Probabilité de partage de comptes](#accounts-sharing-probability) | Disponible et cohérent | Disponible et cohérent | Disponible et cohérent |
+| [Nombre de comptes et d’utilisation par niveau de probabilité de partage](#number-of-accounts-usage-sharing-probability) | Disponible et cohérent | Disponible et cohérent | Disponible et cohérent |
 
 
 ## Score de partage moyen agrégé pour le segment actuel {#aggregated-sharing}
@@ -36,7 +37,7 @@ Les mesures vous aident à comprendre l’ampleur (allant de faible, moyen, éle
 
 >[!NOTE]
 >
-> L’indicateur bleu dans la variable **Score de partage moyen agrégé pour le segment actuel** sert des objectifs différents pour les services D2C par rapport à TV Everywhere. Pour les services D2C, il représente la variable **Index moyen des services** comme illustré dans l’image précédente. Si vous vous connectez en tant que programmeur ou MVPD, ce libellé se transforme en **Index moyen du secteur industriel**.
+> L’indicateur bleu dans la **Note de partage moyenne agrégée pour le segment actuel** sert à des fins différentes pour les services D2C par rapport à TV Everywhere. Pour les services D2C, il représente l’ **index moyen de service** comme illustré dans l’image précédente. Si vous vous connectez en tant que programmeur ou MVPD, cette étiquette se transforme en **Index moyen de secteur**.
 
 Les mesures suivantes sont des composants du panneau Note de partage moyenne .
 
@@ -55,14 +56,14 @@ L’indicateur de tendance affiche le pourcentage de changement de la valeur de 
 
 ### Utilisation de comptes partagés {#usage-from-shared-accounts}
 
-La jauge indique le pourcentage d’utilisation par les comptes partagés parmi tous les comptes d’abonnés pour le segment défini et la période. Ces plages, nommées Faible, Moyen, Élevé et Abnormal, sont basées sur les moyennes de l’industrie.
+La jauge indique le pourcentage d’utilisation par les comptes partagés parmi tous les comptes d’abonnés pour le segment défini et la période. Ces plages, nommées Low, Medium, High et Abnormal, sont basées sur les moyennes de l’industrie.
 
 L’indicateur de tendance, qui illustre une augmentation ou une baisse de l’utilisation des comptes partagés par rapport à l’intervalle de temps précédent.
 
 ![](assets/usage-4mshared-accounts.png){width="350" align="left"}
 
 
-*Utilisation de comptes partagés*
+*Utilisation des comptes partagés*
 
 ### Score de partage global {#overall-sharing-score}
 
@@ -77,11 +78,11 @@ Il fournit un score qui reflète l’impact global du partage. Son objectif est 
 
 ## Catégories de vidéos dans un segment {#video-categories-segment}
 
-Vous pouvez sélectionner les en-têtes de colonne pour trier les données dans toutes les versions du compte IQ.
+Vous pouvez sélectionner les en-têtes de colonne pour trier les données dans toutes les versions d’Account IQ.
 
 +++Services D2C : régions dans le segment
 
-Lorsque vous vous connectez en tant que service D2C, **Régions dans le segment** Le tableau fournit une vue comparative des différents scores de partage agrégés pour la variable [catégories vidéo](/help/accountiq/product-concepts.md#video-category-def) dans le segment actuel.
+Lorsque vous vous connectez en tant que service D2C, le tableau **Régions dans le segment** fournit une vue comparative des différents scores de partage agrégés pour les [catégories vidéo](/help/accountiq/product-concepts.md#video-category-def) dans le segment actuel.
 
 ![](assets/sharing-scores-by-regions-in-segment.png)
 
@@ -89,33 +90,33 @@ Lorsque vous vous connectez en tant que service D2C, **Régions dans le segment*
 
 >[!NOTE]
 >
-> La variable [catégories vidéo](product-concepts.md#video-category-def)  affiché dans l’image précédente, comme **Régions** dans n’est qu’un exemple. Lorsque vous vous connectez au compte IQ, ce panneau affiche la catégorie vidéo spécifique à votre entreprise.
+> Les [catégories vidéo](product-concepts.md#video-category-def) affichées dans l’image précédente, telles que **Régions** dans le segment, ne sont qu’un exemple. Lorsque vous vous connectez à Account IQ, ce panneau affiche la catégorie vidéo spécifique à votre entreprise.
 
-Sélectionner **Exporter** pour télécharger les données dans un fichier .csv. Formation [exportation des rapports de panneau de données](/help/accountiq/export-reports.md).
+Sélectionnez **Exporter** pour télécharger les données dans un fichier .csv. Découvrez [comment exporter des rapports de panneau de données](/help/accountiq/export-reports.md).
 
 +++
 
 +++Programmeurs : MVPD dans le segment
 
-Lorsque vous vous connectez en tant que programmeur, **MVPD dans le segment** Le tableau fournit une vue comparative des différents scores de partage agrégés pour les MVPD dans le segment actuel.
+Lorsque vous vous connectez en tant que programmeur, le tableau **MVPD dans le segment** fournit une vue comparative des différents scores de partage agrégés pour les MVPD dans le segment actuel.
 
 ![](assets/sharing-scores-by-mvpds-in-segment.png)
 
-Sélectionner **Exporter** pour télécharger les données dans un fichier .csv. Formation [exportation des rapports de panneau de données](/help/accountiq/export-reports.md).
+Sélectionnez **Exporter** pour télécharger les données dans un fichier .csv. Découvrez [comment exporter des rapports de panneau de données](/help/accountiq/export-reports.md).
 
 +++
 
 +++MVPD : programmeurs dans un segment
 
-Lorsque vous vous connectez en tant que MVPD, **Programmeurs dans un segment** Le tableau fournit une vue comparative des différents scores de partage agrégés pour les programmeurs dans le segment actuel.
+Lorsque vous vous connectez en tant que MVPD, la table **Programmeurs dans le segment** fournit une vue comparative des différents scores de partage agrégés pour les programmeurs dans le segment actuel.
 
 Sélectionnez les en-têtes de colonne pour trier les données.
 
 ![](assets/sharing-scores-by-programmers-in-segment.png)
 
-*Score de partage par programmeur dans le segment*
+*Score de partage par programmeurs dans le segment*
 
-Sélectionner **Exporter** pour télécharger les données dans un fichier .csv. Formation [exportation des rapports de panneau de données](/help/accountiq/export-reports.md).
+Sélectionnez **Exporter** pour télécharger les données dans un fichier .csv. Découvrez [comment exporter des rapports de panneau de données](/help/accountiq/export-reports.md).
 
 +++
 
@@ -132,7 +133,7 @@ Sélectionnez les en-têtes de colonne pour trier les données.
 
 ## Probabilité de partage des comptes {#accounts-sharing-probability}
 
-Ce graphique partitionne les comptes en plages de quintiles de probabilité de partage, allant de très bas (0-20 %) à très élevé (80-100 %). En savoir plus sur les plages de [Probabilité de partage de compte](#accounts-sharing-probability).
+Ce graphique partitionne les comptes en plages de quintiles de probabilité de partage, allant de très bas (0-20 %) à très élevé (80-100 %). En savoir plus sur les plages de [probabilité de partage de compte](#accounts-sharing-probability).
 
 >[!NOTE]
 >
@@ -142,16 +143,15 @@ Ce graphique partitionne les comptes en plages de quintiles de probabilité de p
 ![](assets/dashboard-ac-sharing-prob.png)
 
 
-*Nombres et pourcentages de comptes abonnés dans différentes plages de probabilités de partage*
+*Nombre et pourcentages de comptes abonnés dans différentes plages de probabilités de partage*
 
 
 ## Nombre de comptes et d’utilisations en partageant le niveau de probabilité {#number-of-accounts-usage-sharing-probability}
 
-Ce panneau fournit une vue tabulaire des comptes partitionnés en plages de quintiles de probabilité de partage, allant de très bas (0-20 %) à très élevé (80-100 %), avec l’utilisation associée de chaque quintile à partir de comptes partagés. En savoir plus sur les plages de [Probabilité de partage de compte](#accounts-sharing-probability).
+Ce panneau fournit une vue tabulaire des comptes partitionnés en plages de quintiles de probabilité de partage, allant de très bas (0-20 %) à très élevé (80-100 %), avec l’utilisation associée de chaque quintile à partir de comptes partagés. En savoir plus sur les plages de [probabilité de partage de compte](#accounts-sharing-probability).
 
 ![](assets/no-acc-usage-prob-level.png)
 
-*Nombre de comptes, de tendances et d’utilisations appartenant à diverses plages de probabilités*
+*Nombre de comptes, tendances et utilisations se rapportant à diverses plages de probabilités*
 
-Sélectionner **Exporter** pour télécharger les données dans un fichier .csv. Formation [exportation des rapports de panneau de données](/help/accountiq/export-reports.md).
-
+Sélectionnez **Exporter** pour télécharger les données dans un fichier .csv. Découvrez [comment exporter des rapports de panneau de données](/help/accountiq/export-reports.md).

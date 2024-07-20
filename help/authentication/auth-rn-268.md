@@ -4,7 +4,7 @@ description: Notes de mise à jour de l’authentification Adobe Pass 2.68
 exl-id: 88628696-448e-4afa-91f0-d3767d68d2f4
 source-git-commit: 87d7380aa7045e64e8caff6d5d7610bd0917181e
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '148'
 ht-degree: 0%
 
 ---

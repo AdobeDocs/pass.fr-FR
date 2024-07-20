@@ -1,20 +1,21 @@
 ---
-title: Versions du compte IQ
-description: Découvrez les versions utilisées pour différents services dans le compte IQ.
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+title: Versions d’Account IQ
+description: Découvrez les versions utilisées pour différents services dans Account IQ.
+exl-id: b8b014d5-a8a8-4327-b6aa-15f7e6a63274
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '312'
 ht-degree: 0%
 
 ---
 
-# Versions du compte IQ {#aiq-versions}
+# Versions d’Account IQ {#aiq-versions}
 
 Account IQ est conçu pour identifier automatiquement le partage de mot de passe, en particulier dans le secteur de la diffusion vidéo en continu. Dans ce secteur, il existe deux catégories principales de services : Direct to Consumer (D2C) et TV Everywhere (TVE).
 
 Ce guide répond aux besoins des abonnés de D2C, des programmeurs de TV Everywhere et des sociétés MVPD de TV Everywhere de l’industrie de la diffusion vidéo en continu.
 
-En raison de légères différences entre D2C et TVE, il existe des variantes correspondantes de Account IQ. Chaque type d’entreprise de diffusion vidéo en continu interagit avec sa propre version spécifique de Account IQ.
+En raison de légères différences entre D2C et TVE, il existe des variantes correspondantes d’Account IQ. Chaque type d’entreprise de diffusion vidéo en continu interagit avec sa propre version spécifique d’Account IQ.
 
 ## Services directs aux consommateurs (D2C) {#d-to-c}
 
@@ -24,9 +25,9 @@ D2C fait référence aux services de diffusion vidéo en continu vendus directem
 
 TV Everywhere fait référence au composant en ligne d’un abonnement TV traditionnel d’un client. Il comprend les abonnés aux services de télévision par câble ou par satellite, tels que Comcast ou DirectTV, qui peuvent accéder au contenu de ces fournisseurs en ligne via différentes plateformes de diffusion en continu.
 
-Il existe deux versions de TV Everywhere : [Programmeurs](/help/accountiq/product-concepts.md#programmer-def) et [MVPD](/help/accountiq/product-concepts.md#mvpd-def).
+Il existe deux versions de TV Everywhere : [Programmeurs](/help/accountiq/product-concepts.md#programmer-def) et [MVPDs](/help/accountiq/product-concepts.md#mvpd-def).
 
-Lorsque vous [onboard](/help/accountiq/get-started.md) Votre entreprise doit vous attribuer un compte IQ avec une version Programmeur ou MVPD.
+Lorsque vous [à bord](/help/accountiq/get-started.md) de votre entreprise vers Account IQ, vous êtes affecté avec une version Programmeur ou MVPD.
 
 ### Programmeurs {#programmers}
 
@@ -38,8 +39,4 @@ Les distributeurs multicanaux de programmes audiovisuels offrent plusieurs canau
 
 >[!NOTE]
 >
-> Selon la version du compte IQ dans laquelle vous vous connectez, certains libellés changent et certaines vues peuvent ne pas être disponibles.
-
-
-
-
+> Selon la version d’Account IQ dans laquelle vous vous connectez, certains libellés changent et certains affichages peuvent ne pas être disponibles.

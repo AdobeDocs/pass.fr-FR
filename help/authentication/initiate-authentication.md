@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -40,9 +40,9 @@ Lance le processus d’authentification en informant un événement de sélectio
 
 
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authenticate | Module AuthN | 1. requestor_id (obligatoire)</br>2.  mso_id (obligatoire)</br>3.  reg_code (obligatoire)</br>4.  domain_name (obligatoire)</br>5.  noflash=true -  </br>    (obligatoire, paramètre résiduel)</br>6.  no_iframe=true (obligatoire, paramètre résiduel)</br>7.  Paramètres supplémentaires (facultatif)</br>8.  redirect_url (obligatoire) | GET | L’application web de connexion est redirigée vers la page de connexion MVPD. | 302 pour les mises en oeuvre de redirection complètes |
+| &lt;SP_FQDN>/api/v1/authenticate | Module AuthN | 1. requestor_id (obligatoire)</br>2.  mso_id (obligatoire)</br>3.  reg_code (obligatoire)</br>4.  domain_name (obligatoire)</br>5.  noflash=true - </br>    (Obligatoire, paramètre résiduel)</br>6.  no_iframe=true (obligatoire, paramètre résiduel)</br>7.  paramètres supplémentaires (facultatif)</br>8.  redirect_url (obligatoire) | GET | L’application web de connexion est redirigée vers la page de connexion MVPD. | 302 pour les mises en oeuvre de redirection complètes |
 
 {style="table-layout:auto"}
 
@@ -81,7 +81,7 @@ Lance le processus d’authentification en informant un événement de sélectio
 >
 >L&#39;appel peut également contenir des paramètres facultatifs qui permettent d&#39;accéder à d&#39;autres fonctionnalités, telles que :
 >
-> * generic\_data : permet l’utilisation de [TempPass Promotionnel](/help/authentication/promotional-temp-pass.md)
+> * generic\_data : permet l’utilisation de [TempPass promotionnel](/help/authentication/promotional-temp-pass.md)
 >
 >```JSON
 >Example:
@@ -89,12 +89,12 @@ Lance le processus d’authentification en informant un événement de sélectio
 >```
 
 
-### **Remarques** {#notes}
+### **Notes** {#notes}
 
-* La valeur de la variable `domain_name` doit être défini sur l’un des noms de domaine enregistrés avec l’authentification Adobe Pass. Pour plus d’informations, voir [Enregistrement et initialisation](/help/authentication/programmer-overview.md).
+* La valeur du paramètre `domain_name` doit être définie sur l’un des noms de domaine enregistrés avec l’authentification Adobe Pass. Pour plus d&#39;informations, voir [Enregistrement et initialisation](/help/authentication/programmer-overview.md).
 
 * [Évitez d’utiliser &#39;&amp;&#39;reg\_code dans /authenticate request (note technique)](/help/authentication/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
-* La variable `redirect_url` doit être le dernier dans l’ordre.
+* Le paramètre `redirect_url` doit être le dernier dans l’ordre.
 
-* La valeur de la variable `redirect_url` doit être codé en URL
+* La valeur du paramètre `redirect_url` doit être codée au format URL.

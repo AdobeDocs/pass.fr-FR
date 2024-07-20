@@ -4,7 +4,7 @@ description: Authentification à l’aide du protocole OAuth 2.0
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1074'
+source-wordcount: '1088'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-## Présentation {#overview}
+## Vue d’ensemble {#overview}
 
 Bien que SAML reste le protocole principal utilisé pour l’authentification par les distributeurs multicanaux de programmes audiovisuels américains et par les entreprises en général, il existe une tendance claire à passer à OAuth 2.0 comme protocole d’authentification principal. Le protocole OAuth 2.0 (https://tools.ietf.org/html/rfc6749) a été principalement développé pour les sites de consommation et a été rapidement adopté par des géants Internet comme Facebook, Google &amp; Twitter.
 
@@ -39,25 +39,25 @@ Le protocole offre également plus de flexibilité en termes de données exposé
 
 Pour prendre en charge l’authentification avec OAuth 2.0, un MVPD doit respecter les conditions préalables suivantes :
 
-Tout d&#39;abord, la police doit s&#39;assurer qu&#39;elle prend en charge la fonction [Subvention du code d’autorisation](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html) flux.
+Tout d’abord, le MVPD doit s’assurer qu’il prend en charge le flux [Authorization Code Grant](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html) .
 
 Après avoir confirmé qu’il prend en charge le flux, le MVPD doit nous fournir les informations suivantes :
 
 * le point de terminaison de l’authentification
-   * le point de fin fournit le code d’autorisation qui sera ensuite utilisé en échange de l’actualisation et du jeton d’accès.
+   * le point de fin fournit le code d’autorisation qui sera ensuite utilisé en exchange pour l’actualisation et le jeton d’accès.
 * le point de terminaison /token
    * cela fournira le jeton d’actualisation et le jeton d’accès.
    * le jeton d’actualisation doit être stable (il ne doit pas changer chaque fois que nous demandons un nouveau jeton d’accès).
    * le MVPD doit autoriser plusieurs jetons d’accès actifs pour chaque jeton d’actualisation.
-   * ce point de fin échangera également un jeton d’actualisation pour un jeton d’accès.
-* nous avons besoin d’une **point d’entrée pour le profil utilisateur**
+   * ce point de fin exchange également un jeton d’actualisation pour un jeton d’accès
+* nous avons besoin d’un point de terminaison **pour user-profile**
    * ce point de fin fournit l’ID utilisateur, qui doit être unique pour un compte et ne doit pas contenir d’informations d’identification personnelle.
-* la valeur **/logout** point de fin (facultatif)
+* le point de terminaison **/logout** (facultatif)
    * L’authentification Adobe Pass redirige vers ce point de terminaison, fournit au MVPD un URI de redirection. Sur ce point de terminaison, le MVPD peut effacer les cookies sur l’ordinateur client ou appliquer la logique souhaitée pour se déconnecter.
 * il est vivement recommandé d’avoir une prise en charge des clients autorisés (applications clientes qui ne déclenchent pas de page d’autorisation de l’utilisateur).
 * nous aurons également besoin des éléments suivants :
-   * **clientID** et **secret client** pour les configurations d’intégration
-   * **temps de vie** Valeurs (TTL) du jeton d’actualisation et du jeton d’accès
+   * **clientID** et **client secret** pour les configurations d’intégration
+   * Valeurs **time to live** (TTL) pour le jeton d’actualisation et le jeton d’accès
    * Nous pouvons fournir au MVPD un URI de rappel d’autorisation et de rappel de déconnexion. En outre, si nécessaire, nous pouvons fournir aux distributeurs multicanaux une liste d’adresses IP à whitelister dans les paramètres de votre pare-feu.
 
 
@@ -67,7 +67,7 @@ Dans le flux d’authentification, l’authentification Adobe Pass communiquera 
 
 
 
-![Diagramme pour afficher le flux d’authentification dans l’authentification Adobe qui communique avec le MVPD sur le protocole sélectionné dans la configuration.](assets/authn-flow.png)
+![Diagramme pour afficher le flux d&#39;authentification dans l&#39;authentification Adobe qui communique avec le MVPD sur le protocole sélectionné dans la configuration.](assets/authn-flow.png)
 
 **Figure 1 : Flux d’authentification OAuth 2.0**
 
@@ -95,14 +95,14 @@ En résumé, le flux d’authentification pour les MVPD prenant en charge le pro
 
 Cette limitation provient des flux de clients qui ne permettent pas au serveur de mettre à jour AuthNToken qui, pour le protocole OAuth 2.0, contient également le jeton d’actualisation.
 
-Un flux d’autorisation type effectue un échange du jeton d’actualisation enregistré dans AuthNToken pour un jeton d’accès qui est ensuite utilisé pour effectuer l’appel d’autorisation au nom de l’utilisateur authentifié en premier lieu. Si le serveur d’autorisation (le MVPD) devait modifier le jeton d’actualisation et invalider l’ancien, nous ne pourrons pas mettre à jour le jeton AuthNToken valide. Pour cette raison, les MVPD doivent prendre en charge les jetons d’actualisation stables afin de pouvoir configurer les intégrations OAuth 2.0 pour eux.
+Un flux d’autorisation type effectue un exchange du jeton d’actualisation enregistré dans AuthNToken pour un jeton d’accès qui est ensuite utilisé pour effectuer l’appel d’autorisation au nom de l’utilisateur authentifié en premier lieu. Si le serveur d’autorisation (le MVPD) devait modifier le jeton d’actualisation et invalider l’ancien, nous ne pourrons pas mettre à jour le jeton AuthNToken valide. Pour cette raison, les MVPD doivent prendre en charge les jetons d’actualisation stables afin de pouvoir configurer les intégrations OAuth 2.0 pour eux.
 
 
 ## Migration de SAML vers OAuth 2.0 {#saml-auth2-migr}
 
 La migration des intégrations de SAML vers OAuth 2.0 sera effectuée par Adobe et le MVPD. Aucun changement technique n’est nécessaire du côté programmeur, bien que le programmeur puisse vouloir vérifier/tester l’alliance de marques sur la page de connexion MVPD. Du point de vue du MVPD, les points de terminaison et d’autres informations demandés dans les exigences de Oauth 2.0 sont requis.
 
-Pour **conserver SSO**, les utilisateurs disposant déjà d’un jeton d’authentification obtenu via SAML seront toujours considérés comme authentifiés et leurs demandes seront acheminées via l’ancienne intégration SAML.
+Pour **préserver SSO**, les utilisateurs qui disposent déjà d’un jeton d’authentification obtenu via SAML seront toujours considérés comme authentifiés et leurs demandes seront acheminées via l’ancienne intégration SAML.
 
 D’un point de vue technique :
 

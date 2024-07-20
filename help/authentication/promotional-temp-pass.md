@@ -19,13 +19,13 @@ ht-degree: 0%
 
 La transmission temporaire promotionnelle permet aux programmeurs d’offrir un accès temporaire à leur contenu protégé aux utilisateurs qui n’ont pas d’informations d’identification de compte avec un MVPD.
 
-La vignette promotionnelle temporaire est conçue pour être utilisée pour exécuter des campagnes promotionnelles lorsqu’un utilisateur, après avoir fourni des informations d’identification valides (par exemple, une adresse électronique) au programmeur, pourra utiliser une variable **nombre prédéfini de titres VOD différents pour une période prédéfinie**.
+La vignette promotionnelle temporaire est conçue pour être utilisée pour exécuter des campagnes promotionnelles dans lesquelles un utilisateur, après avoir fourni des informations d’identification valides (par exemple, une adresse électronique) au programmeur, pourra consommer un **nombre prédéfini de titres VOD différents pendant une période prédéfinie**.
 
 >[!IMPORTANT]
 >
 >Adobe ne stocke aucune information d’identification personnelle (PII). Par conséquent, le programmeur doit définir un hachage sur les informations fournies par l’utilisateur unique sur les API d’authentification Adobe Pass.
 
-La vignette promotionnelle temporaire est créée sur le dessus de la balise [Temp Pass](/help/authentication/temp-pass.md) , ce qui signifie qu’elle inclut toutes les fonctionnalités de transmission de temporaire.
+La transmission temporaire promotionnelle est construite sur la fonction [Temp Pass](/help/authentication/temp-pass.md), ce qui signifie qu’elle comprend toutes les fonctionnalités de transmission temporaire.
 
 Une fois le nombre maximal de titres VOD prédéfinis ou la période prédéfinie dépassée, cet utilisateur ne pourra plus accéder au contenu sur le même appareil ou en utilisant les mêmes informations d’identification de l’utilisateur (par exemple, adresse électronique) tant que les jetons d’autorisation ne seront pas effacés du serveur d’authentification Adobe Pass.
 
@@ -66,11 +66,11 @@ En fonction de l’identifiant de l’appareil et des informations fournies par 
 
 ### Métadonnées utilisateur {#user-metadata}
 
-Pour faciliter la mise en oeuvre de l’application du programmeur, les **les informations de métadonnées utilisateur sont exposées ;** sur la vignette temporaire promotionnelle, avec les clés correspondantes (pour activer les clés, contactez tve-support@adobe.com) :
+Pour faciliter la mise en oeuvre de l’application du programmeur, les **informations de métadonnées utilisateur suivantes sont exposées** sur la vignette de promotion, avec les clés correspondantes (pour activer les clés, contactez tve-support@adobe.com) :
 
-* **restes_resources**: nombre de ressources restantes que l’utilisateur actuel est autorisé à consommer
-* **used_assets**: liste des ressources que l’utilisateur actuel a déjà consommées.
-* **expiration_date**: date d’expiration de l’utilisateur actuel
+* **restes_resources** : nombre de ressources restantes que l’utilisateur actuel est autorisé à consommer
+* **used_assets** : liste des ressources que l’utilisateur actuel a déjà consommées
+* **expiration_date** : date d’expiration de l’utilisateur actuel
 
 ### Comment le temps de visionnage est-il calculé ? {#compute-viewing-time}
 
@@ -78,11 +78,11 @@ La durée de validité d’une transmission temporaire n’est pas corrélée au
 
 ### Authentification et autorisation {#authn-authz}
 
-Pour les flux de transmission temporaire promotionnelle, l’authentification et l’autorisation ne communiquent pas avec un MVPD réel, **toutes les demandes d’autorisation réussiront** tant que toutes ces conditions sont remplies :
+Pour les flux de transmission temporaire promotionnelle, l’authentification et l’autorisation ne communiquent pas avec un MVPD réel, **donc toutes les demandes d’autorisation réussiront** tant que toutes ces conditions sont remplies :
 
 * jetons d’autorisation valides pour les ressources spécifiées
-* nombre de **used_assets** est inférieur à la limite définie par le programmeur
-* **expiration_date** est située après la date courante.
+* Le nombre de **used_assets** est inférieur à la limite définie par le programmeur
+* La valeur **expiration_date** est postérieure à la date actuelle.
 
 ### Comportement de contrôle en amont {#preflight-beh}
 
@@ -96,46 +96,46 @@ La connexion unique n’est pas activée pour les instances de la transmission t
 
 ### Déconnexion {#logout}
 
-Tous les jetons d’un appareil sont supprimés lors de la déconnexion. Par conséquent, le passage de la transmission temporaire de conversion à un MVPD standard sélectionné par l’utilisateur ne doit pas dépendre de cette mise en oeuvre. Il est recommandé d’utiliser la variable `setSelectedProvider(null)` afin d’effacer l’état de l’application, puis de redémarrer le flux d’authentification, qui offre une meilleure expérience utilisateur.
+Tous les jetons d’un appareil sont supprimés lors de la déconnexion. Par conséquent, le passage de la transmission temporaire de conversion à un MVPD standard sélectionné par l’utilisateur ne doit pas dépendre de cette mise en oeuvre. Il est recommandé d’utiliser la fonction `setSelectedProvider(null)` afin d’effacer l’état de l’application, puis de redémarrer le flux d’authentification, qui offre une meilleure expérience utilisateur.
 
 ### Diagramme de flux de transmission temporaire promu {#promo-tempass-flowdia}
 
-![Diagramme de flux de transmission temporaire promu](assets/promo-temp-pass-flow.png)
+![ Diagramme de flux de transmission temporaire promotionnelle ](assets/promo-temp-pass-flow.png)
 
-*Figure : Flux de transmission de la température promotionnelle*
+*Figure : Flux de passage à température promotionnel*
 
 ## Mise en oeuvre de la transmission temporaire de conversion {#impl-promo-tempass}
 
 La transmission temporaire promotionnelle requiert les fonctionnalités côté client suivantes :
 
-* **Informations d’identifiant utilisateur, par exemple propagation de l’adresse électronique** (envoi de l’adresse électronique de l’utilisateur sur les flux d’authentification et d’autorisation). Le courrier électronique est requis par l’authentification Adobe Pass pour lier les jetons d’authentification et d’autorisation (comme dans le cas de la fonction `device_ID`, obligatoire pour tous les appels).
-* **Authentification forcée** - permettant au programmeur de forcer un flux d’authentification lorsque l’utilisateur est déjà authentifié. Cette fonctionnalité est nécessaire pour forcer l’actualisation des métadonnées utilisateur (clé de métadonnées utilisateur). **used_assets** contient le nombre de ressources disponibles) à chaque démarrage de l’application. Comme l’utilisateur peut se connecter à plusieurs appareils, les métadonnées utilisateur présentes sur l’appareil au démarrage de l’application ne sont pas fiables. Nous devons les mettre à jour afin de refléter l’état actuel de cet utilisateur spécifique (identifié par son adresse électronique).
+* **Informations d’identifiant de l’utilisateur, par exemple propagation de l’adresse électronique** (envoi de l’adresse électronique de l’utilisateur sur les flux d’authentification et d’autorisation). L’e-mail est requis par l’authentification Adobe Pass pour lier les jetons d’authentification et d’autorisation (similaire au cas de `device_ID`, requis pour tous les appels).
+* **Forcer l’authentification** - permettant au programmeur de forcer un flux d’authentification lorsque l’utilisateur est déjà authentifié. Cette fonctionnalité est nécessaire pour forcer l’actualisation des métadonnées utilisateur (la clé de métadonnées utilisateur **used_assets** contient le nombre de ressources disponibles) à chaque démarrage de l’application. Comme l’utilisateur peut se connecter à plusieurs appareils, les métadonnées utilisateur présentes sur l’appareil au démarrage de l’application ne sont pas fiables. Nous devons les mettre à jour afin de refléter l’état actuel de cet utilisateur spécifique (identifié par son adresse électronique).
 
 
 >[!IMPORTANT]
 >L’authentification forcée est possible uniquement sur iOS et Android.
->L’authentification Adobe Pass ne dispose pas d’un mécanisme intégré pour arrêter la diffusion en continu libre après les X minutes. L’authentification Adobe Pass cessera d’être **authorization** et **short media** jetons une fois que l’utilisateur a utilisé les ressources Y gratuites. C’est aux programmeurs de restreindre l’accès une fois que la passe temporaire de promotion arrive à expiration.
+>L’authentification Adobe Pass ne dispose pas d’un mécanisme intégré pour arrêter la diffusion en continu libre après les X minutes. L’authentification Adobe Pass cessera d’émettre des jetons **authorization** et **short media** une fois que l’utilisateur aura consommé les ressources Y gratuites. C’est aux programmeurs de restreindre l’accès une fois que la passe temporaire de promotion arrive à expiration.
 
 ## Sécurité {#security}
 
 >[!IMPORTANT]
 >Adobe ne stocke aucune information d’identification personnelle (PII). Par conséquent, le programmeur doit définir un hachage sur les informations fournies par l’utilisateur unique sur les API d’authentification Adobe Pass.
 
-**Hachage des informations d’identifiant utilisateur**
+**Hachage des informations d’identifiant de l’utilisateur**
 
-Adobe recommande d’utiliser la variable **SHA-2** la famille ou son **SHA-256**, **SHA-512** sur les données avant leur envoi à Adobe.
+Adobe recommande d’utiliser la famille **SHA-2** ou ses fonctions **SHA-256**, **SHA-512** spécifiques sur les données avant leur envoi à Adobe.
 
-Par exemple : **SHA-256** over **&quot;user@domain.com&quot;** is **&quot;f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7&quot;**.
+Par exemple, **SHA-256** sur **&quot;user@domain.com&quot;** est **&quot;f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a32b18b88d09069fb7&quot;**}.
 
 ## Réinitialiser ou purger la transmission temporaire de conversion {#reset-promo-tempass}
 
-Certaines règles de fonctionnement nécessitent une purge régulière de la transmission temporaire promotionnelle. Pour ce faire, l’authentification Adobe Pass fournit aux programmeurs une *public* API web, décrite ci-dessous :
+Certaines règles de fonctionnement nécessitent une purge régulière de la transmission temporaire promotionnelle. Pour ce faire, Adobe Pass Authentication fournit aux programmeurs une API web *public*, décrite ci-dessous :
 
 | `DELETE https://mgmt.auth.adobe.com/reset-tempass/v2/reset` |
 |----|
-| <ul><li>Protocole : **https**</li><li>Hôte :<ul><li>Version : **mgmt.auth.adobe.com**</li><li>Préqualification : **mgmt-prequal.auth.adobe.com**</li></ul></li><li>Chemin : **/resettempass/v2/reset**</li><li>Paramètres de requête : **device_id=all&amp;requestor_id=THE_REQUESTOR_ID&amp;mvpd_id=THE_TEMPASS_MVPD_ID**</li><li>headers : ApiKey : **1232293681726481**</li> <li>Réponse :<ul><li>Succès : **HTTP 204**</li><li>Échec : **HTTP 400** pour les requêtes incorrectes, **HTTP 401** si ApiKey n’est pas spécifié, **HTTP 403** si ApiKey n’est pas valide</li></ul></li></ul> |
+| <ul><li>Protocole : **https**</li><li>Hôte :<ul><li>Version : **mgmt.auth.adobe.com**</li><li>Préqualification : **mgmt-prequal.auth.adobe.com**</li></ul></li><li>Chemin d’accès : **/reset-tempass/v2/reset**</li><li>Paramètres de requête : **device_id=all&amp;requestor_id=THE_REQUESTOR_ID&amp;mvpd_id=THE_TEMPASS_MVPD_ID{1)**</li><li>headers : ApiKey : **1232293681726481**</li> <li>Réponse :<ul><li>Succès : **HTTP 204**</li><li>Échec : **HTTP 400** pour les demandes incorrectes, **HTTP 401** si ApiKey n’est pas spécifié, **HTTP 403** si ApiKey n’est pas valide</li></ul></li></ul> |
 
-Outre les exigences de purge de la transmission temporaire, la transmission temporaire de conversion utilise le hachage sur les informations d’identifiant utilisateur envoyées sous la forme **generic_data** lors de l’authentification et de l’autorisation pour la purge.
+Outre les conditions requises pour purger la transmission temporaire, la transmission temporaire de conversion utilise le hachage sur les informations d’identifiant utilisateur envoyées sous la forme **generic_data** lors de l’authentification et de l’autorisation de purge.
 
 Le hachage sera envoyé, et non l’intégralité du fichier JSON :
 
@@ -149,7 +149,7 @@ $ curl -X DELETE -H "Authorization:Bearer H4j7cF3GtJX81BrsgDa10GwSizVz" "https:/
 |:--------------------------------------:|:---------------------:|:----------:|:-----------------------------------------------:|
 | Activateur d’accès JS | OUI | OUI | OUI (à partir de la version 3.0.0) |
 | IOS client natif | OUI | OUI | OUI (à partir de la version 1.10) |
-| Android du client natif | OUI | OUI | OUI |
+| Android client natif | OUI | OUI | OUI |
 | API sans client | OUI | OUI | NON |
 
 
@@ -163,7 +163,7 @@ Cette section décrit les limites qui s’appliquent à la mise en oeuvre actuel
 
 Toutes les applications d’appareils intelligents ne sont pas en mesure de fournir un identifiant d’appareil unique. En l’absence d’un tel identifiant, l’authentification Adobe Pass peut utiliser l’UUID généré par le service de code d’enregistrement Adobe comme identifiant de périphérique unique. Cela signifie que lorsque l’utilisateur se déconnecte, les jetons d’authentification et d’autorisation sont supprimés. Une fois que l’utilisateur tente de s’authentifier à nouveau, cette fois-ci avec différentes informations utilisateur (par exemple, un e-mail), il pourra autoriser à nouveau. Adobe recommande d’ajouter un flux d’interface utilisateur qui ne permettra pas à un utilisateur de &quot;tromper&quot; le système et d’ajouter une logique pour déterminer s’il s’agit d’un nouvel utilisateur demandant un essai ou d’un essai existant.
 
-**Réinitialisation/purge de la transmission temporaire**
+**Réinitialisation/purge de Temp Pass**
 
 Réinitialiser le transfert de température pour les sans client n’est pas disponible dans les cas spécifiques d’Xbox360 et d’Xbox One, car ces plateformes nécessitent une analyse supplémentaire de l’identifiant de périphérique, ce qui n’est pas possible dans l’outil Réinitialiser le transfert de température .
 

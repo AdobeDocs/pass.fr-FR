@@ -1,13 +1,13 @@
 ---
 title: Notes de mise à jour de la surveillance de la simultanéité 2.9.6
 description: Notes de mise à jour de la surveillance de la simultanéité 2.9.6
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 904ae21b-34cb-4005-a12d-c534d406d1e8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '63'
-ht-degree: 1%
+source-wordcount: '69'
+ht-degree: 2%
 
 ---
-
 
 # Notes de mise à jour de la surveillance de la simultanéité 2.9.6 {#cm-296-rn}
 

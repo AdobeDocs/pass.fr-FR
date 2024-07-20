@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Rapports sur les comptes partagés {#shared-accounts-reports}
 
-Les rapports Comptes partagés fournissent un autre groupe de graphiques et de graphiques qui reflètent le comportement de partage et la consommation du segment actuel. Par exemple : **[!UICONTROL Over Moderate Probability]** et **[!UICONTROL Over Low Probability]** pour le segment actuel.
+Les rapports Comptes partagés fournissent un autre groupe de graphiques et de graphiques qui reflètent le comportement de partage et la consommation du segment actuel. Par exemple, **[!UICONTROL Over Moderate Probability]** et **[!UICONTROL Over Low Probability]** pour le segment actuel.
 
 ## Probabilité de partage des comptes {#accounts-sharing-probability}
 
@@ -23,7 +23,7 @@ Ces graphiques en anneau et à barres indiquent les pourcentages (et les nombres
 * Faible (20 % à 40 %)
 * Très faible (0 à 20 %)
 
-La ligne rouge indique la plage de seuil sélectionnée dans la variable [Comptes supérieurs au seuil dans le segment actuel](#threshold-selector) et la zone rouge clair contient le total de tous les comptes au-dessus de ce seuil.
+La ligne rouge indique la plage de seuil sélectionnée dans le panneau [Comptes supérieurs au seuil dans le segment actuel](#threshold-selector) et la zone rouge claire contient le total de tous les comptes supérieurs à ce seuil.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
@@ -43,11 +43,11 @@ Ce panneau vous permet de sélectionner la plage de seuil pour les graphiques en
 
 * Comptes **sur très faible** partage **probabilité**
 
-* Comptes **over low** partage **probabilité**
+* Comptes **sur faible** partage **probabilité**
 
-* Comptes **sur modéré** partage **probabilité**
+* Comptes **sur modéré** partageant **probabilité**
 
-* Comptes **sur élevé** partage **probabilité**
+* Comptes **sur haute** partageant **probabilité**
 
 ![](assets/threshold-selector-shared-accounts.png)
 
@@ -77,7 +77,7 @@ Ce graphique vous indique le nombre d’abonnés du segment actuel qui utilisent
 
 >[!NOTE]
 >
->Vous pouvez zoomer sur les barres qui représentent plusieurs jeux de codes postaux, représentés par un **+** (plus) en double-cliquant dessus (par exemple, 10+).
+>Vous pouvez zoomer sur les barres qui représentent plusieurs jeux de codes postaux, représentés par un signe **+** (plus) (par exemple, 10+), en double-cliquant dessus.
 
 
 ## Portée géographique du segment par période par compte {#geo-span-period-account}
@@ -88,8 +88,8 @@ Ce graphique à barres trace le nombre de comptes d’abonnés qui utilisent du 
 
 >[!NOTE]
 >
-> Vous pouvez effectuer un zoom sur les barres qui représentent plusieurs jeux de distances géographiques, représentées par une **+** (plus) en double-cliquant dessus (par exemple, 1 000+).
+> Vous pouvez zoomer sur les barres qui représentent plusieurs ensembles de distances géographiques, représentées par un signe **+** (plus) (par exemple, plus de 1 000), en double-cliquant dessus.
 
 >[!MORELIKETHIS]
 >
->* Découvrez comment exporter des rapports pour les 1 000 premiers abonnés du segment sélectionné à l’aide de filtres dans les rapports Comptes partagés à l’aide de [Exporter les 1 000 premiers comptes](/help/accountiq/export-acc-information.md) .
+>* Découvrez comment exporter des rapports pour les 1 000 premiers abonnés du segment sélectionné à l’aide de filtres dans les rapports Comptes partagés à l’aide de l’option [Exporter les 1 000 premiers comptes](/help/accountiq/export-acc-information.md) .

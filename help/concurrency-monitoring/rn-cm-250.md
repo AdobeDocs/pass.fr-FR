@@ -1,13 +1,13 @@
 ---
 title: Notes de mise à jour d’Adobe Pass Concurrency Monitoring 2.5.0
 description: Notes de mise à jour d’Adobe Pass Concurrency Monitoring 2.5.0
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: da392b18-a2aa-4f51-a75f-2c5b65b2b073
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '279'
-ht-degree: 0%
+source-wordcount: '286'
+ht-degree: 2%
 
 ---
-
 
 # Notes de mise à jour d’Adobe Pass Concurrency Monitoring 2.5.0 {#cm-250}
 
@@ -43,7 +43,7 @@ La version V2 unifie les appels de pulsation et de requête et simplifie consid�
 
 * Plutôt que des métadonnées personnalisées, cette API permet d’identifier si des métadonnées incorrectes sont envoyées ou si des métadonnées requises par les règles sont manquantes.
 * Les attributs requis pour chaque application sont désormais fournis par un appel API et doivent être mis en cache par les clients.
-Remarques
+Notes
 
 >[!NOTE]
 >
@@ -54,8 +54,8 @@ Remarques
 
 ### Correctifs {#bug-fixes}
 
-N/A
+S/O
 
 ### Problèmes connus {#known-issues}
 
-N/A
+S/O

@@ -1,13 +1,13 @@
 ---
 title: Mécanisme de ralentissement
 description: Mécanisme de ralentissement
-source-git-commit: cbb45cae576332e2b63027992c597b834210988d
+exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 1%
 
 ---
-
 
 # Mécanisme de ralentissement {#throttling-mechanism}
 
@@ -20,16 +20,16 @@ Une fois la limite atteinte, les requêtes sont marquées avec un état de répo
 ## Présentation du mécanisme {#mechanism-overview}
 
 Le mécanisme détermine le nombre maximal d’appels acceptés pour chaque point de terminaison de surveillance de la simultanéité au cours d’un intervalle de temps spécifique.
-Une fois ce nombre maximum d&#39;appels atteint, notre service répondra avec &#39;429 Too many requests&#39;. L’en-tête de réponse 429 &quot;Date d’expiration&quot; inclut l’horodatage lorsque l’appel suivant est considéré comme valide ou lorsque le ralentissement expire. Actuellement, le ralentissement expire au bout d’une minute à compter de la première réponse 429.
+Une fois ce nombre maximum d&#39;appels atteint, notre service répondra avec &#39;429 Too many requests&#39;. L’en-tête de réponse 429 &quot;Date d’expiration&quot; inclut l’horodatage lorsque l’appel suivant est considéré comme valide ou lorsque le ralentissement expire. Pour l’instant, le ralentissement expire après l’un d’eux.   minute à partir de la première réponse 429.
 
 Les points de terminaison configurés avec le ralentissement sont les suivants :
 1. Créer une nouvelle session : POST /sessions/{idp}/{subject}
 2. Appel Heartbeat : POST /sessions/{idp}/{subject}/{sessionId}
-3. Arrêt d’une session : DELETE /sessions/{idp}/{subject}/{sessionId}
+3. Arrêter une session : DELETE /sessions/{idp}/{subject}/{sessionId}
 
 Le ralentissement est configuré à deux niveaux :
-1. session : même unique {sessionId} paramètre envoyé `Heartbeat` appelez et `Terminate a session` appelez .
-2. user : même unique {subject} paramètre envoyé `Create a new session` appelez .
+1. session : même paramètre {sessionId} unique envoyé dans l&#39;appel `Heartbeat` et l&#39;appel `Terminate a session`.
+2. user : même paramètre {subject} unique envoyé dans l&#39;appel `Create a new session`.
 
 La limite de limitation au niveau de la session est définie sur 200 requêtes en une minute.\
 La limite de ralentissement au niveau de l’utilisateur est définie sur 200 requêtes en une minute.\
@@ -53,7 +53,7 @@ Ces deux limites (ralentissement au niveau de la session et ralentissement au ni
 | Second 61 | POST /sessions/idp1/subject1 | 1 | 1 appel reçoit &quot;429 demandes trop nombreuses&quot; | Aucun appel dans la limite disponible pour le moment |
 | 70 secondes | POST /sessions/idp1/subject1 | 1 | 1 appel reçoit &quot;202 Accepted&quot; | Limite à 200 appels disponibles, car 60 secondes se sont écoulées depuis les 10 secondes |
 
-**Exemple de réponse 429 :**
+**429 Exemple de réponse :**
 
 ```
 HTTP/2 429

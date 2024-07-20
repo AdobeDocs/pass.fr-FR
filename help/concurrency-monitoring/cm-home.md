@@ -1,17 +1,17 @@
 ---
 title: Présentation de la surveillance des simultanés
 description: Présentation de la surveillance des simultanés
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---
 
-
 # Présentation de la surveillance des simultanés {#intro}
 
-À savoir [Procédures de réaffectation](/help/concurrency-monitoring/cm-escalation-procedures.md) concernant la surveillance de la simultanéité, reportez-vous à l’article procédures de réaffectation .
+Pour en savoir plus sur les [procédures de réaffectation](/help/concurrency-monitoring/cm-escalation-procedures.md) concernant la surveillance de la simultanéité, consultez l’article sur les procédures de réaffectation .
 
 La surveillance simultanée permet aux fournisseurs d’identité et de contenu (MVPD et programmeurs) de définir et d’appliquer des limites sur l’utilisation simultanée dans plusieurs applications (potentiellement propriété de plusieurs partenaires).
 
@@ -19,7 +19,7 @@ La surveillance simultanée permet aux fournisseurs d’identité et de contenu 
 
 * **V2.0 : [API de surveillance de la simultanéité](http://docs.adobeptime.io/cm-api-v2/)**
 
-Pour vous inscrire à notre service de surveillance de la simultanéité, contactez notre [Équipe d’assistance](mailto:tve-support@adobe.com). Indiquez les informations suivantes et notre équipe se fera un plaisir de vous aider :
+Pour vous inscrire à notre service de surveillance de la simultanéité, contactez notre [équipe d’assistance](mailto:tve-support@adobe.com). Indiquez les informations suivantes et notre équipe se fera un plaisir de vous aider :
 
 1. Nom de votre société
 1. Applications que vous souhaitez intégrer à la surveillance simultanée. Pour chaque application, veuillez fournir :

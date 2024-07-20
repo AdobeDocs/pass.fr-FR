@@ -1,7 +1,8 @@
 ---
 title: Révision et notification push des modifications
 description: Découvrez comment passer en revue et pousser les modifications dans le tableau de bord TVE.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -22,23 +23,23 @@ Suivez ces étapes pour passer en revue et pousser les modifications.
 
    ![Notification des modifications de révision et de notification push](assets/review-changes.png)
 
-   *Zone de notification des modifications de révision et de notification push*
+   *Boîte de notification de modification des révisions et des notifications push*
 
-1. Sélectionner **Modifications des révisions** de la **révision et notification push des modifications** boîte de notification.
+1. Sélectionnez **Modifications de révision** dans la zone de notification **Modifications de révision et de notification push**.
 
-1. Saisissez une brève description de la modification dans **Description de la configuration** pour suivre et comprendre efficacement l’objectif de chaque modification.
+1. Saisissez une brève description de la modification dans **Configuration Description** pour effectuer un suivi efficace et comprendre l’objectif de chaque modification.
 
-   ![Ajout d’une description de configuration](assets/add-conf-desc.png)
+   ![Ajouter une description de configuration](assets/add-conf-desc.png)
 
-   *Ajout d’une description de configuration*
+   *Ajouter une description de configuration*
 
-1. Accédez au **Modifications de configuration** pour afficher un résumé des modifications.
+1. Accédez à la section **Modifications de configuration** pour afficher un résumé des modifications.
 
 1. Pointez sur la modification que vous souhaitez réviser.
 
-1. Sélectionner **Affichage** pour passer en revue les valeurs précédentes et nouvelles associées à une modification de configuration.
+1. Sélectionnez **Afficher** pour passer en revue les valeurs précédentes et nouvelles associées à un changement de configuration.
 
-   ![Afficher les modifications de configuration](assets/view-configuration-changes.png)
+   ![ Afficher les modifications de configuration ](assets/view-configuration-changes.png)
 
    *Afficher les modifications de configuration*
 
@@ -46,12 +47,10 @@ Suivez ces étapes pour passer en revue et pousser les modifications.
 
    >[!NOTE]
    >
-   >La variable **Modifications push** devient actif uniquement après l’ajout d’un **Description de la configuration**.
+   >Le bouton **Push changes** devient actif uniquement après l’ajout d’une **Description de configuration**.
 
    ![Modifications push](assets/push-changes.png)
 
    *Modifications push*
 
    Vous pouvez également sélectionner **Ignorer les modifications** si vous souhaitez annuler toutes les modifications de configuration répertoriées.
-
-

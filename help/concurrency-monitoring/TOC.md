@@ -23,14 +23,14 @@ ht-degree: 9%
 + [Politique de conservation des données](data-retention-policy.md)
 + [Mécanisme de ralentissement](throttling-mechanism.md)
 + [Procédures de réaffectation](cm-escalation-procedures.md)
-+ Utilisation de la surveillance simultanée {#cmu}
++ Utilisation de la surveillance de la simultanéité {#cmu}
    + [Rapports d’utilisation de surveillance de la simultanéité](cm-usage-reports.md)
    + [API d’utilisation de la surveillance de la simultanéité](cmu-api.md)
    + [Accès à l’API de surveillance de la simultanéité](cmu-api-access.md)
 + API version 1{#v1-api}
    + [Point d’informations sur les stratégies](policy-info-pt-versionone.md)
    + [Métadonnées personnalisées](custom-metadata.md)
-   + Guides d’intégration {#int-cookbooks}
+   + Livres de cookies d’intégration {#int-cookbooks}
       + [Limitation de l’utilisation simultanée avec plusieurs applications appartenant à différents propriétaires](restrict-concurr-usage-mult-apps.md)
       + [Client/stratégie unique et applications multiples](single-tenant-policy-mult-app.md)
    + [Modèles d’implémentation](implementation-models.md)

@@ -1,13 +1,13 @@
 ---
 title: Mise en oeuvre de CM pour un client/une stratégie unique et plusieurs applications
 description: Mise en oeuvre de CM pour un client/une stratégie unique et plusieurs applications
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
-
 
 # Mise en oeuvre de CM pour un client/une stratégie unique et plusieurs applications {#imp-cm}
 
@@ -29,7 +29,7 @@ Deux applications + un site web sont utilisés pour démarrer des flux :
 
 1. L’utilisateur lance un flux à partir de l’application iPhone et un flux à partir de l’application iPad. La politique permet cela.
 1. L’utilisateur lance ensuite un troisième flux à partir du site web du programmeur.
-1. La règle de la stratégie (flux max 2, dernières victoires) permet à la dernière diffusion de le lire. **le premier flux qui a été démarré sera marqué comme non conforme à la politique et sera arrêté.**
+1. La règle dans la stratégie (flux max 2, dernières victoires) permet à la dernière diffusion de se lire, de sorte que **le premier flux qui a été démarré sera marqué comme non conforme à la stratégie et sera arrêté.**
 
 
 

@@ -4,7 +4,7 @@ description: Configuration de votre environnement et test dans un environnement 
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Le but de cette note technique est d’aider nos partenaires à configurer leur environnement et à commencer à tester une nouvelle version déployée sur l’environnement de pré-qualification Adobe.
 
-Comme il existe deux versions de construction: ***la production et*** la mise en scène, dans ce document, nous nous concentrerons sur la configuration de la production en mentionnant que toutes les étapes sont les mêmes pour la ***mise en scène***, seules les URL sont différentes.
+Comme il existe deux versions de construction : ***la production*** et ***la mise en scène***, dans ce document, nous nous concentrerons sur la configuration de la production en mentionnant que toutes les étapes sont les mêmes pour la mise en scène, seules les URL sont différentes.
 
 Les étapes 1 et 2 mettent en place l’environnement de test sur l’une des machines de test, l’étape 3 est une vérification du flux de base et les étapes 4 et 5 présentent des directives de test.
 
@@ -65,19 +65,19 @@ Les étapes 1 et 2 mettent en place l’environnement de test sur l’une des ma
 
 ## ÉTAPE 2.  Usurpation de l’environnement de préqualification pour la production {#spoofing-the-prequalification-environment}
 
-* Modifiez le *fichier c:\\windows\\System32\\drivers\\etc\\hosts* (sous Windows) ou */etc/hosts* (sous Macintosh/Linux/Android) et ajoutez les éléments suivants :
+* Modifiez le *fichier c :\\windows\\System32\\drivers\\etc\\hosts* (sous Windows) ou */etc/hosts* (sous Macintosh/Linux/Android) et ajoutez les éléments suivants :
 
 * Profil de production usurpé
    * 52.13.71.11 http://entitlement.auth.adobe.com, http://sp.auth.adobe.com, http://api.auth.adobe.com
 
-**Spoofing sur Android :** Pour réaliser une mise en forme sur Android, vous devez utiliser un émulateur Android.
+**Spoofing sur Android :** Pour parodier sur Android, vous devez utiliser un émulateur Android.
 
-* Une fois l’usurpation, vous pouvez simplement utiliser les URL standard pour les profils de production et d’évaluation : (c’est-à-dire, `http://sp.auth-staging.adobe.com` et `http://entitlement.auth-staging.adobe.com` et vous atteindrez le *environnement de préqualification/production* du* nouveau build.
+* Une fois l’usurpation d’identité mise en place, vous pouvez simplement utiliser les URL standard pour les profils de production et d’évaluation : (c’est-à-dire, `http://sp.auth-staging.adobe.com` et `http://entitlement.auth-staging.adobe.com` et vous atteindrez l’*environnement de préqualification/ production* du* nouveau build.
 
 
 ## ÉTAPE 3.  Vérifiez que vous pointez vers l’environnement approprié. {#Verify-you-are-pointing-to-the-right-environment}
 
-**C’est une étape facile:**
+**C’est une étape facile :**
 
 * Droit de chargement [prequal environnement](https://entitlement-prequal.auth.adobe.com/environment.html) et [droit](https://entitlement.auth.adobe.com/environment.html). Ils doivent renvoyer la même réponse.
 
@@ -93,6 +93,6 @@ Les étapes 1 et 2 mettent en place l’environnement de test sur l’une des ma
 
 ## ÉTAPE 6.  Effectuer des tests à l’aide du site de test d’API {#perform-testing-using-api-testing-site}
 
-* Si vous souhaitez approfondir le test de l’authentification Adobe Pass, nous vous recommandons d’utiliser la variable [Site de test d’API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+* Si vous souhaitez approfondir le test de l’authentification Adobe Pass, nous vous recommandons d’utiliser le [site de test d’API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Pour plus d’informations sur le site de test d’API, voir [Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API d’Adobe](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+Vous trouverez plus d’informations sur le site de test d’API à l’adresse [Comment tester les flux d’authentification et d’autorisation à l’aide du site de test d’API d’Adobe](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).

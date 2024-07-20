@@ -1,5 +1,5 @@
 ---
-title: Glossaire du compte IQ
+title: Glossaire Account IQ
 description: Glossaire de terminologies de produit.
 exl-id: 2ee54442-9538-4c30-b999-265310b3935f
 source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Terminologies courantes dans D2C et TV partout
 
-Les terminologies de produit suivantes et leurs définitions sont communes à toutes les [versions du compte IQ](versions-aiq.md).
+Les terminologies de produit suivantes et leurs définitions sont communes à toutes les [versions d’Account IQ](versions-aiq.md).
 
 ### [!UICONTROL Accounts Sharing Probability] {#account-sharing-probability-def}
 
@@ -21,7 +21,7 @@ Un panneau de tableau de bord avec des graphiques qui divisent les scores de par
 
 ### [!UICONTROL Action] {#action-def}
 
-Un événement direct ou indirect associé à un événement [Opération](#operation-def) qui affecte les caractéristiques (par exemple, le score de partage ou le nombre d’appareils utilisés) d’un segment d’opération associé.
+Événement direct ou indirect associé à une [opération](#operation-def) qui affecte les caractéristiques (par exemple, le score de partage ou le nombre d’appareils utilisés) d’un segment d’opération associé.
 
 ### [!UICONTROL Aggregated sharing score] {#sharing-probability-level-def}
 
@@ -90,7 +90,7 @@ Un appareil à grande mobilité. Par exemple, téléphone mobile et tablette.
 
 ### Opération {#operation-def}
 
-L’opération est un enregistrement créé pour suivre l’effet d’une [action](#action-def) sur un segment associé. Par exemple, une action peut être une limitation du nombre de diffusions simultanées autorisées pour les comptes identifiés par le segment.
+L’opération est un enregistrement créé pour suivre l’effet d’une [action](#action-def) spécifique sur un segment associé. Par exemple, une action peut être une limitation du nombre de diffusions simultanées autorisées pour les comptes identifiés par le segment.
 
 ### [!UICONTROL Overall sharing score] {#overall-sharing-score}
 

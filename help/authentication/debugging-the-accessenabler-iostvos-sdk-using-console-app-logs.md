@@ -4,7 +4,7 @@ description: Débogage du SDK AccessEnabler iOS/tvOS à l’aide des journaux d�
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 
-## Présentation
+## Vue d’ensemble
 
 Ce document a pour but de capturer et de présenter l’évolution du mécanisme de journalisation du SDK iOS/tvOS d’AccessEnabler, ainsi que quelques détails utiles pour déboguer la structure AccessEnabler à l’aide des journaux d’application de la console.
 
@@ -28,7 +28,7 @@ Le mécanisme de journalisation d’AccessEnabler iOS/tvOS a pour objectif d’�
 
 À partir de la version iOS/tvOS 3.5.0 d’AccessEnabler, le mécanisme de journalisation introduit les améliorations suivantes lors des modifications :
 
-* La structure AccessEnabler utilise Apple recommandé [OSLog](https://developer.apple.com/documentation/os/oslog) implémentation.
+* La structure AccessEnabler utilise l’implémentation recommandée par Apple [OSLog](https://developer.apple.com/documentation/os/oslog).
 
 * La structure AccessEnabler introduit la possibilité de filtrer les journaux d’application de la console en fonction du sous-système : **com.adobe.pass.AccessEnabler**. Tous les messages émis par le SDK font partie de com.adobe.pass.AccessEnabler.
 
@@ -45,30 +45,30 @@ En fonction des problèmes qui font l’objet d’une enquête, vous pouvez incl
 
 #### Inclusion {#including}
 
-Tout d’abord, afin de pouvoir voir tous les messages de journalisation émis par la structure AccessEnabler que vous avez **must** sélectionnez les options &quot;Inclure les messages d’informations&quot; et &quot;Inclure les messages de débogage&quot; dans la section Action de l’application Console, comme présenté dans l’image ci-dessous.
+Tout d’abord, pour pouvoir voir les messages de journalisation émis par la structure AccessEnabler, vous **devez** sélectionner les options &quot;Inclure les messages d’information&quot; et &quot;Inclure les messages de débogage&quot; dans la section Action de l’application Console, comme présenté dans l’image ci-dessous.
 
 ![](assets/include-info-debug-msg.png)
 
 
-Pour pouvoir déboguer les fonctionnalités du SDK AccessEnabler iOS/tvOS et **see** Les journaux de la structure AccessEnabler vous permettent d’effectuer les opérations suivantes :
+Pour pouvoir déboguer les fonctionnalités du SDK AccessEnabler iOS/tvOS et **voir** les journaux de structure AccessEnabler que vous pouvez :
 
-* Recherche dans l’application Console à l’aide de **Subsystem** qui Correspond à la valeur com.adobe.pass.AccessEnabler comme dans l’image ci-dessous.
+* Effectuez une recherche dans l’application de console à l’aide de l’option **Subsystem** qui équivaut à la valeur com.adobe.pass.AccessEnabler comme dans l’image ci-dessous.
 
 ![](assets/subsys-console-app.png)
 
-* Recherche dans l’application Console à l’aide de **Quelconque** qui contient la variable
-  [AccessEnabler] comme dans l’image ci-dessous.
+* Recherchez dans l’application de console à l’aide de l’option **Any** qui contient la variable
+  Valeur [AccessEnabler] comme dans l’image ci-dessous.
 
 ![](assets/any-optn-console-app.png)
 
-Outre les deux critères ci-dessus, vous pouvez également utiliser la variable **Catégorie** en conjonction avec **Subsystem** ou **Any (préfixe)** pour rechercher explicitement **debug** ou **error** messages de niveau émis par le SDK AccessEnabler iOS/tvOS.
+Outre les deux critères ci-dessus, vous pouvez également utiliser l’option **Category** conjointement avec **Subsystem** ou **Any (prefix)** pour rechercher explicitement les messages de niveau **debug** ou **error** émis par le SDK AccessEnabler iOS/tvOS.
 
 #### Exclusion
 
-Afin de pouvoir mieux déboguer les fonctionnalités d’autres composants et **exclude** Les journaux de la structure AccessEnabler vous permettent d’effectuer les opérations suivantes :
+Pour pouvoir mieux déboguer les fonctionnalités des autres composants et **exclure** les journaux de structure AccessEnabler, vous pouvez :
 
-* Recherche dans l’application Console à l’aide de **Subsystem** qui n’est pas égale à la valeur com.adobe.pass.AccessEnabler .
-* Recherche dans l’application Console à l’aide de **Quelconque** qui ne contient pas l’option [AccessEnabler] .
+* Recherchez dans l’application de console à l’aide de l’option **Subsystem** qui n’est pas égale à la valeur com.adobe.pass.AccessEnabler.
+* Recherchez dans l’application de console à l’aide de l’option **Any** qui ne contient pas la valeur [AccessEnabler].
 
 ## Signalement d’un problème
 

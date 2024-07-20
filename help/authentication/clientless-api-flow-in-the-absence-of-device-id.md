@@ -4,7 +4,7 @@ description: Flux d’API sans client en l’absence d’identifiant d’apparei
 exl-id: 6549a6d6-03a9-4d95-99fb-d3ada832323d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Une fois ces étapes effectuées, l’authentification Adobe Pass utilise l’UU
 
 ## Solution permanente
 
-Adobe modifiera cette configuration dans une version ultérieure en effectuant `deviceId` une charge utile facultative lors de la création du code reg et de l’utilisation de l’UUID comme clé de jeton au lieu de `deviceId`, lorsque `deviceId` n’est pas présent.
+Adobe changera cela dans une prochaine version, en faisant de `deviceId` une payload facultative lors de la création du code de reg et en utilisant l’UUID comme clé de jeton au lieu de `deviceId`, lorsque `deviceId` n’est pas présent.
 
 <!--
 ## Related Information

@@ -1,13 +1,13 @@
 ---
 title: Présentation des API
 description: Présentation des API
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '2054'
-ht-degree: 0%
+source-wordcount: '2043'
+ht-degree: 1%
 
 ---
-
 
 # API d’utilisation de la surveillance de la simultanéité {#cmu-api-usage}
 
@@ -17,14 +17,14 @@ ht-degree: 0%
 
 ## Présentation des API {#api-overview}
 
-L’utilisation de la surveillance de la simultanéité (CMU) est mise en oeuvre sous la forme d’un WOLAP (basé sur le Web) [Traitement Analytics en ligne](http://en.wikipedia.org/wiki/Online_analytical_processing)). CMU est une API Web de création de rapports d’entreprise générique, soutenue par un entrepôt de données. Il agit comme un langage de requête HTTP qui permet d’effectuer entièrement des opérations OLAP standard.
+L’utilisation de la surveillance de la simultanéité (CMU) est implémentée en tant que projet WOLAP (Web [Online Analytics Processing](http://en.wikipedia.org/wiki/Online_analytical_processing)). CMU est une API Web de création de rapports d’entreprise générique, soutenue par un entrepôt de données. Il agit comme un langage de requête HTTP qui permet d’effectuer entièrement des opérations OLAP standard.
 
 
 >[!NOTE]
 >
 >L’API CMU n’est pas disponible en général. Contactez votre représentant Adobe pour toute question concernant la disponibilité.
 
-L’API CMU fournit une vue hiérarchique des cubes OLAP sous-jacents. Chaque ressource ([dimension](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) dans la hiérarchie de dimension, mappée en tant que segment de chemin d’URL) génère des rapports avec (agrégé). [mesures](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) pour la sélection en cours. Chaque ressource pointe vers sa ressource parente (pour le cumul) et ses sous-ressources (pour l’analyse). Le découpage et la découpe s’effectuent par le biais de paramètres de chaîne de requête en épinglant des dimensions à des valeurs ou des plages spécifiques.
+L’API CMU fournit une vue hiérarchique des cubes OLAP sous-jacents. Chaque ressource ([dimension](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) dans la hiérarchie des dimensions, mappée en tant que segment de chemin d’URL) génère des rapports avec (agrégé) [mesures](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) pour la sélection actuelle. Chaque ressource pointe vers sa ressource parente (pour le cumul) et ses sous-ressources (pour l’analyse). Le découpage et la découpe s’effectuent par le biais de paramètres de chaîne de requête en épinglant des dimensions à des valeurs ou des plages spécifiques.
 
 L’API REST fournit les données disponibles dans un intervalle de temps spécifié dans la requête (revenant aux valeurs par défaut si aucune valeur n’est fournie), en fonction du chemin d’accès à la dimension, des filtres fournis et des mesures sélectionnées. La période ne sera pas appliquée aux rapports qui ne contiennent pas de dimensions temporelles (année, mois, jour, heure, minute, seconde).
 
@@ -40,7 +40,7 @@ Les arborescences d’exploration suivantes illustrent les dimensions (ressource
 
 ![](assets/new_breakdown.png)
 
-A `GET` à la fonction `https://mgmt.auth.adobe.com/cmu/v2` Le point de terminaison de l’API renvoie une représentation contenant :
+Un `GET` au point d’entrée de l’API `https://mgmt.auth.adobe.com/cmu/v2` renvoie une représentation contenant :
 
 * Liens vers les chemins d’exploration racine disponibles :
 
@@ -62,10 +62,10 @@ Suivant un chemin d’accès d’exploration (étape par étape) : /dimensionA/y
 
 Les options de filtrage disponibles sont les suivantes :
 
-* **Est égal à** Les filtres sont fournis en définissant le nom de la dimension sur une valeur spécifique dans la chaîne de requête.
-* **IN** les filtres peuvent être spécifiés en ajoutant plusieurs fois le même paramètre nom-dimension avec des valeurs différentes : dimension=valeur1&amp;dimension=valeur2
-* **Non égal à** Les filtres doivent utiliser le caractère &#39;!&#39; symbole situé après le nom de la dimension, ce qui entraîne l’apparition de &quot;!&quot;=&#39; &quot;operator&quot; : dimension !=value
-* **NOT IN** Les filtres requièrent le caractère &quot;!=’ à utiliser plusieurs fois, une fois pour chaque valeur de l’ensemble : dimension !=value1&amp;dimension!=value2&amp;...
+* Les filtres **Égal à** sont fournis en définissant le nom de la dimension sur une valeur particulière dans la chaîne de requête.
+* Les filtres **IN** peuvent être spécifiés en ajoutant le même paramètre de nom de dimension plusieurs fois avec des valeurs différentes : dimension=valeur1&amp;dimension=valeur2
+* **Non égal à** Les filtres doivent utiliser &quot;!&quot; symbole situé après le nom de la dimension, ce qui entraîne l’apparition de &quot;!&quot;=&#39; &quot;operator&quot; : dimension !=value
+* Les filtres **NOT IN** requièrent le &quot;!=’ à utiliser plusieurs fois, une fois pour chaque valeur de l’ensemble : dimension !=value1&amp;dimension!=value2&amp;...
 
 
 Il existe également une utilisation spéciale pour les noms de dimension dans la chaîne de requête : si le nom de dimension est utilisé comme paramètre de chaîne de requête sans valeur, l’API aura pour instruction de renvoyer une projection incluant cette dimension dans le rapport.
@@ -78,7 +78,7 @@ Exemple de requêtes CMU :
 | /dimension1/dimension2/dimension3?dimension1=valeur1&amp;dimension1=valeur2 | SELECT * de projection WHERE dimension1 DANS (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1!=value1 | SÉLECTIONNEZ * depuis la projection OÙ dimension1 &lt;> &quot;valeur1&quot; GROUPE PAR dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SÉLECTIONNEZ * depuis la projection OÙ dimension1 NE SE TROUVE PAS DANS (&#39;value1&#39;, &#39;value2&#39;) GROUP PAR dimension1, dimension2, dimension3 |
-| En supposant qu’il n’y ait pas de chemin direct : /dimension1/dimension3 mais qu’il y ait un chemin : /dimension1/dimension2/dimension3  </br></br> /dimension1?dimension3 | SELECT * depuis la projection GROUP BY dimension1,dimension3 |
+| En supposant qu’il n’y ait pas de chemin direct : /dimension1/dimension3 mais qu’il y ait un chemin : /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * depuis la projection GROUP BY dimension1,dimension3 |
 
 >[!NOTE]
 >
@@ -129,7 +129,7 @@ Les données sont disponibles dans les formats suivants :
 
 Les stratégies de négociation de contenu suivantes peuvent être utilisées par les clients (la priorité est donnée par le poste dans la liste - premier élément) :
 
-1. Une &quot;extension de fichier&quot; ajoutée au dernier segment du chemin d’URL : par exemple, /cmu/v2/tenant/year/month/day.xml. Si l’URL contient une chaîne de requête, l’extension doit précéder le point d’interrogation : `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
+1. Une &quot;extension de fichier&quot; ajoutée au dernier segment du chemin d’URL : par exemple, /cmu/v2/tenant/year/month/day.xml. Si l’URL contient une chaîne de requête, l’extension doit être précédée du point d’interrogation : `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
 1. Un paramètre de chaîne de requête de format : par exemple, `/cmu/report?format=json`
 1. En-tête HTTP Accept standard : par exemple, `Accept: application/xml`
 
@@ -174,7 +174,7 @@ Le rapport réel (une balise/propriété imbriquée appelée &quot;rapport&quot;
 
 Pour les formats XML et JSON, l’ordre des champs (dimensions et mesures) dans un enregistrement n’est pas spécifié, mais cohérent (l’ordre sera le même dans tous les enregistrements). Toutefois, les clients ne doivent pas se fier à un ordre particulier des champs dans un enregistrement.
 
-Le lien de la ressource (le rel &quot;self&quot; dans JSON et l’attribut de ressource &quot;href&quot; dans XML) contient le chemin actuel et la chaîne de requête utilisée pour le rapport intégré. La chaîne de requête affiche tous les paramètres implicites et explicites, de sorte que la charge utile indique explicitement l’intervalle de temps utilisé, les filtres implicites (le cas échéant), etc. Le reste des liens de la ressource contiendra tous les segments disponibles qui peuvent être suivis afin d’analyser en détail les données actives. Un lien de cumul est également fourni, qui pointe vers le chemin parent (le cas échéant). La variable `href` pour les liens d’analyse/de cumul contiennent uniquement le chemin d’URL (il n’inclut pas la chaîne de requête ; le client doit donc l’ajouter si nécessaire). Notez que tous les paramètres de chaîne de requête utilisés (ou implicites) par la ressource actuelle ne s’appliqueront pas aux liens &quot;de cumul&quot; ou &quot;d’exploration&quot; (par exemple, les filtres peuvent ne pas s’appliquer aux sous-ressources ou aux super-ressources).
+Le lien de la ressource (le rel &quot;self&quot; dans JSON et l’attribut de ressource &quot;href&quot; dans XML) contient le chemin actuel et la chaîne de requête utilisée pour le rapport intégré. La chaîne de requête affiche tous les paramètres implicites et explicites, de sorte que la charge utile indique explicitement l’intervalle de temps utilisé, les filtres implicites (le cas échéant), etc. Le reste des liens de la ressource contiendra tous les segments disponibles qui peuvent être suivis afin d’analyser en détail les données actives. Un lien de cumul est également fourni, qui pointe vers le chemin parent (le cas échéant). La valeur `href` des liens d’analyse/de cumul contient uniquement le chemin d’accès à l’URL (elle n’inclut pas la chaîne de requête ; le client doit donc l’ajouter si nécessaire). Notez que tous les paramètres de chaîne de requête utilisés (ou implicites) par la ressource actuelle ne s’appliqueront pas aux liens &quot;de cumul&quot; ou &quot;d’exploration&quot; (par exemple, les filtres peuvent ne pas s’appliquer aux sous-ressources ou aux super-ressources).
 
 Exemple (en supposant qu’il existe une mesure unique appelée clients et qu’il existe une pré-agrégation pour `year/month/day/...`) :
 
@@ -228,7 +228,7 @@ Dans le format de données CSV, aucun lien ou autre métadonnées (à l’except
 report__<start-date>_<end-date>_<filter-values,...>.csv
 ```
 
-Le fichier CSV contient une ligne d’en-tête, puis les données du rapport sous forme de lignes suivantes. La ligne d’en-tête contient toutes les dimensions suivies de toutes les mesures. L’ordre de tri des données du rapport est reflété dans l’ordre des dimensions. Par conséquent, si les données sont triées par D1 puis par D2, l’en-tête CSV se présente comme suit : `D1, D2, ...metrics....`
+Le fichier CSV contient une ligne d’en-tête, puis les données du rapport sous forme de lignes suivantes. La ligne d’en-tête contient toutes les dimensions suivies de toutes les mesures. L’ordre de tri des données du rapport est reflété dans l’ordre des dimensions. Par conséquent, si les données sont triées par D1 puis par D2, l’en-tête CSV ressemble à : `D1, D2, ...metrics....`
 
 L’ordre des champs dans la ligne d’en-tête reflète l’ordre de tri des données du tableau.
 
@@ -241,14 +241,14 @@ Exemple : https://mgmt.auth.adobe.com/cmu/v2/year/month.csv produira un fichier 
 
 ## Actualisation des données {#data-freshness}
 
-Bien que la requête contienne un en-tête Last-Modified, elle **NE FAIT PAS** reflètent l’heure de la dernière mise à jour du rapport dans le corps. Les rapports généraux sont calculés régulièrement, avec les règles suivantes :
+Bien que la requête contienne un en-tête Last-Modified, elle **NE CORRESPOND PAS** à l’heure de la dernière mise à jour du rapport dans le corps. Les rapports généraux sont calculés régulièrement, avec les règles suivantes :
 
-* si la granularité temporelle est **year** ou **month**, le rapport est mis à jour tous les 2 jours.
-* si la granularité temporelle est **day**, le rapport est mis à jour toutes les 3 heures.
-* si la granularité temporelle est **hour**, le rapport est mis à jour toutes les heures.
-* si la granularité temporelle est **minute**, le rapport est mis à jour toutes les minutes.
+* si la granularité temporelle est de **année** ou **mois**, le rapport est mis à jour tous les 2 jours
+* si la granularité temporelle est de **jour**, le rapport est mis à jour toutes les 3 heures.
+* si la granularité temporelle est de **heure**, le rapport est mis à jour toutes les heures.
+* si la granularité temporelle est de **minute**, le rapport est mis à jour toutes les minutes.
 
-La variable **niveau d&#39;activité** et **niveau de simultanéité** les rapports sont mis à jour chaque jour, quelle que soit la granularité temporelle.
+Les rapports **niveau d’activité** et **niveau d’accès simultané** sont mis à jour tous les jours, quelle que soit la granularité temporelle.
 
 ## Compression GZIP {#gzip-compression}
 

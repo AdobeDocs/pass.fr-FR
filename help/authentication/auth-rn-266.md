@@ -1,9 +1,10 @@
 ---
 title: Notes de mise à jour de l’authentification Adobe Pass 2.66
 description: Notes de mise à jour de l’authentification Adobe Pass 2.66
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 7c3cd007-ed2b-455f-8f70-6ec5d0a6552a
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---
@@ -33,5 +34,5 @@ Avec cette version, nous avons continué les mises à jour internes de la nouvel
 #### Correctifs {#release-overview-bugfixes-266}
 
 * Correction du flux de déconnexion des MVPD basés sur SAML, où le paramètre RelayState était absent de la requête de déconnexion. Nous ciblerons les mises à jour de configuration après la version pour restaurer le flux de déconnexion des MVPD concernés.
-* Ajout de la fonctionnalité de mise à jour des certificats SSL dans notre configuration pour les points de terminaison d’autorisation SOAP.
+* Ajout de la fonctionnalité de mise à jour des certificats SSL dans notre configuration pour SOAP points de terminaison d’autorisation.
 * Correction d’un cas de coin en raison duquel des données incorrectes étaient consignées dans le champ Programmeur dans certains rapports ESM.

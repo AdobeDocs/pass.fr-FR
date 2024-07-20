@@ -4,7 +4,7 @@ description: Présentation technique d’Amazon FireOS
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '2154'
+source-wordcount: '2166'
 ht-degree: 0%
 
 ---
@@ -28,15 +28,15 @@ Les workflows clients natifs sont généralement identiques à ceux des clients 
 
 ### Processus de post-initialisation {#post-init}
 
-Tous les workflows de droits pris en charge par AccessEnabler supposent que vous avez précédemment appelé [`setRequestor()`](#setRequestor) pour établir votre identité. Vous effectuez cet appel pour ne fournir votre ID de demandeur qu’une seule fois, généralement pendant la phase d’initialisation/de configuration de votre application.
+Tous les workflows de droits pris en charge par AccessEnabler supposent que vous avez déjà appelé [`setRequestor()`](#setRequestor) pour établir votre identité. Vous effectuez cet appel pour ne fournir votre ID de demandeur qu’une seule fois, généralement pendant la phase d’initialisation/de configuration de votre application.
 
-Avec les clients natifs (par exemple, AmazonFireOS), après votre premier appel à [`setRequestor()`](#setRequestor), vous avez la possibilité de procéder comme suit :
+Avec les clients natifs (par exemple, AmazonFireOS), après votre premier appel à [`setRequestor()`](#setRequestor), vous avez le choix entre procéder :
 
 - Vous pouvez commencer à lancer des appels de droits immédiatement et leur permettre d’être mis en file d’attente silencieuse, si nécessaire.
-- Vous pouvez également recevoir une confirmation de la réussite ou de l’échec de [`setRequestor()`](#setRequestor) en mettant en oeuvre le rappel setRequestorComplete() .
+- Vous pouvez également recevoir une confirmation de la réussite/l’échec de [`setRequestor()`](#setRequestor) en mettant en oeuvre le rappel setRequestorComplete() .
 - Ou les deux.
 
-C’est à vous de décider d’attendre ou non la notification du succès de [`setRequestor()`](#setRequestor) ou de dépendre du mécanisme de file d’attente d’appels d’AccessEnabler. Comme toutes les demandes d’autorisation et d’authentification suivantes ont besoin de l’identifiant du demandeur et des informations de configuration associées, la variable [`setRequestor()`](#setRequestor) bloque efficacement tous les appels de l’API d’authentification et d’autorisation jusqu’à ce que l’initialisation soit terminée.
+A vous de décider d&#39;attendre la notification du succès de [`setRequestor()`](#setRequestor) ou de vous fier au mécanisme de file d&#39;attente d&#39;appels d&#39;AccessEnabler. Comme toutes les demandes d’autorisation et d’authentification suivantes ont besoin de l’identifiant du demandeur et des informations de configuration associées, la méthode [`setRequestor()`](#setRequestor) bloque efficacement tous les appels d’API d’authentification et d’autorisation jusqu’à ce que l’initialisation soit terminée.
 
 ### Processus d’authentification initiale générique {#generic}
 
@@ -44,20 +44,20 @@ Le but de ce workflow est de se connecter à un utilisateur avec son MVPD.  Une 
 
 Notez que bien que le processus client natif suivant diffère du processus d’authentification type basé sur un navigateur, les étapes 1 à 5 sont les mêmes pour les clients natifs et les clients basés sur un navigateur :
 
-1. Votre page ou lecteur lance le workflow d’authentification avec un appel à [getAuthentication()](#getAuthN), qui recherche un jeton d’authentification mis en cache valide. Cette méthode est facultative. `redirectURL` si vous ne fournissez pas de valeur pour `redirectURL`, après une authentification réussie, l’utilisateur est renvoyé à l’URL à partir de laquelle l’authentification a été initialisée.
-1. AccessEnabler détermine l’état d’authentification actuel. Si l’utilisateur est actuellement authentifié, AccessEnabler appelle votre `setAuthenticationStatus()` fonction de rappel, transmission d’un état d’authentification indiquant la réussite (étape 7 ci-dessous).
-1. Si l’utilisateur n’est pas authentifié, AccessEnabler poursuit le flux d’authentification en déterminant si la dernière tentative d’authentification de l’utilisateur a réussi avec un MVPD donné. Si un ID MVPD est mis en cache ET que la variable `canAuthenticate` L’indicateur est défini sur true OU un MVPD a été sélectionné à l’aide de [`setSelectedProvider()`](#setSelectedProvider), l’utilisateur n’est pas invité à saisir la boîte de dialogue de sélection MVPD. Le flux d’authentification continue à utiliser la valeur mise en cache du MVPD (c’est-à-dire le même MVPD qui a été utilisé lors de la dernière authentification réussie). Un appel réseau est effectué au serveur principal et l’utilisateur est redirigé vers la page de connexion MVPD (étape 6 ci-dessous).
-1. Si aucun ID MVPD n’est mis en cache ET qu’aucun MVPD n’a été sélectionné à l’aide de [`setSelectedProvider()`](#setSelectedProvider) OU le `canAuthenticate` est défini sur false, l’indicateur [`displayProviderDialog()`](#displayProviderDialog) callback est appelé. Ce rappel demande à votre page ou lecteur de créer l’interface utilisateur qui présente à l’utilisateur une liste de distributeurs multicanaux de programmes audiovisuels parmi lesquels choisir. Un tableau d’objets MVPD est fourni, contenant les informations nécessaires à la création du sélecteur MVPD. Chaque objet MVPD décrit une entité MVPD et contient des informations telles que l’identifiant du MVPD (ex. XFINITY, AT\&amp;T, etc.). et l’URL où se trouve le logo MVPD.
-1. Une fois qu’un MVPD particulier est sélectionné, votre page ou lecteur doit informer AccessEnabler du choix de l’utilisateur. Pour les clients non Flashs, une fois que l’utilisateur a sélectionné le MVPD souhaité, vous informez AccessEnabler de la sélection de l’utilisateur via un appel au [`setSelectedProvider()`](#setSelectedProvider) . Les clients Flash distribuent plutôt un partage `MVPDEvent` de type &quot;`mvpdSelection`&quot;, transmission du fournisseur sélectionné.
-1. Pour les applications Amazon, la variable [`navigateToUrl()`](#navigagteToUrl) callback sera ignoré. La bibliothèque Access Enabler facilite l’accès à un contrôle WebView commun pour authentifier les utilisateurs.
-1. Via le `WebView`, l’utilisateur arrive sur la page de connexion du MVPD et saisit ses informations d’identification. Notez que plusieurs opérations de redirection se produisent au cours de ce transfert.
-1. Une fois que WebView finalise l’authentification, il ferme et informe AccessEnabler que l’utilisateur s’est connecté correctement, AccessEnabler récupère le jeton d’authentification réel à partir du serveur principal. AccessEnabler appelle la fonction [`setAuthenticationStatus()`](#setAuthNStatus) rappel avec un code d’état de 1, indiquant la réussite. En cas d’erreur lors de l’exécution de ces étapes, la variable [`setAuthenticationStatus()`](#setAuthNStatus) Le rappel est déclenché avec un code d’état de 0, ainsi qu’un code d’erreur correspondant, indiquant que l’utilisateur n’est pas authentifié.
+1. Votre page ou lecteur lance le workflow d’authentification avec un appel à [getAuthentication()](#getAuthN), qui recherche un jeton d’authentification en mémoire cache valide. Cette méthode comporte un paramètre `redirectURL` facultatif. Si vous ne fournissez pas de valeur pour `redirectURL`, après une authentification réussie, l’utilisateur est renvoyé à l’URL à partir de laquelle l’authentification a été initialisée.
+1. AccessEnabler détermine l’état d’authentification actuel. Si l’utilisateur est actuellement authentifié, AccessEnabler appelle votre fonction de rappel `setAuthenticationStatus()`, en transmettant un état d’authentification indiquant la réussite (étape 7 ci-dessous).
+1. Si l’utilisateur n’est pas authentifié, AccessEnabler poursuit le flux d’authentification en déterminant si la dernière tentative d’authentification de l’utilisateur a réussi avec un MVPD donné. Si un ID MVPD est mis en cache ET que l’indicateur `canAuthenticate` est défini sur true OU qu’un MVPD a été sélectionné à l’aide de [`setSelectedProvider()`](#setSelectedProvider), l’utilisateur n’est pas invité avec la boîte de dialogue de sélection MVPD. Le flux d’authentification continue à utiliser la valeur mise en cache du MVPD (c’est-à-dire le même MVPD qui a été utilisé lors de la dernière authentification réussie). Un appel réseau est effectué au serveur principal et l’utilisateur est redirigé vers la page de connexion MVPD (étape 6 ci-dessous).
+1. Si aucun ID MVPD n’est mis en cache ET qu’aucun MVPD n’a été sélectionné à l’aide de [`setSelectedProvider()`](#setSelectedProvider) OU que l’indicateur `canAuthenticate` est défini sur false, le rappel [`displayProviderDialog()`](#displayProviderDialog) est appelé. Ce rappel demande à votre page ou lecteur de créer l’interface utilisateur qui présente à l’utilisateur une liste de distributeurs multicanaux de programmes audiovisuels parmi lesquels choisir. Un tableau d’objets MVPD est fourni, contenant les informations nécessaires à la création du sélecteur MVPD. Chaque objet MVPD décrit une entité MVPD et contient des informations telles que l’identifiant du MVPD (ex. XFINITY, AT\&amp;T, etc.). et l’URL où se trouve le logo MVPD.
+1. Une fois qu’un MVPD particulier est sélectionné, votre page ou lecteur doit informer AccessEnabler du choix de l’utilisateur. Pour les clients non Flashs, une fois que l’utilisateur a sélectionné le MVPD souhaité, vous informez AccessEnabler de la sélection de l’utilisateur via un appel à la méthode [`setSelectedProvider()`](#setSelectedProvider). Les clients Flash distribuent plutôt un `MVPDEvent` partagé de type &quot;`mvpdSelection`&quot;, en transmettant le fournisseur sélectionné.
+1. Pour les applications Amazon, le rappel [`navigateToUrl()`](#navigagteToUrl) sera ignoré. La bibliothèque Access Enabler facilite l’accès à un contrôle WebView commun pour authentifier les utilisateurs.
+1. Par l’intermédiaire de `WebView`, l’utilisateur arrive sur la page de connexion du MVPD et saisit ses informations d’identification. Notez que plusieurs opérations de redirection se produisent au cours de ce transfert.
+1. Une fois que WebView finalise l’authentification, il ferme et informe AccessEnabler que l’utilisateur s’est connecté correctement, AccessEnabler récupère le jeton d’authentification réel à partir du serveur principal. AccessEnabler appelle le rappel [`setAuthenticationStatus()`](#setAuthNStatus) avec un code d’état de 1, indiquant la réussite. En cas d’erreur lors de l’exécution de ces étapes, le rappel [`setAuthenticationStatus()`](#setAuthNStatus) est déclenché avec un code d’état de 0, ainsi qu’un code d’erreur correspondant, indiquant que l’utilisateur n’est pas authentifié.
 
 ### Processus de déconnexion {#logout}
 
-Pour les clients natifs, les déconnexions sont gérées de la même manière que le processus d’authentification décrit ci-dessus. Selon ce modèle, AccessEnabler crée une `WebView` et chargera le contrôle avec l’URL du point de terminaison de la déconnexion sur le serveur principal. Une fois le processus de déconnexion terminé, les jetons sont effacés.
+Pour les clients natifs, les déconnexions sont gérées de la même manière que le processus d’authentification décrit ci-dessus. Suivant ce modèle, AccessEnabler crée un contrôle `WebView` et charge le contrôle avec l’URL du point de terminaison de déconnexion sur le serveur principal. Une fois le processus de déconnexion terminé, les jetons sont effacés.
 
-Notez que le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir avec la variable `WebView` de quelque manière que ce soit. Une fois la déconnexion terminée, AccessEnabler appelle la fonction `setAuthenticationStatus()` rappel avec un code d’état de 0, indiquant que l’utilisateur n’est pas authentifié.
+Notez que le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir de quelque manière que ce soit avec `WebView`. Une fois la déconnexion terminée, AccessEnabler appelle le rappel `setAuthenticationStatus()` avec un code d’état de 0, indiquant que l’utilisateur n’est pas authentifié.
 
 ## Jetons {#tokens}
 
@@ -69,9 +69,9 @@ La durée de vie des jetons est limitée. Lors de l’expiration, les jetons doi
 
 Il existe trois types de jetons émis lors des workflows de droits :
 
-- **Jeton d’authentification** - Le résultat final du workflow d’authentification de l’utilisateur est un GUID d’authentification que AccessEnabler peut utiliser pour effectuer des requêtes d’autorisation pour le compte de l’utilisateur. Ce GUID d’authentification aura une valeur TTL (durée de vie) associée qui peut être différente de la session d’authentification de l’utilisateur. L’authentification Adobe Pass génère un jeton d’authentification en liant le GUID d’authentification au périphérique qui lance les demandes d’authentification.
-- **Jeton d’autorisation** - Accorde l’accès à une ressource protégée spécifique identifiée par une `resourceID`. Il s’agit d’une autorisation émise par la personne qui l’a autorisée, ainsi que de l’original `resourceID`. Ces informations sont liées au périphérique qui lance la requête.
-- **Jeton multimédia de courte durée** - AccessEnabler accorde l&#39;accès à l&#39;application d&#39;hébergement pour une ressource donnée en renvoyant un jeton multimédia de courte durée. Ce jeton est généré en fonction du jeton d’autorisation précédemment acquis pour cette ressource spécifique. En outre, ce jeton n’est pas lié à l’appareil et la durée de vie associée est beaucoup plus courte (par défaut : 5 minutes).
+- **Jeton d’authentification** - Le résultat final du workflow d’authentification de l’utilisateur sera un GUID d’authentification que AccessEnabler peut utiliser pour effectuer des requêtes d’autorisation pour le compte de l’utilisateur. Ce GUID d’authentification aura une valeur TTL (durée de vie) associée qui peut être différente de la session d’authentification de l’utilisateur. L’authentification Adobe Pass génère un jeton d’authentification en liant le GUID d’authentification au périphérique qui lance les demandes d’authentification.
+- **Jeton d’autorisation** - Accorde l’accès à une ressource protégée spécifique identifiée par un `resourceID` unique. Il se compose d’une autorisation émise par la personne qui l’a autorisée, ainsi que du `resourceID` original. Ces informations sont liées au périphérique qui lance la requête.
+- **Jeton multimédia de courte durée** : AccessEnabler accorde l’accès à l’application d’hébergement pour une ressource donnée en renvoyant un jeton multimédia de courte durée. Ce jeton est généré en fonction du jeton d’autorisation précédemment acquis pour cette ressource spécifique. En outre, ce jeton n’est pas lié à l’appareil et la durée de vie associée est beaucoup plus courte (par défaut : 5 minutes).
 
 Une fois l’authentification et l’autorisation réussies, l’authentification Adobe Pass émet des jetons d’authentification, d’autorisation et de média de courte durée. Ces jetons doivent être mis en cache sur l’appareil de l’utilisateur et utilisés pendant la durée de vie associée.
 
@@ -80,7 +80,7 @@ Une fois l’authentification et l’autorisation réussies, l’authentificatio
 
 #### Jeton d’authentification
 
-- **AccessEnabler 1.10.1 pour FireOS** est basé sur AccessEnabler pour Android 1.9.1 - Ce SDK introduit une nouvelle méthode de stockage de jetons, en activant plusieurs compartiments Programmer-MVPD et donc plusieurs jetons d’authentification.
+- **AccessEnabler 1.10.1 pour FireOS** est basé sur AccessEnabler pour Android 1.9.1 - Ce SDK introduit une nouvelle méthode de stockage de jetons, qui permet plusieurs compartiments Programmer-MVPD et donc plusieurs jetons d’authentification.
 
 #### Jeton d’autorisation
 

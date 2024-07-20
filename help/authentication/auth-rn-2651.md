@@ -1,9 +1,10 @@
 ---
 title: Notes de mise à jour d’Adobe Pass Authentication 2.65.1
 description: Notes de mise à jour d’Adobe Pass Authentication 2.65.1
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 28d112db-b038-4d11-93c5-d6ab67a29700
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '172'
+source-wordcount: '182'
 ht-degree: 0%
 
 ---

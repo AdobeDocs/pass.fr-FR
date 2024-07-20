@@ -1,13 +1,13 @@
 ---
 title: Mode d’isolation MVPD
 description: Découvrez le mode d’isolation MVPD pour les programmeurs TV Everywhere
-source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
+exl-id: 7ffe4ce3-e9cb-4382-a421-bb57d1927b53
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
 
 ---
-
 
 # Mode d’isolation MVPD pour les programmeurs TV Everywhere {#isolation-mode-tve}
 
@@ -21,7 +21,7 @@ Voici un exemple :
 
 ![](assets/isolation-diff-new.png)
 
-*Mode d’isolation Les MVPD identifient quatre abonnés différents au lieu de deux.*
+*Les MVPD du mode d’isolation identifient quatre abonnés différents au lieu de deux*
 
 * Si un abonné B d’un mode d’isolation MVPD (tel que Xfinity) accède au contenu proposé par deux programmeurs différents utilisant le même appareil, le MVPD associera différents identifiants aux deux tentatives d’accès différentes. Il semble qu’il y ait deux abonnés différents qui accèdent au contenu pour les programmeurs (L et M dans la figure).
 
@@ -45,7 +45,7 @@ Le système fonctionne automatiquement en mode Isolation lorsque le segment sél
 >
 > Le comportement en mode Isolation est incompatible avec le mode standard, le mode Isolation MVPD ne peut pas être mélangé avec d’autres MVPD et vice versa.
 
-Pour créer un segment qui est analysé en mode Isolation, faites glisser le mode Isolation MVPD, tel que **Xfinity**, dans la section MVPD de la définition de segment.
+Pour créer un segment qui est analysé en mode Isolation, faites glisser le mode Isolation MVPD, tel que **Xfinity**, vers la section MVPD de la définition de segment.
 
 >[!NOTE]
 >
@@ -53,14 +53,14 @@ Pour créer un segment qui est analysé en mode Isolation, faites glisser le mod
 
 ![](assets/xfinity-in-segment.png)
 
-*Sélection de Xfinity en mode Isolation*
+*Sélection Xfinity en mode Isolation*
 
 >[!IMPORTANT]
 >
-> Le partage de compte est plus pertinent lorsqu’il est mesuré pour la diffusion en continu dans toutes les applications du programmeur. Attendre plus bas **Scores de partage** et quelques variations dans les mesures en mode Isolation.
+> Le partage de compte est plus pertinent lorsqu’il est mesuré pour la diffusion en continu dans toutes les applications du programmeur. Attendez-vous à des **scores de partage** plus bas et à une certaine variation des mesures en mode Isolation.
 
 ![](assets/aggregate-sharing-isolation.png)
 
-*Partage des jauges de probabilité en mode Isolation*
+*Partage des indicateurs de probabilité en mode Isolation*
 
 Les jauges ci-dessus indiquent que seulement 9 % de tous les comptes sont partagés et que, parmi ceux-ci, seulement 11 % du contenu est consommé. En raison des scores naturellement plus bas, les résultats en mode Isolation doivent être interprétés différemment des résultats en mode standard.

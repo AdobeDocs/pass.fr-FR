@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Introduction {#tve-db-intro}
 
-[[!DNL Adobe] Tableau de bord TVE (tableau de bord TVE)](https://console.auth.adobe.com/) est un tableau de bord en libre-service destiné aux utilisateurs travaillant pour des sociétés multimédias (programmeurs) qui entretiennent des relations commerciales avec l’équipe produit Authentification Adobe Pass .
+[[!DNL Adobe] Tableau de bord TVE (tableau de bord TVE)](https://console.auth.adobe.com/) est un tableau de bord en libre-service destiné aux utilisateurs travaillant pour des sociétés multimédias (programmeurs) ayant une relation commerciale avec l’équipe produit Authentification Adobe Pass.
 
 Contactez votre gestionnaire de compte technique (TAM) pour obtenir l’accès. Pour y accéder, deux nouveaux groupes d’utilisateurs doivent être configurés dans votre organisation Adobe Marketing Cloud :
 
@@ -36,28 +36,28 @@ Avant de vous plonger dans ce guide d’utilisation, nous vous recommandons de p
 Dans les sections suivantes de ce guide d’utilisation, vous découvrirez comment administrer différents paramètres aux canaux, programmeurs ou intégrations entre canaux et MVPD (Multichannel Video Program Distributors) de votre entreprise.
 
 >[!IMPORTANT]
->Le tableau de bord TVE offre la possibilité de basculer entre un espace de travail de base et un espace de travail avancé. Pour ce faire, faites basculer l’icône dans le coin supérieur droit. L’espace de travail avancé est destiné aux utilisateurs qui possèdent des connaissances techniques approfondies ainsi que des connaissances avancées des fonctionnalités proposées par l’équipe produit Authentification Adobe Pass.
+>Le tableau de bord TVE offre la possibilité de basculer entre un Workspace de base et un avancé. Pour ce faire, faites basculer l’icône dans le coin supérieur droit. Le Workspace avancé est destiné aux utilisateurs qui possèdent des connaissances techniques approfondies ainsi que des connaissances avancées sur les fonctionnalités proposées par l’équipe produit Authentification Adobe Pass.
 
-![TVE Tableaux de bord](assets/tve-basic-advanced-workspace.png)
+![TVE Dashboard workspaces](assets/tve-basic-advanced-workspace.png)
 
 *Figure 1 : Menu déroulant du tableau de bord Adobe Primetime TVE &quot;Basic / Advanced Workspace&quot;*
 
 ## Environnements {#authn-environments}
 
-Selon les tâches qu’un utilisateur peut être tenu d’accomplir, il doit peut-être passer d’un environnement d’authentification Adobe Pass à un autre. Pour plus d’informations sur les environnements d’authentification Adobe Pass, consultez le document suivant : [Présentation des environnements d’authentification Adobe Pass](/help/authentication/understanding-the-adobe-environments.md).
+Selon les tâches qu’un utilisateur peut être tenu d’accomplir, il doit peut-être passer d’un environnement d’authentification Adobe Pass à un autre. Pour plus d’informations sur les environnements d’authentification Adobe Pass, consultez le document suivant : [Comprendre les environnements d’authentification Adobe Pass](/help/authentication/understanding-the-adobe-environments.md).
 
 Le tableau de bord TVE fournit deux environnements nommés Préqualification (Préqualification) et Version, chacun ayant deux profils nommés Évaluation et Production, comme illustré ci-dessous :
 
-* [Évaluation préquate](https://console-prequal.auth-staging.adobe.com/)
-* [Production prédéfinie](https://console-prequal.auth.adobe.com/)
+* [Évaluation préquale](https://console-prequal.auth-staging.adobe.com/)
+* [Production préquale](https://console-prequal.auth.adobe.com/)
 * [Évaluation des versions](https://console.auth-staging.adobe.com/)
-* [Version Production](https://console.auth.adobe.com/)
+* [Production de versions](https://console.auth.adobe.com/)
 
 Pour passer d’un environnement à l’autre, l’utilisateur peut cliquer sur l’environnement souhaité représenté par l’entrée dans la liste déroulante illustrée ci-dessous :
 
-![Liste déroulante Environnements du tableau de bord TVE](assets/tve-dashboard-env.png)
+![Liste déroulante des environnements de tableau de bord TVE](assets/tve-dashboard-env.png)
 
-*Figure 2 : Menu déroulant des environnements du tableau de bord Adobe Pass TVE*
+*Figure 2 : Liste déroulante des environnements de tableau de bord TVE Adobe Pass*
 
 >[!IMPORTANT]
 >
@@ -65,39 +65,39 @@ Pour passer d’un environnement à l’autre, l’utilisateur peut cliquer sur 
 
 Pour apporter des modifications administratives à la configuration de l’authentification Adobe Pass par le biais du tableau de bord TVE :
 
-* Effectuez les modifications dans [Publication de l’évaluation et validation](http://sp.auth-staging.adobe.com/apitest/api.html).
-* Effectuez les modifications dans [Préqualification de la production et validation](http://sp.auth-staging.adobe.com/apitest/api.html).
-* Effectuez les modifications dans [Publication de la production et validation](http://sp.auth-staging.adobe.com/apitest/api.html).
+* Effectuez les modifications dans [Évaluation des versions et validez-les](http://sp.auth-staging.adobe.com/apitest/api.html).
+* Effectuez les modifications dans [Prequal Production et validez-les](http://sp.auth-staging.adobe.com/apitest/api.html).
+* Effectuez les modifications dans [Release Production et validez-les](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
 >
 >Pour que les modifications administratives soient mises en ligne, les utilisateurs doivent accéder à la section &quot;Révision et Push des modifications&quot; en cliquant sur le bouton qui s’affiche dans la partie inférieure gauche de la barre latérale. Pour passer en revue les modifications, ajoutez une description des modifications nouvellement créées et confirmez la mise à jour de la configuration en sélectionnant &quot;Configuration Push&quot;.
 
-![Tve Dashboard passe en revue une notification push](assets/tve-review-push-notifications.png)
+![ Tve Dashboard passe en revue une notification push ](assets/tve-review-push-notifications.png)
 
-*Figure 3 : Notification de révision et de modification push du tableau de bord TVE d’Adobe Primetime*
+*Figure 3 : Notification de révision et de modification push du tableau de bord TVE Adobe Primetime*
 
 ## Sections {#sections}
 
 Les utilisateurs travaillant pour des sociétés multimédias (programmeurs) peuvent accéder aux sections suivantes du tableau de bord TVE à partir de la barre latérale :
 
-* **Canaux** - Contient les paramètres relatifs aux fournisseurs de contenu
-* **Programmeurs** - Contient des paramètres liés à l’organisation parente qui agrègent un ou plusieurs **Canaux**
-* **Intégrations** - Contient les paramètres liés à l’intégration entre **Canaux** et **MVPD**
-* **MVPD** - Contient les paramètres liés aux paramètres disponibles **MVPD**
+* **Canaux** - Contient les paramètres liés aux fournisseurs de contenu
+* **Programmeurs** - Contient des paramètres liés à l’organisation parente agrégeant un ou plusieurs **Canaux**
+* **Intégrations** - Contient des paramètres liés à l’intégration entre **Canaux** et **MVPD**
+* **MVPDs** - Contient des paramètres liés aux **MVPD** disponibles
 * **Rapports** - Contient des données agrégées pour trois types de rapports : AuthN TTL, AuthZ TTL, SSO
 * **Journal des modifications** - Contient les dernières modifications appliquées à la configuration du tableau de bord TVE
 
 ![Sections du tableau de bord TVE](assets/tve-dashboard-sections.png)
 
-*Figure 4 : Sections du tableau de bord TVE d’Adobe Primetime*
+*Figure 4 : Sections du tableau de bord Adobe Primetime TVE*
 
 ### Canaux {#tve-db-channels-section}
 
 Cette section permet d’afficher et de modifier les paramètres des canaux disponibles ou d’en créer un nouveau. Cliquer sur l’un des canaux disponibles renvoie un écran avec les onglets suivants :
 
 * **Données du canal**
-   * **Identifiant de canal** - Identifiant unique du canal utilisé dans notre système, également appelé &quot;ID du demandeur&quot;.
+   * **Identifiant de canal** - L’identifiant unique du canal utilisé dans notre système, également appelé &quot;identifiant demandeur&quot;.
    * **Nom d’affichage** - Nom commercial du canal.
 * **Paramètres généraux**
    * **Configuration Analytics** - Configurez les événements d’authentification Adobe Pass à transférer vers Adobe Analytics. Pour plus d’informations sur la configuration de l’identifiant de suite de rapports (RSID) avant d’activer cette fonctionnalité, contactez l’Adobe.
@@ -112,11 +112,11 @@ Cette section permet d’afficher et de modifier les paramètres des canaux disp
   Contient la liste des intégrations avec les MVPD disponibles, avec le statut de chaque intégration qui peut être activée ou non. Pour accéder à la page Intégration , cliquez sur une entrée spécifique.
 * **Applications enregistrées**
 
-  Contient la liste des enregistrements d’application. Pour plus d’informations, consultez le document [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md).
+  Contient la liste des enregistrements d’application. Pour plus d’informations, consultez le document [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md).
 
 * **Schémas personnalisés**
 
-  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md)
+  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [ Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md)
 
 
 #### Ajout/suppression de domaines {#add-delete-domains}
@@ -132,9 +132,9 @@ Pour lancer le processus d’ajout d’un nouveau domaine pour le canal sélecti
 Cette section permet d’afficher et de modifier les paramètres des programmeurs disponibles ou d’en créer un nouveau. Cliquez sur l’un des programmeurs disponibles pour renvoyer un écran avec les onglets suivants :
 
 * **Données du programmeur**
-   * **Identifiant du programmeur** - Identifiant unique du programmeur utilisé dans notre système.
+   * **Identifiant du programmeur** : identifiant unique du programmeur utilisé dans notre système.
    * **Nom d’affichage** - Nom commercial du programmeur.
-   * **URL du logo** - Localisateur de ressource uniforme (URL) du logo commercial du programmeur.
+   * **Logo Url** - Le logo commercial du programmeur : localisateur de ressource uniforme (URL).
    * **Aperçu du logo** - Aperçu du logo commercial du programmeur en le téléchargeant à partir du localisateur de ressource uniforme ci-dessus (URL).
 
 * **Certificats**
@@ -147,32 +147,32 @@ Cette section permet d’afficher et de modifier les paramètres des programmeur
 
 * **Applications enregistrées**
 
-  Contient la liste des enregistrements d’application. Pour plus d’informations, voir [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md).
+  Contient la liste des enregistrements d’application. Pour plus d’informations, voir [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md).
 
 * **Schémas personnalisés**
 
-  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion dynamique de l&#39;enregistrement des clients](/help/authentication/dynamic-client-registration-management.md).
+  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion de l’enregistrement du client dynamique](/help/authentication/dynamic-client-registration-management.md).
 
 
 ### Intégrations {#tve-db-integrations-sec}
 
-Cette section permet d’afficher et de modifier les paramètres pour les intégrations entre les canaux et les MVPD disponibles ou d’en créer un nouveau. Cliquer sur l’une des intégrations disponibles renvoie une seule page lors de l’utilisation de l’espace de travail de base ou un écran avec les onglets suivants lors de l’utilisation de l’espace de travail avancé :
+Cette section permet d’afficher et de modifier les paramètres pour les intégrations entre les canaux et les MVPD disponibles ou d’en créer un nouveau. Cliquer sur l’une des intégrations disponibles renvoie une seule page lors de l’utilisation de l’Workspace de base ou un écran avec les onglets suivants lors de l’utilisation de l’Workspace avancé :
 
 * **Données d’intégration**
-   * **Identifiant d’intégration**- Résultat de l’ajout de l’identifiant unique des MVPD à l’identifiant unique du canal séparé par le caractère &quot;_&quot;.
+   * **Identifiant d’intégration** : résultat de l’ajout de l’identifiant unique des MVPD à l’identifiant unique du canal séparé par le caractère &quot;_&quot;.
    * **Nom d’affichage du canal** - Nom commercial du canal.
-   * **Identifiant de canal** - Identifiant unique du canal utilisé dans notre système, également appelé &quot;ID du demandeur&quot;.
+   * **Identifiant de canal** - L’identifiant unique du canal utilisé dans notre système, également appelé &quot;identifiant demandeur&quot;.
    * **Nom d’affichage MVPD** - Nom commercial du MVPD.
-   * **MVPD Id** - Identifiant unique du MVPD utilisé dans notre système.
+   * **MVPD Id** : identifiant unique du MVPD utilisé dans notre système.
 * **Paramètres généraux**
    * **Clés de métadonnées utilisateur** - Configurez les clés de métadonnées disponibles pour l’intégration spécifique.
-   * **Paramètres spécifiques à la plateforme** - Configurez différents paramètres sur une plateforme spécifique (par exemple, TTL, SSO et IFrames).
+   * **Paramètres spécifiques à la plateforme** - Configurez différents paramètres pour une plateforme spécifique (par exemple, TTL, SSO et IFrames).
 
 * **Paramètres d’authentification**
    * Contient les paramètres liés à la fonctionnalité d’authentification d’Adobe Pass.
 * **Paramètres d’autorisation**
    * Contient les paramètres liés à la fonction d’autorisation d’authentification Adobe Pass.
-* **Paramètres de connexion**
+* **Paramètres de déconnexion**
    * Contient les paramètres liés à la fonction de déconnexion de l’authentification Adobe Pass.
 
 #### Création d’une intégration {#create-integration}
@@ -191,22 +191,22 @@ Pour créer une intégration, procédez comme suit :
 
 
 
-*Figure 5. Fenêtre Nouvelle intégration du tableau de bord Adobe Primetime TVE*
+*Figure 5. Fenêtre Nouvelle intégration du tableau de bord TVE Adobe Primetime*
 
 
 #### Mise à jour de l’intégration {#update-integration}
 
 Pour mettre à jour une intégration existante, cliquez sur l’entrée de tableau pour cette intégration spécifique à partir de la section Intégrations ou de la section Canaux , qui contient un onglet Intégrations .
 
-Lorsque vous utilisez le mode Espace de travail de base, cette section vous permet d’afficher et de modifier les paramètres les plus fréquemment mis à jour, tels que les TTL (durée de vie) des jetons d’authentification et d’autorisation, ainsi que les paramètres d’iFrame. Notez que les paramètres TTL peuvent être manquants pour les intégrations avec les MVPD qui prennent en charge la persistance des jetons définie de manière dynamique (voir l’entrée 1.19 à partir de [Conditions d’intégration MVPD](/help/authentication/mvpd-integr-features.md)).
+Lors de l’utilisation du mode Workspace de base, cette section permet d’afficher et de modifier les paramètres les plus fréquemment mis à jour, tels que les TTL (durée de vie) des jetons d’authentification et d’autorisation, ainsi que les paramètres d’iFrame. Veuillez garder à l’esprit que les paramètres TTL peuvent être manquants pour les intégrations avec les MVPD qui prennent en charge la persistance des jetons définie de manière dynamique (voir l’entrée 1.19 de [Conditions requises d’intégration MVPD](/help/authentication/mvpd-integr-features.md)).
 
 
 
-Lorsque vous utilisez le mode Espace de travail avancé, cette section vous permet d’afficher et de modifier des paramètres moins courants.
+Lorsque vous utilisez le mode Workspace avancé, cette section vous permet d’afficher et de modifier des paramètres moins courants.
 
 
 
-Dans le cas des modes de base et d’espace de travail avancé, ces paramètres peuvent être modifiés au niveau de la plateforme (par exemple, sélectionnez une valeur personnalisée pour le jeton TTL d’autorisation sur Android, valeur par défaut sur toutes les autres plateformes).
+Dans le cas des modes Workspace de base et avancé, ces paramètres peuvent être modifiés au niveau de la plateforme (par exemple, sélectionnez une valeur personnalisée pour le jeton TTL d’autorisation sur Android, valeur par défaut sur toutes les autres plateformes).
 
 
 
@@ -216,7 +216,7 @@ Dans le cas des modes de base et d’espace de travail avancé, ces paramètres 
 ![](assets/inheritance-chain-component.png)
 
 
-*Figure 6. Le composant de chaîne d’héritage de la propriété Tableau de bord TVE Adobe Primetime*
+*Figure 6. Le composant de chaîne d’héritage de la propriété TVE Dashboard Adobe Primetime*
 
 
 #### Paramètres spécifiques à la plateforme {#platform-sp-settings}
@@ -224,17 +224,17 @@ Dans le cas des modes de base et d’espace de travail avancé, ces paramètres 
 Cette sous-section peut être utilisée pour remplacer les paramètres de plateformes spécifiques. Les plateformes disponibles sont les suivantes :
 
 * **Toutes les plateformes** - Définissez des valeurs qui seront appliquées à toutes les plateformes, indépendamment des implémentations du programmeur, au cas où aucune autre valeur n’est définie pour une plateforme spécifique.
-* **Android** - Définissez les valeurs qui seront appliquées aux implémentations du programmeur sur le SDK Android d’authentification Adobe Pass.
-* **API REST sans client** - Définissez les valeurs qui seront appliquées aux implémentations du programmeur sur l’API REST d’authentification Adobe Pass.
-* **FireTV** - Définissez les valeurs qui seront appliquées aux mises en oeuvre du programmeur sur le SDK Adobe Pass Authentication FireTV.
-* **SDK FLASH** - Cette plateforme est obsolète. **obsolète**
-* **SDK JavaScript** - Définissez les valeurs qui seront appliquées aux implémentations du programmeur sur le SDK JavaScript d’authentification Adobe Pass.
-* **Roku** - Définissez des valeurs qui seront appliquées aux implémentations du programmeur sur l’API REST d’authentification Adobe Pass et qui envoient &quot;Roku&quot; comme type d’appareil. Cette priorité est accordée aux valeurs définies pour la plateforme API REST sans client dans le cas des appareils Roku.
-* **SDK natif Xbox** - Cette plateforme est obsolète. **obsolète**
-* **API REST Xbox 360** - Définissez des valeurs qui seront appliquées aux implémentations du programmeur sur l’API REST d’authentification Adobe Pass et qui envoient &quot;xbox&quot; comme type d’appareil. Cette priorité est accordée aux valeurs définies pour la plateforme API REST sans client dans le cas des appareils Xbox 360.
-* **API REST Xbox One** - Définissez des valeurs qui seront appliquées aux implémentations du programmeur sur l’API REST d’authentification Adobe Pass et qui envoient &quot;xboxOne&quot; comme type d’appareil. Cela prévaut sur les valeurs définies pour la plateforme d’API REST sans client dans le cas des appareils XboxOne.
-* **iOS** - Définissez les valeurs qui seront appliquées aux implémentations du programmeur sur le SDK iOS d’authentification Adobe Pass.
-* **tvOS** - Définissez les valeurs qui seront appliquées aux implémentations du programmeur sur le SDK tvOS de l’authentification Adobe Pass.
+* **Android** - Définissez les valeurs qui seront appliquées aux mises en oeuvre de programmeur par le biais du SDK Android d’authentification Adobe Pass.
+* **API REST sans client** - Définissez les valeurs qui seront appliquées aux implémentations du programmeur par le biais de l’API REST d’authentification Adobe Pass.
+* **Fire TV** - Définissez les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais du SDK Adobe Pass Authentication FireTV.
+* **SDK Flash** - Cette plateforme est obsolète. **deprecated**
+* **SDK JavaScript** - Définissez les valeurs qui seront appliquées aux mises en oeuvre de programmeur par le biais du SDK JavaScript d’authentification Adobe Pass.
+* **Roku** - Définissez les valeurs qui seront appliquées aux implémentations du programmeur sur l’API REST d’authentification Adobe Pass et qui envoient &quot;Roku&quot; comme type d’appareil. Cette priorité est accordée aux valeurs définies pour la plateforme API REST sans client dans le cas des appareils Roku.
+* **SDK natif Xbox** - Cette plateforme est obsolète. **deprecated**
+* **API REST Xbox 360** - Définissez les valeurs qui seront appliquées aux mises en oeuvre du programmeur sur l’API REST d’authentification Adobe Pass et qui envoient &quot;xbox&quot; comme type de périphérique. Cette priorité est accordée aux valeurs définies pour la plateforme API REST sans client dans le cas des appareils Xbox 360.
+* **API REST Xbox One** - Définissez les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais de l’API REST d’authentification Adobe Pass et qui envoient &quot;xboxOne&quot; comme type de périphérique. Cela prévaut sur les valeurs définies pour la plateforme d’API REST sans client dans le cas des appareils XboxOne.
+* **iOS** - Définissez les valeurs qui seront appliquées aux mises en oeuvre de programmeur par le biais du SDK iOS d’authentification Adobe Pass.
+* **tvOS** - Définissez les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais du SDK tvOS de l’authentification Adobe Pass.
 
 
 ![](assets/platform-sp-settings.png)
@@ -246,92 +246,92 @@ Cette sous-section peut être utilisée pour remplacer les paramètres de platef
 
 Pour activer/désactiver l’authentification unique pour une intégration et une plateforme spécifiques, procédez comme suit :
 
-* Assurez-vous d’utiliser le mode Espace de travail avancé
+* Vérifiez que vous utilisez le mode Workspace avancé .
 * accéder à l’intégration souhaitée ;
-* accédez à la **Paramètres généraux** tab
+* Accédez à l’onglet **Paramètres généraux**
 * sélectionnez la plateforme sur laquelle vous souhaitez activer ou désactiver l’authentification unique
-* bascule **Activer la connexion unique** Indicateur de la valeur souhaitée (Oui/Non)
+* Activez l’indicateur **Activer l’authentification unique** sur la valeur souhaitée (Oui/Non).
 
   >[!IMPORTANT]
-  >Il est important de noter que le **Activer la connexion unique** L’indicateur n’est disponible que pour les plateformes iOS, tvOS, Roku et FireTV, et uniquement pour les intégrations avec des MVPD qui prennent en charge l’authentification unique pour ces plateformes.
+  >Il est important de noter que l’indicateur **Activer l’authentification unique** est disponible uniquement pour les plateformes iOS, tvOS, Roku et FireTV, et uniquement pour les intégrations avec les MVPD qui prennent en charge l’authentification unique pour ces plateformes.
 
-* bascule **Application des autorisations de Platform** Indicateur de la valeur souhaitée (Oui/Non)
+* basculez l’indicateur **Exiger une autorisation de plateforme** sur la valeur souhaitée (Oui/Non).
 
   >[!IMPORTANT]
-  >Il est important de noter que le **Application des autorisations de Platform** L’indicateur contrôle si la décision de l’utilisateur d’autoriser ou de refuser l’accès à sa plate-forme à son abonnement de fournisseur de télévision est appliquée ou non. En prenant en compte le scénario lorsque **Activer la connexion unique** L’indicateur est défini sur &quot;Oui&quot;, **Application des autorisations de Platform** L’indicateur est également défini sur &quot;Oui&quot; et l’utilisateur choisit de refuser l’accès de la plateforme à son abonnement au fournisseur de télévision, puis l’application (canal) correspondante ne pourra pas utiliser le jeton d’authentification Adobe Pass obtenu par une autre application (canal).
+  >Il est important de noter que l’indicateur **Exiger une autorisation de plateforme** contrôle si la décision de l’utilisateur d’autoriser ou de refuser l’accès à sa plateforme à son abonnement de fournisseur de télévision est appliquée ou non. Dans le cas où l’indicateur **Activer l’authentification unique** est défini sur &quot;Oui&quot;, l’indicateur **Exiger une autorisation de plateforme** est également défini sur &quot;Oui&quot; et l’utilisateur choisit de refuser l’accès de la plateforme à son abonnement au fournisseur de télévision, alors l’application (canal) respective ne pourra pas utiliser le jeton d’authentification Adobe Pass obtenu par une autre application (canal).
 
 
 #### Activation de l’authentification par domicile {#enable-hba}
 
-Suivez les étapes ci-dessous pour activer/désactiver l’authentification de base d’accueil pour **OAuth2** MVPD basés sur :
+Suivez les étapes ci-dessous pour activer/désactiver l’authentification de base d’accueil pour les MVPD **OAuth2** basés sur :
 
-* Assurez-vous d’utiliser le mode Espace de travail avancé
+* Vérifiez que vous utilisez le mode Workspace avancé .
 * accéder à l’intégration souhaitée ;
-* accéder à **Paramètres d’authentification** tab
-* accéder à **Règles dynamiques AuthN** sous-onglet
-* bascule **Tenter l’adaptateur de bus hôte** Indicateur de la valeur souhaitée (Oui/Non)
+* Accédez à l’onglet **Paramètres d’authentification**
+* Accédez au sous-onglet **Règles dynamiques AuthN**
+* basculez l’indicateur **Tenter l’adaptateur de bus hôte** sur la valeur souhaitée (Oui/Non).
 
 
 >[!IMPORTANT]
 >Gardez à l’esprit que la valeur de &quot;TTL de l’adaptateur de bus hôte AuthN&quot; ne doit jamais être remplacée, faute de quoi le flux d’autorisation pourrait échouer de manière inattendue.
 
-Contacter pour **tve-support@adobe.com** pour plus d’informations sur l’activation de l’authentification de base d’accueil pour les MVPD basés sur SAML.
+Contactez **tve-support@adobe.com** pour plus d’informations sur l’activation de l’authentification de base d’accueil pour les MVPD basés sur SAML.
 
 ### MVPD {#tve-db-mvpds-sec}
 
 Cette section permet d’afficher les paramètres des MVPD disponibles. Cliquer sur l’un des MVPD disponibles renvoie un écran avec les onglets suivants :
 
 * **Données MVPD**
-   * **MVPD Id** - Identifiant unique du MVPD utilisé dans notre système.
-   * **Nom d’affichage** - Nom commercial du MVPD qui peut être utilisé dans le sélecteur de l’utilisateur.
-   * **URL du logo** - Localisateur de ressource uniforme (URL) du logo commercial du MVPD.
+   * **MVPD Id** : identifiant unique du MVPD utilisé dans notre système.
+   * **Nom d’affichage** : nom commercial du MVPD qui peut être utilisé dans le sélecteur de l’utilisateur.
+   * **Logo Url** - Localisateur de ressource uniforme de logo commercial du MVPD (URL).
    * **Aperçu du logo** - Aperçu du logo commercial du MVPD en le téléchargeant à partir du localisateur de ressource uniforme ci-dessus (URL).
 * **Paramètres généraux**
    * **Clés de métadonnées utilisateur**
       * Clés de métadonnées disponibles pour le MVPD spécifique.
-   * **Propriétés des données client**
-      * **Auth/Aggregator** - Si la valeur est &quot;Oui&quot;, un nouveau jeton d’authentification est nécessaire pour chaque nouveau canal auquel l’utilisateur tente d’accéder.
-      * **AuthN passif activé** - Si l’indicateur Auth/Aggregator est défini sur &quot;Oui&quot; et que l’option AuthN passif activée est définie sur &quot;Oui&quot;, le processus d’authentification avec un autre canal se produit en arrière-plan sans qu’il faille rediriger entièrement le navigateur et que le sélecteur s’affiche.
-      * **Session d’authentification/de navigateur** - Si la valeur est définie sur &quot;Oui&quot;, l’utilisateur est déconnecté après la fermeture du navigateur. S’il est défini sur &quot;Non&quot;, l’utilisateur peut redémarrer le navigateur et rester connecté.
-      * **IFrame obligatoire** - Si la valeur est &quot;Oui&quot;, cela indique que la fenêtre de connexion MVPD nécessite un iFrame. Les champs &quot;Largeur de l’iFrame&quot; et &quot;Hauteur de l’iFrame&quot; représentent la taille requise pour l’iFrame qui charge la page de connexion MVPD.
+   * **Propriétés de données client**
+      * **Auth/Aggregator** - Si la valeur est définie sur &quot;Oui&quot;, un nouveau jeton d’authentification est nécessaire pour chaque nouveau canal auquel l’utilisateur tente d’accéder.
+      * **AuthN passif activé** - Si l’indicateur Auth/Agrégateur est défini sur &quot;Oui&quot; et que l’indicateur AuthN passif activé est défini sur &quot;Oui&quot;, le processus d’authentification avec un autre canal se produit en arrière-plan sans qu’il faille rediriger entièrement le navigateur et que le sélecteur s’affiche.
+      * **Session Auth/browser** - Si la valeur est définie sur &quot;Oui&quot;, l’utilisateur est déconnecté après la fermeture du navigateur. S’il est défini sur &quot;Non&quot;, l’utilisateur peut redémarrer le navigateur et rester connecté.
+      * **IFrame Required** - Si la valeur est définie sur &quot;Oui&quot;, cela indique que la fenêtre de connexion MVPD nécessite un iFrame. Les champs &quot;Largeur de l’iFrame&quot; et &quot;Hauteur de l’iFrame&quot; représentent la taille requise pour l’iFrame qui charge la page de connexion MVPD.
 * **Paramètres d’authentification**
-   * **Sélectionner le point de fin**
+   * **Sélectionner le point d’entrée**
       * Ce champ indique le ou les points d’entrée d’authentification exposés par le MVPD. Le point de terminaison peut varier en fonction du protocole d’authentification utilisé.
-   * **Paramètres généraux d’AuthN**
+   * **Paramètres généraux AuthN**
       * Ce sous-onglet affiche le protocole d&#39;authentification utilisé par le MVPD et les informations relatives au protocole.
    * **Certificats AuthN**
       * Ce sous-onglet affiche les certificats utilisés par le MVPD dans le flux d’authentification aux côtés de l’organisation de l’émetteur, la date d’émission et la date d’expiration. Ces certificats servent de clés privées/publiques et sont utilisés à des fins de validation.
    * **Règles dynamiques AuthN**
       * Ce sous-onglet affiche les règles qui s&#39;appliquent au processus d&#39;authentification. En appuyant sur la requête / réponse / jeton du diagramme, vous pouvez voir comme surligné les paramètres appliqués à cette partie du flux d’authentification.
 * **Paramètres d’autorisation**
-   * **Sélectionner le point de fin**
+   * **Sélectionner le point d’entrée**
       * Ce champ indique le point de terminaison d’autorisation exposé par le MVPD. Le point de terminaison peut varier en fonction du protocole d’autorisation utilisé. Les protocoles d’autorisation disponibles sont SOAP, REST (pour les appareils sans client), SAML, XACML et OAUTH.
-   * **Paramètres généraux d’AuthZ**
+   * **Paramètres généraux AuthZ**
       * Ce sous-onglet affiche le protocole d’autorisation utilisé par le MVPD et les informations relatives au protocole.
-      * **Configuration du contrôle en amont**
-         * Il décrit le nombre de ressources qui peuvent être préautorisées par un MVPD dans un seul appel, le modèle PreFlight utilisé, ainsi que le seuil de dépassement de délai. Le nombre de ressources peut parfois être différent pour une intégration donnée. Cela peut être géré en modifiant le **Nombre max. de ressources de contrôle en amont**&quot;, disponible sous l’onglet Paramètres généraux . Cette propriété est disponible uniquement pour une intégration donnée et, si elle est définie, elle sera utilisée à la place de la valeur définie dans Paramètres d’autorisation -> Configuration de pré-vol -> Ressources max. de pré-vol.
+      * **Configuration de contrôle en amont**
+         * Il décrit le nombre de ressources qui peuvent être préautorisées par un MVPD dans un seul appel, le modèle PreFlight utilisé, ainsi que le seuil de dépassement de délai. Le nombre de ressources peut parfois être différent pour une intégration donnée. Cela peut être géré en modifiant la propriété &quot;**Nombre max de ressources Preflight**&quot;, disponible sous l’onglet Paramètres généraux . Cette propriété est disponible uniquement pour une intégration donnée et, si elle est définie, elle sera utilisée à la place de la valeur définie dans Paramètres d’autorisation -> Configuration de pré-vol -> Ressources max. de pré-vol.
       * **Protection DOS**
          * Il décrit la protection du refus de service sur le point de terminaison d’autorisation MVPD. Pour obtenir une description exacte de chaque champ, reportez-vous aux info-bulles en survolant les champs de protection DOS.
-      * Si le MVPD est un **TempPass**, puis la variable **Paramètres généraux d’AuthZ** contient également des informations concernant la durée TempPass.
-      * Si le MVPD est un **FlexibleTempPass**, puis la variable **Paramètres généraux d’AuthZ** contient également des informations concernant la durée TempPass, le nombre maximal de ressources et le champ d’identification (voir l’image ci-dessous).
+      * Si le MVPD est un **TempPass**, les **Paramètres généraux AuthZ** contiennent également des informations concernant la durée de TempPass.
+      * Si le MVPD est un **FlexibleTempPass**, les **paramètres généraux AuthZ** contiennent également des informations concernant la durée du TempPass, le nombre maximal de ressources et le champ d’identification (voir l’image ci-dessous).
    * **Certificats AuthZ**
       * Ce sous-onglet affiche les certificats utilisés par le MVPD dans le flux d’autorisation aux côtés de l’organisme émetteur, la date d’émission et la date d’expiration. Ces certificats servent de clés privées/publiques et sont utilisés à des fins de validation.
    * **Règles dynamiques AuthZ**
-      * Ce sous-onglet affiche les règles qui s&#39;appliquent au processus d&#39;autorisation. En appuyant sur le diagramme **Request / Response / Token**, vous pouvez voir en surbrillance les paramètres appliqués à cette partie du flux d’autorisation.
-* **Paramètres de connexion**
-   * **Sélectionner le point de fin**
+      * Ce sous-onglet affiche les règles qui s&#39;appliquent au processus d&#39;autorisation. En appuyant sur la **requête/réponse/jeton** du diagramme, vous pouvez voir en surbrillance les paramètres appliqués à cette partie du flux d’autorisation.
+* **Paramètres de déconnexion**
+   * **Sélectionner le point d’entrée**
       * Ce champ indique le point de terminaison de déconnexion exposé par le MVPD. Les protocoles fournis peuvent être SAML ou OAuth2.
-      * **Paramètres généraux de connexion**
+      * **Paramètres généraux de déconnexion**
          * Ce sous-onglet affiche le protocole de déconnexion utilisé par le MVPD et les informations relatives au protocole.
-         * **Require Logout Response Signed** - Si elle est définie sur &quot;Oui&quot;, la réponse doit être signée par un certificat approuvé.
+         * **Require Logout Response Signed** - Si la valeur est &quot;Yes&quot;, la réponse doit être signée par un certificat de confiance.
       * **Certificats de déconnexion**
          * Ce sous-onglet affiche les certificats utilisés par le MVPD dans le flux de déconnexion, ainsi que leur organisation émetteur, la date d’émission et la date d’expiration. Ces certificats servent de clés privées/publiques et sont utilisés à des fins de validation.
       * **Déconnexion des règles dynamiques**
-         * Ce sous-onglet affiche les règles qui s&#39;appliquent au processus de déconnexion. En appuyant sur le diagramme **Request / Response / Token**, vous pouvez voir en surbrillance les paramètres appliqués à cette partie du flux de déconnexion.
+         * Ce sous-onglet affiche les règles qui s&#39;appliquent au processus de déconnexion. En appuyant sur la **requête/réponse/jeton** du diagramme, vous pouvez voir en surbrillance les paramètres appliqués à cette partie du flux de déconnexion.
 
 ### Rapports {#tve-db-reports-sec}
 
-Pour accéder à cette section, cliquez sur &quot;Rapports&quot; dans le[Sections du tableau de bord](#sections)&quot;. Vous accédez alors à un écran de 3 onglets, qui sera présenté en détail dans les sous-sections suivantes : [Rapports TTL AuthN](#authn-ttl-reports), [Rapports TTL AuthZ](#authz-ttl-reports), [Rapports SSO](#sso-reports).
+Pour accéder à cette section, cliquez sur &quot;Rapports&quot; dans le menu &quot;[Sections du tableau de bord](#sections)&quot;. Vous accédez alors à un écran avec 3 onglets, qui sera présenté en détail dans les sous-sections suivantes : [Rapports TTL AuthN](#authn-ttl-reports), [Rapports TTL AuthZ](#authz-ttl-reports) et [Rapports SSO](#sso-reports).
 
 Cette section permet d’afficher et d’exporter des données agrégées pour plusieurs types de rapports pour votre ou vos intégrations de canaux avec divers MVPD sur toutes les plateformes.
 
@@ -340,24 +340,24 @@ Cette section permet d’afficher et d’exporter des données agrégées pour p
 Tous les rapports combinent les valeurs sur les plateformes suivantes :
 
 **NAVIGATEURS**
-Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais du SDK JavaScript de l’authentification Adobe Pass.
+Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais du SDK JavaScript d’authentification Adobe Pass.
 
 **MOBILE : IOS**
 Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais du SDK iOS d’authentification Adobe Pass.
 
 **MOBILE : ANDROID**
-Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur sur le SDK Android d’authentification Adobe Pass.
+Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais du SDK Android d’authentification Adobe Pass.
 
 **MOBILE : AUTRES**
 Affiche les valeurs qui seront appliquées aux implémentations du programmeur via l’API REST d’authentification Adobe Pass développée pour les appareils mobiles.
 
-**TVCD : ROKU**
+**TVCD: ROKU**
 Affiche les valeurs qui seront appliquées aux implémentations du programmeur sur l’API REST d’authentification Adobe Pass et qui envoient &quot;Roku&quot; comme type d’appareil.
 
-**TVCD : FIRETV**
+**TVCD: FIRETV**
 Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur sur le SDK Adobe Pass Authentication FireTV.
 
-**TVCD : APPLETV**
+**TVCD: APPLETV**
 Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur par le biais du SDK tvOS de l’authentification Adobe Pass.
 
 **TVCD : AUTRES**
@@ -366,20 +366,20 @@ Affiche les valeurs qui seront appliquées aux mises en oeuvre du programmeur vi
 **PLATFORM : INCONNU**
 Affiche les valeurs qui seront appliquées aux implémentations du programmeur pour lesquelles les services d’authentification Adobe Pass détectent un type d’appareil inconnu.
 
-Examinez le mécanisme de [transmission des informations client](/help/authentication/passing-client-information-device-connection-and-application.md) aux API REST d’authentification Adobe Pass ou aux SDK pour plus d’informations sur la manière d’envoyer le type d’appareil souhaité (par exemple, &quot;Roku&quot;).
+Examinez le mécanisme de [transmission d’informations client](/help/authentication/passing-client-information-device-connection-and-application.md) aux API REST d’authentification Adobe Pass ou aux SDK pour plus d’informations sur la manière d’envoyer le type d’appareil souhaité (par exemple, &quot;Roku&quot;).
 
 Tous les rapports combinent les valeurs calculées selon la configuration spécifique à chaque environnement d&#39;authentification Adobe Pass. Par conséquent, vous pouvez vous attendre à des données de rapport différentes lors du changement entre différents environnements de tableau de bord TVE.
 
-Veuillez consulter la section [Environnements](#authn-environments) pour plus d’informations sur les environnements disponibles d’authentification Adobe Pass.
+Pour plus d’informations sur les environnements disponibles d’authentification Adobe Pass, consultez la section [Environnements](#authn-environments) .
 
 
 ##### Sélection de canaux/MVPD spécifiques {#selecting-specific-channels-mvpds}
 
 Tous les rapports permettent d’utiliser des filtres en sélectionnant des canaux spécifiques ou des MVPD spécifiques à inclure dans les rapports résultants.
 
-Pour sélectionner un ou plusieurs canaux, utilisez le **liste déroulante** placé après le libellé &quot;Canaux sélectionnés pour le rapport&quot;. Voir la figure 8./9./10. images ci-dessous.
+Pour sélectionner un ou plusieurs canaux, utilisez la **liste déroulante** placée après l’étiquette &quot;Canaux sélectionnés pour le rapport&quot;. Voir la figure 8./9./10. images ci-dessous.
 
-Pour sélectionner un ou plusieurs MVPD, utilisez la variable **liste déroulante** placé après le libellé &quot;MVPD sélectionnés pour le rapport&quot;. Voir la figure 8./9./10. images ci-dessous.
+Pour sélectionner un ou plusieurs MVPD, utilisez la **liste déroulante** placée après l’étiquette &quot;MVPD sélectionnés pour le rapport&quot;. Voir la figure 8./9./10. images ci-dessous.
 
 Par défaut, les données sont agrégées sur tous les canaux de votre entreprise (&quot;Tous les canaux&quot;) et les MVPD avec lesquels elles sont intégrées (&quot;Tous les MVPD&quot;).
 
@@ -392,15 +392,15 @@ Tous les rapports permettent d’exporter des données au format CSV (valeurs s�
 
 Pour exporter des données, utilisez le bouton &quot;Exporter le rapport&quot; situé dans le coin supérieur droit de la fenêtre. Voir la figure 8./9./10. images ci-dessous.
 
-Un fichier nommé **Report.csv** sera téléchargé automatiquement sur votre ordinateur. Par conséquent, assurez-vous que les paramètres de votre navigateur permettent de télécharger les fichiers.
+Un fichier nommé **Report.csv** sera automatiquement téléchargé sur votre ordinateur. Par conséquent, assurez-vous que les paramètres de votre navigateur permettent de télécharger les fichiers.
 
-L’icône de chargement &quot;Export de données&quot; s’affiche à l’écran pendant que le fichier Report.csv est calculé, ce qui peut prendre la forme **à quelques minutes** selon la taille des données à exporter.
+L’icône de chargement &quot;Export de données&quot; sera présente à l’écran pendant que le fichier Report.csv est calculé, ce qui peut prendre entre **et quelques minutes** en fonction de la taille des données à exporter.
 
 #### Rapports TTL AuthN (#authn-ttl-reports)
 
 Ce rapport affiche la durée de vie (TTL) du jeton d’authentification configuré pour votre ou vos intégrations de canaux avec divers MVPD sur toutes les plateformes.
 
-Durée de vie du jeton d’authentification, également appelé **AuthN TTL**, s’affiche dans des valeurs lisibles par l’utilisateur, telles que : **jours, heures, minutes, secondes**.
+Le jeton d’authentification Durée de vie, également appelé **AuthN TTL**, s’affiche dans des valeurs lisibles par l’utilisateur, telles que : **jours, heures, minutes, secondes**.
 
 En termes d’expérience utilisateur, les rapports TTL AuthN vous permettent d’inspecter visuellement le temps d’authentification d’un utilisateur en fonction d’un MVPD spécifique et d’une plateforme spécifique.
 
@@ -408,21 +408,21 @@ Pour accéder à ce type de rapport, cliquez sur l’onglet &quot;Rapports TTL A
 
 ![Rapports TTL AuthN](assets/authn-ttl-reports.png)
 
-*Figure 8 : Onglet Rapport TTL du tableau de bord TVE d’Adobe Primetime*
+*Figure 8 : Onglet Rapport TTL AuthN du tableau de bord TVE Adobe Primetime*
 
 Le tableau Rapports TTL AuthN contient des pages et peut être défilé horizontalement et verticalement selon la taille de l’écran.
 
-Si vous envisagez d’apporter une modification à une valeur TTL AuthN, veuillez consulter [Intégrations](#tve-db-integrations-sec) .
+Si vous envisagez d’apporter une modification à une valeur TTL AuthN, consultez la section [Intégrations](#tve-db-integrations-sec) .
 
 >[!IMPORTANT]
->Le &quot;**Défini par MVPD**&quot; est utilisé dans les cas où le MVPD est celui qui applique la valeur AuthN TTL et non la configuration de l’authentification Adobe Pass.
+>L’espace réservé &quot;**défini par MVPD**&quot; est utilisé lorsque le MVPD est celui qui applique la valeur TTL AuthN et non la configuration d’authentification Adobe Pass.
 
 
 #### Rapports TTL AuthZ {#authz-ttl-reports}
 
 Ce rapport affiche la durée de vie (TTL) du jeton d’autorisation configuré pour votre ou vos intégrations de canaux avec divers MVPD sur toutes les plateformes.
 
-Durée de vie du jeton d’autorisation, également appelé **AuthZ TTL**, s’affiche dans des valeurs lisibles par l’utilisateur, telles que : **jours, heures, minutes, secondes**.
+La durée de vie du jeton d’autorisation, également appelé **AuthZ TTL**, s’affiche dans des valeurs lisibles par l’utilisateur, telles que : **jours, heures, minutes, secondes**.
 
 En termes d’expérience utilisateur, les rapports TTL AuthZ vous permettent d’inspecter visuellement le temps qu’un utilisateur sera autorisé en fonction d’un MVPD spécifique et d’une plateforme spécifique.
 
@@ -437,31 +437,31 @@ Le tableau Rapports TTL AuthZ contient des pages et peut être défilé horizont
 Si vous envisagez d’apporter une modification à une valeur TTL AuthZ, reportez-vous à la section [Intégrations](#tve-db-integrations-sec) .
 
 >[!IMPORTANT]
->Le &quot;**Défini par MVPD**&quot; est utilisé dans les cas où le MVPD est celui qui applique la valeur AuthZ TTL et non la configuration de l’authentification Adobe Pass.
+>L’espace réservé &quot;**défini par MVPD**&quot; est utilisé lorsque le MVPD est celui qui applique la valeur TTL AuthZ et non la configuration d’authentification Adobe Pass.
 
 
 #### Rapports SSO {#sso-reports}
 
 Ce rapport affiche l’état de connexion unique (SSO) configuré pour votre/vos intégration(s) de canal(s) avec divers MVPD sur toutes les plateformes.
 
-État de connexion unique, également appelé **état SSO**, s’affiche sous la forme d’un tri-état avec les valeurs possibles suivantes : **SSO désactivé, SSO activé, SSO incertain**.
+L’état de connexion unique, également appelé **état SSO**, s’affiche sous la forme d’un état triple avec les valeurs possibles suivantes : **SSO désactivé, SSO activé, SSO incertain**.
 
 En termes d’expérience utilisateur, les rapports d’authentification unique vous permettent d’examiner visuellement l’expérience d’authentification unique de l’utilisateur attendue en fonction d’un MVPD spécifique et d’une plateforme spécifique.
 
-Pour accéder à ce type de rapport, cliquez sur le lien **Rapports SSO**&quot; à partir du **Rapports**&quot;.
+Pour accéder à ce type de rapport, cliquez sur l’onglet &quot;**Rapports d’authentification unique**&quot; de la section &quot;**Rapports**&quot;.
 
 
 ![Onglet Rapports SSO du tableau de bord TVE](assets/sso-reports.png)
 
 
-*Figure 10 : Onglet Rapports SSO du tableau de bord TVE d’Adobe Primetime*
+*Figure 10 : Onglet Rapports SSO du tableau de bord TVE Adobe Primetime*
 
 Le tableau Rapports d’authentification unique contient des pages et peut être défilé horizontalement et verticalement selon la taille de l’écran.
 
-Si vous envisagez d’apporter une modification à un état d’authentification unique, veuillez consulter la section [Intégrations](#tve-db-integrations-sec) .
+Si vous envisagez d’apporter une modification à l’état SSO, consultez la section [Intégrations](#tve-db-integrations-sec) .
 
 >[!IMPORTANT]
->&quot;**SSO incertain**&quot;un espace réservé est utilisé dans les cas où la connexion unique est activée et possible, mais les paramètres de la plateforme utilisateur/les décisions de l’utilisateur (par exemple, l’option du navigateur utilisateur pour bloquer les cookies tiers, l’utilisateur choisissant de refuser l’accès à sa plateforme à son abonnement au fournisseur de télévision) ou les paramètres MVPD (par exemple, MVPD demandant l’authentification pour chaque canal) peuvent empêcher la connexion unique.
+>L’espace réservé &quot;**SSO Uncertain**&quot; est utilisé dans les cas où la SSO est activée et possible, mais les paramètres de la plateforme utilisateur/les décisions de l’utilisateur (par exemple, l’option du navigateur utilisateur pour bloquer les cookies tiers, l’utilisateur choisissant de refuser l’accès à sa plateforme à son abonnement au fournisseur de télévision) ou les paramètres MVPD (par exemple, MVPD demandant l’authentification pour chaque canal) peuvent empêcher la SSO).
 
 ### Journal des modifications {#tve-db-changelog-sec}
 
@@ -481,7 +481,7 @@ Cette section permet aux utilisateurs d’envoyer des commentaires. Suivez les �
 * Si nécessaire, téléchargez une capture d’écran du message en cliquant sur le bouton &quot;Télécharger la capture d’écran&quot;.
 * cliquez sur le bouton &quot;Envoyer&quot;.
 
-![Formulaire de retour de tableau de bord tv](assets/tve-dashboard-feedback.png)
+![Formulaire de retour de tableau de bord tve](assets/tve-dashboard-feedback.png)
 
 *Figure 11 : Section Commentaires du tableau de bord TVE Adobe Primetime*
 
@@ -510,7 +510,7 @@ Si cela se produit, vous devrez attendre que l’équipe d’ingénierie Authent
 ![Application TVE à l’état dégradé](assets/tve-degraded-state.png)
 
 
-*Figure : Application TVE dans un état dégradé*
+*Figure : Application TVE en état dégradé*
 
 Si le tableau de bord TVE est &quot;dégradé&quot;, les utilisateurs n’auront pas de fonctionnalités de recherche et de tri, mais ils pourront afficher ou apporter de nouvelles modifications.
 

@@ -4,7 +4,7 @@ description: Guide pas à pas du SDK JavaScript
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,10 @@ ht-degree: 0%
 
 ## Introduction {#intro}
 
-Ce document décrit les processus de droits que l’application de niveau supérieur d’un programmeur implémente pour une intégration JavaScript avec le service d’authentification Adobe Pass. Les liens vers la référence API JavaScript sont inclus dans tout le contenu.
+Ce document décrit les processus de droits que l’application de niveau supérieur d’un programmeur implémente pour une intégration JavaScript avec le service d’authentification Adobe Pass. Des liens vers la référence API JavaScript sont inclus dans tout le contenu.
 
-Notez également que la variable [Informations connexes](#related) comprend un lien vers un ensemble d’exemples de code JavaScript.
+Notez également que la section [Informations connexes](#related) comprend une
+lien vers un ensemble d’exemples de code JavaScript.
 
 ## Flux de droits {#entitlement}
 
@@ -46,16 +47,17 @@ Créez vos fonctions de rappel :
 - `entitlementLoaded`
 </br>
 
-**Déclencheur :** L’initialisation d’AccessEnabler est terminée et chargée.
+**Déclencheur :** L&#39;AccessEnabler a été chargé et l&#39;initialisation est terminée.
 
 - `displayProviderDialog(mvpds)`
 
-  **Déclencheur :** `getAuthentication(),` uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié. Le paramètre mvpds est un tableau de fournisseurs disponibles pour l’utilisateur.
+  **Déclencheur :** `getAuthentication(),` uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié
+Le paramètre mvpds est un tableau de fournisseurs mis à la disposition de l’utilisateur.
 
 - `setAuthenticationStatus(status, errorcode)`
 
   **Déclencheur :**
-   - `checkAuthentication()`à chaque fois.
+   - `checkAuthentication()` à chaque fois.
    - `getAuthentication()` uniquement si l’utilisateur est déjà authentifié et a sélectionné un fournisseur.
 
   L’état renvoyé est une réussite ou un échec ; le code d’erreur décrit le type de l’échec.
@@ -70,29 +72,30 @@ Créez vos fonctions de rappel :
 
 - `sendTrackingData(event, data)`
 
-  **Triggers :** `checkAuthentication(), getAuthentication(),checkAuthorization(), getAuthorization(), setSelectedProvider()`.  La variable `event` indique l’événement de droit survenu ; `data` est une liste de valeurs relatives à l’événement.
+  **Triggers :** `checkAuthentication(), getAuthentication(),checkAuthorization(), getAuthorization(), setSelectedProvider()`.  Le paramètre `event` indique quel événement de droit s’est produit ; le paramètre `data` est une liste de valeurs relatives à l’événement.
 - `setToken(token, resource)`
-  **Déclencheur :** `checkAuthorization()`et `getAuthorization()` après une autorisation réussie d’affichage d’une ressource.   La variable `token` est le jeton multimédia de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
+  **Déclencheur :** `checkAuthorization()` et `getAuthorization()` après une autorisation réussie d’affichage d’une ressource.   Le paramètre `token` est le jeton multimédia de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
 
 - `tokenRequestFailed(resource, code, description)`
-  **Déclencheur :**`checkAuthorization()` et`getAuthorization()`  après une autorisation manquée.\
-  La variable `resource` est le contenu que l’utilisateur tentait d’afficher ; le paramètre `code` est le code d’erreur indiquant le type d’échec qui s’est produit ; le paramètre `description` décrit l’erreur associée au code d’erreur.
+  **Déclencheur :**`checkAuthorization()` et`getAuthorization()` après une autorisation manquée.\
+  Le paramètre `resource` est le contenu que l’utilisateur tentait de consulter ; le paramètre `code` est le code d’erreur indiquant le type d’échec survenu ; le paramètre `description` décrit l’erreur associée au code d’erreur.
 
 - `selectedProvider(mvpd)`
 
-  **Déclencheur :** [`getSelectedProvider()`](#$getSelProv Le `mvpd` fournit des informations sur le fournisseur sélectionné par l’utilisateur.
+  **Déclencheur :** [`getSelectedProvider()`](#$getSelProv Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par
+l’utilisateur.
 
 - `setMetadataStatus(metadata, key, arguments)`
 
   **Déclencheur :** `getMetadata().`\
-  La variable `metadata` fournit les données spécifiques demandées ; le paramètre key est la clé utilisée dans la variable `getMetadata()`et la demande `arguments` est le même dictionnaire que celui qui a été transmis à `getMetadata()`.
+  Le paramètre `metadata` fournit les données spécifiques que vous avez demandées ; le paramètre key est la clé utilisée dans la requête `getMetadata()` et le paramètre `arguments` est le même dictionnaire qui a été transmis à `getMetadata()`.
 
 
 ## 2. Flux de démarrage
 
 **I. Chargez le JavaScript AccessEnabler :**
 
-**Pour le profil d’évaluation**
+**Pour Le Profil D’Évaluation**
 
 ```JSON
 <script type="text/javascript"         
@@ -102,7 +105,7 @@ src="https://entitlement.auth-staging.adobe.com/entitlement/v4/AccessEnabler.js"
 
 ou ...
 
-**Pour le profil de production**
+**Pour Profil de production**
 
 ```JSON
 <script type="text/javascript"         
@@ -110,36 +113,39 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 </script>"
 ```
 
-**Triggers :** Une fois l’initialisation terminée, l’authentification Adobe Pass appelle votre `entitlementLoaded()` fonction de rappel. Il s’agit du point d’entrée de la communication de votre application avec AccessEnabler.
+**Triggers :** Une fois l’initialisation terminée, Adobe Pass
+authentication appelle votre fonction de rappel `entitlementLoaded()` . Il s’agit du point d’entrée de la communication de votre application avec AccessEnabler.
 
 
-**II.** Appeler `setRequestor()`pour établir l&#39;identité du programmeur ; transmettre le `requestorID` et (éventuellement) un tableau de points de terminaison d’authentification Adobe Pass.
+**II.** Appelez `setRequestor()` pour établir la variable
+identité du programmeur ; transmettez le `requestorID` du programmeur et
+(facultatif) un tableau de points de fin d’authentification Adobe Pass.
 
-**Triggers :** Aucun, mais active `displayProviderDialog()` à appeler si nécessaire.
+**Triggers :** Aucun, mais permet d’appeler `displayProviderDialog()` si nécessaire.
 
 
-**III.** Appeler `checkAuthentication()` pour rechercher une authentification existante sans initialiser l’ensemble [flux d’authentification].  Si cet appel réussit, vous pouvez passer directement à la variable `authorization flow`.  Si ce n’est pas le cas, passez au `authentication flow`.
+**III.** Appelez `checkAuthentication()` pour rechercher une authentification existante sans initialiser le [flux d&#39;authentification] complet.  Si cet appel réussit, vous pouvez passer directement à `authorization flow`.  Si ce n&#39;est pas le cas, passez à l&#39;élément `authentication flow`.
 
-**Dépendance :** Un appel réussi à `setRequestor()`(cette dépendance s’applique également à tous les appels suivants).
+**Dépendance :** Appel réussi à `setRequestor()` (cette dépendance s’applique également à tous les appels suivants).
 
-**Triggers :** `setAuthenticationStatus()` callback
+**Triggers:** `setAuthenticationStatus()` callback
 
 </br>
 
 ## 3. Flux d’authentification</span>
 
 
-**Dépendance :** Un appel réussi à `setRequestor()`(cette dépendance s’applique également à tous les appels suivants).
+**Dépendance :** Appel réussi à `setRequestor()` (cette dépendance s’applique également à tous les appels suivants).
 
 
-Appeler `getAuthentication()` pour obtenir l’état d’authentification OU pour déclencher le flux d’authentification du fournisseur.
+Appelez `getAuthentication()` pour obtenir l’état d’authentification OU pour déclencher le flux d’authentification du fournisseur.
 
-**Déclencheurs :**
+**Trigers:**
 
-- `displayProviderDialog()`si l’utilisateur n’a pas encore été authentifié ;
+- `displayProviderDialog()` si l’utilisateur n’a pas encore été authentifié
 - `setAuthenticationStatus()` si l’authentification a déjà eu lieu
 
-La fin du flux d’authentification est atteinte lors des appels AccessEnabler `setAuthenticationStatus()`avec `isAuthenticated == 1`.
+La fin du flux d’authentification est atteinte lorsque AccessEnabler appelle `setAuthenticationStatus()` avec `isAuthenticated == 1`.
 
 ## 4. Flux d’autorisation {#authz}
 
@@ -148,7 +154,7 @@ La fin du flux d’authentification est atteinte lors des appels AccessEnabler `
 - Un appel réussi à `setRequestor()` (cette dépendance s’applique également à tous les appels suivants).
 - ID de ressource valide accepté par le ou les MVPD. Notez que les ResourceID doivent être identiques à ceux utilisés sur d’autres appareils ou plateformes et seront identiques sur plusieurs MVPD.
 
-Appeler `getAuthorization()` et transmettez le ResourceID pour le média demandé. Un appel réussi renvoie un jeton de média court, qui confirme que l’utilisateur est autorisé à afficher le média demandé.
+Appelez `getAuthorization()` et transmettez l’ID de ressource pour le média demandé. Un appel réussi renvoie un jeton de média court, qui confirme que l’utilisateur est autorisé à afficher le média demandé.
 
 - Si l’appel est transmis : l’utilisateur dispose d’un jeton AuthN valide et est autorisé à regarder le média demandé.
 - Si l’appel échoue : examinez l’exception générée pour déterminer son type (AuthN, AuthZ, etc.) :
@@ -156,10 +162,11 @@ Appeler `getAuthorization()` et transmettez le ResourceID pour le média demand�
 - Si l’appel était une erreur AuthZ, l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur de ce type doit s’afficher à l’utilisateur.
 - En cas d’erreur (erreur de connexion, erreur réseau, etc.) puis afficher un message d’erreur approprié à l’utilisateur.
 
-Utilisez le vérificateur de jeton multimédia pour valider le shortMediaToken renvoyé par un `getAuthorization()` appelez .
+Utilisez le vérificateur de jeton multimédia pour valider le shortMediaToken renvoyé par un appel `getAuthorization()` réussi.
 
 
-**Dépendance :** Vérification du jeton de média court (inclus dans la bibliothèque AccessEnabler)
+**Dépendance :** Vérification du jeton de média court (inclus avec
+Bibliothèque AccessEnabler)
 
 - Si la validation réussit : affichez/relayez le média demandé à l’utilisateur.
 - En cas d’échec : le jeton AuthZ n’était pas valide, la demande de média doit être refusée et un message d’erreur doit s’afficher à l’utilisateur.
@@ -175,7 +182,7 @@ Utilisez le vérificateur de jeton multimédia pour valider le shortMediaToken r
 
 ## Configuration de l’identifiant visiteur {#visitorID}
 
-Configuration d’un [visitorID Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html) est très important du point de vue d’analytics. Une fois la valeur visitorID d’un EC définie, le SDK envoie ces informations avec chaque appel réseau et le service d’authentification Adobe Pass collecte ces informations. De cette manière, vous pourrez mettre en corrélation les données d’analyse du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pourriez avoir d’autres applications ou sites web. Vous trouverez des informations sur la configuration d’EC visitorID [here](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
+La configuration d’une valeur [visitorID Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html) est très importante du point de vue des analyses. Une fois la valeur visitorID d’un EC définie, le SDK envoie ces informations avec chaque appel réseau et le service d’authentification Adobe Pass collecte ces informations. De cette manière, vous pourrez mettre en corrélation les données d’analyse du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pourriez avoir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur EC [ici](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

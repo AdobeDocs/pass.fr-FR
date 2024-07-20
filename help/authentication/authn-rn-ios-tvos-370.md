@@ -4,7 +4,7 @@ description: Notes de mise à jour d’Authentication iOS/tvOS 3.7.0
 exl-id: 19c1179e-16b1-4608-954f-25b0980d7ad9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '117'
+source-wordcount: '126'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Date de publication : 09/03/2021
 
 Améliore l’utilisation de la structure AccessEnabler en autorisant les opérations de stockage Keychain lorsque l’application est en arrière-plan ou lorsque l’appareil est verrouillé. Cela peut faciliter, par exemple, la mise en oeuvre d’AirPlay.
 
-## Package de version {#rel=pkg-iostvos370}
+## Package de mise à jour {#rel=pkg-iostvos370}
 
 Vous pouvez télécharger le SDK iOS/tvOS v3.7.0 à partir d’ici.
 

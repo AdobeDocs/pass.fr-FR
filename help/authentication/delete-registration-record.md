@@ -17,16 +17,16 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -38,9 +38,9 @@ ht-degree: 2%
 
 Supprime l’enregistrement du code reg et le libère pour réutilisation.
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Par exemple :</br></br>&lt;reggie_fqdn>/reggie/v1/regcode/ER45RTY | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. Identifiant du demandeur  </br>    (composant Chemin)</br>2.  Code d’enregistrement  </br>    (composant Chemin) | DELETE | Aucun | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Par exemple :</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. ID du demandeur </br>    (Composant Chemin)</br>2.  Code d’enregistrement </br>    (composant Chemin) | DELETE | Aucun | 204 |
 
 {style="table-layout:auto"}
 

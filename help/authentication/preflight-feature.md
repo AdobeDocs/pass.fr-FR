@@ -4,7 +4,7 @@ description: Fonctionnalité de contrôle en amont, activation, dépannage ou d�
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ L’interface externe de l’API PreAuthorization est inchangée. Aucune mise à
 
 Les ressources Preflight peuvent être calculées de trois façons :
 
-* **Forcer et joindre la méthode à MVPD**: cela implique l’Adobe d’effectuer plusieurs appels d’autorisation au MVPD (le client devra toutefois effectuer un appel de contrôle en amont).
-* **Ligne du canal**: le MVPD expose la ligne de canal pour l’utilisateur connecté dans la réponse d’authentification SAML et l’Adobe renvoie les ressources autorisées en fonction de cela. La réponse SAML authN dans le traceur SAML doit exposer cette liste.
-* **Autorisation multicanal**: l’authentification client et Adobe effectue tous deux un appel unique au MVPD pour un ensemble de ressources.
+* **Méthode de branchement à MVPD** : cela implique l’Adobe d’effectuer plusieurs appels d’autorisation au MVPD (le client devra toutefois effectuer un appel de contrôle en amont).
+* **Ligne de canal** : le MVPD expose la ligne de canal vers le haut pour l’utilisateur connecté dans la réponse d’authentification SAML et l’Adobe renvoie les ressources autorisées en fonction de cela. La réponse SAML authN dans le traceur SAML doit exposer cette liste.
+* **Autorisation multicanal** : l’authentification client et Adobe effectue tous deux un appel unique au MVPD pour un ensemble de ressources.
 
 Quel que soit le MVPD, l’application cliente effectuera un appel unique au point de terminaison Preflight (API checkPreauthorizedResources), en transmettant un ensemble d’identifiants de ressource. Selon l’une des méthodes ci-dessus prises en charge par MVPD, Adobe renvoie alors les ID de ressource préautorisés.
 

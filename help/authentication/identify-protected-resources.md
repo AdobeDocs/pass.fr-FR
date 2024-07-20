@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-## Présentation {#overview}
+## Vue d’ensemble {#overview}
 
 Chaque demande d’autorisation (ou demande d’autorisation) doit contenir un identifiant unique pour la ressource protégée pour laquelle l’utilisateur demande l’accès. Une ressource protégée peut être n’importe quel niveau de contenu autorisé, comme convenu entre un MVPD et les programmeurs participants. Les ressources protégées potentielles doivent s’adapter à cette structure arborescente avec une granularité de plus en plus spécifique :
 
@@ -43,7 +43,7 @@ Si vous utilisez un identifiant de ressource simple, tel que &quot;TNT&quot;, il
 ```
 
 
-Un spécificateur plus complexe peut inclure, par exemple, des informations d’évaluation supplémentaires. Vous pouvez transmettre la chaîne RSS entière aux fonctions d’activation d’accès nécessitant un identifiant de ressource, telles que [`getAuthorization()`](/help/authentication/rest-api-reference.md):
+Un spécificateur plus complexe peut inclure, par exemple, des informations d’évaluation supplémentaires. Vous pouvez transmettre la chaîne RSS entière aux fonctions d’activation d’accès qui nécessitent un identifiant de ressource, tel que [`getAuthorization()`](/help/authentication/rest-api-reference.md) :
 
 ```rss
     var resource = 
@@ -56,7 +56,7 @@ Un spécificateur plus complexe peut inclure, par exemple, des informations d’
     getAuthorization(resource);
 ```
 
-Les attributs de ressource sont opaques à l’authentification Adobe Pass ; ils sont simplement transmis au MVPD. Si le MVPD ne reconnaît pas ou ne peut pas analyser votre spécificateur de ressource, il renvoie une erreur à l’authentification Adobe Pass, qui renvoie l’erreur à votre `tokenRequestFailed()` rappel.
+Les attributs de ressource sont opaques à l’authentification Adobe Pass ; ils sont simplement transmis au MVPD. Si le MVPD ne reconnaît pas ou ne peut pas analyser votre spécificateur de ressource, il renvoie une erreur à l’authentification Adobe Pass, qui renvoie l’erreur à votre rappel `tokenRequestFailed()`.
 
 <!--
 ## Related Information {#related}

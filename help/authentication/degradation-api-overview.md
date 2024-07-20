@@ -16,14 +16,14 @@ ht-degree: 0%
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 >Pour utiliser l’API de dégradation, vous devez :
 >- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
->- obtenir un jeton d’accès en fonction de [Enregistrement du client dynamique](dynamic-client-registration.md)
+>- Obtention d’un jeton d’accès basé sur l’[ enregistrement du client dynamique](dynamic-client-registration.md)
 > 
 
 >[!NOTE]
 >
 >Pour utiliser l’API de dégradation, vous devez :
 >- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
->- obtenir un jeton d’accès en fonction de [Enregistrement du client dynamique](dynamic-client-registration.md)
+>- Obtention d’un jeton d’accès basé sur l’[ enregistrement du client dynamique](dynamic-client-registration.md)
 > 
 
 ## Informations générales {#general_info}

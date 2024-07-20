@@ -19,14 +19,14 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Renvoie le code d’enregistrement généré de manière aléatoire et l’URI de page de connexion.
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètre | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br>Paramètre | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestor}/regcode</br>Par exemple :</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Application de diffusion en continu</br>ou</br>Service de programmation | 1. demandeur  </br>    (composant Chemin)</br>2.  deviceId (Hashed)   </br>    (obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  mvpd (facultatif)</br>5.  ttl (facultatif)</br>6.  _deviceType_</br> 7.  _deviceUser_ (Obsolète)</br>8.  _appId_ (Obsolète) | POST | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir schémas et exemples ci-dessous. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode</br>Par exemple :</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Application de diffusion en continu</br>ou</br>Service de programmation | 1. demandeur </br>    (Composant Chemin)</br>2.  deviceId (Hashed)   </br>    (Obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  mvpd (facultatif)</br>5.  ttl (facultatif)</br>6.  _deviceType_</br> 7.  _deviceUser_ (obsolète)</br>8.  _appId_ (obsolète) | POST | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir schémas et exemples ci-dessous. | 201 |
 
 {style="table-layout:auto"}
 
@@ -47,28 +47,28 @@ Renvoie le code d’enregistrement généré de manière aléatoire et l’URI d
 | --- | --- |
 | demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’identifiant de l’appareil. |
-| device_info/</br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br>**Remarque**: cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br>Consultez les détails complets de la section [Transmission des informations de périphérique et de connexion](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| device_info/</br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br>**Remarque** : cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br>Pour plus d&#39;informations, reportez-vous à la section [Transmission des informations de périphérique et de connexion](/help/authentication/passing-client-information-device-connection-and-application.md). |
 | mvpd | Identifiant MVPD pour lequel cette opération est valide. |
-| ttl | Durée de vie de ce regcode en secondes.</br>**Remarque**: la valeur maximale autorisée pour tl est de 3 600 secondes (10 heures). Des valeurs plus élevées entraînent une réponse HTTP 400 (mauvaise requête). If `ttl` n’est pas renseignée, l’authentification Adobe Pass définit une valeur par défaut de 30 minutes. |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br>Si ce paramètre est correctement défini, ESM propose des mesures qui sont [ventilation par type d’appareil](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyses puissent être effectués, par exemple, Roku, Apple TV et Xbox.</br>Voir [Avantages de l’utilisation d’un paramètre de type d’appareil sans client dans les mesures de transmission ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Remarque**: device_info remplace ce paramètre. |
+| ttl | Durée de vie de ce regcode en secondes.</br>**Remarque** : la valeur maximale autorisée pour ttl est de 36 000 secondes (10 heures). Des valeurs plus élevées entraînent une réponse HTTP 400 (mauvaise requête). Si `ttl` n’est pas renseigné, l’authentification Adobe Pass définit une valeur par défaut de 30 minutes. |
+| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br>Si ce paramètre est défini correctement, ESM offre des mesures [ventilées par type d’appareil](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Sans client, de sorte que différents types d’analyses puissent être effectués, par exemple, Roku, Apple TV et Xbox.</br>Voir [Avantages de l’utilisation d’un paramètre de type d’appareil sans client dans les mesures de transmission ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Remarque** : l’info_périphérique remplacera ce paramètre. |
 | _deviceUser_ | Identifiant de l’utilisateur de l’appareil. |
-| _appId_ | ID/nom de l’application. </br>**Remarque**: device_info remplace ce paramètre. |
+| _appId_ | ID/nom de l’application. </br>**Remarque** : device_info remplace ce paramètre. |
 
 {style="table-layout:auto"}
 
 
 >[!CAUTION]
 >
->**Adresse IP du périphérique de diffusion**
+>**Adresse IP du périphérique de diffusion en continu**
 ></br>
->Pour les mises en oeuvre client-serveur, l’adresse IP du périphérique en flux continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où la variable **regcode** L’appel est effectué à partir du service de programmation et non du périphérique de diffusion en continu. L’en-tête suivant est nécessaire pour transmettre l’adresse IP du périphérique de diffusion en continu :
+>Pour les mises en oeuvre client-serveur, l’adresse IP du périphérique en flux continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué en tant que service de programmation et non comme périphérique de diffusion en continu, l’en-tête suivant est nécessaire pour transmettre l’adresse IP du périphérique de diffusion en continu :
 >
 >
 >```
 >X-Forwarded-For : <streaming_device_ip> 
 >```
 >
->where `<streaming\_device\_ip>` est l’adresse IP publique du périphérique de diffusion en continu.
+>où `<streaming\_device\_ip>` est l’adresse IP publique de l’appareil en flux continu.
 ></br></br>
 >Exemple :</br>
 >
@@ -182,7 +182,7 @@ Renvoie le code d’enregistrement généré de manière aléatoire et l’URI d
     </ns2:regcode>
 ```
 
-**JSON :**
+**JSON:**
 
 ```JSON
     {

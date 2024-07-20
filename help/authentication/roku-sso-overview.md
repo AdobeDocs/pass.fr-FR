@@ -58,7 +58,7 @@ Tous les MVPD ne permettront pas l’authentification unique Roku.
 
   Le premier jeton d’authentification valide sera utilisé pour effectuer une authentification unique. Dans ce cas, toutes les autres applications qui seront authentifiées via SSO utiliseront le même TTL jusqu’à son expiration. Ainsi, lorsque vous naviguez d’une application à l’autre, la deuxième application partage la durée de vie de la première application qui s’authentifie.
 
-* **Les autres fonctionnalités d’Adobe fonctionneront-elles comme auparavant ?**
+* **D’autres fonctionnalités d’Adobe fonctionneront-elles comme avant ?**
 
   Toutes les fonctionnalités d’authentification Adobe Pass fonctionneront comme auparavant.
 

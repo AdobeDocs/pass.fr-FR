@@ -1,15 +1,15 @@
 ---
-title: SDK Android avec enregistrement du client dynamique
-description: SDK Android avec enregistrement du client dynamique
+title: SDK Android avec enregistrement de client dynamique
+description: SDK Android avec enregistrement de client dynamique
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1294'
+source-wordcount: '1277'
 ht-degree: 0%
 
 ---
 
-# SDK Android avec enregistrement du client dynamique {#android-sdk-with-dynamic-client-registration}
+# SDK Android avec enregistrement de client dynamique {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
@@ -21,31 +21,31 @@ Le SDK Android AccessEnabler pour Android a été modifié pour activer l’auth
 
 Pour Android, l’utilisation des onglets personnalisés de Chrome limite l’accès aux cookies provenant d’autres applications.
 
->**SDK Android 3.0.0** introduit :
+>**Le SDK Android 3.0.0** introduit :
 
 - l’enregistrement du client dynamique remplace le mécanisme d’enregistrement de l’application actuel en fonction de l’authentification de l’ID du demandeur signé et du cookie de session.
 - Onglets personnalisés Chrome pour les flux d’authentification
 
 >[!NOTE]
 >
->Pour les anciennes versions d’Android sans Chrome Custom Onglets, l’authentification WebView est similaire à celle des anciennes versions du SDK AccessEnabler.
+>Pour les versions plus anciennes d’Android sans onglets personnalisés Chrome, la prise en charge utilise l’authentification WebView de la même manière que dans les anciennes versions du SDK AccessEnabler.
 
 
 ## Enregistrement du client dynamique {#DCR}
 
-Le SDK Android v3.0+ utilise la procédure d’enregistrement du client dynamique définie dans [Enregistrement du client dynamique](/help/authentication/dynamic-client-registration.md).
+Le SDK Android v3.0+ utilise la procédure d’ enregistrement du client dynamique comme défini dans [Enregistrement du client dynamique](/help/authentication/dynamic-client-registration.md).
 
 
 ## Démonstration des fonctionnalités {#Demo}
 
-Veuillez regarder [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui décrit davantage le contexte de la fonctionnalité et contient une démonstration sur la gestion des instructions de logiciel à l’aide du tableau de bord TVE et sur le test des instructions générées à l’aide d’une application de démonstration fournie par Adobe dans le cadre du SDK Android.
+Regardez [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui donne plus de contexte sur la fonctionnalité et contient une démonstration sur la gestion des instructions logicielles à l’aide du tableau de bord TVE et sur la manière de tester les instructions générées à l’aide d’une application de démonstration fournie par Adobe dans le cadre du SDK Android.
 
 ## Modifications des API {#API}
 
 
 ### Factory.getInstance
 
-**Description :** Instancie l’objet Access Enabler. Il doit y avoir une instance Access Enabler unique par instance d’application.
+**Description :** instancie l’objet Access Enabler. Il doit y avoir une instance Access Enabler unique par instance d’application.
 
 | Appel API : constructeur |
 | --- |
@@ -56,8 +56,8 @@ Veuillez regarder [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui 
 
 **Paramètres :**
 
-- *appContext*: contexte de l’application Android
-- softwareStatement : valeur obtenue à partir du tableau de bord TVE ou *null* si &quot;software\_statement&quot; est défini dans strings.xml
+- *appContext* : contexte de l’application Android
+- softwareStatement : valeur obtenue à partir de TVE Dashboard ou *null* si &quot;software\_statement&quot; est défini dans strings.xml
 - redirectUrl : URL unique, l’un des domaines dans l’ordre inverse qui a été explicitement ajouté dans le tableau de bord TVE ou *null* si &quot;redirect\_uri&quot; est défini dans strings.xml
 
 Remarque : un softwareStatement ou redirectUrl non valide empêchera l’application d’initialiser AccessEnabler ou d’enregistrer l’application pour l’authentification et l’autorisation Adobe Pass.
@@ -67,13 +67,13 @@ Remarque : le paramètre redirectUrl ou redirect\_uri dans strings.xml doit êtr
 
 ### setRequestor
 
-**Description :** Définit l’identité du canal. Un identifiant unique est attribué à chaque canal lors de l’enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez de SSO et de jetons distants, l’état d’authentification peut changer lorsque l’application est en arrière-plan, setRequestor peut être appelé de nouveau lorsque l’application est mise en premier plan afin de se synchroniser avec l’état du système (récupération d’un jeton distant si SSO est activé ou suppression du jeton local si une déconnexion s’est produite entre-temps).
+**Description :** Établit l’identité du canal. Un identifiant unique est attribué à chaque canal lors de l’enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez de SSO et de jetons distants, l’état d’authentification peut changer lorsque l’application est en arrière-plan, setRequestor peut être appelé de nouveau lorsque l’application est mise en premier plan afin de se synchroniser avec l’état du système (récupération d’un jeton distant si SSO est activé ou suppression du jeton local si une déconnexion s’est produite entre-temps).
 
 La réponse du serveur contient une liste de MVPD ainsi que certaines informations de configuration jointes à l’identité du canal. La réponse du serveur est utilisée en interne par le code Access Enabler. Seul l’état de l’opération (c.-à-d. SUCCESS/FAIL) est présenté à votre application via le rappel setRequestorComplete() .
 
-Si la variable *url* n’est pas utilisé, l’appel réseau obtenu cible l’URL du fournisseur de services par défaut : l’environnement de mise à jour/production de l’Adobe.
+Si le paramètre *urls* n’est pas utilisé, l’appel réseau obtenu cible l’URL du fournisseur de services par défaut : l’environnement de production/version d’Adobe.
 
-Si une valeur est fournie pour la variable *url* , l’appel réseau obtenu cible toutes les URL fournies dans la variable *url* . Toutes les requêtes de configuration sont déclenchées simultanément dans des threads distincts. Le premier participant a la priorité lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, Access Enabler mémorise l&#39;URL du prestataire associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
+Si une valeur est fournie pour le paramètre *urls* , l’appel réseau obtenu cible toutes les URL fournies dans le paramètre *urls* . Toutes les requêtes de configuration sont déclenchées simultanément dans des threads distincts. Le premier participant a la priorité lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, Access Enabler mémorise l&#39;URL du prestataire associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
 
 | Appel API : configuration du demandeur |
 | --- |
@@ -89,12 +89,12 @@ Si une valeur est fournie pour la variable *url* , l’appel réseau obtenu cibl
 
 **Paramètres :**
 
-- *requestorID*: identifiant unique associé au canal. Transmettez l’identifiant unique attribué par Adobe à votre site lorsque vous vous êtes enregistré pour la première fois auprès du service d’authentification Adobe Pass.
-- *url*: paramètre facultatif ; par défaut, le fournisseur de services Adobe est utilisé. [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points de terminaison pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances du fournisseur de services d’authentification Adobe Pass. Dans ce cas, la liste MVPD est composée des points de terminaison de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
+- *requestorID* : identifiant unique associé au canal. Transmettez l’identifiant unique attribué par Adobe à votre site lorsque vous vous êtes enregistré pour la première fois auprès du service d’authentification Adobe Pass.
+- *urls* : paramètre facultatif ; par défaut, le fournisseur de services Adobe est utilisé [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points de terminaison pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances du fournisseur de services d’authentification Adobe Pass. Dans ce cas, la liste MVPD est composée des points de terminaison de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
 
 Obsolète :
 
-- *signedRequestorID*: une copie de l’ID du demandeur signé numériquement avec votre clé privée. <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
+- *signedRequestorID* : copie de l’ID du demandeur signé numériquement avec votre clé privée. <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
 **Rappels déclenchés :** `setRequestorComplete()`
 
@@ -128,7 +128,8 @@ Dans strings.xml, ajoutez :
 <string name="redirect_uri">application_url.com</string>
 ```
 
-Appelez AccessEnabler.getInstance(appContext,softwareStatement, redirectUrl)
+Appelez AccessEnabler.getInstance(appContext,softwareStatement,
+redirectUrl)
 
 
 ### 2. Configuration de l’application
@@ -137,9 +138,9 @@ a. setRequestor(requestor\_id)
 
 Le SDK effectue les opérations suivantes :
 
-- application d’enregistrement : utilisation **software\_statement**, le SDK obtient un **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Ces informations seront stockées dans le stockage interne de l&#39;application.
+- application d’enregistrement : à l’aide de **software\_statement**, le SDK obtient un **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Ces informations seront stockées dans le stockage interne de l&#39;application.
 
-- obtenir un **access\_token** en utilisant client\_id, client\_secret et grant\_type=&quot;client\_credentials&quot; . Cet access\_token sera utilisé pour chaque appel effectué par le SDK aux serveurs Adobe Pass.
+- obtenez un **access\_token** en utilisant client\_id, client\_secret et grant\_type=&quot;client\_credentials&quot; . Cet access\_token sera utilisé pour chaque appel effectué par le SDK aux serveurs Adobe Pass.
 
 **Réponses d’erreur de jeton :**
 
@@ -169,9 +170,10 @@ d. setSelectedProvider
 - connexion annulée : réinitialisation de la sélection MVPD
 - Le schéma d’URL est défini sur &quot;adobepass://redirect_uri&quot; pour capturer une fois l’authentification terminée.
 
-e. get/checkAuthorization : le SDK inclura **access_token** en-tête en tant qu’autorisation : porteur **access_token**
+e. get/checkAuthorization : le SDK inclura **access_token** dans l’en-tête en tant qu’autorisation : porteur **access_token**
 
-- si l’autorisation a réussi, un appel est effectué pour obtenir le jeton multimédia
+- si l’autorisation est réussie, un appel est effectué pour obtenir la variable
+jeton multimédia
 
 f. logout :
 
@@ -180,7 +182,7 @@ f. logout :
 - Le schéma d’URL est défini sur &quot;adobepass://logout&quot; pour capturer le moment où la déconnexion est terminée.
 - La déconnexion déclenche un sendTrackingData(new Event(EVENT_LOGOUT,USER_NOT_AUTHENTICATED_ERROR) et un rappel : setAuthenticationStatus(0,&quot;Logout&quot;).
 
-**Remarque :** car chaque appel nécessite une **access_token,** les codes d’erreur possibles ci-dessous sont gérés dans le SDK.
+**Remarque :** car chaque appel nécessite un **access_token,** les codes d’erreur possibles ci-dessous sont gérés dans le SDK.
 
 
 | Réponses d’erreur | | |

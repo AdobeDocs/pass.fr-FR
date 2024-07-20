@@ -4,7 +4,7 @@ description: Gestion de l’enregistrement du client dynamique
 exl-id: 2c3ebb0b-c814-4b9e-af57-ce1403651e9e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-## Présentation {#overview}
+## Vue d’ensemble {#overview}
 
-Avec l&#39;adoption généralisée de [Onglets personnalisés Chrome Android](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} et [Contrôleur de vue Safari Apple](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} dans les applications de nos clients, nous mettons à jour le flux d’authentification des utilisateurs dans l’authentification Adobe Pass. Plus précisément, nous ne pouvons plus atteindre l’objectif de maintenance de l’état afin que le flux de l’agent utilisateur d’authentification d’un abonné MVPD puisse être suivi entre les redirections. Cela était auparavant effectué à l’aide de cookies HTTP. Cette limitation est le pilote pour commencer à migrer toutes les API vers OAuth 2.0. [RFC6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
+Avec l’adoption généralisée de [onglets personnalisés Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} et du [contrôleur de vue Apple Safari](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} dans les applications de nos clients, nous mettons à jour le flux d’authentification de l’utilisateur dans l’authentification Adobe Pass. Plus précisément, nous ne pouvons plus atteindre l’objectif de maintenance de l’état afin que le flux de l’agent utilisateur d’authentification d’un abonné MVPD puisse être suivi entre les redirections. Cela était auparavant effectué à l’aide de cookies HTTP. Cette limitation est le pilote pour commencer à migrer toutes les API vers OAuth 2.0 [RFC6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
 
 Grâce à cette mise à jour, les clients d’authentification Adobe deviennent des clients OAuth 2.0 et un serveur d’autorisation OAuth 2.0 personnalisé est déployé pour répondre aux besoins du service d’authentification Adobe Pass.
 
@@ -25,16 +25,16 @@ Pour que les applications clientes utilisent l’autorisation OAuth 2.0, le serv
 
 Ces métadonnées sont communiquées sous la forme d’une instruction logicielle, qui contient un &quot;software_id&quot; pour permettre à notre serveur d’autorisations de mettre en corrélation différentes instances d’une application à l’aide de la même instruction logicielle.
 
-A **déclaration logicielle** est un jeton Web JSON (JWT) qui affirme des valeurs de métadonnées sur le logiciel client sous la forme d’un lot. Lorsqu’elle est présentée au serveur d’autorisations dans le cadre d’une demande d’enregistrement du client, l’instruction logicielle doit être signée numériquement ou au format MAC à l’aide de la signature web JSON (JWS).
+Une **instruction logicielle** est un jeton Web JSON (JWT) qui affirme les valeurs de métadonnées du logiciel client en tant que lot. Lorsqu’elle est présentée au serveur d’autorisations dans le cadre d’une demande d’enregistrement du client, l’instruction logicielle doit être signée numériquement ou au format MAC à l’aide de la signature web JSON (JWS).
 
-Vous trouverez une explication plus détaillée des instructions logicielles et de leur fonctionnement dans la documentation officielle. [RFC7591](https://tools.ietf.org/html/rfc7591).
+Vous trouverez une explication plus détaillée des instructions logicielles et de leur fonctionnement dans la documentation officielle [RFC7591](https://tools.ietf.org/html/rfc7591).
 
 L’instruction logicielle doit être déployée avec l’application sur l’appareil de l’utilisateur.
 
 Avant cette mise à jour, nous avions deux mécanismes permettant aux applications d’effectuer des appels vers l’authentification Adobe Pass :
 
-* les clients basés sur un navigateur sont enregistrés via les autorisations [liste de domaines](/help/authentication/programmer-overview.md#reg-and-init)
-* les clients d’applications natives, tels que les applications iOS et Android, sont enregistrés via **demandeur signé** mécanisme
+* les clients basés sur un navigateur sont enregistrés via la [liste de domaines](/help/authentication/programmer-overview.md#reg-and-init) autorisée
+* les clients d’applications natives, tels que les applications iOS et Android, sont enregistrés par le biais du mécanisme **signed requestor**
 
 
 Grâce au mécanisme d’autorisation d’enregistrement du client, vous devez ajouter vos applications au tableau de bord TVE.
@@ -47,29 +47,29 @@ Suivez les étapes des sections ci-dessous pour créer une application enregistr
 
 Vous pouvez créer une application enregistrée de deux manières différentes dans le tableau de bord TVE :
 
-* [Niveau de programmeur](#prog-level) - vous permet de créer une application enregistrée et de la lier à n’importe quel ou tous les canaux du programmeur.
+* [Niveau du programmeur](#prog-level) : permet de créer une application enregistrée et de la lier à n’importe quel ou tous les canaux du programmeur.
 
-* [Niveau de canal](#channel-level) - vous permet de créer une application enregistrée liée de manière permanente à ce canal seule.
+* [Niveau de canal](#channel-level) : permet de créer une application enregistrée liée de manière permanente à ce canal seule.
 
 ### Création d’une application enregistrée au niveau du programmeur {#prog-level}
 
-Accédez à **Programmeurs** > **Applications enregistrées** .
+Accédez à l’onglet **Programmeurs** > **Applications enregistrées** .
 
 ![](assets/reg-app-progr-level.png)
 
-Dans l’onglet Applications enregistrées , cliquez sur **Ajouter une nouvelle application**. Renseignez les champs obligatoires de la nouvelle fenêtre.
+Dans l&#39;onglet Applications enregistrées , cliquez sur **Ajouter une nouvelle application**. Renseignez les champs obligatoires de la nouvelle fenêtre.
 
 Comme illustré ci-dessous, les champs que vous devez renseigner sont les suivants :
 
-* **Nom de l’application** : nom de l’application.
+* **Nom de l’application** : nom de l’application
 
-* **Attribué au canal** : nom de votre canal, t</span>à laquelle cette application est liée. Le paramètre par défaut du masque déroulant est **Tous les canaux.** L’interface vous permet de sélectionner un canal ou tous les canaux.
+* **Attribué au canal** : nom de votre canal, t</span> auquel cette application est liée. Le paramètre par défaut dans le masque déroulant est **Tous les canaux.** L’interface vous permet de sélectionner un canal ou tous les canaux.
 
-* **Version de l’application** - par défaut, cette valeur est définie sur &quot;1.0.0&quot;, mais nous vous encourageons vivement à la modifier avec votre propre version de l’application. Si vous décidez de modifier la version de votre application, il est recommandé de la refléter en créant une nouvelle application enregistrée.
+* **Version de l’application** : par défaut, cette valeur est définie sur &quot;1.0.0&quot;, mais nous vous encourageons vivement à la modifier avec votre propre version de l’application. Si vous décidez de modifier la version de votre application, il est recommandé de la refléter en créant une nouvelle application enregistrée.
 
-* **Plateformes d’applications** : plateformes avec lesquelles l’application doit être liée. Vous avez la possibilité de les sélectionner toutes ou plusieurs valeurs.
+* **Plateformes d’application** : plateformes avec lesquelles l’application doit être liée. Vous avez la possibilité de les sélectionner toutes ou plusieurs valeurs.
 
-* **Noms de domaine** : domaines avec lesquels l’application doit être liée. Les domaines de la liste déroulante sont une sélection unifiée de tous les domaines de tous vos canaux. Vous avez la possibilité de sélectionner plusieurs domaines dans la liste. La signification des domaines est les URL de redirection. [RFC6749](https://tools.ietf.org/html/rfc6749). Dans le processus d’enregistrement du client, l’application cliente peut demander à être autorisée à utiliser une URL de redirection pour finaliser le flux d’authentification. Lorsqu’une application cliente demande une URL de redirection spécifique, elle est validée par rapport aux domaines placés sur la liste blanche de cette application enregistrée associée à l’instruction logicielle.
+* **Noms de domaine** : domaines avec lesquels l’application doit être liée. Les domaines de la liste déroulante sont une sélection unifiée de tous les domaines de tous vos canaux. Vous avez la possibilité de sélectionner plusieurs domaines dans la liste. La signification des domaines est les URL de redirection [RFC6749](https://tools.ietf.org/html/rfc6749). Dans le processus d’enregistrement du client, l’application cliente peut demander à être autorisée à utiliser une URL de redirection pour finaliser le flux d’authentification. Lorsqu’une application cliente demande une URL de redirection spécifique, elle est validée par rapport aux domaines placés sur la liste blanche de cette application enregistrée associée à l’instruction logicielle.
 
 
 ![](assets/new-reg-app.png)
@@ -77,7 +77,7 @@ Comme illustré ci-dessous, les champs que vous devez renseigner sont les suivan
 
 Après avoir rempli les champs avec les valeurs appropriées, vous devez cliquer sur &quot;Terminé&quot; pour que l’application soit enregistrée dans la configuration.
 
-Sachez qu&#39;il y a **aucune option pour modifier une application déjà créée**. Si un élément créé ne répond plus aux exigences , une nouvelle application enregistrée doit être créée et utilisée avec l’application cliente dont elle remplit les exigences.
+Notez qu’il n’existe **aucune option pour modifier une application déjà créée**. Si un élément créé ne répond plus aux exigences , une nouvelle application enregistrée doit être créée et utilisée avec l’application cliente dont elle remplit les exigences.
 
 
 ### Enregistrement d’une nouvelle application au niveau du canal {#channel-level}
@@ -124,7 +124,7 @@ Le nom du fichier est identifié de manière unique en lui ajoutant un préfixe 
 
 Veuillez noter que, pour la même application enregistrée, différentes instructions logicielles seront reçues chaque fois que l’utilisateur cliquera sur le bouton de téléchargement, mais cela n’invalide pas les instructions logicielles précédemment obtenues pour cette application. Cela se produit car ils sont générés sur place, par requête d’action.
 
-Il y en a une. **limitation** concernant l’action de téléchargement. Si une instruction logicielle est requise en cliquant sur le bouton &quot;Télécharger&quot; peu après la création de l’application enregistrée et que celle-ci n’a pas encore été enregistrée et que le fichier json de configuration n’a pas été synchronisé , le message d’erreur suivant s’affiche au bas de la page.
+Il existe une **limitation** concernant l’action de téléchargement. Si une instruction logicielle est requise en cliquant sur le bouton &quot;Télécharger&quot; peu après la création de l’application enregistrée et que celle-ci n’a pas encore été enregistrée et que le fichier json de configuration n’a pas été synchronisé , le message d’erreur suivant s’affiche au bas de la page.
 
 ![](assets/error-sw-statement-notready.png)
 
@@ -143,4 +143,4 @@ Pour plus d’informations sur le fonctionnement du processus de bout en bout, o
 
 ## Démonstration des fonctionnalités {#tutorial}
 
-Veuillez regarder [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui décrit plus en détail les fonctionnalités et contient une démonstration sur la gestion des instructions de logiciel à l’aide du tableau de bord TVE et sur le test des instructions générées à l’aide d’une application de démonstration fournie par Adobe dans le cadre du SDK Android.
+Regardez [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui donne plus de contexte sur les fonctionnalités et contient une démonstration sur la gestion des instructions logicielles à l’aide du tableau de bord TVE et sur la manière de tester les instructions générées à l’aide d’une application de démonstration fournie par Adobe dans le cadre du SDK Android.

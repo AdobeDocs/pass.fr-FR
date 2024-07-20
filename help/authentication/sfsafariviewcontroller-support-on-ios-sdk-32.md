@@ -35,9 +35,9 @@ Dans ce cas, la version 3.2 offre au programmeur la possibilité de gérer manue
 Pour gérer manuellement le SVC, l’implémentateur doit effectuer les étapes suivantes :
 
 
-1. appel **setOptions([&quot;handleSVC&quot;:true])** après l’initialisation d’AccessEnabler (assurez-vous que cet appel est effectué avant le début de l’authentification). Cela permet une gestion &quot;manuelle&quot; du SVC. Le SDK ne présente pas automatiquement le SVC, mais, au besoin, appelle **navigate(toUrl:*{url}* useSVC:true)**.
+1. appelez **setOptions([&quot;handleSVC&quot;:true])** après l’initialisation d’AccessEnabler (assurez-vous que cet appel est effectué avant le début de l’authentification). Cela permet une gestion &quot;manuelle&quot; du SVC. Le SDK ne présente pas automatiquement le SVC, mais, au besoin,     appelez **navigate(toUrl:*{url}* useSVC:true)**.
 
-1. implémentation du rappel facultatif **`navigateToUrl:useSVC:`** dans l’implémentation, vous devez créer une instance svc à l’aide de l’instance SFSafariViewController à l’aide de l’URL fournie, puis la présenter à l’écran :
+1. implémentez le rappel facultatif **`navigateToUrl:useSVC:`** dans l’implémentation. Vous devez créer une instance svc à l’aide de l’instance SFSafariViewController à l’aide de l’URL fournie et la présenter à l’écran :
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {
@@ -47,14 +47,14 @@ Pour gérer manuellement le SVC, l’implémentateur doit effectuer les étapes 
        }
    ```
 
-   ***Remarques :***
+   ***Notes :***
 
-   - *Vous pouvez personnaliser SFSafariViewController comme vous le souhaitez. Par exemple, sur iOS 11+, vous pouvez remplacer le libellé &quot;Terminé&quot; par &quot;Annuler&quot;.*
-   - *pour pouvoir ignorer le svc, vous avez besoin d&#39;une référence à celui-ci, veuillez ne pas le créer dans le cadre du **navigateToUrl:useSVC***
-   - *utiliser votre propre contrôleur de vue pour &quot;myController&quot; ;*
+   - *Vous pouvez personnaliser SFSafariViewController comme vous le souhaitez. Par exemple, sur iOS 11+, vous pouvez remplacer l’étiquette &quot;Terminé&quot; par &quot;Annuler&quot;.*
+   - *pour pouvoir ignorer le svc, vous avez besoin d’une référence à ce dernier. Ne le créez pas dans le cadre de **navigateToUrl:useSVC***
+   - *utilisez votre propre contrôleur de vue pour &quot;myController&quot;*
 
 
-1. Dans l’implémentation du délégué de votre application à **application(\_app: UIApplication, url d’ouverture : URL, options : \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool**, ajoutez du code pour fermer le svc. Vous devriez déjà y trouver du code qui appelle **accessEnabler.handleExternalURL()**. Ajoutez ci-dessous :
+1. Dans l’implémentation déléguée de votre application de **application(\_app: UIApplication, ouvrez url: URL, options: \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool**, ajoutez le code pour fermer le svc. Vous devriez déjà y trouver du code qui appelle **accessEnabler.handleExternalURL()**. Ajoutez ci-dessous :
 
    ```obj-c
    if(svc != nil) {
@@ -65,7 +65,7 @@ Pour gérer manuellement le SVC, l’implémentateur doit effectuer les étapes 
    Là encore, svc est une référence au SFSafariViewController que vous avez créé à l’étape 2.
 
 
-1. Mise en oeuvre **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** de **SFSafariViewControllerDelegate** afin de capturer lorsque l’utilisateur a annulé le svc à l’aide du bouton &quot;Terminé&quot;. Dans cette fonction, pour informer le SDK que l’authentification a été annulée, vous devez appeler :
+1. Mettez en oeuvre **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** à partir de **SFSafariViewControllerDelegate** afin de capturer lorsque l’utilisateur a annulé le svc à l’aide du bouton &quot;Terminé&quot;. Dans cette fonction, pour informer le SDK que l’authentification a été annulée, vous devez appeler :
 
    ```obj-c
    accessEnabler.setSelectedProvider(nil)

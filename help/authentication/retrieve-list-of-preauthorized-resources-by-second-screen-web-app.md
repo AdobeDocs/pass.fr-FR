@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par [Mécanisme de ralentissement](/help/authentication/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/throttling-mechanism.md)
 
 ## Points de terminaison de l’API REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN> :
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -40,9 +40,9 @@ Demande d’authentification Adobe Pass pour obtenir la liste des ressources pr�
 Il existe deux ensembles d’API : un ensemble pour l’application de diffusion en continu ou le service de programmation et un ensemble pour l’application web du deuxième écran. Cette page décrit l’API de l’application AuthN.
 
 
-| Point d’entrée | Appelé  </br>Par | Entrée   </br>Paramètres | HTTP  </br>Méthode | Réponse | HTTP  </br>Réponse |
+| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/preautoriser/{code d’enregistrement} | Module AuthN | 1. code d’enregistrement  </br>    (composant Chemin)</br>2.  demandeur (obligatoire)</br>3.  liste de ressources (obligatoire) | GET | XML ou JSON contenant des décisions de préautorisation ou des détails d’erreur individuels. Voir les exemples ci-dessous. | 200 - Succès</br></br>400 - Mauvaise requête</br></br>401 - Non autorisé</br></br>405 - Méthode non autorisée  </br></br>412 - Echec de la précondition</br></br>500 - Erreur interne du serveur |
+| &lt;SP_FQDN>/api/v1/preauthorized/{code d’enregistrement} | Module AuthN | 1. code d&#39;enregistrement </br>    (Composant Chemin)</br>2.  demandeur (obligatoire)</br>3.  liste de ressources (obligatoire) | GET | XML ou JSON contenant des décisions de préautorisation ou des détails d’erreur individuels. Voir les exemples ci-dessous. | 200 - Succès</br></br>400 - Bad request</br></br>401 - Unauthorized</br></br>405 - Méthode non autorisée </br></br>412 - Échec de la précondition</br></br>500 - Erreur interne du serveur |
 
 
 
@@ -84,7 +84,7 @@ Content-Type: application/xml; charset=utf-8
 </resources>
 ```
 
-**JSON :**
+**JSON:**
 
 ```JSON
 HTTP/1.1 200 OK
