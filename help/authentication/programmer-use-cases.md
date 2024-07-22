@@ -2,7 +2,7 @@
 title: Cas d’utilisation des programmeurs
 description: Cas d’utilisation des programmeurs
 exl-id: 51ca7e4f-b0d8-4e35-8398-2efb4879de2a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 189d0e5c83d1bc171c6ff3057f22dbf4055ea6b1
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 2%
@@ -131,11 +131,12 @@ Activez les droits TVE pour les événements spéciaux qui peuvent ne pas être 
 **Priority**- Medium
 
 Activation de la validation du jeton multimédia avant de publier le flux vidéo sur le lecteur client.
-| Priorité  |                                                   Cas d’utilisation                                                  |                                                                                                                                                              Description                                                                                                                                                             | Plateformes | Notes MVPD |
-|---|---|---|---|---|
-| Élevée      | Programmeur Federated Player - Avec autorisation au niveau de la page                                                 | Les API d’authentification Adobe Pass sont effectuées dans JavaScript dans la page et le jeton est transmis au lecteur. Le jeton peut être transmis au service de validation de plusieurs façons :                                 Obtention du paramètre sur l’URL du service de validation                    Paramètre d’URL transmis dans la chaîne de requête de l’URL du flux                    API d’interface externe                    FlashVars                           |           |            |
-| Medium    | Programmeur Federated Player - Avec autorisation de lecteur interne                                            | Les API d’authentification Adobe Pass sont effectuées en ActionScript dans le SWF du lecteur. Le jeton est donc disponible pour le lecteur à partir du rappel.                                                                                                                                                                                         |           |            |
-| Élevée      | Lecteur synchronisé : hébergé sur MVPD Portal avec autorisation au niveau de la page à l’aide d’un iFrame pour encapsuler le lecteur  | Similaire au lecteur avec l’autorisation de niveau page, mais avec l’iFrame de wrapper de page du lecteur dans le portail MVPD. L’authentification doit se produire séparément dans le portail MVPD.                                                                                                                                                    |           |                        |
+
+| Priorité | Cas d’utilisation | Description | Plateformes | Notes MVPD |
+|---------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
+| Elevée | Programmeur Federated Player - Avec autorisation au niveau de la page | Les API d’authentification Adobe Pass sont effectuées dans JavaScript dans la page et le jeton est transmis au lecteur. Le jeton peut être transmis au service de validation de plusieurs façons :                                 Obtention du paramètre sur l’URL du service de validation                    Paramètre d’URL transmis dans la chaîne de requête de l’URL du flux                    API d’interface externe                    FlashVars |           |            |
+| Moyenne | Programmeur Federated Player - Avec autorisation de lecteur interne | Les API d’authentification Adobe Pass sont effectuées en ActionScript dans le SWF du lecteur. Le jeton est donc disponible pour le lecteur à partir du rappel. |           |            |
+| Elevée | Lecteur synchronisé : hébergé sur MVPD Portal avec autorisation au niveau de la page à l’aide d’un iFrame pour encapsuler le lecteur | Similaire au lecteur avec l’autorisation de niveau page, mais avec l’iFrame de wrapper de page du lecteur dans le portail MVPD. L’authentification doit se produire séparément dans le portail MVPD. |           |                        |
 
 
 <!--
