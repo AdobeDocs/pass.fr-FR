@@ -2,7 +2,7 @@
 title: Fonctionnalités d’intégration MVPD
 description: Fonctionnalités d’intégration MVPD
 exl-id: fcd65940-9a86-49b2-9d52-9031fb763338
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: e4567dd870790d11b9c5904d635fc00bdd1a23d2
 workflow-type: tm+mt
 source-wordcount: '1733'
 ht-degree: 3%
@@ -84,8 +84,8 @@ Les informations contenues dans les tables sont destinées à orienter le proces
 | 3,3 | Enregistrement de compte en ligne | Le MVPD permet de créer un compte intégré au flux AuthN fédérée. | A |                                                                                                                                                           |
 | 3,4 | Aide et assistance en ligne | Le MVPD fournit un moyen de fournir de l’aide pendant le flux AuthN fédérée. | A |                                                                                                                                                           |
 | 3,5 | Authentification interne par modem | Le MVPD authentifie automatiquement un appareil lorsqu’il se trouve sur le réseau local d’un modèle enregistré (ISP MVPD uniquement). | B | Cette priorité est moindre, car il s&#39;agit d&#39;une optimisation que beaucoup ne peuvent pas encore soutenir et qui présente quelques défis pour limiter les fraudes et contrôler les parents. |
-Vous pouvez désormais importer le code du tableau Markdown directement à l’aide de la boîte de dialogue Fichier/Coller les données du tableau... .
 
+Vous pouvez désormais importer le code du tableau Markdown directement à l’aide de la boîte de dialogue Fichier/Coller les données du tableau... .
 
 
 ## 4. Fonctionnalités d’Analytics {#analytics-features}
