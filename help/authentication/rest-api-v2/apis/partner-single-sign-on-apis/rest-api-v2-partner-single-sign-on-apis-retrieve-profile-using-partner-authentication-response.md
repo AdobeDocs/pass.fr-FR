@@ -1,9 +1,9 @@
 ---
 title: Récupération du profil à l’aide de la réponse d’authentification du partenaire
 description: API REST V2 - Récupération du profil à l’aide de la réponse d’authentification du partenaire
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '729'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/throttling-mechanism.md) .
 
 ## Requête {#request}
 
