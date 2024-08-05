@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '1125'
+source-wordcount: '1137'
 ht-degree: 2%
 
 ---
@@ -54,6 +54,7 @@ ht-degree: 2%
          + [Aperçu gratuit pour la transmission temporaire et la transmission temporaire promotionnelle](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + API REST V2 {#rest-api-v2}
       + API {#rest-api-v2-apis}
+         + [API REST V2 - API - Aperçu](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + Configuration {#rest-api-v2-configuration-apis}
             + [Récupérer la configuration pour un prestataire spécifique](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + Sessions {#rest-api-v2-sessions-apis}
@@ -62,8 +63,8 @@ ht-degree: 2%
             + [Récupération d’une session d’authentification](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
          + Profils {#rest-api-v2-profiles-apis}
             + [Récupération des profils](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-            + [Récupération du profil pour mvpd spécifique](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-mvpd.md)
-            + [Récupération du profil pour un code spécifique](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-code.md)
+            + [Récupération du profil pour mvpd spécifique](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+            + [Récupération du profil pour un code spécifique](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + Décisions {#rest-api-v2-decisions-apis}
             + [Récupération des décisions d’autorisation à l’aide de mvpd spécifique](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
             + [Récupérer les décisions de préautorisation à l’aide de mvpd spécifique](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
@@ -73,23 +74,24 @@ ht-degree: 2%
             + [Récupération de la demande d’authentification du partenaire](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [Récupération du profil à l’aide de la réponse d’authentification du partenaire](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + Flux {#rest-api-v2-flows}
-         + Flux de base {#rest-api-v2-basic-flows}
-            + [Flux de profils de base exécuté dans une application principale](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-            + [Flux de profils de base exécuté dans une application secondaire](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-            + [Flux d’authentification de base exécuté sur une application principale](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-            + [Flux d’authentification de base exécuté sur une application secondaire](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-            + [Flux d’autorisation de base exécuté sur une application principale](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
-            + [Flux de préautorisation de base effectué dans une application principale](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
-            + [Flux de connexion de base exécuté dans l’application principale](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-logout-primary-application-flow.md)
+         + [API REST V2 - Flux - Aperçu](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + Flux d’accès de base {#rest-api-v2-basic-access-flows}
+            + [Flux de profils de base exécuté dans une application principale](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+            + [Flux de profils de base exécuté dans une application secondaire](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+            + [Flux d’authentification de base exécuté sur une application principale](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+            + [Flux d’authentification de base exécuté sur une application secondaire](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+            + [Flux d’autorisation de base exécuté sur une application principale](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+            + [Flux de préautorisation de base effectué dans une application principale](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
+            + [Flux de connexion de base exécuté dans l’application principale](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
          + Flux d’accès dégradé {#rest-api-v2-degraded-access-flows}
-            + [Flux d&#39;accès dégradés](rest-api-v2/flows/access-degraded-flows/rest-api-v2-access-degraded-flows.md)
+            + [Flux d&#39;accès dégradés](rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)
          + Flux d’accès temporaire {#rest-api-v2-temporary-access-flows}
-            + [Flux d’accès temporaires](rest-api-v2/flows/access-temporary-flows/rest-api-v2-access-temporary-flows.md)
-         + Flux de connexion unique {#rest-api-v2-single-sign-on-flows}
-            + [Authentification unique à l’aide de flux de partenaires](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md)
-            + [Authentification unique à l’aide des flux d’identités de plateforme](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
-            + [Authentification unique à l’aide de flux de jetons de service](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md)
-            + [Flux de déconnexion unique](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-logout-flow.md)
+            + [Flux d’accès temporaires](rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
+         + Flux d’accès de connexion unique {#rest-api-v2-single-sign-on-access-flows}
+            + [Authentification unique à l’aide de flux de partenaires](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
+            + [Authentification unique à l’aide des flux d’identités de plateforme](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
+            + [Authentification unique à l’aide de flux de jetons de service](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
+            + [Flux de déconnexion unique](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + Annexe {#rest-api-v2-appendix}
          + En-têtes {#rest-api-v2-appendix-headers}
             + [En-tête - AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)

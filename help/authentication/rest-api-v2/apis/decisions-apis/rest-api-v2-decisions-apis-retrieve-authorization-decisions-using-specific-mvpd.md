@@ -1,7 +1,7 @@
 ---
 title: Récupération des décisions d’autorisation à l’aide de mvpd spécifique
 description: API REST V2 - Récupération des décisions d’autorisation à l’aide de mvpd spécifique
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '921'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Récupération des décisions d’autorisation à l’aide de mvpd spécifique {#retrieve-authorization-decisions-using-specific-mvpd}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
@@ -115,7 +115,7 @@ ht-degree: 1%
       <td>
         La génération de la payload d’authentification unique pour la méthode d’identification de plateforme est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
         <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Connexion unique à l’aide des flux d’identité de plateforme</a> .
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Connexion unique à l’aide des flux d’identité de plateforme</a> .
       </td>
       <td>facultatif</td>
    </tr>
@@ -124,7 +124,7 @@ ht-degree: 1%
       <td>
         La génération de la payload de connexion unique pour la méthode de jeton de service est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
         <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md">Authentification unique à l’aide des flux de jeton de service</a> .
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Authentification unique à l’aide des flux de jeton de service</a> .
       </td>
       <td>facultatif</td>
    </tr>
@@ -133,7 +133,7 @@ ht-degree: 1%
       <td>
         La génération de la payload de connexion unique pour la méthode Partner est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> .
         <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">Connexion unique à l’aide des flux de partenaire</a> .</td>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Connexion unique à l’aide des flux de partenaire</a> .</td>
       <td>facultatif</td>
    </tr>
    <tr>

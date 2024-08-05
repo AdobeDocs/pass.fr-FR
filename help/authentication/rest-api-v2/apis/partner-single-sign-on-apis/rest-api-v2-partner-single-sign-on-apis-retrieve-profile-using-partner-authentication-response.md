@@ -1,7 +1,7 @@
 ---
 title: Récupération du profil à l’aide de la réponse d’authentification du partenaire
 description: API REST V2 - Récupération du profil à l’aide de la réponse d’authentification du partenaire
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # Récupération du profil à l’aide de la réponse d’authentification du partenaire {#retrieve-profile-using-partner-authentication-response}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
@@ -108,7 +108,7 @@ ht-degree: 2%
       <td>
         La génération de la payload de connexion unique pour la méthode Partner est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> .
         <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">Connexion unique à l’aide des flux de partenaire</a> .</td>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Connexion unique à l’aide des flux de partenaire</a> .</td>
       <td>facultatif</td>
    </tr>
    <tr>

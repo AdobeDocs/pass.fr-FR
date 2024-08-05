@@ -1,15 +1,15 @@
 ---
-title: Récupération des profils
-description: API REST V2 - Récupération des profils
+title: Récupération du profil pour un code spécifique
+description: API REST V2 - Récupération du profil pour un code spécifique
 source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '823'
-ht-degree: 1%
+source-wordcount: '570'
+ht-degree: 2%
 
 ---
 
 
-# Récupération des profils {#retrieve-profiles}
+# Récupération du profil pour un code spécifique {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
 >
@@ -29,7 +29,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
-      <td>/api/v2/{serviceProvider}/profiles</td>
+      <td>/api/v2/{serviceProvider}/profiles/{code}</td>
       <td></td>
    </tr>
    <tr>
@@ -48,6 +48,11 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
+      <td style="background-color: #DEEBFF;">code</td>
+      <td>Code d’authentification obtenu après la création de la session d’authentification sur l’appareil de diffusion en continu.</td>
+      <td><i>required</i></td>
+   </tr>
+   <tr>
       <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7; width: 10%;"></th>
@@ -55,24 +60,6 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
       <td>La génération de la charge utile du jeton porteur est décrite dans la documentation <a href="../../../dynamic-client-registration-api.md">Enregistrement dynamique du client</a>.</td>
-      <td><i>required</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La génération de la payload de l’identifiant de l’appareil est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> .</td>
-      <td><i>required</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
-      <td>
-         La génération de la payload d’informations sur l’appareil est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plate-forme d’appareil de l’application autorise la spécification explicite de valeurs valides.
-         <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement les valeurs définies explicitement avec les valeurs extraites (par défaut).
-         <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal d’authentification Adobe Pass utilise implicitement les valeurs extraites (par défaut).
-      </td>
       <td><i>required</i></td>
    </tr>
    <tr>
@@ -84,32 +71,6 @@ ht-degree: 1%
          <br/><br/>
          Pour les implémentations client/serveur, l’adresse IP du périphérique de diffusion en continu est envoyée implicitement.
       </td>
-      <td>facultatif</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Objet-Jeton</td>
-      <td>
-        La génération de la payload d’authentification unique pour la méthode d’identification de plateforme est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
-        <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Connexion unique à l’aide des flux d’identité de plateforme</a> .
-      </td>
-      <td>facultatif</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AD-Service-Token</td>
-      <td>
-        La génération de la payload de connexion unique pour la méthode de jeton de service est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Authentification unique à l’aide des flux de jeton de service</a> .
-      </td>
-      <td>facultatif</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
-      <td>
-        La génération de la payload de connexion unique pour la méthode Partner est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> .
-        <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Connexion unique à l’aide des flux de partenaire</a> .</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -248,17 +209,16 @@ ht-degree: 1%
                             Le profil a été créé suite à :
                             <ul>
                                 <li>Authentification de base</li>
-                                <li>Authentification unique à l’aide de l’identité de plateforme</li>
-                                <li>Authentification unique à l’aide du jeton de service</li>
                             </ul>
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
+                        <td style="background-color: #DEEBFF;">Adobe</td>
                         <td>
                             Le profil a été créé suite à :
                             <ul>
-                                <li>Authentification unique à l’aide d’Apple partenaire</li>
+                                <li>Accès dégradé</li>
+                                <li>Accès temporaire</li>
                             </ul>
                         </td>
                      </tr>
@@ -286,29 +246,20 @@ ht-degree: 1%
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
+                        <td style="background-color: #DEEBFF;">dégradé</td>
                         <td>
                             Le profil a été créé suite à :
                             <ul>
-                                <li>Authentification unique à l’aide d’Apple partenaire</li>
+                                <li>Accès dégradé</li>
                             </ul>
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">platformSSO</td>
+                        <td style="background-color: #DEEBFF;">temporaire</td>
                         <td>
                             Le profil a été créé suite à :
                             <ul>
-                                <li>Authentification unique à l’aide de l’identité de plateforme</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">serviceTokenSSO</td>
-                        <td>
-                            Le profil a été créé suite à :
-                            <ul>
-                                <li>Authentification unique à l’aide du jeton de service</li>
+                                <li>Accès temporaire</li>
                             </ul>
                         </td>
                      </tr>
@@ -371,20 +322,19 @@ ht-degree: 1%
 
 ## Exemples {#samples}
 
-### 1. Récupérez tous les profils authentifiés existants et valides obtenus grâce à l’authentification de base
+### 1. Récupération des profils authentifiés existants et valides sur un périphérique secondaire après une authentification de base
 
 >[!BEGINTABS]
 
 >[!TAB Requête]
 
 ```JSON
-GET /api/v2/REF30/profiles
+GET /api/v2/REF30/profiles/Cablevision/XTC98W
  
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
 X-Device-Info ....
 Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
 ```
 
 >[!TAB Réponse]
@@ -416,148 +366,10 @@ Content-Type: application/json; charset=utf-8
                 "parental-controls" : {
                     "value" : BASE64_value_parental-controls,
                     "state" : "plain"
-                }          
-            }
-        },
-        "Spectrum" : {
-            "notBefore" : 1623943955,
-            "notAfter" : 1623951155,
-            "issuer" : "Spectrum",
-            "type" : "regular",
-            "attributes" : {
-                "userId" : {
-                    "value" : "BASE64_value_userId",
-                    "state" : "plain"
                 }
             }
         }
      }
-}
-```
-
->[!ENDTABS]
-
-### 2. Récupérez tous les profils authentifiés existants et valides, y compris ceux obtenus par l’authentification par authentification par authentification unique à l’aide de la méthode Service Token
-
->[!BEGINTABS]
-
->[!TAB Requête]
-
-```JSON
-GET /api/v2/REF30/profiles
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-AD-Service-Token : eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkZDNmYWIyN2NmMjg0ZmU2ZWU0ZDY3ZmExZjY4MzE3YyIsImlzcyI6IkFkb2JlIiw.....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB Réponse]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-
-{
-   "profiles": {
-      "AdobeShibboleth": {
-         "notBefore": 1748073636999,
-         "notAfter": 1748105173000,
-         "issuer": "AdobeShibboleth",
-         "type": "serviceTokenSSO",
-         "attributes": {
-            "upstreamUserID": {
-               "value": "AAdzZWNyZXQxydCkywfPBl0KExk8OWhdbUBVDDJBttfKD7RAcRlc32Pbuwd1...",
-               "state": "plain"
-            },
-            "userID": {
-               "value": "AAdzZWNyZXQxydCkywfPBl0KExk8OWhdbUBVDDJBttfKD7RAcRlc32Pbuwd14aTV....",
-               "state": "plain"
-            },
-            "mvpd": {
-               "value": "AdobeShibboleth",
-               "state": "plain"
-            }
-         }
-      },
-      "Spectrum": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
-      }
-   }
-}
-```
-
->[!ENDTABS]
-
-### 3. Récupérez tous les profils authentifiés existants et valides, y compris ceux obtenus grâce à l’authentification par authentification par authentification unique via la méthode d’identification Platform.
-
->[!BEGINTABS]
-
->[!TAB Requête]
-
-```JSON
-GET /api/v2/REF30/profiles
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-Adobe-Subject-Token : eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyMmM4MDU1MjEzMDIwYzhmZGYzOGZkMTI1YWViMzUzYSIsImlzcyI6....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB Réponse]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8    
- 
-{
-   "profiles": {
-      "AdobePass_SMI": {
-         "notBefore": 1724337476000,
-         "notAfter": 1724345252000,
-         "issuer": "AdobePass_SMI",
-         "type": "platformSSO",
-         "attributes": {
-            "upstreamUserID": {
-               "value": "38524bdc3d1caac0b3e139003ea0954e15ad9648",
-               "state": "plain"
-            },
-            "userID": {
-               "value": "38524bdc3d1caac0b3e139003ea0954e15ad9648",
-               "state": "plain"
-            },
-            "mvpd": {
-               "value": "AdobePass_SMI",
-               "state": "plain"
-            }
-         }
-      },
-      "Cablevision": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
-      }
-   }
 }
 ```
 

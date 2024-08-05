@@ -1,7 +1,7 @@
 ---
 title: En-tête - Adobe-Objet-Jeton
 description: API REST V2 - En-tête - Adobe-Objet-Jeton
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 2%
@@ -21,7 +21,7 @@ L’en-tête de requête <b> Adobe-Subject-Token</b> contient l’identifiant un
 
 Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode d’identification de plateforme.
 
-Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) qui utilisent la méthode d’identification de plateforme, reportez-vous à la documentation [Authentification unique à l’aide des flux d’identités de plateforme](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
+Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) qui utilisent la méthode d’identification de plateforme, reportez-vous à la documentation [Authentification unique à l’aide des flux d’identités de plateforme](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
 
 ## Syntaxe {#syntax}
 
