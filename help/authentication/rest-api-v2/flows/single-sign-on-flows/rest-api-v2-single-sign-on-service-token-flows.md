@@ -1,15 +1,19 @@
 ---
 title: Connexion unique - Jeton de service - Flux
 description: API REST V2 - Connexion unique - Jeton de service - Flux
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1811'
+source-wordcount: '1837'
 ht-degree: 0%
 
 ---
 
 
 # Authentification unique à l’aide de flux de jetons de service{#single-sign-on-service-token-full-flows}
+
+>[!NOTE]
+>
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 La méthode Service Token permet à plusieurs applications d’utiliser un identifiant d’utilisateur unique afin d’effectuer une authentification unique (SSO) sur plusieurs appareils et plateformes lors de l’utilisation des services Adobe Pass.
 

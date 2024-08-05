@@ -1,15 +1,19 @@
 ---
 title: En-tête - X-Device-Info
 description: API REST V2 - En-tête - X-Device-Info
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '428'
 ht-degree: 3%
 
 ---
 
 
 # En-tête - X-Device-Info {#header-x-device-info}
+
+>[!NOTE]
+>
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 ## Vue d’ensemble {#overview}
 

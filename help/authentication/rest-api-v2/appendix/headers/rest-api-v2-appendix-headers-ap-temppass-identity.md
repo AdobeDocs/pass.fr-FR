@@ -1,15 +1,19 @@
 ---
 title: En-tête - AP-TempPass-Identity
 description: API REST V2 - En-tête - AP-TempPass-Identity
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '58'
-ht-degree: 6%
+source-wordcount: '84'
+ht-degree: 4%
 
 ---
 
 
 # En-tête - AP-TempPass-Identity {#header-ap-temppass-identity}
+
+>[!NOTE]
+>
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 ## Vue d’ensemble {#overview}
 

@@ -1,15 +1,19 @@
 ---
 title: Authentification de base - Application de Principal - Flux
 description: API REST V2 - Authentification de base - Application de Principal - Flux
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '883'
 ht-degree: 0%
 
 ---
 
 
 # Flux d’authentification de base exécuté sur une application principale {#basic-authentication-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 Le **flux d’authentification** dans le droit d’authentification Adobe Pass permet à l’application de diffusion en continu de vérifier qu’un utilisateur dispose d’un compte MVPD valide. Ce processus nécessite que l’utilisateur dispose d’un compte MVPD actif et qu’il saisisse des informations de connexion valides sur la page de connexion MVPD.
 

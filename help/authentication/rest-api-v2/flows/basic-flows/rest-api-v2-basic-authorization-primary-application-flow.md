@@ -1,15 +1,19 @@
 ---
 title: Autorisation de base - Application de Principal - Flux
 description: API REST V2 - Autorisation de base - Application de Principal - Flux
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '592'
 ht-degree: 0%
 
 ---
 
 
 # Flux d’autorisation de base exécuté sur une application principale {#basic-authorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 Le **flux d’autorisation** dans le droit d’authentification Adobe Pass permet à l’application de diffusion en continu de déterminer si un MVPD autorise ou refuse la demande de l’utilisateur pour diffuser du contenu. Si la décision est `Permit`, la réponse inclut un jeton multimédia. Le serveur Adobe Pass signe le jeton multimédia et permet à l’application de diffusion en continu d’utiliser la bibliothèque de vérification de jeton multimédia pour vérifier son authenticité avant que le flux ne soit publié.
 
