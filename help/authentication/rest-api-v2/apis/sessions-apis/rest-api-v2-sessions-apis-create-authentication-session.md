@@ -1,9 +1,9 @@
 ---
 title: Créer une session d’authentification
 description: API REST V2 - Création d’une session d’authentification
-source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
+source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
@@ -246,24 +246,20 @@ ht-degree: 1%
                   Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux d’authentification.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">authentifier</td>
-                        <td>Le périphérique de diffusion en continu ou un autre périphérique doit ouvrir l’URL fournie dans un agent utilisateur.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">resume</td>
-                        <td>Le périphérique de diffusion en continu ou un autre périphérique doit fournir les paramètres manquants et reprendre la session d’authentification à l’aide du code.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autoriser</td>
-                        <td>Le périphérique de diffusion en continu peut directement procéder aux flux de décisions.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>authentifier</b></li>
+                    <ul>
+                        <li>Le périphérique de diffusion en continu ou un autre périphérique doit ouvrir l’URL fournie dans un agent utilisateur.</li>
+                    </ul>
+                    <li><b>resume</b></li>
+                    <ul>
+                        <li>Le périphérique de diffusion en continu ou un autre périphérique doit fournir les paramètres manquants et reprendre la session d’authentification à l’aide du code.</li>
+                    </ul>
+                    <li><b>autoriser</b></li>
+                    <ul>
+                        <li>Le périphérique de diffusion en continu peut directement procéder aux flux de décisions.</li>
+                    </ul>
+                  </ul>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -272,20 +268,16 @@ ht-degree: 1%
                   Le type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut 'actionName'.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">direct</td>
-                        <td>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interactif</td>
-                        <td>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactif</b></li>
+                    <ul>
+                        <li>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</li>
+                    </ul>
+                    <li><b>direct</b></li>
+                    <ul>
+                        <li>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</li>
+                    </ul>
+                  </ul>
                <td><i>required</i></td>
             </tr>
             <tr>
