@@ -1,15 +1,15 @@
 ---
 title: Créer une session d’authentification
 description: API REST V2 - Création d’une session d’authentification
-source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
+source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
 workflow-type: tm+mt
-source-wordcount: '966'
+source-wordcount: '967'
 ht-degree: 1%
 
 ---
 
 
-# Créer une session d’authentification {#create-authentication-session}
+# Créer une session d’authentification - test {#create-authentication-session}
 
 >[!IMPORTANT]
 >
