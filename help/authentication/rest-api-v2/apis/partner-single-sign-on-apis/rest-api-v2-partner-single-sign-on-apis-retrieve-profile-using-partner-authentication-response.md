@@ -1,10 +1,10 @@
 ---
 title: Récupération du profil à l’aide de la réponse d’authentification du partenaire
 description: API REST V2 - Récupération du profil à l’aide de la réponse d’authentification du partenaire
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '729'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 2%
 
 ## Requête {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 2%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres de chemin</th>
+      <th style="background-color: #EFF2F7;">Paramètres de chemin</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 2%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres du corps</th>
+      <th style="background-color: #EFF2F7;">Paramètres du corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
@@ -67,9 +67,9 @@ ht-degree: 2%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
@@ -140,10 +140,10 @@ ht-degree: 2%
 
 ## Réponse {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texte</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Texte</th>
       <th style="background-color: #EFF2F7;">Description</th>
    </tr>
    <tr>
@@ -185,11 +185,11 @@ ht-degree: 2%
 
 ### Succès {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -202,9 +202,9 @@ ht-degree: 2%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">profils</td>
@@ -212,11 +212,11 @@ ht-degree: 2%
          JSON contenant une carte de paires clé-valeur.
          <br/><br/>
          L’élément clé est défini par la valeur suivante :
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valeur</th>
+               <th style="background-color: #EFF2F7;">Valeur</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 2%
             </tr>
          </table>
          L’élément value est défini par les attributs suivants :
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
@@ -247,21 +247,9 @@ ht-degree: 2%
                   Entité propriétaire du profil.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
-                        <td>
-                            Le profil a été créé suite à :
-                            <ul>
-                                <li>Authentification unique à l’aide d’Apple partenaire</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>Apple</b><br/>Le profil a été créé suite à : authentification unique à l’aide du partenaire Apple.</li>
+                  </ul>
                </td>
                <td><i>required</i></td>
             </tr>
@@ -271,21 +259,9 @@ ht-degree: 2%
                   Type du profil.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
-                        <td>
-                            Le profil a été créé suite à :
-                            <ul>
-                                <li>Authentification unique à l’aide d’Apple partenaire</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>appleSSO</b><br/>Le profil a été créé suite à : authentification unique à l’aide du partenaire Apple.</li>
+                  </ul>
                </td>
                <td><i>required</i></td>
             </tr>
@@ -315,11 +291,11 @@ ht-degree: 2%
 
 ### Erreur {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -332,9 +308,9 @@ ht-degree: 2%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erreur</td>

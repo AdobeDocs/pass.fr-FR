@@ -1,23 +1,23 @@
 ---
 title: Créer une session d’authentification
 description: API REST V2 - Création d’une session d’authentification
-source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '964'
 ht-degree: 1%
 
 ---
 
 
-# Créer une session d’authentification - test {#create-authentication-session}
+# Créer une session d’authentification {#create-authentication-session}
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
->La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/throttling-mechanism.md) .
+> La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/throttling-mechanism.md) .
 
 ## Requête {#request}
 
@@ -247,18 +247,9 @@ ht-degree: 1%
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>authentifier</b></li>
-                    <ul>
-                        <li>Le périphérique de diffusion en continu ou un autre périphérique doit ouvrir l’URL fournie dans un agent utilisateur.</li>
-                    </ul>
-                    <li><b>resume</b></li>
-                    <ul>
-                        <li>Le périphérique de diffusion en continu ou un autre périphérique doit fournir les paramètres manquants et reprendre la session d’authentification à l’aide du code.</li>
-                    </ul>
-                    <li><b>autoriser</b></li>
-                    <ul>
-                        <li>Le périphérique de diffusion en continu peut directement procéder aux flux de décisions.</li>
-                    </ul>
+                    <li><b>authentifier</b><br/>L’appareil de diffusion en continu ou un autre appareil doit ouvrir l’URL fournie dans un agent utilisateur.</li>
+                    <li><b>resume</b><br/>L’appareil de diffusion en continu ou un autre appareil doit fournir les paramètres manquants et reprendre la session d’authentification à l’aide du code.</li>
+                    <li><b>autoriser</b><br/>L’appareil de diffusion en continu peut directement procéder aux flux de décisions.</li>
                   </ul>
                <td><i>required</i></td>
             </tr>
@@ -269,14 +260,8 @@ ht-degree: 1%
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>interactif</b></li>
-                    <ul>
-                        <li>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</li>
-                    </ul>
-                    <li><b>direct</b></li>
-                    <ul>
-                        <li>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</li>
-                    </ul>
+                    <li><b>interactif</b><br/>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</li>
+                    <li><b>direct</b><br/>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</li>
                   </ul>
                <td><i>required</i></td>
             </tr>

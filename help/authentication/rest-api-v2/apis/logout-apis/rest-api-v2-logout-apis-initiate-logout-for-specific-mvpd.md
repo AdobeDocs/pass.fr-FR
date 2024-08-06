@@ -1,9 +1,9 @@
 ---
 title: Lancement de la déconnexion pour mvpd spécifique
 description: API REST V2 - Lancement de la déconnexion pour mvpd spécifique
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '909'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Requête {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres de chemin</th>
+      <th style="background-color: #EFF2F7;">Paramètres de chemin</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres de requête</th>
+      <th style="background-color: #EFF2F7;">Paramètres de requête</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -67,9 +67,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
@@ -141,10 +141,10 @@ ht-degree: 1%
 
 ## Réponse {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texte</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Texte</th>
       <th style="background-color: #EFF2F7;">Description</th>
    </tr>
    <tr>
@@ -186,11 +186,11 @@ ht-degree: 1%
 
 ### Succès {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -203,9 +203,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">logouts</td>
@@ -213,11 +213,11 @@ ht-degree: 1%
          JSON contenant une carte de paires clé-valeur.
          <br/><br/>
          L’élément clé est défini par la valeur suivante :
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valeur</th>
+               <th style="background-color: #EFF2F7;">Valeur</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 1%
                <td><i>required</i></td>
          </table>
          L’élément value est défini par les attributs suivants :
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,47 +237,11 @@ ht-degree: 1%
                   Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux de déconnexion.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">déconnexion</td>
-                        <td>
-                            L’appareil de diffusion en continu doit ouvrir l’URL fournie dans un agent utilisateur.
-                            <br/><br/>
-                            Cette action s’applique aux scénarios suivants :
-                            <ul>
-                                <li>Déconnexion de MVPD avec un point de terminaison de déconnexion</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">complete</td>
-                        <td>
-                            Le périphérique de diffusion en continu n’a pas besoin d’effectuer d’actions ultérieures.
-                            <br/><br/>
-                            Cette action s’applique aux scénarios suivants :
-                            <ul>\
-                                <li>Déconnectez-vous de MVPD sans point de terminaison de déconnexion (fonctionnalité de déconnexion factice).</li>
-                                <li>Connexion pendant un accès dégradé</li>
-                                <li>Connexion pendant un accès temporaire</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">non valide</td>
-                        <td>
-                            Le périphérique de diffusion en continu n’a pas besoin d’effectuer d’actions ultérieures.
-                            <br/><br/>
-                            Cette action s’applique aux scénarios suivants :
-                            <ul>
-                                <li>Déconnectez-vous de MVPD lorsqu’aucun profil valide n’est trouvé</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>déconnexion</b><br/>L’appareil de diffusion en continu doit ouvrir l’URL fournie dans un agent utilisateur.<br/>Cette action s’applique aux scénarios suivants : déconnectez-vous de MVPD avec un point de terminaison de déconnexion.</li>
+                    <li><b>complete</b><br/>L’appareil de diffusion en continu n’a pas à effectuer d’actions ultérieures.<br/>Cette action s’applique aux scénarios suivants : déconnectez-vous de MVPD sans point de terminaison de déconnexion (fonctionnalité de déconnexion factice), déconnectez-vous lors d’un accès dégradé, déconnectez-vous pendant un accès temporaire.</li>
+                    <li><b>non valide</b><br/>L’appareil de diffusion en continu n’a pas à effectuer d’actions ultérieures.<br/>Cette action s’applique aux scénarios suivants : déconnectez-vous de MVPD lorsqu’aucun profil valide n’est trouvé.</li>
+                  </ul>  
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -286,31 +250,10 @@ ht-degree: 1%
                   Le type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut 'actionName'.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interactif</td>
-                        <td>
-                            Ce type s’applique aux valeurs suivantes de l’attribut `actionName` :
-                            <ul>
-                                <li>déconnexion</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">none</td>
-                        <td>
-                            Ce type s’applique aux valeurs suivantes de l’attribut `actionName` :
-                            <ul>
-                                <li>complete</li>
-                                <li>non valide</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactive</b><br/>Ce type s’applique aux valeurs suivantes de l’attribut `actionName` : <b>logout</b>.</li>
+                    <li><b>none</b><br/>Ce type s’applique aux valeurs suivantes de l’attribut `actionName` : <b>complete</b>, <b>invalid</b>.</li>
+                  </ul>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -325,8 +268,8 @@ ht-degree: 1%
                   <br/><br/>
                   Elle n’est pas présente pour les valeurs suivantes de l’attribut `actionName` :
                   <ul>
-                    <li>complete</li>
-                    <li>non valide</li>
+                    <li><b>complete</b></li>
+                    <li><b>non valide</b></li>
                   </ul>
                </td>
                <td>facultatif</td>
@@ -338,11 +281,11 @@ ht-degree: 1%
 
 ### Erreur {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -355,9 +298,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erreur</td>

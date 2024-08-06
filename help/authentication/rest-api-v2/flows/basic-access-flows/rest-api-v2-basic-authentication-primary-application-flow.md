@@ -1,7 +1,7 @@
 ---
 title: Authentification de base - Application de Principal - Flux
 description: API REST V2 - Authentification de base - Application de Principal - Flux
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
    >
    > * Les paramètres et en-têtes _required_ doivent être valides.
    > * L&#39;intégration entre les `serviceProvider` et `mvpd` fournis doit être active.
+   > 
+   > <br/>
    > 
    > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation [Enhanced Error Codes](../../../enhanced-error-codes.md).
 

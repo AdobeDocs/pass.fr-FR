@@ -1,9 +1,9 @@
 ---
 title: Récupération des décisions de préautorisation à l’aide de mvpd spécifique
 description: API REST V2 - Récupération des décisions de préautorisation à l’aide de mvpd spécifique
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '816'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Requête {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres de chemin</th>
+      <th style="background-color: #EFF2F7;">Paramètres de chemin</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres du corps</th>
+      <th style="background-color: #EFF2F7;">Paramètres du corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ressources</td>
@@ -63,9 +63,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
@@ -154,10 +154,10 @@ ht-degree: 1%
 
 ## Réponse {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texte</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Texte</th>
       <th style="background-color: #EFF2F7;">Description</th>
    </tr>
    <tr>
@@ -199,11 +199,11 @@ ht-degree: 1%
 
 ### Succès {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -216,19 +216,19 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">décisions</td>
       <td>
          JSON contenant une liste d’éléments, chaque élément ayant les attributs suivants :
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">resource</td>
@@ -254,28 +254,14 @@ ht-degree: 1%
                <td style="background-color: #DEEBFF;">source</td>
                <td>
                   Informations sur la source de décision :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd</td>
-                        <td>La décision est émise par le point de terminaison de préautorisation MVPD.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">dégradation</td>
-                        <td>La décision est prise en raison d’un accès dégradé.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">temppass</td>
-                        <td>La décision est prise à la suite d’un accès temporaire.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">factice</td>
-                        <td>La décision est émise à la suite de la fonction de préautorisation factice.</td>
-                     </tr>
-                  </table>
+                  <br/><br/>
+                  Les valeurs possibles sont les suivantes :
+                  <ul>
+                    <li><b>mvpd</b><br/>La décision est émise par le point de terminaison de préautorisation MVPD.</li>
+                    <li><b>dégradation</b><br/>La décision est émise à la suite d’un accès dégradé.</li>
+                    <li><b>temppass</b><br/>La décision est émise à la suite d’un accès temporaire.</li>
+                    <li><b>factice</b><br/>La décision est émise à la suite de la fonctionnalité de préautorisation factice.</li>
+                  </ul>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -290,11 +276,11 @@ ht-degree: 1%
 
 ### Erreur {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -307,9 +293,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erreur</td>

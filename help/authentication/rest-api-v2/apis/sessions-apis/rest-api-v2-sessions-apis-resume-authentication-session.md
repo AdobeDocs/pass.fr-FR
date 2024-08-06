@@ -1,9 +1,9 @@
 ---
 title: Reprendre la session d’authentification
 description: API REST V2 - Reprendre la session d’authentification
-source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '753'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Requête {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres de chemin</th>
+      <th style="background-color: #EFF2F7;">Paramètres de chemin</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres du corps</th>
+      <th style="background-color: #EFF2F7;">Paramètres du corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
@@ -87,9 +87,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
@@ -134,10 +134,10 @@ ht-degree: 1%
 
 ## Réponse {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texte</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Texte</th>
       <th style="background-color: #EFF2F7;">Description</th>
    </tr>
    <tr>
@@ -179,11 +179,11 @@ ht-degree: 1%
 
 ### Succès {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -191,19 +191,19 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          Objet JSON possédant les attributs suivants :
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -211,24 +211,11 @@ ht-degree: 1%
                   Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux d’authentification.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">authentifier</td>
-                        <td>Le périphérique de diffusion en continu ou un autre périphérique doit ouvrir l’URL fournie dans un agent utilisateur.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">retry</td>
-                        <td>Le périphérique de diffusion en continu ou un autre périphérique doit fournir les paramètres manquants et essayer de reprendre la session d’authentification à l’aide du code.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autoriser</td>
-                        <td>Le périphérique de diffusion en continu peut directement procéder aux flux de décisions.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>authentifier</b><br/>L’appareil de diffusion en continu ou un autre appareil doit ouvrir l’URL fournie dans un agent utilisateur.</li>
+                    <li><b>retry</b><br/>L’appareil de diffusion en continu ou un autre appareil doit fournir les paramètres manquants et essayer de reprendre la session d’authentification à l’aide du code.</li>
+                    <li><b>autoriser</b><br/>L’appareil de diffusion en continu peut directement procéder aux flux de décisions.</li>
+                  </ul> 
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -237,20 +224,10 @@ ht-degree: 1%
                   Le type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut 'actionName'.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">direct</td>
-                        <td>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interactif</td>
-                        <td>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactif</b><br/>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</li>
+                    <li><b>direct</b><br/>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</li>
+                  </ul>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -290,11 +267,11 @@ ht-degree: 1%
 
 ### Erreur {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -307,9 +284,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erreur</td>

@@ -1,9 +1,9 @@
 ---
 title: Récupération de la demande d’authentification du partenaire
 description: API REST V2 - Récupération de la demande d’authentification du partenaire
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1092'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Requête {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres de chemin</th>
+      <th style="background-color: #EFF2F7;">Paramètres de chemin</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Paramètres du corps</th>
+      <th style="background-color: #EFF2F7;">Paramètres du corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
@@ -82,9 +82,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
@@ -155,10 +155,10 @@ ht-degree: 1%
 
 ## Réponse {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texte</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Texte</th>
       <th style="background-color: #EFF2F7;">Description</th>
    </tr>
    <tr>
@@ -200,11 +200,11 @@ ht-degree: 1%
 
 ### Succès {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -217,19 +217,19 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          Objet JSON possédant les attributs suivants :
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,36 +237,12 @@ ht-degree: 1%
                   Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux d’authentification.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">partner_profile</td>
-                        <td>Le périphérique de diffusion en continu peut utiliser la requête d’authentification de partenaire fournie pour obtenir une réponse d’authentification de partenaire qui peut être utilisée pour récupérer un profil.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">authentifier</td>
-                        <td>
-                            Lorsque le flux d’authentification unique du partenaire ne peut pas continuer, l’appareil de diffusion en continu peut revenir au flux d’authentification de base.
-                            <br/><br/>
-                            Le périphérique de diffusion en continu ou un autre périphérique doit ouvrir l’URL fournie dans un agent utilisateur.
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">resume</td>
-                        <td>
-                            Lorsque le flux d’authentification unique du partenaire ne peut pas continuer, l’appareil de diffusion en continu peut revenir au flux d’authentification de base.
-                            <br/><br/>
-                            Le périphérique de diffusion en continu ou un autre périphérique doit fournir les paramètres manquants et reprendre la session d’authentification à l’aide du code.
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autoriser</td>
-                        <td>Le périphérique de diffusion en continu peut directement procéder aux flux de décisions.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>partner_profile</b><br/>L’appareil en flux continu peut utiliser la requête d’authentification de partenaire fournie pour obtenir une réponse d’authentification de partenaire qui peut être utilisée pour récupérer un profil.</li>
+                    <li><b>authentifier</b><br/>Lorsque le flux de connexion unique du partenaire ne peut pas continuer, le périphérique de diffusion en continu peut revenir au flux d’authentification de base.<br/>L’appareil de diffusion en continu ou un autre appareil doit ouvrir l’URL fournie dans un agent utilisateur.</li>
+                    <li><b>resume</b><br/>Lorsque le flux d’authentification unique du partenaire ne peut pas continuer, le périphérique de diffusion en continu peut revenir au flux d’authentification de base.<br/> L’appareil de diffusion en continu ou un autre appareil doit fournir les paramètres manquants et reprendre la session d’authentification à l’aide du code.</li>
+                    <li><b>autoriser</b><br/>L’appareil de diffusion en continu peut directement procéder aux flux de décisions.</li>
+                  </ul>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -275,20 +251,10 @@ ht-degree: 1%
                   Le type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut 'actionName'.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">direct</td>
-                        <td>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interactif</td>
-                        <td>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactif</b><br/>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</li>
+                    <li><b>direct</b><br/>Le flux se poursuit avec un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</li>
+                  </ul>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -322,38 +288,11 @@ ht-degree: 1%
                     Ce champ est présent lorsque le flux d’authentification unique du partenaire peut continuer.
                     <br/><br/>
                     Objet JSON possédant les attributs suivants :
-                    <table>
-                        <tr>
-                            <th style="background-color: #EFF2F7; width: 30%;">Attribut</th>
-                            <th style="background-color: #EFF2F7;"></th>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">type</td>
-                            <td>
-                                Indique le type de protocole pris en charge par le MVPD.
-                                <br/><br/>
-                                Les valeurs possibles sont les suivantes :
-                                <table>
-                                    <tr>
-                                        <th style="background-color: #EFF2F7; width: 30%;">Valeur</th>
-                                        <th style="background-color: #EFF2F7;"></th>
-                                    </tr>
-                                    <tr>
-                                        <td style="background-color: #DEEBFF;">saml</td>
-                                        <td>Le MVPD prend en charge le protocole SAML.</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">requête</td>
-                            <td>Requête SAML.</td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">Attributs</td>
-                            <td>Attributs de requête SAML.</td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <li><b>type</b><br/>Indique le type de protocole pris en charge par le MVPD (SAML uniquement).</li>
+                        <li><b>request</b><br/>Requête SAML.</li>
+                        <li><b>attributes</b><br/>Attributs de requête SAML.</li>
+                    </ul>
                </td>
                <td>facultatif</td>
             </tr>
@@ -378,11 +317,11 @@ ht-degree: 1%
 
 ### Erreur {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">En-têtes</th>
+      <th style="background-color: #EFF2F7;">En-têtes</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
@@ -395,9 +334,9 @@ ht-degree: 1%
       <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corps</th>
+      <th style="background-color: #EFF2F7;">Corps</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">erreur</td>
