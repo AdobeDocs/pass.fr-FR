@@ -1,9 +1,9 @@
 ---
 title: Authentification de base - Application Secondaire - Flux
 description: API REST V2 - Authentification de base - Application Secondaire - Flux
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,46 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
 
    Si le serveur principal Adobe Pass n’identifie pas de profil valide, l’application en continu affiche le `code` qui peut être utilisé pour reprendre la session d’authentification dans une application secondaire.
 
+1. **Valider le code d’authentification :** L’application secondaire valide l’utilisateur fourni `code` pour s’assurer qu’il peut procéder à l’authentification MVPD dans l’agent utilisateur.
+
+   >[!IMPORTANT]
+   >
+   > Pour plus d’informations sur :[](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+   >
+   > * Tous les paramètres _requis_, comme `serviceProvider` et `code`
+   > * Tous les en-têtes _requis_, comme `Authorization`
+   > * Tous les paramètres et en-têtes _optional_
+
+1. **Renseignez les informations sur la session d’authentification :** La réponse du point de terminaison sessions contient les données suivantes :
+   * L’attribut `existing` contient les paramètres existants qui ont déjà été fournis.
+   * L’attribut `missing` contient les paramètres manquants qui doivent être fournis pour terminer le flux d’authentification.
+
+   >[!IMPORTANT]
+   >
+   > Pour plus d’informations sur les informations fournies dans une réponse de validation de session, reportez-vous à la documentation de l’API [Récupérer les informations de session d’authentification](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) .
+   >
+   > <br/>
+   >
+   > Le point de terminaison Sessions valide les données de requête pour s’assurer que les conditions de base sont remplies :
+   >
+   > * Les paramètres et en-têtes _required_ doivent être valides.
+   >
+   > <br/>
+   >
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation [Enhanced Error Codes](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Suggestion : l’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller de réessayer d’en utiliser une nouvelle.
+
 1. **Ouvrir l’URL dans l’agent utilisateur :** L’application secondaire ouvre un agent utilisateur pour charger l’auto-calcul `url`, effectuant une requête sur le point de terminaison Authentifier. Ce flux peut inclure plusieurs redirections, ce qui conduit finalement l’utilisateur à la page de connexion MVPD et à fournir des informations d’identification valides.
+
+   >[!IMPORTANT]
+   >
+   > Pour plus d’informations sur :[](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
+   >
+   > * Tous les paramètres _requis_, comme `serviceProvider` et `code`
+   > * Tous les paramètres et en-têtes _optional_
 
 1. **Authentification MVPD complète :** Si le flux d’authentification est réussi, l’interaction de l’agent utilisateur enregistre un profil régulier dans le serveur principal Adobe Pass et atteint le `redirectUrl` fourni.
 
@@ -231,6 +270,10 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
    > <br/>
    > 
    > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation [Enhanced Error Codes](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Suggestion : l’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller de réessayer d’en utiliser une nouvelle.
 
 1. **Indique le profil existant :** La réponse du point de terminaison sessions contient les données suivantes :
    * L’attribut `actionName` est défini sur &quot;autoriser&quot;.

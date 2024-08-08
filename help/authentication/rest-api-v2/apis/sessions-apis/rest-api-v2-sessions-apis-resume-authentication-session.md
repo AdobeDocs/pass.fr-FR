@@ -1,7 +1,7 @@
 ---
 title: Reprendre la session d’authentification
 description: API REST V2 - Reprendre la session d’authentification
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
       <td>Identifiant unique interne associé au fournisseur de services lors du processus d’intégration.</td>
       <td><i>required</i></td>
    </tr>
-    <tr>
+   <tr>
       <td style="background-color: #DEEBFF;">code</td>
       <td>Code d’authentification obtenu après la création de la session d’authentification sur l’appareil de diffusion en continu.</td>
       <td><i>required</i></td>

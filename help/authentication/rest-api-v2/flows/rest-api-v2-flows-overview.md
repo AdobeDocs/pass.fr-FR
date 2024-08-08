@@ -1,15 +1,15 @@
 ---
 title: API REST V2 - Flux - Aperçu
 description: API REST V2 - Flux - Aperçu
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '201'
 ht-degree: 0%
 
 ---
 
 
-# Présentation des flux de l’API REST V2 {#rest-api-v2-flows-overview}
+# API REST V2 - Flux - Aperçu {#rest-api-v2-flows-overview}
 
 >[!IMPORTANT]
 >
@@ -19,7 +19,17 @@ ht-degree: 0%
 >
 > La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/throttling-mechanism.md) .
 
-## Flux d’accès de base {#rest-api-v2-flows-access-basic}
+## Vous souhaitez essayer notre API REST V2 ?
+
+Vous pouvez désormais explorer l’API REST Adobe Pass Authentication V2 via notre page dédiée aux produits depuis le site web [Adobe Developer](https://developer.adobe.com/adobe-pass/).
+
+Notre équipe d’assistance dédiée est également à votre disposition pour toute question ou assistance technique dont vous avez besoin.
+
+## API REST V2 - Flux {#rest-api-v2-flows}
+
+Pour commencer, consultez notre documentation publique pour chaque flux pris en charge.
+
+### Flux d’accès de base {#rest-api-v2-flows-access-basic}
 
 * [Flux de profils de base exécuté dans une application principale](./basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flux de profils de base exécuté dans une application secondaire](./basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
@@ -29,15 +39,15 @@ ht-degree: 0%
 * [Flux de préautorisation de base effectué dans une application principale](./basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 * [Flux de connexion de base exécuté dans l’application principale](./basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
 
-## Flux d’accès dégradés {#rest-api-v2-flows-access-degraded}
+### Flux d’accès dégradés {#rest-api-v2-flows-access-degraded}
 
 * [Flux d&#39;accès dégradés](./degraded-access-flows/rest-api-v2-access-degraded-flows.md)
 
-## Flux d’accès temporaires {#rest-api-v2-flows-access-temporary}
+### Flux d’accès temporaires {#rest-api-v2-flows-access-temporary}
 
 * [Flux d’accès temporaires](./temporary-access-flows/rest-api-v2-access-temporary-flows.md)
 
-## Flux d’accès de connexion unique {#rest-api-v2-flows-access-single-sign-on}
+### Flux d’accès de connexion unique {#rest-api-v2-flows-access-single-sign-on}
 
 * [Authentification unique à l’aide de flux de partenaires](./single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
 * [Authentification unique à l’aide des flux d’identités de plateforme](./single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
