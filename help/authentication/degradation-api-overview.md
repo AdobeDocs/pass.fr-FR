@@ -2,29 +2,28 @@
 title: Présentation de l’API de dégradation
 description: Présentation de l’API de dégradation
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+
 # Présentation de l’API de dégradation {#degradation-api-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
->Pour utiliser l’API de dégradation, vous devez :
->- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
->- Obtention d’un jeton d’accès basé sur l’[ enregistrement du client dynamique](dynamic-client-registration.md)
-> 
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Pour utiliser l’API de dégradation, vous devez :
->- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
->- Obtention d’un jeton d’accès basé sur l’[ enregistrement du client dynamique](dynamic-client-registration.md)
-> 
+> Avant d’utiliser l’API de dégradation, assurez-vous que les conditions préalables suivantes sont remplies :
+>
+> * Récupérez les informations d’identification du client comme décrit dans la documentation de l’API [Récupérez les informations d’identification du client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [Récupérer le jeton d’accès](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle, consultez la documentation [Aperçu de l’enregistrement du client dynamique](./dcr-api/dynamic-client-registration-overview.md) .
 
 ## Informations générales {#general_info}
 

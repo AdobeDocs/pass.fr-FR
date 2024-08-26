@@ -2,9 +2,9 @@
 title: Programmeurs
 description: Découvrez les programmeurs et leurs configurations dans le tableau de bord TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -120,11 +120,11 @@ Un nouveau changement de configuration a été créé et est prêt pour la mise 
 
 ### Applications enregistrées {#registered-applications}
 
-Cet onglet fournit une liste d’inscriptions aux applications. Pour plus d’informations, voir [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md).
+Cet onglet fournit une liste d’inscriptions aux applications.
 
 ### Schémas personnalisés {#custom-schemes}
 
-Cet onglet affiche une liste des schémas personnalisés. Pour plus d’informations, consultez les sections [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion de l’enregistrement du client dynamique](/help/authentication/dynamic-client-registration-management.md).
+Cet onglet affiche une liste des schémas personnalisés. Affichez l’ [ enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
 ## Ajouter un nouveau programmeur {#add-new-programmer}
 

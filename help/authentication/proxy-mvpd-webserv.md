@@ -2,29 +2,28 @@
 title: Service Web MVPD de proxy
 description: Service Web MVPD de proxy
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: f8cef3c41fb7132204c4fa499301c3010f62ca14
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
 
 ---
 
+
 # Service Web MVPD de proxy {#proxy-mvpd-wbservice}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
->Pour utiliser le service Web MVPD de proxy, vous devez :
->- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
->- Obtention d’un jeton d’accès basé sur l’[ enregistrement du client dynamique](dynamic-client-registration.md)
-> 
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Pour utiliser le service Web MVPD de proxy, vous devez :
->- demandez à l’équipe de support un relevé logiciel pour votre application enregistrée.
->- Obtention d’un jeton d’accès basé sur l’[ enregistrement du client dynamique](dynamic-client-registration.md)
-> 
+> Avant d’utiliser le service Web MVPD proxy, assurez-vous que les conditions préalables suivantes sont remplies :
+>
+> * Récupérez les informations d’identification du client comme décrit dans la documentation de l’API [Récupérez les informations d’identification du client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [Récupérer le jeton d’accès](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle, consultez la documentation [Aperçu de l’enregistrement du client dynamique](./dcr-api/dynamic-client-registration-overview.md) .
 
 ## Vue d’ensemble {#overview-proxy-mvpd-webserv}
 
@@ -232,7 +231,7 @@ Adobe a défini le format accepté suivant pour la publication/récupération de
 
 Pour qu’une demande soit considérée comme valide, elle doit respecter les règles suivantes :
 
-- L’en-tête de requête doit contenir le jeton d’accès Oauth2 de sécurité provenant de l’ [enregistrement du client dynamique](dynamic-client-registration.md).
+- L’en-tête de requête doit contenir le jeton d’accès Oauth2 de sécurité obtenu comme décrit dans la documentation de l’API [Récupérer le jeton d’accès](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 - La demande doit provenir d’une adresse IP spécifique qui a été autorisée.
 - La demande doit être envoyée via le protocole SSL.
 

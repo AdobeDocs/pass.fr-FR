@@ -2,9 +2,9 @@
 title: Guide pas à pas de l’API REST (serveur à serveur)
 description: Redéfinissez le serveur de livre de cuisine de l’API sur le serveur .
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Les termes supplémentaires utilisés dans le flux sont définis dans la variabl
 ### Enregistrement du client dynamique (DCR)
 
 
-Adobe Pass utilise DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct, dépendant et prérequis. Vous pouvez le trouver dans [Enregistrement du client dynamique](/help/authentication/dynamic-client-registration.md).
+Adobe Pass utilise DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [Présentation de l’enregistrement du client dynamique](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ### Authentification (authN)

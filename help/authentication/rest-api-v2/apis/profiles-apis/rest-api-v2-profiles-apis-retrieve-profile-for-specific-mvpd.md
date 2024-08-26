@@ -1,9 +1,9 @@
 ---
 title: Récupération du profil pour mvpd spécifique
 description: 'API REST V2 : récupération du profil pour mvpd spécifique'
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '966'
+source-wordcount: '972'
 ht-degree: 1%
 
 ---
@@ -59,18 +59,18 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération de la charge utile du jeton porteur est décrite dans la documentation <a href="../../../dynamic-client-registration-api.md">Enregistrement dynamique du client</a>.</td>
+      <td>La génération du payload du jeton porteur est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La génération de la payload de l’identifiant de l’appareil est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> .</td>
+      <td>La génération de la payload de l’identifiant de l’appareil est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> .</td>
       <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur l’appareil est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
+         La génération de la payload d’informations sur l’appareil est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> .
          <br/><br/>
          Il est vivement recommandé de toujours l’utiliser lorsque la plate-forme d’appareil de l’application autorise la spécification explicite de valeurs valides.
          <br/><br/>
@@ -94,7 +94,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Objet-Jeton</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode d’identification de plateforme est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        La génération de la payload d’authentification unique pour la méthode d’identification de plateforme est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
         <br/><br/>
         Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Connexion unique à l’aide des flux d’identité de plateforme</a> .
       </td>
@@ -103,7 +103,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        La génération de la payload de connexion unique pour la méthode de jeton de service est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
+        La génération de la payload de connexion unique pour la méthode Service Token est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
         <br/><br/>
         Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Authentification unique à l’aide des flux de jeton de service</a> .
       </td>
@@ -112,14 +112,14 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La génération de la payload de connexion unique pour la méthode Partner est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> .
+        La génération de la payload de connexion unique pour la méthode Partner est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
         <br/><br/>
         Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Connexion unique à l’aide des flux de partenaire</a> .</td>
       <td>facultatif</td>
     </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-TempPass-Identity</td>
-      <td>La génération de la payload de l’identifiant unique de l’utilisateur est décrite dans la documentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a> .</td>
+      <td>La génération de la payload de l’identifiant unique de l’utilisateur est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a> .</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -164,7 +164,7 @@ ht-degree: 1%
       <td>401</td>
       <td>Non autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, reportez-vous à la documentation <a href="../../../dynamic-client-registration-api.md">Enregistrement du client dynamique</a> .
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, reportez-vous à la documentation <a href="../../../dcr-api/dynamic-client-registration-overview.md">Présentation de l’enregistrement du client dynamique</a> .
       </td>
    </tr>
    <tr>

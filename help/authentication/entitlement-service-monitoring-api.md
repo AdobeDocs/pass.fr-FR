@@ -2,18 +2,27 @@
 title: API de surveillance du service de droits
 description: API de surveillance du service de droits
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '2010'
+source-wordcount: '2070'
 ht-degree: 1%
 
 ---
 
 # API de surveillance du service de droits {#entitlement-service-monitoring-api}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> Avant d’utiliser l’API de dégradation, assurez-vous que les conditions préalables suivantes sont remplies :
+>
+> * Récupérez les informations d’identification du client comme décrit dans la documentation de l’API [Récupérez les informations d’identification du client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [Récupérer le jeton d’accès](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle, consultez la documentation [Aperçu de l’enregistrement du client dynamique](./dcr-api/dynamic-client-registration-overview.md) .
 
 ## Présentation de l’API {#api-overview}
 

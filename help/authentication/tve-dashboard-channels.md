@@ -2,9 +2,9 @@
 title: Canaux
 description: Découvrez les canaux et leurs différentes configurations dans le tableau de bord TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1124'
 ht-degree: 0%
 
 ---
@@ -206,11 +206,11 @@ Le domaine sélectionné n’est plus disponible. Par conséquent, l’applicati
 
 ### Applications enregistrées {#registered-applications}
 
-Cet onglet fournit une liste d’inscriptions aux applications. Pour plus d’informations, voir [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md) .
+Cet onglet fournit une liste d’inscriptions aux applications.
 
 ### Schémas personnalisés {#custom-schemes}
 
-Cet onglet affiche une liste des schémas personnalisés. Pour plus d’informations, consultez les sections [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion de l’enregistrement du client dynamique](/help/authentication/dynamic-client-registration-management.md) .
+Cet onglet affiche une liste des schémas personnalisés. Affichez l’ [ enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
 ## Ajouter un nouveau canal {#add-new-channel}
 

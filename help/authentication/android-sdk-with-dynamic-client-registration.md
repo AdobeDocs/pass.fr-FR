@@ -2,9 +2,9 @@
 title: SDK Android avec enregistrement de client dynamique
 description: SDK Android avec enregistrement de client dynamique
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1277'
+source-wordcount: '1278'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Pour Android, l’utilisation des onglets personnalisés de Chrome limite l’ac
 
 ## Enregistrement du client dynamique {#DCR}
 
-Le SDK Android v3.0+ utilise la procédure d’ enregistrement du client dynamique comme défini dans [Enregistrement du client dynamique](/help/authentication/dynamic-client-registration.md).
+Le SDK Android v3.0+ utilise la procédure d’enregistrement du client dynamique comme défini dans la [Présentation de l’enregistrement du client dynamique](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ## Démonstration des fonctionnalités {#Demo}

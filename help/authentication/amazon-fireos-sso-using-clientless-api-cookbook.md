@@ -2,9 +2,9 @@
 title: Amazon FireOS SSO à l’aide du guide pas à pas API client
 description: Amazon FireOS SSO à l’aide du guide pas à pas API client
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '761'
 ht-degree: 0%
 
 ---
@@ -149,9 +149,9 @@ S’il s’agit de votre première implémentation, consultez la **présentation
 
 L’API sans client Adobe exige que les applications utilisent l’enregistrement client dynamique pour effectuer des appels vers les serveurs Adobe.
 
-* Pour utiliser l’enregistrement du client dynamique dans votre application, suivez les instructions de la [gestion de l’enregistrement du client dynamique pour enregistrer l’application](/help/authentication/dynamic-client-registration-management.md).
+* Pour utiliser l’enregistrement du client dynamique dans votre application, suivez les instructions de la [gestion de l’enregistrement du client dynamique](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management) pour créer une application enregistrée et télécharger une instruction logicielle.
 
-* Pour mettre en oeuvre l’API d’enregistrement du client dynamique afin d’effectuer des demandes d’authentification et d’autorisation sur les serveurs Adobe Pass, suivez les instructions de la section [ API d’enregistrement du client dynamique ](/help/authentication/dynamic-client-registration-api.md) .
+* Pour mettre en oeuvre l’API d’enregistrement du client dynamique afin d’effectuer des demandes d’authentification et d’autorisation sur les serveurs Adobe Pass, suivez les instructions de la section [ Flux d’enregistrement du client dynamique ](./dcr-api/flows/dynamic-client-registration-flow.md).
 
 ### Mise à jour de l’API sans client d’Adobe Pass pour utiliser la fonction SSO d’Amazon {#clientlesssso}
 

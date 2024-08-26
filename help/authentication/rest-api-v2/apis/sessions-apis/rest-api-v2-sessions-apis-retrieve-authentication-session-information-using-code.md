@@ -1,7 +1,7 @@
 ---
 title: Récupération de la session d’authentification à l’aide du code
 description: API REST V2 - Récupération de la session d’authentification à l’aide du code
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '406'
 ht-degree: 2%
@@ -59,7 +59,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération de la charge utile du jeton porteur est décrite dans la documentation <a href="../../../dynamic-client-registration-api.md">Enregistrement dynamique du client</a>.</td>
+      <td>La génération du payload du jeton porteur est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
@@ -115,7 +115,7 @@ ht-degree: 2%
       <td>401</td>
       <td>Non autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, reportez-vous à la documentation <a href="../../../dynamic-client-registration-api.md">Enregistrement du client dynamique</a> .
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, reportez-vous à la documentation <a href="../../../dcr-api/dynamic-client-registration-overview.md">Présentation de l’enregistrement du client dynamique</a> .
       </td>
    </tr>
    <tr>

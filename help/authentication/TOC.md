@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1149'
 ht-degree: 2%
 
 ---
@@ -54,7 +54,7 @@ ht-degree: 2%
          + [Aperçu gratuit pour la transmission temporaire et la transmission temporaire promotionnelle](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + API REST V2 {#rest-api-v2}
       + API {#rest-api-v2-apis}
-         + [API REST V2 - API - Aperçu](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+         + [API REST V2 - API - Présentation](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + Configuration {#rest-api-v2-configuration-apis}
             + [Récupérer la configuration pour un prestataire spécifique](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + Sessions {#rest-api-v2-sessions-apis}
@@ -68,7 +68,7 @@ ht-degree: 2%
             + [Récupération du profil pour un code spécifique](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + Décisions {#rest-api-v2-decisions-apis}
             + [Récupération des décisions d’autorisation à l’aide de mvpd spécifique](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-            + [Récupérer les décisions de préautorisation à l’aide de mvpd spécifique](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+            + [Récupération des décisions de préautorisation à l’aide de mvpd spécifique](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
          + Déconnexion {#rest-api-v2-logout-apis}
             + [Lancement de la déconnexion pour mvpd spécifique](./rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
          + Connexion unique du partenaire {#rest-api-v2-partner-single-sign-on-apis}
@@ -95,12 +95,13 @@ ht-degree: 2%
             + [Flux de déconnexion unique](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + Annexe {#rest-api-v2-appendix}
          + En-têtes {#rest-api-v2-appendix-headers}
+            + [En-tête - Autorisation](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [En-tête - AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [En-tête - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
             + [En-tête - AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
             + [En-tête - Adobe-Objet-Jeton](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [En-tête - AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
             + [En-tête - AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
             + [En-tête - AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-            + [En-tête - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + SDK AccessEnabler {#accessenabler-sdk}
       + SDK JavaScript {#javascriptsdk}
          + [Présentation du SDK JavaScript](javascript-sdk-overview.md)
@@ -188,10 +189,13 @@ ht-degree: 2%
    + Rapport d’erreurs {#error-reportn}
       + [Rapport d’erreurs](error-reporting.md)
       + [Amélioration des codes d’erreur](enhanced-error-codes.md)
-   + Enregistrement du client {#client-regn}
-      + [Enregistrement du client dynamique](dynamic-client-registration.md)
-      + [API d’enregistrement de client dynamique](dynamic-client-registration-api.md)
-      + [Gestion de l’enregistrement du client dynamique](dynamic-client-registration-management.md)
+   + Enregistrement du client {#dcr-api}
+      + [Présentation de l’enregistrement des clients dynamiques](./dcr-api/dynamic-client-registration-overview.md)
+      + API {#dcr-api-apis}
+         + [Récupération des informations d’identification client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+         + [Récupération du jeton d’accès](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+      + Flux {#dcr-api-flows}
+         + [Flux d’enregistrement de client dynamique](./dcr-api/flows/dynamic-client-registration-flow.md)
    + Service de dégradation {#degrn-service}
       + [Présentation de l’API de dégradation](degradation-api-overview.md)
    + Préparation à la confidentialité {#privacy-readiness}
@@ -251,7 +255,7 @@ ht-degree: 2%
          + [Erreur d’authentification iOS - Impossible de trouver adobepass.ios.app](ios-authentication-error-adobepassiosapp-cannot-be-found.md)
          + [Réinitialiser le transfert temporaire sur iOS](reset-temp-pass-on-ios.md)
          + [Débogage du SDK AccessEnabler iOS/tvOS à l’aide des journaux d’application de la console](debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-         + [Chemin de mise à niveau AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
+         + [Chemin de mise à niveau d’AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
    + Transmettre des environnements d’authentification {#primetime-authentication-environments}
       + [Présentation des environnements Adobe](understanding-the-adobe-environments.md)
       + [Configuration de votre environnement et test dans un environnement de préqualification](setting-up-your-environment-and-testing-in-prequal.md)
@@ -268,7 +272,7 @@ ht-degree: 2%
    + Outils et utilitaires {#tools-and-utilities}
       + [Utilisation du proxy Charles](using-charles-proxy.md)
    + Concepts {#concepts}
-      + [Comprendre les identifiants utilisateur](understanding-user-ids.md)
+      + [Présentation des ID utilisateur](understanding-user-ids.md)
 + [Guide d’utilisation du tableau de bord TVE](tve-dashboard-user-guide.md)
 + Nouveau guide d’utilisation du tableau de bord TVE {#user-guide}
    + [Présentation du tableau de bord TVE](/help/authentication/tve-dashboard-overview.md)
@@ -282,4 +286,3 @@ ht-degree: 2%
    + [Rapports](/help/authentication/tve-dashboard-reports.md)
    + [Journal des modifications](/help/authentication/tve-dashboard-changes-log.md)
 + [Glossaire](glossary.md)
-

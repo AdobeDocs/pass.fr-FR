@@ -2,12 +2,13 @@
 title: Enregistrement de l’application iOS/tvOS
 description: Enregistrement de l’application iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
+
 
 # Enregistrement de l’application iOS/tvOS {#iostvos-application-registration}
 
@@ -19,7 +20,7 @@ ht-degree: 0%
 
 À compter de la version 3.0 du SDK iOS/tvOS AccessEnabler, nous sommes en train de modifier le mécanisme d’authentification avec les serveurs d’Adobe. Au lieu d’utiliser une clé publique et un système secret pour signer le requestorID, nous introduisons le concept d’une chaîne d’instruction logicielle qui peut être utilisée pour obtenir un jeton d’accès utilisé ultérieurement pour tous les appels effectués par le SDK vers nos serveurs. Outre une instruction logicielle, vous aurez également besoin d’un modèle d’URL personnalisé pour votre application.
 
-Pour plus d’informations, voir [Enregistrement du client dynamique](/help/authentication/dynamic-client-registration.md)
+Pour plus d’informations, voir [Présentation de l’enregistrement du client dynamique](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Qu’est-ce qu’une déclaration logicielle ? {#Soft_state}
 
@@ -40,7 +41,7 @@ Une instruction logicielle est un jeton JWT qui contient des informations sur vo
 - Vous devriez voir une liste contenant toutes les applications enregistrées. Cliquez sur le bouton   `Download` sur l’application que vous venez de créer. Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle ne soit prête à être téléchargée.
 - Un fichier texte sera téléchargé. Utilisez son contenu comme déclaration logicielle.
 
-Pour plus d’informations, voir [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md).
+Pour plus d’informations, voir [Dynamic Client Registration Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Si vous n’avez pas accès au tableau de bord TVE d’Adobe :
 

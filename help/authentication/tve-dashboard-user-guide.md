@@ -2,9 +2,9 @@
 title: Guide d’utilisation du tableau de bord Primetime TVE
 description: Guide d’utilisation du tableau de bord Primetime TVE
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '4377'
+source-wordcount: '5504'
 ht-degree: 0%
 
 ---
@@ -112,12 +112,11 @@ Cette section permet d’afficher et de modifier les paramètres des canaux disp
   Contient la liste des intégrations avec les MVPD disponibles, avec le statut de chaque intégration qui peut être activée ou non. Pour accéder à la page Intégration , cliquez sur une entrée spécifique.
 * **Applications enregistrées**
 
-  Contient la liste des enregistrements d’application. Pour plus d’informations, consultez le document [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md).
+  Contient la liste des enregistrements d’application. Pour plus d’informations, consultez le document [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Schémas personnalisés**
 
-  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [ Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md)
-
+  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)
 
 #### Ajout/suppression de domaines {#add-delete-domains}
 
@@ -126,6 +125,50 @@ Pour lancer le processus d’ajout d’un nouveau domaine pour le canal sélecti
 ![Ajouter un nouveau domaine à une section de canal sélectionnée](assets/add-domain-to-channel-sec.png)
 
 *Figure : Onglet Domaines dans les canaux*
+
+#### Créer une application enregistrée au niveau du canal {#create-registered-application-channel-level}
+
+Pour créer une application enregistrée au niveau d’un canal, accédez au menu &quot;Canaux&quot; et choisissez celui pour lequel vous souhaitez créer une application. Ensuite, après avoir accédé à l’onglet &quot;Applications enregistrées&quot;, cliquez sur le bouton &quot;Ajouter une nouvelle application&quot;.
+
+![](./assets/reg-new-app-channel-level.png)
+
+Comme illustré ci-dessous, les champs que vous devez renseigner sont les suivants :
+
+* **Nom de l’application** : nom de l’application
+
+* **Affecté au canal** - Comme illustré ci-dessous, ce qui est légèrement différent ici, par rapport à la même action effectuée au niveau du programmeur, est la liste déroulante &quot;Canaux attribués&quot; qui n’est pas activée. Il n’existe donc pas d’option pour lier l’application enregistrée à autre que le canal actuel.
+
+* **Version de l’application** : par défaut, cette valeur est définie sur &quot;1.0.0&quot;, mais nous vous encourageons vivement à la modifier avec votre propre version de l’application. Si vous décidez de modifier la version de votre application, il est recommandé de la refléter en créant une nouvelle application enregistrée.
+
+* **Plateformes d’application** : plateformes avec lesquelles l’application doit être liée. Vous avez la possibilité de les sélectionner toutes ou plusieurs valeurs.
+
+* **Noms de domaine** : domaines avec lesquels l’application doit être liée. Les domaines de la liste déroulante sont une sélection unifiée de tous les domaines de tous vos canaux. Vous avez la possibilité de sélectionner plusieurs domaines dans la liste. La signification des domaines est les URL de redirection [RFC6749](https://tools.ietf.org/html/rfc6749). Dans le processus d’enregistrement du client, l’application cliente peut demander à être autorisée à utiliser une URL de redirection pour finaliser le flux d’authentification. Lorsqu’une application cliente demande une URL de redirection spécifique, elle est validée par rapport aux domaines placés sur la liste blanche de cette application enregistrée associée à l’instruction logicielle.
+
+![](./assets/new-reg-app-channel.png)
+
+Après avoir rempli les champs avec les valeurs appropriées, vous devez cliquer sur &quot;Terminé&quot; pour que l’application soit enregistrée dans la configuration.
+
+Notez qu’il n’existe **aucune option pour modifier une application déjà créée**. Si un élément créé ne répond plus aux exigences, une nouvelle application enregistrée doit être créée et utilisée avec l’application cliente dont elle remplit les exigences.
+
+##### Téléchargement d’une instruction logicielle {#download-software-statement-channel-level}
+
+![](./assets/reg-app-list.png)
+
+Cliquer sur le bouton &quot;Télécharger&quot; dans l’entrée de liste pour laquelle une instruction logicielle est nécessaire génère un fichier texte. Ce fichier contiendra quelque chose de similaire à l’exemple de sortie ci-dessous.
+
+![](./assets/download-software-statement.png)
+
+Le nom du fichier est identifié de manière unique en lui ajoutant un préfixe &quot;software_statement&quot; et l’horodatage actuel.
+
+Veuillez noter que, pour la même application enregistrée, différentes instructions logicielles seront reçues chaque fois que l’utilisateur cliquera sur le bouton de téléchargement, mais cela n’invalide pas les instructions logicielles précédemment obtenues pour cette application. Cela se produit car ils sont générés sur place, par requête d’action.
+
+Il existe une **limitation** concernant l’action de téléchargement. Si une instruction logicielle est requise en cliquant sur le bouton &quot;Télécharger&quot; peu après la création de l’application enregistrée et que celle-ci n’a pas encore été enregistrée et que le fichier json de configuration n’a pas été synchronisé, le message d’erreur suivant s’affiche au bas de la page.
+
+![](./assets/error-sw-statement-notready.png)
+
+Cette opération encapsule un code d’erreur HTTP 404 Not Found reçu du noyau, car l’identifiant de l’application enregistrée n’a pas encore été propagé et le noyau n’en a aucune connaissance.
+
+Après la création de l’application enregistrée, la solution consiste à attendre au plus 2 minutes que la configuration soit synchronisée. Après cela, le message d’erreur ne sera plus reçu et le fichier texte contenant l’instruction logicielle sera disponible au téléchargement.
 
 ### Programmeurs {#tve-db-programmers-section}
 
@@ -147,12 +190,57 @@ Cette section permet d’afficher et de modifier les paramètres des programmeur
 
 * **Applications enregistrées**
 
-  Contient la liste des enregistrements d’application. Pour plus d’informations, voir [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md).
+  Contient la liste des enregistrements d’application. Pour plus d’informations, voir [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Schémas personnalisés**
 
-  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md) et [Gestion de l’enregistrement du client dynamique](/help/authentication/dynamic-client-registration-management.md).
+  Contient la liste des schémas personnalisés. Pour plus d’informations, voir [Enregistrement de l’application iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
+#### Créer une application enregistrée au niveau du programmeur {#create-registered-application-programmer-level}
+
+Accédez à l’onglet **Programmeurs** > **Applications enregistrées** .
+
+![](./assets/reg-app-progr-level.png)
+
+Dans l&#39;onglet Applications enregistrées , cliquez sur **Ajouter une nouvelle application**. Renseignez les champs obligatoires de la nouvelle fenêtre.
+
+Comme illustré ci-dessous, les champs que vous devez renseigner sont les suivants :
+
+* **Nom de l’application** : nom de l’application
+
+* **Attribué au canal** : nom de votre canal, t</span> auquel cette application est liée. Le paramètre par défaut dans le masque déroulant est **Tous les canaux.** L’interface vous permet de sélectionner un canal ou tous les canaux.
+
+* **Version de l’application** : par défaut, cette valeur est définie sur &quot;1.0.0&quot;, mais nous vous encourageons vivement à la modifier avec votre propre version de l’application. Si vous décidez de modifier la version de votre application, il est recommandé de la refléter en créant une nouvelle application enregistrée.
+
+* **Plateformes d’application** : plateformes avec lesquelles l’application doit être liée. Vous avez la possibilité de les sélectionner toutes ou plusieurs valeurs.
+
+* **Noms de domaine** : domaines avec lesquels l’application doit être liée. Les domaines de la liste déroulante sont une sélection unifiée de tous les domaines de tous vos canaux. Vous avez la possibilité de sélectionner plusieurs domaines dans la liste. La signification des domaines est les URL de redirection [RFC6749](https://tools.ietf.org/html/rfc6749). Dans le processus d’enregistrement du client, l’application cliente peut demander à être autorisée à utiliser une URL de redirection pour finaliser le flux d’authentification. Lorsqu’une application cliente demande une URL de redirection spécifique, elle est validée par rapport aux domaines placés sur la liste blanche de cette application enregistrée associée à l’instruction logicielle.
+
+![](./assets/new-reg-app.png)
+
+Après avoir rempli les champs avec les valeurs appropriées, vous devez cliquer sur &quot;Terminé&quot; pour que l’application soit enregistrée dans la configuration.
+
+Notez qu’il n’existe **aucune option pour modifier une application déjà créée**. Si un élément créé ne répond plus aux exigences, une nouvelle application enregistrée doit être créée et utilisée avec l’application cliente dont elle remplit les exigences.
+
+##### Téléchargement d’une instruction logicielle {#download-software-statement-programmer-level}
+
+![](./assets/reg-app-list.png)
+
+Cliquer sur le bouton &quot;Télécharger&quot; dans l’entrée de liste pour laquelle une instruction logicielle est nécessaire génère un fichier texte. Ce fichier contiendra quelque chose de similaire à l’exemple de sortie ci-dessous.
+
+![](./assets/download-software-statement.png)
+
+Le nom du fichier est identifié de manière unique en lui ajoutant un préfixe &quot;software_statement&quot; et l’horodatage actuel.
+
+Veuillez noter que, pour la même application enregistrée, différentes instructions logicielles seront reçues chaque fois que l’utilisateur cliquera sur le bouton de téléchargement, mais cela n’invalide pas les instructions logicielles précédemment obtenues pour cette application. Cela se produit car ils sont générés sur place, par requête d’action.
+
+Il existe une **limitation** concernant l’action de téléchargement. Si une instruction logicielle est requise en cliquant sur le bouton &quot;Télécharger&quot; peu après la création de l’application enregistrée et que celle-ci n’a pas encore été enregistrée et que le fichier json de configuration n’a pas été synchronisé , le message d’erreur suivant s’affiche au bas de la page.
+
+![](./assets/error-sw-statement-notready.png)
+
+Cette opération encapsule un code d’erreur HTTP 404 Not Found reçu du noyau, car l’identifiant de l’application enregistrée n’a pas encore été propagé et le noyau n’en a aucune connaissance.
+
+Après la création de l’application enregistrée, la solution consiste à attendre au plus 2 minutes que la configuration soit synchronisée. Après cela, le message d’erreur ne sera plus reçu et le fichier texte contenant l’instruction logicielle sera disponible au téléchargement.
 
 ### Intégrations {#tve-db-integrations-sec}
 
