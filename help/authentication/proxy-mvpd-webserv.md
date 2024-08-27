@@ -2,9 +2,9 @@
 title: Service Web MVPD de proxy
 description: Service Web MVPD de proxy
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 186335e27c05b2e0dd553607715a625376d9f299
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1027'
 ht-degree: 0%
 
 ---
@@ -239,14 +239,14 @@ Tous les paramètres présents dans l’en-tête de la requête qui ne sont pas 
 
 Exemple de curl :
 
-`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds"`
+`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier&gt;/mvpds"`
 
 ## Points de terminaison du service Web MVPD de proxy pour les environnements d’authentification Adobe Pass {#proxy-mvpd-wevserv-endpoints}
 
-- **URL de production :** https://mgmt.auth.adobe.com/control/v3/proxiedMvpds
-- **URL d’évaluation :** https://mgmt.auth-staging.adobe.com/control/v3/proxiedMvpds
-- **URL de préproduction :** https://mgmt-prequal.auth.adobe.com/control/v3/proxiedMvpds
-- **URL d’évaluation PreQual :** https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds
+- **URL de production :** https://mgmt.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL intermédiaire :** https://mgmt.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL de préproduction :** https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL PreQual-Staging :** https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
 
 <!--
 >[!RELATEDINFORMATION]
