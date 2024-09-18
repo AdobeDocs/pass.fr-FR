@@ -2,9 +2,9 @@
 title: Rapports d’utilisation de surveillance de la simultanéité
 description: Rapports d’utilisation de surveillance de la simultanéité
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 36da78fd66cfbc86e7bea7575c757fef536c0755
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Le service **Rapports d’utilisation de surveillance de la simultanéité** est
 
 ## Conditions préalables {#usage-rep-prerequisites}
 
-Pour accéder au produit Rapports d’utilisation de surveillance de la simultanéité , un client doit d’abord contacter l’ [équipe d’assistance](mailto:tve-support@adobe.com) pour la surveillance de la simultanéité et il prendra les mesures nécessaires pour vous permettre d’accéder au produit de l’API.
+Pour accéder au produit Rapports d’utilisation de surveillance de la simultanéité , un client doit d’abord contacter l’ [équipe d’assistance](mailto:tve-support@adobe.com) pour la surveillance de la simultanéité et il prendra les mesures nécessaires pour vous permettre d’accéder au produit de l’API. Plus d’informations sur [l’accès à l’API CMU](/help/concurrency-monitoring/cmu-api-access.md).
 
 ## Mesures et ventilations des rapports généraux {#general-rep-metrics-breakdown}
 
@@ -54,12 +54,12 @@ Pour accéder au produit Rapports d’utilisation de surveillance de la simultan
 ### Les utilisateurs des rapports d’utilisation peuvent filtrer les mesures répertoriées ci-dessus selon les dimensions suivantes : {#dimensions-2-filter-metrics}
 
 | Nom de la Dimension | Description |
-|:---|:---|
+|:---------------|:------------------------------------------------------------------------------------------------------------------|
 | year | Année à 4 chiffres |
 | month | Mois de l’année (1-12) |
 | day | Jour du mois (1-31) |
 | hour | Heure de la journée |
-| minute | La minute de l’heure |
+| minute | La minute de l&#39;heure[^1] |
 | application | Nom de l’application enregistré dans la surveillance simultanée utilisée pour gérer les sessions |
 | application-id | ID d’application enregistré dans la surveillance de la simultanéité utilisé pour gérer les sessions |
 | channel | Métadonnées de canal envoyées lors de l’initialisation de la session (marquées comme Inconnues si aucune métadonnée n’est envoyée) |
@@ -88,3 +88,9 @@ Le principal objectif de ce rapport est de vous aider à comprendre l’impact d
 | niveau d’accès simultané | Représente toute activité de flux **distincte qui a été approuvée lors de la phase d’initialisation de la session** pour un utilisateur afin de pouvoir observer le nombre de flux simultanés **ouverts** par un utilisateur et comprendre l’impact de l’application d’une certaine limite de simultanéité. |
 | niveau d’activité | Représente toute activité de flux **distincte (quel que soit son état : démarré, actif, arrêté, rejeté)** pour un utilisateur afin de pouvoir observer le nombre de flux simultanés qui ont été essayés par un utilisateur et de comprendre l’impact de l’application d’une certaine limite de simultanéité. |
 | mvpd | MVPD fourni lors de la gestion des sessions |
+
+### Exemples de rapports
+
+Pour une meilleure précision des données, nous recommandons les rapports présentés sur cette page [Exemples de rapports CMU](/help/concurrency-monitoring/cm-usage-reports-examples.md)
+
+[^1] : les rapports mineurs ne sont pas disponibles par défaut. Veuillez contacter l’ [équipe d’assistance](mailto:tve-support@adobe.com) pour leur demander.

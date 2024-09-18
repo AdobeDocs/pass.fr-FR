@@ -2,7 +2,7 @@
 title: Présentation des API
 description: Présentation des API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 301825253b21746684df9b6372a239b03305d50e
 workflow-type: tm+mt
 source-wordcount: '2043'
 ht-degree: 1%
@@ -24,7 +24,7 @@ L’utilisation de la surveillance de la simultanéité (CMU) est implémentée 
 >
 >L’API CMU n’est pas disponible en général. Contactez votre représentant Adobe pour toute question concernant la disponibilité.
 
-L’API CMU fournit une vue hiérarchique des cubes OLAP sous-jacents. Chaque ressource ([dimension](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) dans la hiérarchie des dimensions, mappée en tant que segment de chemin d’URL) génère des rapports avec (agrégé) [mesures](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) pour la sélection actuelle. Chaque ressource pointe vers sa ressource parente (pour le cumul) et ses sous-ressources (pour l’analyse). Le découpage et la découpe s’effectuent par le biais de paramètres de chaîne de requête en épinglant des dimensions à des valeurs ou des plages spécifiques.
+L’API CMU fournit une vue hiérarchique des cubes OLAP sous-jacents. Chaque ressource ([dimension](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) dans la hiérarchie des dimensions, mappée en tant que segment de chemin d’URL) génère des rapports avec (agrégé) [mesures](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) pour la sélection actuelle. Chaque ressource pointe vers sa ressource parente (pour le cumul) et ses sous-ressources (pour l’analyse). Le découpage et la découpe s’effectuent par le biais de paramètres de chaîne de requête en épinglant des dimensions à des valeurs ou des plages spécifiques.
 
 L’API REST fournit les données disponibles dans un intervalle de temps spécifié dans la requête (revenant aux valeurs par défaut si aucune valeur n’est fournie), en fonction du chemin d’accès à la dimension, des filtres fournis et des mesures sélectionnées. La période ne sera pas appliquée aux rapports qui ne contiennent pas de dimensions temporelles (année, mois, jour, heure, minute, seconde).
 
