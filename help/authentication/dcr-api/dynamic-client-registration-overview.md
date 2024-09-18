@@ -1,13 +1,13 @@
 ---
 title: Présentation de l’enregistrement du client dynamique
 description: Présentation de l’enregistrement du client dynamique
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '840'
 ht-degree: 0%
 
 ---
-
 
 # Présentation de l’enregistrement du client dynamique {#dynamic-client-registration-overview}
 
@@ -53,7 +53,7 @@ Pour en savoir plus sur la gestion et l’utilisation de l’enregistrement dyna
 
 Le processus de gestion dynamique des enregistrements des clients permet aux applications clientes s’exécutant sur des plateformes spécifiques et ayant besoin d’un accès à des API d’authentification Adobe Pass spécifiques de s’enregistrer via le [tableau de bord Adobe Pass TVE](https://console.auth.adobe.com/).
 
-Le tableau de bord Adobe Pass TVE est un outil permettant aux clients d’authentification Adobe Pass (programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service permet de nombreuses fonctionnalités décrites dans le [Guide de l’utilisateur du tableau de bord Adobe Pass TVE](../tve-dashboard-user-guide.md).
+Le tableau de bord Adobe Pass TVE est un outil permettant aux clients d’authentification Adobe Pass (programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service permet de nombreuses fonctionnalités décrites dans le [Guide de l’utilisateur du tableau de bord Adobe Pass TVE](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
 
 Si vous avez accès au [tableau de bord Adobe Pass TVE](https://console.auth.adobe.com/), suivez les étapes des sections ci-dessous pour créer une application enregistrée et télécharger l’instruction logicielle.
 
@@ -67,12 +67,12 @@ Vous pouvez créer une application enregistrée de deux manières différentes :
 
 * **Niveau du programmeur**
 
-  Le processus d&#39;enregistrement au niveau du programmeur permet de créer une application enregistrée liée à tous les canaux disponibles ou à un sous-ensemble sélectionné de canaux. Pour plus d’informations, reportez-vous à la section [Création d’une application enregistrée au niveau du programmeur](../tve-dashboard-user-guide.md#create-registered-application-programmer-level) du [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard-user-guide.md) .
+  Le processus d&#39;enregistrement au niveau du programmeur permet de créer une application enregistrée liée à tous les canaux disponibles ou à un sous-ensemble sélectionné de canaux. Pour plus d’informations, reportez-vous à la section [Création d’une application enregistrée au niveau du programmeur](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-programmer-level) du [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) .
 
 
 * **Niveau de canal**
 
-  Le processus d’enregistrement au niveau du canal permet de créer une application enregistrée liée uniquement au canal sélectionné actuel. Pour plus d’informations, reportez-vous à la section [Création d’une application enregistrée au niveau du canal](../tve-dashboard-user-guide.md#create-registered-application-channel-level) de la documentation [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard-user-guide.md) .
+  Le processus d’enregistrement au niveau du canal permet de créer une application enregistrée liée uniquement au canal sélectionné actuel. Pour plus d’informations, reportez-vous à la section [Création d’une application enregistrée au niveau du canal](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-channel-level) de la documentation [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) .
 
 >[!IMPORTANT]
 >
@@ -92,11 +92,11 @@ Vous pouvez télécharger un relevé logiciel de deux manières différentes en 
 
 * **Niveau du programmeur**
 
-  Pour plus d’informations, reportez-vous à la section [Téléchargement d’une instruction logicielle au niveau du programmeur](../tve-dashboard-user-guide.md#download-software-statement-programmer-level) du [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard-user-guide.md).
+  Pour plus d’informations, reportez-vous à la section [Téléchargement d’une instruction logicielle au niveau du programmeur](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-programmer-level) du [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
 
 * **Niveau de canal**
 
-  Pour plus d’informations, reportez-vous à la section [Téléchargement d’une instruction logicielle au niveau du canal](../tve-dashboard-user-guide.md#download-software-statement-channel-level) de la documentation [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard-user-guide.md) .
+  Pour plus d’informations, reportez-vous à la section [Téléchargement d’une instruction logicielle au niveau du canal](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-channel-level) de la documentation [Guide de l’utilisateur de TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) .
 
 L’instruction logicielle est un jeton Web JSON (`JWT`) qui contient des informations sur votre logiciel d’application client sous la forme d’un lot. Lorsqu’elle est présentée à l’API [Récupérer les informations d’identification du client](./apis/dynamic-client-registration-apis-retrieve-client-credentials.md), l’instruction logicielle est signée numériquement à l’aide de la signature web JSON (`JWS`).
 

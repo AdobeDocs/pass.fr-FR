@@ -2,7 +2,7 @@
 title: Bienvenue dans Adobe&reg; Pass Authentication !
 description: Bienvenue dans Adobe&reg; Pass Authentication overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 6699f37915551a19252dc84b6a37cc4565011fd5
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Vos commentaires sont toujours appréciés !
 
 | **Éléments en vedette** |
 |-|
-| <ul><li>[Connexion unique pour iOS](/help/authentication/apple-sso-overview.md)</li><li>[Transmet temporaire promotionnel](/help/authentication/promotional-temp-pass.md)</li><li>[Authentification par domicile (adaptateur de bus hôte)](/help/authentication/home-based-authn-tve.md)</li><li>[Infographie de l’adaptateur de bus hôte](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
+| <ul><li>[Connexion unique pour iOS](/help/authentication/apple-sso-overview.md)</li><li>[Transmet temporaire promotionnel](/help/authentication/promotional-temp-pass.md)</li><li>[Authentification par domicile (adaptateur de bus hôte)](/help/authentication/home-based-authn-tve.md)</li><li>[Infographie de l’adaptateur de bus hôte](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)</li></ul> |
 
 | **Pour les programmeurs** | **Pour les MVPD** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
