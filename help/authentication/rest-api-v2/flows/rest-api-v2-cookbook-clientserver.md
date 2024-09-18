@@ -1,7 +1,7 @@
 ---
 title: API REST V2 - Guide pas à pas - Étapes de mise en oeuvre client/serveur
 description: API REST V2 - Guide pas à pas - Étapes de mise en oeuvre client/serveur
-source-git-commit: 5ba888b35731ef64b3dd1878f2fa55083989f857
+source-git-commit: 5ba538bdb13d121ba27005df82d4ae604f912241
 workflow-type: tm+mt
 source-wordcount: '698'
 ht-degree: 0%
@@ -26,6 +26,7 @@ Pour mettre en oeuvre l’API REST Adobe Pass V2, vous devez suivre les étapes 
 ## A. Phase d’enregistrement {#registration-phase}
 
 ### Étape 1 : Enregistrement de votre application {#step-1-register-your-application}
+
 Pour que l’application puisse appeler l’API REST Adobe Pass V2, elle a besoin d’un jeton d’accès requis par la couche de sécurité de l’API.
 Pour obtenir le jeton d’accès, l’application doit suivre les étapes décrites ci-dessous :
 [Enregistrement du client dynamique](./dynamic-client-registration.md)
@@ -33,6 +34,7 @@ Pour obtenir le jeton d’accès, l’application doit suivre les étapes décri
 ## B. Phase d’authentification {#authentication-phase}
 
 ### Étape 2 : recherche des profils authentifiés existants {#step-2-check-for-existing-authenticated-profiles}
+
 Vérification des applications de diffusion en continu pour les profils authentifiés existants : <b>/api/v2/{serviceProvider}/profiles</b><br>
 ([Récupération des profils authentifiés](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md))
 
@@ -49,6 +51,7 @@ Vérification des applications de diffusion en continu pour les profils authenti
       * si un profil est trouvé, l’application de diffusion en continu peut passer à <a href="#preauthorization-phase">C. Phase de préautorisation</a> ou <a href="#authorization-phase">D. Phase d’autorisation</a>
 
 ### Étape 3 : Authentification de l’utilisateur {#step-3-authenticate-the-user}
+
 Utilisation d’un navigateur ou d’une application web de deuxième écran :
 
 * Option 1. L’application de diffusion en continu peut ouvrir un navigateur ou une vue web, charger l’URL pour s’authentifier et l’utilisateur arrive sur la page de connexion MVPD où les informations d’identification doivent être envoyées.
@@ -57,6 +60,7 @@ Utilisation d’un navigateur ou d’une application web de deuxième écran :
    * l’utilisateur saisit son identifiant/mot de passe, la redirection finale affiche une page de succès.
 
 ### Étape 4 : Recherche de profils authentifiés {#step-4-check-for-authenticated-profiles}
+
 L’application de diffusion en continu recherche une authentification avec MVPD à effectuer dans le navigateur ou le deuxième écran
 
 * l’interrogation toutes les 15 secondes est recommandée sur <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>
@@ -70,8 +74,10 @@ L’application de diffusion en continu recherche une authentification avec MVPD
 ## C. Phase de préautorisation {#preauthorization-phase}
 
 ### Etape 5 : Recherche des ressources préautorisées {#step-5-check-for-preauthorized-resources}
+
 L’application de diffusion en continu se prépare à afficher les vidéos disponibles pour l’utilisateur authentifié et peut vérifier la variable
 accès à ces ressources.
+
 * est facultative et exécutée si l’application souhaite filtrer les ressources non disponibles dans le package utilisateur authentifié.
 * appel à <b>/api/v2/{serviceProvider}/requests/preautoriser/{mvpd}</b><br>
 ([Récupérer la décision de préautorisation à l’aide de MVPD spécifique](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
@@ -80,6 +86,7 @@ accès à ces ressources.
 ## D. Phase d’autorisation {#authorization-phase}
 
 ### Etape 6 : Recherche des ressources autorisées {#step-6-check-for-authorized-resources}
+
 L’application de diffusion en continu se prépare à lire une vidéo/ressource/ressource sélectionnée par l’utilisateur.
 
 * est nécessaire pour chaque démarrage de lecture
@@ -91,6 +98,7 @@ L’application de diffusion en continu se prépare à lire une vidéo/ressource
 ## E. Phase de déconnexion {#logout-phase}
 
 ### Étape 7 : déconnexion {#step-7-logout}
+
 Appareil de diffusion en continu : l’utilisateur souhaite se déconnecter du MVPD.
 
 * appel <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
