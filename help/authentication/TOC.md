@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: 837276ce85445da5c3877592b194e37adf35fa32
 workflow-type: tm+mt
-source-wordcount: '1159'
+source-wordcount: '1165'
 ht-degree: 2%
 
 ---
@@ -94,6 +94,8 @@ ht-degree: 2%
             + [Authentification unique à l’aide des flux d’identités de plateforme](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
             + [Authentification unique à l’aide de flux de jetons de service](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
             + [Flux de déconnexion unique](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
+      + Cookbooks {#rest-api-v2-cookbooks}
+         + [Guide pas à pas de l’API REST V2 (client à serveur)](rest-api-v2/cookbooks/rest-api-v2-cookbooks-client-server.md)
       + Annexe {#rest-api-v2-appendix}
          + En-têtes {#rest-api-v2-appendix-headers}
             + [En-tête - Autorisation](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
