@@ -2,9 +2,9 @@
 title: Accès à l’API CMU
 description: Accès à l’API CMU
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -27,20 +27,22 @@ Suivez les étapes des sections ci-dessous pour y accéder.
 ## Etapes de la procédure d’accès {#access-procedure-steps}
 
 1. posséder une application enregistrée sur le serveur Adobe Pass DCR. Pour cette étape, contactez notre [équipe d&#39;assistance](mailto:tve-support@adobe.com).
+
 2. Obtention de l’instruction logicielle
-   1. Accédez au tableau de bord TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a> ou <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Accédez à [Tableau de bord Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication)
    2. Sélectionner un programmeur
-   3. Accéder à l’onglet Applications
+   3. Accédez à l’onglet *Applications enregistrées*
    4. Sélectionner une application
-   5. Cliquez sur DownLoad Software Statement pour obtenir un fichier similaire à la capture suivante.
+   5. Cliquez sur Télécharger sur la ligne de l’application enregistrée pour laquelle vous souhaitez obtenir un relevé logiciel et enregistrez-le sous forme de fichier sur votre ordinateur local.
       <figure>
-          <img src="assets/software_statement_1_download.png"
+          <img src="assets/programmer-download-software-statement-button.png"
                alt="Télécharger le relevé logiciel">
-       </figure>
+      </figure>
+
       <figure>
           <img src="assets/software_statement_2.png"
                alt="Exemple de relevé logiciel">
-       </figure>
+      </figure>
 
 3. Obtention du jeton d’accès
    1. Obtenez les informations d’identification du client à l’aide de l’instruction logicielle obtenue ci-dessus et effectuez l’appel ci-dessous. De cette manière, une paire client_id - client_secret sera obtenue, qui peut être utilisée pour obtenir le jeton d’accès.

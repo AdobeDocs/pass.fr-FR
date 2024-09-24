@@ -2,7 +2,7 @@
 title: Enregistrement de l’application Amazon FireOS
 description: Enregistrement de l’application Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Une instruction logicielle est un jeton JWT qui contient des informations sur vo
 
 ### Si vous avez accès au tableau de bord TVE d’Adobe :
 
-1. Ouvrez votre navigateur et accédez à `https://console.auth.adobe.com`.
+1. Ouvrez votre navigateur et accédez à `https://experience.adobe.com/#/pass/authentication`.
 
 1. Accédez à la section **[!UICONTROL Channels]** , puis sélectionnez votre canal.
 

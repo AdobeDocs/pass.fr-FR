@@ -1,13 +1,13 @@
 ---
 title: Récupération des informations d’identification client
 description: API d’enregistrement du client dynamique - Récupération des informations d’identification du client
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 1%
 
 ---
-
 
 # Récupération des informations d’identification client {#retrieve-client-credentials}
 
@@ -45,7 +45,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">software_statement</td>
       <td>
-            L’instruction logicielle associée à l’application enregistrée créée et téléchargée à partir du <a href="https://console.auth.adobe.com/">tableau de bord Adobe Pass TVE</a>.
+            L’instruction logicielle associée à l’application enregistrée créée et téléchargée à partir du <a href="https://experience.adobe.com/#/pass/authentication">tableau de bord Adobe Pass TVE</a>.
             <br/><br/>
             La gestion des applications enregistrées est décrite dans la documentation <a href="../dynamic-client-registration-overview.md">Présentation de l’enregistrement du client dynamique</a> .
       </td>

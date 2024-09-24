@@ -2,7 +2,7 @@
 title: Authentification basée sur la maison pour TV partout
 description: Authentification basée sur la maison pour TV partout
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 0%
@@ -115,7 +115,7 @@ Description du flux d’authentification de l’adaptateur de bus hôte pour le 
 ## Comment activer l’adaptateur de bus hôte {#how-to-activate-hba}
 
 * **Protocole OAuth :**
-   * Pour activer l’adaptateur de bus hôte, reportez-vous au [Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+   * Pour activer l’adaptateur de bus hôte, reportez-vous au [Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * **Protocole SAML :** l’authentification basée sur l’accueil est activée côté MVPD. Aucune action n’est requise par le programmeur ou l’Adobe.
 Pour plus d’informations sur les MVPD qui prennent en charge l’authentification par accueil, voir [État de l’adaptateur de bus hôte pour les MVPD](/help/authentication/hba-status-mvpds.md).
 
@@ -156,5 +156,5 @@ Pour plus d’informations sur les MVPD qui prennent en charge l’authentificat
 * [Infographie d’authentification basée sur l’accueil](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank} - par Adobe
 * [Authentification à l’aide du protocole OAuth 2.0](/help/authentication/authn-oauth2-protocol.md)
 * [Authentification avec des MVPD SAML](/help/authentication/authn-usecase.md)
-* [Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+* [Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * [Métadonnées utilisateur hba_status](/help/authentication/user-metadata-feature.md#obtaining)

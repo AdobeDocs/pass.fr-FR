@@ -2,7 +2,7 @@
 title: Enregistrement de l’application iOS/tvOS
 description: Enregistrement de l’application iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Une instruction logicielle est un jeton JWT qui contient des informations sur vo
 
 ### Si vous avez accès au tableau de bord TVE d’Adobe :
 
-- Ouvrez votre navigateur et accédez à <https://console.auth.adobe.com>.
+- Ouvrez votre navigateur et accédez à <https://experience.adobe.com/#/pass/authentication>.
 - Accédez à la section `Channels` et sélectionnez votre canal.
 - Accédez à l’onglet `Registered Applications` .
 - Cliquez sur `Add new application`.
@@ -55,7 +55,7 @@ Après avoir obtenu votre instruction logicielle, vous devez la transmettre en t
 
 ### Si vous avez accès au tableau de bord TVE d’Adobe :
 
-- Ouvrez votre navigateur et accédez à <https://console.auth.adobe.com>.
+- Ouvrez votre navigateur et accédez à <https://experience.adobe.com/#/pass/authentication>.
 - Accédez à la section `Channels` et sélectionnez votre canal.
 - Accédez à l’onglet `Custom Schemes` .
 - Cliquez sur `Generate a new custom scheme`.
