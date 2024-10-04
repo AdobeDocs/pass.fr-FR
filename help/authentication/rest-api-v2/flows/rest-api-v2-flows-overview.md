@@ -1,21 +1,21 @@
 ---
-title: API REST V2 - Flux - Aperçu
-description: API REST V2 - Flux - Aperçu
+title: Présentation des flux de l’API REST V2
+description: Présentation des flux de l’API REST V2
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
 
-# API REST V2 - Flux - Aperçu {#rest-api-v2-flows-overview}
+# Présentation des flux de l’API REST V2 {#rest-api-v2-flows-overview}
 
 >[!IMPORTANT]
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-Pour commencer, consultez la documentation publique de chaque entrée de la liste ci-dessous.
+Pour commencer, consultez la documentation publique des flux qui vous intéressent dans la liste ci-dessous.
 
 ## Flux d’accès de base {#rest-api-v2-flows-access-basic}
 
