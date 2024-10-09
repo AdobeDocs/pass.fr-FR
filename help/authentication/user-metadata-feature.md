@@ -2,9 +2,9 @@
 title: Fonctionnalité Métadonnées utilisateur
 description: Fonctionnalité Métadonnées utilisateur
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1654'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Points clés des métadonnées utilisateur :
 - Transmis à l’application du programmeur pendant les flux d’authentification et d’autorisation
 - Les valeurs sont enregistrées dans le jeton
 - Les valeurs peuvent être normalisées si différents MVPD fournissent des données dans différents formats.
-- Certains paramètres peuvent être chiffrés à l’aide de la clé du programmeur (par exemple, le code postal).
+- Certains paramètres peuvent être chiffrés à l’aide de la clé du programmeur (par exemple, le code postal). Voir [Certificat de métadonnées utilisateur pour le chiffrement](./user-metadata-certificate.md) pour la génération du certificat de chiffrement.
 - Des valeurs spécifiques sont disponibles par Adobe, via un changement de configuration.
 
 ## Obtention des métadonnées utilisateur {#obtaining}
