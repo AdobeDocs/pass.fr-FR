@@ -1,13 +1,13 @@
 ---
 title: Créer une session d’authentification
 description: API REST V2 - Création d’une session d’authentification
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '968'
+source-wordcount: '970'
 ht-degree: 1%
 
 ---
-
 
 # Créer une session d’authentification {#create-authentication-session}
 
@@ -324,8 +324,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">erreur</td>
-      <td>L’erreur fournit des informations supplémentaires conformes à la documentation <a href="../../../enhanced-error-codes.md">Enhanced Error Codes</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
       <td><i>required</i></td>
    </tr>
 </table>

@@ -1,13 +1,13 @@
 ---
 title: Récupération de la session d’authentification à l’aide du code
 description: API REST V2 - Récupération de la session d’authentification à l’aide du code
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '408'
 ht-degree: 2%
 
 ---
-
 
 # Récupération de la session d’authentification à l’aide du code {#retrieve-authentication-session-using-code}
 
@@ -188,8 +188,8 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">erreur</td>
-      <td>L’erreur fournit des informations supplémentaires conformes à la documentation <a href="../../../enhanced-error-codes.md">Enhanced Error Codes</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
       <td><i>required</i></td>
    </tr>
 </table>
