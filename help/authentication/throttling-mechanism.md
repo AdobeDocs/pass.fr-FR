@@ -2,9 +2,9 @@
 title: Mécanisme de ralentissement
 description: Découvrez le mécanisme de limitation utilisé dans l’authentification Adobe Pass. Consultez un aperçu de ce mécanisme dans cette page.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
+source-git-commit: 83998257b25465c109cac56ae753291d1572696c
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1141'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Vous trouverez plus d’informations sur la manière de transmettre l’en-tête
 
 ### Limites et points de fin réels
 
-Actuellement, la limite par défaut autorise un maximum de 1 requête par seconde, avec une première rafale de 3 requêtes (allocation unique lors de la première interaction du client identifié, ce qui devrait permettre à l’initialisation de se terminer avec succès). Cela ne devrait affecter aucune analyse de performances classique de tous nos clients.
+Actuellement, la limite par défaut autorise un maximum d’une requête par seconde, avec une première rafale de 10 requêtes (allocation unique lors de la première interaction du client identifié, qui devrait permettre à l’initialisation de se terminer avec succès). Cela ne devrait affecter aucune analyse de performances classique de tous nos clients.
 
 Le mécanisme de ralentissement sera activé sur les points de terminaison suivants :
 
@@ -67,6 +67,7 @@ Le mécanisme de ralentissement sera activé sur les points de terminaison suiva
 - /api/v1/authenticate/
 - /api/v1/.+/profile-requests/.+
 - /api/v1/identities
+- /adobe-services/config/
 - /reggie/v1/.+/regcode
 - /reggie/v1/.+/regcode/.+
 
@@ -144,13 +145,21 @@ Les clients qui utilisent une mise en oeuvre personnalisée (y compris celle du 
 ## Exemple de scénario pour le ralentissement
 
 | Temps écoulé depuis la première requête | Réponse reçue | Explication |
-|--------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|
+|--------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | Second 0 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite |
 | Second 0.3 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite et 1 appel marqués comme rafistolés |
 | Second 0.6 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite et 2 appels marqués comme ayant été ouverts |
 | Deuxième 0,9 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite et 3 appels marqués comme ayant été ouverts |
 | Second 1.2 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 3 appels marqués comme perdants |
-| Second 1.4 | L’appel reçoit le code d’état 429 | 2 appels sont consommés à partir de la limite et 3 appels marqués comme perdants et 1 appels reçoivent &quot;429 Too many requests&quot; |
-| Second 1.6 | L’appel reçoit le code d’état 429 | 2 appels sont consommés à partir de la limite et 3 appels marqués comme perdants et 2 appels reçoivent ‘429 Too many requests’ |
-| Second 1.8 | L’appel reçoit le code d’état 429 | 2 appels sont consommés à partir de la limite et 3 appels marqués comme perdants et 3 appels reçoivent ‘429 Too many requests’ |
-| Second 2.1 | L’appel reçoit le code d’état de réussite | 3 appels sont consommés à partir de la limite et 3 appels marqués comme perdants et 3 appels reçoivent &quot;429 Too many requests&quot; (429 demandes excessives) |
+| Second 1.3 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 4 appels marqués comme ayant explosé |
+| Second 1.4 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 5 appels marqués comme perdants |
+| Second 1.5 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 6 appels marqués comme perdants |
+| Second 1.6 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 7 appels marqués comme perdants |
+| Second 1.7 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 8 appels marqués comme perdants |
+| Second 1.8 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 9 appels marqués comme perdants |
+| Second 2.1 | L’appel reçoit le code d’état de réussite | 3 appels sont consommés à partir de la limite et 9 appels marqués comme ayant éclaté |
+| Second 2.2 | L’appel reçoit le code d’état de réussite | 3 appels sont consommés à partir de la limite et 10 appels marqués comme perdants |
+| Deuxième version 2.4 | L’appel reçoit le code d’état 429 | 3 appels sont consommés à partir de la limite et 10 appels marqués comme rafistolés et 1 appels reçoivent ‘429 Too many requests’ (429 Too many requests) |
+| Second 2.6 | L’appel reçoit le code d’état 429 | 3 appels sont consommés à partir de la limite et 10 appels marqués comme perdants et 2 appels reçoivent ‘429 Too many requests’ |
+| Second 2.8 | L’appel reçoit le code d’état 429 | 3 appels sont consommés à partir de la limite et 10 appels marqués comme perdants et 3 appels reçoivent ‘429 Too many requests’ |
+| Second 3.1 | L’appel reçoit le code d’état de réussite | 4 appels sont consommés à partir de la limite et 10 appels marqués comme rafistolés et 3 appels reçoivent &quot;429 Too many requests&quot; |
