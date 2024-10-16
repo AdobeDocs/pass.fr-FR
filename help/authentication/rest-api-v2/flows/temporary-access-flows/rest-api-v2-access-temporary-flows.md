@@ -1,13 +1,13 @@
 ---
 title: Flux d’accès temporaires
 description: API REST V2 - Flux d’accès temporaire
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '3210'
+source-wordcount: '3215'
 ht-degree: 0%
 
 ---
-
 
 # Flux d’accès temporaires {#temporary-access-flows}
 
@@ -369,7 +369,7 @@ Avant de récupérer les décisions d’autorisation à l’expiration d’un Te
 > <br/>
 > 
 > * Une configuration valide de TempPass de base ou promotionnel doit être appliquée à l&#39;intégration entre les `serviceProvider` et `mvpd` fournis.
-> * La durée de vie (TTL) configurée pour le TempPass de base ou promotionnel a expiré.
+> * La durée de vie (TTL) configurée pour le modèle de base ou promotionnel La limite de durée d’accès temporaire a été dépassée.
 
 ### Workflow {#workflow-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
