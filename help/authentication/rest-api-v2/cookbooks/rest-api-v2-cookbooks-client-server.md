@@ -1,9 +1,9 @@
 ---
 title: Guide pas à pas de l’API REST V2 (client à serveur)
 description: Guide pas à pas de l’API REST V2 (client à serveur)
-source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
+source-git-commit: 0d6693d51887c9e794401e984f3a4075be091ee5
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Procédure de mise en oeuvre de l’API REST V2 dans les applications côté client {#steps-to-implement-the-rest-api-v2-in-client-side-applications}
 
-Pour mettre en oeuvre l’API REST Adobe Pass V2, vous devez suivre les étapes ci-dessous regroupées en phases.
+Pour mettre en oeuvre l’API REST V2 d’Adobe Pass, vous devez suivre les étapes ci-dessous, regroupées en phases.
 
 ## A. Phase d’enregistrement {#registration-phase}
 
@@ -38,13 +38,13 @@ Pour obtenir le jeton d’accès, l’application doit suivre les étapes décri
 Les vérifications d’applications de diffusion en continu pour les profils authentifiés existants : <b>/api/v2/{serviceProvider}/profiles</b><br>
 ([Récupération des profils authentifiés](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md))
 
-* Si aucun profil n’a été trouvé et que l’application de diffusion en continu implémente un flux TempPass
+* Si aucun profil n’est trouvé et que l’application de diffusion en continu implémente un flux TempPass
    * Consultez la documentation sur la mise en oeuvre des [flux d’accès temporaires](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
-* Si aucun profil n’a été trouvé, l’application de diffusion en continu implémente un flux d’authentification.
+* Si aucun profil n’est trouvé et que l’application de diffusion en continu implémente un flux d’authentification
    * L’application de diffusion en continu récupère la liste des MVPD disponibles pour serviceProvider : <b>/api/v2/{serviceProvider}/configuration</b><br>
 ([Récupérer la liste des MVPD disponibles](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
    * L’application de diffusion en continu peut mettre en oeuvre le filtrage sur la liste des MVPD et afficher uniquement les MVPD prévus tout en masquant d’autres (TempPass, tests MVPD, MVPD en cours de développement, etc.)
-   * Sélecteur d’affichage d’application de diffusion en continu, l’utilisateur sélectionne le MVPD
+   * L’application de diffusion en continu affiche un sélecteur, l’utilisateur sélectionne le MVPD.
    * L’application de diffusion en continu crée une session : <b>/api/v2/{serviceProvider}/sessions</b><br>
 ([Créer une session d’authentification](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * un CODE et une URL à utiliser pour l’authentification sont renvoyés.
@@ -55,7 +55,7 @@ Les vérifications d’applications de diffusion en continu pour les profils aut
 Utilisation d’un navigateur ou d’une application web de deuxième écran :
 
 * Option 1. L’application de diffusion en continu peut ouvrir un navigateur ou une vue web, charger l’URL pour s’authentifier et l’utilisateur arrive sur la page de connexion MVPD où les informations d’identification doivent être envoyées.
-   * l’utilisateur saisit son identifiant/mot de passe, la redirection finale affiche une page de succès.
+   * l’utilisateur saisit le login/mot de passe, la redirection finale affiche une page de succès.
 * Option 2. L’application de diffusion en continu ne peut pas ouvrir un navigateur et simplement afficher le CODE. <b>Une application web distincte doit être développée</b> pour demander à l’utilisateur de saisir le CODE, de créer et d’ouvrir l’URL : <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * l’utilisateur saisit son identifiant/mot de passe, la redirection finale affiche une page de succès.
 
@@ -68,7 +68,7 @@ L’application de diffusion en continu recherche une authentification avec MVPD
    * Si la sélection MVPD n’est pas effectuée dans l’application de diffusion en continu, car le sélecteur MVPD est présenté dans l’application du deuxième écran, l’interrogation doit avoir lieu avec le CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
 ([Récupération des profils authentifiés pour un CODE spécifique](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
 * L’interrogation ne doit pas dépasser 30 minutes, dans le cas où 30 minutes sont atteintes et que l’application de diffusion en continu est toujours active, une nouvelle session doit être lancée et un nouveau CODE et une URL sont renvoyés.
-* Une fois l’authentification terminée, le retour est de 200 avec le profil authentifié
+* Une fois l’authentification terminée, le retour est de 200 avec le profil authentifié.
 * L&#39;application de diffusion en continu peut passer à <a href="#preauthorization-phase">C. Phase de préautorisation</a> ou <a href="#authorization-phase">D. Phase d’autorisation</a>
 
 ## C. Phase de préautorisation {#preauthorization-phase}
