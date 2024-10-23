@@ -2,7 +2,7 @@
 title: API de surveillance du service de droits
 description: API de surveillance du service de droits
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 8fa1e63619f4e22794d701a218c77649f73d9f60
+source-git-commit: 59ece09a8a72e67ea0944059064dba65e3137bd7
 workflow-type: tm+mt
 source-wordcount: '2027'
 ht-degree: 1%
@@ -122,11 +122,11 @@ Les paramètres de chaîne de requête suivants ont une signification réservée
 | --- | ---- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- | --- |
 | access_token | Oui | Le jeton DCR peut être transmis en tant que jeton porteur d’autorisation standard. | Aucun | access_token=XXXX |
 | nom-dimension | Oui | Tout nom de dimension, contenu dans le chemin d’URL actuel ou dans un sous-chemin valide ; la valeur sera traitée comme un filtre égal. Si aucune valeur n’est fournie, la dimension spécifiée sera alors incluse dans la sortie même si elle n’est pas incluse ou adjacente au chemin actuel. | Aucun | someDimension=someValue&amp;someOtherDimension |
-| end | Oui | Heure de fin du rapport en millisecondes | Heure actuelle du serveur | end=2012-07-30 |
+| end | Oui | Heure de fin du rapport en millisecondes | Heure actuelle du serveur | end=2024-07-30 |
 | format | Oui | Utilisé pour la négociation de contenu (avec le même effet mais une priorité inférieure au chemin &quot;extension&quot; - voir ci-dessous). | Aucun : la négociation du contenu tentera les autres stratégies | format=json |
 | limit | Oui | Nombre maximal de lignes à renvoyer | Valeur par défaut signalée par le serveur dans le lien self si aucune limite n’est spécifiée dans la requête. | limit=1500 |
 | mesures | Oui | Liste de noms de mesures séparés par des virgules à renvoyer. Elle doit être utilisée à la fois pour filtrer un sous-ensemble des mesures disponibles (afin de réduire la taille de la payload) et pour appliquer l’API afin de renvoyer une projection contenant les mesures demandées (plutôt que la projection optimale par défaut). | Toutes les mesures disponibles pour la projection actuelle seront renvoyées si ce paramètre n’est pas fourni. | metrics=m1,m2 |
-| start | Oui | Heure de début du rapport ISO8601 ; le serveur remplira la partie restante si seul un préfixe est fourni : par exemple, start=2012 donnera start=2012-01-01:00:00:00 | Signalé par le serveur dans le lien self : le serveur tente de fournir des valeurs par défaut raisonnables en fonction de la granularité temporelle sélectionnée. | start=2012-07-15 |
+| start | Oui | Heure de début du rapport ISO8601 ; le serveur remplira la partie restante si seul un préfixe est fourni : par exemple, start=2024 donnera start=2024-01-01:00:00:00 | Signalé par le serveur dans le lien self : le serveur tente de fournir des valeurs par défaut raisonnables en fonction de la granularité temporelle sélectionnée. | start=2024-07-15 |
 
 La seule méthode HTTP actuellement disponible est GET.
 
@@ -207,14 +207,14 @@ Exemple (en supposant qu’il existe une mesure unique appelée `clients` et qu�
 * https://mgmt.auth.adobe.com/esm/v3/year/month.xml
 
 ```XML
-   <resource href="/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
+   <resource href="/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21">
    <links>
    <link rel="roll-up" href="/esm/v3/year"/>
    <link rel="drill-down" href="/esm/v3/year/month/day"/>
    </links>
    <report>
-   <record month="6" year="2012" clients="205"/>
-   <record month="7" year="2012" clients="466"/>
+   <record month="6" year="2024" clients="205"/>
+   <record month="7" year="2024" clients="466"/>
    </report>
    </resource>
 ```
@@ -225,7 +225,7 @@ Exemple (en supposant qu’il existe une mesure unique appelée `clients` et qu�
       {
         "_links" : {
           "self" : {
-            "href" : "/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
+            "href" : "/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21"
           },
           "roll-up" : {
             "href" : "/esm/v3/year"
@@ -236,11 +236,11 @@ Exemple (en supposant qu’il existe une mesure unique appelée `clients` et qu�
         },
         "report" : [ {
           "month" : "6",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "205"
         }, {
           "month" : "7",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "466"
         } ]
       }
@@ -259,13 +259,13 @@ Le fichier CSV contient une ligne d’en-tête, puis les données du rapport sou
 L’ordre des champs dans la ligne d’en-tête reflète l’ordre de tri des données du tableau.
 
 
-Exemple : https://mgmt.auth.adobe.com/esm/v3/year/month.csv produira un fichier nommé `report__2012-07-20_2012-08-20_1000.csv` avec le contenu suivant :
+Exemple : https://mgmt.auth.adobe.com/esm/v3/year/month.csv produira un fichier nommé `report__2024-07-20_2024-08-20_1000.csv` avec le contenu suivant :
 
 
 | Année | Mois | Clients |
 | ---- | :---: | ------- |
-| 2012 | 6 | 580 |
-| 2012 | 7 | 231 |
+| 2024 | 6 | 580 |
+| 2024 | 7 | 231 |
 
 ## Actualisation des données {#data-freshness}
 
