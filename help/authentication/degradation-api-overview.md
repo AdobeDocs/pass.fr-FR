@@ -2,9 +2,9 @@
 title: Présentation de l’API de dégradation
 description: Présentation de l’API de dégradation
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 95c3b1cbce4a591ce387ae3b242721e50ba2ddb1
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '428'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 0%
 >
 >Cette API n’est pas disponible en général. Contactez votre représentant Adobe pour connaître les mises à jour de disponibilité.
 
-Cette fonctionnalité fournit les trois parties restantes d’une intégration (programmeurs, MVPD et Adobe) avec la possibilité de contourner temporairement des points de terminaison d’authentification et d’autorisation MVPD spécifiques. En règle générale, c’est le programmeur qui déclenche une telle action, mais quelle que soit la personne qui déclenche un événement de dégradation, l’action dépend d’accords conclus antérieurement avec les distributeurs de programmes multivariés concernés.
+Cette fonctionnalité fournit les trois parties principales d’une intégration (programmeurs, MVPD et Adobe) avec la possibilité de contourner temporairement des points de terminaison d’authentification et d’autorisation MVPD spécifiques. En règle générale, c’est le programmeur qui lance une telle action, mais quelle que soit la personne qui déclenche un événement de dégradation, l’action dépend d’accords conclus antérieurement avec les distributeurs de programmes multivariés concernés.
 
 Le cas d’utilisation principal de cette fonctionnalité se produit lors d’événements sportifs ou de grande envergure. Dans de tels scénarios de trafic élevé, il est possible que la charge sur un point de terminaison MVPD spécifique devienne trop élevée, ce qui entraîne des temps de réponse très longs pour les utilisateurs. Afin de préserver une bonne expérience utilisateur dans un tel scénario, le programmeur peut décider de déclencher une règle de dégradation qui peut temporairement s’authentifier/autoriser automatiquement les utilisateurs, ou désactiver un MVPD en le supprimant de la liste des MVPD disponibles.
 
@@ -40,7 +40,7 @@ Une règle de dégradation n’est appliquée que pour une période fixe. Bien q
 Notes de mise à niveau :
 
 - Cette fonctionnalité est conçue pour être utilisée avec l’API de surveillance de l’utilisation, qui fournit des informations en temps réel sur le nombre d’authentifications et d’autorisations par MVPD, la latence d’autorisation moyenne et d’autres mesures nécessaires pour une présentation complète du service.
-- Cette fonctionnalité ne permet pas de contourner le service d’authentification Adobe Primetim. Si l’authentification Adobe Pass est en panne, aucun mécanisme au sein du service ne peut être utilisé pour permettre aux utilisateurs de voir le contenu. Les sites ou les applications peuvent, cependant, contourner l’authentification Adobe Pass par eux-mêmes.
+- Cette fonctionnalité ne permet pas de contourner le service d’authentification Adobe Pass. Si l’authentification Adobe Pass est en panne, aucun mécanisme au sein du service ne peut être utilisé pour permettre aux utilisateurs de voir le contenu. Les sites ou les applications peuvent, cependant, contourner l’authentification Adobe Pass par eux-mêmes.
 - Actuellement, l’Adobe ne déclenche pas directement la dégradation. La décision doit toujours résider avec un programmeur spécifique qui a accepté de telles conditions avec les MVPD. À l’avenir, l’authentification Adobe Pass pourrait être proactive dans le déclenchement des règles de dégradation si des accords (protection SLA) peuvent être conclus avec des distributeurs multicanaux de programmes audiovisuels.
 
 <!--
