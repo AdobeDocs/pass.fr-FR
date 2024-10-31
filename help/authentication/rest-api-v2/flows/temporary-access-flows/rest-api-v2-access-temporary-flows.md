@@ -2,7 +2,7 @@
 title: Flux d’accès temporaires
 description: API REST V2 - Flux d’accès temporaire
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -349,7 +349,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’autorisation lor
 
 1. **Gérer les `Deny` détails de décision :** L’application en continu traite les informations d’erreur de la réponse et peut les utiliser pour afficher éventuellement un message spécifique dans l’interface utilisateur.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application en continu peut informer les utilisateurs que le nombre maximum de ressources a été dépassé et leur conseiller de lancer un flux d’authentification de base à l’aide d’un MVPD standard pour continuer à regarder.
 
@@ -429,7 +429,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’autorisation à 
 
 1. **Gérer les `Deny` détails de décision :** L’application en continu traite les informations d’erreur de la réponse et peut les utiliser pour afficher éventuellement un message spécifique dans l’interface utilisateur.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application de diffusion en continu peut informer les utilisateurs que l’accès temporaire a expiré et leur conseiller de lancer un flux d’authentification de base à l’aide d’un MVPD standard pour continuer à regarder.
 

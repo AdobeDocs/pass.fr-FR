@@ -2,9 +2,9 @@
 title: Accès à l’authentification unique (SSO) du SDK Android sur les applications Android 10
 description: Accès à l’authentification unique (SSO) du SDK Android sur les applications Android 10
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,6 @@ Cependant, dans la dernière version d’Android 10, Google a produit quelques m
 
 Suite à ces modifications, l’authentification unique (SSO) proposée par Access Enabler Android version **3.2.1 SDK (dernière version)** et les versions précédentes peuvent être affectées sur les appareils Android 10, comme expliqué dans la section suivante.
 
-Voir [Présentation de Roku SSO](/help/authentication/roku-sso-overview.md).
-
 ## Comportement
 
 Selon l’attribut de manifeste **[!UICONTROL target SDK level]** de votre application ou l’utilisation de **android:requestLegacyExternalStorage**, l’authentification unique (SSO) proposée par le SDK Access Enabler Android version 3.2.1 (dernière version) et les versions précédentes se comportent actuellement comme suit :
@@ -32,7 +30,6 @@ Selon l’attribut de manifeste **[!UICONTROL target SDK level]** de votre appli
 - Votre application cible **Android 9 (niveau API 28)** ou inférieur **-\>** L’authentification unique (SSO) **fonctionnera**
 - Votre application cible **Android 10** **(niveau API 29)** et **définit** la valeur de **requestLegacyExternalStorage sur true** dans le fichier manifeste de votre application **-\>** L’authentification unique (SSO) **fonctionnera**
 - Votre application cible **Android 10** **(niveau API 29)** et **ne définit pas** la valeur de **requestLegacyExternalStorage sur true** dans le fichier manifeste de votre application **-\>** L’authentification unique (SSO) **ne fonctionnera pas**
-
 
 >[!TIP]
 >

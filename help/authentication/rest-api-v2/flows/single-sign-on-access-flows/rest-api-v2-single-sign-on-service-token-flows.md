@@ -1,13 +1,13 @@
 ---
 title: Connexion unique - Jeton de service - Flux
 description: API REST V2 - Connexion unique - Jeton de service - Flux
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1848'
 ht-degree: 0%
 
 ---
-
 
 # Authentification unique à l’aide de flux de jetons de service{#single-sign-on-service-token-full-flows}
 
@@ -120,7 +120,7 @@ Effectuez les étapes données pour mettre en oeuvre le flux d’authentificatio
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`
    > * Tous les paramètres et en-têtes _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application de diffusion en continu peut attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil normal a été généré et enregistré avec succès.
 

@@ -1,13 +1,13 @@
 ---
 title: Authentification unique - Partner - Flux
 description: API REST V2 - Authentification unique - Partner - Flux
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
-
 
 # Authentification unique à l’aide de flux de partenaires {#single-sign-on-partner-flows}
 
@@ -18,6 +18,18 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/throttling-mechanism.md) .
+
+La méthode Partner permet à plusieurs applications d’utiliser une payload d’état de la structure de partenaire pour obtenir l’authentification unique (SSO) au niveau de l’appareil lors de l’utilisation des services Adobe Pass.
+
+Les applications sont chargées de récupérer la charge utile d’état de la structure du partenaire à l’aide de structures ou de bibliothèques spécifiques à un partenaire en dehors des systèmes Adobe Pass.
+
+Les applications sont chargées d’inclure cette payload d’état de la structure partenaire dans l’en-tête `AP-Partner-Framework-Status` de toutes les requêtes qui la spécifient.
+
+Pour plus d’informations sur l’en-tête `AP-Partner-Framework-Status`, consultez la documentation [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md) .
+
+L’API REST d’authentification Adobe Pass V2 prend en charge l’authentification unique du partenaire (SSO) pour les utilisateurs finaux des applications clientes s’exécutant sur iOS, iPadOS ou tvOS.
+
+Pour plus d’informations sur l’authentification unique (SSO) pour la plateforme Apple, reportez-vous à la documentation [Guide de l’authentification unique d’Apple (API REST V2)](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md).
 
 ## Récupération de la demande d’authentification du partenaire {#retrieve-partner-authentication-request}
 
@@ -61,7 +73,7 @@ Effectuez les étapes données pour récupérer la demande d’authentification 
    > Pour plus d’informations sur :[](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
    >
    > * Tous les paramètres _requis_, comme `serviceProvider` et `partner`
-   > * Tous les en-têtes _requis_ tels que `Authorization`, `AP-Device-Identifier` et `AP-Partner-Framework-Status`
+   > * Tous les en-têtes _requis_ tels que `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` et `AP-Partner-Framework-Status`
    > * Tous les en-têtes et paramètres _optional_
    >
    > <br/>
@@ -175,7 +187,7 @@ Effectuez les étapes données pour mettre en oeuvre le flux de récupération d
    > Pour plus d’informations sur :[](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
    >
    > * Tous les paramètres _required_, comme `serviceProvider`, `partner` et `SAMLResponse`
-   > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier` et `AP-Partner-Framework-Status`
+   > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` et `AP-Partner-Framework-Status`
    > * Tous les en-têtes et paramètres _optional_
    >
    > <br/>

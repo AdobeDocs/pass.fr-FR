@@ -1,13 +1,13 @@
 ---
 title: Authentification de base - Application de Principal - Flux
 description: API REST V2 - Authentification de base - Application de Principal - Flux
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
 
 ---
-
 
 # Flux d’authentification de base exécuté sur une application principale {#basic-authentication-flow-performed-within-primary-application}
 
@@ -121,7 +121,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`
    > * Tous les paramètres et en-têtes _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application de diffusion en continu peut attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil normal a été généré et enregistré avec succès.
 

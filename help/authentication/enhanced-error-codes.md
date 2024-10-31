@@ -2,7 +2,7 @@
 title: Amélioration des codes d’erreur
 description: Amélioration des codes d’erreur
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2593'
 ht-degree: 3%
@@ -301,8 +301,8 @@ Le tableau ci-dessous répertorie les codes d’erreur améliorés possibles qu�
 | **none** | *invalid_parameter_service_provider* | 400 | La valeur du paramètre du fournisseur de services est absente ou non valide. |
 |                              | *invalid_parameter_mvpd* | 400 | La valeur du paramètre mvpd est absente ou non valide. |
 |                              | *invalid_parameter_code* | 400 | La valeur du paramètre de code est absente ou non valide. |
-|                              | *invalid_parameter_resources* | 400 | La valeur du paramètre d’URL de redirection est absente ou non valide. |
-|                              | *invalid_parameter_redirect_url* | 400 | La valeur du paramètre resources est absente ou non valide. |
+|                              | *invalid_parameter_resources* | 400 | La valeur du paramètre resources est absente ou non valide. |
+|                              | *invalid_parameter_redirect_url* | 400 | La valeur du paramètre d’URL de redirection est absente ou non valide. |
 |                              | *invalid_parameter_partner* | 400 | La valeur du paramètre partenaire est absente ou non valide. |
 |                              | *invalid_parameter_saml_response* | 400 | La valeur du paramètre de réponse SAML est absente ou non valide. |
 |                              | *invalid_header_device_info* | 400 | La valeur de l’en-tête des informations sur le périphérique est manquante ou non valide. |

@@ -2,7 +2,7 @@
 title: Bienvenue dans Adobe&reg; Pass Authentication !
 description: Bienvenue dans Adobe&reg; Pass Authentication overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Vos commentaires sont toujours appréciés !
 
 | **Éléments en vedette** |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[Connexion unique pour iOS](/help/authentication/apple-sso-overview.md)</li><li>[Transmet temporaire promotionnel](/help/authentication/promotional-temp-pass.md)</li><li>[Authentification par domicile (adaptateur de bus hôte)](/help/authentication/home-based-authn-tve.md)</li><li>[Infographie de l’adaptateur de bus hôte](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+| <ul><li>[Connexion unique pour iOS](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)</li><li>[Transmet temporaire promotionnel](/help/authentication/promotional-temp-pass.md)</li><li>[Authentification par domicile (adaptateur de bus hôte)](/help/authentication/home-based-authn-tve.md)</li><li>[Infographie de l’adaptateur de bus hôte](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guide de l’utilisateur du tableau de bord Adobe Pass TVE](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | **Pour les programmeurs** | **Pour les MVPD** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

@@ -1,13 +1,13 @@
 ---
 title: Authentification de base - Application Secondaire - Flux
 description: API REST V2 - Authentification de base - Application Secondaire - Flux
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
 
 ---
-
 
 # Flux d’authentification de base exécuté sur une application secondaire {#basic-authentication-flow-performed-within-secondary-application}
 
@@ -137,7 +137,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
    >
    > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation [Enhanced Error Codes](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller de réessayer d’en utiliser une nouvelle.
 
@@ -162,7 +162,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`
    > * Tous les paramètres et en-têtes _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application en continu peut mettre en oeuvre un mécanisme d’interrogation à l’aide de `code` pour vérifier si le profil normal a bien été généré et enregistré.
 
@@ -271,7 +271,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
    > 
    > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation [Enhanced Error Codes](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller de réessayer d’en utiliser une nouvelle.
 
@@ -300,7 +300,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux d’authentification
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`
    > * Tous les paramètres et en-têtes _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application en continu peut mettre en oeuvre un mécanisme d’interrogation à l’aide de `code` pour vérifier si le profil normal a bien été généré et enregistré.
 

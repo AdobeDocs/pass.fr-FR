@@ -2,9 +2,9 @@
 title: Guide pas à pas de l'API REST (client à serveur)
 description: Client du guide pas à pas de l’API REST sur le serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -130,16 +130,22 @@ utilisateur.
 
 1. Renvoyez l’utilisateur à votre application Smart Device pour terminer le flux d’autorisation.
 
-## SSO de la plateforme {#platform-sso}
+## Connexion unique du partenaire {#partner-sso}
 
-Certaines plateformes prennent en charge la connexion unique (SSO). Les détails de mise en oeuvre se trouvent pour chaque plateforme respective :
+Certains périphériques prennent en charge l’authentification unique du partenaire (SSO) :
 
-* [APPLE SSO](/help/authentication/apple-sso-cookbook-rest-api.md)
-* AMAZON SSO
+* [APPLE SSO](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+
+## Connexion unique à Platform {#platform-sso}
+
+Certains périphériques prennent en charge la connexion unique à Platform (SSO) :
+
+* [AMAZON SSO](./single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Roku SSO](./single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass et TempPass Promotionnel pour l’API REST {#temppass}
 
-Pour les implémentations TempPass et TempPass de promotion dans le cas où l’utilisateur n’est pas tenu de saisir des informations d’identification, l’authentification peut être mise en oeuvre directement dans l’application de diffusion en continu.
+Pour les implémentations TempPass et TempPass de promotion où l’utilisateur n’est pas tenu de saisir des informations d’identification, l’authentification peut être mise en oeuvre directement dans l’application de diffusion en continu.
 
 **Pour utiliser cette API, l’application de diffusion en continu doit s’assurer que l’identifiant unique de l’appareil est utilisé pour identifier le jeton, ainsi que les données supplémentaires facultatives.**
 

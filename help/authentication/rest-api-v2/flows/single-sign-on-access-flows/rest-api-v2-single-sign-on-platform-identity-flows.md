@@ -1,13 +1,13 @@
 ---
 title: Authentification unique - Identité de plateforme - Flux
 description: API REST V2 - Authentification unique - Identité de plateforme - Flux
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1830'
 ht-degree: 0%
 
 ---
-
 
 # Authentification unique à l’aide des flux d’identités de plateforme {#single-sign-on-platform-identity-full-flows}
 
@@ -117,7 +117,7 @@ Effectuez les étapes données pour mettre en oeuvre le flux d’authentificatio
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`
    > * Tous les paramètres et en-têtes _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggestion : l’application de diffusion en continu peut attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil normal a été généré et enregistré avec succès.
 
