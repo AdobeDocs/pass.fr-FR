@@ -1,7 +1,7 @@
 ---
 title: Guide pas à pas de l’API REST V2 (serveur à serveur)
 description: Guide pas à pas de l’API REST V2 (serveur à serveur)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+source-git-commit: c17e52dd52fa14c50d59945598d1913f02be2468
 workflow-type: tm+mt
 source-wordcount: '1566'
 ht-degree: 0%
@@ -186,4 +186,4 @@ Le service de programmation doit conserver les certificats partagés avec Adobe 
 
 ## Informations connexes {#related}
 
-* [Référence de l’API REST V2](/help/authentication/rest-api-v2/rest-api-v2-flows-overview.md)
+* [Référence de l’API REST V2](/help/authentication/rest-api-v2/rest-api-v2-overview.md)
