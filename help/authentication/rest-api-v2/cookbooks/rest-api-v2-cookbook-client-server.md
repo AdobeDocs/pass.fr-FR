@@ -1,13 +1,13 @@
 ---
 title: Guide pas à pas de l’API REST V2 (client à serveur)
 description: Guide pas à pas de l’API REST V2 (client à serveur)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
+source-git-commit: 563e0b17de3be9290a661242355b4835b8c386e1
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
-
 
 # Guide pas à pas de l’API REST V2 (client à serveur) {#rest-api-v2-cookbook-clientserver}
 
@@ -29,7 +29,7 @@ Pour mettre en oeuvre l’API REST V2 d’Adobe Pass, vous devez suivre les éta
 
 Pour que l’application puisse appeler l’API REST Adobe Pass V2, elle a besoin d’un jeton d’accès requis par la couche de sécurité de l’API.
 
-Pour obtenir le jeton d’accès, l’application doit suivre les étapes décrites : [Enregistrement du client dynamique](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+Pour obtenir le jeton d’accès, l’application doit suivre les étapes décrites dans la documentation [Enregistrement dynamique du client](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## B. Phase d’authentification {#authentication-phase}
 
@@ -54,10 +54,10 @@ Les vérifications d’applications de diffusion en continu pour les profils aut
 
 Utilisation d’un navigateur ou d’une application web de deuxième écran :
 
-* Option 1. L’application de diffusion en continu peut ouvrir un navigateur ou une vue web, charger l’URL pour s’authentifier et l’utilisateur arrive sur la page de connexion MVPD où les informations d’identification doivent être envoyées.
-   * l’utilisateur saisit le login/mot de passe, la redirection finale affiche une page de succès.
+* Option 1. L’application de diffusion en continu peut ouvrir un navigateur ou une vue web, charger l’URL pour l’authentification et l’utilisateur arrive sur la page de connexion MVPD où les informations d’identification doivent être envoyées.
+   * L’utilisateur saisit le nom d’utilisateur/mot de passe, la redirection finale affiche une page de succès.
 * Option 2. L’application de diffusion en continu ne peut pas ouvrir un navigateur et simplement afficher le CODE. <b>Une application web distincte doit être développée</b> pour demander à l’utilisateur de saisir le CODE, de créer et d’ouvrir l’URL : <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
-   * l’utilisateur saisit son identifiant/mot de passe, la redirection finale affiche une page de succès.
+   * L’utilisateur saisit le nom d’utilisateur/mot de passe, la redirection finale affiche une page de succès.
 
 ### Étape 4 : Recherche de profils authentifiés {#step-4-check-for-authenticated-profiles}
 
@@ -67,7 +67,7 @@ L’application de diffusion en continu recherche une authentification avec MVPD
 ([Récupération des profils authentifiés pour une MVPD spécifique](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
    * Si la sélection MVPD n’est pas effectuée dans l’application de diffusion en continu, car le sélecteur MVPD est présenté dans l’application du deuxième écran, l’interrogation doit avoir lieu avec le CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
 ([Récupération des profils authentifiés pour un CODE spécifique](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
-* L’interrogation ne doit pas dépasser 30 minutes, dans le cas où 30 minutes sont atteintes et que l’application de diffusion en continu est toujours active, une nouvelle session doit être lancée et un nouveau CODE et une URL sont renvoyés.
+* L’interrogation ne doit pas dépasser 30 minutes, au cas où 30 minutes seraient atteintes et que l’application de diffusion en continu soit toujours active, une nouvelle session doit être lancée et un nouveau CODE et une URL sont renvoyés.
 * Une fois l’authentification terminée, le retour est de 200 avec le profil authentifié.
 * L&#39;application de diffusion en continu peut passer à <a href="#preauthorization-phase">C. Phase de préautorisation</a> ou <a href="#authorization-phase">D. Phase d’autorisation</a>
 
@@ -91,14 +91,14 @@ L’application de diffusion en continu se prépare à lire une vidéo/ressource
 * Une étape est nécessaire pour chaque démarrage de lecture
 * Appelez <b>/api/v2/{serviceProvider}/décision/autoriser/{mvpd}</b><br>
 ([Récupérer la décision d’autorisation à l’aide de MVPD spécifique](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
-   * décision = &quot;Permit&quot; , le périphérique de diffusion en continu commence la diffusion en continu
+   * décision = &quot;Permit&quot;, le périphérique de diffusion en continu commence la diffusion en continu
    * décision = &quot;Refuser&quot;, le périphérique de diffusion informe l’utilisateur qu’il n’a pas accès à cette vidéo.
 
 ## E. Phase de déconnexion {#logout-phase}
 
 ### Étape 7 : déconnexion {#step-7-logout}
 
-Appareil de diffusion en continu : l’utilisateur souhaite se déconnecter du MVPD
+Appareil de diffusion en continu : l’utilisateur souhaite se déconnecter du MVPD.
 
 * Appelez <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
 ([Lancement de la déconnexion pour MVPD spécifique](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
