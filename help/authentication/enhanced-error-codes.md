@@ -2,9 +2,9 @@
 title: Amélioration des codes d’erreur
 description: Amélioration des codes d’erreur
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: ce9659074bfa3fac3ea62a70a6da470f15bad3fe
 workflow-type: tm+mt
-source-wordcount: '2593'
+source-wordcount: '2606'
 ht-degree: 3%
 
 ---
@@ -313,6 +313,7 @@ Le tableau ci-dessous répertorie les codes d’erreur améliorés possibles qu�
 |                              | *invalid_header_pfs_permission_access_not_authorized* | 400 | La valeur d’état d’accès aux autorisations de l’en-tête d’état de la structure partenaire n’est pas accordée. |
 |                              | *invalid_header_pfs_provider_id_not_Determin* | 400 | La valeur de l’identifiant du fournisseur de l’en-tête de statut de la structure du partenaire n’est pas associée à un mvpd connu. |
 |                              | *invalid_header_pfs_provider_id_mismatch* | 400 | La valeur de l’ID de fournisseur de l’en-tête d’état de la structure du partenaire ne correspond pas au paramètre mvpd envoyé. |
+|                              | *invalid_header_pfs_provider_info_expiré* | 400 | Les informations du fournisseur de l’en-tête d’état de la structure du partenaire ont expiré. |
 |                              | *invalid_integration* | 400 | L’intégration entre le fournisseur de services spécifié et mvpd n’existe pas ou est désactivée. |
 |                              | *invalid_authentication_session* | 400 | La session d’authentification associée à cette requête est manquante ou non valide. |
 |                              | *preauthorization_denied_by_mvpd* | 403 | Le MVPD a renvoyé une décision &quot;Refuser&quot; lors de la demande d’autorisation préalable pour la ressource spécifiée. |
