@@ -1,9 +1,10 @@
 ---
 title: Guide pas à pas Apple SSO (API REST V2)
 description: Guide pas à pas Apple SSO (API REST V2)
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3410'
 ht-degree: 0%
 
 ---
@@ -16,11 +17,11 @@ ht-degree: 0%
 
 L’API REST d’authentification Adobe Pass V2 prend en charge l’authentification unique du partenaire (SSO) pour les utilisateurs finaux des applications clientes s’exécutant sur iOS, iPadOS ou tvOS.
 
-Ce document fait office d’extension de la documentation existante de l’API REST V2 qui décrit la mise en oeuvre de l’ [authentification unique à l’aide de flux de partenaires](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
+Ce document agit comme une extension de l’ [’API REST V2 Overview](/help/authentication/rest-api-v2/rest-api-v2-overview.md) qui fournit une vue de haut niveau et le document qui décrit comment implémenter l’ [authentification unique à l’aide de flux de partenaires](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
 
-## Authentification unique Apple à l’aide de flux de partenaires {#apple-sso-cookbook-rest-api-v2-cookbook}
+## Authentification unique Apple à l’aide de flux de partenaires {#cookbook}
 
-### Conditions préalables {#apple-sso-cookbook-rest-api-v2-prerequisites}
+### Conditions préalables {#prerequisites}
 
 Avant de poursuivre l’authentification unique Apple à l’aide de flux de partenaires, assurez-vous que les conditions préalables suivantes sont remplies :
 
@@ -40,7 +41,7 @@ Avant de poursuivre l’authentification unique Apple à l’aide de flux de par
 >
 > * L’application de diffusion en continu a rempli les [ conditions préalables à l’intégration](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md#apple-sso-prerequisites-programmer) qui s’appliquent à un programmeur et sont requises pour activer l’expérience de connexion unique d’Apple.
 
-### Workflow {#apple-sso-cookbook-rest-api-v2-workflow}
+### Workflow {#workflow}
 
 Exécutez les étapes données pour mettre en oeuvre l’authentification unique Apple à l’aide des flux de partenaires, comme illustré dans le diagramme ci-dessous.
 

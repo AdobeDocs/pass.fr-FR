@@ -2,7 +2,7 @@
 title: En-tête - Adobe-Objet-Jeton
 description: API REST V2 - En-tête - Adobe-Objet-Jeton
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 2%
@@ -47,10 +47,10 @@ Signature Web JSON (`JWS`) ou chiffrement Web JSON (`JWE`) qui est un jeton Web 
 
 Elle est disponible pour les plateformes suivantes :
 
-* [Guide pas à pas Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Guide pas à pas Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 
 ## Exemples {#examples}
 
 Reportez-vous aux exemples décrits pour les plateformes suivantes :
 
-* [Guide pas à pas Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Guide pas à pas Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
