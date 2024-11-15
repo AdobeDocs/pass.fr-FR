@@ -1,9 +1,10 @@
 ---
 title: Glossaire de l’API REST V2
 description: Glossaire de l’API REST V2
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '1872'
+source-wordcount: '1964'
 ht-degree: 0%
 
 ---
@@ -34,6 +35,8 @@ Le code d’authentification est un concept d’authentification Adobe Pass qui 
 
 Le code d&#39;authentification peut être utilisé par une [application par Principal (programmeur)](#primary-application) ou une [application Secondaire (programmeur)](#secondary-application) pour terminer le processus [authentication](#authentication), récupérer des informations sur la [session d&#39;authentification](#session) ou accéder à l&#39;utilisateur [profile](#profile).
 
+Synonyme de l’ancien terme utilisé comme code d’enregistrement.
+
 #### Session d’authentification {#session}
 
 La session d’authentification est un concept d’authentification Adobe Pass qui stocke des informations sur le processus d’authentification de l’utilisateur qui a démarré (ou s’est poursuivi) à partir d’une application [Programmer](#programmer) et qui est identifié de manière unique par un [code d’authentification](#code).
@@ -45,6 +48,10 @@ La session d&#39;authentification peut également indiquer l&#39;application [Pr
 L’autorisation est un processus qui permet à un utilisateur d’accéder au contenu protégé ([resource](#resource)) à partir d’un catalogue [Programmer](#programmer) basé sur l’abonnement [MVPD](#mvpd) détenu, après avoir validé les droits de l’utilisateur avec le [MVPD](#mvpd).
 
 ### C {#c}
+
+#### Informations d’identification client {#client-credentials}
+
+Les informations d’identification du client sont un ensemble de valeurs uniques qui sont générées pendant le processus [Enregistrement dynamique du client (DCR)](#dcr) et qui sont destinées à être utilisées pour obtenir un [jeton d’accès](#access-token).
 
 #### Configuration {#configuration}
 
@@ -114,6 +121,8 @@ Le jeton multimédia est un jeton généré par l’authentification Adobe Pass 
 
 Le jeton multimédia est transmis à [Programmer](#programmer), qui le valide ensuite pour garantir la sécurité de l&#39;accès pour cette [ressource](#resource).
 
+Synonyme avec ancien terme utilisé comme jeton d’autorisation court.
+
 #### Vérificateur de jeton multimédia {#media-token-verifier}
 
 Le outil de vérification de jeton multimédia est une bibliothèque distribuée par l’authentification Adobe Pass qui est chargée de vérifier l’authenticité d’un [jeton multimédia](#media-token).
@@ -138,7 +147,15 @@ Le partenaire est identifié par une valeur unique (par exemple, &quot;pomme&quo
 
 #### Préautorisation {#preauthorization}
 
-La préautorisation est un processus qui permet à un utilisateur de prévisualiser la liste de [ressources](#resource) à partir d’un catalogue [Programmer](#programmer) auquel il aurait droit, après avoir validé les droits de l’utilisateur avec le [MVPD](#mvpd).
+La préautorisation est un processus qui permet à un utilisateur de prévisualiser un sous-ensemble de [ressources](#resource) à partir d’un catalogue de [programmeur](#programmer) auquel il aurait droit, après avoir validé les droits de l’utilisateur avec le [MVPD](#mvpd).
+
+Synonyme de [Preflight](#preflight).
+
+#### Contrôle en amont {#preflight}
+
+Le contrôle en amont est un processus qui permet à un utilisateur de prévisualiser un sous-ensemble de [ressources](#resource) à partir d’un catalogue de [programmeur](#programmer) auquel il aurait droit, après avoir validé les droits de l’utilisateur avec le [MVPD](#mvpd).
+
+Synonyme de [Preauthorization](#preauthorization).
 
 #### Application de Principal (programmeur) {#primary-application}
 
@@ -147,6 +164,8 @@ L’application principale fait référence à une application [Programmer](#pro
 #### Profil {#profile}
 
 Le profil est un concept d’authentification Adobe Pass qui stocke des informations sur la date de début et de fin de l’authentification de l’utilisateur, les [métadonnées de l’utilisateur](#user-metadata) ainsi que d’autres champs qui indiquent la méthode d’obtention de l’authentification (par exemple, &quot;normal&quot;, &quot;dégradé&quot;, &quot;temporaire&quot;, &quot;authentification unique&quot;, etc.).
+
+Synonyme avec l’ancien terme utilisé comme jeton d’authentification.
 
 #### Programmeur {#programmer}
 
@@ -270,7 +289,7 @@ L’agent utilisateur fait référence à un navigateur ou à un composant simil
 
 #### Métadonnées utilisateur {#user-metadata}
 
-Les métadonnées utilisateur font référence à des attributs spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, identifiants utilisateur, etc.) qui sont conservés par le [MVPD](#mvpd) et fournis par l’authentification Adobe Pass dans le cadre d’un [profil](#profile).
+Les métadonnées utilisateur font référence à des attributs spécifiques à l’utilisateur (par exemple, des codes postaux, des évaluations parentales, des ID utilisateur, etc.) qui sont gérés par le [MVPD](#mvpd) et fournis par l’authentification Adobe Pass dans le cadre d’un [profil](#profile).
 
 Pour plus d’informations, consultez la documentation [Métadonnées utilisateur](/help/authentication/user-metadata-feature.md).
 

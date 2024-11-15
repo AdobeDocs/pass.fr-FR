@@ -2,7 +2,7 @@
 title: Intégrations des tableaux de bord TVE
 description: Découvrez les intégrations entre vos canaux et MVPD et comment gérer les intégrations.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -328,7 +328,7 @@ Pour créer une nouvelle intégration avec un nouveau MVPD dans votre configurat
 Une nouvelle intégration sera créée uniquement après les [modifications de révision et de notification push](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 
-## Désactivation de l’intégration {#disable-integratgion}
+## Désactivation de l’intégration {#disable-integration}
 
 Pour désactiver une intégration, procédez comme suit :
 
