@@ -2,9 +2,9 @@
 title: Guide pas à pas Apple SSO (API REST V2)
 description: Guide pas à pas Apple SSO (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3442'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,10 @@ Exécutez les étapes données pour mettre en oeuvre l’authentification unique
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`
    > * Tous les paramètres et en-têtes _optional_
 
-1. **Indiquez l’action suivante :** La réponse du point de terminaison de la connexion Adobe Pass contient les données nécessaires pour guider l’application de diffusion en continu concernant l’action suivante.
+1. **Indiquez l’action suivante :** La réponse du point de terminaison de la connexion Adobe Pass contient les données nécessaires pour guider l’application de diffusion en continu concernant l’action suivante :
+   * L’attribut `url` est manquant, car l’utilisateur doit interagir avec le niveau du partenaire (système) pour terminer le flux de déconnexion.
+   * L’attribut `actionName` est défini sur &quot;partner_logout&quot;.
+   * L’attribut `actionType` est défini sur &quot;partner_interactive&quot;.
 
    >[!IMPORTANT]
    >
