@@ -2,7 +2,7 @@
 title: Attributs de métadonnées standard
 description: Attributs de métadonnées standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 4%
@@ -24,7 +24,7 @@ L’API de surveillance de la simultanéité force les clients à envoyer les va
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | En-tête d’autorisation | ticket Zendesk lors de l’intégration |
 | mvpdName | Sample_MVPD | chemin URI | Authentification Adobe Pass à partir du point de terminaison de configuration lorsque l’utilisateur sélectionne le MVPD |
-| accountId | 12345 | chemin URI | Authentification Adobe Pass métadonnées amontUserID après connexion de l’utilisateur [Métadonnées utilisateur amontUserID - Authentification Adobe Pass](/help/authentication/user-metadata-feature.md) |
+| accountId | 12345 | chemin URI | Authentification Adobe Pass métadonnées amontUserID après connexion de l’utilisateur [Métadonnées utilisateur amontUserID - Authentification Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
 
 
 ## Attributs de métadonnées {#metadata-attr}
