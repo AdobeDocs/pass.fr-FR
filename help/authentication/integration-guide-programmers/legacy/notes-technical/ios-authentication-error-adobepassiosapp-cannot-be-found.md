@@ -2,9 +2,9 @@
 title: Erreur d’authentification iOS - adobepass.ios.app introuvable
 description: Erreur d’authentification iOS - adobepass.ios.app introuvable
 exl-id: cd97c6fb-f0fa-45c2-82c1-f28aa6b2fd12
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '365'
+source-wordcount: '387'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 ## Problème {#issue}
 

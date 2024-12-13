@@ -2,9 +2,9 @@
 title: Accéder à l’authentification unique (SSO) Android SDK sur les applications Android 10
 description: Accéder à l’authentification unique (SSO) Android SDK sur les applications Android 10
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '402'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 ## Vue d’ensemble
 

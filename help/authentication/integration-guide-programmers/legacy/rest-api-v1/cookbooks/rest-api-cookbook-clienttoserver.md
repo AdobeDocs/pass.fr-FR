@@ -2,9 +2,9 @@
 title: Manuel de l’API REST (client à serveur)
 description: Client de guide pas à pas de l’API REST au serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '899'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,9 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 ## Vue d’ensemble {#overview}
 

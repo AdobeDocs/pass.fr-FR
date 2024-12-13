@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1258'
+source-wordcount: '1260'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,35 @@ ht-degree: 2%
 # Aide sur l’authentification Adobe Pass {#authentication}
 
 + [Authentification Adobe Pass](home.md)
++ [Annonces de produit](product-announcements.md)
++ Versions du produit {#product-releases}
+   + {#2024} 2024
+      + [Notes de mise à jour de l’authentification Adobe Pass version 3.0.3](notes-releases/auth-rn-303.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass 3.0](notes-releases/auth-rn-300.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.70](notes-releases/auth-rn-270.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.69](notes-releases/auth-rn-269.md)
+      + [Notes de mise à jour de la version 4.7.0 d’Adobe Pass Authentication JavaScript](notes-releases/authn-rn-javascript-470.md)
+      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
+      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
+   + {#2023} 2023
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.68](notes-releases/auth-rn-268.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.67](notes-releases/auth-rn-267.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.66](notes-releases/auth-rn-266.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass 2.65.1](notes-releases/auth-rn-2651.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.65](notes-releases/auth-rn-265.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass 2.64.1](notes-releases/auth-rn-2641.md)
+      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.3](notes-releases/authn-rn-ios-tvos-383.md)
+      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.2](notes-releases/authn-rn-ios-tvos-382.md)
+      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.1](notes-releases/authn-rn-ios-tvos-381.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3](notes-releases/authn-rn-android-373.md)
+   + {#2022} 2022
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.64](notes-releases/auth-rn-264.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass version 2.63](notes-releases/auth-rn-263.md)
+      + [Notes de mise à jour de l’authentification Adobe Pass 2.62.1](notes-releases/auth-rn-2621.md)
+      + [Notes de mise à jour de la version 4.6.0 d’Adobe Pass Authentication JavaScript](notes-releases/authn-rn-javascript-460.md)
+   + {#2021} 2021
+      + [Notes de mise à jour de la version 4.4.0 d’Adobe Pass Authentication JavaScript](notes-releases/authn-rn-javascript-440.md)
+      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + {#kickstart} Kickstart
    + [Document technique](kickstart/technical-paper.md)
    + [Présentation du programmeur](kickstart/programmer-overview.md)
@@ -261,34 +290,6 @@ ht-degree: 2%
    + [Intégrations](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
    + [Rapports](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
    + [Log des modifications](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
-+ Notes de mise à jour {#release-notes}
-   + {#release-notes-2024} 2024
-      + [Notes de mise à jour de l’authentification Adobe Pass version 3.0.3](notes-releases/auth-rn-303.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass 3.0](notes-releases/auth-rn-300.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.70](notes-releases/auth-rn-270.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.69](notes-releases/auth-rn-269.md)
-      + [Notes De Mise À Jour De JavaScript 4.7.0 D’Authentification Adobe Pass](notes-releases/authn-rn-javascript-470.md)
-      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
-      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
-   + {#release-notes-2023} 2023
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.68](notes-releases/auth-rn-268.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.67](notes-releases/auth-rn-267.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.66](notes-releases/auth-rn-266.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass 2.65.1](notes-releases/auth-rn-2651.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.65](notes-releases/auth-rn-265.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass 2.64.1](notes-releases/auth-rn-2641.md)
-      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.3](notes-releases/authn-rn-ios-tvos-383.md)
-      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.2](notes-releases/authn-rn-ios-tvos-382.md)
-      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.8.1](notes-releases/authn-rn-ios-tvos-381.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3](notes-releases/authn-rn-android-373.md)
-   + {#release-notes-2022} 2022
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.64](notes-releases/auth-rn-264.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass version 2.63](notes-releases/auth-rn-263.md)
-      + [Notes de mise à jour de l’authentification Adobe Pass 2.62.1](notes-releases/auth-rn-2621.md)
-      + [Notes De Mise À Jour De JavaScript 4.6.0 D’Authentification Adobe Pass](notes-releases/authn-rn-javascript-460.md)
-   + {#release-notes-2021} 2021
-      + [Notes De Mise À Jour De JavaScript 4.4.0 D’Authentification Adobe Pass](notes-releases/authn-rn-javascript-440.md)
-      + [Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + Notes techniques {#tech-notes}
    + {#environments} Environnements
       + [Présentation des environnements d’Adobe](notes-technical/environments/understanding-the-adobe-environments.md)

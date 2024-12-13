@@ -2,9 +2,9 @@
 title: Fonction de contrôle en amont, comment activer, résoudre les problèmes ou déterminer le problème
 description: Fonction de contrôle en amont, comment activer, résoudre les problèmes ou déterminer le problème
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 La façon dont l’authentification Adobe Pass calcule les ressources preAuthorizeResources a changé. L’API PreAuthorization a une nouvelle mise en œuvre. Cette implémentation remplace l’ancienne solution qui consistait à effectuer uniquement des appels d’autorisation multiples.
 L’interface externe de l’API PreAuthorization reste inchangée ; aucune mise à jour n’est requise dans l’application du programmeur.

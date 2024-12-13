@@ -2,9 +2,9 @@
 title: Comprendre les ID utilisateur
 description: Comprendre les ID utilisateur
 exl-id: 813a8501-db72-4850-a387-c8db6120db80
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '625'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 Conceptuellement, chaque utilisateur qui initie un flux de droits est associé à un ID utilisateur unique. Cependant, au cours d’un flux de droits, cet identifiant utilisateur peut être présenté de différentes manières, en fonction de l’API auprès de laquelle vous l’obtenez.
 

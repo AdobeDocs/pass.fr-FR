@@ -2,9 +2,9 @@
 title: Avantages de l’utilisation du paramètre deviceType sans client dans les mesures d’authentification Adobe Pass
 description: Avantages de l’utilisation du paramètre deviceType sans client dans les mesures d’authentification Adobe Pass
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '374'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 </br>
 

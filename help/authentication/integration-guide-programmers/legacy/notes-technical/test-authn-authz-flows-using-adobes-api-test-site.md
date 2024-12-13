@@ -2,9 +2,9 @@
 title: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API d’Adobe
 description: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API d’Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 Afin de tester les flux AuthN et AuthZ, nous avons préparé un site de test **API** à votre disposition. Notre équipe d&#39;assistance se fera un plaisir de vous fournir les informations d&#39;identification. Vous pouvez nous contacter à **support@tve.zendesk.com**.
 

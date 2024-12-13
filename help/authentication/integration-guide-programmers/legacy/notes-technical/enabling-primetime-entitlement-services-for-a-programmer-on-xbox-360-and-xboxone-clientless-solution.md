@@ -2,9 +2,9 @@
 title: Activation des services Adobe Pass Entitlement pour un programmeur sur Xbox 360 et XboxOne sans client
 description: Activation des services Adobe Pass Entitlement pour un programmeur sur Xbox 360 et XboxOne sans client
 exl-id: ff7254de-9ea4-4c27-a186-d1c2eea12222
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-
+>[!IMPORTANT]
+>
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 
 1. Le programmeur crée un ticket Zendesk pour activer Xbox 360/One pour la solution sans client d’authentification Adobe Pass en fournissant les informations suivantes :
