@@ -1,25 +1,25 @@
 ---
-title: Fournir la liste MVPD
-description: Fournir la liste MVPD
+title: Fourniture d’une liste MVPD
+description: Fourniture d’une liste MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '233'
 ht-degree: 2%
 
 ---
 
-# Fournir la liste MVPD {#provide-mvpd-list}
+# (Hérité) Fournir Une Liste MVPD {#provide-mvpd-list}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
-## Points de terminaison de l’API REST {#clientless-endpoints}
+## Points d’entrée de l’API REST {#clientless-endpoints}
 
 &lt;REGGIE_FQDN> :
 
@@ -35,19 +35,19 @@ ht-degree: 2%
 
 ## Description {#description}
 
-Renvoie la liste des MVPD configurés pour le demandeur.
+Renvoie la liste des fichiers MVPD configurés pour le demandeur.
 
-| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
+| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Authentification Adobe Pass | 1. Demandeur</br>    (Composant Chemin)</br>_2.  deviceType (obsolète)_ | GET | XML ou JSON contenant la liste des MVPD. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Authentification Adobe Pass | 1. Demandeur </br>    (Composant Chemin d’accès)</br>_2.  deviceType (obsolète)_ | GET | XML ou JSON contenant la liste des fichiers MVPD. | 200 |
 
 {style="table-layout:auto"}
 
 
 | Paramètre d’entrée | Description |
 | --------------- | ------------------------------------------------------------- |
-| demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
-| *deviceType* | Type de périphérique. |
+| demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
+| *deviceType* | Type d’appareil. |
 
 {style="table-layout:auto"}
 
@@ -55,10 +55,10 @@ Renvoie la liste des MVPD configurés pour le demandeur.
 
 Identique à la réponse XML MVPD existante au servlet /config
 
-Remarque : tous les MVPD configurés pour utiliser la fonction SSO de Platform auront les propriétés supplémentaires suivantes dans leur noeud correspondant (JSON/XML) :
+Remarque : tous les MVPD configurés pour utiliser la connexion unique de Platform disposent des propriétés supplémentaires suivantes dans leur nœud correspondant (JSON/XML) :
 
-* **enablePlatformServices (boolean):** indicateur indiquant si ce MVPD est intégré via la connexion unique à Platform
-* **boardingStatus (string):** Indicateur précisant si le MVPD prend entièrement en charge l’authentification unique par plateforme (SUPPORTED) ou si le MVPD apparaît uniquement dans le sélecteur de plateforme (PICKER)
-* **displayInPlatformPicker (booléen) :** si ce MVPD apparaît dans le sélecteur de plateforme
-* **platformMappingId (string):** l’identifiant de ce MVPD connu par la plateforme
-* **requiredMetadataFields (tableau de chaînes) :** les champs de métadonnées utilisateur attendus pour une connexion réussie
+* **enablePlatformServices (booléen) : indicateur** si ce MVPD est intégré via l’authentification unique de Platform
+* **boardingStatus (string) : indicateur** qui signale si le MVPD prend entièrement en charge l’authentification unique de Platform (PRIS EN CHARGE) ou si le MVPD apparaît uniquement dans le sélecteur de plateforme (PICKER)
+* **displayInPlatformPicker (booléen) :** ce MVPD doit-il apparaître dans le sélecteur de plateforme ?
+* **platformMappingId (string) :** l&#39;identifiant de ce MVPD tel qu&#39;il est connu par la plateforme
+* **requiredMetadataFields (tableau de chaînes) :** les champs de métadonnées utilisateur qui devraient être disponibles lors d’une connexion réussie

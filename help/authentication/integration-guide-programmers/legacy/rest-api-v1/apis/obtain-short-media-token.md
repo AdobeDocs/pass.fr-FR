@@ -1,25 +1,25 @@
 ---
 title: Obtention d’un jeton de média court
-description: Obtention d’un jeton multimédia court
+description: obtention d’un jeton de média court
 exl-id: 667eaaba-423e-4d54-9dbe-084b3c049e1f
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '370'
+source-wordcount: '371'
 ht-degree: 0%
 
 ---
 
-# Obtention d’un jeton de média court {#obtain-short-media-token}
+# (Hérité) Obtention D’Un Jeton Multimédia Court {#obtain-short-media-token}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
-## Points de terminaison de l’API REST {#clientless-endpoints}
+## Points d’entrée de l’API REST {#clientless-endpoints}
 
 &lt;REGGIE_FQDN> :
 
@@ -35,11 +35,11 @@ ht-degree: 0%
 
 ## Description {#description}
 
-Obtient Un Jeton De Média Court.
+Obtient un jeton de média court.
 
-| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
+| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/mediatoken</br></br> ou</br></br>&lt;SP_FQDN>/api/v1/tokens/media</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/tokens/media | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  resource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6.  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète) | GET | XML ou JSON contenant un jeton de média codé Base64 ou des détails d’erreur en cas d’échec. | 200 - Succès </br>403 - Pas de succès |
+| &lt;SP_FQDN>/api/v1/mediatoken</br></br> ou</br></br>&lt;SP_FQDN>/api/v1/tokens/media</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/tokens/media | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  ressource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète) | GET | XML ou JSON contenant un jeton de média codé en Base64 ou des détails d’erreur en cas d’échec. | 200 - Succès </br>403 - Aucun Succès |
 
 {style="table-layout:auto"}
 
@@ -53,19 +53,19 @@ Obtient Un Jeton De Média Court.
 
 | Paramètre d’entrée | Description |
 |-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
-| deviceId | Octets d’identifiant de l’appareil. |
-| resource | Chaîne contenant un resourceId (ou fragment MRSS), identifiant le contenu demandé par un utilisateur et reconnu par les points de terminaison d’autorisation MVPD. |
-| device_info/</br></br>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br>**Remarque** : cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. </br></br>Pour plus d&#39;informations, reportez-vous à la section [Transmission des informations de périphérique et de connexion](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM offre des mesures [ventilées par type d’appareil]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyses puissent être effectués. Par exemple, Roku, Apple TV et Xbox.</br></br>Voir [Avantages de l’utilisation du paramètre de type de périphérique sans client ](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplace ce paramètre. |
-| _deviceUser_ | Identifiant de l’utilisateur de l’appareil.</br></br>**Remarque** : Si elle est utilisée, deviceUser doit avoir les mêmes valeurs que dans la requête [Create Registration Code](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) . |
-| _appId_ | ID/nom de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. S’il est utilisé, `appId` doit avoir les mêmes valeurs que dans la requête [Create Registration Code](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) . |
+| demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
+| deviceId | Octets d’ID de l’appareil. |
+| ressource | Chaîne contenant un resourceId (ou un fragment MRSS), identifiant le contenu demandé par un utilisateur et reconnu par les points d’entrée d’autorisation MVPD. |
+| device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL de GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM offre des mesures qui sont [ventilées par type d’appareil]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse peuvent être effectués pour. Par exemple, Roku, AppleTV et Xbox.</br></br>Voir [Avantages de l’utilisation du paramètre devicetype sans client ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplacera ce paramètre. |
+| _deviceUser_ | Identifiant utilisateur de l’appareil.</br></br>**Remarque** : si cette option est utilisée, deviceUser doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
+| _appId_ | Nom/ID de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. S’il est utilisé, `appId` doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 
 {style="table-layout:auto"}
 
 ### Exemple de réponse {#response}
 
-**XML :**
+**XML:**
 
 ```XML
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -96,6 +96,6 @@ Obtient Un Jeton De Média Court.
 
 
 
-### Compatibilité de la bibliothèque de vérification multimédia
+### Compatibilité de Media Verification Library
 
-Le champ `serializedToken` de l’appel &quot;Obtenir un jeton de média court&quot; est un jeton codé en base64 qui peut être vérifié par rapport à la bibliothèque de vérification Adobe Medium.
+Le champ `serializedToken` de l’appel « Obtenir un jeton de média court » est un jeton codé en Base64 qui peut être vérifié par rapport à la bibliothèque de vérification Adobe Medium.

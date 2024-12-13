@@ -1,25 +1,25 @@
 ---
-title: Vérification du flux d’authentification par application web de deuxième écran
-description: Vérification du flux d’authentification par application web de deuxième écran
+title: Vérifier le flux d’authentification par application web du deuxième écran
+description: Vérifier le flux d’authentification par application web du deuxième écran
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# Vérification du flux d’authentification par application web de deuxième écran {#check-authentication-flow-by-second-screen-web-app}
+# (Hérité) Vérifier le flux d’authentification par application web du deuxième écran {#check-authentication-flow-by-second-screen-web-app}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
-## Points de terminaison de l’API REST {#clientless-endpoints}
+## Points d’entrée de l’API REST {#clientless-endpoints}
 
 &lt;REGGIE_FQDN> :
 
@@ -35,19 +35,19 @@ ht-degree: 0%
 
 ## Description {#description}
 
-Cette API doit être utilisée par la seconde application web de connexion à l’écran pour confirmer que l’authentification Adobe Pass a reconnu la connexion réussie de MVPD. Nous vous recommandons d’appeler cette API avant d’afficher un message de réussite à l’utilisateur final qui lui indique de passer à la console de l’appareil pour continuer les workflows.
+Cette API doit être utilisée par l’application web de connexion du deuxième écran pour confirmer que l’authentification Adobe Pass a confirmé une connexion réussie à partir de MVPD. Nous vous recommandons d’appeler cette API avant d’afficher un message de réussite indiquant à l’utilisateur final de passer à la console de l’appareil pour poursuivre les workflows.
 
 
-| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
+| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{code d’enregistrement} | Application Web de connexion | 1. code d&#39;enregistrement </br>    (Composant Chemin)</br>2.  requestor </br>    (obligatoire) | GET | XML ou JSON contenant les détails d’erreur en cas d’échec. | 200 - Succès   </br>403 - Interdit |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Application Web de connexion | 1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  </br> du demandeur    (Obligatoire) | GET | XML ou JSON contenant les détails de l’erreur en cas d’échec. | 200 - Succès   </br>403 - Interdit |
 
 </br>
 
 | Paramètre d’entrée | Description |
 | ----------------- | --------------------------------------------------------------------------------------------- |
-| code d&#39;enregistrement | La valeur du code d’enregistrement fournie par l’utilisateur au début du flux d’authentification. |
-| demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
+| code d&#39;enregistrement | Valeur du code d’enregistrement fournie par l’utilisateur au début du flux d’authentification. |
+| demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
 
 
 ### Exemple de réponse (en cas d’erreur) {#response}

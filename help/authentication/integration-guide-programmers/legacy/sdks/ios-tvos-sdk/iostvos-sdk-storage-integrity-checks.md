@@ -1,23 +1,23 @@
 ---
-title: Mécanisme de contrôle de l’intégrité du stockage iOS/tvOS
-description: Mécanisme de vérification de l’intégrité iOS/tvOS
+title: Mécanisme de vérification de l’intégrité du stockage iOS/tvOS
+description: Mécanisme de vérification de l’intégrité d’iOS/tvOS
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '324'
 ht-degree: 2%
 
 ---
 
-# Mécanisme de vérification de l’intégrité iOS/tvOS {#iostvos-sdk-storage-integrity-checks}
+# Mécanisme de vérification de l’intégrité iOS/tvOS (hérité) {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 ## Introduction {#Intro}
 
-À compter de la version 3.8.3 du SDK iOS/tvOS AccessEnabler, l’option permettant d’effectuer des vérifications d’intégrité du stockage est disponible lors de l’initialisation d’AccessEnabler.
+À partir de la version 3.8.3 du SDK AccessEnabler d’iOS/tvOS, l’option permettant d’effectuer des contrôles d’intégrité du stockage est disponible lors de l’initialisation d’AccessEnabler.
 
 Pour utiliser ce mécanisme, l’api a été étendue avec une méthode d’initialisation supplémentaire pour la classe AccessEnabler.
 
@@ -26,17 +26,17 @@ Pour utiliser ce mécanisme, l’api a été étendue avec une méthode d’init
 ```
 
 
-## Vérifications de l’intégrité {#Checks}
+## Contrôles d’intégrité {#Checks}
 
-Les contrôles d’intégrité du stockage sont utiles lorsque la corruption du stockage AccessEnabler est suspectée (par exemple lorsqu’une situation de concurrence se produit lors d’une opération de stockage lecture/écriture).
+Les contrôles d’intégrité du stockage sont utiles lorsque la corruption du stockage AccessEnabler est suspectée (par exemple lorsqu’une condition de concurrence se produit lors d’une opération de stockage en lecture/écriture).
 
-Les vérifications suivantes peuvent être effectuées lors de l’initialisation d’AccessEnabler :
-- Opérabilité du stockage : vérifie la réussite des opérations de lecture et d’écriture
+Les vérifications suivantes peuvent être effectuées lors de l&#39;initialisation d&#39;AccessEnabler :
+- Opérabilité du stockage : vérifie le succès des opérations de lecture et d’écriture
 - Intégrité des valeurs stockées : vérifie que toutes les valeurs sont valides et au format attendu
 
 >[!IMPORTANT]
 > 
->Si l’une des vérifications échoue, toutes les valeurs du stockage sont effacées et l’utilisateur est déconnecté, ce qui peut entraîner une mauvaise expérience utilisateur. Utilisez les contrôles d’intégrité du stockage uniquement lorsque cela est nécessaire.
+>Si l’une des vérifications échoue, toutes les valeurs du stockage sont effacées et l’utilisateur est déconnecté, ce qui peut entraîner une mauvaise expérience utilisateur. N’utilisez les contrôles d’intégrité du stockage que lorsque cela est jugé nécessaire.
 
 
 ## Comportement par défaut {#Default}
@@ -66,8 +66,8 @@ AccessEnabler *accessEnabler = [[AccessEnabler alloc] initWithStorageCheck:INTEG
 
 L’énumération IntegrityCheckType est exposée à l’application cliente et possède les valeurs suivantes :
 
-| Valeur | Vérifications effectuées | Stockage effacé | Description | Cas d’utilisation recommandé |
+| Valeur | Contrôles effectués | Stockage effacé | Description | Cas d’utilisation recommandé |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| INTEGRITY_CHECK_NONE | Aucun | Jamais | Aucune vérification de l’intégrité n’est effectuée lors de l’initialisation du stockage | Lorsque les flux de SDK fonctionnent comme prévu |
-| INTEGRITY_CHECK_ALL | Opérabilité de stockage <br/> Validité des valeurs stockées | Échec de la vérification | Toutes les vérifications d’intégrité disponibles sont effectuées lors de l’initialisation du stockage. | Lorsque la corruption du stockage du SDK est suspectée. <br/> En cas d’échec des contrôles d’intégrité, l’utilisateur est déconnecté. |
-| INTEGRITY_CHECK_CLEAR | Aucun | Toujours | Le stockage est effacé lors de l’initialisation du stockage. | Lorsque les flux de SDK ne peuvent pas être terminés comme prévu |
+| INTEGRITY_CHECK_NONE | Aucun | Jamais | Aucune vérification d&#39;intégrité n&#39;est effectuée à l&#39;initialisation du stockage | Lorsque les flux SDK fonctionnent comme prévu |
+| INTEGRITY_CHECK_ALL | Opérabilité du stockage <br/> Validité des valeurs stockées | Échec lors de la vérification | Tous les contrôles d&#39;intégrité disponibles sont effectués à l&#39;initialisation du stockage | En cas de suspicion de corruption du stockage SDK. <br/> En cas d’échec de l’une des vérifications d’intégrité, l’utilisateur est déconnecté |
+| INTEGRITY_CHECK_CLEAR | Aucun | Toujours | Le stockage est effacé à l&#39;initialisation du stockage | Lorsque les flux SDK ne peuvent pas être exécutés comme prévu |

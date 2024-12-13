@@ -1,25 +1,25 @@
 ---
-title: Enregistrement des retours
-description: Enregistrement des retours
+title: Enregistrement d'enregistrement de retour
+description: Enregistrement d'enregistrement de retour
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '253'
 ht-degree: 2%
 
 ---
 
-# Enregistrement des retours {#return-registration-record}
+# Enregistrement d’enregistrement de retour (hérité) {#return-registration-record}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
-## Points de terminaison de l’API REST {#clientless-endpoints}
+## Points d’entrée de l’API REST {#clientless-endpoints}
 
 `<REGGIE_FQDN>` :
 
@@ -36,16 +36,16 @@ ht-degree: 2%
 
 ## Description {#description}
 
-Renvoie l’enregistrement du code d’enregistrement contenant le code d’enregistrement UUID, le code d’enregistrement et l’identifiant d’appareil haché.
+Renvoie l’enregistrement du code d’enregistrement contenant l’UUID du code d’enregistrement, le code d’enregistrement et l’ID de périphérique haché.
 
 
 
 
 
 
-| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
+| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur </br>    (Composant Chemin)</br>2.  code d&#39;enregistrement </br>    (composant Chemin) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir schéma et exemple ci-dessous. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. </br> du demandeur    (Composant Chemin d’accès)</br>2.  </br> du code d’enregistrement    (Composant Chemin) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir le schéma et l’exemple ci-dessous. | 200 |
 
 {style="table-layout:auto"}
 
@@ -54,15 +54,15 @@ Renvoie l’enregistrement du code d’enregistrement contenant le code d’enre
 
 | Paramètre d’entrée | Description |
 | --- | --- |
-| demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
-| code d&#39;enregistrement | La valeur du code d’enregistrement qui s’afficherait sur le périphérique de diffusion (à saisir dans le flux d’authentification). |
+| demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
+| code d&#39;enregistrement | Valeur du code d’enregistrement qui s’afficherait sur l’appareil de diffusion en continu (à saisir dans le flux d’authentification). |
 
 
 
 
 ## Schéma XML de réponse {#response-xml-schema}
 
-### XSD du code d’enregistrement
+### Code d’enregistrement XSD
 
 ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -99,17 +99,17 @@ Renvoie l’enregistrement du code d’enregistrement contenant le code d’enre
 | Nom de l’élément | Description |
 | --- | --- |
 | id | UUID généré par le service de code d’enregistrement |
-| code | Code d’enregistrement généré par le service de code d’enregistrement |
-| demandeur | Identifiant du demandeur |
+| code | Code d’enregistrement généré par le service Registration Code |
+| demandeur | ID du demandeur |
 | mvpd | MVPD ID |
-| généré | Horodatage de création du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
-| expires | Horodatage de l’expiration du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
+| généré | Date et heure de création du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
+| expire | Date et heure d’expiration du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
 | deviceId | ID d’appareil unique (ou jeton XSTS) |
-| deviceType | Type de périphérique |
+| deviceType | Type d’appareil |
 | deviceUser | Utilisateur connecté à l’appareil |
-| appId | ID de l’application |
+| appId | Id De L&#39;Application |
 | appVersion | Version de l’application |
-| registrationURL | URL de l’application Web de connexion à afficher à l’utilisateur final |
+| registrationURL | URL de l’application web de connexion à afficher pour l’utilisateur final |
 
 {style="table-layout:auto"}
 

@@ -1,25 +1,25 @@
 ---
-title: Page d’enregistrement
-description: Page d’enregistrement
+title: Page d'inscription
+description: Page d'inscription
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '494'
 ht-degree: 1%
 
 ---
 
-# Page d’enregistrement {#registration-page}
+# Page d’enregistrement (héritée) {#registration-page}
 
-## Points de terminaison de l’API REST {#clientless-endpoints}
-
->[!NOTE]
->
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+## Points d’entrée de l’API REST {#clientless-endpoints}
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+>[!NOTE]
+>
+> L’implémentation de l’API REST est limitée par [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 &lt;REGGIE_FQDN> :
 
@@ -35,43 +35,43 @@ ht-degree: 1%
 
 ## Description {#create-reg-code-svc}
 
-Renvoie le code d’enregistrement généré de manière aléatoire et l’URI de page de connexion.
+Renvoie le code d’enregistrement et l’URI de page de connexion générés de manière aléatoire.
 
-| Point d’entrée | Appelé <br> | Entrée   <br>Paramètre | Méthode HTTP <br> | Réponse | Réponse HTTP <br> |
+| Point d’entrée | Appelé <br>Par | Entrée   <br>Paramètre | HTTP <br>Méthode | Réponse | HTTP <br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Application de diffusion en continu<br>ou<br>Service de programmation | 1. demandeur <br>    (Composant Chemin)<br>2.  deviceId (Hashed)   <br>    (Obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POST | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Service de programmation<br>ou<br>d’application en flux continu | 1. <br> du demandeur    (Composant Chemin d’accès)<br>2.  deviceId (haché)   <br>    (Obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POST | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
 
 {style="table-layout:auto"}
 
 | Paramètre d’entrée | Type | Description |
 | --- |------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisation | Valeur d’en-tête <br> : porteur &lt;access_token> | Jeton d’accès DCR |
-| Accepter | Valeur d’en-tête <br> : application/json | indiquer le type de contenu que le client doit être en mesure de comprendre ; |
-| demandeur | Paramètre de requête | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
-| deviceId | Paramètre de requête | Octets d’identifiant de l’appareil. |
-| device_info/<br>X-Device-Info | device_info: Body <br> X-Device-Info: Header | Informations sur les périphériques de diffusion en continu.<br>**Remarque** : cette variable peut être transmise à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, elle doit être transmise sous la forme X-Device-Info dans l’en-tête http. <br>Pour plus d&#39;informations, reportez-vous à la section [Transmission des informations de périphérique et de connexion](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
+| Autorisation | En-tête <br> valeur : porteur &lt;access_token> | Jeton d’accès DCR |
+| Accepter | Valeur de <br> d’en-tête : application/json. | indiquer le type de contenu que le client doit pouvoir comprendre |
+| demandeur | Paramètre de requête | ID de demandeur du programmeur pour lequel cette opération est valide. |
+| deviceId | Paramètre de requête | Octets d’ID de l’appareil. |
+| device_info/<br>X-Device-Info | device_info : Corps <br> X-Device-Info : En-tête | Informations sur l’appareil de diffusion en continu.<br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL de GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. <br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Paramètre de requête | Identifiant MVPD pour lequel cette opération est valide. |
-| ttl | Paramètre de requête | Durée de vie de ce regcode en secondes.<br>**Remarque** : la valeur maximale autorisée pour ttl est de 36 000 secondes (10 heures). Des valeurs plus élevées entraînent une réponse HTTP 400 (mauvaise requête). Si `ttl` n’est pas renseigné, l’authentification Adobe Pass définit une valeur par défaut de 30 minutes. |
-| _deviceType_ | Paramètre de requête | Obsolète, ne doit pas être utilisée. |
-| _deviceUser_ | Paramètre de requête | Obsolète, ne doit pas être utilisée. |
-| _appId_ | Paramètre de requête | Obsolète, ne doit pas être utilisée. |
+| ttl | Paramètre de requête | Durée pendant laquelle ce regcode doit durer en secondes.<br>**Remarque** : la valeur maximale autorisée pour ttl est de 36000 secondes (10 heures). Des valeurs plus élevées entraînent une réponse HTTP 400 (requête incorrecte). Si `ttl` n’est pas renseigné, l’authentification Adobe Pass définit une valeur par défaut de 30 minutes. |
+| _deviceType_ | Paramètre de requête | Obsolète, ne doit pas être utilisé. |
+| _deviceUser_ | Paramètre de requête | Obsolète, ne doit pas être utilisé. |
+| _appId_ | Paramètre de requête | Obsolète, ne doit pas être utilisé. |
 
 {style="table-layout:auto"}
 
 >[!CAUTION]
 >
->**Adresse IP du périphérique de diffusion en continu**
+>**Adresse IP de l’appareil de streaming**
 ><br>
->Pour les mises en oeuvre client-serveur, l’adresse IP du périphérique en flux continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué en tant que service de programmation et non comme périphérique de diffusion en continu, l’en-tête suivant est nécessaire pour transmettre l’adresse IP du périphérique de diffusion en continu :
+>Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué par le service de programmation et non par l’appareil de diffusion en continu, l’en-tête suivant est requis pour transmettre l’adresse IP de l’appareil de diffusion en continu :
 >
 >
 >```
 >X-Forwarded-For : <streaming_device_ip> 
 >```
 >
->où `<streaming\_device\_ip>` est l’adresse IP publique de l’appareil en flux continu.
+>où `<streaming\_device\_ip>` est l’adresse IP publique de l’appareil de diffusion en continu.
 ><br><br>
->Exemple :<br>
+>Exemple : <br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
@@ -82,7 +82,7 @@ Renvoie le code d’enregistrement généré de manière aléatoire et l’URI d
 ### JSON de réponse
 
 
-#### Exemples JSON de code d’enregistrement
+#### EXEMPLES JSON de code d’enregistrement
 
 ```JSON
 {
@@ -112,18 +112,18 @@ Renvoie le code d’enregistrement généré de manière aléatoire et l’URI d
 | Nom de l’élément | Description |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------|
 | id | UUID généré par le service de code d’enregistrement |
-| code | Code d’enregistrement généré par le service de code d’enregistrement |
-| demandeur | Identifiant du demandeur |
+| code | Code d’enregistrement généré par le service Registration Code |
+| demandeur | ID du demandeur |
 | mvpd | Identifiant Mvpd |
-| généré | Horodatage de création du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
-| expires | Horodatage de l’expiration du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
-| deviceId | ID d’appareil unique de base64 |
-| info:deviceId | Type de périphérique Base64 |
-| info:deviceInfo | Base64 Informations sur les périphériques normalisées reposant sur les informations reçues de User-Agent, X-Device-Info ou device_info |
+| généré | Date et heure de création du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
+| expire | Date et heure d’expiration du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
+| deviceId | ID d’appareil unique Base64 |
+| info:deviceId | Type d’appareil Base64 |
+| info:deviceInfo | Base64 Normalised Device Information s&#39;appuie sur les informations reçues de User-Agent, X-Device-Info ou device_info |
 | info:userAgent | Agent utilisateur envoyé par l’application |
 | info:originalUserAgent | Agent utilisateur envoyé par l’application |
-| info:authorizationType | OAUTH2 pour les appels utilisant DCR |
-| info:sourceApplicationInformation | Informations sur l’application telles que configurées dans DCR |
+| info:authorizationType | OAUTH2 des appels à l’aide de DCR |
+| info:sourceApplicationInformation | Informations sur l’application telles que configurées dans le DCR |
 
 {style="table-layout:auto"}
 

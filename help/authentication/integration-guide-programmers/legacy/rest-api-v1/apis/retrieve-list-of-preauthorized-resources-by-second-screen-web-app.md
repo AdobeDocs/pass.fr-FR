@@ -1,25 +1,25 @@
 ---
-title: Récupération de la liste des ressources préautorisées par une application web de deuxième écran
-description: Récupération de la liste des ressources préautorisées par une application web de deuxième écran
+title: Récupération de la liste des ressources préautorisées par l’application web du deuxième écran
+description: Récupération de la liste des ressources préautorisées par l’application web du deuxième écran
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
-# Récupération de la liste des ressources préautorisées par une application web de deuxième écran {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
+# (Hérité) Récupérer la liste des ressources préautorisées par l’application web du deuxième écran {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
-## Points de terminaison de l’API REST {#clientless-endpoints}
+## Points d’entrée de l’API REST {#clientless-endpoints}
 
 &lt;REGGIE_FQDN> :
 
@@ -35,27 +35,27 @@ ht-degree: 0%
 
 ## Description {#description}
 
-Demande d’authentification Adobe Pass pour obtenir la liste des ressources préautorisées.
+Une requête à l’Authentification Adobe Pass pour obtenir la liste des ressources préautorisées.
 
-Il existe deux ensembles d’API : un ensemble pour l’application de diffusion en continu ou le service de programmation et un ensemble pour l’application web du deuxième écran. Cette page décrit l’API de l’application AuthN.
+Il existe deux ensembles d’API : l’un pour l’application de diffusion en continu ou le service de programmation, l’autre pour la deuxième application web Screens. Cette page décrit l’API de l’application AuthN.
 
 
-| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
+| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorized/{code d’enregistrement} | Module AuthN | 1. code d&#39;enregistrement </br>    (Composant Chemin)</br>2.  demandeur (obligatoire)</br>3.  liste de ressources (obligatoire) | GET | XML ou JSON contenant des décisions de préautorisation ou des détails d’erreur individuels. Voir les exemples ci-dessous. | 200 - Succès</br></br>400 - Bad request</br></br>401 - Unauthorized</br></br>405 - Méthode non autorisée </br></br>412 - Échec de la précondition</br></br>500 - Erreur interne du serveur |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Module AuthN | 1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  demandeur (obligatoire)</br>3.  liste des ressources (obligatoire) | GET | XML ou JSON contenant des décisions de pré-autorisation individuelles ou des détails d’erreur. Voir les exemples ci-dessous. | 200 - Succès </br></br> 400 - Requête incorrecte </br></br> 401 - Non autorisé </br></br> 405 - Méthode non autorisée </br></br>412 - Échec de la condition préalable </br></br> 500 - Erreur de serveur interne |
 
 
 
 | Paramètre d’entrée | Description |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| code d&#39;enregistrement | La valeur du code d’enregistrement fournie par l’utilisateur au début du flux d’authentification. |
-| demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
-| liste de ressources | Chaîne contenant une liste délimitée par des virgules de resourceIds qui identifie le contenu pouvant être accessible à un utilisateur et reconnu par les points de terminaison d’autorisation MVPD. |
+| code d&#39;enregistrement | Valeur du code d’enregistrement fournie par l’utilisateur au début du flux d’authentification. |
+| demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
+| liste des ressources | Chaîne contenant une liste délimitée par des virgules de resourceId qui identifie le contenu susceptible d’être accessible à un utilisateur ou une utilisatrice et qui est reconnue par les points d’entrée d’autorisation MVPD. |
 
 
 ### Exemple de réponse {#sample-response}
 
-**XML :**
+**XML:**
 
 ```XML
 HTTP/1.1 200 OK

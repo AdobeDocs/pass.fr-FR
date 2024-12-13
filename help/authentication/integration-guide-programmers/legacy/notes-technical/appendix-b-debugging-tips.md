@@ -1,0 +1,56 @@
+---
+title: Annexe B « Conseils de débogage »
+description: Annexe B « Conseils de débogage »
+exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+workflow-type: tm+mt
+source-wordcount: '162'
+ht-degree: 0%
+
+---
+
+# (Hérité) Annexe B : Conseils de débogage {#appendix-b-debugging-tips}
+
+>[!NOTE]
+>
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+
+
+## Effacement des données temporaires {#clearing-temporary-data}
+
+L’authentification Adobe Pass stocke des données temporaires telles que le cache du navigateur, le cache des LSO et les cookies. Il est important d’effacer les données temporaires pour vous assurer d’avoir une ardoise propre lors du test.
+
+- [Effacement du cache et des cookies du navigateur](#clearing-the-browser-cache-and-cookies)
+- [Effacement du cache des LSO](#clearing-lsos-cache)
+
+
+## Effacement du cache et des cookies du navigateur {#clearing-the-browser-cache-and-cookies}
+
+Il est fiable par le navigateur, mais dans Firefox : « Tools » -\> « Clear Recent History... » -\> Sur « Time range to clear: » sélectionnez « Tout »; et sur « Details » : vérifiez les « Cookies » et « Cache » -\> Cliquez sur « Clear Now ».
+
+
+## Effacement du cache des LSO {#clearing-lsos-cache}
+
+Accédez à l&#39;aide du Flash Player [](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+
+Sélectionnez le ```entitlement.\*``` (en fonction de ce qui a été testé) et cliquez sur « Supprimer le site web ».
+
+
+## Outils de débogage {#tools}
+
+Les ingénieurs Adobe Pass Authentication utilisent les outils de débogage suivants :
+
+- Firebug - <http://www.getfirebug.com/>
+- Flashbug (fonctionne avec la version de débogage du lecteur flash)
+- Fiddler - <http://www.fiddler2.com/fiddler2/>
+- Charles - <http://www.charlesproxy.com/>
+- Wireshark - <http://www.wireshark.org/>
+
+
+<!--
+## Related Information
+
+- [Programmer Integration Guide](/help/authentication/programmer-integration-guide-overview.md)
+
+- [Using Charles Proxy (Tech Note)](https://tve.zendesk.com/hc/en-us/articles/204962849-Using-Charles-Proxy)
+-->

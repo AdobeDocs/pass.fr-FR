@@ -1,43 +1,43 @@
 ---
-title: Présentation du SDK JavaScript
-description: Présentation du SDK JavaScript
+title: Présentation de JavaScript SDK
+description: Présentation de JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Présentation du SDK JavaScript {#javascript-sdk-overview}
+# Présentation de JavaScript SDK (hérité) {#javascript-sdk-overview}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 ## Introduction
 
-Adobe recommande vivement de migrer vers la dernière version JS v4.x de la bibliothèque AccessEnabler.
+Adobe vous recommande vivement de migrer vers la dernière version de JS v4.x de la bibliothèque AccessEnabler.
 
-L’intégration Adobe Pass Authentication JavaScript offre aux programmeurs une solution TV-Everywhere dans l’environnement de développement d’applications web JS familier. Les principaux composants de l’intégration sont votre application de &quot;haut niveau&quot; (interaction utilisateur, présentation vidéo), et la bibliothèque AccessEnabler de &quot;bas niveau&quot; fournie par l’Adobe, qui fournit votre entrée aux flux de droits, et gère la communication avec les serveurs d’authentification Adobe Pass.
+L’intégration de JavaScript d’authentification Adobe Pass offre aux programmeurs une solution TV-Everywhere dans l’environnement de développement d’applications web JS habituel. Les principaux composants de l’intégration sont votre application « de haut niveau » (interaction utilisateur, présentation vidéo) et la bibliothèque AccessEnabler « de bas niveau » fournie par l’Adobe, qui fournit votre entrée aux flux de droits et gère la communication avec les serveurs d’authentification Adobe Pass.
 
-Le flux général de droits d’authentification Adobe Pass est traité dans [Flux de droits du programmeur](/help/authentication/integration-guide-programmers/entitlement-flow.md), et le guide pas à pas d’intégration JavaScript vous guide tout au long de l’implémentation. Les sections suivantes contiennent des descriptions et des exemples spécifiques à l’intégration de JavaScript AccessEnabler.
+Le flux général de droits d’authentification Adobe Pass est traité dans la section [Flux de droits du programmeur](/help/authentication/integration-guide-programmers/entitlement-flow.md) et le guide pas à pas relatif à l’intégration de JavaScript vous guide tout au long de la mise en œuvre. Les sections suivantes fournissent des descriptions et des exemples spécifiques à l’intégration JavaScript AccessEnabler.
 
 >[!IMPORTANT]
 >
->Ce document décrit la mise en oeuvre d’une solution web pour ordinateur de bureau. La bibliothèque JavaScript n’est pas prise en charge sur les plateformes mobiles (par exemple, Safari sur iOS, Chrome sur Android). Utilisez nos SDK natifs si vous souhaitez cibler une plateforme mobile (iOS, Android, Windows).
+>Ce document décrit l’implémentation d’une solution web de bureau. La bibliothèque JavaScript n’est pas prise en charge sur les plateformes mobiles (par exemple, Safari sur iOS, Chrome sur Android). Utilisez nos SDK natifs si vous souhaitez cibler une plateforme mobile (iOS, Android, Windows).
 
 ## Création de la boîte de dialogue de sélection MVPD {#creating-the-mvpd-selection-dialog}
 
-Pour qu’un utilisateur se connecte à son MVPD et s’authentifie, votre page ou lecteur doit fournir à l’utilisateur un moyen d’identifier son MVPD. Une version par défaut d’une boîte de dialogue de sélection MVPD est fournie pour le développement. Pour une utilisation en production, vous devez mettre en oeuvre votre propre sélecteur MVPD.
+Pour qu’un utilisateur puisse se connecter à son MVPD et s’authentifier, votre page ou lecteur doit lui permettre d’identifier son MVPD. Une version par défaut d’une boîte de dialogue de sélection MVPD est fournie pour le développement. Pour une utilisation en production, vous devez implémenter votre propre sélecteur MVPD.
 
-Si vous savez déjà qui est le fournisseur du client, vous pouvez [définir le MVPD par programmation ](/help/authentication/home.md), sans interaction de l’utilisateur. La technique est la même, mais ignore l’étape d’appel de la boîte de dialogue du sélecteur de fournisseur et de sélection du MVPD par le client.
+Si vous savez déjà qui est le fournisseur du client, vous pouvez [définir le MVPD par programmation](/help/authentication/home.md) sans interaction de l’utilisateur. La technique est la même, mais contourne l’étape d’appel de la boîte de dialogue du sélecteur de fournisseur et de demande au client de sélectionner son MVPD.
 
 ## Affichage du fournisseur de services {#displaying-the-service-provider}
 
 L’exemple de code suivant montre comment découvrir et afficher le fournisseur de services pour le client actuel :
 
-**HTML** - Cette page ajoute une section à la page qui affiche le fournisseur choisi du client, s’il est déjà connecté :
+**HTML** - Cette page ajoute une section à la page qui affiche le fournisseur choisi par le client, s&#39;il est déjà connecté :
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -76,7 +76,7 @@ L’exemple de code suivant montre comment découvrir et afficher le fournisseur
 ```
 
 
-**JavaScript** Ce fichier JavaScript interroge le gestionnaire d’accès du fournisseur actuel si l’utilisateur est déjà connecté et affiche le résultat dans la section de page qui lui est réservée. Il met également en oeuvre une boîte de dialogue de sélecteur MVPD :
+**JavaScript** Ce fichier JavaScript interroge Access Enabler pour le fournisseur actuel si l&#39;utilisateur est déjà connecté et affiche le résultat dans la section de page qui lui est réservée. Il implémente également une boîte de dialogue de sélecteur MVPD :
 
 ```JS
     $(function() {
@@ -197,19 +197,19 @@ L’exemple de code suivant montre comment découvrir et afficher le fournisseur
 
 ## Déconnexion {#logout}
 
-Appelez `logout()` pour lancer le processus de déconnexion. Cette méthode ne prend aucun argument. Il déconnecte l’utilisateur actuel, efface toutes les informations d’authentification et d’autorisation pour cet utilisateur et supprime tous les jetons AuthN et AuthZ du système local.
+Appelez `logout()` pour lancer le processus de déconnexion. Cette méthode ne prend aucun argument. Il déconnecte l’utilisateur actuel, efface toutes les informations d’authentification et d’autorisation de cet utilisateur et supprime tous les jetons AuthN et AuthZ du système local.
 
 Dans certains cas, votre lecteur n’est pas responsable de la gestion des déconnexions des utilisateurs :
 
 
 
-- **Lorsque la déconnexion est lancée à partir d’un site qui n’est pas intégré à l’authentification Adobe Pass.** Dans ce cas, le MVPD peut appeler le service de connexion unique d’authentification Adobe Pass par le biais d’une redirection du navigateur. (L’appel de SLO via un appel backchannel n’est actuellement pas pris en charge.)
+- **Lorsque la déconnexion est lancée à partir d’un site qui n’est pas intégré à l’authentification Adobe Pass.** Dans ce cas, le MVPD peut appeler le service de déconnexion unique d’authentification Adobe Pass par le biais d’une redirection du navigateur. (L’appel de SLO via un appel de backchannel n’est actuellement pas pris en charge.)
 
 >[!NOTE]
 >
->Si l’utilisateur laisse son ordinateur inactif suffisamment longtemps pour que ses jetons expirent, il peut tout de même revenir à sa session et lancer la déconnexion. L’authentification Adobe Pass garantit que tous les jetons sont supprimés et avertit le MVPD de supprimer leur session.
+>Si l’utilisateur ou l’utilisatrice laisse son ordinateur inactif suffisamment longtemps pour que ses jetons expirent, il ou elle peut toujours revenir à sa session et lancer avec succès la déconnexion. L’authentification Adobe Pass s’assure que tous les jetons sont supprimés et avertit le MVPD de supprimer également sa session.
 
-Le code JavaScript suivant indique comment déconnecter (déauthentifier) un utilisateur actuellement authentifié :
+Le code JavaScript suivant illustre la déconnexion (désauthentification) d’un utilisateur actuellement authentifié :
 
 ```JS
     [...]

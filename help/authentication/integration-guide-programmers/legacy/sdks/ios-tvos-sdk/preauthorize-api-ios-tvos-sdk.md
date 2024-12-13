@@ -2,32 +2,32 @@
 title: Préautorisation de l’API iOS/tvOS
 description: Préautorisation de l’API iOS/tvOS
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
-# Préautoriser {#preauthorize}
+# (Hérité) Autoriser à l’avance {#preauthorize}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-L’API de préautorisation peut être utilisée pour obtenir une décision de préautorisation pour une ou plusieurs ressources. L’application peut ainsi implémenter des conseils d’interface utilisateur et/ou un filtrage de contenu.
+L’API de préautorisation peut être utilisée pour obtenir une décision de préautorisation pour une ou plusieurs ressources, de cette manière l’application peut implémenter des indications de l’interface utilisateur et/ou le filtrage de contenu.
 
 >[!IMPORTANT]
 >
->L’API d’autorisation **doit** être utilisée avant d’accorder à l’utilisateur l’accès aux ressources spécifiées.
+>L’API d’autorisation **doit** doit être utilisée avant d’accorder à l’utilisateur l’accès aux ressources spécifiées.
 
 Si le résultat de la réponse de l’API de préautorisation contient une ou plusieurs ressources avec une décision de préautorisation refusée, des informations d’erreur supplémentaires peuvent être incluses **(voir la note ci-dessous)** pour chaque ressource affectée.
 
 >[!IMPORTANT]
 >
->La fonctionnalité améliorée de création de rapports d’erreur qui ajoute des informations d’erreur supplémentaires pour les décisions de préautorisation refusées est disponible sur demande, car elle doit être activée côté configuration de l’authentification Adobe Pass.
+>La fonctionnalité de rapport d’erreur améliorée qui ajoute des informations d’erreur supplémentaires pour les décisions de préautorisation refusées est disponible sur demande, car elle doit être activée du côté de la configuration de l’authentification Adobe Pass.
 
-Si la demande de préautorisation d’API n’a pas pu être traitée en raison d’une erreur du SDK d’authentification Adobe Pass ou si une erreur des services d’authentification Adobe Pass a lieu, alors des informations d’erreur supplémentaires (quelle que soit la configuration ci-dessus) et aucune ressource ne sera incluse dans le résultat de la réponse de préautorisation d’API.
+Au cas où la demande de préautorisation de l’API n’a pas pu être traitée en raison d’une erreur de SDK d’authentification Adobe Pass ou au cas où une erreur de services d’authentification Adobe Pass se produit, une information d’erreur supplémentaire (indépendamment de la configuration ci-dessus) et aucune ressource ne seront incluses dans le résultat de la réponse de préautorisation de l’API.
 
 </br>
 
@@ -36,18 +36,18 @@ Si la demande de préautorisation d’API n’a pas pu être traitée en raison 
 
 **Disponibilité :** v3.6.0+
 
-**Paramètres :**
+**Paramètres:**
 
-- PreauthorizedRequest : objet de requête utilisé pour transmettre le contenu de la requête API ;
+- PreauthorizeRequest : objet de la requête utilisé pour transmettre le contenu de la requête API.
 - AccessEnablerCallback : objet de rappel utilisé pour renvoyer la réponse de l’API ;
-- PreauthorizedResponse : objet de réponse utilisé pour renvoyer le contenu de réponse de l’API ;
+- PreauthorizeResponse : objet de réponse utilisé pour renvoyer le contenu de la réponse de l’API
 
 
 </br>
 
 ## `class PreauthorizeRequest`{#androidpreauthorizerequest}
 
-### **class PreauthorizedRequest.Builder**
+### **class PreauthorizeRequest.Builder**
 
 ```
     ///
@@ -111,7 +111,7 @@ Si la demande de préautorisation d’API n’a pas pu être traitée en raison 
 ```
 
 
-## **enum PreauthorizedRequest.Feature**
+## **enum PreauthorizeRequest.Feature**
 
 ```
     ///
@@ -161,19 +161,19 @@ Si la demande de préautorisation d’API n’a pas pu être traitée en raison 
 
 ### Exemples :
 
-Cette section décrit la structure JSON de certains objets PreauthorizedResponse possibles.
+Cette section met en évidence la structure JSON de certains objets PreauthorizeResponse possibles.
 
 >[!IMPORTANT]
 >
->Les fichiers JSON présentés par les exemples suivants sont accessibles uniquement par le biais des classes de modèle présentées dans ce document. Vous ne pourrez pas accéder aux propriétés de ces fichiers JSON autrement qu’au moyen de méthodes publiques.
+>Les fichiers JSON présentés dans les exemples suivants sont accessibles uniquement par le biais des classes de modèles présentées dans ce document. Vous ne pourrez pas accéder aux propriétés de ces fichiers JSON autrement que par le biais des méthodes publiques.
 
 >[!IMPORTANT]
 >
->La liste des erreurs supplémentaires possibles récupérées à l’aide de la fonction améliorée de création de rapports d’erreurs est documentée dans la [création de rapports d’erreurs avancés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
+>La liste des erreurs supplémentaires possibles récupérées par le biais de la fonctionnalité de rapport d’erreur améliorée est documentée dans [Rapport d’erreur avancé](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
-#### Réussite
+#### Succès
 
-Toutes les ressources demandées ont une décision positive de préautorisation
+Toutes les ressources demandées font l&#39;objet d&#39;une décision positive de préautorisation
 
 ```JSON
     {
@@ -195,7 +195,7 @@ Toutes les ressources demandées ont une décision positive de préautorisation
 ```
 
 
-Une ou plusieurs ressources ont une décision de préautorisation refusée et la fonctionnalité de création de rapports d’erreur améliorée n’est pas activée dans la configuration de l’authentification Adobe Pass.
+Une ou plusieurs ressources ont une décision de préautorisation refusée et la fonctionnalité de rapport d’erreur améliorée n’est pas activée dans la configuration de l’authentification Adobe Pass
 
 ```JSON
     {
@@ -218,7 +218,7 @@ Une ou plusieurs ressources ont une décision de préautorisation refusée et la
 ```
 
 
-Une ou plusieurs ressources ont une décision de préautorisation refusée et la fonctionnalité de création de rapports d’erreur améliorée est activée dans la configuration de l’authentification Adobe Pass.
+Une ou plusieurs ressources se voient refuser la décision de préautorisation et la fonctionnalité de rapport d’erreur améliorée est activée dans la configuration de l’authentification Adobe Pass
 
 ```JSON
     {
@@ -253,7 +253,7 @@ Une ou plusieurs ressources ont une décision de préautorisation refusée et la
 
 
 
-Les services d’authentification Adobe Pass ont rencontré une erreur lors du traitement de la demande de préautorisation d’API.
+Les services d’authentification Adobe Pass rencontrent une erreur lors de la maintenance de la requête API de préautorisation
 
 ```JSON
     {
@@ -273,7 +273,7 @@ Les services d’authentification Adobe Pass ont rencontré une erreur lors du t
 
 #### Échec
 
-Le SDK d’authentification Adobe Pass rencontre une erreur lors du traitement de la demande de préautorisation d’API.
+Le SDK d’authentification Adobe Pass rencontre une erreur lors du traitement de la requête d’API de préautorisation
 
 ```JSON
     {
@@ -321,7 +321,7 @@ Le SDK d’authentification Adobe Pass rencontre une erreur lors du traitement d
 
 </br>
 
-## **class Status** {#status}
+## **statut de la classe** {#status}
 
 ```
     ///
@@ -377,7 +377,7 @@ Le SDK d’authentification Adobe Pass rencontre une erreur lors du traitement d
 
 <br>
 
-## **class Decision** {#decision}
+## **décision de classe** {#decision}
 
 ```
     ///

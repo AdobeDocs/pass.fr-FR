@@ -2,47 +2,47 @@
 title: Préautoriser Android
 description: Préautoriser Android
 exl-id: b5337595-135f-4981-a578-2da432f125d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '196'
 ht-degree: 0%
 
 ---
 
-# Préautoriser {#preuthorize-android}
+# (Hérité) Autoriser à l’avance {#preuthorize-android}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 </br>
 
 
-La méthode API de préautorisation doit être utilisée par les applications afin d’obtenir une décision de préautorisation pour une ou plusieurs ressources. La demande de préautorisation d’API doit être utilisée pour les conseils d’interface utilisateur et/ou le filtrage de contenu. Une demande d’API d’autorisation réelle doit être effectuée avant d’accorder à l’utilisateur l’accès à la ou aux ressources spécifiées.
+La méthode API de préautorisation doit être utilisée par les applications afin d’obtenir une décision de préautorisation pour une ou plusieurs ressources. La requête d’API de préautorisation doit être utilisée pour les indications de l’interface utilisateur et/ou le filtrage de contenu. Une requête d’API d’autorisation réelle doit être effectuée avant d’accorder à l’utilisateur l’accès à la ou aux ressources spécifiées.
 
 
 
-En cas d’erreur inattendue (par exemple, problème réseau, point de terminaison d’autorisation MVPD indisponible, etc.) survenant lorsqu’une demande de préautorisation d’API est traitée par les services d’authentification Adobe Pass, une ou plusieurs informations d’erreur séparées seront incluses pour la ou les ressources concernées dans le résultat de la réponse de l’API de préautorisation.
+En cas d’erreur inattendue (par exemple, problème réseau, point d’entrée d’autorisation MVPD indisponible, etc.) survenant lorsqu’une requête d’API de préautorisation est traitée par les services d’authentification Adobe Pass, une ou plusieurs informations d’erreur séparées seront incluses pour la ou les ressources affectées dans le cadre du résultat de la réponse d’API de préautorisation.
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`
 
 
-**Description :**
+**Description:**
 
 **Disponibilité :** v3.6.0+
 
-**Paramètres :**
+**Paramètres:**
 
-- *PreauthorizedRequest* : objet Créateur utilisé pour définir la requête
+- *PreauthorizeRequest* : objet Builder utilisé pour définir la demande
 - AccessEnablerCallback : rappel utilisé pour renvoyer la réponse de l’API
-- PreauthorizedResponse : objet utilisé pour renvoyer l’API
+- PreauthorizeResponse : objet utilisé pour renvoyer l’API
 contenu de la réponse
 
 
-### public class PreauthorizedRequest {#androidpreauthorizerequest}
+### public, classe PreauthorizeRequest {#androidpreauthorizerequest}
 
-**class PreauthorizedRequest.Builder**
+**class PreauthorizeRequest.Builder**
 
 ```java
     ///
@@ -63,7 +63,7 @@ contenu de la réponse
     ///
 ```
 
-**Ressources publiques du créateur setResources(Liste\&lt;Chaîne\>)**
+**public Builder setResources(List\&lt;String\> ressources)**
 
 ```
     ///
@@ -85,8 +85,8 @@ contenu de la réponse
 ```
 
 
-**public Builder disableFeatures(Set\&lt;PreauthorizedRequest.Feature\>
-features)**
+**public Builder disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
+fonctionnalités)**
 
 ```
     ///
@@ -106,9 +106,9 @@ features)**
     ///
 ```
 
-**public PreauthorizedRequest build()**
+**public PreauthorizeRequest build()**
 
-**enum PreauthorizedRequest.Feature**
+**enum PreauthorizeRequest.Feature**
 
 ```java
     ///
@@ -142,7 +142,7 @@ features)**
 
 
 
-### class PreauthorizedResponse {#preauthorizeresponse}
+### classe PreauthorizeResponse {#preauthorizeresponse}
 
 ```java
     ///

@@ -2,24 +2,24 @@
 title: Métadonnées utilisateur
 description: Métadonnées utilisateur
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
 
-# Métadonnées utilisateur {#user-metadata}
+# Métadonnées utilisateur (héritées) {#user-metadata}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 >[!NOTE]
 >
-> L’implémentation de l’API REST est limitée par le [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> L’implémentation de l’API REST est limitée par [mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
-## Points de terminaison de l’API REST {#clientless-endpoints}
+## Points d’entrée de l’API REST {#clientless-endpoints}
 
 `<REGGIE_FQDN>` :
 
@@ -38,23 +38,23 @@ ht-degree: 0%
 Récupérez les métadonnées que MVPD a partagées à propos de l’utilisateur authentifié.
 
 
-| Point d’entrée | Appelé </br> | Entrée   </br> Params | Méthode HTTP </br> | Réponse | Réponse HTTP </br> |
+| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| `<SP_FQDN>`/api/v1/tokens/usermetadata | Application de diffusion en continu</br></br>ou</br></br>Service de programmation | 1. demandeur</br>2.  deviceId (obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  deviceType</br>5.  deviceUser (obsolète)</br>6.  appId (obsolète) | GET | XML ou JSON contenant des métadonnées utilisateur ou des détails d’erreur en cas d’échec. | 200 - Succès<p>404 - Aucune métadonnée trouvée<p>412 - Jeton AuthN non valide (par exemple, jeton expiré) |
+| `<SP_FQDN>`/api/v1/tokens/usermetadata | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. demandeur</br>2.  deviceId (obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  deviceType</br>5.  deviceUser (obsolète)</br>6.  appId (obsolète) | GET | XML ou JSON contenant des métadonnées utilisateur ou des détails d’erreur en cas d’échec. | 200 - Succès<p>404 - Aucune métadonnée trouvée<p>412 - Jeton AuthN non valide (par exemple, jeton expiré) |
 
 
 | Paramètre d’entrée | Description |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| demandeur | Identifiant du demandeur du programmeur pour lequel cette opération est valide. |
-| deviceId | Octets d’identifiant de l’appareil. |
-| device_info/<p>X-Device-Info | Informations sur les périphériques de diffusion en continu.</br></br> **Remarque :** Il peut s’agir de transférer device_info comme paramètre d’URL. Toutefois, en raison de la taille potentielle de ce paramètre et des limitations de longueur d’une URL de GET, il doit être transmis en tant que X-Device-Info dans l’en-tête http. </br></br> Consultez les détails complets dans la section [Transmission des informations de périphérique et de connexion](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br> Si ce paramètre est défini correctement, ESM offre des mesures [ ventilées par type d’appareil ](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) lors de l’utilisation de Clientless, de sorte que différents types d’analyses puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br> Voir [Avantages de l’utilisation d’un paramètre de type d’appareil sans client dans Pass metrics](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Remarque :** `device_info` remplace ce paramètre. |
-| _deviceUser_ | L&#39;identifiant de l&#39;utilisateur de l&#39;appareil.</br></br> **Remarque :** Si utilisé, `deviceUser` doit avoir les mêmes valeurs que dans la requête [Create Registration Code](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) . |
-| _appId_ | ID/nom de l’application. </br></br> **Remarque :** `device_info` remplace ce paramètre. S’il est utilisé, `appId` doit avoir les mêmes valeurs que dans la requête [Create Registration Code](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) . |
+| demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
+| deviceId | Octets d’ID de l’appareil. |
+| device_info/<p>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br> **Remarque :** Ceci PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations sur la longueur d’une URL de GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br> Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple Roku, PC).</br></br> Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br> Voir [Avantages de l’utilisation du paramètre de type d’appareil sans client dans les mesures Pass](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Remarque :** l’`device_info` remplace ce paramètre. |
+| _deviceUser_ | Identifiant utilisateur de l’appareil.</br></br> **Remarque :** s’il est utilisé, `deviceUser` doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
+| _appId_ | Nom/ID de l’application. </br></br> **Remarque :** l’`device_info` remplace ce paramètre. S’il est utilisé, `appId` doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 
 >[!NOTE]
 > 
->Les informations de métadonnées utilisateur doivent être disponibles une fois le flux d’authentification terminé, mais peuvent être mises à jour sur le flux d’autorisation, en fonction du MVPD et du type de métadonnées.
+>Les informations de métadonnées utilisateur doivent être disponibles une fois le flux d’authentification terminé. Toutefois, elles peuvent être mises à jour dans le flux d’autorisation, selon le MVPD et le type de métadonnées.
 
 
 
@@ -82,11 +82,11 @@ Après un appel réussi, le serveur répond avec un objet XML (par défaut) ou J
     }
 ```
 
-À la racine de l’objet, il y a trois noeuds :
+À la racine de l’objet se trouvent trois nœuds :
 
-* *updated* : spécifie un horodatage UNIX qui représente la dernière fois que les métadonnées ont été mises à jour. Cette propriété est définie initialement par le serveur lors de la génération des métadonnées pendant la phase d’authentification. Les appels suivants (une fois les métadonnées mises à jour) génèrent un horodatage incrémenté.
+* *updated* : spécifie un horodatage UNIX qui représente la dernière fois que les métadonnées ont été mises à jour. Cette propriété est définie initialement par le serveur lors de la génération des métadonnées pendant la phase d’authentification. Les appels suivants (après la mise à jour des métadonnées) entraînent une incrémentation de l’horodatage.
 * *data* : contient les valeurs réelles des métadonnées.
-* *encrypted* : un tableau répertoriant les propriétés chiffrées. Pour déchiffrer une valeur de métadonnées spécifique, le programmeur doit effectuer un décodage Base64 sur les métadonnées, puis appliquer un déchiffrement RSA sur la valeur obtenue, en utilisant sa propre clé privée (l’Adobe chiffre les métadonnées sur le serveur à l’aide du certificat public du programmeur).
+* *encrypted* : tableau répertoriant les propriétés chiffrées. Pour déchiffrer une valeur de métadonnées spécifique, le programmeur doit effectuer un décodage Base64 sur les métadonnées, puis effectuer un déchiffrement RSA sur la valeur obtenue, à l’aide de sa propre clé privée (l’Adobe chiffre les métadonnées sur le serveur à l’aide du certificat public du programmeur).
 
 En cas d’erreur, le serveur renvoie un objet XML ou JSON spécifiant un message d’erreur détaillé.
 
