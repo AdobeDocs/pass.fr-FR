@@ -2,9 +2,9 @@
 title: Bienvenue dans Adobe&reg; Pass Authentication !
 description: Bienvenue dans l’aperçu de l’authentification de Adobe&reg; Pass
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ L’authentification Adobe Pass est une solution de droits pour TV Everywhere, f
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>[ Guide de démarrage rapide pour les programmeurs ](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[Métadonnées utilisateur](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[Guide de démarrage rapide de MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[ Authentification ](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[Autorisation](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[ Déconnexion ](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | **Pour les clients d’application natifs** | **Pour tous** |
-| <ul><li>[Présentation Technique D’iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Présentation Technique D’Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Document technique](/help/authentication/kickstart/technical-paper.md)</li><li>[Procédures d’escalade](/help/authentication/kickstart/escalation-procedures.md)</li><li>[ Glossaire ](/help/authentication/kickstart/glossary.md)</li></ul> |
+| <ul><li>[Présentation Technique D’iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Présentation Technique D’Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Document technique](/help/authentication/kickstart/technical-paper.md)</li><li>[Procédures d’escalade](/help/authentication/kickstart/escalation-procedures.md)</li></ul> |
 | **Pour les appareils intelligents** |                                                                                                                                                                                                                                                                                                                                                                       |
 | <ul><li>[Présentation technique sans client](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[API sans client](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 

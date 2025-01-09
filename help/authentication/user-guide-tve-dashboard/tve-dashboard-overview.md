@@ -1,10 +1,10 @@
 ---
 title: Présentation du tableau de bord TVE
-description: Découvrez le tableau de bord TVE et les ressources.
+description: Connaître le tableau de bord TVE et les ressources.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
@@ -13,44 +13,45 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-Le [[!DNL Adobe] Pass TVE Dashboard](https://experience.adobe.com/pass/authentication) est un outil permettant aux clients d’authentification Adobe Pass (programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service permet diverses fonctionnalités, telles que :
+Le tableau de bord [[!DNL Adobe] Pass TVE Dashboard](https://experience.adobe.com/pass/authentication) est un outil permettant aux clients (programmeurs) d’Adobe Pass Authentication de gérer leur configuration et leurs données. Ce tableau de bord en libre-service permet de bénéficier de nombreuses fonctionnalités, notamment :
 
-* **Gestion de l’intégration** : ajoutez de nouvelles intégrations entre les marques respectives (canaux) d’un programmeur et des distributeurs de programmation vidéo multicanaux (MVPD) dans l’écosystème d’authentification Adobe Pass.
+* **Gestion de l’intégration** : ajoutez de nouvelles intégrations entre les marques (canaux) respectives d’un programmeur et des distributeurs de programmation vidéo multicanaux (MVPD) dans l’écosystème d’authentification Adobe Pass.
 
-* **Configuration des propriétés** : configurez plusieurs propriétés pour chaque intégration afin de mettre en oeuvre des règles commerciales granulaires personnalisées en fonction des besoins spécifiques de la plateforme.
+* **Configuration des propriétés** : configurez plusieurs propriétés pour chaque intégration afin d’implémenter des règles métier granulaires personnalisées en fonction des besoins spécifiques de la plateforme.
 
-* **Génération de rapports** : accédez et exportez des rapports détaillés sur la configuration dans les MVPD. Ces rapports comprennent :
-   * Catégories de plateformes telles que *Appareils de bureau, mobiles et télévisés*
+* **Génération de rapports** : accédez aux rapports détaillés sur la configuration de la configuration et exportez-les dans les MVPD. Ces rapports incluent les éléments suivants :
+   * Catégories de plateforme telles que *Ordinateur de bureau, mobile et appareils connectés à la télévision*
    * Plateformes telles que *iOS, Android™, tvOS, Roku et FireTV*
 
-  Les rapports fournissent des informations sur la prise en charge de l’authentification unique (SSO) et la durée des sessions d’authentification ou d’autorisation des abonnés aux niveaux MVPD et plateforme.
+  Les rapports fournissent des informations sur la prise en charge de l’authentification unique (SSO) et la durée de session d’authentification ou d’autorisation des abonnés au niveau de MVPD et de la plateforme.
 
 * **Visualisation du trafic** : visualisez les données de trafic d’authentification et d’autorisation de haut niveau des propriétés du programmeur.
 
-Contactez votre gestionnaire de compte technique (TAM) pour accéder au tableau de bord TVE. Cet accès nécessite la configuration de deux nouveaux groupes d’utilisateurs dans votre organisation Adobe Marketing Cloud :
+Contactez votre gestionnaire de compte technique (TAM) pour accéder au tableau de bord TVE. Cet accès nécessite la configuration de deux nouveaux groupes d’utilisateurs au sein de votre organisation Adobe Marketing Cloud :
 
-* **TVE Dashboard Read-Write** : les membres de ce groupe disposent de droits de modification complets dans toutes les sections du tableau de bord.
-* **Tableau de bord TVE en lecture seule** : les membres de ce groupe ont accès en lecture seule à l’ensemble du tableau de bord.
+* **TVE Dashboard Read-Write** : les membres de ce groupe ont des droits de modification complets sur toutes les sections du tableau de bord.
+* **TVE Dashboard Read-Only** : les membres de ce groupe ont un accès en lecture seule à l’ensemble du tableau de bord.
 
 L’authentification Adobe Pass fournit les sections suivantes dans le tableau de bord TVE :
 
 * [Environnements](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
-* [Révision et notification push des modifications](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
+* [Vérifier et transmettre les modifications](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
 * [Tableau de bord](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
 * [Canaux](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
 * [Programmeurs](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md)
 * [MVPD](/help/authentication/user-guide-tve-dashboard/tve-dashboard-mvpds.md)
 * [Intégrations](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
 * [Rapports](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
-* [Journal des modifications](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
+* [Log des modifications](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
 
 ## Ressources {#resources-tve-dashboard}
 
-Adobe propose d’utiliser les ressources suivantes pour bien comprendre les flux et les fonctionnalités, afin de vous familiariser avec la terminologie employée dans ce guide :
+Adobe suggère d’utiliser les ressources suivantes pour bien comprendre les flux et les fonctionnalités, ce qui vous aidera à vous familiariser avec la terminologie utilisée dans ce guide :
 
-* [Document technique TVE](/help/authentication/kickstart/technical-paper.md)
-* [Guide de démarrage rapide du programmeur](/help/authentication/kickstart/programmer-kickstart-guide.md)
+* [Document Technique TVE](/help/authentication/kickstart/technical-paper.md)
+* [Guide De Démarrage Rapide Du Programmeur](/help/authentication/kickstart/programmer-kickstart-guide.md)
 * [Flux de droits](/help/authentication/integration-guide-programmers/entitlement-flow.md)
-* [Glossaire](/help/authentication/kickstart/glossary.md)
+* [Glossaire de Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+* [Glossaire de l’API REST v2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)

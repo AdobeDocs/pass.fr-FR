@@ -2,9 +2,9 @@
 title: Manuel de l’API REST (serveur à serveur)
 description: Serveur du guide pas à pas de l’API REST à serveur.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1867'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -42,10 +42,6 @@ Dans une solution de serveur à serveur opérationnelle, les composants suivants
 | Infrastructure d&#39;Adobe | Service Adobe Pass | Un service qui s’intègre aux services MVPD IdP et AuthZ et fournit des décisions d’authentification et d’autorisation. |
 | Infrastructure MVPD | IdP MVPD | Point d’entrée MVPD qui fournit un service d’authentification basé sur les informations d’identification pour valider l’identité de l’utilisateur. |
 | | Service MVPD AuthZ | Point d’entrée MVPD qui fournit des décisions d’autorisation basées sur les abonnements des utilisateurs, le contrôle parental, etc. |
-
-
-D’autres termes utilisés dans le flux sont définis dans le
-[Glossaire](/help/authentication/kickstart/glossary.md)
 
 ## Flux {#flows}
 
@@ -197,10 +193,3 @@ Le service Programmer doit envoyer les données et le formatage requis par les M
 Le service de programmation doit respecter les TTL authN et authZ lors de la mise en cache et de l’invalidation des sessions authN ou authZ lorsqu’elles sont notifiées.
 
 Le programmeur doit conserver les certificats partagés avec l’Adobe.
-
-<!--
-## Related Information {#related}
-
-* [REST API Reference](/help/authentication/rest-api-reference.md)
-* [Glossary of Terms](/help/authentication/adobe-pass-glossary.md)
--->

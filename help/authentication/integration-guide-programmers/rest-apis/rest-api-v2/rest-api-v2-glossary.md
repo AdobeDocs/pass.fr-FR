@@ -2,9 +2,9 @@
 title: Glossaire de l’API REST V2
 description: Glossaire de l’API REST V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1964'
+source-wordcount: '1747'
 ht-degree: 0%
 
 ---
@@ -13,191 +13,175 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-Ce document fournit des définitions des termes utilisés lors de l’intégration de la documentation de l’API REST Adobe Pass Authentication V2 et sert de remplacement à notre [Glossaire](/help/authentication/kickstart/glossary.md) hérité.
+Ce document fournit des définitions des termes utilisés lors de l’intégration de l’API REST d’authentification Adobe Pass V2.
 
-## Termes du glossaire {#glossary-terms}
+>[!MORELIKETHIS]
+>
+> * [Glossaire de Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 
-### A {#a}
+## Glossaire {#glossary-terms}
 
-#### Jeton d’accès {#access-token}
-
-Le jeton d’accès est un jeton généré par l’authentification Adobe Pass à la suite du processus [Enregistrement dynamique du client (DCR)](#dcr) destiné à assurer l’accès aux API protégées.
+### UN {#a}
 
 #### Authentification {#authentication}
 
-L’authentification est un processus qui permet à un utilisateur de prouver son identité à un [programmeur](#programmer), afin d’accéder au contenu protégé ([ressource](#resource)), après avoir validé l’abonnement de l’utilisateur avec le [MVPD](#mvpd).
+L’authentification est un processus qui permet à un utilisateur de prouver son identité à un [programmeur](#programmer), d’accéder au contenu protégé ([ressource](#resource)), après validation de l’abonnement de l’utilisateur avec le [MVPD](#mvpd).
 
 #### Code d’authentification {#code}
 
-Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur lance le processus [authentication](#authentication) et identifie de manière unique la [session d’authentification](#session) d’un utilisateur jusqu’à la fin du processus d’authentification.
+Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [ session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
 
-Le code d&#39;authentification peut être utilisé par une [application par Principal (programmeur)](#primary-application) ou une [application Secondaire (programmeur)](#secondary-application) pour terminer le processus [authentication](#authentication), récupérer des informations sur la [session d&#39;authentification](#session) ou accéder à l&#39;utilisateur [profile](#profile).
+Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [](#primary-application) ou une application (programmeur) Secondaire [](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
 
-Synonyme de l’ancien terme utilisé comme code d’enregistrement.
+Synonyme de l&#39;ancien terme utilisé code d&#39;enregistrement.
 
-#### Session d’authentification {#session}
+#### Session d&#39;authentification {#session}
 
-La session d’authentification est un concept d’authentification Adobe Pass qui stocke des informations sur le processus d’authentification de l’utilisateur qui a démarré (ou s’est poursuivi) à partir d’une application [Programmer](#programmer) et qui est identifié de manière unique par un [code d’authentification](#code).
+La session d’authentification est un concept d’authentification Adobe Pass qui stocke des informations sur le processus d’authentification de l’utilisateur démarré (ou poursuivi) à partir d’une application [Programmeur](#programmer) et qui est identifié de manière unique par un [code d’authentification](#code).
 
-La session d&#39;authentification peut également indiquer l&#39;application [Programmer](#programmer) pour poursuivre le processus [authorization](#authorization) comme phase suivante du flux [titlement](#entitlement) si l&#39;utilisateur est déjà authentifié.
+La session d’authentification peut également indiquer l’application [Programmeur](#programmer) pour poursuivre le processus [autorisation](#authorization) comme phase suivante du flux [droits](#entitlement) si l’utilisateur est déjà authentifié.
 
 #### Autorisation {#authorization}
 
-L’autorisation est un processus qui permet à un utilisateur d’accéder au contenu protégé ([resource](#resource)) à partir d’un catalogue [Programmer](#programmer) basé sur l’abonnement [MVPD](#mvpd) détenu, après avoir validé les droits de l’utilisateur avec le [MVPD](#mvpd).
+L’autorisation est un processus qui permet à un utilisateur d’accéder au contenu protégé ([ressource](#resource)) d’un catalogue [Programmeur](#programmer) basé sur l’abonnement [MVPD](#mvpd) détenu, après validation des droits de l’utilisateur avec le [MVPD](#mvpd).
 
 ### C {#c}
 
-#### Informations d’identification client {#client-credentials}
-
-Les informations d’identification du client sont un ensemble de valeurs uniques qui sont générées pendant le processus [Enregistrement dynamique du client (DCR)](#dcr) et qui sont destinées à être utilisées pour obtenir un [jeton d’accès](#access-token).
-
 #### Configuration {#configuration}
 
-La configuration est un concept d’authentification Adobe Pass qui stocke des informations sur les paramètres d’intégration [Programmer](#programmer) et [MVPD](#mvpd) et peut être utilisé pendant le processus [authentification](#authentication) lorsque l’utilisateur demande de sélectionner son [fournisseur de télévision](#tv-provider) dans une liste d’intégrations actives.
-
-#### Schéma personnalisé {#custom-scheme}
-
-Le schéma personnalisé est une valeur unique qui fait référence à une application [Programmer](#programmer) qui peut être générée et téléchargée à partir du [tableau de bord TVE](#tve-dashboard) d’Adobe Pass et qui est destinée à être utilisée comme redirection finale dans les applications s’exécutant sur des périphériques iOS.
+La configuration est un concept d’authentification Adobe Pass qui stocke des informations sur les paramètres d’intégration [Programmeur](#programmer) et [MVPD](#mvpd) et qui peut être utilisé pendant le processus [authentification](#authentication) lorsque l’utilisateur demande à sélectionner son [fournisseur de télévision](#tv-provider) dans une liste d’intégrations actives.
 
 ### D {#d}
 
-#### DCR {#dcr}
-
-L’enregistrement du client dynamique (DCR) est un mécanisme d’autorisation défini par le [RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591), et il est basé sur le framework d’autorisation OAuth 2.0 décrit par le [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749).
-
-Le DCR est fourni à un [programmeur](#programmer) en tant que service d’authentification Adobe Pass qui peut permettre un accès supplémentaire aux API protégées.
-
-Pour plus d’informations, consultez la documentation [Présentation de l’enregistrement du client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) .
-
 #### Décision {#decision}
 
-La décision est un concept d’authentification Adobe Pass qui stocke des informations sur la demande de processus [MVPD](#mvpd) [authorization](#authorization) ou [preauthorization](#preauthorization) pour autoriser ou refuser l’accès de l’utilisateur à un contenu protégé [Programmer](#programmer).
+La décision est un concept d’authentification Adobe Pass qui stocke des informations sur la demande de processus [MVPD](#mvpd) [autorisation](#authorization) ou [préautorisation](#preauthorization) pour autoriser ou refuser l’accès d’un utilisateur à un contenu protégé [Programmeur](#programmer).
 
 #### Dégradation {#degradation}
 
-La dégradation est une fonctionnalité d’authentification Adobe Pass qui permet à un utilisateur d’accéder au contenu protégé même lorsque son [MVPD](#mvpd) subit une interruption de service.
+La dégradation est une fonctionnalité d’authentification d’Adobe Pass qui permet à un utilisateur d’accéder au contenu protégé même lorsque son [MVPD](#mvpd) subit une interruption de service.
 
-Pour plus d’informations, consultez la documentation [Présentation de l’API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md).
+Pour plus d’informations, consultez la documentation [ Présentation de l’API de dégradation ](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md) .
+
+#### Identifiant de l’appareil {#device-id}
+
+L’ID d’appareil est un identifiant unique lié à l’appareil de l’utilisateur et doit être fourni par l’application [Programmeur](#programmer) sur toutes les phases du flux [droits](#entitlement).
 
 ### E {#e}
 
 #### Droit {#entitlement}
 
-Le droit est un concept d’authentification Adobe Pass qui intègre les flux et fonctionnalités disponibles qui aident un utilisateur à passer par différentes phases, afin d’accéder à un contenu protégé, allant de [authentication](#authentication), [preauthorization](#preauthorization), [authorization](#authorization), et enfin [logout](#logout).
+Le droit est un concept d’authentification Adobe Pass qui incorpore les flux et fonctionnalités disponibles pour aider un utilisateur à passer par différentes phases, pour accéder au contenu protégé, allant de [authentification](#authentication), [préautorisation](#preauthorization), [autorisation](#authorization) et enfin [déconnexion](#logout).
 
 #### Code d’erreur amélioré {#enhanced-error-code}
 
-Le code d’erreur amélioré est un concept d’ authentification Adobe Pass qui fournit des informations supplémentaires sur l’erreur qui s’est produite lors du traitement d’une requête.
+Le code d’erreur amélioré est un concept d’authentification Adobe Pass qui fournit des informations supplémentaires sur l’erreur qui s’est produite lors du traitement d’une requête.
 
-Pour plus d’informations, reportez-vous à la documentation [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) .
+Pour plus d’informations, consultez la documentation [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
 ### H {#h}
 
-#### Adaptateur {#hba}
+#### HBA {#hba}
 
-L’authentification par domicile (adaptateur de bus hôte) est le processus par lequel un consommateur se voit automatiquement accorder l’accès au contenu [TV Everywhere (TVE)](#tve) sur certains appareils connectés à son réseau domestique, qui fait partie de l’emplacement dans le contrat d’abonnement.
+L’authentification à domicile (HBA) est le processus par lequel un client se voit automatiquement accorder l’accès au contenu [TV Everywhere (TVE)](#tve) sur certains appareils connectés à son réseau domestique, qui fait partie de l’emplacement du contrat d’abonnement.
 
-### I {#i}
+### J&#39;{#i}
 
 #### Fournisseur d’identité {#identity-provider}
 
-Le fournisseur d’identité est une entreprise qui fournit des services d’identité aux consommateurs par câble, satellite ou sur Internet dans le contexte de [TV Everywhere (TVE)](#tve).
+Le fournisseur d’identité est une société qui fournit des services d’identité aux consommateurs par le biais de services par câble, par satellite ou par Internet dans le contexte de [TV Everywhere (TVE)](#tve).
 
-Synonyme de [MVPD](#mvpd) et [fournisseur de télévision](#tv-provider).
+Synonyme de [MVPD](#mvpd) et [Fournisseur TV](#tv-provider).
 
 ### L {#l}
 
 #### Déconnexion {#logout}
 
-La déconnexion est un processus qui permet à un utilisateur de mettre fin à son [profil](#profile) authentifié dans l’authentification Adobe Pass et de mettre à jour l’application [Programmer](#programmer) pour refléter l’état de l’utilisateur.
+La déconnexion est un processus qui permet à un utilisateur de mettre fin à son [profil](#profile) authentifié dans l’authentification Adobe Pass et de mettre à jour l’application [Programmeur](#programmer) pour refléter le statut de l’utilisateur.
 
 ### M {#m}
 
-#### Jeton de média {#media-token}
+#### Jeton multimédia {#media-token}
 
 Le jeton multimédia est un jeton généré par l’authentification Adobe Pass suite à une autorisation [décision](#decision) destinée à fournir l’accès au contenu protégé.
 
-Le jeton multimédia est transmis à [Programmer](#programmer), qui le valide ensuite pour garantir la sécurité de l&#39;accès pour cette [ressource](#resource).
+Le jeton de média est transmis au [programmeur](#programmer), qui le valide ensuite pour garantir la sécurité de l’accès pour cette [ressource](#resource).
 
-Synonyme avec ancien terme utilisé comme jeton d’autorisation court.
+Synonyme d’ancien terme utilisé jeton d’autorisation court.
 
-#### Vérificateur de jeton multimédia {#media-token-verifier}
+#### Vérificateur de jeton de média {#media-token-verifier}
 
-Le outil de vérification de jeton multimédia est une bibliothèque distribuée par l’authentification Adobe Pass qui est chargée de vérifier l’authenticité d’un [jeton multimédia](#media-token).
+Le vérificateur de jeton multimédia est une bibliothèque distribuée par l’authentification Adobe Pass qui est chargée de vérifier l’authenticité d’un [jeton multimédia](#media-token).
 
-Pour plus d’informations, consultez la documentation [Intégration du vérificateur de jeton multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md) .
+Pour plus d’informations, consultez la documentation [ Intégration du vérificateur de jetons multimédia ](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
 
 #### MVPD {#mvpd}
 
-Le distributeur multicanal de programmes vidéo (MVPD) est une société qui fournit des services de télévision aux consommateurs par câble, satellite ou Internet.
+Le distributeur de programmation vidéo multicanal (MVPD) est une société qui fournit des services de télévision aux consommateurs par câble, par satellite ou par Internet.
 
-Le MVPD est identifié par une valeur unique définie lors du processus d’intégration entre le MVPD et l’Adobe.
+Le MVPD est identifié par une valeur unique définie lors du processus d’intégration entre MVPD et Adobe.
 
-Synonyme de [fournisseur de télévision](#tv-provider) et [fournisseur d’identité](#identity-provider).
+Synonyme de [Fournisseur TV](#tv-provider) et [Fournisseur d’identité](#identity-provider).
 
 ### P {#p}
 
 #### Partenaire {#partner}
 
-Le partenaire est une entreprise qui fournit un service ou une structure à un [programmeur](#programmer) afin d’activer une expérience utilisateur de connexion unique.
+Le partenaire est une société qui fournit un service ou une structure à un [programmeur](#programmer) pour permettre une expérience utilisateur d’authentification unique.
 
-Le partenaire est identifié par une valeur unique (par exemple, &quot;pomme&quot;) définie lors du processus d’intégration entre le partenaire et l’Adobe.
+Le partenaire est identifié par une valeur unique (par exemple, « apple ») définie lors du processus d’intégration entre le partenaire et l’Adobe.
 
 #### Préautorisation {#preauthorization}
 
-La préautorisation est un processus qui permet à un utilisateur de prévisualiser un sous-ensemble de [ressources](#resource) à partir d’un catalogue de [programmeur](#programmer) auquel il aurait droit, après avoir validé les droits de l’utilisateur avec le [MVPD](#mvpd).
+La préautorisation est un processus qui permet à un utilisateur de prévisualiser un sous-ensemble de [ressources](#resource) à partir d’un catalogue [Programmeur](#programmer) auquel il aurait accès, après validation des droits de l’utilisateur avec le [MVPD](#mvpd).
 
-Synonyme de [Preflight](#preflight).
+Synonyme de [contrôle en amont](#preflight).
 
 #### Contrôle en amont {#preflight}
 
-Le contrôle en amont est un processus qui permet à un utilisateur de prévisualiser un sous-ensemble de [ressources](#resource) à partir d’un catalogue de [programmeur](#programmer) auquel il aurait droit, après avoir validé les droits de l’utilisateur avec le [MVPD](#mvpd).
+Le contrôle en amont est un processus qui permet à un utilisateur de prévisualiser un sous-ensemble de [ressources](#resource) à partir d’un catalogue [Programmeur](#programmer) auquel il serait autorisé à accéder, après validation des droits de l’utilisateur avec le [MVPD](#mvpd).
 
-Synonyme de [Preauthorization](#preauthorization).
+Synonyme de [préautorisation](#preauthorization).
 
-#### Application de Principal (programmeur) {#primary-application}
+#### Application Principal (programmeur) {#primary-application}
 
-L’application principale fait référence à une application [Programmer](#programmer) qui initie l’ [authentification](#authentication), mais qui peut ne pas être en mesure d’achever le processus en utilisant un [agent utilisateur](#user-agent) pour accéder à la page de connexion [MVPD](#mvpd).
+L’application principale fait référence à une application [Programmeur](#programmer) qui lance l’[authentification](#authentication), mais qui peut ne pas être en mesure d’exécuter le processus à l’aide d’un [agent utilisateur](#user-agent) pour accéder à la page de connexion de [MVPD](#mvpd).
 
 #### Profil {#profile}
 
-Le profil est un concept d’authentification Adobe Pass qui stocke des informations sur la date de début et de fin de l’authentification de l’utilisateur, les [métadonnées de l’utilisateur](#user-metadata) ainsi que d’autres champs qui indiquent la méthode d’obtention de l’authentification (par exemple, &quot;normal&quot;, &quot;dégradé&quot;, &quot;temporaire&quot;, &quot;authentification unique&quot;, etc.).
+Le profil est un concept d’authentification Adobe Pass qui stocke des informations sur la date de début et de fin de l’authentification de l’utilisateur, les [métadonnées de l’utilisateur](#user-metadata) ainsi que d’autres champs indiquant la méthode d’obtention de l’authentification (par exemple, « normale », « dégradée », « temporaire », « authentification unique », etc.).
 
-Synonyme avec l’ancien terme utilisé comme jeton d’authentification.
+Synonyme de l’ancien terme utilisé jeton d’authentification.
 
 #### Programmeur {#programmer}
 
-Le programmeur est une entreprise qui fournit du contenu aux consommateurs par le biais de canaux (marques) détenus sur différentes plateformes.
+Le programmeur est une entreprise qui fournit du contenu aux consommateurs par le biais de canaux détenus (marques) sur différentes plateformes.
 
-Le programmeur regroupe plusieurs canaux détenus (marques) en [fournisseurs de services](#service-provider) dans son intégration avec l’authentification Adobe Pass.
+Le programmeur regroupe plusieurs canaux détenus (marques) en tant que [fournisseurs de services](#service-provider) dans son intégration à l’authentification Adobe Pass.
 
-#### Proxy MVPD {#proxy-mvpd}
+#### MVPD du proxy {#proxy-mvpd}
 
-Le proxy MVPD est une entreprise qui fournit des services d’identité pour d’autres MVPD et qui s’intègre directement à l’authentification Adobe Pass.
+Le proxy MVPD est une société qui fournit des services d’identités pour d’autres MVPD et qui s’intègre directement à l’authentification Adobe Pass.
 
 #### MVPD proxy {#proxied-mvpd}
 
-Le MVPD proxy est une entreprise qui n’a pas d’intégration directe avec l’authentification Adobe Pass, mais qui est intégrée par le biais d’un [proxy MVPD](#proxy-mvpd).
+Le MVPD proxy est une société qui n’a pas d’intégration directe avec l’authentification Adobe Pass, mais qui est intégrée par le biais d’un [proxy MVPD](#proxy-mvpd).
 
 #### Identité de la plateforme {#platform-identity}
 
-L’identité de plateforme est une payload d’identifiant de plateforme unique générée par un service ou une structure (bibliothèque) lié à l’appareil de l’utilisateur et fournie au [programmeur](#programmer) afin d’activer une expérience utilisateur de connexion unique.
+L’identité de la plateforme est une payload d’identifiant de plateforme unique générée par un service ou un framework (bibliothèque) lié à l’appareil de l’utilisateur et fournie au [programmeur](#programmer) pour activer une expérience utilisateur d’authentification unique.
 
-Pour plus d&#39;informations, consultez la documentation [Connexion unique à l&#39;aide des flux d&#39;identités de la plateforme](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md) .
+Pour plus d&#39;informations, consultez la documentation [Authentification unique à l&#39;aide des flux d&#39;identité de la plateforme](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
 
 ### R {#r}
 
-#### Application enregistrée {#registered-application}
-
-L’application enregistrée est un concept d’authentification Adobe Pass qui stocke des informations sur l’application [Programmer](#programmer) qui nécessite de poursuivre le processus [Enregistrement dynamique du client (DCR)](#dcr).
-
 #### Ressource {#resource}
 
-La ressource est un contenu protégé auquel un utilisateur tente d’accéder à partir d’un catalogue [Programmer](#programmer).
+La ressource est un contenu protégé auquel un utilisateur ou une utilisatrice tente d’accéder à partir d’un catalogue [Programmeur](#programmer).
 
-La ressource est identifiée par une valeur unique qui est convenue entre le programmeur et les MVPD.
+La ressource est identifiée par une valeur unique convenue entre le programmeur et les MVPD.
 
 Pour plus d’informations, consultez la documentation [Identification des ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
 
@@ -205,91 +189,91 @@ Pour plus d’informations, consultez la documentation [Identification des resso
 
 #### SAML {#saml}
 
-Le langage SAML (Security Assertion Markup Language) est une norme ouverte permettant l’échange de données d’authentification et d’autorisation entre les parties, notamment entre un [fournisseur d’identité](#identity-provider) et un [fournisseur de services](#sp).
+Le langage SAML (Security Assertion Markup Language) est une norme ouverte pour l’échange de données d’authentification et d’autorisation entre les parties, en particulier entre un [fournisseur d’identité](#identity-provider) et un [fournisseur de services](#sp).
 
 #### Application Secondaire (programmeur) {#secondary-application}
 
-L’application secondaire fait référence à une application [Programmer](#programmer) capable d’effectuer le processus [authentification](#authentication) en utilisant un [agent utilisateur](#user-agent) pour accéder à la page de connexion [MVPD](#mvpd).
+L’application secondaire fait référence à une application [Programmeur](#programmer) capable d’effectuer le processus [authentification](#authentication) à l’aide d’un [agent utilisateur](#user-agent) pour accéder à la page de connexion de [MVPD](#mvpd).
 
-L’application secondaire peut s’exécuter sur le même appareil que l’application principale ou sur un autre appareil (secondaire), auquel cas l’expérience de connexion est appelée expérience utilisateur &quot;authentification par deuxième écran&quot;.
+L’application secondaire peut s’exécuter sur le même appareil que l’application principale ou sur un autre appareil (secondaire), auquel cas l’expérience de connexion est appelée expérience utilisateur d’« authentification sur deuxième écran ».
 
 #### Jeton de service {#service-token}
 
-Le jeton de service est un identifiant utilisateur unique généré par un service ou une structure (bibliothèque) lié à l’utilisateur et fourni au [programmeur](#programmer) afin d’activer une expérience utilisateur de connexion unique.
+Le jeton de service est un identifiant utilisateur unique généré par un service ou une structure (bibliothèque) lié à l’utilisateur et fourni au [programmeur](#programmer) pour activer une expérience utilisateur d’authentification unique.
 
-Pour plus d’informations, reportez-vous à la documentation [Authentification unique à l’aide des flux de jetons de service](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md) .
+Pour plus d’informations, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
-#### Fournisseur de services {#service-provider}
+#### Prestataire {#service-provider}
 
-Le fournisseur de services est un canal (marque) détenu par un [programmeur](#programmer).
+Le fournisseur est un canal (marque) détenu par un [programmeur](#programmer).
 
-Le fournisseur de services est identifié par une valeur unique définie lors du processus d&#39;intégration entre le programmeur et l&#39;Adobe.
+Le fournisseur de services est identifié par une valeur unique définie lors du processus d’intégration entre le programmeur et l’Adobe.
 
-Synonyme avec l&#39;ancien terme utilisé [id du demandeur](/help/authentication/kickstart/glossary.md#requestor-id).
-
-#### Instruction logicielle {#software-statement}
-
-L’instruction logicielle est un jeton Web JSON (JWT) qui peut être téléchargé à partir du [tableau de bord TVE](#tve-dashboard) d’Adobe Pass et qui est destiné à être utilisé dans le cadre du processus [Enregistrement du client dynamique (DCR)](#dcr).
+Synonyme de l’ancien terme utilisé pour l’ID du demandeur.
 
 #### SLO {#slo}
 
-La déconnexion unique (SLO) est un processus qui permet à un utilisateur de se déconnecter de toutes les applications qui faisaient partie de l’ [authentification unique (SSO)](#sso).
+La déconnexion unique (SLO) est un processus qui permet à un utilisateur de se déconnecter de toutes les applications qui faisaient partie de l’authentification unique [SSO)](#sso).
 
 #### SP {#sp}
 
-Le fournisseur de services (SP) fait référence au rôle joué par l’authentification Adobe Pass au nom d’un [programmeur](#programmer) dans une intégration à un [MVPD](#mvpd).
+Le fournisseur de services (SP) fait référence au rôle joué par l’authentification Adobe Pass pour le compte d’un [programmeur](#programmer) dans une intégration à un [MVPD](#mvpd).
 
 #### SSO {#sso}
 
-L’authentification unique (SSO) est un processus qui permet à un utilisateur de s’authentifier une seule fois et d’accéder à plusieurs applications [Programmer](#programmer) sans avoir à s’authentifier pour chacune d’elles.
+L’authentification unique (SSO) est un processus qui permet à un utilisateur de s’authentifier une seule fois et d’accéder à plusieurs applications [Programmeur](#programmer) sans avoir à s’authentifier pour chacune d’elles.
 
 ### T {#t}
 
-#### TempPass Basic {#temp-pass-basic}
+#### TempPass de base {#temp-pass-basic}
 
-TempPass est une fonction d’authentification Adobe Pass qui permet à un utilisateur d’accéder à un contenu protégé pendant une durée limitée sans avoir à s’authentifier avec un [MVPD](#mvpd).
+Le TempPass de base est une fonction d’authentification d’Adobe Pass qui permet à un utilisateur d’accéder à un contenu protégé pendant une durée limitée sans avoir à s’authentifier avec un [MVPD](#mvpd).
 
 Pour plus d’informations, consultez la documentation [Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md).
 
 #### Promotionnel TempPass {#temp-pass-promotional}
 
-TempPass est une fonctionnalité d’authentification Adobe Pass qui permet à un utilisateur d’accéder à du contenu protégé pour un nombre maximal de ressources et une durée limitée sans avoir à s’authentifier avec un [MVPD](#mvpd).
+Le TempPass promotionnel est une fonction d’authentification d’Adobe Pass qui permet à un utilisateur d’accéder au contenu protégé pendant un nombre maximal de ressources et une durée limitée sans avoir à s’authentifier avec un [MVPD](#mvpd).
 
-Pour plus d’informations, reportez-vous à la documentation [Passe temporaire promotionnelle](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md) .
+Pour plus d’informations, consultez la documentation [Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md).
 
 #### TTL {#ttl}
 
 La durée de vie (TTL) est une valeur qui indique la durée de validité d’une entité sous-jacente.
 
-Le TTL peut être mentionné pour un [jeton d’accès](#access-token), un [profil](#profile), une autorisation [décision](#decision) ou un [jeton multimédia](#media-token).
+La TTL peut être mentionnée pour un [jeton d’accès](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md#access-token), un [profil](#profile), une autorisation [décision](#decision) ou un [jeton de média](#media-token).
 
 #### TVE {#tve}
 
-TV Everywhere (TVE) est un créneau du secteur qui permet aux consommateurs d’accéder à leurs programmes télévisés, films et autres contenus préférés sur plusieurs appareils, tels que smartphones, tablettes, ordinateurs portables, etc.
+TV Everywhere (TVE) est un créneau du secteur qui permet aux consommateurs d’accéder à leurs émissions de télévision, films et autres contenus préférés sur plusieurs appareils, tels que les smartphones, les tablettes, les ordinateurs portables et bien d’autres.
 
 #### Tableau de bord TVE {#tve-dashboard}
 
-Le tableau de bord TV Everywhere (TVE) est un outil d’authentification Adobe Pass fourni à [Programmers](#programmer) pour gérer leur configuration et leurs données.
+Le tableau de bord TV Everywhere (TVE) est un outil d’authentification Adobe Pass fourni aux [programmeurs](#programmer) pour gérer leur configuration et leurs données.
 
-Pour plus d’informations, consultez la documentation [TVE Dashboard User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md) .
+Pour plus d’informations, consultez la documentation du [Guide d’utilisation du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md).
 
 #### Fournisseur TV {#tv-provider}
 
-Le fournisseur de télévision est une entreprise qui fournit des services de télévision aux consommateurs par câble, satellite ou par Internet.
+Le fournisseur de services de télévision est une entreprise qui fournit des services de télévision aux consommateurs par câble, par satellite ou par Internet.
 
-Le fournisseur de télévision est identifié par une valeur unique définie lors du processus d&#39;intégration entre le fournisseur de télévision et l&#39;Adobe.
+Le fournisseur de télévision est identifié par une valeur unique définie lors du processus d’intégration entre le fournisseur de télévision et l’Adobe.
 
-Synonyme de [MVPD](#mvpd) et [Fournisseur d’identités](#identity-provider).
+Synonyme de [MVPD](#mvpd) et [Fournisseur d&#39;identité](#identity-provider).
 
 ### U {#u}
 
 #### Agent utilisateur {#user-agent}
 
-L’agent utilisateur fait référence à un navigateur ou à un composant similaire (spécifique à la plate-forme) capable de naviguer sur le web et d’afficher la page de connexion [MVPD](#mvpd).
+L&#39;agent utilisateur fait référence à un navigateur ou à un composant similaire (spécifique à la plateforme) capable de naviguer sur le Web et de générer la page de connexion de [MVPD](#mvpd).
+
+#### Identifiant utilisateur {#user-id}
+
+L&#39;identifiant utilisateur est un identifiant unique lié à l&#39;utilisateur et provient du processus d&#39;authentification [MVPD](#mvpd).
 
 #### Métadonnées utilisateur {#user-metadata}
 
-Les métadonnées utilisateur font référence à des attributs spécifiques à l’utilisateur (par exemple, des codes postaux, des évaluations parentales, des ID utilisateur, etc.) qui sont gérés par le [MVPD](#mvpd) et fournis par l’authentification Adobe Pass dans le cadre d’un [profil](#profile).
+Les métadonnées utilisateur font référence à des attributs spécifiques à l&#39;utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) gérés par le [MVPD](#mvpd) et fournis par l&#39;authentification Adobe Pass dans le cadre d&#39;un [profil](#profile).
 
 Pour plus d’informations, consultez la documentation [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md).
 
@@ -297,6 +281,6 @@ Pour plus d’informations, consultez la documentation [Métadonnées utilisateu
 
 #### VSA {#vsa}
 
-Le compte d’abonné vidéo (VSA) est une structure développée par Apple fournie au [programmeur](#programmer) afin d’activer une expérience utilisateur de connexion unique.
+Le compte d’abonné vidéo (VSA) est un framework développé par Apple et fourni au [programmeur](#programmer) pour permettre une expérience utilisateur d’authentification unique.
 
-Pour plus d’informations, reportez-vous à la documentation [Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) et [Connexion unique à l’aide de flux de partenaires](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) .
+Pour plus d’informations, reportez-vous à la documentation [Structure de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) et [Authentification unique à l’aide de flux de partenaires](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).

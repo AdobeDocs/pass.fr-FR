@@ -2,9 +2,9 @@
 title: Manuel de l’API REST (client à serveur)
 description: Client de guide pas à pas de l’API REST au serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -44,10 +44,6 @@ Dans une solution client à serveur opérationnelle, les composants suivants son
 | Infrastructure d&#39;Adobe | Service Adobe Pass | Un service qui s’intègre aux services MVPD IdP et AuthZ et fournit des décisions d’authentification et d’autorisation. |
 | Infrastructure MVPD | IdP MVPD | Point d’entrée MVPD qui fournit un service d’authentification basé sur les informations d’identification pour valider l’identité de l’utilisateur. |
 | | Service MVPD AuthZ | Point d’entrée MVPD qui fournit des décisions d’autorisation basées sur les abonnements des utilisateurs, le contrôle parental, etc. |
-
-
-
-D’autres termes utilisés dans le flux sont définis dans le [Glossaire](/help/authentication/kickstart/glossary.md).
 
 ## Flux{#flows}
 
