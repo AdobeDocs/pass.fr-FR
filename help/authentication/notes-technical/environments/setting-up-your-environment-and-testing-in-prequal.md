@@ -2,9 +2,9 @@
 title: Configuration de votre environnement et tests dans Pre-Qual
 description: Configuration de votre environnement et tests dans Pre-Qual
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,16 @@ Les étapes 1 et 2 mettent en place l’environnement de test sur l’une des ma
 
 ```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
 
+```cmd
+C:\>nslookup entitlement-prequal.auth.adobe.com 
+...
+Addresses:  52.26.79.43
+            54.190.212.171
+```
+
+```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+
+
 * **Sous Linux/Mac**
 
 ```sh
@@ -53,6 +63,17 @@ Les étapes 1 et 2 mettent en place l’environnement de test sur l’une des ma
 ```
 
 ```Choose any IP from **A records (**e.g `52.13.71.11)```
+
+```sh
+    $ dig entitlement-prequal.auth.adobe.com
+    
+    ;; ANSWER SECTION:
+    ...
+    ............ 60 IN A      52.26.79.43
+    ............ 60 IN A      54.190.212.171
+```
+
+```Choose any IP from **A records (**e.g `54.190.212.171)```
 
 >[!NOTE]
 >
@@ -68,14 +89,15 @@ Les étapes 1 et 2 mettent en place l’environnement de test sur l’une des ma
 * Modifiez le *fichier c :\\windows\\System32\\drivers\\etc\\hosts* (sous Windows) ou */etc/hosts* (sous Macintosh/Linux/Android) et ajoutez les éléments suivants :
 
 * Profil de production usurpé
-   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
+   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+   * 54.190.212.171 entitlement.auth.adobe.com
 
 **Usurpation sur Android :** pour usurper Android, vous devez utiliser un émulateur Android.
 
 * Une fois l’usurpation en place, vous pouvez simplement utiliser les URL standard pour les profils de production et d’évaluation : (c’est-à-dire, `http://sp.auth-staging.adobe.com` et `http://entitlement.auth-staging.adobe.com`, et vous accéderez à l’*environnement de préqualification/production* de la nouvelle build*.
 
 
-## ÉTAPE 3.  Vérifiez que vous pointez vers le bon environnement. {#Verify-you-are-pointing-to-the-right-environment}
+## ÉTAPE 3.  Vérifiez que vous pointez vers le bon environnement {#Verify-you-are-pointing-to-the-right-environment}
 
 **C’est une étape facile :**
 
@@ -86,13 +108,13 @@ Les étapes 1 et 2 mettent en place l’environnement de test sur l’une des ma
 
 * Cette étape nécessite l’adresse du site Web du programmeur et certaines informations d’identification MVPD valides (un utilisateur authentifié et autorisé).
 
-## ÉTAPE 5.  Tester des scénarios à l’aide des sites Web du programmeur {#perform-scenario-testing-using-programmer-website}
+## ÉTAPE 5.  Effectuer des tests de scénario à l’aide des sites web du programmeur. {#perform-scenario-testing-using-programmer-website}
 
-* Après avoir terminé la configuration de l’environnement et vous être assuré que le flux d’authentification de base et d’autorisation fonctionne, vous pouvez procéder au test de scénarios plus complexes.
+* Après avoir terminé la configuration de l’environnement et vérifié que le flux d’authentification-autorisation de base fonctionne, vous pouvez procéder au test de scénarios plus complexes.
 
 
 ## ÉTAPE 6.  Effectuer des tests à l’aide du site de test d’API {#perform-testing-using-api-testing-site}
 
 * Si vous souhaitez approfondir le test de l’authentification Adobe Pass, nous vous recommandons d’utiliser le site de test [API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Pour plus d’informations sur le site de test des API, consultez [Comment tester les flux d’authentification et d’autorisation à l’aide du site de test des API d’Adobe ](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
+Vous trouverez plus de détails sur le site de test de l’API dans [Comment tester les flux de Authentication et d’autorisation à l’aide du site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md) de test API de Adobe.
