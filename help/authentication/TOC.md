@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1256'
 ht-degree: 2%
 
 ---
@@ -120,11 +120,10 @@ ht-degree: 2%
                + [En-tête - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Fonctionnalités standard {#standard-features}
       + Droits {#entitlements}
-         + [Identification de la ressource protégée](integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
          + [Autorisation de contrôle en amont](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [Intégration du vérificateur de jeton de média](integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)
-         + [Métadonnées utilisateur](integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
-         + [Certificat de métadonnées utilisateur pour le chiffrement](integration-guide-programmers/features-standard/entitlements/user-metadata-certificate.md)
+         + [Ressource protégée](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [Jetons de média](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
+         + [Métadonnées utilisateur](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + {#error-reporting} de rapport d’erreur
          + [Codes d’erreur améliorés](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + {#sso-access} d&#39;accès SSO

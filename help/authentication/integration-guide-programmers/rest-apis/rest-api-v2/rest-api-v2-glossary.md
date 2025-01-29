@@ -2,9 +2,9 @@
 title: Glossaire de l’API REST V2
 description: Glossaire de l’API REST V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1744'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ Synonyme d’ancien terme utilisé jeton d’autorisation court.
 
 Le vérificateur de jeton multimédia est une bibliothèque distribuée par l’authentification Adobe Pass qui est chargée de vérifier l’authenticité d’un [jeton multimédia](#media-token).
 
-Pour plus d’informations, consultez la documentation [ Intégration du vérificateur de jetons multimédia ](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Pour plus d’informations, consultez la documentation du [Vérificateur de jeton multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
 #### MVPD {#mvpd}
 
@@ -183,7 +183,7 @@ La ressource est un contenu protégé auquel un utilisateur ou une utilisatrice 
 
 La ressource est identifiée par une valeur unique convenue entre le programmeur et les MVPD.
 
-Pour plus d’informations, consultez la documentation [Identification des ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 ### S {#s}
 
@@ -275,7 +275,7 @@ L&#39;identifiant utilisateur est un identifiant unique lié à l&#39;utilisateu
 
 Les métadonnées utilisateur font référence à des attributs spécifiques à l&#39;utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) gérés par le [MVPD](#mvpd) et fournis par l&#39;authentification Adobe Pass dans le cadre d&#39;un [profil](#profile).
 
-Pour plus d’informations, consultez la documentation [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md).
+Pour plus d’informations, consultez la documentation [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 
 ### V {#v}
 

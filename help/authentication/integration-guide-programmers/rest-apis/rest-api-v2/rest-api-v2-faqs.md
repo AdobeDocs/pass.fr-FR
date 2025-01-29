@@ -2,9 +2,9 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '6668'
+source-wordcount: '6664'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Pour plus d’informations, reportez-vous aux documents suivants :
 
 #### 3. Comment l’application cliente peut-elle obtenir les informations sur les métadonnées de l’utilisateur ? {#authentication-phase-faq3}
 
-L’application cliente peut interroger l’un des points d’entrée suivants capables de renvoyer des informations [métadonnées de l’utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) dans le cadre des informations de profil :
+L’application cliente peut interroger l’un des points d’entrée suivants capables de renvoyer des informations [métadonnées de l’utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) dans le cadre des informations de profil :
 
 * [API du point d’entrée des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [Point d’entrée des profils pour une API MVPD spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
@@ -245,7 +245,7 @@ L’identifiant unique de la ressource peut avoir deux formats :
 * Format de chaîne simple, tel qu’un identifiant unique pour un canal (marque).
 * Format RSS (Media RSS) contenant des informations supplémentaires telles que le titre, les évaluations et les métadonnées de contrôle parental.
 
-Pour plus d&#39;informations, consultez la documentation [Identification des ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. Pour combien de ressources l’application cliente peut-elle obtenir une décision de préautorisation à la fois ? {#preauthorization-phase-faq6}
 
@@ -294,7 +294,7 @@ Le jeton de média est un terme défini dans la documentation [Glossaire](/help/
 
 Le jeton de média se compose d’une chaîne signée envoyée en texte clair qui peut être récupérée à partir du point d’entrée Autoriser les décisions .
 
-Pour plus d’informations, consultez la documentation [ Intégration du vérificateur de jetons multimédia ](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Pour plus d’informations, consultez la documentation du [Vérificateur de jeton multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
 Le jeton multimédia est valide pendant une période limitée et courte spécifiée au moment de l’émission, indiquant la durée pendant laquelle il doit être utilisé par l’application cliente avant d’avoir à interroger à nouveau le point d’entrée d’autorisation des décisions.
 
@@ -316,7 +316,7 @@ L’identifiant unique de la ressource peut avoir deux formats :
 * Format de chaîne simple, tel qu’un identifiant unique pour un canal (marque).
 * Format RSS (Media RSS) contenant des informations supplémentaires telles que le titre, les évaluations et les métadonnées de contrôle parental.
 
-Pour plus d&#39;informations, consultez la documentation [Identification des ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. Pour combien de ressources la demande du client peut-elle obtenir une décision d’autorisation à la fois ? {#authorization-phase-faq6}
 
