@@ -2,7 +2,7 @@
 title: Référence de l’API Android SDK
 description: Référence de l’API Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '4560'
 ht-degree: 0%
@@ -614,7 +614,7 @@ Les programmeurs ont accès à deux types de métadonnées :
 
 **Rappels déclenchés :** [`setMetadataStatus()`](#setMetadaStatus)
 
-**Informations supplémentaires :** [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**Informations supplémentaires :** [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 [Retour à l’API Android...](#api)
 
@@ -676,7 +676,7 @@ Cette valeur est nulle lorsque la demande porte sur des métadonnées simples (T
 
 **Déclenché par :** [`getMetadata()`](#getMetadata)
 
-**Informations supplémentaires :** [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**Informations supplémentaires :** [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 
 [Retour à l’API Android...](#api)
