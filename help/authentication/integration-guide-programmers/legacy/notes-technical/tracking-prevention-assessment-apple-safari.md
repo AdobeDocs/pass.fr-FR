@@ -2,7 +2,7 @@
 title: Évaluation de la prévention du suivi dans Apple Safari
 description: Évaluation de la prévention du suivi dans Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -133,7 +133,7 @@ Aucune atténuation connue n’est disponible ou possible au moment de la rédac
 
 **passe temp**
 
-Pour atténuer les problèmes d’individualisation et avoir une interaction client, nous vous recommandons d’utiliser **[Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)** de manière interactive et de fournir au moins une information supplémentaire sur l’utilisateur (par exemple, son adresse e-mail).
+Afin de limiter les problèmes d’individualisation et d’obtenir une interaction client, nous vous recommandons d’utiliser **[Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** de manière interactive et de fournir au moins une information supplémentaire sur l’utilisateur (par exemple, son adresse e-mail).
 
 ## Safari 13 {#safari13}
 

@@ -2,7 +2,7 @@
 title: Lancer l’authentification
 description: Lancer l’authentification
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
@@ -85,7 +85,7 @@ Lance le processus d’authentification en signalant un événement de sélectio
 >
 >L’appel peut également contenir des paramètres facultatifs qui activent d’autres fonctionnalités telles que :
 >
-> * generic\_data - active l’utilisation de [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)
+> * generic\_data - active l’utilisation de [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:
