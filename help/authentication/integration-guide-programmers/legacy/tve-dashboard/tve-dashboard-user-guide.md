@@ -2,9 +2,9 @@
 title: Guide d’utilisation du tableau de bord TVE Primetime
 description: Guide d’utilisation du tableau de bord TVE Primetime
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '5524'
+source-wordcount: '5517'
 ht-degree: 0%
 
 ---
@@ -287,7 +287,7 @@ Pour créer une intégration, procédez comme suit :
 
 Pour mettre à jour une intégration existante, cliquez sur l’entrée de la table pour cette intégration spécifique à partir de la section Intégrations ou de la section Canaux, qui contient un onglet Intégrations .
 
-Lors de l’utilisation du mode Workspace de base, cette section permet d’afficher et de modifier les paramètres les plus couramment mis à jour, tels que les TTL d’authentification et de jeton d’autorisation (durée de vie), ainsi que les paramètres iFrame. Gardez à l’esprit que les paramètres de durée de vie peuvent être manquants pour les intégrations aux MVPD qui prennent en charge la durée de vie de persistance des jetons définie dynamiquement (voir l’entrée 1.19 de la section [Exigences d’intégration de MVPD](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)).
+Lors de l’utilisation du mode Workspace de base, cette section permet d’afficher et de modifier les paramètres les plus couramment mis à jour, tels que les TTL d’authentification et de jeton d’autorisation (durée de vie), ainsi que les paramètres iFrame. Gardez à l’esprit que les paramètres de TTL peuvent être manquants pour les intégrations aux MVPD qui prennent en charge la durée de vie de persistance de jeton définie dynamiquement.
 
 
 
