@@ -2,7 +2,7 @@
 title: FAQ sur les procédures d’assistance
 description: FAQ sur les procédures d’assistance
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
 workflow-type: tm+mt
 source-wordcount: '777'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Un incident de niveau de gravité 1 peut être déclenché par un Adobe ou un pa
    * Trace HTTP ou journaux des appareils présentant le problème
    * (facultatif) Toutes les captures d’écran ou vidéos disponibles présentant le problème
 
-1. Si l&#39;Adobe ne répond pas au ticket dans un délai donné, le partenaire peut appeler le numéro suivant : **1-205-693-9813**.
+1. Si l’Adobe ne répond pas au ticket dans un délai donné, le partenaire peut appeler le numéro suivant : **1-657-312-4623**.
 
 >[!IMPORTANT]
 >
