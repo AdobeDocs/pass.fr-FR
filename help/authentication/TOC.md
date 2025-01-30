@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
 workflow-type: tm+mt
-source-wordcount: '1249'
+source-wordcount: '1250'
 ht-degree: 2%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 2%
    + [Présentation de MVPD](kickstart/mvpd-overview.md)
    + [Guide de démarrage rapide du programmeur](kickstart/programmer-kickstart-guide.md)
    + [Guide de démarrage rapide de MVPD](kickstart/mvpd-kickstart-guide.md)
-   + [Procédures d’escalade](kickstart/escalation-procedures.md)
+   + [FAQ sur les procédures d’assistance](kickstart/support-procedures-faqs.md)
 + Guide D’Intégration Pour Les Programmeurs {#integration-guide-programmers}
    + {#rest-apis} des API REST
       + {#rest-api-dcr} du DCR de l’API REST
