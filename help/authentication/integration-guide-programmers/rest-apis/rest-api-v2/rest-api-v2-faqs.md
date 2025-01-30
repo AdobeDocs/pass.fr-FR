@@ -2,7 +2,7 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '6664'
 ht-degree: 0%
@@ -245,7 +245,7 @@ L’identifiant unique de la ressource peut avoir deux formats :
 * Format de chaîne simple, tel qu’un identifiant unique pour un canal (marque).
 * Format RSS (Media RSS) contenant des informations supplémentaires telles que le titre, les évaluations et les métadonnées de contrôle parental.
 
-Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
+Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
 #### 6. Pour combien de ressources l’application cliente peut-elle obtenir une décision de préautorisation à la fois ? {#preauthorization-phase-faq6}
 
@@ -316,7 +316,7 @@ L’identifiant unique de la ressource peut avoir deux formats :
 * Format de chaîne simple, tel qu’un identifiant unique pour un canal (marque).
 * Format RSS (Media RSS) contenant des informations supplémentaires telles que le titre, les évaluations et les métadonnées de contrôle parental.
 
-Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
+Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
 #### 6. Pour combien de ressources la demande du client peut-elle obtenir une décision d’autorisation à la fois ? {#authorization-phase-faq6}
 

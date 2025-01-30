@@ -1,9 +1,10 @@
 ---
 title: Jetons de média
 description: Jetons de média
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -12,9 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-Le jeton média est un jeton généré par l’authentification Adobe Pass suite à une décision d’autorisation censée fournir un accès en lecture seule au contenu protégé (ressource). Le jeton multimédia est valide pendant une période limitée et courte (quelques minutes) spécifiée au moment de l’émission, indiquant la durée pendant laquelle il doit être utilisé par l’application cliente avant d’avoir à en récupérer un nouveau.
+Le jeton multimédia est un jeton généré par l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) à la suite d’une décision d’autorisation censée fournir un accès en lecture seule au contenu protégé (ressource). Le jeton de média est valide pendant une période limitée et courte (quelques minutes) spécifiée au moment de l’émission, indiquant la durée pendant laquelle il doit être vérifié et utilisé par l’application cliente.
 
 Le jeton de média se compose d’une chaîne signée basée sur l’infrastructure à clé publique (PKI) envoyée en texte clair. Avec la protection basée sur l’ICP, le jeton est signé à l’aide d’une clé asymétrique émise à l’Adobe par une autorité de certification (CA).
 
@@ -49,7 +50,7 @@ La bibliothèque du vérificateur de jetons multimédia représentée par l’ar
 
 La classe `ITokenVerifier` définit les méthodes suivantes :
 
-* Méthode `isValid()` utilisée pour valider le jeton de média. Elle accepte un seul argument, l’[identifiant de ressource](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md). Si l’identifiant de ressource fourni est `null`, la méthode valide uniquement l’authenticité et la période de validité du jeton multimédia.
+* Méthode `isValid()` utilisée pour valider le jeton de média. Elle accepte un seul argument, l’[identifiant de ressource](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Si l’identifiant de ressource fourni est `null`, la méthode valide uniquement l’authenticité et la période de validité du jeton multimédia.
 
   La méthode `isValid()` renvoie l’une des valeurs de statut suivantes :
 
@@ -193,7 +194,7 @@ Le jeton de média peut être récupéré à l’aide de l’API suivante :
 
 * [Récupérer des décisions d’autorisation à l’aide de mvpd spécifiques](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 
-Reportez-vous aux sections **Réponse** et **Exemples** de l’API ci-dessus pour comprendre les modèles de décision d’autorisation et de jeton de média.
+Reportez-vous aux sections **Réponse** et **Exemples** de l’API ci-dessus pour comprendre la structure des décisions d’autorisation et des jetons multimédia.
 
 Pour plus d’informations sur comment et à quel moment intégrer l’API ci-dessus, reportez-vous au document suivant :
 

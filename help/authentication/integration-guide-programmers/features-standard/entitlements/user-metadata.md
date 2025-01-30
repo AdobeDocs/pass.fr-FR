@@ -2,7 +2,7 @@
 title: Métadonnées utilisateur
 description: Métadonnées utilisateur
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1793'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 Les métadonnées utilisateur font référence à des [attributs](#attributes) spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) qui sont gérés par les MVPD et fournis aux programmeurs via l’API Adobe Pass Authentication [API REST V2](#apis).
 

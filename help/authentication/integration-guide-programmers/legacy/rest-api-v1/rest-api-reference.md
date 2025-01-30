@@ -2,7 +2,7 @@
 title: Référence de l’API REST
 description: Référence de l’api REST
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '669'
 ht-degree: 3%
@@ -57,7 +57,7 @@ Le tableau ci-dessous répertorie les services web disponibles pour l’approche
 
 
 | Sr | Point d’entrée de service web | Description | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | Hébergé à | Appelé par |
-|-----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
+|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
 | 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | Renvoie le code d’enregistrement et l’URI de page de connexion générés de manière aléatoire | 2 | Adobe </br>service Reg Code | Smart Device |
 | 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | Retourne l&#39;enregistrement du code d&#39;enregistrement contenant l&#39;UUID du code d&#39;enregistrement, le code d&#39;enregistrement et l&#39;ID de périphérique haché | 8 | Adobe </br>service Reg Code | Authentification Adobe Pass |
 | 3. | [&lt;SP_FQDN>/api/v1/config/ </br> {requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | Renvoie la liste des fichiers MVPD configurés pour le demandeur | 5 | Adobe </br>Adobe Pass </br>authentication </br>Service | Connexion </br>Web </br>App |
