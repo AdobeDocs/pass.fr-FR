@@ -2,9 +2,9 @@
 title: Guide d’utilisation du tableau de bord TVE Primetime
 description: Guide d’utilisation du tableau de bord TVE Primetime
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '5526'
+source-wordcount: '5524'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,6 @@ Avant d’aborder en détail ce guide d’utilisation, nous vous recommandons de
 
 * [Document Technique TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guide De Démarrage Rapide Du Programmeur](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Flux de droits](/help/authentication/integration-guide-programmers/entitlement-flow.md)
 
 Dans les sections suivantes de ce guide d&#39;utilisation, vous découvrirez comment administrer différents paramètres pour les canaux de votre entreprise, les programmeurs ou les intégrations entre les canaux et les MVPD (Multichannel Video Program Distributors).
 

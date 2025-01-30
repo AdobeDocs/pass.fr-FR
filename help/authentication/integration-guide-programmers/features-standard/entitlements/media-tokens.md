@@ -2,9 +2,9 @@
 title: Jetons de média
 description: Jetons de média
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-Le jeton multimédia est un jeton généré par l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) à la suite d’une décision d’autorisation censée fournir un accès en lecture seule au contenu protégé (ressource). Le jeton de média est valide pendant une période limitée et courte (quelques minutes) spécifiée au moment de l’émission, indiquant la durée pendant laquelle il doit être vérifié et utilisé par l’application cliente.
+Le jeton multimédia est un jeton généré par l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) à la suite d’une décision d’autorisation censée fournir un accès en lecture seule au contenu protégé (ressource).
+
+Le jeton de média est valide pendant une période limitée et courte (7 minutes par défaut) spécifiée au moment de l’émission, indiquant le délai avant qu’il ne doive être vérifié et utilisé par l’application cliente. Le jeton média est limité à une utilisation unique et ne doit jamais être mis en cache.
 
 Le jeton de média se compose d’une chaîne signée basée sur l’infrastructure à clé publique (PKI) envoyée en texte clair. Avec la protection basée sur l’ICP, le jeton est signé à l’aide d’une clé asymétrique émise à l’Adobe par une autorité de certification (CA).
 
@@ -25,7 +27,7 @@ Le vérificateur de jeton multimédia est une bibliothèque distribuée par l’
 
 ## Vérificateur de jeton de média {#media-token-verifier}
 
-L’authentification Adobe Pass recommande aux programmeurs d’envoyer le jeton multimédia à un service principal intégrant la bibliothèque du vérificateur de jeton multimédia pour garantir un accès sécurisé avant de lancer le flux vidéo. La durée de vie (TTL) du jeton multimédia est conçue pour tenir compte des problèmes potentiels de synchronisation des horloges entre le serveur de génération de jetons et le serveur de validation.
+L’authentification Adobe Pass recommande aux programmeurs d’envoyer le jeton multimédia à leur propre service principal en intégrant la bibliothèque du vérificateur de jeton multimédia pour garantir un accès sécurisé avant de lancer le flux vidéo. La durée de vie (TTL) du jeton multimédia est conçue pour tenir compte des problèmes potentiels de synchronisation des horloges entre le serveur de génération de jetons et le serveur de validation.
 
 L’authentification Adobe Pass déconseille vivement d’analyser le jeton multimédia et d’extraire directement ses données, car le format du jeton n’est pas garanti et peut changer à l’avenir. La bibliothèque du vérificateur de jeton de média doit être le seul outil utilisé pour analyser le contenu du jeton.
 

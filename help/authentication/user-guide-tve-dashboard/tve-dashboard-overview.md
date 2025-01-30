@@ -2,9 +2,9 @@
 title: Présentation du tableau de bord TVE
 description: Connaître le tableau de bord TVE et les ressources.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -52,6 +52,6 @@ Adobe suggère d’utiliser les ressources suivantes pour bien comprendre les fl
 
 * [Document Technique TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guide De Démarrage Rapide Du Programmeur](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Flux de droits](/help/authentication/integration-guide-programmers/entitlement-flow.md)
+* [Présentation du guide d’intégration du programmeur](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * [Glossaire de Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 * [Glossaire de l’API REST v2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
