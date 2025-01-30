@@ -2,7 +2,7 @@
 title: Présentation de la surveillance du service de droits
 description: Présentation de la surveillance du service de droits
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -129,11 +129,3 @@ Vous pouvez utiliser les données ESM pour les cas d’utilisation suivants :
 - **Débogage/test de qualité** - Les données étant également réparties par plateforme, appareil, navigateur et système d’exploitation, l’analyse des schémas d’utilisation peut mettre en évidence des problèmes sur des combinaisons spécifiques (par exemple, Safari sur OSX).
 
 - **Analytics** - Les données fournies peuvent être utilisées pour compléter/contrôler les données côté client collectées via Adobe Analytics ou un autre outil d’analyse.
-
-<!--
-## Related Information {#related-information}
-
-- [ESM API](/help/authentication/entitlement-service-monitoring-api.md)
-- [Degradation API Overview](/help/authentication/degradation-api-overview.md)
-- [Server-side Metrics](/help/authentication/understanding-serverside-metrics.md)
--->

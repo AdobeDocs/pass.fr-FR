@@ -2,7 +2,7 @@
 title: Présentation de l’enregistrement client dynamique
 description: Présentation de l’enregistrement client dynamique
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,8 +20,8 @@ L’enregistrement client dynamique représente un mécanisme d’autorisation d
 Adobe Pass fournit un service d’enregistrement client dynamique qui permet d’accéder aux API protégées suivantes :
 
 * API Adobe Pass Authentication Management :
-   * [Réinitialiser l’API Temp Pass](../../features-premium/temporary-access/temp-pass-feature.md)
-   * [API de dégradation](../../features-premium/degraded-access/degradation-api-overview.md)
+   * [Réinitialiser l’API Temp Pass](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [API de dégradation](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
    * [API Proxy MVPD](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [API de surveillance du service de droit](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * API REST d&#39;authentification Adobe Pass :
@@ -102,7 +102,7 @@ L’instruction du logiciel est un jeton Web JSON (`JWT`) qui contient des infor
 
 Pour une explication plus détaillée des instructions de logiciel et de leur fonctionnement, reportez-vous à la documentation [RFC 7591](https://tools.ietf.org/html/rfc7591).
 
-## Flux d’enregistrement client dynamique  {#dynamic-client-registration-flow}
+## Flux d’enregistrement client dynamique {#dynamic-client-registration-flow}
 
 En résumé, le mécanisme d’autorisation de l’enregistrement client dynamique implique plusieurs étapes :
 
