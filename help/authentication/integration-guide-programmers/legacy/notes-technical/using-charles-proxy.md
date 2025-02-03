@@ -2,9 +2,9 @@
 title: Utilisation du proxy Charles
 description: Utilisation du proxy Charles
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 175755aa7463257487b29c5f4da989cf34e91bfd
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '376'
 ht-degree: 0%
 
 ---
@@ -43,10 +43,9 @@ Activer la `\[ *Proxy -\> Proxy Settings... -\> SSL* \]` de proxy SSL
 
 Cochez la case « Activer le proxy SSL » et ajoutez tous les emplacements HTTPS.
 
-
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/ProxySettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/SSLSettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AddHttpsLocations.PNG)
-
-
+-->
 
 - Proxy SSL - <http://www.charlesproxy.com/documentation/proxying/ssl-proxying/>
 - Certificats SSL - <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
@@ -69,7 +68,9 @@ Si votre sortie devient trop encombrée, vous pouvez choisir d’ignorer ou d’
 
 L’usurpation DNS est très utile lorsque vous essayez de rediriger une requête vers une autre adresse IP, en particulier lorsque vous utilisez des appareils mobiles :
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/DNSSpoofing.PNG)
+-->
 
 <http://www.charlesproxy.com/documentation/tools/dns-spoofing/>
 
@@ -82,7 +83,9 @@ L’usurpation DNS est très utile lorsque vous essayez de rediriger une requêt
 
 Avec Map Remote, vous pouvez rediriger une requête « entrante » vers un autre point d’entrée. Le cas d’utilisation le plus courant de cette fonctionnalité est de « mapper » les `AccessEnabler.swf` aux `AccessEnablerDebug.swf:`
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
+-->
 
 <http://www.charlesproxy.com/documentation/tools/map-remote/>
 
@@ -100,7 +103,9 @@ Avec Map Remote, vous pouvez rediriger une requête « entrante » vers un autre
 
 Accédez à <http://charlesproxy.com/charles.crt> à partir de votre appareil iOS.  La boîte de dialogue d’installation du certificat démarre :
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
+-->
 
 </br>
 
@@ -117,15 +122,18 @@ Sur votre appareil iOS, sélectionnez `\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIF
 
 </br>
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy1.png)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy2.PNG)
-
+-->
 
 </br>
 Ici, vous devez spécifier l’adresse IP et le port de la machine sur laquelle vous exécutez Charles. <span style="line-height: 1.6em;">Si vous ouvrez désormais Safari sur votre appareil iOS et que vous tentez d’ouvrir une page web, la fenêtre contextuelle ci-dessous s’affiche sur l’ordinateur exécutant Charles :
 
 </br>
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
+-->
 
 </br>
 Cliquez sur « Autoriser » pour permettre à l’appareil d’utiliser Charles pour tous ses
