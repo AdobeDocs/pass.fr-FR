@@ -2,7 +2,7 @@
 title: Présentation de l’enregistrement client dynamique
 description: Présentation de l’enregistrement client dynamique
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![ Série de webinaires en direct ](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 L’enregistrement client dynamique représente un mécanisme d’autorisation défini par la norme [RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591) et repose sur le cadre d’autorisation OAuth 2.0 décrit par la norme [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749).
 

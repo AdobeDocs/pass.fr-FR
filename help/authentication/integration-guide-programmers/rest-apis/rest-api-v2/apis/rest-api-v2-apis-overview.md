@@ -1,52 +1,54 @@
 ---
-title: Présentation des API REST V2
-description: Présentation des API REST V2
+title: Présentation des API REST API V2
+description: Présentation des API REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 0%
 
 ---
 
-# Présentation des API REST V2 {#rest-api-v2-apis-overview}
+# Présentation des API REST API V2 {#rest-api-v2-apis-overview}
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![ Série de webinaires en direct ](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Pour commencer, consultez la documentation publique des API qui vous intéressent dans la liste ci-dessous.
 
 ## Configuration {#rest-api-v2-apis-configuration}
 
-* [Récupérer la configuration pour un prestataire spécifique](configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+* [Récupération de la configuration pour un fournisseur de services spécifique](configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
 
 ## Sessions {#rest-api-v2-apis-sessions}
 
 * [Créer une session d’authentification](sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
 * [Reprendre la session d’authentification](sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [Récupération d’une session d’authentification](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+* [Récupérer la session d’authentification](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
 * [Authentification dans l’agent utilisateur](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
 
 ## Profils {#rest-api-v2-apis-profiles}
 
 * [Récupération des profils](profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-* [Récupération du profil pour mvpd spécifique](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [Récupération du profil pour un fichier mvpd spécifique](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [Récupération du profil pour un code spécifique](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
 ## Décisions {#rest-api-v2-apis-decisions}
 
-* [Récupération des décisions d’autorisation à l’aide de mvpd spécifique](decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-* [Récupération des décisions de préautorisation à l’aide de mvpd spécifique](decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+* [Récupérer des décisions d’autorisation à l’aide de mvpd spécifiques](decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+* [Récupérer des décisions de préautorisation à l’aide de mvpd spécifiques](decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 
 ## Déconnexion {#rest-api-v2-apis-logout}
 
-* [Lancement de la déconnexion pour mvpd spécifique](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+* [Lancer la déconnexion pour un fichier mvpd spécifique](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
 
-## Connexion unique du partenaire {#rest-api-v2-apis-partner-single-sign-on}
+## Authentification SSO Du Partenaire {#rest-api-v2-apis-partner-single-sign-on}
 
-* [Récupération de la demande d’authentification du partenaire](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Récupération du profil à l’aide de la réponse d’authentification du partenaire](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Récupérer la demande d’authentification du partenaire](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+* [Récupérer le profil à l’aide de la réponse d’authentification du partenaire](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 ## Vous souhaitez essayer l’API REST V2 ?
 
