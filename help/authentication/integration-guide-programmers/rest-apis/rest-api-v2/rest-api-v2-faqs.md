@@ -2,9 +2,9 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
 workflow-type: tm+mt
-source-wordcount: '6664'
+source-wordcount: '6460'
 ht-degree: 0%
 
 ---
@@ -19,21 +19,21 @@ Ce document fournit des réponses générales aux questions fréquentes sur l’
 
 Pour plus d’informations sur l’API REST V2 dans son ensemble, consultez la documentation [ Présentation de l’API REST V2 ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) .
 
->[!MORELIKETHIS]
->
-> * [FAQ sur Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
-
 ## Questions fréquentes d’ordre général {#general-faqs}
 
 Commencez par cette section si vous travaillez sur une application qui doit intégrer l’API REST V2, qu’il s’agisse d’une nouvelle application ou d’une application existante qui migre depuis [l’API REST V1](#migration-rest-api-v1-to-rest-api-v2) ou [SDK](#migration-sdk-to-rest-api-v2).
 
 Pour plus d’informations sur les détails et les étapes de la migration, consultez également les sections suivantes.
 
+>[!MORELIKETHIS]
+>
+> * [FAQ sur Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md#general-faqs)
+
 ### FAQ sur la phase d&#39;enregistrement {#registration-phase-faqs-general}
 
 +++FAQ sur la phase d’enregistrement
 
-Reportez-vous à la documentation [FAQ sur l’enregistrement client dynamique (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md).
+Reportez-vous à la documentation [FAQ sur l’enregistrement client dynamique (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md#rest-api-v2-access-faqs).
 
 +++
 
@@ -375,6 +375,10 @@ Si l’application cliente migre de l’API REST V1 vers l’API REST V2, elle p
 
 Passez à cette section si vous travaillez sur une application qui doit migrer une application existante vers l’API REST V2.
 
+>[!MORELIKETHIS]
+>
+> * [FAQ sur Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md#migration-faqs)
+
 ### Questions fréquentes générales sur la migration {#general-migration-faqs}
 
 +++Questions fréquentes générales sur la migration
@@ -405,25 +409,7 @@ L’authentification de l’utilisateur obtenue dans les anciennes versions de l
 
 Par conséquent, l’utilisateur devra s’authentifier à nouveau dans la nouvelle application cliente migrée vers l’API REST V2.
 
-#### 4. L’application cliente peut-elle utiliser les applications enregistrées existantes (déclarations de logiciel) ? {#migration-faq4}
-
-L’application cliente ne peut pas réutiliser les applications enregistrées existantes (instructions logicielles). Elle doit donc générer et télécharger une nouvelle application enregistrée (instructions logicielles) dédiée à l’utilisation de l’API REST V2.
-
-Cette opération peut être effectuée via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre organisation ou par un représentant Adobe Pass Authentication agissant en votre nom.
-
-Pour plus d’informations, reportez-vous à la documentation [Guide de l’utilisateur des canaux du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications) ou [Guide de l’utilisateur des programmeurs du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications).
-
-Pour le moment, vous devrez demander à un représentant de l’authentification Adobe Pass d’activer l’utilisation de l’API REST V2 pour vos nouvelles applications enregistrées (instructions logicielles), jusqu’à ce que le tableau de bord Adobe Pass [TVE Dashboard](rest-api-v2-glossary.md#tve-dashboard) soit mis à jour pour permettre l’auto-gestion de cette opération.
-
-Afin de distinguer les applications enregistrées (instructions logicielles) utilisées dans les applications clientes utilisant l’API REST V2, vous devez ajouter un suffixe spécifique au nom de l’application enregistrée, tel que « RESTV2 ».
-
-#### 5. L’application cliente peut-elle utiliser les schémas personnalisés existants ? {#migration-faq5}
-
-L’application cliente peut réutiliser les schémas personnalisés existants générés via le tableau de bord Adobe Pass [TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard).
-
-Pour plus d’informations, reportez-vous à la documentation [Guide de l’utilisateur des canaux du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#custom-schemes) ou [Guide de l’utilisateur des programmeurs du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#custom-schemes).
-
-#### 6. Les codes d’erreur améliorés sont-ils activés par défaut dans l’API REST V2 ? {#migration-faq6}
+#### 4. Les codes d’erreur améliorés sont-ils activés par défaut dans l’API REST V2 ? {#migration-faq4}
 
 Oui.
 
