@@ -2,9 +2,9 @@
 title: Manuel d’Android SDK
 description: Manuel d’Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1703'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -135,7 +135,9 @@ Bibliothèque Android (AccessEnabler)
 
    | REMARQUE |     |
    | --- | --- |  
-   | ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) | Aucune demande de droit ne peut être traitée tant que l’identité du demandeur n’est pas entièrement établie. Cela signifie effectivement que, pendant que setRequestor() est toujours en cours d’exécution, toutes les demandes de droits suivantes (par exemple, `checkAuthentication()`) sont bloquées.<br><br>Vous disposez de deux options d’implémentation : une fois les informations d’identification du demandeur envoyées au serveur principal, la couche d’application de l’interface utilisateur peut choisir l’une des deux approches suivantes :<br><br>1.  Attendez le déclenchement du rappel `setRequestorComplete()` (partie du délégué AccessEnabler).  Cette option offre la plus grande certitude quant à la réalisation de l`setRequestor()`opération. Elle est donc recommandée pour la plupart des implémentations.<br>2.  Continuez sans attendre le déclenchement du rappel `setRequestorComplete()` et commencez à émettre des demandes de droits. Ces appels (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sont mis en file d&#39;attente par la bibliothèque AccessEnabler, qui effectuera les appels réseau réels après l&#39;`setRequestor(). `Cette option peut parfois être interrompue si, par exemple, la connexion réseau est instable. |
+   |  | Aucune demande de droit ne peut être traitée tant que l’identité du demandeur n’est pas entièrement établie. Cela signifie effectivement que, pendant que setRequestor() est toujours en cours d’exécution, toutes les demandes de droits suivantes (par exemple, `checkAuthentication()`) sont bloquées.<br><br>Vous disposez de deux options d’implémentation : une fois les informations d’identification du demandeur envoyées au serveur principal, la couche d’application de l’interface utilisateur peut choisir l’une des deux approches suivantes :<br><br>1.  Attendez le déclenchement du rappel `setRequestorComplete()` (partie du délégué AccessEnabler).  Cette option offre la plus grande certitude quant à la réalisation de l`setRequestor()`opération. Elle est donc recommandée pour la plupart des implémentations.<br>2.  Continuez sans attendre le déclenchement du rappel `setRequestorComplete()` et commencez à émettre des demandes de droits. Ces appels (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sont mis en file d&#39;attente par la bibliothèque AccessEnabler, qui effectuera les appels réseau réels après l&#39;`setRequestor(). `Cette option peut parfois être interrompue si, par exemple, la connexion réseau est instable. |
+
+   <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
 1. Appelez [checkAuthentication()](#$checkAuthN) pour vérifier une authentification existante sans initier le flux d’authentification complet.   Si cet appel réussit, vous pouvez passer directement au flux d’autorisation.  Dans le cas contraire, passez au flux d’authentification.
 
