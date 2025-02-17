@@ -2,9 +2,9 @@
 title: Notes de mise à jour de l’authentification Adobe Pass 2.66
 description: Notes de mise à jour de l’authentification Adobe Pass 2.66
 exl-id: 7c3cd007-ed2b-455f-8f70-6ec5d0a6552a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
-source-wordcount: '154'
+source-wordcount: '155'
 ht-degree: 0%
 
 ---
@@ -13,26 +13,27 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
 
-## Clients côté serveur et Web {#server-side-web-clients-266}
+## Clients côté serveur et clients web {#server-side-web-clients-266}
 
 * [Numéro de build](#build-number-266)
-* [Présentation des versions](#release-overview-266)
+* [Présentation de la version](#release-overview-266)
 
 ### Numéro de build {#build-number-266}
 
 Authentification Adobe Pass : adobe-pass-**2.66.0.1**
+
 Date de publication : **07/11/2023 - 07/13/2023**
 
-### Présentation des versions {#release-overview-266}
+### Présentation de la version {#release-overview-266}
 
-Avec cette version, nous avons continué les mises à jour internes de la nouvelle API REST.
+Avec cette version, nous avons poursuivi les mises à jour internes pour la nouvelle API REST.
 
-#### Correctifs {#release-overview-bugfixes-266}
+#### Correctifs
 
-* Correction du flux de déconnexion des MVPD basés sur SAML, où le paramètre RelayState était absent de la requête de déconnexion. Nous ciblerons les mises à jour de configuration après la version pour restaurer le flux de déconnexion des MVPD concernés.
-* Ajout de la fonctionnalité de mise à jour des certificats SSL dans notre configuration pour SOAP points de terminaison d’autorisation.
-* Correction d’un cas de coin en raison duquel des données incorrectes étaient consignées dans le champ Programmeur dans certains rapports ESM.
+* Correction du flux de déconnexion pour les MVPD SAML, où le paramètre RelayState était manquant dans la demande de déconnexion. Nous allons cibler les mises à jour de configuration après la publication afin de restaurer le flux de déconnexion pour les MVPD affectées.
+* Ajout de la possibilité de mettre à jour les certificats SSL dans notre configuration pour les points d’entrée d’autorisation SOAP.
+* Correction d’un problème dans lequel des données incorrectes étaient consignées dans le champ Programmeur de certains rapports ESM.

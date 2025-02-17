@@ -1,41 +1,40 @@
 ---
-title: Notes de mise à jour de l’authentification Adobe Pass 2.64
-description: Notes de mise à jour de l’authentification Adobe Pass 2.64
+title: Notes De Mise À Jour De L’Authentification Adobe Pass 2.64
+description: Notes De Mise À Jour De L’Authentification Adobe Pass 2.64
 exl-id: 4db21026-a0c2-4e33-b01f-4ccae824a110
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '134'
 ht-degree: 0%
 
 ---
 
-# Notes de mise à jour de l’authentification Adobe Pass 2.64 {#authn-264-rn}
+# Notes De Mise À Jour De L’Authentification Adobe Pass 2.64 {#authn-264-rn}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
 
-## Clients côté serveur et Web {#ss-web-clients}
+## Clients côté serveur et clients web {#server-side-web-clients-264}
 
-* [Numéro de build](#build-no-264)
-* [Nouvelles fonctionnalités](#new-featres-264)
-* [Correctifs](#bug-fixes-264)
+* [Numéro de build](#build-number-264)
+* [Présentation de la version](#release-overview-264)
 
-### Numéro de build {#build-no-264}
+### Numéro de build {#build-number-264}
 
 Authentification Adobe Pass : adobe-pass-**2.64**
 
 Date de publication : **11/08/2022 - 11/10/2022**
 
-### Nouvelles fonctionnalités {#new-featres-264}
+### Présentation de la version {#release-overview-264}
 
-* Mises à jour de l’infrastructure, visant à réduire les temps de réponse du serveur, à améliorer les performances globales du système.
-* Améliorations du nouveau mécanisme d&#39;identification de plateforme.
-* Possibilité de bloquer les réponses d’authentification non sollicitées des MVPD où le paramètre &quot;in_response_to&quot; est absent de l’assertion SAML.
+* Mises à jour de l’infrastructure, visant à réduire les temps de réponse du serveur et à améliorer les performances globales du système.
+* Améliorations apportées au nouveau mécanisme d’identification des plateformes.
+* Possibilité de bloquer les réponses d&#39;authentification non sollicitées des MVPD où le paramètre « in_response_to » est absent de l&#39;assertion SAML.
 
-### Correctifs {#bug-fixes-264}
+#### Correctifs
 
-* Correction d’une mise en forme incorrecte de certains jetons TempPass hérités.
-* Correction de problèmes mineurs sur le deuxième flux d’authentification de l’écran.
+* Correction d’un formatage incorrect de certains jetons TempPass hérités.
+* Correction de problèmes mineurs sur le flux d’authentification du deuxième écran.

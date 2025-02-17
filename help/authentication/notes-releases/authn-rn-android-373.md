@@ -1,38 +1,35 @@
 ---
-title: Notes de mise à jour d’Adobe Pass Authentication Android 3.7.3
-description: Notes de mise à jour d’Adobe Pass Authentication Android 3.7.3
+title: Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3
+description: Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3
 exl-id: f335357e-c209-428d-af2a-2181551447d4
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
 
 ---
 
-# Notes de mise à jour d’Adobe Pass Authentication Android 3.7.3 {#android-sdk-373-release-notes}
+# Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3 {#android-sdk-373-rn}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
 
-## Numéro de build {#build-no-android-sdk-373}
+## Numéro de build {#build-number-373}
 
 Authentification Adobe Pass : Android 3.7.3
 
-Date de publication : 09/19/2023
+Date De Publication : **09/19/2023**
 
+## Présentation de la version {#release-overview-373}
 
+* Modifications pour prendre en charge Android 14 et les applications ciblant le niveau API 34
+   * Ajoutez l&#39;indicateur requis par les récepteurs de diffusions enregistrés à l&#39;exécution d&#39;Android 14 [](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
+* Correction de l’absence d’ouverture de ChromeCustomTabs pour la connexion à MVPD sur l’API d’émulateur 32+
+   * Remarque : une solution à ce problème sur SDK &lt;3.7.3 consiste à ouvrir l’application Chrome sur l’émulateur et à terminer sa configuration avant d’essayer d’ouvrir une session MVPD
 
-## Présentation des versions {#overview-android-sdk-373}
+## Package de version {#release-package-373}
 
-* Modifications apportées à la prise en charge d’Android 14 et des applications ciblant l’API niveau 34
-   * Ajoutez l’indicateur requis par les [récepteurs de diffusions enregistrés au moment de l’exécution Android 14](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
-* Correction de ChromeCustomTabs qui ne s’ouvre pas pour la connexion MVPD sur l’API d’émulateur 32+
-   * Remarque : Une solution à ce problème sur le SDK &lt;3.7.3 consiste à ouvrir l’application Chrome sur l’émulateur et à terminer sa configuration avant de tenter de se connecter au MVPD.
-
-
-## Package de version {#rel-pkg-android373}
-
-Vous pouvez télécharger le SDK Android v3.7.3 à partir de [ici](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).
+Vous pouvez télécharger Android SDK v3.7.3 à partir de [ici](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).

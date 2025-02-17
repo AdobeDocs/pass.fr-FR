@@ -1,55 +1,53 @@
 ---
-title: Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.4.0
-description: Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.4.0
+title: Notes De Mise À Jour De JavaScript 4.4.0 D’Authentification Adobe Pass
+description: Notes De Mise À Jour De JavaScript 4.4.0 D’Authentification Adobe Pass
 exl-id: 28cc0ccc-7a1d-45bd-8455-26cfde25c5c5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 0%
 
 ---
 
-# Notes de mise à jour d’Adobe Pass Authentication JavaScript 4.4.0 {#javascript-sdk-440-release-notes}
+# Notes De Mise À Jour De JavaScript 4.4.0 D’Authentification Adobe Pass {#javascript-sdk-440-rn}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
 
-## Numéro de build {#build-no-javascript-sdk-440}
+## Numéro de build {#build-number-440}
 
 Authentification Adobe Pass : JavaScript 4.4.0
 
-Date de publication : **06/22/2021**
+Date De Publication : **06/22/2021**
 
+## Présentation de la version {#release-overview-440}
 
-## Présentation des versions {#overview-javascript-sdk-440}
-
-### Nouvelles fonctionnalités {#new-features-javascript-sdk-440}
+### Nouvelles fonctionnalités
 
 Autorisation de contrôle en amont
 
-* Nouvelle API de préautorisation : il s’agit du nouvel appel d’API à utiliser pour notre fonctionnalité d’autorisation de contrôle en amont, qui introduit également un reporting d’erreurs amélioré pour le flux de contrôle en amont.
-* Cette fonctionnalité est disponible sur demande, car elle doit être activée sur la configuration de l’authentification Primetime. Pour plus d’informations sur l’activation de cette fonctionnalité, contactez votre TAM.
-* Obsolète l’API checkPreauthorizedResources.
+* Nouvelle API de préautorisation : il s’agit du nouvel appel API à utiliser pour notre fonctionnalité d’autorisation de contrôle en amont, qui introduit également un rapport d’erreur amélioré pour le flux de contrôle en amont.
+* Cette fonctionnalité est disponible sur demande, car elle a été activée dans la configuration de Primetime Authentication. Veuillez contacter votre TAM pour plus d’informations sur la manière d’activer cette fonctionnalité.
+* API checkPreauthorizedResources obsolète.
 
 Identification de la plateforme
 
-* Ajoute l’en-tête AP-SDK-Identifier sur tous les appels SDK pour mieux identifier le type et la version du SDK.
+* Ajoute un en-tête AP-SDK-Identifier sur tous les appels SDK pour mieux identifier le type et la version de SDK.
 
 Autres
 
-* Améliorations architecturales internes.
+* Améliorations de l’architecture interne.
 
-
-### Correctifs {#bug-fixes-javascript-sdk-440}
+### Correctifs
 
 * Correction de la condition de concurrence générée lorsque setRequestor et getAuthentication sont appelés simultanément.
-* Correction d’un problème qui empêchait le chargement correct des droits dans les environnements d’évaluation.
-* Correction d’un problème qui empêchait l’achèvement du flux de déconnexion en arrière-plan dans les navigateurs Safari. L’utilisateur semblait donc toujours authentifié jusqu’à l’actualisation de la page. Un délai d’expiration a été introduit, actuellement défini sur 30 secondes. Par conséquent, si aucune réponse du serveur d’authentification Primetime n’est fournie au cours de cette période, le SDK appelle le rappel setAuthenticationStatus .
+* Correction d’un problème qui empêchait le chargement correct des droits sur les environnements d’évaluation.
+* Correction d’un problème qui empêchait le flux de déconnexion en arrière-plan de se terminer sur les navigateurs Safari, l’utilisateur semblait toujours authentifié jusqu’à ce qu’une actualisation de page se produise. Un délai d’expiration a été introduit. Il est actuellement défini sur 30 secondes. Par conséquent, s’il n’y a pas de réponse du serveur d’authentification Primetime pendant cette période, le SDK appelle le rappel setAuthenticationStatus.
 
-## Package de version {#rel-pkg-javascript-sdk-440}
+## Package de version {#release-package-440}
 
 L’URL de production est : https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js
 
