@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1246'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,9 @@ ht-degree: 2%
 + [Authentification Adobe Pass](home.md)
 + [Annonces de produit](product-announcements.md)
 + Versions du produit {#product-releases}
+   + {#2025} 2025
+      + [Notes de mise à jour de l’authentification Adobe Pass version 3.1.0](notes-releases/auth-rn-310.md)
+      + [Notes de mise à jour de la version 4.7.1 du JavaScript d’authentification Adobe Pass](notes-releases/authn-rn-javascript-471.md)
    + {#2024} 2024
       + [Notes de mise à jour de l’authentification Adobe Pass version 3.0.3](notes-releases/auth-rn-303.md)
       + [Notes de mise à jour de l’authentification Adobe Pass 3.0](notes-releases/auth-rn-300.md)
@@ -116,7 +119,7 @@ ht-degree: 2%
                + [En-tête - Identifiant-appareil-AP](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
                + [En-Tête - X-Device-Info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
                + [En-tête - Jeton de service AD](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
-               + [En-Tête - Adobe-Subject-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+               + [En-Tête : Adobe-Subject-Token.](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
                + [En-tête - AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                + [En-tête - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Fonctionnalités standard {#standard-features}
@@ -152,7 +155,7 @@ ht-degree: 2%
          + [Mesures côté serveur](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       + {#analytics} Analytics
          + [Intégration des données côté serveur de l’authentification Adobe Pass dans Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         + [Utilisation de l’ID Experience Cloud dans l’authentification Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         + [Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + {#legacy} hérité
       + {#rest-api-v1} de l’API REST V1 (héritée)
          + [Présentation de l’API REST V1 (héritée)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
@@ -174,7 +177,7 @@ ht-degree: 2%
             + [(Hérité) Lancer la déconnexion](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
             + [Métadonnées utilisateur (héritées)](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
             + [(Hérité) Récupérer la requête de profil](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
-            + [exchange du jeton (hérité)](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
+            + [Échange de jetons (hérité)](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
             + [(Hérité) Aperçu gratuit pour Temp Pass et Promotionnel Temp Pass](integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md)
          + {#rest-api-v1-cookbooks} des livres de cookie (hérités)
             + [Cookbook de l’API REST V1 (hérité) (client à serveur)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
@@ -256,7 +259,7 @@ ht-degree: 2%
             + [(Hérité) Empêcher l’affichage des fichiers MVPD dans la boîte de dialogue de sélection](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
          + {#troubleshooting} de dépannage (hérité)
             + [(Hérité) Utilisation du proxy Charles](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
-            + [(Hérité) Surveillance du Pass PayTV Adobe Pass Adobe](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
+            + [(Hérité) Surveillance du Pass Adobe Pass Adobe PayTV](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Hérité) Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 + Guide d’intégration pour MVPDs {#integration-guide-mvpds}
    + [Guide d’intégration de MVPD](integration-guide-mvpds/mvpd-integration-guide-overview.md)
@@ -265,8 +268,8 @@ ht-degree: 2%
    + [Autorisation](integration-guide-mvpds/authz-usecase.md)
    + [Autorisation de contrôle en amont](integration-guide-mvpds/mvpd-preflight-authz.md)
    + [Déconnexion de MVPD](integration-guide-mvpds/usecase-mvpd-logout.md)
-   + [Exchange des métadonnées de contenu](integration-guide-mvpds/mvpd-content-metadata-exchange.md)
-   + [Exchange des métadonnées de l’utilisateur](integration-guide-mvpds/mvpd-user-metadata-exchng.md)
+   + [Échange de métadonnées de contenu](integration-guide-mvpds/mvpd-content-metadata-exchange.md)
+   + [Échange de métadonnées utilisateur](integration-guide-mvpds/mvpd-user-metadata-exchng.md)
    + [Service web de MVPD du proxy](integration-guide-mvpds/proxy-mvpd-webserv.md)
    + [Intégration de MVPD SAML par proxy](integration-guide-mvpds/proxy-mvpd-saml-int.md)
    + [Définition de la portée du fournisseur de services](integration-guide-mvpds/serv-provider-scoping.md)
@@ -284,5 +287,5 @@ ht-degree: 2%
    + [Log des modifications](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
 + Notes techniques {#tech-notes}
    + {#environments} Environnements
-      + [Présentation des environnements d’Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
+      + [Présentation des environnements Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
       + [Configuration de votre environnement et tests dans Pre-Qual](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)
