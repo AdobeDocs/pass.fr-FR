@@ -2,18 +2,18 @@
 title: Authentification Notes de mise à jour d’iOS / tvOS 3.8.1
 description: Authentification Notes de mise à jour d’iOS / tvOS 3.8.1
 exl-id: e1e24b47-e5b7-4706-8690-ad71dee35cb8
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '96'
+source-wordcount: '92'
 ht-degree: 0%
 
 ---
 
 # Authentification Notes de mise à jour d’iOS / tvOS 3.8.1 {#ios-tvos-sdk-381-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
 
