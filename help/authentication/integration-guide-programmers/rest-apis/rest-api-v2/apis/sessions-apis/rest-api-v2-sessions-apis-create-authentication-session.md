@@ -2,9 +2,9 @@
 title: Créer une session d’authentification
 description: API REST V2 - Créer une session d’authentification
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1047'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -34,7 +34,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">méthode</td>
-      <td>POST</td>
+      <td>POSTER</td>
       <td></td>
    </tr>
    <tr>
@@ -130,7 +130,7 @@ ht-degree: 1%
       <td>facultatif</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Jeton-Sujet-Adobe</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
         La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
         <br/><br/>
@@ -268,17 +268,15 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Type de raison utilisé pour expliquer le « actionName ».
+                  Type de raison qui explique le « actionName ».
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>aucun</b></li>
-                    <li><b>authentifié</b></li>
-                    <li><b>temporaire</b></li>
-                    <li><b>dégradé</b></li>
-                    <li><b>AuthenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>none</b><br/>L’application cliente est requise pour continuer à s’authentifier.</li>
+                    <li><b>authentifié</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès de base.</li>
+                    <li><b>temporaire</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès temporaires.</li>
+                    <li><b>degraded</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès dégradés.</li>
+                    <li><b>authenticatedSSO</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès à authentification unique.</li>
                   </ul>
                <td><i>obligatoire</i></td>
             </tr>
@@ -483,6 +481,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Créer une session d’authentification à l’aide du TempPass de base ou promotionnel (non requis)
 

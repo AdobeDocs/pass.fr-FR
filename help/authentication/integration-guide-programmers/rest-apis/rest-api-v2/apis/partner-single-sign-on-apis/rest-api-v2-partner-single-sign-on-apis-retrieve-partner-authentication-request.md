@@ -2,10 +2,10 @@
 title: Récupérer la demande d’authentification du partenaire
 description: API REST V2 - Récupération de la demande d’authentification du partenaire
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1136'
-ht-degree: 1%
+source-wordcount: '1230'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -34,7 +34,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">méthode</td>
-      <td>POST</td>
+      <td>POSTER</td>
       <td></td>
    </tr>
    <tr>
@@ -258,6 +258,23 @@ ht-degree: 1%
                <td><i>obligatoire</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">reasonType</td>
+               <td>
+                  Type de raison qui explique le « actionName ».
+                  <br/><br/>
+                  Les valeurs possibles sont les suivantes :
+                  <ul>
+                    <li><b>none</b><br/>L’application cliente est requise pour continuer à s’authentifier.</li>
+                    <li><b>authentifié</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès de base.</li>
+                    <li><b>temporaire</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès temporaires.</li>
+                    <li><b>degraded</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès dégradés.</li>
+                    <li><b>authenticatedSSO</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès à authentification unique.</li>
+                    <li><b>pfs_fallback</b><br/>L’application cliente doit revenir au flux d’authentification de base en raison d’une valeur d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> manquante ou non valide.</li>
+                    <li><b>configuration_fallback</b><br/>L’application cliente doit revenir au flux d’authentification de base en raison de la configuration d’authentification unique du partenaire sur le serveur principal d’Adobe Pass.</li>
+                  </ul>
+               <td><i>obligatoire</i></td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
                <td>
                     Paramètres manquants qui doivent être fournis pour terminer le flux d’authentification de base.
@@ -379,6 +396,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "partner_profile",
     "actionType": "direct",
+    "reasonType": "none",
     "url": "/api/v2/REF30/profiles/sso/Apple",
     "sessionId": "83c046be-ea4b-4581-b5f2-13e56e69dee9",
     "mvpd": "Cablevision",
@@ -435,15 +453,52 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Récupérer la demande d’authentification du partenaire, mais revenir au flux d’authentification de base sans paramètres manquants
+### 3. Récupérer la demande d’authentification du partenaire, mais revient au flux d’authentification de base en raison d’une valeur d’en-tête AP-Partner-Framework-Status manquante ou non valide
 
->[!IMPORTANT]
-> 
-> Hypothèses
-> 
-> <br/>
->
-> * Retourne au flux d’authentification de base en raison des paramètres d’authentification unique du partenaire ou à la configuration d’authentification unique du partenaire sur le serveur principal d’Adobe Pass.
+>[!BEGINTABS]
+
+>[!TAB Requête]
+
+```HTTPS
+POST /api/v2/REF30/sessions/sso/Apple HTTP/1.1
+ 
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Content-Type: application/x-www-form-urlencoded
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    AP-Partner-Framework-Status: ewogICAgImZyYW1ld29ya1Blcm1pc3Npb25JbmZvIjogewogICAgICAiYWNjZXNzU3RhdHVzIjogImRlbmllZCIKICAgIH0sCiAgICAiZnJhbWV3b3JrUHJvdmlkZXJJbmZvIiA6IHt9Cn0=
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+
+Body:
+
+domainName=adobe.com&redirectUrl=https%3A%2F%2Fadobe.com
+```
+
+>[!TAB Réponse]
+
+```HTTPS
+HTTP/1.1 200 OK  
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "actionName": "authenticate",
+    "actionType": "interactive",
+    "reasonType": "pfs_fallback",
+    "url": "/api/v2/authenticate/REF30/OKTWW2W",
+    "code": "OKTWW2W",
+    "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
+    "mvpd": "Cablevision",
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
+}
+```
+
+>[!ENDTABS]
+
+### 4. Récupérez la demande d’authentification du partenaire, mais retourne au flux d’authentification de base en raison de la configuration d’authentification unique du partenaire sur le serveur principal d’Adobe Pass
 
 >[!BEGINTABS]
 
@@ -475,7 +530,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
-    "reasonType": "none",
+    "reasonType": "configuration_fallback",
     "url": "/api/v2/authenticate/REF30/OKTWW2W",
     "code": "OKTWW2W",
     "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
@@ -488,15 +543,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Récupérez la demande d’authentification du partenaire, mais revenez au flux d’authentification de base avec les paramètres manquants.
-
->[!IMPORTANT]
->
-> Hypothèses
->
-> <br/>
->
-> * Retourne au flux d’authentification de base en raison des paramètres d’authentification unique du partenaire ou à la configuration d’authentification unique du partenaire sur le serveur principal d’Adobe Pass.
+### 5. Récupérer la demande d’authentification du partenaire, mais revient au flux d’authentification de base en raison de paramètres manquants
 
 >[!BEGINTABS]
 

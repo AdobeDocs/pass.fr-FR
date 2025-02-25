@@ -2,9 +2,9 @@
 title: Reprendre la session d’authentification
 description: API REST V2 - Reprendre la session d’authentification
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -34,7 +34,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">méthode</td>
-      <td>POST</td>
+      <td>POSTER</td>
       <td></td>
    </tr>
    <tr>
@@ -233,17 +233,14 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Type de raison utilisé pour expliquer le « actionName ».
+                  Type de raison qui explique le « actionName ».
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>aucun</b></li>
-                    <li><b>authentifié</b></li>
-                    <li><b>temporaire</b></li>
-                    <li><b>dégradé</b></li>
-                    <li><b>AuthenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>none</b><br/>L’application cliente est requise pour continuer à s’authentifier.</li>
+                    <li><b>authentifié</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès de base.</li>
+                    <li><b>temporaire</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès temporaires.</li>
+                    <li><b>degraded</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès dégradés.</li>
                   </ul>
                <td><i>obligatoire</i></td>
             </tr>
@@ -353,6 +350,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
@@ -444,6 +442,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Reprendre la session d’authentification à l’aide du TempPass de base ou promotionnel (non requis)
 
