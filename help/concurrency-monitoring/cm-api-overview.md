@@ -2,9 +2,9 @@
 title: Présentation de l’API
 description: Présentation de la surveillance de la simultanéité dans l’API
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
+source-git-commit: 0cabb090e3c0282f9bcd097719d52374f2d991dd
 workflow-type: tm+mt
-source-wordcount: '2102'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Ce document aide les développeurs d’applications à utiliser notre spécifica
 
 Pendant le processus de développement, la documentation publique Swagger représente la ligne directrice de référence pour comprendre et tester les flux d’API. C’est un excellent point de départ pour adopter une approche pratique et se familiariser avec le comportement des applications du monde réel dans différents scénarios d’interaction client.
 
-Envoyez un ticket dans [Zendesk](mailto:tve-support@adobe.com) pour enregistrer votre société et vos applications dans la surveillance de concurrence. L&#39;Adobe attribuera un ID d&#39;application à chaque entité. Dans ce guide, nous utiliserons deux applications de référence avec les ID **demo-app** et **demo-app-2** qui se trouveront sous l’Adobe client.
+Envoyez un ticket dans [Zendesk](mailto:tve-support@adobe.com) pour enregistrer votre société et vos applications dans la surveillance de concurrence. Adobe attribuera un identifiant d&#39;application à chaque entité. Dans ce guide, nous utiliserons deux applications de référence avec les ID **demo-app** et **demo-app-2** qui se trouveront sous le client Adobe.
 
 
 ## Cas d’utilisation {#api-use-case}
@@ -36,7 +36,7 @@ Ensuite, nous appuyons sur **Explorer** pour définir l’identifiant qui sera u
 
 ### Première application {#first-app-use-cases}
 
-L’application avec l’ID **demo-app** a été affectée par l’équipe d’Adobe à une politique avec une règle qui limite le nombre de flux simultanés à 3. Une politique est affectée à une application spécifique en fonction de la demande soumise dans Zendesk.
+L’application avec l’ID **demo-app** s’est vu attribuer par l’équipe d’Adobe une politique avec une règle qui limite le nombre de flux simultanés à 3. Une politique est affectée à une application spécifique en fonction de la demande soumise dans Zendesk.
 
 
 #### Récupération des métadonnées {#retrieve-metadata-use-case}
@@ -137,6 +137,10 @@ Si aucune session n’est en cours pour un utilisateur spécifique lorsque vous 
 
 Notez également que dans ce cas, l’en-tête **Expires** n’est pas présent.
 
+Si une session a été créée en tuant une autre, à l’aide de l’en-tête **X-Terminate**, sous métadonnées, vous trouverez le champ **remplacé**. Sa valeur est un indicateur de la session tuée pour faire de la place à la session en cours.
+
+![](assets/get-all-running-streams-superseded.png)
+
 #### Enfreindre la politique {#breaking-policy-app-first}
 
 
@@ -175,7 +179,7 @@ Pour tous les appels de l’API du cycle de vie de la session, le corps de la r�
 **Conseils**
 Le **EvaluationResult** inclura un tableau d&#39;objets Advice sous **associatedAdvice**. Ces conseils sont destinés à permettre à l’application d’afficher un message d’erreur complet à l’intention de l’utilisateur et (potentiellement) de permettre à l’utilisateur d’agir.
 
-Actuellement, il existe deux types de conseils (spécifiés par leur valeur d’attribut **type**) : **violation de règle** et **terminaison à distance**. La première fournit des détails sur une règle enfreinte et les sessions en conflit avec la session actuelle (y compris l’attribut terminate qui peut être utilisé pour terminer cette session à distance). La deuxième est simplement de dire que la session en cours a été délibérément interrompue par une session à distance, de sorte que les utilisateurs sauront qui les a chassés quand les limites ont été atteintes.
+Actuellement, il existe deux types de conseils (spécifiés par leur valeur d’attribut **type**) : **violation de règle** et **terminaison à distance**. La première fournit des détails sur une règle enfreinte et les sessions en conflit avec la session actuelle (y compris l’attribut terminate qui peut être utilisé pour terminer cette session à distance). La deuxième est simplement de dire que la session en cours a été délibérément interrompue par une session à distance, de sorte que les utilisateurs sauront qui les a chassés quand les limites ont été atteintes. Si la mention **remplacé** est incluse dans les métadonnées, la session en question a été créée à l’aide de l’en-tête **X-Terminate**.
 
 ![](assets/advices.png)
 
