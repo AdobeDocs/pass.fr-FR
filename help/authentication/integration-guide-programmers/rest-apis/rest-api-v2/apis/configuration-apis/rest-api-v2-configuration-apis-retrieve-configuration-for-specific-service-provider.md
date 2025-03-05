@@ -1,23 +1,27 @@
 ---
-title: Récupérer la configuration pour un prestataire spécifique
-description: API REST V2 - Récupération de la configuration pour un prestataire spécifique
+title: Récupération de la configuration pour un fournisseur de services spécifique
+description: API REST V2 - Récupération de la configuration pour un fournisseur de services spécifique
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '515'
-ht-degree: 2%
+source-wordcount: '725'
+ht-degree: 1%
 
 ---
 
-# Récupérer la configuration pour un prestataire spécifique {#retrieve-configuration-for-specific-service-provider}
+# Récupération de la configuration pour un fournisseur de services spécifique {#retrieve-configuration-for-specific-service-provider}
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
-> La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md) .
+> L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
 
 ## Requête {#request}
 
@@ -28,12 +32,12 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">chemin</td>
       <td>/api/v2/{serviceProvider}/configuration</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">méthode</td>
       <td>GET</td>
       <td></td>
    </tr>
@@ -45,7 +49,7 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
       <td>Identifiant unique interne associé au fournisseur de services lors du processus d’intégration.</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Paramètres de requête</th>
@@ -53,7 +57,7 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">profile</td>
+      <td style="background-color: #DEEBFF;">profil</td>
       <td>-</td>
       <td>facultatif</td>
    </tr>
@@ -64,26 +68,26 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération du payload du jeton porteur est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
-      <td><i>required</i></td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La génération de la payload de l’identifiant de l’appareil est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> .</td>
-      <td><i>required</i></td>
+      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur l’appareil est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> .
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
          <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plate-forme d’appareil de l’application autorise la spécification explicite de valeurs valides.
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
          <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement les valeurs définies explicitement avec les valeurs extraites (par défaut).
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
          <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal d’authentification Adobe Pass utilise implicitement les valeurs extraites (par défaut).
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
@@ -92,7 +96,7 @@ ht-degree: 2%
          <br/><br/>
          Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
          <br/><br/>
-         Pour les implémentations client/serveur, l’adresse IP du périphérique de diffusion en continu est envoyée implicitement.
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
       </td>
       <td>facultatif</td>
    </tr>
@@ -101,7 +105,7 @@ ht-degree: 2%
       <td>
          Type de média accepté par l’application cliente.
          <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json.
+         S’il est spécifié, il doit s’agir d’application/json.
       </td>
       <td>facultatif</td>
    </tr>
@@ -124,35 +128,35 @@ ht-degree: 2%
       <td>200</td>
       <td>OK</td>
       <td>
-        Le corps de la réponse contient une liste de MVPD ayant une intégration active avec le 'serviceProvider'.
+        Le corps de la réponse contient une liste de MVPD ayant une intégration active avec le « serviceProvider ».
       </td>
    </tr>
    <tr>
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide. Le client doit corriger la requête et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
       </td>
    </tr>
    <tr>
       <td>401</td>
-      <td>Non autorisé</td>
+      <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, reportez-vous à la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Présentation de l’enregistrement du client dynamique</a> .
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
       </td>
    </tr>
    <tr>
       <td>405</td>
-      <td>Méthode non autorisée</td>
+      <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, reportez-vous à la section <a href="#request">Requête</a> .
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
       </td>
    </tr>
    <tr>
       <td>500</td>
-      <td>Erreur interne du serveur</td>
+      <td>Erreur de serveur interne</td>
       <td>
-        Le côté serveur a rencontré un problème. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
       </td>
    </tr>
 </table>
@@ -168,12 +172,12 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>200</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -192,8 +196,8 @@ ht-degree: 2%
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">appareil</td>
-                <td>Type de périphérique</td>
-                <td><i>required</i></td>
+                <td>Type d’appareil</td>
+                <td><i>obligatoire</i></td>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">clientType</td>
@@ -210,40 +214,40 @@ ht-degree: 2%
                 <td>
                     Objet JSON possédant les attributs suivants :
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>name</b></li>
-                        <li><b>domains</b></li>
+                        <li><b>id</b><br/>identifiant unique interne associé au fournisseur de services lors du processus d’intégration.</li>
+                        <li><b>name</b><br/>Nom commercial (de marque) associé au fournisseur de services lors du processus d’intégration.</li>
+                        <li><b>domains</b><br/>La liste des noms de domaine associés à l'authentification Adobe Pass pour représenter le fournisseur de services.</li>
                     </ul>
                 </td>
-                <td><i>required</i></td>
+                <td><i>obligatoire</i></td>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">mvpds</td>
                 <td>
                     Objet JSON possédant les attributs suivants :
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>displayName</b></li>
-                        <li><b>logoUrl</b></li>
-                        <li><b>isTempPass</b></li>
-                        <li><b>isProxy</b></li>
-                        <li><b>boardingStatus</b></li>
-                        <li><b>platformMappingId</b></li>
-                        <li><b>enablePlatformServices</b></li>
-                        <li><b>displayInPlatformPicker</b></li>
-                        <li><b>enforcePlatformPermissions</b></li>
+                        <li><b>id</b><br/>identifiant unique interne associé au fournisseur d’identité lors du processus d’intégration.</li>
+                        <li><b>displayName</b><br/>nom commercial (de marque) associé au fournisseur d’identité lors du processus d’intégration.</li>
+                        <li><b>logoUrl</b><br>URL à partir de laquelle télécharger le logo associé au fournisseur d’identité.</li>
+                        <li><b>isTempPass</b><br/>Indicateur qui spécifie si le MVPD est conçu pour fournir la fonctionnalité <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
+                        <li><b>isProxy</b><br/>Indicateur qui spécifie si le MVPD est un MVPD proxy.</li>
+                        <li><b>boardingStatus</b><br/>Statut spécifiant si le fournisseur d’identité est intégré par la plateforme d’appareil de diffusion en continu pour les flux d’authentification unique.</li>
+                        <li><b>platformMappingId</b><br/>Identifiant unique interne associé au fournisseur d’identité par la plateforme de l’appareil de diffusion en continu pour les flux d’authentification unique.</li>
+                        <li><b>enablePlatformServices</b><br/>Indicateur qui spécifie si la configuration du fournisseur d’identité est activée pour la plateforme de l’appareil de diffusion en continu pour les flux d’authentification unique.</li>
+                        <li><b>displayInPlatformPicker</b><br/>Indicateur qui spécifie si le fournisseur d’identité peut être affiché dans le sélecteur de plateforme d’appareil de diffusion en continu pour les flux d’authentification unique.</li>
+                        <li><b>applyPlatformPermissions</b><br/>indicateur qui spécifie si l’appareil de diffusion en continu doit appliquer les autorisations d’utilisateur fournies par la plateforme pour les flux d’authentification unique.</li>
                     </ul>
                 </td>
-                <td><i>required</i></td>
+                <td><i>obligatoire</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">time</td>
+               <td style="background-color: #DEEBFF;">temps</td>
                <td></td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
          </table>
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
 </table>
 
 ### Erreur {#error}
@@ -257,12 +261,12 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>400, 401, 405, 500</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -271,14 +275,14 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
-      <td><i>required</i></td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
 </table>
 
 ## Exemples {#samples}
 
-### 1. Récupérer la configuration pour un prestataire spécifique
+### 1. Récupérer la configuration pour un fournisseur de services spécifique
 
 >[!BEGINTABS]
 
