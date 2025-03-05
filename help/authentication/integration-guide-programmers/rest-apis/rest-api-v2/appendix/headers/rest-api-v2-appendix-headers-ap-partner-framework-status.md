@@ -2,7 +2,7 @@
 title: En-tête - AP-Partner-Framework-Status
 description: API REST V2 - En-tête - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 1%
@@ -13,17 +13,17 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 ## Vue d’ensemble {#overview}
 
-L’en-tête de requête <b>AP-Partner-Framework-Status</b> contient des informations d’état obtenues à partir d’un framework de partenaire afin d’obtenir une authentification unique (SSO).
+L’en-tête de requête <b>AP-Partner-Framework-Status</b> contient des informations de statut obtenues à partir d’un framework de partenaire afin d’obtenir l’authentification unique (SSO).
 
 ## Syntaxe {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Partner-Framework-Status{1: &lt;partner_framework_status_information&gt;</b></td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Partner-Framework-Status</b> : &lt;partner_framework_status_information&gt;</td>
    </tr>
    <tr>
       <td>Type d’en-tête</td>
@@ -41,7 +41,7 @@ L’en-tête de requête <b>AP-Partner-Framework-Status</b> contient des informa
 
 La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivants :
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Attribut</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -51,7 +51,7 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
       <td>
          Il s’agit d’un attribut obligatoire.
          <br/><br/>
-         Les informations d’état des autorisations utilisateur sont renvoyées par la structure du partenaire et traitées par l’application.
+         Les informations de statut des autorisations utilisateur renvoyées par le framework du partenaire et traitées par l’application.
          <br/><br/>
          Il s’agit d’un élément JSON avec les attributs suivants :
          <br/>
@@ -65,13 +65,13 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                <td>
                   Il s’agit d’un attribut obligatoire.
                   <br/><br/>
-                  Il s'agit d'une énumération avec les valeurs possibles suivantes :
+                  Il s’agit d’une énumération avec les valeurs possibles suivantes :
                   <br/>
                   <ul>
-                     <li>grant : l’utilisateur a autorisé l’application à accéder aux informations d’abonnement.</li>
-                     <li>deny : l’utilisateur a refusé la demande d’accès aux informations d’abonnement.</li>
-                     <li>En attente : l’utilisateur n’a pas encore choisi d’autoriser l’application à accéder aux informations d’abonnement.</li>
-                     <li>notDetermined : l’application n’est pas autorisée à accéder aux informations d’abonnement.</li>
+                     <li><b>authorized</b><br/>L’utilisateur a autorisé l’application à accéder aux informations d’abonnement.</li>
+                     <li><b>refusé</b><br/>L’utilisateur a refusé que l’application accède aux informations d’abonnement.</li>
+                     <li><b>pending</b><br/>L'utilisateur n'a pas encore choisi d'autoriser l'application à accéder aux informations d'abonnement.</li>
+                     <li><b>notDefined</b><br/>L’application n’est pas autorisée à accéder aux informations d’abonnement.</li>
                   </ul>
                </td>
             </tr>
@@ -80,7 +80,7 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                <td>
                   Il s’agit d’un attribut facultatif.
                   <br/><br/>
-                  Vous pouvez l’utiliser pour transmettre l’erreur de framework du partenaire au cas où l’une d’elles serait déclenchée lors de l’interrogation des informations d’état des autorisations utilisateur.
+                  Elle peut être utilisée pour transmettre l’erreur de framework du partenaire au cas où l’une d’elles serait déclenchée lors de la demande d’informations sur le statut des autorisations utilisateur.
                   <br/><br/>
                   Il s’agit d’un élément JSON avec les attributs suivants :
                   <br/>
@@ -91,11 +91,11 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                      </tr>
                      <tr>
                         <td>code</td>
-                        <td>Chaîne qui identifie de manière unique l’erreur telle que définie par la structure du partenaire.</td>
+                        <td>Chaîne qui identifie de manière unique l’erreur telle que définie par le framework du partenaire.</td>
                      </tr>
                      <tr>
                         <td>message</td>
-                        <td>Chaîne contenant la description de l’erreur telle que définie par la structure du partenaire.</td>
+                        <td>Chaîne contenant la description de l’erreur telle que définie par le framework du partenaire.</td>
                      </tr>
                   </table>
                </td>
@@ -108,7 +108,7 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
       <td>
          Il s’agit d’un attribut obligatoire.
          <br/><br/>
-         Les informations d’état de connexion du fournisseur renvoyées par la structure du partenaire et traitées par l’application.
+         Informations sur le statut de connexion du fournisseur renvoyées par le framework du partenaire et traitées par l’application.
          <br/><br/>
          Il s’agit d’un élément JSON avec les attributs suivants :
          <br/>
@@ -122,7 +122,7 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                <td>
                   Il s’agit d’un attribut obligatoire.
                   <br/><br/>
-                  Il s’agit du mappingId qui identifie le MVPD utilisé pendant le flux d’authentification au niveau de la structure du partenaire.
+                  Il s’agit de mappingId qui identifie le MVPD utilisé pendant le flux d’authentification au niveau du framework du partenaire.
                </td>
             </tr>
             <tr>
@@ -130,7 +130,7 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                <td>
                   Il s’agit d’un attribut obligatoire.
                   <br/><br/>
-                  Il s’agit de la date d’expiration du profil utilisateur authentifié, au cas où l’utilisateur aurait réussi à se connecter à l’aide d’un MVPD pris en charge au niveau de la structure du partenaire.
+                  Il s’agit de la date d’expiration du profil utilisateur authentifié, au cas où l’utilisateur s’est connecté avec succès à l’aide d’un MVPD pris en charge au niveau du framework du partenaire.
                </td>
             </tr>
             <tr>
@@ -138,7 +138,7 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                <td>
                   Il s’agit d’un attribut facultatif.
                   <br/><br/>
-                  Vous pouvez l’utiliser pour transmettre l’erreur de framework du partenaire au cas où l’une d’elles serait déclenchée lors de l’interrogation des informations d’état de connexion du fournisseur.
+                  Elle peut être utilisée pour transmettre l’erreur de framework du partenaire au cas où l’une d’elles serait déclenchée lors de la demande des informations de statut de connexion du fournisseur.
                   <br/><br/>
                   Il s’agit d’un élément JSON avec les attributs suivants :
                   <br/>
@@ -149,11 +149,11 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                      </tr>
                      <tr>
                         <td>code</td>
-                        <td>Chaîne qui identifie de manière unique l’erreur telle que définie par la structure du partenaire.</td>
+                        <td>Chaîne qui identifie de manière unique l’erreur telle que définie par le framework du partenaire.</td>
                      </tr>
                      <tr>
                         <td>message</td>
-                        <td>Chaîne contenant la description de l’erreur telle que définie par la structure du partenaire.</td>
+                        <td>Chaîne contenant la description de l’erreur telle que définie par le framework du partenaire.</td>
                      </tr>
                   </table>
                </td>

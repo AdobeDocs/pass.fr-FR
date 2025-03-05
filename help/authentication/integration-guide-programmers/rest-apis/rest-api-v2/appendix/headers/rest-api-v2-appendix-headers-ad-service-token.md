@@ -1,33 +1,33 @@
 ---
-title: En-tête - AD-Service-Token
-description: API REST V2 - En-tête - AD-Service-Token
+title: En-tête - Jeton de service AD
+description: API REST V2 - En-tête - Jeton de service AD
 exl-id: 856f76fc-cde6-4b3f-81f7-deaa0df015dc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
 
 ---
 
-# En-tête - AD-Service-Token {#header-ad-service-token}
+# En-tête - Jeton de service AD {#header-ad-service-token}
 
 >[!NOTE]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 ## Vue d’ensemble {#overview}
 
-L’en-tête de requête <b>AD-Service-Token</b> contient l’identifiant utilisateur unique `JWS` obtenu à partir d’un service d’identité s’exécutant en dehors des systèmes d’authentification Adobe Pass.
+L’en-tête de requête <b>AD-Service-Token</b> contient l’identifiant utilisateur unique `JWS` obtenu à partir d’un service d’identités s’exécutant en dehors des systèmes d’authentification Adobe Pass.
 
-Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode Service Token.
+Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode du jeton de service.
 
-Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) qui utilisent la méthode du jeton de service, reportez-vous à la documentation [Authentification unique à l’aide des flux de jeton de service](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode du jeton de service, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 ## Syntaxe {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>AD-Service-Token</b> : &lt;identifiant_utilisateur_unique&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>AD-Service-Token</b> : &lt;unique_user_identifier&gt;</td>
    </tr>
    <tr>
       <td>Type d’en-tête</td>
@@ -43,42 +43,42 @@ Pour plus d’informations sur les flux activés pour l’authentification uniqu
 
 <b>unique_user_identifier</b>
 
-Signature Web JSON (`JWS`) qui est un jeton Web JSON signé (`JWT`) contenant des informations d’identifiant utilisateur uniques.
+La signature web JSON (`JWS`) qui est un jeton web JSON signé (`JWT`) contenant des informations d’identifiant utilisateur uniques.
 
-`JWT` possède les attributs suivants :
+Le `JWT` possède les attributs suivants :
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Attribut</th>
       <th style="background-color: #EFF2F7;">Description</th>
    </tr>
    <tr>
-      <td>iss</td>
-      <td>Identifiant unique associé à l’entité qui offre à l’application un service d’identité externe pour obtenir l’authentification unique (SSO).</td>
+      <td>is</td>
+      <td>Identifiant unique associé à l’entité qui offre à l’application un service d’identités externe pour obtenir l’authentification unique (SSO).</td>
    </tr>
    <tr>
-      <td>sub</td>
-      <td>Identifiant unique de l’utilisateur tel que renvoyé par le service d’identité externe.</td>
+      <td>sous-marin</td>
+      <td>Identifiant unique de l’utilisateur renvoyé par le service d’identités externe.</td>
    </tr>
    <tr>
       <td>aud</td>
-      <td>L’audience, qui doit être "Adobe".</td>
+      <td>L’audience, qui doit être « Adobe ».</td>
    </tr>
    <tr>
       <td>iat</td>
-      <td>Le émis à l’horodatage pour le JWT actuel.</td>
+      <td>L’horodatage émis pour le JWT actuel.</td>
    </tr>
    <tr>
       <td>exp</td>
-      <td>Horodatage d’expiration du JWT actuel.</td>
+      <td>Date et heure d’expiration du JWT actuel.</td>
    </tr>
 </table>
 
-`JWT` doit être signé à l’aide de l’algorithme `SHA256withRSA`.
+La `JWT` doit être signée à l’aide de `SHA256withRSA` algorithme.
 
-`JWT` doit être signé avec une clé privée, faisant partie d’une paire de clés privées RSA - clé publique gérée par le service d’identité externe.
+Le `JWT` doit être signé avec une clé privée, faisant partie d’une paire de clés privées RSA - clé publique gérée par le service d’identités externe.
 
-La clé publique de cette paire doit être transmise à l&#39;authentification Adobe Pass afin de pouvoir reconnaître les jetons `JWT` signés avec la clé privée mentionnée ci-dessus.
+La clé publique de cette paire doit être transmise à l’authentification Adobe Pass afin de pouvoir reconnaître les jetons `JWT` signés avec la clé privée mentionnée ci-dessus.
 
 ## Exemples {#examples}
 
