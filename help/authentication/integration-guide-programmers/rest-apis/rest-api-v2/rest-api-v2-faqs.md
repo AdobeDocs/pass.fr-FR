@@ -2,9 +2,9 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '8198'
+source-wordcount: '9072'
 ht-degree: 0%
 
 ---
@@ -224,7 +224,7 @@ Toutefois, pour les fichiers MVPD qui prennent en charge l’[authentification �
 
 #### 9. Quels sont les cas d’utilisation de chaque point d’entrée de profil disponible ? {#authentication-phase-faq9}
 
-Les points d’entrée de profils sont conçus pour permettre à l’application cliente de connaître le statut d’authentification de l’utilisateur, d’accéder aux informations de métadonnées de l’utilisateur, de trouver la méthode utilisée pour s’authentifier ou l’entité utilisée pour fournir l’identité.
+Les points d’entrée de profils de base sont conçus pour permettre à l’application cliente de connaître le statut d’authentification de l’utilisateur, d’accéder aux informations de métadonnées de l’utilisateur, de trouver la méthode utilisée pour s’authentifier ou l’entité utilisée pour fournir l’identité.
 
 Chaque point d’entrée correspond à un cas d’utilisation spécifique, comme suit :
 
@@ -233,6 +233,18 @@ Chaque point d’entrée correspond à un cas d’utilisation spécifique, comme
 | [API du point d’entrée des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | Récupérez tous les profils utilisateur. | **L’utilisateur ouvre l’application cliente pour la première fois**<br/><br/> Dans ce scénario, l’application cliente ne dispose pas de l’identifiant MVPD sélectionné par l’utilisateur mis en cache dans le stockage persistant.<br/><br/>Par conséquent, il envoie une seule demande pour récupérer tous les profils utilisateur disponibles. |
 | [Point d’entrée des profils pour une API MVPD spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Récupérez le profil utilisateur associé à un MVPD spécifique. | **L’utilisateur revient à l’application cliente après s’être authentifié lors d’une visite précédente**<br/><br/> Dans ce cas, l’application cliente doit avoir l’identifiant MVPD de l’utilisateur précédemment sélectionné mis en cache dans le stockage persistant.<br/><br/>Par conséquent, il envoie une seule demande pour récupérer le profil de l’utilisateur pour ce MVPD spécifique. |
 | [ Point d’entrée des profils pour une API de code (d’authentification) spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Récupérez le profil utilisateur associé à un code d’authentification spécifique. | **L’utilisateur lance le processus d’authentification**<br/><br/> Dans ce scénario, l’application cliente doit déterminer si l’utilisateur a terminé l’authentification avec succès et récupérer ses informations de profil.<br/><br/>Par conséquent, il lance un mécanisme d’interrogation pour récupérer le profil de l’utilisateur associé au code d’authentification. |
+
+Pour plus d’informations, reportez-vous aux documents [Flux de profils de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md) et [Flux de profils de base exécuté dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md).
+
+Le point d’entrée de l’authentification unique des profils a un autre objectif. Il permet à l’application cliente de créer un profil utilisateur à l’aide de la réponse d’authentification du partenaire et de le récupérer en une seule opération unique.
+
+| API | Description | Cas d’utilisation |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [API du point d’entrée de l’authentification unique des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | Créez et récupérez un profil utilisateur à l’aide de la réponse d’authentification du partenaire. | **L’utilisateur autorise l’application à utiliser l’authentification unique du partenaire pour s’authentifier**<br/><br/> Dans ce scénario, l’application cliente doit créer un profil utilisateur après avoir reçu la réponse d’authentification du partenaire et la récupérer en une seule opération unique. |
+
+Pour toute requête ultérieure, les points d’entrée Profils de base doivent être utilisés pour déterminer le statut d’authentification de l’utilisateur, accéder aux informations de métadonnées de l’utilisateur, trouver la méthode utilisée pour l’authentification ou l’entité utilisée pour fournir l’identité.
+
+Pour plus d’informations, reportez-vous aux documents [ Authentification unique à l’aide des flux de partenaire ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) et [Cookbook SSO d’Apple (API REST V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
 #### 10. Que doit faire l’application cliente si l’utilisateur possède plusieurs profils MVPD ? {#authentication-phase-faq10}
 
@@ -351,11 +363,29 @@ Pour plus d’informations, reportez-vous aux documents suivants :
 * [Récupération de l’API de décisions de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 * [Flux de préautorisation de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 
-#### 4. Pourquoi un jeton de média est-il manquant dans la décision de préautorisation ? {#preauthorization-phase-faq4}
+#### 4. L’application cliente doit-elle mettre en cache les décisions de préautorisation dans un stockage persistant ? {#preauthorization-phase-faq4}
+
+L’application cliente n’est pas nécessaire pour stocker les décisions de préautorisation dans un stockage persistant. Cependant, il est recommandé de mettre en cache les décisions d’autorisation en mémoire pour améliorer l’expérience de l’utilisateur. Cela permet d’éviter les appels inutiles au point d’entrée de préautorisation des décisions pour les ressources qui ont déjà été préautorisées, ce qui réduit la latence et améliore les performances.
+
+#### 5. Comment l’application cliente peut-elle déterminer pourquoi une décision de préautorisation a été refusée ? {#preauthorization-phase-faq5}
+
+L’application cliente peut déterminer la raison d’un refus de décision de préautorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent des informations sur la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application.
+
+Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée.
+
+Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+
+#### 6. Pourquoi un jeton de média est-il manquant dans la décision de préautorisation ? {#preauthorization-phase-faq6}
 
 Il manque un jeton multimédia dans la décision de préautorisation, car la phase de préautorisation ne doit pas être utilisée pour lire les ressources, car c’est l’objectif de la phase d’autorisation.
 
-#### 5. Qu’est-ce qu’une ressource et quels formats sont pris en charge ? {#preauthorization-phase-faq5}
+#### 7. La phase d’autorisation peut-elle être ignorée si une décision de préautorisation existe déjà ? {#preauthorization-phase-faq7}
+
+Non.
+
+La phase d’autorisation ne peut pas être ignorée même si une décision de préautorisation est disponible. Les décisions de préautorisation sont uniquement informatives et n’accordent pas de droits de lecture réels. La phase de préautorisation est destinée à fournir des conseils précoces, mais la phase d’autorisation est toujours requise avant la lecture de tout contenu.
+
+#### 8. Qu’est-ce qu’une ressource et quels formats sont pris en charge ? {#preauthorization-phase-faq8}
 
 La ressource est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource).
 
@@ -368,7 +398,7 @@ L’identifiant unique de la ressource peut avoir deux formats :
 
 Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
-#### 6. Pour combien de ressources l’application cliente peut-elle obtenir une décision de préautorisation à la fois ? {#preauthorization-phase-faq6}
+#### 9. Pour combien de ressources l’application cliente peut-elle obtenir une décision de préautorisation à la fois ? {#preauthorization-phase-faq9}
 
 L’application cliente peut obtenir une décision de préautorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 5, en raison des conditions imposées par les MVPD.
 
@@ -409,7 +439,19 @@ Cette période limitée appelée autorisation (authZ) [TTL](/help/authentication
 
 Pour plus d’informations, reportez-vous à la documentation du [Guide d’utilisation des intégrations de tableaux de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
-#### 4. Qu’est-ce qu’un jeton multimédia et combien de temps est-il valide ? {#authorization-phase-faq4}
+#### 4. L’application cliente doit-elle mettre en cache les décisions d’autorisation dans un stockage persistant ? {#authorization-phase-faq4}
+
+L’application cliente n’est pas nécessaire pour stocker les décisions d’autorisation dans un stockage persistant.
+
+#### 5. Comment l’application cliente peut-elle déterminer pourquoi une décision d’autorisation a été refusée ? {#authorization-phase-faq5}
+
+L’application cliente peut déterminer la raison d’un refus d’autorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée Autoriser les décisions . Ces détails fournissent des informations sur la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application.
+
+Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée.
+
+Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+
+#### 6. Qu’est-ce qu’un jeton multimédia et combien de temps est-il valide ? {#authorization-phase-faq6}
 
 Le jeton de média est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#media-token).
 
@@ -417,7 +459,7 @@ Le jeton de média se compose d’une chaîne signée envoyée en texte clair qu
 
 Pour plus d’informations, consultez la documentation du [Vérificateur de jeton multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
-Le jeton multimédia est valide pendant une période limitée et courte spécifiée au moment de l’émission, indiquant la durée pendant laquelle il doit être utilisé par l’application cliente avant d’avoir à interroger à nouveau le point d’entrée d’autorisation des décisions.
+Le jeton de média est valide pendant une période limitée et courte spécifiée au moment de l’émission, indiquant le délai avant lequel il doit être vérifié et utilisé par l’application cliente.
 
 L’application cliente peut utiliser le jeton multimédia pour lire un flux de ressources au cas où la décision du fournisseur de télévision (faisant autorité) permettrait à l’utilisateur d’y accéder.
 
@@ -426,7 +468,41 @@ Pour plus d’informations, reportez-vous aux documents suivants :
 * [Récupérer l’API des décisions d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 * [Flux d’autorisation de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
-#### 5. Qu’est-ce qu’une ressource et quels formats sont pris en charge ? {#authorization-phase-faq5}
+#### 7. L’application cliente doit-elle valider le jeton de média avant de lire le flux de ressources ? {#authorization-phase-faq7}
+
+Oui.
+
+L’application cliente doit valider le jeton de média avant de commencer la lecture du flux de ressources. Cette validation doit être effectuée à l’aide du [Vérificateur de jeton multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier). En vérifiant le `serializedToken` du `token` renvoyé, l’application cliente empêche tout accès non autorisé, tel que l’extraction de flux, et garantit que seuls les utilisateurs correctement autorisés peuvent lire le contenu.
+
+#### 8. L’application cliente doit-elle actualiser un jeton de média expiré pendant la lecture ? {#authorization-phase-faq8}
+
+Non.
+
+L’application cliente n’est pas tenue d’actualiser un jeton de média expiré pendant que le flux est en cours de lecture. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire la même ressource.
+
+#### 9. À quoi sert chaque attribut d’horodatage dans la décision d’autorisation ? {#authorization-phase-faq9}
+
+La décision d’autorisation comprend plusieurs attributs d’horodatage qui fournissent un contexte essentiel sur la période de validité de l’autorisation elle-même et du jeton de média associé. Ces horodatages ont des fins différentes, selon qu’ils se rapportent à la décision d’autorisation ou au jeton multimédia.
+
+**Horodatages Au Niveau De La Décision**
+
+Ces dates et heures décrivent la période de validité de la décision d’autorisation globale :
+
+| Attribut | Description | Notes |
+|-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | Heure à laquelle la décision d’autorisation a été émise. | Ceci marque le début de la fenêtre de validité de l’autorisation. |
+| `notAfter` | Heure à laquelle la décision d’autorisation expire. | La [ durée de vie (TTL) de l’autorisation détermine ](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) durée pendant laquelle l’autorisation reste valide avant d’exiger une nouvelle autorisation. Cette TTL est négociée avec les représentants de MVPD. |
+
+**Horodatages au niveau des jetons**
+
+Ces horodatages décrivent la période de validité du jeton multimédia lié à la décision d’autorisation :
+
+| Attribut | Description | Notes |
+|-------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | Heure à laquelle le jeton de média a été émis. | Cela marque le moment où le jeton devient valide pour la lecture. |
+| `notAfter` | Heure à laquelle le jeton de média expire. | Les jetons multimédias ont une durée de vie délibérément courte (généralement 7 minutes) afin de minimiser les risques d’utilisation abusive et de tenir compte des différences d’horloge potentielles entre le serveur de génération de jetons et le serveur de vérification des jetons. |
+
+#### 10. Qu’est-ce qu’une ressource et quels formats sont pris en charge ? {#authorization-phase-faq10}
 
 La ressource est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource).
 
@@ -439,7 +515,7 @@ L’identifiant unique de la ressource peut avoir deux formats :
 
 Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
-#### 6. Pour combien de ressources la demande du client peut-elle obtenir une décision d’autorisation à la fois ? {#authorization-phase-faq6}
+#### 11. Pour combien de ressources la demande du client peut-elle obtenir une décision d’autorisation à la fois ? {#authorization-phase-faq11}
 
 L’application cliente peut obtenir une décision d’autorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 1, en raison des conditions imposées par les MVPD.
 
@@ -452,6 +528,10 @@ L’application cliente peut obtenir une décision d’autorisation pour un nomb
 #### 1. Quel est l’objectif de la phase de déconnexion ? {#logout-phase-faq1}
 
 L’objectif de la phase de déconnexion est de permettre à l’application cliente de mettre fin au profil authentifié de l’utilisateur dans l’authentification Adobe Pass à la demande de l’utilisateur.
+
+#### 2. La phase de déconnexion est-elle obligatoire ? {#logout-phase-faq2}
+
+La phase de déconnexion est obligatoire, l’application cliente doit permettre à l’utilisateur de se déconnecter.
 
 +++
 

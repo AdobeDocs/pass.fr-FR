@@ -2,9 +2,9 @@
 title: Guide d’intégration du programmeur
 description: Guide d’intégration du programmeur
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '2071'
+source-wordcount: '2073'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Ce guide d’intégration est destiné aux fournisseurs de contenu (programmeurs) qui prévoient de s’intégrer à l’authentification Adobe® Pass.
 
@@ -210,7 +210,7 @@ Les étapes suivantes décrivent les étapes de haut niveau dans le cas d’une 
 **API**
 
 * [Récupérer la demande d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Récupérer le profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 **Flux**
 

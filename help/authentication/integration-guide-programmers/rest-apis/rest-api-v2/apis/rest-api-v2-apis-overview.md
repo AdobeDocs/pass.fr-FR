@@ -2,9 +2,9 @@
 title: Présentation des API REST API V2
 description: Présentation des API REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '151'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Pour commencer, consultez la documentation publique des API qui vous intéressen
 ## Authentification SSO Du Partenaire {#rest-api-v2-apis-partner-single-sign-on}
 
 * [Récupérer la demande d’authentification du partenaire](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Récupérer le profil à l’aide de la réponse d’authentification du partenaire](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 ## Vous souhaitez essayer l’API REST V2 ?
 

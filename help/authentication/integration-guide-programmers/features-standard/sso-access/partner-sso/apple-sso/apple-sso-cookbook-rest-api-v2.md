@@ -2,9 +2,9 @@
 title: Manuel de l’authentification unique Apple (API REST V2)
 description: Manuel de l’authentification unique Apple (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '3443'
+source-wordcount: '3615'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 L’API REST d’authentification Adobe Pass V2 prend en charge l’authentification unique (SSO) du partenaire pour les utilisateurs finaux des applications clientes s’exécutant sur iOS, iPadOS ou tvOS.
 
@@ -284,7 +284,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    * [Authentification dans l’application secondaire avec mvpd présélectionné](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-1. **Procédez à la récupération du profil à l’aide du flux de réponse d’authentification du partenaire :** la réponse de point d’entrée du partenaire Sessions contient les données suivantes :
+1. **Continuez à créer et à récupérer le profil à l’aide du flux de réponse d’authentification du partenaire :** la réponse de point d’entrée du partenaire Sessions contient les données suivantes :
    * L’attribut `actionName` est défini sur « partner_profile ».
    * L’attribut `actionType` est défini sur « direct ».
    * L’attribut `authenticationRequest - type` inclut le protocole de sécurité utilisé par le framework de partenaire pour la connexion à MVPD (actuellement défini sur SAML uniquement).
@@ -316,11 +316,11 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    * La date d’expiration du profil du fournisseur d’utilisateurs (si disponible) est valide.
    * La réponse d’authentification du partenaire (réponse SAML) est présente et valide.
 
-1. **Récupérer le profil à l’aide de la réponse d’authentification du partenaire :** l’application de diffusion en continu rassemble toutes les données nécessaires pour créer et récupérer un profil en appelant le point d’entrée Profiles Partner .
+1. **Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire :** l’application de diffusion en continu rassemble toutes les données nécessaires pour créer et récupérer un profil en appelant le point d’entrée Profiles Partner .
 
    >[!IMPORTANT]
    >
-   > Consultez la documentation de l’API [Récupérer le profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) pour plus d’informations sur :
+   > Consultez la documentation de l’API [Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) pour plus d’informations sur :
    >
    > * Tous les paramètres _obligatoires_ tels que `serviceProvider`, `partner` et `SAMLResponse`
    > * Tous les en-têtes _obligatoires_ tels que `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` et `AP-Partner-Framework-Status`
@@ -338,7 +338,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!IMPORTANT]
    >
-   > Reportez-vous à la documentation de l’API [Récupérer le profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) pour plus d’informations sur les informations fournies dans une réponse de profil.
+   > Reportez-vous à la documentation de l’API [Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) pour plus d’informations sur les informations fournies dans une réponse de profil.
    >
    > <br/>
    >
@@ -371,6 +371,10 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 1. **Récupérer l’état du framework du partenaire :** l’application de diffusion en continu appelle le [Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) développé par Apple, pour obtenir les autorisations de l’utilisateur et des informations sur le fournisseur.
 
    >[!IMPORTANT]
+   > 
+   > L’application de streaming peut ignorer cette étape si le type de profil utilisateur sélectionné n’est pas « appleSSO ».
+
+   >[!IMPORTANT]
    >
    > Reportez-vous à la documentation [Structure de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) pour plus d’informations sur :
    >
@@ -386,13 +390,17 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    > L’application de diffusion en continu doit s’assurer de spécifier une valeur booléenne égale à `false` pour la propriété [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) dans l’objet `VSAccountMetadataRequest`, afin d’indiquer que l’utilisateur ne peut pas être interrompu à cette phase.
 
    >[!TIP]
-   > 
-   > Suggestion : l’application de diffusion en continu peut utiliser une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons de l’actualiser lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan.
+   >
+   > Recommandation : L’application de diffusion en continu peut utiliser à la place une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons de l’actualiser lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan. Dans ce cas, l’application de diffusion en continu doit s’assurer qu’elle met en cache et utilise uniquement des valeurs valides pour le statut du framework du partenaire, comme décrit par l’étape « Renvoyer les informations de statut du framework du partenaire ».
 
 1. **Renvoyer les informations de statut du framework du partenaire :** l’application de diffusion en continu valide les données de réponse pour s’assurer que les conditions de base sont remplies :
    * Le statut d’accès de l’autorisation utilisateur est accordé.
    * L’identifiant de mappage du fournisseur d’utilisateurs est présent et valide.
-   * La date d’expiration du profil du fournisseur d’utilisateurs (si disponible) est valide.
+   * La date d’expiration du profil du fournisseur d’utilisateurs est valide.
+
+   >[!IMPORTANT]
+   >
+   > L’application de streaming peut ignorer cette étape si le type de profil utilisateur sélectionné n’est pas « appleSSO ».
 
 1. **Récupérer les décisions de préautorisation :** l’application de diffusion en continu rassemble toutes les données nécessaires pour obtenir des décisions de préautorisation pour une liste de ressources en appelant le point d’entrée Decisions Preauthorize.
 
@@ -406,7 +414,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > L’application de diffusion en continu doit s’assurer qu’elle inclut une valeur valide pour le statut du framework du partenaire avant d’effectuer une requête supplémentaire, lorsque le profil choisi est un profil de type « appleSSO ».
+   > L’application de diffusion en continu doit s’assurer qu’elle inclut une valeur valide pour le statut du framework du partenaire avant d’effectuer une requête supplémentaire, lorsque le profil choisi est un profil de type « appleSSO ». Cependant, cette étape peut être ignorée si le type de profil utilisateur sélectionné n’est pas « appleSSO ».
    >
    > <br/>
    >
@@ -435,6 +443,10 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!IMPORTANT]
    >
+   > L’application de streaming peut ignorer cette étape si le type de profil utilisateur sélectionné n’est pas « appleSSO ».
+
+   >[!IMPORTANT]
+   >
    > Reportez-vous à la documentation [Structure de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) pour plus d’informations sur :
    >
    > <br/>
@@ -450,12 +462,16 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!TIP]
    >
-   > Suggestion : l’application de diffusion en continu peut utiliser une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons de l’actualiser lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan.
+   > Recommandation : L’application de diffusion en continu peut utiliser à la place une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons de l’actualiser lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan. Dans ce cas, l’application de diffusion en continu doit s’assurer qu’elle met en cache et utilise uniquement des valeurs valides pour le statut du framework du partenaire, comme décrit par l’étape « Renvoyer les informations de statut du framework du partenaire ».
 
 1. **Renvoyer les informations de statut du framework du partenaire :** l’application de diffusion en continu valide les données de réponse pour s’assurer que les conditions de base sont remplies :
    * Le statut d’accès de l’autorisation utilisateur est accordé.
    * L’identifiant de mappage du fournisseur d’utilisateurs est présent et valide.
-   * La date d’expiration du profil du fournisseur d’utilisateurs (si disponible) est valide.
+   * La date d’expiration du profil du fournisseur d’utilisateurs est valide.
+
+   >[!IMPORTANT]
+   >
+   > L’application de streaming peut ignorer cette étape si le type de profil utilisateur sélectionné n’est pas « appleSSO ».
 
 1. **Récupérer la décision d’autorisation :** l’application de diffusion en continu rassemble toutes les données nécessaires pour obtenir une décision d’autorisation pour une ressource spécifique en appelant le point d’entrée Decisions Authorize.
 
@@ -469,7 +485,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > L’application de diffusion en continu doit s’assurer qu’elle inclut une valeur valide pour le statut du framework du partenaire avant d’effectuer une requête supplémentaire, lorsque le profil choisi est un profil de type « appleSSO ».
+   > L’application de diffusion en continu doit s’assurer qu’elle inclut une valeur valide pour le statut du framework du partenaire avant d’effectuer une requête supplémentaire, lorsque le profil choisi est un profil de type « appleSSO ». Cependant, cette étape peut être ignorée si le type de profil utilisateur sélectionné n’est pas « appleSSO ».
    >
    > <br/>
    >
@@ -515,6 +531,10 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!IMPORTANT]
    >
+   > L’application de diffusion en continu doit inviter l’utilisateur à terminer le processus de déconnexion au niveau du partenaire, comme spécifié par les attributs `actionName` et `actionType`, lorsque le type de profil utilisateur supprimé est « appleSSO ».
+
+   >[!IMPORTANT]
+   >
    > Reportez-vous à la documentation de l’API [Lancer la déconnexion pour des API mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) spécifiques pour plus d’informations sur les informations fournies dans une réponse de déconnexion.
    >
    > <br/>
@@ -527,9 +547,5 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    > <br/>
    >
    > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui sont conformes à la documentation [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
-
-   >[!IMPORTANT]
-   > 
-   > L’application de diffusion en continu doit s’assurer qu’elle indique à l’utilisateur de continuer à se déconnecter au niveau du partenaire.
 
 +++

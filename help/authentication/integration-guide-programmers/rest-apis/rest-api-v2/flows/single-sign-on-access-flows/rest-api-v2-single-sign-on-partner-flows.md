@@ -2,9 +2,9 @@
 title: Authentification Single Sign-On - Partenaire - Flux
 description: API REST V2 - Authentification unique - Partenaire - Flux
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -125,7 +125,7 @@ Exécutez les étapes données pour récupérer la demande d’authentification 
 
    Si le serveur principal Adobe Pass n’identifie pas de profil valide et que la validation de l’authentification unique du partenaire réussit, l’application de diffusion en continu reçoit une réponse avec des actions et des données à transmettre au framework du partenaire pour démarrer le flux d’authentification avec MVPD.
 
-   Pour plus d’informations sur le flux de récupération du profil à l’aide d’une réponse d’authentification du partenaire, consultez la section [Récupérer le profil à l’aide d’une réponse d’authentification du partenaire](#retrieve-profile-using-partner-authentication-response).
+   Pour plus d’informations sur le flux de récupération du profil à l’aide d’une réponse d’authentification du partenaire, reportez-vous à la section [Créer et récupérer un profil à l’aide d’une réponse d’authentification du partenaire](#create-and-retrieve-profile-using-partner-authentication-response).
 
 1. **Poursuivre avec le flux d’authentification de base :** la réponse du point d’entrée du partenaire Sessions contient les données suivantes :
    * L’attribut `actionName` est défini sur « authentifier » ou « reprendre ».
@@ -152,9 +152,9 @@ Exécutez les étapes données pour récupérer la demande d’authentification 
    > 
    > Pour plus d’informations sur `AP-Partner-Framework-Status`’en-tête , consultez la documentation [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md).
 
-## Récupérer le profil à l’aide de la réponse d’authentification du partenaire {#retrieve-profile-using-partner-authentication-response}
+## Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire {#create-and-retrieve-profile-using-partner-authentication-response}
 
-### Conditions préalables {#prerequisites-retrieve-profile-using-partner-authentication-response}
+### Conditions préalables {#prerequisites-create-and-retrieve-profile-using-partner-authentication-response}
 
 Avant de récupérer le profil à l’aide d’une réponse d’authentification du partenaire, assurez-vous que les conditions préalables suivantes sont remplies :
 
@@ -169,13 +169,13 @@ Avant de récupérer le profil à l’aide d’une réponse d’authentification
 > * Le framework de partenaire prend en charge l’interaction utilisateur pour l’authentification avec le MVPD sélectionné.
 > * Le framework de partenaire fournit des informations sur les autorisations d’utilisateur et les fournisseurs.
 
-### Workflow {#workflow-retrieve-profile-using-partner-authentication-response}
+### Workflow {#workflow-create-and-retrieve-profile-using-partner-authentication-response}
 
 Suivez les étapes données pour implémenter le flux de récupération des profils à l’aide d’une réponse d’authentification du partenaire, comme illustré dans le diagramme suivant.
 
-![Récupérer le profil à l’aide de la réponse d’authentification du partenaire](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
-*Récupérer un profil authentifié à l’aide de la réponse d’authentification du partenaire*
+*Créer et récupérer un profil authentifié à l’aide de la réponse d’authentification du partenaire*
 
 1. **Terminer l’authentification MVPD avec le framework du partenaire :** si le flux d’authentification est réussi, l’interaction du framework du partenaire avec le MVPD produit une réponse d’authentification du partenaire (réponse SAML) qui est renvoyée avec les informations de statut du framework du partenaire.
 
@@ -184,11 +184,11 @@ Suivez les étapes données pour implémenter le flux de récupération des prof
    * L’identifiant de mappage du fournisseur d’utilisateurs est présent et valide.
    * La date d’expiration du profil du fournisseur d’utilisateurs (si disponible) est valide.
 
-1. **Récupérer le profil à l’aide de la réponse d’authentification du partenaire :** l’application de diffusion en continu rassemble toutes les données nécessaires pour créer et récupérer un profil en appelant le point d’entrée Profiles Partner .
+1. **Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire :** l’application de diffusion en continu rassemble toutes les données nécessaires pour créer et récupérer un profil en appelant le point d’entrée Profiles Partner .
 
    >[!IMPORTANT]
    >
-   > Consultez la documentation de l’API [Récupérer le profil à l’aide de la réponse d’authentification du partenaire](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) pour plus d’informations sur :
+   > Consultez la documentation de l’API [Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) pour plus d’informations sur :
    >
    > * Tous les paramètres _obligatoires_ tels que `serviceProvider`, `partner` et `SAMLResponse`
    > * Tous les en-têtes _obligatoires_ tels que `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` et `AP-Partner-Framework-Status`
@@ -208,7 +208,7 @@ Suivez les étapes données pour implémenter le flux de récupération des prof
 
    >[!IMPORTANT]
    >
-   > Reportez-vous à la documentation de l’API [Récupérer le profil à l’aide de la réponse d’authentification du partenaire](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) pour plus d’informations sur les informations fournies dans une réponse de profil.
+   > Reportez-vous à la documentation de l’API [Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) pour plus d’informations sur les informations fournies dans une réponse de profil.
    > 
    > <br/>
    > 
