@@ -2,9 +2,9 @@
 title: Jetons de média
 description: Jetons de média
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Le jeton multimédia est un jeton généré par l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) à la suite d’une décision d’autorisation censée fournir un accès en lecture seule au contenu protégé (ressource).
 
 Le jeton de média est valide pendant une période limitée et courte (7 minutes par défaut) spécifiée au moment de l’émission, indiquant le délai avant qu’il ne doive être vérifié et utilisé par l’application cliente. Le jeton média est limité à une utilisation unique et ne doit jamais être mis en cache.
 
-Le jeton de média se compose d’une chaîne signée basée sur l’infrastructure à clé publique (PKI) envoyée en texte clair. Avec la protection basée sur l’ICP, le jeton est signé à l’aide d’une clé asymétrique émise à l’Adobe par une autorité de certification (CA).
+Le jeton de média se compose d’une chaîne signée basée sur l’infrastructure à clé publique (PKI) envoyée en texte clair. Avec la protection basée sur l’ICP, le jeton est signé à l’aide d’une clé asymétrique émise vers Adobe par une autorité de certification (CA).
 
 Le jeton multimédia est transmis au programmeur, qui peut ensuite le valider à l’aide du vérificateur de jeton multimédia avant de démarrer le flux vidéo afin de garantir la sécurité de l’accès à cette ressource.
 
@@ -39,7 +39,7 @@ La bibliothèque du vérificateur de jeton de média nécessite la version 1.5 d
 
 La bibliothèque du vérificateur de jetons multimédia représentée par l’archive Java `mediatoken-verifier-VERSION.jar` comprend les éléments suivants :
 
-* Adobe de la clé publique.
+* Clé publique Adobe.
 * API de vérification des jetons (`ITokenVerifier.java`).
 * Implémentation de référence (`com.adobe.entitlement.test.EntitlementVerifierTest.java`).
 * Dépendances et fichiers de stockage des clés de certificat.
@@ -198,10 +198,14 @@ Le jeton de média peut être récupéré à l’aide de l’API suivante :
 
 Reportez-vous aux sections **Réponse** et **Exemples** de l’API ci-dessus pour comprendre la structure des décisions d’autorisation et des jetons multimédia.
 
+>[!IMPORTANT]
+>
+> L’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les [jetons multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md), car ils sont déjà inclus dans les décisions d’autorisation qui autorisent l’accès utilisateur.
+
 Pour plus d’informations sur comment et à quel moment intégrer l’API ci-dessus, reportez-vous au document suivant :
 
 * [Flux d’autorisation de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
->[!IMPORTANT]
+>[!MORELIKETHIS]
 >
-> L’application cliente doit transmettre la valeur `serializedToken` du `token` renvoyé au [vérificateur de jeton multimédia](#media-token-verifier) pour validation.
+> [FAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

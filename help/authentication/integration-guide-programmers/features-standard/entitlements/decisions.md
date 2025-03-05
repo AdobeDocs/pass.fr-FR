@@ -1,9 +1,10 @@
 ---
 title: Décisions
 description: Décisions
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Les décisions sont générées par l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) en fonction des demandes d’autorisation ou de préautorisation MVPD de l’utilisateur ou de l’utilisatrice, déterminant si l’accès au [contenu protégé](#protected-resources) est accordé ou refusé.
 
@@ -68,6 +69,17 @@ Il est important de noter que les décisions d’autorisation ne peuvent être o
 >[!IMPORTANT]
 >
 > Le nombre maximal de ressources ne peut être augmenté qu’après avoir conclu un accord avec les MVPD et les représentants d’Adobe Pass Authentication.
+
+## Gestion de la durée de vie (TTL) de l’autorisation {#authorization-ttl-management}
+
+La durée de vie (TTL) de l’autorisation définit la durée pendant laquelle une ressource reste autorisée avant de devoir être réautorisée. Ce délai est limité et doit être convenu avec les représentants de MVPD. Les valeurs de durée de vie peuvent varier en fonction des éléments suivants :
+
+* Catégorie de plateforme (par exemple, ordinateurs de bureau, appareils mobiles, appareils connectés à la télévision)
+* Plateforme spécifique (par exemple, iOS, Android, tvOS, Roku, FireTV)
+
+La TTL d’autorisation (authZ) peut être consultée et modifiée par l’intermédiaire du tableau de bord Adobe Pass [TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre organisation ou par un représentant de l’authentification Adobe Pass agissant en votre nom.
+
+Pour plus d’informations, reportez-vous à la documentation du [Guide d’utilisation des intégrations de tableaux de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
 ## Ressources protégées {#protected-resources}
 
@@ -133,3 +145,8 @@ Pour plus d’informations sur comment et à quel moment intégrer les API ci-de
 
 * [Flux de préautorisation de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 * [Flux d’autorisation de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+
+>[!MORELIKETHIS]
+>
+> [FAQ sur la phase de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [FAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
