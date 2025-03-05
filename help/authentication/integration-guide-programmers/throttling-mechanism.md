@@ -1,52 +1,52 @@
 ---
-title: Mécanisme de ralentissement
-description: Découvrez le mécanisme de limitation utilisé dans l’authentification Adobe Pass. Consultez un aperçu de ce mécanisme dans cette page.
+title: Mécanisme de limitation
+description: Découvrez le mécanisme de limitation utilisé dans l’authentification Adobe Pass. Découvrez un aperçu de ce mécanisme sur cette page.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
 
 ---
 
-# Mécanisme de ralentissement {#throttling-mechanism}
+# Mécanisme de limitation {#throttling-mechanism}
 
-Tous les clients Pass Authentication doivent pouvoir accéder à l’API Pass Authentication pour chacun de leurs utilisateurs, conformément aux instructions et à leurs analyses de cas.
+Tous les clients Pass Authentication doivent pouvoir accéder à l’API Pass Authentication pour chacun de leurs utilisateurs, conformément aux instructions et à leur business case.
 
-L’authentification par col introduit un mécanisme de limitation pour assurer une distribution équitable des ressources entre les utilisateurs de nos clients.
+L’authentification par mot de passe introduit un mécanisme de limitation pour assurer une répartition équitable des ressources entre les utilisateurs de nos clients.
 
 Ce mécanisme est important pour plusieurs raisons :
 
-- L’une des règles d’or de l’architecture multi-locataires est que le comportement d’un utilisateur ne doit pas affecter quelqu’un d’autre.
-- La limitation de débit est importante pour les API, car il est facile de faire des erreurs lors de l’intégration à une API. Comme les API sont programmées, il est relativement facile d’envoyer accidentellement plus de requêtes que prévu.
+- L’une des règles d’or de l’architecture à plusieurs clients est que le comportement d’un utilisateur ne doit pas affecter quelqu’un d’autre.
+- La limitation du débit est importante pour les API, car il est facile de faire des erreurs lors de l’intégration à une API. Comme les API sont programmées, il est relativement facile d’envoyer accidentellement plus de requêtes que prévu.
 
 ## Présentation du mécanisme {#mechanism-overview}
 
 ### Implémentations client
 
-L’authentification par transmission fournit des instructions et un SDK pour interagir avec l’API, mais ne contrôle pas la manière dont le client l’utilise. Certaines mises en oeuvre peuvent avoir une mise en oeuvre rudimentaire et peuvent inonder le service de requêtes d’API inutiles, accidentellement ou non, ce qui peut entraîner des ralentissements ou des problèmes de capacité pour d’autres utilisateurs.
+L’authentification Pass fournit des instructions et un SDK pour interagir avec l’API, mais ne contrôle pas la manière dont le client l’utilise. Certaines implémentations peuvent avoir une implémentation rudimentaire et pourraient inonder le service de requêtes d’API inutiles, que ce soit accidentellement ou non, ce qui pourrait entraîner des ralentissements ou des problèmes de capacité pour d’autres utilisateurs et utilisatrices.
 
-Le service lui-même doit être en mesure de gérer toute capacité raisonnable. Mais quel que soit l’évolutivité ou les performances d’un service, il y a toujours des limites. Par conséquent, les limites du nombre d’appels acceptés doivent être configurées pour le service dans un intervalle de temps spécifique.
+Le service lui-même devrait être en mesure de gérer toute capacité raisonnable. Mais peu importe l’évolutivité ou les performances d’un service, il y a toujours des limites. Par conséquent, des limites doivent être configurées pour le nombre d’appels acceptés dans un intervalle de temps spécifique pour le service.
 
-### Présentation du ralentissement
+### Introduction du ralentissement
 
-L’authentification par transmission est basée sur l’identification de l’utilisateur et un algorithme de limitation de débit de jeton avec des valeurs prédéfinies pour contrôler l’accès de chaque appareil d’utilisateur à notre API.
+L&#39;authentification Pass est basée sur l&#39;identification de l&#39;utilisateur et un algorithme de limitation du taux de compartiments de jetons avec des valeurs prédéfinies pour contrôler l&#39;accès de chaque utilisateur à notre API.
 
-### Mécanisme d&#39;identification des périphériques
+### Mécanisme d&#39;identification de dispositif
 
-Le mécanisme de ralentissement proposé utilise les périphériques identifiés individuellement, à l’aide de l’en-tête &quot;X-Forwarded-For&quot;. Les limites seront appliquées de la même manière pour chaque appareil.
+Le mécanisme de limitation proposé utilise individuellement les dispositifs identifiés, à l&#39;aide de l&#39;en-tête « X-Forwarded-For ». Les limites seront appliquées de la même manière pour chaque appareil.
 
 ### Mises à jour requises
 
-Les implémentations serveur à serveur doivent transférer les adresses IP de leur client à l’aide du mécanisme d’en-tête &quot;X-Forwarded-For&quot;.
+Les implémentations serveur à serveur doivent transférer les adresses IP de leur client à l’aide du mécanisme d’en-tête « X-Forwarded-For ».
 
 Vous trouverez plus d’informations sur la manière de transmettre l’en-tête X-Forwarded-For [ici](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
 
-### Limites et points de fin réels
+### Limites et points d’entrée réels {#throttling-mechanism-limits}
 
-Actuellement, la limite par défaut autorise un maximum d’une requête par seconde, avec une première rafale de 10 requêtes (allocation unique lors de la première interaction du client identifié, qui devrait permettre à l’initialisation de se terminer avec succès). Cela ne devrait affecter aucune analyse de performances classique de tous nos clients.
+Actuellement, la limite par défaut autorise un maximum de 1 requête par seconde, avec un rafale initiale de 10 requêtes (autorisation unique sur la première interaction du client identifié, ce qui devrait permettre à l’initialisation de se terminer correctement). Cela ne devrait pas affecter les analyses de rentabilisation standard de tous nos clients.
 
-Le mécanisme de ralentissement sera activé sur les points de terminaison suivants :
+Le mécanisme de limitation sera activé sur les points d’entrée suivants :
 
 - /o/client/register
 - /o/client/token
@@ -60,8 +60,8 @@ Le mécanisme de ralentissement sera activé sur les points de terminaison suiva
 - /api/v1/config/
 - /api/v1/checkauthn
 - /api/v1/logout
-- /api/v1/authorized
-- /api/v1/preauthorized
+- /api/v1/authorize
+- /api/v1/preauthorize
 - /api/v1/mediatoken
 - /api/v1/authenticate/freepreview
 - /api/v1/authenticate/
@@ -71,39 +71,39 @@ Le mécanisme de ralentissement sera activé sur les points de terminaison suiva
 - /reggie/v1/.+/regcode
 - /reggie/v1/.+/regcode/.+
 
-### clarification de l&#39;implémentation du SDK
+### Désambiguïté de l’implémentation de SDK
 
-Les clients qui utilisent les SDK fournis par l’authentification Adobe Pass n’interagissent pas explicitement avec les points de terminaison, cette section présente les fonctions connues, leur comportement en cas de réponse de ralentissement et les actions à entreprendre.
+Comme les clients qui utilisent les SDK fournis par l’authentification Adobe Pass n’interagissent pas explicitement avec des points d’entrée, cette section présente les fonctions connues, leur comportement en cas de réponse de limitation et les actions à entreprendre.
 
 #### setRequestor
 
-Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `setRequestor` du SDK, le SDK renvoie un code d’erreur CFG429 via le rappel `errorHandler`.
+Une fois la limite de limitation atteinte à l’aide de `setRequestor` fonction du SDK, le SDK renvoie un code d’erreur CFG429 par le biais `errorHandler` rappel .
 
 #### getAuthorization
 
-Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `getAuthorization` du SDK, le SDK renvoie un code d’erreur Z100 via un rappel `errorHandler`.
+Une fois la limite de limitation atteinte à l’aide de `getAuthorization` fonction du SDK, le SDK renvoie un code d’erreur Z100 par le biais `errorHandler` rappel .
 
 #### checkPreauthorizedResources
 
-Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `checkPreauthorizedResources` du SDK, le SDK renvoie un code d’erreur P100 via un rappel `errorHandler`.
+Une fois la limite de limitation atteinte à l’aide de `checkPreauthorizedResources` fonction du SDK, le SDK renvoie un code d’erreur P100 par le biais `errorHandler` rappel .
 
 #### getMetadata
 
-Lorsque vous atteignez la limite de ralentissement à l’aide de la fonction `getMetadata` du SDK, le SDK renvoie une réponse vide via le rappel `setMetadataStatus`.
+Une fois la limite de limitation atteinte à l’aide de `getMetadata` fonction du SDK, le SDK renvoie une réponse vide par le biais d’`setMetadataStatus` rappel .
 
-Pour chaque détail de mise en oeuvre spécifique, reportez-vous à la documentation spécifique du SDK.
+Pour chaque détail d’implémentation spécifique, reportez-vous à la documentation spécifique de SDK.
 
-- [Référence de l’API du SDK JavaScript](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-- [Référence de l’API du SDK Android](legacy/sdks/android-sdk/android-sdk-api-reference.md)
+- [Référence de l’API JavaScript SDK](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+- [Référence de l’API Android SDK](legacy/sdks/android-sdk/android-sdk-api-reference.md)
 - [Référence de l’API iOS/tvOS](legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
 
-### Modifications et réponse de la réponse de l’API
+### Modifications de la réponse de l’API et réponse {#throttling-mechanism-response}
 
-Lorsque nous identifions que la limite est atteinte, nous marquons cette requête avec un état de réponse spécifique (requêtes HTTP 429 Too many), indiquant que vous avez consommé tous les jetons affectés à l’appareil de l’utilisateur (adresse IP) pendant l’intervalle de temps.
+Lorsque nous identifions que la limite est dépassée, nous marquons cette requête avec un statut de réponse spécifique (HTTP 429 Too Many Requests), indiquant que vous avez consommé tous les jetons affectés à l’appareil utilisateur (adresse IP) pendant l’intervalle de temps.
 
-Le ralentissement expire après une seconde des 429 premières réponses. Chaque application qui reçoit une réponse 429 doit attendre au moins 1 seconde avant de générer une nouvelle requête.
+La limitation expire après une seconde des 429 premières réponses. Chaque application qui reçoit une réponse 429 doit attendre au moins 1 seconde avant de générer une nouvelle requête.
 
-Toutes les applications client doivent gérer correctement la réponse &quot;429 Too many requests&quot;.
+Toutes les applications clientes doivent gérer de manière appropriée la réponse « 429 Too Many Requests ».
 
 Voici un exemple de message de réponse 429 :
 
@@ -132,34 +132,34 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 ## Impact et modifications requises
 
-### Transfert de l’en-tête X-Forwarded-For
+### Transmettre l’en-tête X-Forwarded-For
 
-Les clients qui utilisent une mise en oeuvre personnalisée (y compris de serveur à serveur) pour interagir avec l’API Pass Authentication doivent s’assurer qu’ils peuvent capturer leur adresse IP utilisateur et la transférer correctement, en utilisant l’en-tête X-Forwarded-For plus loin dans l’API Pass Authentication.
+Les clients qui utilisent une implémentation personnalisée (y compris de serveur à serveur) pour interagir avec l’API Pass Authentication doivent s’assurer qu’ils peuvent capturer leur adresse IP utilisateur et la transférer correctement, en utilisant l’en-tête X-Forwarded-For suite à l’API Pass Authentication.
 
-Voir [ici](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md) pour plus de détails.
+Voir [ici](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md) pour plus d’informations.
 
 ### Réaction au nouveau code de réponse
 
-Les clients qui utilisent une mise en oeuvre personnalisée (y compris celle du serveur à serveur) pour interagir avec l’API Pass Authentication doivent s’assurer que tout appel ultérieur effectué après la réception d’une demande 429 Too Many comprend une période d’attente d’au moins 1 seconde. Cette période d’attente permet de modifier ce mécanisme et d’obtenir une réponse commerciale valide.
+Les clients qui utilisent une implémentation personnalisée (y compris de serveur à serveur) pour interagir avec l’API d’authentification Pass doivent s’assurer que tout appel ultérieur effectué après réception d’une demande 429 Too many inclut une période d’attente d’au moins 1 seconde. Cette période d&#39;attente permet de modifier ce mécanisme et d&#39;obtenir une réponse commerciale valide.
 
-## Exemple de scénario pour le ralentissement
+## Exemple de scénario de limitation
 
-| Temps écoulé depuis la première requête | Réponse reçue | Explication |
+| Temps depuis la première demande | Réponse reçue | Explication |
 |--------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------|
-| Second 0 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite |
-| Second 0.3 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite et 1 appel marqués comme rafistolés |
-| Second 0.6 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite et 2 appels marqués comme ayant été ouverts |
-| Deuxième 0,9 | L’appel reçoit le code d’état de réussite | 1 appel consommé à partir de la limite et 3 appels marqués comme ayant été ouverts |
-| Second 1.2 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 3 appels marqués comme perdants |
-| Second 1.3 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 4 appels marqués comme ayant explosé |
-| Second 1.4 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 5 appels marqués comme perdants |
-| Second 1.5 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 6 appels marqués comme perdants |
-| Second 1.6 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 7 appels marqués comme perdants |
-| Second 1.7 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 8 appels marqués comme perdants |
-| Second 1.8 | L’appel reçoit le code d’état de réussite | 2 appels sont consommés à partir de la limite et 9 appels marqués comme perdants |
-| Second 2.1 | L’appel reçoit le code d’état de réussite | 3 appels sont consommés à partir de la limite et 9 appels marqués comme ayant éclaté |
-| Second 2.2 | L’appel reçoit le code d’état de réussite | 3 appels sont consommés à partir de la limite et 10 appels marqués comme perdants |
-| Deuxième version 2.4 | L’appel reçoit le code d’état 429 | 3 appels sont consommés à partir de la limite et 10 appels marqués comme rafistolés et 1 appels reçoivent ‘429 Too many requests’ (429 Too many requests) |
-| Second 2.6 | L’appel reçoit le code d’état 429 | 3 appels sont consommés à partir de la limite et 10 appels marqués comme perdants et 2 appels reçoivent ‘429 Too many requests’ |
-| Second 2.8 | L’appel reçoit le code d’état 429 | 3 appels sont consommés à partir de la limite et 10 appels marqués comme perdants et 3 appels reçoivent ‘429 Too many requests’ |
-| Second 3.1 | L’appel reçoit le code d’état de réussite | 4 appels sont consommés à partir de la limite et 10 appels marqués comme rafistolés et 3 appels reçoivent &quot;429 Too many requests&quot; |
+| Seconde 0 | L’appel reçoit le code de statut de succès. | 1 appel consommé depuis la limite |
+| Deuxième 0,3 | L’appel reçoit le code de statut de succès. | 1 appels consommés à partir de la limite et 1 appels marqués comme rafale |
+| Deuxième 0,6 | L’appel reçoit le code de statut de succès. | 1 appel consommé à partir de la limite et 2 appels marqués comme rafale |
+| Deuxième 0,9 | L’appel reçoit le code de statut de succès. | 1 appel consommé à partir de la limite et 3 appels marqués comme rafale |
+| Deuxième 1.2 | L’appel reçoit le code de statut de succès. | 2 appels consommés à partir de la limite et 3 appels marqués comme rafale |
+| Deuxième 1.3 | L’appel reçoit le code de statut de succès. | 2 appels consommés à partir de la limite et 4 appels marqués comme rafale |
+| Deuxième 1.4 | L’appel reçoit le code de statut de succès. | 2 appels consommés à partir de la limite et 5 appels marqués comme rafale |
+| Deuxième 1,5 | L’appel reçoit le code de statut de succès. | 2 appels consommés à partir de la limite et 6 appels marqués comme rafale |
+| Deuxième 1,6 | L’appel reçoit le code de statut de succès. | 2 appels consommés à partir de la limite et 7 appels marqués comme rafale |
+| Deuxième 1,7 | L’appel reçoit le code de statut de succès. | 2 appels consommés à partir de la limite et 8 appels marqués comme rafale |
+| Deuxième 1,8 | L’appel reçoit le code de statut de succès. | 2 appels consommés à partir de la limite et 9 appels marqués comme rafale |
+| Deuxième 2.1 | L’appel reçoit le code de statut de succès. | 3 appels consommés à partir de la limite et 9 appels marqués comme rafale |
+| Deuxième 2.2 | L’appel reçoit le code de statut de succès. | 3 appels consommés à partir de la limite et 10 appels marqués comme rafale |
+| Deuxième 2.4 | L&#39;appel reçoit le code d&#39;état 429 | 3 appels consommés à partir de la limite et 10 appels marqués comme rafale et 1 appel reçoit « 429 demandes trop nombreuses » |
+| Deuxième 2.6 | L&#39;appel reçoit le code d&#39;état 429 | 3 appels consommés à partir de la limite et 10 appels marqués comme rafale et 2 appels reçoivent « 429 demandes trop nombreuses » |
+| Deuxième 2,8 | L&#39;appel reçoit le code d&#39;état 429 | 3 appels consommés à partir de la limite et 10 appels marqués comme rafale et 3 appels reçoivent « 429 demandes trop nombreuses » |
+| Deuxième 3.1 | L’appel reçoit le code de statut de succès. | 4 appels consommés à partir de la limite et 10 appels marqués comme étant en rafale et 3 appels reçoivent « 429 Too many requests » |

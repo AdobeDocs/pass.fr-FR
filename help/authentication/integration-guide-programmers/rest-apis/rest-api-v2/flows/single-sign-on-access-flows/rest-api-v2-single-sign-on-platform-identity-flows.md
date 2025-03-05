@@ -2,9 +2,9 @@
 title: Authentification Unique - Identité De La Plateforme - Flux
 description: API REST V2 - Authentification unique - Identité de plateforme - Flux
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1846'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 La méthode Identité de plateforme permet à plusieurs applications d’utiliser un identifiant de plateforme unique pour obtenir l’authentification unique (SSO) au niveau de l’appareil ou de la plateforme lors de l’utilisation des services Adobe Pass.
 

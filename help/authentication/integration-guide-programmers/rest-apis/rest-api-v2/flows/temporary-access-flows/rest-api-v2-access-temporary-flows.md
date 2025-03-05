@@ -2,9 +2,9 @@
 title: Flux d’accès temporaires
 description: API REST V2 - Flux d’accès temporaires
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '3215'
+source-wordcount: '3225'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 TempPass permet aux programmeurs de fournir un accès temporaire à leur contenu protégé sans demander aux utilisateurs de s’authentifier à l’aide d’un compte MVPD valide.
 

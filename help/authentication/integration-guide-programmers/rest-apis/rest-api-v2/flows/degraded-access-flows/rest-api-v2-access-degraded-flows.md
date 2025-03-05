@@ -2,9 +2,9 @@
 title: Flux d’accès dégradés
 description: API REST V2 - Flux d’accès dégradés
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 La dégradation permet le contournement temporaire de points d’entrée d’authentification et d’autorisation MVPD spécifiques. En règle générale, le programmeur lance cette action, mais quelle que soit la personne qui déclenche un événement de dégradation, l’action dépend des dispositions préalables prises avec les MVPD affectées.
 

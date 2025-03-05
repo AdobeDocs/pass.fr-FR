@@ -1,10 +1,10 @@
 ---
 title: Récupération des profils
-description: API REST V2 - Récupération des profils
+description: API REST V2 - Récupération de profils
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '824'
 ht-degree: 1%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
-> La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md) .
+> L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 ## Requête {#request}
 
@@ -28,12 +32,12 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">chemin</td>
       <td>/api/v2/{serviceProvider}/profiles</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">méthode</td>
       <td>GET</td>
       <td></td>
    </tr>
@@ -45,7 +49,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
       <td>Identifiant unique interne associé au fournisseur de services lors du processus d’intégration.</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">En-têtes</th>
@@ -54,26 +58,26 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération du payload du jeton porteur est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
-      <td><i>required</i></td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La génération de la payload de l’identifiant de l’appareil est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> .</td>
-      <td><i>required</i></td>
+      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur l’appareil est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> .
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
          <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plate-forme d’appareil de l’application autorise la spécification explicite de valeurs valides.
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
          <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement les valeurs définies explicitement avec les valeurs extraites (par défaut).
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
          <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal d’authentification Adobe Pass utilise implicitement les valeurs extraites (par défaut).
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
@@ -82,34 +86,34 @@ ht-degree: 1%
          <br/><br/>
          Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
          <br/><br/>
-         Pour les implémentations client/serveur, l’adresse IP du périphérique de diffusion en continu est envoyée implicitement.
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
       </td>
       <td>facultatif</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Objet-Jeton</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode d’identification de plateforme est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
         <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Connexion unique à l’aide des flux d’identité de plateforme</a> .
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md"> Authentification unique à l’aide des flux d’identité de plateforme </a>.
       </td>
       <td>facultatif</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">AD-Service-Token</td>
+      <td style="background-color: #DEEBFF;">Jeton de service AD</td>
       <td>
-        La génération de la payload de connexion unique pour la méthode Service Token est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
+        La génération de la payload d’authentification unique pour la méthode de jeton de service est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
         <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Authentification unique à l’aide des flux de jeton de service</a> .
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.
       </td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La génération de la payload de connexion unique pour la méthode Partner est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
+        La génération de la payload d’authentification unique pour la méthode Partner est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
         <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Connexion unique à l’aide des flux de partenaire</a> .</td>
+        Pour plus d’informations sur l’authentification unique activée pour les flux utilisant un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md"> Authentification unique à l’aide des flux de partenaire </a>.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -117,7 +121,7 @@ ht-degree: 1%
       <td>
          Type de média accepté par l’application cliente.
          <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json.
+         S’il est spécifié, il doit s’agir d’application/json.
       </td>
       <td>facultatif</td>
    </tr>
@@ -140,35 +144,35 @@ ht-degree: 1%
       <td>200</td>
       <td>OK</td>
       <td>
-        Le corps de la réponse contient un mappage des profils valides, qui peut être vide.
+        Le corps de la réponse contient un mappage de profils valides, qui peut être vide.
       </td>
    </tr>
    <tr>
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide. Le client doit corriger la requête et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
       </td>
    </tr>
    <tr>
       <td>401</td>
-      <td>Non autorisé</td>
+      <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, reportez-vous à la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Présentation de l’enregistrement du client dynamique</a> .
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
       </td>
    </tr>
    <tr>
       <td>405</td>
-      <td>Méthode non autorisée</td>
+      <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, reportez-vous à la section <a href="#request">Requête</a> .
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
       </td>
    </tr>
    <tr>
       <td>500</td>
-      <td>Erreur interne du serveur</td>
+      <td>Erreur de serveur interne</td>
       <td>
-        Le côté serveur a rencontré un problème. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
       </td>
    </tr>
 </table>
@@ -184,12 +188,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>200</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -199,9 +203,9 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">profils</td>
       <td>
-        JSON contenant une carte de paires clé-valeur.
+        JSON contenant un mappage de paires clé-valeur.
         <br/><br/>
-        L’élément clé est défini par la valeur suivante :
+        L'élément clé est défini par la valeur suivante :
         <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valeur</th>
@@ -211,10 +215,10 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
                <td>Identifiant unique interne associé au fournisseur d’identité lors du processus d’intégration.</td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
          </table>
-         L’élément value est défini par les attributs suivants :
+         L’élément de valeur est défini par les attributs suivants :
          <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Attribut</th>
@@ -223,26 +227,26 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Horodatage avant lequel le profil n’est pas valide.</td>
-               <td><i>required</i></td>
+               <td>Date et heure auxquelles le profil n’est pas valide.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Horodatage au bout duquel le profil n’est pas valide.</td>
-               <td><i>required</i></td>
+               <td>Date et heure après lesquelles le profil n’est plus valide.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">issuer</td>
+               <td style="background-color: #DEEBFF;">émetteur</td>
                <td>
                   Entité propriétaire du profil.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>mvpd (par exemple, Spectrum, Cablevision, etc.)</b><br/>Le profil a été créé suite à : authentification de base, authentification unique à l’aide de l’identité de la plateforme ou authentification unique à l’aide du jeton de service.</li>
-                    <li><b>Apple</b><br/>Le profil a été créé suite à : authentification unique à l’aide du partenaire Apple.</li>
+                    <li><b>mvpd (par exemple, Spectrum, Télévision par câble, etc.)</b><br/>Le profil a été créé suite à : une authentification de base, une authentification unique à l’aide de l’identité de la plateforme ou une authentification unique à l’aide d’un jeton de service.</li>
+                    <li><b>Apple</b><br/>Le profil a été créé suite à : authentification unique à l'aide d'Apple partenaire.</li>
                   </ul>
                </td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
@@ -251,35 +255,35 @@ ht-degree: 1%
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>normal</b><br/>Le profil a été créé suite à : authentification de base.</li>
-                    <li><b>appleSSO</b><br/>Le profil a été créé suite à : authentification unique à l’aide du partenaire Apple.</li>
+                    <li><b>standard</b><br/>Le profil a été créé suite à : authentification de base.</li>
+                    <li><b>appleSSO</b><br/>Le profil a été créé suite à : authentification unique à l’aide d’Apple partenaire.</li>
                     <li><b>platformSSO</b><br/>Le profil a été créé suite à : authentification unique à l’aide de l’identité de la plateforme.</li>
                     <li><b>serviceTokenSSO</b><br/>Le profil a été créé suite à : authentification unique à l’aide du jeton de service.</li>
                   </ul>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">Attributs</td>
+               <td style="background-color: #DEEBFF;">attributs</td>
                <td>
-                    Liste des attributs de métadonnées utilisateur.
+                    Liste des attributs de métadonnées de l’utilisateur.
                     <br/><br/>
-                    Ces attributs peuvent être :
+                    Ces attributs peuvent être les suivants :
                     <ul>
-                        <li>Obligatoire, comme "userId"</li>
-                        <li>Non obligatoire, comme "zip", "householdId", "maxRating", etc.</li>
+                        <li>Obligatoire, comme 'userId'</li>
+                        <li>Non obligatoire, comme « zip », « householdId », « maxRating », etc.</li>
                     </ul>
                     Les valeurs des attributs peuvent être les suivantes :
                     <ul>
                         <li>simple</li>
-                        <li>list</li>
-                        <li>map</li>
+                        <li>liste</li>
+                        <li>carte</li>
                     </ul>
                </td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
          </table>
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
 </table>
 
 ### Erreur {#error}
@@ -293,12 +297,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>400, 401, 405, 500</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -307,14 +311,14 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
-      <td><i>required</i></td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
 </table>
 
 ## Exemples {#samples}
 
-### 1. Récupération des profils obtenus via l’authentification de base
+### 1. Récupérer les profils obtenus par l’intermédiaire de l’authentification de base
 
 >[!BEGINTABS]
 
@@ -381,7 +385,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode Service Token
+### 2. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode Jeton de service
 
 >[!BEGINTABS]
 
@@ -445,7 +449,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode Platform Identity
+### 3. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode d’identification Platform
 
 >[!BEGINTABS]
 

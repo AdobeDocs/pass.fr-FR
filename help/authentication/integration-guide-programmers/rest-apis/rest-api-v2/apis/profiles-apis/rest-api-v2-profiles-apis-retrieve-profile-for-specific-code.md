@@ -1,10 +1,10 @@
 ---
 title: Récupération du profil pour un code spécifique
-description: API REST V2 - Récupération du profil pour un code spécifique
+description: API REST V2 - Récupération d’un profil pour un code spécifique
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '711'
 ht-degree: 1%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
-> La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md) .
+> L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 ## Requête {#request}
 
@@ -28,12 +32,12 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">chemin</td>
       <td>/api/v2/{serviceProvider}/profiles/code/{code}</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">méthode</td>
       <td>GET</td>
       <td></td>
    </tr>
@@ -45,12 +49,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
       <td>Identifiant unique interne associé au fournisseur de services lors du processus d’intégration.</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">code</td>
       <td>Code d’authentification obtenu après la création de la session d’authentification sur l’appareil de diffusion en continu.</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">En-têtes</th>
@@ -59,8 +63,8 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération du payload du jeton porteur est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
-      <td><i>required</i></td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
@@ -69,13 +73,13 @@ ht-degree: 1%
          <br/><br/>
          Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
          <br/><br/>
-         Pour les implémentations client/serveur, l’adresse IP du périphérique de diffusion en continu est envoyée implicitement.
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
       </td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-TempPass-Identity</td>
-      <td>La génération de la payload de l’identifiant unique de l’utilisateur est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a> .</td>
+      <td>La génération de la payload de l’identifiant unique de l’utilisateur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a>.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -83,7 +87,7 @@ ht-degree: 1%
       <td>
          Type de média accepté par l’application cliente.
          <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json.
+         S’il est spécifié, il doit s’agir d’application/json.
       </td>
       <td>facultatif</td>
    </tr>
@@ -106,42 +110,42 @@ ht-degree: 1%
       <td>200</td>
       <td>OK</td>
       <td>
-        Le corps de la réponse contient un mappage des profils valides, qui peut être vide.
+        Le corps de la réponse contient un mappage de profils valides, qui peut être vide.
       </td>
    </tr>
    <tr>
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide. Le client doit corriger la requête et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
       </td>
    </tr>
    <tr>
       <td>401</td>
-      <td>Non autorisé</td>
+      <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, reportez-vous à la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Présentation de l’enregistrement du client dynamique</a> .
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
       </td>
    </tr>
    <tr>
       <td>403</td>
       <td>Interdit</td>
       <td>
-        Le délai d’accès temporaire (TTL) a expiré ou le nombre maximum de ressources est dépassé. Le client doit indiquer à l’utilisateur de lancer un flux d’authentification de base à l’aide d’un MVPD standard. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+        La durée de vie (TTL) d’accès temporaire a expiré ou le nombre maximal de ressources est dépassé. Le client doit indiquer à l’utilisateur de lancer un flux d’authentification de base à l’aide d’un MVPD standard. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
       </td>
    </tr> 
    <tr>
       <td>405</td>
-      <td>Méthode non autorisée</td>
+      <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, reportez-vous à la section <a href="#request">Requête</a> .
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
       </td>
    </tr>
    <tr>
       <td>500</td>
-      <td>Erreur interne du serveur</td>
+      <td>Erreur de serveur interne</td>
       <td>
-        Le côté serveur a rencontré un problème. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
       </td>
    </tr>
 </table>
@@ -157,12 +161,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>200</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -172,9 +176,9 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">profils</td>
       <td>
-        JSON contenant une carte de paires clé-valeur.
+        JSON contenant un mappage de paires clé-valeur.
         <br/><br/>
-        L’élément clé est défini par la valeur suivante :
+        L'élément clé est défini par la valeur suivante :
         <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valeur</th>
@@ -184,10 +188,10 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
                <td>Identifiant unique interne associé au fournisseur d’identité lors du processus d’intégration.</td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
          </table>
-         L’élément value est défini par les attributs suivants :
+         L’élément de valeur est défini par les attributs suivants :
          <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Attribut</th>
@@ -196,25 +200,25 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Horodatage avant lequel le profil n’est pas valide.</td>
-               <td><i>required</i></td>
+               <td>Date et heure auxquelles le profil n’est pas valide.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Horodatage au bout duquel le profil n’est pas valide.</td>
-               <td><i>required</i></td>
+               <td>Date et heure après lesquelles le profil n’est plus valide.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">issuer</td>
+               <td style="background-color: #DEEBFF;">émetteur</td>
                <td>
                   Entité propriétaire du profil.
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>mvpd (par exemple, Spectrum, Cablevision, etc.)</b><br/>Le profil a été créé suite à : authentification de base.</li>
-                    <li><b>Adobe</b><br/>Le profil a été créé suite à : accès dégradé, accès temporaire.</li>
+                    <li><b>mvpd (par exemple, Spectrum, Télévision par câble, etc.)</b><br/>Le profil a été créé suite à : authentification de base.</li>
+                    <li><b>Adobe</b><br/>Le profil a été créé suite à : un accès dégradé, un accès temporaire.</li>
                   </ul>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
@@ -223,34 +227,34 @@ ht-degree: 1%
                   <br/><br/>
                   Les valeurs possibles sont les suivantes :
                   <ul>
-                    <li><b>normal</b><br/>Le profil a été créé suite à : authentification de base.</li>
-                    <li><b>degraded</b><br/>Le profil a été créé à la suite de : accès dégradé.</li>
+                    <li><b>standard</b><br/>Le profil a été créé suite à : authentification de base.</li>
+                    <li><b>degraded</b><br/>Le profil a été créé suite à : un accès dégradé.</li>
                     <li><b>temporaire</b><br/>Le profil a été créé suite à : accès temporaire.</li>
                   </ul>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">Attributs</td>
+               <td style="background-color: #DEEBFF;">attributs</td>
                <td>
-                    Liste des attributs de métadonnées utilisateur.
+                    Liste des attributs de métadonnées de l’utilisateur.
                     <br/><br/>
-                    Ces attributs peuvent être :
+                    Ces attributs peuvent être les suivants :
                     <ul>
-                        <li>Obligatoire, comme "userId"</li>
-                        <li>Non obligatoire, comme "zip", "householdId", "maxRating", etc.</li>
+                        <li>Obligatoire, comme 'userId'</li>
+                        <li>Non obligatoire, comme « zip », « householdId », « maxRating », etc.</li>
                     </ul>
                     Les valeurs des attributs peuvent être les suivantes :
                     <ul>
                         <li>simple</li>
-                        <li>list</li>
-                        <li>map</li>
+                        <li>liste</li>
+                        <li>carte</li>
                     </ul>
                </td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
          </table>
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
 </table>
 
 ### Erreur {#error}
@@ -264,12 +268,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>400, 401, 403, 405, 500</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -278,14 +282,14 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
-      <td><i>required</i></td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.</td>
+      <td><i>obligatoire</i></td>
    </tr>
 </table>
 
 ## Exemples {#samples}
 
-### 1. Récupération du profil pour du code spécifique obtenu via l’authentification de base
+### 1. Récupérer le profil pour le code spécifique obtenu par l’authentification de base
 
 >[!BEGINTABS]
 
@@ -338,7 +342,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Récupérez le profil pour un code spécifique lorsque TempPass de base est sélectionné
+### 2. Récupérer le profil pour un code spécifique lorsque le TempPass de base est sélectionné
 
 >[!BEGINTABS]
 
@@ -381,7 +385,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Réponse - Limite de durée dépassée]
+>[!TAB Réponse - Limite De Durée Dépassée]
 
 ```HTTPS
 HTTP/1.1 403 Forbidden
@@ -415,7 +419,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Récupérez le profil pour un code spécifique lorsque le TempPass promotionnel est sélectionné
+### 3. Récupérer le profil pour un code spécifique lorsque le TempPass promotionnel est sélectionné
 
 >[!BEGINTABS]
 
@@ -472,7 +476,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Réponse - Limite de durée dépassée]
+>[!TAB Réponse - Limite De Durée Dépassée]
 
 ```HTTPS
 HTTP/1.1 403 Forbidden
@@ -488,7 +492,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Réponse - Limite des ressources dépassée]
+>[!TAB Réponse - Limite de ressources dépassée]
 
 ```HTTPS
 HTTP/1.1 403 Forbidden
@@ -520,7 +524,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Réponse - Identité non valide]
+>[!TAB Réponse - Identité Non Valide]
 
 ```HTTPS
 HTTP/1.1 400 Bad Request
@@ -538,7 +542,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Récupérez le profil pour un code spécifique lorsque la dégradation est appliquée
+### 4. Récupérer le profil pour le code spécifique pendant l’application de la dégradation
 
 >[!BEGINTABS]
 
@@ -552,7 +556,7 @@ GET /api/v2/REF30/profiles/code/XTC98W HTTP/1.1
     User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
->[!TAB Réponse - AuthNAll Degradation]
+>[!TAB Réponse - Dégradation AuthNAll]
 
 ```HTTPS
 HTTP/1.1 200 OK

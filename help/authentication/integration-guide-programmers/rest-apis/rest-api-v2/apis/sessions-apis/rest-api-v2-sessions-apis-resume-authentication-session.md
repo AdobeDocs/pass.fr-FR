@@ -2,9 +2,9 @@
 title: Reprendre la session d’authentification
 description: API REST V2 - Reprendre la session d’authentification
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '886'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 ## Requête {#request}
 

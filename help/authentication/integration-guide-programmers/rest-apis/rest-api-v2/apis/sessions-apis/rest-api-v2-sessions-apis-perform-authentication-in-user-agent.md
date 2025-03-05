@@ -2,9 +2,9 @@
 title: Authentification dans l’agent utilisateur
 description: API REST V2 - Authentification dans l’agent utilisateur
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '240'
 ht-degree: 3%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
-> La mise en oeuvre de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md) .
+> L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Veillez également à consulter la [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 ## Requête {#request}
 
@@ -28,12 +32,12 @@ ht-degree: 3%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">chemin</td>
       <td>/api/v2/authenticate/{serviceProvider}/{code}</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">méthode</td>
       <td>GET</td>
       <td></td>
    </tr>
@@ -45,12 +49,12 @@ ht-degree: 3%
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
       <td>Identifiant unique interne associé au fournisseur de services lors du processus d’intégration.</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">code</td>
       <td>Code d’authentification obtenu après la création de la session d’authentification sur l’appareil de diffusion en continu.</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">En-têtes</th>
@@ -76,35 +80,35 @@ ht-degree: 3%
       <td>302</td>
       <td>Trouvé</td>
       <td>
-        Le corps de la réponse contient une redirection d’emplacement pour continuer le flux jusqu’à atteindre la page de connexion MVPD.
+        Le corps de la réponse contient une redirection d’emplacement pour continuer le flux jusqu’à la page de connexion de MVPD
       </td>
    </tr>
    <tr>
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide. Le client doit corriger la requête et réessayer.
+        La requête n’est pas valide, le client doit la corriger et réessayer.
       </td>
    </tr>
    <tr>
       <td>405</td>
-      <td>Méthode non autorisée</td>
+      <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, reportez-vous à la section <a href="#request">Requête</a> .
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
       </td>
    </tr>
    <tr>
       <td>500</td>
-      <td>Erreur interne du serveur</td>
+      <td>Erreur de serveur interne</td>
       <td>
-        Le côté serveur a rencontré un problème.
+        Un problème est survenu côté serveur.
       </td>
    </tr>
 </table>
 
 ### Succès {#success}
 
-La réponse réussie est une série d’une ou de plusieurs redirections jusqu’à atteindre la page de connexion MVPD.
+La réponse réussie est une série d’une ou de plusieurs redirections jusqu’à la page de connexion de MVPD.
 
 ### Erreur {#error}
 
@@ -117,12 +121,12 @@ La réponse réussie est une série d’une ou de plusieurs redirections jusqu�
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>400, 405, 500</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>text/html</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -138,7 +142,7 @@ La réponse réussie est une série d’une ou de plusieurs redirections jusqu�
 
 ## Exemples {#samples}
 
-### 1. Effectuez l’authentification dans l’agent utilisateur
+### 1. Effectuer l’authentification dans l’agent utilisateur
 
 >[!BEGINTABS]
 
