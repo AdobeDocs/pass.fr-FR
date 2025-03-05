@@ -1,32 +1,24 @@
 ---
-title: Présentation de la confidentialité
-description: Présentation de la confidentialité
+title: Présentation de l’assistance en matière de confidentialité
+description: Présentation de l’assistance en matière de confidentialité
 exl-id: 9868a7e7-30f6-420e-a660-7d2f7870374d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 7e56c0a3651290376a72752638f463cf9415ec0e
 workflow-type: tm+mt
 source-wordcount: '217'
 ht-degree: 0%
 
 ---
 
-# Présentation de la confidentialité {#priv-supp-overview}
+# Présentation de l’assistance en matière de confidentialité {#priv-supp-overview}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 ## Vue d’ensemble {#overview}
 
-**RGPD** - Le règlement général sur la protection des données (RGPD), en vigueur depuis le 25 mai 2018, donne à tous les individus (sujets des données) à l’intérieur des frontières de l’Union européenne (UE) le contrôle de leurs données personnelles et simplifie l’environnement réglementaire pour les affaires internationales. Cette loi s’applique à toutes les entreprises (contrôleurs de données) qui offrent des biens ou des services pour, surveiller le comportement et collecter des données personnelles de personnes à l’intérieur des frontières de l’UE au moment du traitement de leurs données personnelles, quel que soit le lieu d’activité du contrôleur de données.
+**RGPD**-Le Règlement général sur la protection des données (RGPD), une loi en vigueur le 25 mai 2018, donne à toutes les personnes (titulaires de données) situées à l’intérieur des frontières de l’Union européenne (UE) le contrôle de leurs données personnelles et simplifie l’environnement réglementaire pour les entreprises internationales. Cette loi s&#39;applique à toutes les entreprises (responsables du traitement des données) qui offrent des biens ou des services aux particuliers, surveillent leur comportement et collectent des données à caractère personnel à l&#39;intérieur des frontières de l&#39;UE au moment où leurs données à caractère personnel sont traitées, quel que soit le lieu d&#39;activité du responsable du traitement des données
 
-**CCPA** - Le California Consumer Privacy Act (CCPA) est une loi qui accorde aux résidents de Californie de nouveaux droits concernant leurs informations personnelles et impose des responsabilités en matière de protection des données à certaines entités qui exercent leurs activités en Californie. Le CCPA utilise certains concepts déjà connus en vertu du RGPD, tels que le droit d’accéder et de supprimer des informations personnelles. Cependant, il existe d’autres domaines où la CCPA diffère du RGPD.
+**CCPA**-Le California Consumer Privacy Act (CCPA) est une loi qui confère aux Californiens de nouveaux droits sur leurs informations personnelles et impose des responsabilités en matière de protection des données à certaines entités qui exercent des activités en Californie. Le CCPA utilise certains concepts déjà connus dans le cadre du RGPD, tels que le droit d’accès et de suppression des informations personnelles. Cependant, il existe d’autres domaines dans lesquels le CCPA diffère du RGPD.
 
-En tant que client Adobe Pass Authentication, vous pouvez soumettre des demandes individuelles en vertu du RGPD ou du CCPA pour accéder et supprimer des données client, soit par l’[interface utilisateur du Privacy Service](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md), soit en appelant l’[API du Privacy Service](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_api_tutorial.md).
-
-<!--
-
->[!MORELIKETHIS]
->
->* [Privacy Services Overview](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/technical_overview/privacy_service_overview/privacy_service_overview.md)
->* [Privacy Service API documentation](https://www.adobe.io/apis/experiencecloud/gdpr.html)
--->
+En tant que client Adobe Pass Authentication, vous pouvez soumettre des demandes individuelles de confidentialité en vertu du RGPD ou du CCPA pour accéder et supprimer des données client, soit par le biais de l’interface utilisateur de [Privacy Service](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) soit en appelant l’API [Privacy Service](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_api_tutorial.md).
