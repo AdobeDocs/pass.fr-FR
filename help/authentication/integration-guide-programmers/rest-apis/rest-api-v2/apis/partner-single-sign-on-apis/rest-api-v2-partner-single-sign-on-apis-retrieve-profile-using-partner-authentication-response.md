@@ -2,7 +2,7 @@
 title: Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire
 description: API REST V2 - Création et récupération d’un profil à l’aide de la réponse d’authentification du partenaire
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
 workflow-type: tm+mt
 source-wordcount: '734'
 ht-degree: 1%
@@ -272,8 +272,8 @@ ht-degree: 1%
                     <br/><br/>
                     Ces attributs peuvent être les suivants :
                     <ul>
-                        <li>Obligatoire, comme 'userId'</li>
-                        <li>Non obligatoire, comme « zip », « householdId », « maxRating », etc.</li>
+                        <li>Obligatoire, comme 'userID'</li>
+                        <li>Non obligatoire, comme « zip », « householdID », « maxRating », etc.</li>
                     </ul>
                     Les valeurs des attributs peuvent être les suivantes :
                     <ul>
@@ -358,11 +358,11 @@ Content-Type: application/json;charset=UTF-8
             "issuer": "Apple",
             "type": "appleSSO",
             "attributes": {
-                "userId": {
+                "userID": {
                     "value": "BASE64_value_userId",
                     "state": "plain"
                 },
-                "householdId": {
+                "householdID": {
                     "value": "BASE64_value_householdId",
                     "state": "plain"
                 },
