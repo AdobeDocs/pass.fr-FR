@@ -2,7 +2,7 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
 workflow-type: tm+mt
 source-wordcount: '9072'
 ht-degree: 0%
@@ -303,7 +303,7 @@ Pour garantir l’efficacité et éviter les requêtes inutiles, l’application
 
 | **Authentification effectuée dans l’application principale (écran)** | **Authentification effectuée dans une application secondaire (écran)** |
 |----------------------------------------------------------------------|----------------------------------------------------------------------|
-| L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 1 à 5 secondes. | L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes. |
+| L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes. | L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes. |
 
 #### 16. Quel est le nombre maximal de requêtes d’interrogation que l’application cliente peut envoyer ? {#authentication-phase-faq16}
 
