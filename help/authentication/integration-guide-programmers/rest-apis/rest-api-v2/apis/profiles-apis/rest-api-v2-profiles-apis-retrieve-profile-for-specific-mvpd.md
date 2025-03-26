@@ -2,9 +2,9 @@
 title: Récupération du profil pour un fichier mvpd spécifique
 description: API REST V2 - Récupération du profil d’un fichier mvpd spécifique
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
-source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1016'
+source-wordcount: '1057'
 ht-degree: 1%
 
 ---
@@ -284,9 +284,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">attributs</td>
                <td>
-                    Liste des attributs de métadonnées de l’utilisateur.
+                    JSON contenant un mappage de paires clé-valeur.
                     <br/><br/>
-                    Ces attributs peuvent être les suivants :
+                    L’élément clé est défini par les attributs de métadonnées de l’utilisateur et peut être :
                     <ul>
                         <li>Obligatoire, comme 'userID'</li>
                         <li>Non obligatoire, comme « zip », « householdID », « maxRating », etc.</li>
@@ -297,6 +297,7 @@ ht-degree: 1%
                         <li>liste</li>
                         <li>carte</li>
                     </ul>
+                    Les métadonnées de l’utilisateur sont disponibles une fois le flux d’authentification terminé, mais certains attributs de métadonnées peuvent être mis à jour pendant le flux d’autorisation, selon le MVPD et l’attribut de métadonnées spécifique en question.
                </td>
                <td><i>obligatoire</i></td>
             </tr>

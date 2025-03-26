@@ -2,9 +2,9 @@
 title: Métadonnées utilisateur
 description: Métadonnées utilisateur
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '1902'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Les métadonnées utilisateur font référence à des [attributs](#attributes) spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) qui sont gérés par les MVPD et fournis aux programmeurs via l’API Adobe Pass Authentication [API REST V2](#apis).
+
+Les métadonnées de l’utilisateur sont disponibles une fois le flux d’authentification terminé, mais certains attributs de métadonnées peuvent être mis à jour pendant le flux d’autorisation, selon le MVPD et l’attribut de métadonnées spécifique en question.
 
 Les métadonnées utilisateur peuvent être utilisées pour améliorer la personnalisation des utilisateurs et utilisatrices, mais aussi pour les analyses. Par exemple, un programmeur peut utiliser le code postal d’un utilisateur pour diffuser des informations localisées ou des mises à jour météorologiques, ou pour appliquer le contrôle parental.
 
@@ -168,7 +170,17 @@ Les attributs de métadonnées de l’utilisateur peuvent être récupérés à 
 
 Reportez-vous aux sections **Réponse** et **Exemples** des API ci-dessus pour comprendre la structure des attributs de métadonnées de l’utilisateur.
 
+>[!IMPORTANT]
+>
+> Les métadonnées de l’utilisateur sont disponibles une fois le flux d’authentification terminé. Par conséquent, l’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les informations [métadonnées de l’utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), car elles sont déjà incluses dans les informations de profil.
+
 Pour plus d’informations sur comment et à quel moment intégrer les API ci-dessus, reportez-vous aux documents suivants :
 
 * [Flux de profils de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flux de profils de base exécuté dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Certains attributs de métadonnées peuvent être mis à jour pendant le flux d’autorisation, selon le MVPD et l’attribut de métadonnées spécifique. Par conséquent, l’application cliente peut avoir besoin d’interroger à nouveau les API ci-dessus pour récupérer les dernières métadonnées de l’utilisateur.
+
+>[!MORELIKETHIS]
+>
+> [FAQ sur la phase d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)

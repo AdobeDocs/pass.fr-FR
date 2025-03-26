@@ -2,9 +2,9 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '9072'
+source-wordcount: '9113'
 ht-degree: 0%
 
 ---
@@ -321,12 +321,14 @@ L’application cliente peut interroger l’un des points d’entrée suivants c
 * [Point d’entrée des profils pour une API MVPD spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [Point d’entrée des profils pour une API de code spécifique (authentification)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
-L’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les informations de métadonnées de l’utilisateur, car elles sont déjà incluses dans les informations de profil obtenues lors de la vérification de l’authentification de l’utilisateur.
+Les métadonnées de l’utilisateur sont disponibles une fois le flux d’authentification terminé. Par conséquent, l’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les informations [métadonnées de l’utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), car elles sont déjà incluses dans les informations de profil.
 
 Pour plus d’informations, reportez-vous aux documents suivants :
 
 * [Flux de profils de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flux de profils de base exécuté dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Certains attributs de métadonnées peuvent être mis à jour pendant le flux d’autorisation, selon le MVPD et l’attribut de métadonnées spécifique. Par conséquent, l’application cliente peut avoir besoin d’interroger à nouveau les API ci-dessus pour récupérer les dernières métadonnées de l’utilisateur.
 
 #### 18. Comment l’application cliente doit-elle gérer l’accès dégradé ? {#authentication-phase-faq18}
 
