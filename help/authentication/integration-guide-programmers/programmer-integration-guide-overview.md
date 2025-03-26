@@ -2,9 +2,9 @@
 title: Guide d’intégration du programmeur
 description: Guide d’intégration du programmeur
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '2073'
+source-wordcount: '2119'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,9 @@ Pour les programmeurs, l’authentification Adobe Pass fournit des API dans le c
 
 * API d’authentification Premium Adobe Pass :
    * [Réinitialiser l’API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
    * [API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
    * [API de surveillance du service de droit](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Cas d’utilisation {#use-cases}
@@ -323,4 +325,6 @@ Pour plus d’informations sur les droits, reportez-vous aux documents suivants 
 
 * **[Jetons multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  Une fois l’autorisation réussie, l’authentification Adobe Pass crée un jeton multimédia (« de courte durée ») associé à une requête de lecture réussie.
+  Une fois l’autorisation réussie, l’authentification Adobe Pass crée un jeton multimédia (« de courte durée ») associé à une demande de lecture réussie et prend en charge les bonnes pratiques du secteur pour atténuer la fraude (par exemple, l’extraction de flux).
+
+Les valeurs de durée de vie (« TTL ») des profils et des décisions sont définies en fonction d&#39;accords entre les programmeurs et les fournisseurs de télévision payante, qui conviennent d&#39;une valeur qui sert au mieux toutes les personnes impliquées.
