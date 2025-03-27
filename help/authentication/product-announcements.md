@@ -2,39 +2,14 @@
 title: Annonces de produit
 description: Annonces de produit
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 6b309f66bfe1376bd62ad5e99b4f6383194af6c6
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '973'
+source-wordcount: '784'
 ht-degree: 2%
 
 ---
 
 # Annonces de produit {#product-announcements}
-
-<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![ Série de webinaires en direct ](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
-
-En tant que précieux partenaire d’authentification d’Adobe Pass, nous vous invitons à notre prochain webinaire en direct sur la nouvelle API REST. La nouvelle API a été lancée l’année dernière pour améliorer l’expérience de l’utilisateur final et simplifier l’intégration avec les services Adobe Pass. 
-
-Nous organiserons une série de deux webinaires pour donner un aperçu de la nouvelle API, des avantages et des cas d’utilisation supplémentaires qui peuvent être activés en migrant vers la nouvelle API.
-
-Inscrivez-vous au webinaire qui fonctionne le mieux pour vous et votre équipe.
-
-* [Webinaire 1 - 19 février 2025](https://events.teams.microsoft.com/event/83c6ec1e-2522-4918-910f-c529b4fb0574@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
-* [Webinaire 2 - 5 mars 2025](https://events.teams.microsoft.com/event/6f673689-e848-4c00-93d9-4f5d8f108977@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
-
-Au cours de la session, vous découvrirez :
-
-* Présentation et avantages de l’API REST v2
-* Présentation des flux de base
-* Chronologies et étapes suivantes
-
-Le webinaire est utile si vous êtes :
-
-* Un nouveau client prévoit de lancer une nouvelle application TVE
-* Clients existants devant migrer vers les nouvelles API
-* Partenaires d’implémentation qui mettraient en œuvre des API pour les clients
-
-La documentation technique sur la nouvelle API se trouve [ici](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md). Nous vous encourageons, ainsi que votre équipe, à remplir toutes les questions dont vous souhaiteriez discuter au cours de la session [ici](https://forms.office.com/r/sJea78tUy3).
 
 ## Fin de vie {#eol}
 

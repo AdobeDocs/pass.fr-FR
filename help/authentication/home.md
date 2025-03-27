@@ -1,21 +1,19 @@
 ---
-title: Bienvenue dans l’authentification Adobe&reg; Pass
-description: Bienvenue dans l’authentification Adobe&reg; Pass
+title: Bienvenue dans Adobe&reg; Transmettre l’authentification
+description: Bienvenue dans Adobe&reg; Transmettre l’authentification
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '423'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
 
-# Bienvenue dans l’authentification Adobe ® Pass {#welcome}
+# Bienvenue dans l’authentification Adobe® Pass {#welcome}
 
 >[!IMPORTANT]
 >
 > Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
-
-<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![ Série de webinaires en direct ](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 L’authentification Adobe Pass est une puissante solution de droits pour TV Everywhere (TVE), conçue pour rationaliser et sécuriser le processus de vérification du droit des téléspectateurs d’accéder à un contenu protégé. Ce cadre modulaire connecte les fournisseurs de contenu (programmeurs) aux fournisseurs de télévision payante (MVPD), ce qui facilite les transactions de droits d’accès avec vitesse, cohérence et fiabilité.
 
@@ -74,5 +72,5 @@ Questions fréquentes sur les procédures de prise en charge de l’authentifica
 
 ## ?? Contact
 
-* [Contactez l’assistance technique d’Adobe ](mailto:tve-support@adobe.com)\
-  Pour toute demande d’aide ou d’entreprise supplémentaire, contactez l’équipe d’assistance d’Adobe.
+* [Contactez l’assistance Adobe](mailto:tve-support@adobe.com)\
+  Pour toute demande d’aide ou d’entreprise supplémentaire, contactez l’équipe d’assistance Adobe.
