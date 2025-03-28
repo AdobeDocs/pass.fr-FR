@@ -2,9 +2,9 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '9113'
+source-wordcount: '9537'
 ht-degree: 0%
 
 ---
@@ -248,9 +248,18 @@ Pour plus d’informations, reportez-vous aux documents [ Authentification uniqu
 
 #### 10. Que doit faire l’application cliente si l’utilisateur possède plusieurs profils MVPD ? {#authentication-phase-faq10}
 
-Lorsque l’utilisateur dispose de plusieurs profils MVPD, l’application cliente doit déterminer la meilleure approche pour gérer ce scénario.
+La décision de prendre en charge plusieurs profils dépend des exigences commerciales de l’application cliente.
+
+La plupart des utilisateurs n’auront qu’un seul profil. Cependant, dans les cas où il existe plusieurs profils (comme décrit ci-dessous), l’application cliente est chargée de déterminer la meilleure expérience utilisateur pour la sélection des profils.
 
 L’application cliente peut choisir d’inviter l’utilisateur à sélectionner le profil MVPD souhaité ou d’effectuer la sélection automatiquement, par exemple en choisissant le premier profil utilisateur dans la réponse ou celui dont la période de validité est la plus longue.
+
+L’API REST v2 prend en charge plusieurs profils pour s’adapter aux éléments suivants :
+
+* Les utilisateurs qui peuvent avoir à choisir entre un profil MVPD standard et un profil obtenu par authentification unique (SSO).
+* Les utilisateurs se voient proposer un accès temporaire sans avoir à se déconnecter de leur MVPD standard.
+* Utilisateurs disposant d’un abonnement MVPD associé à des services de type « Direct-to-Consumer » (DTC).
+* Utilisateurs disposant de plusieurs abonnements MVPD.
 
 #### 11. Que se passe-t-il lorsque les profils utilisateur expirent ? {#authentication-phase-faq11}
 
@@ -332,9 +341,35 @@ Certains attributs de métadonnées peuvent être mis à jour pendant le flux d�
 
 #### 18. Comment l’application cliente doit-elle gérer l’accès dégradé ? {#authentication-phase-faq18}
 
-Étant donné que votre entreprise a l’intention d’utiliser la fonctionnalité [dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md), l’application cliente doit gérer les flux d’accès dégradés, qui décrivent le comportement des points d’entrée de l’API REST v2 dans de tels scénarios.
+La [fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md) permet à l’application cliente de conserver une expérience de diffusion en continu transparente pour les utilisateurs et utilisatrices, même lorsque leurs services d’authentification ou d’autorisation MVPD rencontrent des problèmes.
+
+En résumé, cela peut garantir un accès ininterrompu au contenu malgré les perturbations temporaires des services de MVPD.
+
+Étant donné que votre entreprise a l’intention d’utiliser la fonctionnalité de dégradation Premium, l’application cliente doit gérer les flux d’accès dégradés, qui décrivent le comportement des points d’entrée de l’API REST v2 dans de tels scénarios.
 
 Pour plus d&#39;informations, consultez la documentation [Flux d&#39;accès dégradés](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md).
+
+#### 19. Comment l’application cliente doit-elle gérer l’accès temporaire ? {#authentication-phase-faq19}
+
+La [fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) permet à l&#39;application cliente de fournir un accès temporaire à l&#39;utilisateur.
+
+En résumé, cela peut intéresser les utilisateurs et les utilisatrices en leur fournissant un accès limité dans le temps au contenu ou à un nombre prédéfini de titres VOD pendant une période spécifiée.
+
+Étant donné que votre entreprise a l’intention d’utiliser la fonctionnalité TempPass Premium, l’application cliente doit gérer les flux d’accès temporaires, qui décrivent le comportement des points d’entrée de l’API REST v2 dans de tels scénarios.
+
+Dans les versions précédentes de l’API, l’application cliente devait déconnecter un utilisateur authentifié avec son MVPD standard pour offrir un accès temporaire.
+
+Avec l’API REST v2, l’application cliente peut basculer facilement entre un MVPD standard et un MVPD TempPass lors de l’autorisation d’un flux, éliminant ainsi la nécessité pour l’utilisateur d’être déconnecté.
+
+Pour plus d&#39;informations, consultez la documentation [Flux d&#39;accès temporaires](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
+
+#### 20. Comment l’application cliente doit-elle gérer l’accès avec authentification unique sur plusieurs appareils ? {#authentication-phase-faq20}
+
+L’API REST v2 peut activer l’authentification unique entre appareils si l’application cliente fournit un identifiant utilisateur unique cohérent entre les appareils.
+
+Cet identifiant, appelé jeton de service, doit être généré par l’application cliente par l’implémentation ou l’intégration d’un service d’identités externe de votre choix.
+
+Pour plus d’informations, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 +++
 
@@ -574,9 +609,15 @@ La documentation de l’en-tête [AP-Device-Identifier](/help/authentication/int
 >
 > Si l’application cliente migre de l’API REST V1 vers l’API REST V2, elle peut continuer à utiliser la même méthode pour calculer la valeur des informations sur l’appareil que précédemment.
 
-L’en-tête de requête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) contient les informations du client (appareil, connexion et application) liées à l’appareil de diffusion en continu actuel.
+L’en-tête de requête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) contient les informations client (appareil, connexion et application) liées à l’appareil de diffusion en continu actuel et est utilisé pour déterminer les règles spécifiques à la plateforme que les MVPD peuvent appliquer.
 
 La documentation de l’en-tête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) fournit des exemples pour les principales plateformes sur la manière de calculer la valeur, mais l’application cliente peut choisir d’utiliser une autre méthode en fonction de sa propre logique commerciale et de ses propres exigences.
+
+Si l’en-tête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) est manquant ou contient des valeurs incorrectes, la requête peut être classée comme provenant d’une plateforme `unknown`.
+
+Cela peut entraîner le traitement de la requête comme non sécurisée et soumise à des règles plus restrictives, telles que des TTL d’authentification plus courtes. De plus, certains champs, comme le `connectionIp` et le `connectionPort` de l&#39;appareil de diffusion en continu, sont obligatoires pour des fonctions comme l&#39;authentification de base d&#39;accueil [ de Spectrum](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md).
+
+Même lorsque la requête provient d’un serveur pour le compte d’un appareil, la valeur de l’en-tête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) doit refléter les informations réelles de l’appareil de diffusion en continu.
 
 +++
 
