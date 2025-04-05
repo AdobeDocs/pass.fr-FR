@@ -2,9 +2,9 @@
 title: Manuel de l’API REST (client à serveur)
 description: Client de guide pas à pas de l’API REST au serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -41,7 +41,7 @@ Dans une solution client à serveur opérationnelle, les composants suivants son
 | Appareil De Diffusion En Continu | Application de streaming | L’application Programmeur qui réside sur l’appareil de diffusion en continu de l’utilisateur et lit une vidéo authentifiée. |
 | | \[Facultatif\] Module AuthN | Si l’appareil de diffusion en continu dispose d’un agent utilisateur (c’est-à-dire un navigateur web), le module AuthN est chargé d’authentifier l’utilisateur sur l’IdP MVPD. |
 | \[Facultatif\] Périphérique AuthN | Application AuthN | Si l’appareil de diffusion en continu ne dispose pas d’un agent utilisateur (c’est-à-dire un navigateur web), l’application AuthN est une application web de programmation accessible à partir de l’appareil d’un utilisateur distinct à l’aide d’un navigateur web. |
-| Infrastructure d&#39;Adobe | Service Adobe Pass | Un service qui s’intègre aux services MVPD IdP et AuthZ et fournit des décisions d’authentification et d’autorisation. |
+| Infrastructure Adobe | Service Adobe Pass | Un service qui s’intègre aux services MVPD IdP et AuthZ et fournit des décisions d’authentification et d’autorisation. |
 | Infrastructure MVPD | IdP MVPD | Point d’entrée MVPD qui fournit un service d’authentification basé sur les informations d’identification pour valider l’identité de l’utilisateur. |
 | | Service MVPD AuthZ | Point d’entrée MVPD qui fournit des décisions d’autorisation basées sur les abonnements des utilisateurs, le contrôle parental, etc. |
 
@@ -72,7 +72,7 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
 
 1. Obtenez un code d’enregistrement et une URL que votre utilisateur peut utiliser pour accéder à l’application de connexion du deuxième écran, puis présentez-les à l’utilisateur :
 
-   a. Envoyez une demande de POST au service de code d’enregistrement d’Adobe, en transmettant un ID d’appareil haché et une « URL d’enregistrement ».  Par exemple : [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a. Envoyez une requête POST au service Adobe Registration Code, en transmettant un ID d’appareil haché et une « URL d’enregistrement ».  Par exemple : [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
    b. Présentez le code d’enregistrement et l’URL renvoyés à l’utilisateur.
 
@@ -84,7 +84,7 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
 
 1. L’utilisateur revient de l’application du deuxième écran et appuie sur le bouton « Continuer » sur votre appareil. Vous pouvez également implémenter un mécanisme d’interrogation pour vérifier le statut de l’authentification, mais l’Authentification Adobe Pass recommande la méthode du bouton Continuer plutôt que l’interrogation. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Par exemple : [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
-2. Envoyez une demande de GET au service d’autorisation Authentification Adobe Pass pour lancer l’autorisation. Par exemple : `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+2. Envoyez une requête GET au service d’autorisation Authentification Adobe Pass pour lancer l’autorisation. Par exemple : `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
@@ -140,7 +140,6 @@ Certains appareils fournissent une prise en charge dédiée à l’authentificat
 Certains appareils fournissent une prise en charge dédiée à l’authentification unique (SSO) de Platform :
 
 * [SSO AMAZON](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
-* [SSO Roku](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass et TempPass promotionnel pour l’API REST {#temppass}
 

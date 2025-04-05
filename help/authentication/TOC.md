@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 7e56c0a3651290376a72752638f463cf9415ec0e
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1257'
 ht-degree: 2%
 
 ---
@@ -68,6 +68,7 @@ ht-degree: 2%
             + [Flux d’enregistrement client dynamique](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + API REST V2 {#rest-api-v2}
          + [Présentation de l’API REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
+         + [Liste de contrôle V2 de l’API REST](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Glossaire de l’API REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
          + [FAQ sur l’API REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          + {#rest-api-v2-apis} des API
@@ -120,6 +121,7 @@ ht-degree: 2%
                + [En-Tête - X-Device-Info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
                + [En-tête - Jeton de service AD](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
                + [En-Tête : Adobe-Subject-Token.](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+               + [En-Tête : X-Roku-Reserved-Roku-Connect-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
                + [En-tête - AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                + [En-tête - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Fonctionnalités standard {#standard-features}
@@ -138,7 +140,7 @@ ht-degree: 2%
             + {#amazon-sso} d’authentification SSO Amazon
                + [Manuel de l’authentification unique Amazon (API REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
             + {#roku-sso} d’authentification SSO Roku
-               + [Présentation de l’authentification unique (SSO) Roku](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+               + [Guide pas à pas de Roku SSO (API REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
       + {#hba-access} d’accès à l’authentification basée sur l’accueil
          + [Authentification à domicile (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       + {#privacy-support} d’assistance en matière de confidentialité

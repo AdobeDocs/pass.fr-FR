@@ -2,9 +2,9 @@
 title: Récupérer la demande d’authentification du partenaire
 description: API REST V2 - Récupération de la demande d’authentification du partenaire
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1219'
 ht-degree: 0%
 
 ---
@@ -266,7 +266,6 @@ ht-degree: 0%
                   <ul>
                     <li><b>none</b><br/>L’application cliente est requise pour continuer à s’authentifier.</li>
                     <li><b>authentifié</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès de base.</li>
-                    <li><b>temporaire</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès temporaires.</li>
                     <li><b>degraded</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès dégradés.</li>
                     <li><b>authenticatedSSO</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès à authentification unique.</li>
                     <li><b>pfs_fallback</b><br/>L’application cliente doit revenir au flux d’authentification de base en raison d’une valeur d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> manquante ou non valide.</li>

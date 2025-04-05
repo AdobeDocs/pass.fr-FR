@@ -2,9 +2,9 @@
 title: Authentification Unique - Identité De La Plateforme - Flux
 description: API REST V2 - Authentification unique - Identité de plateforme - Flux
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1846'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -27,14 +27,14 @@ La méthode Identité de plateforme permet à plusieurs applications d’utilise
 
 Les applications sont chargées de récupérer la payload d’identifiant de plateforme unique à l’aide de services d’identité ou de bibliothèques spécifiques aux appareils en dehors des systèmes Adobe Pass.
 
-Les applications sont chargées d’inclure ce payload d’identifiant de plateforme unique dans l’en-tête `Adobe-Subject-Token` pour toutes les requêtes qui le spécifient.
+Les applications sont chargées d’inclure ce payload d’identifiant de plateforme unique dans l’en-tête `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token` pour toutes les requêtes qui le spécifient.
 
-Pour plus d’informations sur `Adobe-Subject-Token`’en-tête , consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`, consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md).
 
 >[!MORELIKETHIS]
 > 
 > * [Manuel de l’authentification unique Amazon](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Guide pas à pas Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+> * [Guide pas à pas Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Authentification par authentification unique à l’aide de l’identité de la plateforme {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -43,11 +43,11 @@ Pour plus d’informations sur `Adobe-Subject-Token`’en-tête , consultez la d
 Avant d’effectuer le flux d’authentification par authentification unique à l’aide d’une identité de plateforme, assurez-vous que les conditions préalables suivantes sont remplies :
 
 * La plateforme doit fournir un service d’identités ou une bibliothèque qui renvoie des informations cohérentes sous forme de payload `JWS` ou `JWE` pour toutes les applications sur le même appareil ou la même plateforme.
-* La première application de diffusion en continu doit récupérer l’identifiant unique de la plateforme et inclure la payload `JWS` ou `JWE` dans l’en-tête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) pour toutes les requêtes qui la spécifient.
+* La première application de diffusion en continu doit récupérer l’identifiant unique de la plateforme et inclure la payload `JWS` ou `JWE` dans l’en-tête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) pour toutes les requêtes qui la spécifient.
 * La première application de diffusion en continu doit sélectionner un MVPD.
 * La première application de diffusion en continu doit lancer une session d’authentification pour se connecter avec le MVPD sélectionné.
 * La première application en flux continu doit s’authentifier auprès du MVPD sélectionné dans un agent utilisateur.
-* La deuxième application de diffusion en continu doit récupérer l’identifiant unique de la plateforme et inclure la payload `JWS` ou `JWE` dans l’en-tête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) pour toutes les requêtes qui la spécifient.
+* La deuxième application de diffusion en continu doit récupérer l’identifiant unique de la plateforme et inclure la payload `JWS` ou `JWE` dans l’en-tête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) pour toutes les requêtes qui le spécifient.
 
 >[!IMPORTANT]
 >
@@ -88,7 +88,7 @@ Suivez les étapes données pour implémenter le flux d’authentification par a
    >
    > <br/>
    > 
-   > Pour plus d’informations sur `Adobe-Subject-Token`’en-tête , consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`, consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md).
 
 1. **Indiquez l’action suivante :** la réponse du point d’entrée des sessions contient les données nécessaires pour guider la première application de diffusion en continu concernant l’action suivante.
 
@@ -156,7 +156,7 @@ Suivez les étapes données pour implémenter le flux d’authentification par a
    >
    > <br/>
    > 
-   > Pour plus d’informations sur `Adobe-Subject-Token`’en-tête , consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`, consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md).
 
 1. **Récupérer l’identifiant de la plateforme :** la deuxième application de diffusion en continu appelle le service d’identités ou la bibliothèque d’identités, en dehors des systèmes Adobe Pass, pour obtenir la payload `JWS` ou `JWE` associée à l’identifiant unique de la plateforme.
 
@@ -180,7 +180,7 @@ Suivez les étapes données pour implémenter le flux d’authentification par a
    >
    > <br/>
    > 
-   > Pour plus d’informations sur `Adobe-Subject-Token`’en-tête , consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`, consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md).
 
 1. **Rechercher un profil d’authentification unique :** le serveur Adobe Pass identifie un profil d’authentification unique valide en fonction des paramètres et des en-têtes reçus.
 
@@ -208,7 +208,7 @@ Suivez les étapes données pour implémenter le flux d’authentification par a
    >
    > <br/>
    > 
-   > Pour plus d’informations sur `Adobe-Subject-Token`’en-tête , consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`, consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md).
 
 ## Récupérer des décisions d’autorisation par authentification unique à l’aide de l’identité de la plateforme{#performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
@@ -217,7 +217,7 @@ Suivez les étapes données pour implémenter le flux d’authentification par a
 Avant d’exécuter le flux d’autorisation par authentification unique à l’aide d’une identité de plateforme, assurez-vous que les conditions préalables suivantes sont remplies :
 
 * La plateforme doit fournir un service d’identités ou une bibliothèque qui renvoie des informations cohérentes sous forme de payload `JWS` ou `JWE` pour toutes les applications sur le même appareil ou la même plateforme.
-* La deuxième application de diffusion en continu doit récupérer l’identifiant unique de la plateforme et inclure la payload `JWS` ou `JWE` dans l’en-tête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) pour toutes les requêtes qui la spécifient.
+* La deuxième application de diffusion en continu doit récupérer l’identifiant unique de la plateforme et inclure la payload `JWS` ou `JWE` dans l’en-tête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) pour toutes les requêtes qui le spécifient.
 * La deuxième application de diffusion en continu doit récupérer une décision d’autorisation avant de lire une ressource sélectionnée par l’utilisateur.
 
 >[!IMPORTANT]
@@ -226,7 +226,7 @@ Avant d’exécuter le flux d’autorisation par authentification unique à l’
 > 
 > <br/>
 > 
-> * La première application de diffusion en continu a effectué l’authentification et a inclus une valeur valide pour l’en-tête de requête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+> * La première application de diffusion en continu a effectué l’authentification et a inclus une valeur valide pour l’en-tête de requête [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md).
 
 ### Workflow {#workflow-scenario-performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
@@ -258,7 +258,7 @@ Suivez les étapes données pour implémenter le flux d’autorisation par le bi
    >
    > <br/>
    > 
-   > Pour plus d’informations sur `Adobe-Subject-Token`’en-tête , consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Reserved-Roku-Connect-Token`, consultez la documentation de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md).
 
 1. **Rechercher un profil d’authentification unique :** le serveur Adobe Pass identifie un profil d’authentification unique valide en fonction des paramètres et des en-têtes reçus.
 
