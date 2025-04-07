@@ -2,9 +2,9 @@
 title: Authentification Unique - Identité De La Plateforme - Flux
 description: API REST V2 - Authentification unique - Identité de plateforme - Flux
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1856'
+source-wordcount: '1855'
 ht-degree: 0%
 
 ---
@@ -128,7 +128,7 @@ Suivez les étapes données pour implémenter le flux d’authentification par a
 
    >[!TIP]
    >
-   > Suggestion : l’application de diffusion en continu peut attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil standard a bien été généré et enregistré.
+   > L’application de diffusion en continu doit attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil standard a bien été généré et enregistré.
 
 1. **Rechercher un profil normal :** le serveur Adobe Pass identifie un profil valide en fonction des paramètres et des en-têtes reçus.
 

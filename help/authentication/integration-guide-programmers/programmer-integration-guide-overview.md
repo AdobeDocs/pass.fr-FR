@@ -2,7 +2,7 @@
 title: Guide d’intégration du programmeur
 description: Guide d’intégration du programmeur
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -201,7 +201,7 @@ Les étapes suivantes décrivent les étapes de haut niveau dans le cas d’une 
 
 **FAQ**
 
-* [FAQ sur la phase d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
+* [Questions fréquentes sur la phase d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)
 
 >[!TIP]
 >
@@ -236,7 +236,7 @@ La phase de préautorisation peut améliorer l’expérience de l’utilisateur 
 
 **FAQ**
 
-* [FAQ sur la phase de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general).
+* [FAQ sur la phase de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
 
 >[!TIP]
 >
@@ -277,7 +277,7 @@ Les étapes suivantes décrivent les étapes de haut niveau :
 
 **FAQ**
 
-* [ FAQ sur la phase d’autorisation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general).
+* [FAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
 
 >[!TIP]
 >
@@ -297,7 +297,7 @@ L’objectif de la phase de déconnexion est de permettre à l’application cli
 
 **FAQ**
 
-* [FAQ sur la phase de déconnexion](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#logout-phase-faqs-general).
+* [FAQ sur la phase de déconnexion](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#logout-phase-faqs-general)
 
 #### Déconnexion unique (SLO) {#single-logout}
 

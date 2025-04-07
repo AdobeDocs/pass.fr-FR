@@ -1,9 +1,10 @@
 ---
 title: Liste de contrôle V2 de l’API REST
 description: Liste de contrôle V2 de l’API REST
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Mise en cache des jetons d’accès</i></td>
-      <td>Stockez les jetons d’accès dans un espace de stockage persistant et réutilisez-les jusqu’à leur expiration. Ne demandez pas de nouveau jeton pour chaque appel API REST v2.</td>
+      <td>Stockez les jetons d’accès dans un espace de stockage persistant et réutilisez-les jusqu’à leur expiration.<br/><br/>Ne demandez pas de nouveau jeton pour chaque appel API REST v2. Actualisez les jetons d’accès uniquement lorsqu’ils expirent.</td>
       <td>Risque de surcharger les ressources système, d’augmenter la latence et de déclencher potentiellement des réponses d’erreur HTTP 429 « Too many requests ».</td>
    </tr>
 </table>
@@ -85,7 +86,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Configuration du mécanisme d'interrogation</i></td>
-      <td>Configurez la fréquence du mécanisme d’interrogation dans les conditions suivantes :<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Authentification effectuée dans l’application principale (écran)</a></b><ul><li>L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Authentification effectuée dans une application secondaire (écran)</a></b><ul><li>L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes.</li></ul></td>
+      <td>Configurez la fréquence du mécanisme d’interrogation dans les conditions suivantes :<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Authentification effectuée dans l’application principale (écran)</a></b><ul><li>L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes ou plus.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Authentification effectuée dans une application secondaire (écran)</a></b><ul><li>L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes.</li></ul></td>
       <td>Risque de surcharger les ressources système, d’augmenter la latence et de déclencher potentiellement des réponses d’erreur HTTP 429 « Too many requests ».</td>
    </tr>
    <tr>
@@ -237,7 +238,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Validation des jetons d’accès</i></td>
-      <td>Vérifiez de manière proactive la validité du jeton d’accès et actualisez-le après expiration.<br/><br/>Assurez-vous que tout mécanisme de reprise permettant de gérer les erreurs HTTP 401 « Non autorisé » actualise d’abord le jeton d’accès avant de retenter la requête d’origine.</td>
+      <td>Vérifiez de manière proactive la validité du jeton d’accès pour l’actualiser après expiration.<br/><br/>Assurez-vous que tout mécanisme de reprise permettant de gérer les erreurs HTTP 401 « Non autorisé » actualise d’abord le jeton d’accès avant de retenter la requête d’origine.</td>
       <td>Risques déclenchant des réponses d’erreur HTTP 401 « Non autorisé », surchargeant les ressources système et augmentant la latence.</td>
    </tr>
 </table>

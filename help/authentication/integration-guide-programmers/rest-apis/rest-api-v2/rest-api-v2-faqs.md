@@ -2,9 +2,9 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '9697'
+source-wordcount: '9703'
 ht-degree: 0%
 
 ---
@@ -311,7 +311,7 @@ Les informations de profil de l’utilisateur sont récupérées avec succès, c
 
 **Session d’authentification et expiration du code**
 
-La session d’authentification et le code expirent, comme indiqué par la date et l’heure `notAfter` dans la réponse de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Si cela se produit, l’utilisateur ou l’utilisatrice doit redémarrer le processus d’authentification et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
+La session d’authentification et le code expirent, comme indiqué par l’horodatage `notAfter` (par exemple, 30 minutes) dans la réponse de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Si cela se produit, l’utilisateur ou l’utilisatrice doit redémarrer le processus d’authentification et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
 
 **Nouveau code d’authentification généré**
 
@@ -322,8 +322,8 @@ Si l’utilisateur demande un nouveau code d’authentification sur l’appareil
 Pour garantir l’efficacité et éviter les requêtes inutiles, l’application cliente doit configurer la fréquence du mécanisme d’interrogation dans les conditions suivantes :
 
 | **Authentification effectuée dans l’application principale (écran)** | **Authentification effectuée dans une application secondaire (écran)** |
-|----------------------------------------------------------------------|----------------------------------------------------------------------|
-| L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes. | L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes. |
+|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes ou plus. | L’application principale (de diffusion en continu) doit effectuer une interrogation toutes les 3 à 5 secondes ou plus. |
 
 #### 17. Quel est le nombre maximal de requêtes d’interrogation que l’application cliente peut envoyer ? {#authentication-phase-faq17}
 
@@ -526,7 +526,7 @@ L’application cliente doit valider le jeton de média avant de commencer la le
 
 Non.
 
-L’application cliente n’est pas tenue d’actualiser un jeton de média expiré pendant que le flux est en cours de lecture. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire la même ressource.
+L’application cliente n’est pas tenue d’actualiser un jeton de média expiré pendant que le flux est en cours de lecture. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire une ressource.
 
 #### 9. À quoi sert chaque attribut d’horodatage dans la décision d’autorisation ? {#authorization-phase-faq9}
 

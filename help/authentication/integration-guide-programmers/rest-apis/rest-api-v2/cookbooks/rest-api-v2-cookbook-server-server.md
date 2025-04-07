@@ -2,9 +2,9 @@
 title: Guide pas à pas API REST V2 (serveur à serveur)
 description: Guide pas à pas API REST V2 (serveur à serveur)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1578'
+source-wordcount: '2510'
 ht-degree: 0%
 
 ---
@@ -13,165 +13,331 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-L’objectif de ce guide pas à pas est de détailler les bonnes pratiques pour l’implémentation de l’authentification Adobe Pass à l’aide de l’API REST V2 dans une architecture de serveur à serveur. Il fournit des exigences de base, une implémentation étape par étape et des considérations générales pour les environnements de production et l’exploitation.
+Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) [ dans leurs applications de streaming avec une architecture de serveur à serveur (S2S).
 
-## Composants {#components}
+## Conditions préalables {#prerequisites}
 
-Dans une solution de serveur à serveur opérationnelle, les composants suivants sont impliqués :
+Pour connaître les termes et définitions, reportez-vous à la documentation [Glossaire de l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md).
+
+Pour connaître les exigences obligatoires et les pratiques recommandées, reportez-vous à la documentation de la [Liste de contrôle de l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md).
+
+Pour les questions fréquentes, reportez-vous à la documentation [FAQ sur l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md) .
+
+### Composants {#components}
+
+Avant de commencer, assurez-vous de bien comprendre les composants et termes suivants utilisés dans le workflow :
 
 | Type | Composant | Description |
-|---------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Appareil De Diffusion En Continu | Application de streaming | L’application Programmeur qui réside sur l’appareil de diffusion en continu de l’utilisateur et lit une vidéo authentifiée. |
-|                           | \[Facultatif\] Module AuthN | Si l’appareil de diffusion en continu dispose d’un agent utilisateur (c’est-à-dire un navigateur web), le module AuthN est chargé d’authentifier l’utilisateur sur l’IdP MVPD. |
-| \[Facultatif\] Périphérique AuthN | Application AuthN | Si l’appareil de diffusion en continu ne dispose pas d’un agent utilisateur (c’est-à-dire un navigateur web), l’application AuthN est une application web de programmation accessible à partir de l’appareil d’un utilisateur distinct à l’aide d’un navigateur web. |
-| Infrastructure du programmeur | Service de programmation | Service qui relie l’appareil de diffusion en continu au service Adobe Pass afin d’obtenir des décisions d’authentification et d’autorisation. |
-| Infrastructure d&#39;Adobe | Service Adobe Pass | Un service qui s’intègre aux services MVPD IdP et AuthZ et fournit des décisions d’authentification et d’autorisation. |
-| Infrastructure MVPD | IdP MVPD | Point d’entrée MVPD qui fournit un service d’authentification basé sur les informations d’identification pour valider l’identité de l’utilisateur. |
-|                           | Service MVPD AuthZ | Point d’entrée MVPD qui fournit des décisions d’autorisation basées sur les abonnements des utilisateurs, le contrôle parental, etc. |
+|---------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Infrastructure Adobe | Service Adobe Pass | S’intègre à l’IdP MVPD et au service AuthZ pour fournir des décisions d’authentification et d’autorisation. |
+| Infrastructure du programmeur | Service de programmation | Connecte l’appareil de diffusion en continu au service Adobe Pass pour obtenir des profils authentifiés et des décisions d’autorisation. |
+| Infrastructure MVPD | Service MVPD IdP | Point d’entrée MVPD responsable de l’authentification basée sur les informations d’identification, validant l’identité de l’utilisateur. |
+|                           | Service MVPD AuthZ | Point d’entrée MVPD qui détermine les décisions d’autorisation en fonction des abonnements des utilisateurs, du contrôle parental et d’autres règles de droits. |
+| Appareil De Diffusion En Continu | Application de streaming | Application du programmeur qui s’exécute sur l’appareil de diffusion en continu de l’utilisateur et lit du contenu vidéo authentifié. |
+|                           | (Facultatif) Module AuthN | Si l’appareil de diffusion en continu possède un user-agent (par exemple, un navigateur), le module AuthN gère l’authentification de l’utilisateur sur l’IdP MVPD. |
+| (Facultatif) Périphérique AuthN | Application AuthN | Si l’appareil de diffusion en continu ne dispose pas d’un user-agent (par exemple, un navigateur), l’application AuthN est une application web de programmation accessible à partir d’un appareil distinct via un navigateur web. |
 
-D’autres termes utilisés dans le flux sont définis dans le [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md).
+### Conditions requises {#requirements}
 
-Le diagramme suivant illustre l’ensemble du flux :
+Dans les implémentations serveur à serveur (S2S), l’application de diffusion en continu et le service de programmation doivent établir un protocole qui permet au service de programmation de :
+
+* Communiquez avec le service Adobe Pass au nom de l’application de diffusion en continu.
+
+* Collectez et transmettez un identifiant d’appareil unique pour l’appareil de diffusion en continu, comme l’exige l’en-tête [AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md).
+
+* Collectez et transmettez des informations précises sur l’appareil de diffusion en continu, y compris le port source et les détails spécifiques à l’appareil, comme l’exige l’en-tête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md).
+
+* Collectez et transmettez l’adresse IP de l’appareil de diffusion en continu comme l’exige l’en-tête X-Forwarded-For.
+
+* Stockez en toute sécurité des paramètres tels que l’identifiant de l’appareil, l’identifiant client et le secret client dans l’application de diffusion en continu ou le service de programmation.
+
+* Formatez et envoyez les données conformément aux MVPD et aux applications intégrées, y compris l’adresse IP de l’appareil, le port source, les informations spécifiques à l’appareil, le SMS et les identifiants facultatifs tels que l’ECID.
+
+* Conservez et gérez en toute sécurité les certificats partagés avec Adobe pour la transmission de métadonnées d’utilisateur chiffrées.
+
+* Respectez le profil d’authentification et la validité de la décision d’autorisation lors de la mise en cache, en veillant à ce que les états d’authentification et d’autorisation soient invalidés lorsque vous recevez une notification.
+
+* Renvoyez les décisions d’autorisation et les instructions pertinentes à l’application de streaming.
+
+### Environnements {#environments}
+
+Avant de lancer le workflow, veillez à conserver au moins deux environnements : Production et Évaluation.
+
+**Production**
+
+L’environnement de production doit être hautement disponible et mis à l’échelle de manière appropriée pour gérer les pics de trafic importants ou inattendus, tels que ceux causés par des événements sportifs en direct ou les dernières nouvelles.
+
+* Le service Adobe Pass fonctionne sur plusieurs centres de données géographiquement dispersés aux États-Unis afin d’optimiser les performances et de minimiser la latence.
+
+   * Le service de programmation doit adopter une stratégie d’infrastructure similaire, afin d’assurer des temps de réponse de faible latence de la part d’Adobe Pass.
+
+* Le programmeur doit fournir la plage d’adresses IP publique de son environnement de production.
+
+   * Ces adresses IP seront ajoutées à une liste autorisée dans l’infrastructure Adobe Pass.
+
+* Le service de programmation doit limiter la mise en cache DNS à un maximum de 30 secondes afin de permettre un réacheminement dynamique au cas où Adobe devrait rediriger le trafic en raison de l’indisponibilité d’un centre de données.
+
+**Évaluation**
+
+L’environnement d’évaluation peut être minimal mais doit refléter la production en incluant tous les composants système critiques et la logique commerciale.
+
+* Il doit permettre de tester les versions avant le déploiement en production.
+
+* Elle doit rester fonctionnellement similaire à la production, ce qui permet des tests réalistes.
+
+* Idéalement, l’environnement d’évaluation doit être connecté aux environnements de test Adobe Pass afin de :
+
+   * Permet aux programmeurs de tester l’infrastructure d’Adobe.
+
+   * Activez Adobe pour faciliter les tests et le dépannage si nécessaire.
+
+## Workflow {#workflow}
+
+Effectuez les étapes ci-dessous comme illustré dans le diagramme suivant.
 
 ![Guide pas à pas API REST V2 (serveur à serveur)](/help/authentication/assets/rest-api-v2/cookbooks/rest-api-v2-cookbook-server-to-server-diagram.png)
 
-### Procédure d’implémentation de l’API REST V2 dans une architecture serveur à serveur {#steps-to-implement-the-rest-api-v2-in-server-to-server-infrastructure}
-
-Pour mettre en œuvre l’API REST Adobe Pass V2, vous devez suivre les étapes ci-dessous, regroupées en phases.
-
-## 0. Prérequis {#prerequisites}
-
-Dans les implémentations de serveur à serveur, le service de programmation et d’application de diffusion en continu doit établir un protocole pour que le service de programmation puisse :
-
-* Identifiez de manière unique l’application de diffusion en continu sur l’appareil.
-* Agissez au nom de l’application de diffusion en continu et communiquez avec le service Adobe Pass.
-* Collectez et stockez des informations sur l’application en flux continu et l’appareil, telles que l’adresse IP, le port source et les informations sur l’appareil, afin de les transmettre à Adobe Pass.
-* Renvoyer les décisions et les instructions à l’application de diffusion en continu.
-
-Les paramètres tels que l’ID d’appareil, l’ID client, le secret client (défini ci-dessous) peuvent être stockés sur l’application de diffusion en continu ou le service de programmation.
+*Guide pas à pas API REST V2 (serveur à serveur)*
 
 ## A. Phase d&#39;enregistrement {#registration-phase}
 
+L’objectif de la phase d’enregistrement est d’enregistrer l’application de diffusion en continu par rapport à l’authentification Adobe Pass par le biais du processus d’enregistrement client dynamique (DCR).
+
+Le processus d’enregistrement client dynamique (DCR) nécessite que l’application de diffusion en continu obtienne une paire d’informations d’identification client et récupère un jeton d’accès en tant qu’objectif final de la phase d’enregistrement.
+
+La phase d’enregistrement est obligatoire, mais l’application de diffusion en continu peut ignorer cette phase si elle dispose d’une paire d’informations d’identification client mises en cache et d’un jeton d’accès toujours valides.
+
++++Articles connexes
+
+API :
+
+* [Récupérer les informations d’identification du client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+* [Récupérer le jeton d’accès](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+
+Flux :
+
+* [Flux d’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
+
+Questions fréquentes :
+
+* [FAQ sur la phase d&#39;enregistrement](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
+
++++
+
 ### Étape 1 : enregistrer votre application {#step-1-register-your-application}
 
-Pour que l’application puisse appeler l’API REST Adobe Pass V2, elle a besoin d’un jeton d’accès requis par la couche de sécurité de l’API.
+* Récupérer les informations d’identification du client : le service de programmation récupère les informations d’identification du client en appelant le point d’entrée [**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-Pour les implémentations serveur à serveur, le service de programmation peut s’enregistrer au nom d’une instance d’application, mais les valeurs des informations d’identification du client (identifiant client et secret client) doivent être obtenues pour chaque appareil de diffusion en continu.
+   * Le service de programmation ou l’application de programmation doivent stocker les informations d’identification du client et les utiliser indéfiniment lorsqu’ils doivent récupérer un jeton d’accès.
 
-Pour obtenir le jeton d’accès, le service de programmation peut agir au nom d’une application en flux continu et doit suivre les étapes décrites dans la documentation [Enregistrement dynamique de client](../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+
+* Récupérer le jeton d’accès : le service de programmation récupère le jeton d’accès en appelant le point d’entrée [**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+
+   * Le service ou l’application de programmation doit stocker et utiliser le jeton d’accès jusqu’à son expiration, puis le supprimer et en obtenir un nouveau.
 
 ## B. Phase d’authentification {#authentication-phase}
 
+La phase d’authentification a pour but de permettre à l’application de diffusion en continu de vérifier l’identité de l’utilisateur et d’obtenir des informations sur les métadonnées de l’utilisateur.
+
+La phase d’authentification agit comme une étape préalable à la phase de préautorisation ou à la phase d’autorisation lorsque l’application de streaming doit lire du contenu.
+
++++Articles connexes
+
+API
+
+* [Créer une session d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [Reprendre la session d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+* [Récupérer la session d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+* [Authentification dans l’agent utilisateur](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
+* [Récupération des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+* [Récupération du profil pour un fichier mvpd spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [Récupération du profil pour un code spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+
+Flux
+
+* [Flux d’authentification de base effectué dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+* [Flux d’authentification de base effectué dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+* [Flux de profils de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+* [Flux de profils de base exécuté dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Questions fréquentes
+
+* [Questions fréquentes sur la phase d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)
+
++++
+
 ### Étape 2 : vérifier les profils authentifiés existants {#step-2-check-for-existing-authenticated-profiles}
 
-Le service de programmation recherche les profils authentifiés existants `/api/v2/{serviceProvider}/profiles` pour le compte de l’application de diffusion en continu ([Récupérer les profils authentifiés](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)).
+* **Récupérer les profils :** le service de programmation recherche les profils existants pour le compte de l’application de streaming en appelant le point d’entrée [**/api/v2/{serviceProvider}/profiles**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md).
 
-* Si aucun profil n’a été trouvé et que l’application de diffusion en continu implémente un flux TempPass
-   * Consultez la documentation sur la mise en œuvre des [flux d’accès temporaires](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
-* Si aucun profil trouvé, l’application de diffusion en continu implémente un flux d’authentification
-   * <b>Étape 2.a :</b> le service de programmation récupère la liste des MVPD disponibles pour serviceProvider : <b>/api/v2/{serviceProvider}/configuration</b><br>
-([Récupérer la liste des fichiers MVPD disponibles](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
-   * Le service de programmation peut mettre en œuvre un filtrage sur la liste des MVPD et afficher uniquement les MVPD destinés à en masquer d&#39;autres (TempPass, MVPD de test, MVPD en cours de développement, etc.)
-   * Le service de programmation doit renvoyer une liste MVPD filtrée pour que l’application de diffusion en continu affiche le sélecteur . L’utilisateur sélectionne le MVPD.
-   * Une fois le MVPD sélectionné dans l’application de diffusion en continu, le service de programmation crée une session : <b>/api/v2/{serviceProvider}/sessions</b><br>
-([Créer une session d’authentification](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
-      * Un CODE et une URL à utiliser pour l’authentification sont renvoyés
-      * Si un profil est trouvé, le service de programmation peut passer à l’étape <a href="#preauthorization-phase">C. Phase de préautorisation </a>
-   * Le service de programmation doit renvoyer le CODE et l’URL à l’application de diffusion en continu
+
+* **Scénario 1 :** il existe des profils existants, le service de programmation peut passer à la [phase de préautorisation](#preauthorization-phase) ou à la [phase d’autorisation](#authorization-phase).
+
+
+* **Scénario 2 :** il n’existe aucun profil existant, le service de programmation peut passer à l’étape suivante pour [Authentifier l’utilisateur](#step-3-authenticate-the-user).
+
+
+* **Scénario 3 :** il n’existe aucun profil, le service de programmation peut procéder à la fourniture d’un accès temporaire à l’utilisateur par le biais de la fonctionnalité [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
+
+   * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) consultez la documentation [ Flux d’accès temporaires .
 
 ### Étape 3 : Authentifier l’utilisateur {#step-3-authenticate-the-user}
 
-Utilisation d’un navigateur ou d’une application web de deuxième écran :
+* **Récupérer la configuration :** le service de programmation récupère la liste des MVPD disponibles en appelant le point d’entrée [**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-* Option 1. L’application de diffusion en continu peut ouvrir un navigateur ou une vue web, charger l’URL pour l’authentification et l’utilisateur accède à la page de connexion de MVPD où les informations d’identification doivent être envoyées
-   * L’utilisateur saisit le nom d’utilisateur/mot de passe, la redirection finale affiche une page de réussite
-* Option 2. L’application de streaming ne peut pas ouvrir un navigateur et affiche simplement le CODE. <b>Une application web distincte, AuthN_APP, doit être développée</b> pour demander à l’utilisateur de saisir du CODE, de créer et d’ouvrir l’URL : <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
-   * L’utilisateur saisit le nom d’utilisateur/mot de passe, la redirection finale affiche une page de réussite
+   * Le service de programmation peut mettre en œuvre un mécanisme de filtrage personnalisé pour affiner la liste des MVPD à partir de la réponse de configuration, de sorte que l’application de diffusion en continu affiche uniquement les fournisseurs prévus tout en masquant les autres (par exemple, les MVPD en cours de développement, les MVPD de test, TempPass). Cela permet de s’assurer que les utilisateurs disposent d’une sélection organisée lors du choix de leur fournisseur de télévision.
+
+
+* **Créer une session d’authentification :** le service de programmation lance une session d’authentification en appelant le point d’entrée [**/api/v2/{serviceProvider}/sessions**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+
+   * Le service de programmation doit renvoyer les `code` et les `url` à l’application de diffusion en continu.
+
+
+* **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` d’authentification.
+
+   * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
+
+
+* **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Elle doit donc afficher le `code` d’authentification. Une application web distincte est nécessaire pour inviter l’utilisateur à saisir le `code`, à créer le `url` d’authentification et à l’ouvrir : [**/api/v2/authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
+
+   * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
 
 ### Étape 4 : rechercher des profils authentifiés {#step-4-check-for-authenticated-profiles}
 
-Le service de programmation vérifie que l’authentification auprès de MVPD doit se terminer dans le navigateur ou le deuxième écran
+* **Récupérer le profil pour un code spécifique :** le service de programmation doit implémenter un mécanisme d’interrogation à l’aide de l’`code` pour vérifier si le profil a été généré et enregistré avec succès en appelant le point d’entrée [**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md).
 
-* Une interrogation toutes les 15 secondes est recommandée le <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>
-([Récupérer des profils authentifiés pour des MVPD spécifiques](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
-   * Si la sélection MVPD n’est pas effectuée dans l’application de diffusion en continu, car le sélecteur MVPD est présenté dans l’application du deuxième écran, l’interrogation doit se produire avec CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
-([Récupérer des profils authentifiés pour un CODE spécifique](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
-* L’interrogation ne doit pas dépasser 30 minutes. Si 30 minutes sont atteintes et que l’application de diffusion en continu est toujours active, une nouvelle session doit être lancée et un nouveau CODE et une nouvelle URL seront renvoyés
-* Une fois l’authentification terminée, la valeur renvoyée est 200 avec le profil authentifié
-* Le service de programmation peut passer à l&#39;étape <a href="#preauthorization-phase">C. Phase de préautorisation </a>
+   * Le service de programmation doit **démarrer le mécanisme d’interrogation** dans les conditions suivantes :
 
-## C. Phase de préautorisation {#preauthorization-phase}
+      * **Authentification effectuée dans l’application principale (écran) :** le service de programmation doit lancer l’interrogation lorsque l’utilisateur atteint la page de destination finale, une fois que le composant de navigateur charge l’URL spécifiée pour le paramètre `redirectUrl` dans la requête de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+
+      * **Authentification effectuée dans une application secondaire (écran) :** l’application du service de programmation doit lancer l’interrogation dès que l’utilisateur lance le processus d’authentification, juste après avoir reçu la réponse du point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) et affiché le code d’authentification à l’utilisateur.
+
+   * Le service de programmation doit **arrêter le mécanisme d’interrogation** dans les conditions suivantes :
+
+      * **Authentification réussie :** les informations de profil de l’utilisateur sont récupérées avec succès, confirmant leur statut d’authentification. À ce stade, l’interrogation n’est plus nécessaire.
+
+      * **Session d’authentification et expiration du code :** la session d’authentification et le code expirent, comme indiqué par la date et l’heure `notAfter` (par exemple, 30 minutes) dans la réponse de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Si cela se produit, l’utilisateur ou l’utilisatrice doit redémarrer le processus d’authentification et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
+
+      * **Nouveau code d’authentification généré :** si l’utilisateur demande un nouveau code d’authentification sur l’appareil principal (écran), la session existante n’est plus valide et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
+
+   * Le service de programmation doit **configurer la fréquence du mécanisme d’interrogation** dans les conditions suivantes :
+
+      * **Authentification effectuée dans l’application principale (écran) :** le service de programmation doit effectuer une interrogation toutes les 3 à 5 secondes ou plus.
+
+      * **Authentification effectuée dans une application secondaire (écran) :** le service de programmation doit interroger toutes les 3 à 5 secondes ou plus.
+
+   * Le service de programmation doit mettre en cache certaines parties des informations de profil de l’utilisateur dans un stockage persistant afin d’éviter les requêtes inutiles et d’améliorer l’expérience de l’utilisateur.
+
+## C. Phase De Préautorisation (Facultatif) {#preauthorization-phase}
+
+L’objectif de la phase de préautorisation est de fournir à l’application de streaming la possibilité de présenter un sous-ensemble de ressources de son catalogue auxquelles l’utilisateur ou l’utilisatrice serait autorisé à accéder.
+
+La phase de préautorisation peut améliorer l’expérience de l’utilisateur lorsqu’il ouvre l’application de diffusion en continu pour la première fois ou accède à une nouvelle section.
+
+La phase de préautorisation n’est pas obligatoire, l’application de diffusion en continu peut ignorer cette phase si elle souhaite présenter un catalogue de ressources sans les filtrer au préalable en fonction des droits de l’utilisateur.
+
++++Articles connexes
+
+API
+
+* [Récupération des décisions de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+
+Flux
+
+* [Flux de préautorisation de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
+
+Questions fréquentes
+
+* [FAQ sur la phase de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+
++++
 
 ### Étape 5 : rechercher des ressources préautorisées {#step-5-check-for-preauthorized-resources}
 
-Avec un profil d’authentification valide pour un utilisateur, le service de programmation a la possibilité de vérifier l’accès aux vidéos disponibles et de transmettre la liste à l’application de diffusion en continu pour affichage.
+* **Récupérer les décisions de préautorisation :** le service de programmation récupère les décisions de préautorisation pour une liste de ressources en appelant le point d’entrée [**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md).
 
-* L’étape est facultative et exécutée si l’application souhaite filtrer les ressources non disponibles dans le package d’utilisateurs authentifiés
-* Appel à <b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
-([Récupérer la décision de préautorisation à l’aide d’un MVPD spécifique](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
+   * Le service de programmation doit transmettre la liste des décisions d’autorisation et de refus de préautorisation à l’application de diffusion en continu.
+
+   * Le service de programmation n’est pas nécessaire pour stocker les décisions de préautorisation dans un stockage persistant. Cependant, il est recommandé de mettre en cache les décisions d’autorisation en mémoire pour améliorer l’expérience de l’utilisateur. Cela permet d’éviter les appels inutiles de ressources déjà préautorisées, ce qui réduit la latence et améliore les performances.
+
+   * Le service de programmation peut déterminer la raison d’un refus de décision de préautorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent des informations sur la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+
+   * Le service de programmation peut obtenir une décision de préautorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 5, en raison des conditions imposées par les MVPD. Ce nombre maximal de ressources peut être consulté et modifié après accord avec les MVPD via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre entreprise ou par un représentant Adobe Pass Authentication agissant en votre nom.
 
 ## D. Phase d’autorisation {#authorization-phase}
 
+La phase d’autorisation a pour but de permettre à l’application de diffusion en continu de lire les ressources demandées par l’utilisateur après validation de ses droits avec MVPD.
+
+La phase d’autorisation est obligatoire, l’application de diffusion en continu ne peut pas ignorer cette phase si elle souhaite lire les ressources demandées par l’utilisateur, car elle doit vérifier auprès du MVPD que l’utilisateur a bien le droit de lire le flux avant de le publier.
+
++++Articles connexes
+
+API
+
+* [Récupérer les décisions d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+
+Flux
+
+* [Flux d’autorisation de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+
+Questions fréquentes
+
+* [FAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
+
++++
+
 ### Étape 6 : vérifier les ressources autorisées {#step-6-check-for-authorized-resources}
 
-L’application de diffusion en continu se prépare à lire une vidéo/ressource/ressource sélectionnée par l’utilisateur.
+* **Récupérer la décision d’autorisation :** le service de programmation récupère la décision d’autorisation pour une ressource spécifique transmise par l’application de diffusion en continu en appelant le point d’entrée [**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md).
 
-* L’étape est nécessaire pour chaque début de lecture
-* L’application de diffusion en continu transmet ces informations au service de programmation
-* Le service de programmation, au nom de l’application de diffusion en continu, appelle <b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
-([Récupérer une décision d’autorisation à l’aide d’un MVPD spécifique](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
-   * Décision = « Autoriser ». Le service de programmation demande à l’application de diffusion de démarrer la diffusion en continu.
-   * Décision = « Refuser », le service de programmation demande à l’application de diffusion en continu d’informer l’utilisateur qu’elle n’a pas accès à cette vidéo
-   * dans le processus, le service de programmation peut évaluer d’autres règles métier et renvoyer la décision appropriée à l’application de diffusion en continu
+   * Le service de programmation n’est pas nécessaire pour stocker les décisions d’autorisation dans un stockage persistant.
+
+   * Le service de programmation peut déterminer la raison d’un refus d’autorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée d’autorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application de diffusion en continu. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+
+   * Le service de programmation peut évaluer d&#39;autres règles métier et renvoyer une décision d&#39;autorisation appropriée à l&#39;application de streaming.
+
+   * Le service de programmation n’est pas nécessaire pour actualiser un jeton de média expiré pendant que le flux est en cours de lecture. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire une ressource.
+
+   * Le service de programmation peut obtenir une décision d’autorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 1, en raison des conditions imposées par les MVPD.
 
 ## E. Phase de déconnexion {#logout-phase}
 
+L’objectif de la phase de déconnexion est de permettre à l’application de diffusion en continu de mettre fin au profil authentifié de l’utilisateur dans l’authentification Adobe Pass à la demande de l’utilisateur.
+
+La phase de déconnexion est obligatoire, l’application de diffusion en continu doit permettre à l’utilisateur de se déconnecter.
+
++++Articles connexes
+
+API
+
+* [Lancer la déconnexion pour un fichier mvpd spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+
+Flux
+
+* [Flux de déconnexion de base effectué dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
+
+Questions fréquentes
+
+* [FAQ sur la phase de déconnexion](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#logout-phase-faqs-general)
+
++++
+
 ### Étape 7 : Déconnexion {#step-7-logout}
 
-Application en flux continu : l’utilisateur souhaite se déconnecter du MVPD
+* Lancer la déconnexion d’Adobe Pass : le service de programmation lance le flux de déconnexion comme demandé par l’application de diffusion en continu en appelant le point d’entrée [/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md).
 
-* L’application en flux continu informe le service de programmation qu’il doit se déconnecter du MVPD pour cette application spécifique.
-* Le service de programmation peut nettoyer les informations stockées sur l’utilisateur authentifié
-* Appel du service de programmation <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
-([Déconnexion d’un MVPD spécifique](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
-* Si la réponse actionType=&#39;interactive&#39; et l’URL sont présentes, le service de programmation renvoie l’URL à l’application de diffusion en continu
-* Selon les fonctionnalités existantes, l’application de diffusion en continu peut ouvrir l’URL dans le navigateur (généralement la même que celle utilisée pour l’authentification)
-* Si l’application de diffusion en continu n’a pas de navigateur ou s’il s’agit d’une instance différente de celle de l’authentification, le flux peut être arrêté, car la session MVPD n’a pas été conservée dans le cache du navigateur.
+   * Le service de programmation peut nettoyer toutes les informations qu’il stocke sur l’utilisateur authentifié.
 
-## Environnements et exigences fonctionnelles{#environments}
+   * Le service de programmation doit suivre les instructions fournies dans les attributs `actionName` et `actionType` de la réponse de point d’entrée de déconnexion pour s’assurer que le processus de déconnexion est correctement terminé.
 
-Un programmeur doit créer au moins deux environnements : un pour la production et un ou plusieurs pour l’évaluation.
+      * Si l’attribut `actionType` dans la réponse est défini sur « interactif », le service de programmation doit renvoyer la valeur de l’attribut `url` à l’application de diffusion en continu.
 
-### Production
+         * **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` de déconnexion.
 
-L’environnement de production doit être hautement disponible et dimensionné de manière appropriée en cas de pics importants ou inattendus (par exemple, sports en direct, actualités).
-
-Le service Adobe Pass s’exécute sur plusieurs centres de données géographiquement dispersés dans l’ensemble des États-Unis. Pour obtenir le meilleur temps de réponse (c’est-à-dire la latence la plus faible) à partir du service Adobe Pass, le programmeur doit également créer une infrastructure de service géographiquement dispersée similaire.
-
-Le service de programmation doit limiter le cache DNS à un maximum de 30 s au cas où l’Adobe devrait réacheminer le trafic. Cela peut se produire si un centre de données n’est plus disponible.
-
-Le programmeur doit fournir la plage d’adresses IP publique de l’environnement de production. Ils seront entrés dans une liste autorisée d’adresses IP dans l’infrastructure Adobe Pass pour l’accès et gérés par les politiques d’utilisation équitable des API d’Adobe.
-
-### Évaluation
-
-L’environnement d’évaluation peut être minimal, mais il doit inclure tous les composants système et la logique commerciale. Il doit fonctionner de la même manière que la production et permettre de tester les versions en dehors de la production. Idéalement, l’environnement d’évaluation peut être connecté aux environnements de test Adobe Pass pour être utilisé par le programmeur et par Adobe si nécessaire, afin que nous puissions vous aider à effectuer les tests et à résoudre les problèmes.
-
-### Exigences fonctionnelles
-
-Le service de programmation doit transmettre des informations d’identification d’appareil précises pour l’appareil pour lequel il exécute les flux. En outre, le service Programmer doit transmettre l’adresse IP de l’appareil pour lequel il exécute les flux (dans un en-tête x-forwarded-for) avec le port source de connexion (dans le champ informations sur l’appareil ) :
-
-Le service de programmation doit envoyer les données et le formatage requis par les MVPD individuels ou les applications intégrées (par exemple, l’adresse IP de l’appareil, le port source, les informations sur l’appareil, le MRSS, les données facultatives telles que l’ECID). <!--Please see the documentation for [Passing Device and Connection Information Cookbook](http://tve.helpdocsonline.com/passing-device-information-cookbook)-->.
-
-Le service de programmation doit respecter le profil d’authentification et la validité des décisions lors de la mise en cache et invalider les authentifications ou les décisions lorsqu’elles sont notifiées.
-
-Le service de programmation doit gérer les certificats partagés avec l’Adobe (pour les métadonnées utilisateur chiffrées).
-
-## Informations connexes {#related}
-
-* [Référence de l’API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
+         * **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Par conséquent, le processus de déconnexion peut être arrêté, car la session MVPD n’a pas été conservée dans le cache du navigateur d’un appareil de diffusion en continu.

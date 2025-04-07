@@ -2,9 +2,9 @@
 title: Manuel de l’authentification unique Apple (API REST V2)
 description: Manuel de l’authentification unique Apple (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3615'
+source-wordcount: '3609'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!TIP]
    >
-   > Suggestion : les informations d’identification du client doivent être mises en cache et peuvent être utilisées indéfiniment.
+   > Les informations d’identification du client doivent être mises en cache et utilisées indéfiniment.
 
 1. **Récupérer le jeton d’accès :** l’application de diffusion en continu rassemble toutes les données nécessaires pour récupérer le jeton d’accès en appelant le point d’entrée du jeton client.
 
@@ -109,7 +109,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!TIP]
    >
-   > Suggestion : le jeton d’accès doit être mis en cache et utilisé uniquement pendant la durée spécifiée (par exemple, durée de vie de 24 heures). Après son expiration, l’application de diffusion en continu doit demander un nouveau jeton d’accès.
+   > Le jeton d’accès doit être mis en cache et utilisé uniquement pendant la durée spécifiée (par exemple, durée de vie de 24 heures). Après son expiration, l’application de diffusion en continu doit demander un nouveau jeton d’accès.
 
 +++
 
@@ -391,7 +391,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!TIP]
    >
-   > Recommandation : L’application de diffusion en continu peut utiliser à la place une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons de l’actualiser lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan. Dans ce cas, l’application de diffusion en continu doit s’assurer qu’elle met en cache et utilise uniquement des valeurs valides pour le statut du framework du partenaire, comme décrit par l’étape « Renvoyer les informations de statut du framework du partenaire ».
+   > L’application de diffusion en continu peut utiliser à la place une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons d’actualiser cette valeur lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan. Dans ce cas, l’application de diffusion en continu doit s’assurer qu’elle met en cache et utilise uniquement des valeurs valides pour le statut du framework du partenaire, comme décrit par l’étape « Renvoyer les informations de statut du framework du partenaire ».
 
 1. **Renvoyer les informations de statut du framework du partenaire :** l’application de diffusion en continu valide les données de réponse pour s’assurer que les conditions de base sont remplies :
    * Le statut d’accès de l’autorisation utilisateur est accordé.
@@ -462,7 +462,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!TIP]
    >
-   > Recommandation : L’application de diffusion en continu peut utiliser à la place une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons de l’actualiser lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan. Dans ce cas, l’application de diffusion en continu doit s’assurer qu’elle met en cache et utilise uniquement des valeurs valides pour le statut du framework du partenaire, comme décrit par l’étape « Renvoyer les informations de statut du framework du partenaire ».
+   > L’application de diffusion en continu peut utiliser à la place une valeur mise en cache pour les informations de statut du framework du partenaire. Nous vous recommandons d’actualiser cette valeur lorsque l’application passe de l’état d’arrière-plan à l’état de premier plan. Dans ce cas, l’application de diffusion en continu doit s’assurer qu’elle met en cache et utilise uniquement des valeurs valides pour le statut du framework du partenaire, comme décrit par l’étape « Renvoyer les informations de statut du framework du partenaire ».
 
 1. **Renvoyer les informations de statut du framework du partenaire :** l’application de diffusion en continu valide les données de réponse pour s’assurer que les conditions de base sont remplies :
    * Le statut d’accès de l’autorisation utilisateur est accordé.

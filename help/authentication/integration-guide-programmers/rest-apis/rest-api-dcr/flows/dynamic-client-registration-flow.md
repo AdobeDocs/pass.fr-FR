@@ -1,117 +1,117 @@
 ---
-title: Flux d’enregistrement de client dynamique
-description: Flux d’enregistrement de client dynamique
+title: Flux d’enregistrement client dynamique
+description: Flux d’enregistrement client dynamique
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
 
-# Flux d’enregistrement de client dynamique {#dynamic-client-registration-flow}
+# Flux d’enregistrement client dynamique {#dynamic-client-registration-flow}
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
-> L’implémentation de l’API d’enregistrement de client dynamique est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md) .
+> L’implémentation de l’API d’enregistrement client dynamique est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
 ## Accès aux API protégées par Adobe Pass {#access-adobe-pass-protected-apis}
 
 ### Conditions préalables {#prerequisites-access-adobe-pass-protected-apis}
 
-Avant d’accéder aux API protégées par Adobe Pass, assurez-vous que les conditions préalables suivantes sont remplies :
+Avant d’accéder aux API protégées d’Adobe Pass, assurez-vous que les conditions préalables suivantes sont remplies :
 
-* Un représentant du client doit créer une application enregistrée comme décrit dans la section [Gérer les applications enregistrées](../dynamic-client-registration-overview.md#manage-registered-applications) .
-* Un représentant du client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [Gérer les instructions de logiciel](../dynamic-client-registration-overview.md#manage-software-statements) .
+* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [ Gérer les applications enregistrées ](../dynamic-client-registration-overview.md#manage-registered-applications).
+* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [ Gérer les instructions logicielles ](../dynamic-client-registration-overview.md#manage-software-statements).
 
 >[!IMPORTANT]
 >
-> Les SDK d’authentification Adobe Pass sont chargés d’obtenir et d’actualiser les informations d’identification du client et le jeton d’accès pour le compte de l’application cliente.
+> Les SDK d’authentification Adobe Pass sont chargés d’obtenir et d’actualiser les informations d’identification du client et le jeton d’accès au nom de l’application cliente.
 > 
 > Pour toutes les autres API protégées par Adobe Pass, l’application cliente doit suivre le workflow ci-dessous.
 
 ### Workflow {#workflow-access-adobe-pass-protected-apis}
 
-Suivez les étapes ci-dessous pour accéder aux API protégées par Adobe Pass, comme illustré dans le diagramme ci-dessous.
+Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, comme illustré dans le diagramme ci-dessous.
 
 ![Accès aux API protégées par Adobe Pass](../../../../assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
 
 *Accès aux API protégées par Adobe Pass*
 
-1. **Récupérer les informations d’identification du client :** L’application client rassemble toutes les données nécessaires pour récupérer les informations d’identification du client en appelant le point de terminaison de l’enregistrement du client.
+1. **Récupérer les informations d’identification du client :** l’application cliente rassemble toutes les données nécessaires pour récupérer les informations d’identification du client en appelant le point d’entrée du registre client.
 
    >[!IMPORTANT]
    >
-   > Pour plus d’informations sur :[](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)
+   > Consultez la documentation de l’API [Récupération des informations d’identification du client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request) pour plus d’informations sur :
    >
-   > * Tous les paramètres _requis_, comme `software_statement`
-   > * Tous les en-têtes _requis_, comme `Content-Type`, `X-Device-Info`
-   > * Tous les paramètres et en-têtes _optional_
+   > * Tous les paramètres _obligatoires_ comme `software_statement`
+   > * Tous les en-têtes _obligatoires_ tels que `Content-Type`, `X-Device-Info`
+   > * Tous les paramètres _facultatifs_ et en-têtes
 
-1. **Renvoi des informations d’identification du client :** La réponse du point de terminaison de l’enregistrement du client contient des informations sur les informations d’identification du client associées aux paramètres et en-têtes reçus.
+1. **Renvoyer les informations d’identification du client :** la réponse du point d’entrée du registre du client contient des informations sur les informations d’identification du client associées aux paramètres et en-têtes reçus.
 
    >[!IMPORTANT]
    >
-   > Pour plus d’informations sur les informations fournies dans une réponse aux informations d’identification du client, reportez-vous à la documentation de l’API [Récupérer les informations d’identification du client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success) .
+   > Consultez la documentation de l’API [Récupération des informations d’identification du client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success) pour plus d’informations sur les informations fournies dans une réponse d’informations d’identification du client.
    >
    > <br/>
    >
-   > Le registre du client valide les données de requête pour s’assurer que les conditions de base sont remplies :
+   > Le registre du client valide les données de la requête pour s’assurer que les conditions de base sont remplies :
    >
-   > * Les paramètres et en-têtes _required_ doivent être valides.
+   > * Les paramètres _obligatoire_ et les en-têtes doivent être valides.
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation de l’API [Récupérer les informations d’identification du client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupération des informations d’identification du client ](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
 
    >[!TIP]
    >
-   > Suggestion : les informations d’identification du client doivent être mises en cache et peuvent être utilisées indéfiniment.
+   > Les informations d’identification du client doivent être mises en cache et utilisées indéfiniment.
 
-1. **Récupérer le jeton d’accès :** L’application cliente rassemble toutes les données nécessaires pour récupérer le jeton d’accès en appelant le point d’entrée du jeton client.
-
-   >[!IMPORTANT]
-   >
-   > Pour plus d’informations sur :[](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request)
-   >
-   > * Tous les paramètres _required_, comme `client_id`, `client_secret` et `grant_type`
-   > * Tous les en-têtes _requis_, comme `Content-Type`, `X-Device-Info`
-   > * Tous les paramètres et en-têtes _optional_
-
-1. **Jeton d’accès de retour :** La réponse du point de terminaison du jeton client contient des informations sur le jeton d’accès associé aux paramètres et en-têtes reçus.
+1. **Récupérer le jeton d’accès :** l’application cliente rassemble toutes les données nécessaires pour récupérer le jeton d’accès en appelant le point d’entrée du jeton client.
 
    >[!IMPORTANT]
    >
-   > Pour plus d’informations sur les informations fournies dans une réponse de jeton d’accès, reportez-vous à la documentation de l’API [ Récupérer le jeton d’accès](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) .
+   > Consultez la documentation de l’API [ Récupération du jeton d’accès ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
+   >
+   > * Tous les paramètres _obligatoires_ tels que `client_id`, `client_secret` et `grant_type`
+   > * Tous les en-têtes _obligatoires_ tels que `Content-Type`, `X-Device-Info`
+   > * Tous les paramètres _facultatifs_ et en-têtes
+
+1. **Jeton d’accès de retour :** la réponse du point d’entrée du jeton client contient des informations sur le jeton d’accès associé aux paramètres et en-têtes reçus.
+
+   >[!IMPORTANT]
+   >
+   > Reportez-vous à la documentation de l’API [Récupérer le jeton d’accès](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) pour plus d’informations sur les informations fournies dans une réponse de jeton d’accès.
    >
    > <br/>
    >
-   > Le jeton client valide les données de requête pour s’assurer que les conditions de base sont remplies :
+   > Le jeton client valide les données de la requête pour s’assurer que les conditions de base sont remplies :
    >
-   > * Les paramètres et en-têtes _required_ doivent être valides.
+   > * Les paramètres _obligatoire_ et les en-têtes doivent être valides.
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation de l’API [Récupérer le jeton d’accès](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupérer le jeton d’accès ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >
-   > Suggestion : le jeton d’accès doit être mis en cache et utilisé uniquement pendant la durée spécifiée (par exemple, durée de vie de 24 heures). Une fois arrivé à expiration, l’application cliente doit demander un nouveau jeton d’accès.
+   > Le jeton d’accès doit être mis en cache et utilisé uniquement pendant la durée spécifiée (par exemple, durée de vie de 24 heures). Après son expiration, l’application cliente doit demander un nouveau jeton d’accès.
 
-1. **Poursuivez l’accès aux API protégées :** L’application cliente utilise le jeton d’accès pour accéder à d’autres API protégées par Adobe Pass. L’application cliente doit inclure le jeton d’accès dans l’en-tête de requête `Authorization` à l’aide du schéma d’authentification `Bearer` (c’est-à-dire `Authorization: Bearer <access_token>`).
+1. **Accéder aux API protégées :** l’application cliente utilise le jeton d’accès pour accéder à d’autres API protégées par Adobe Pass. L’application cliente doit inclure le jeton d’accès dans l’en-tête de requête `Authorization` à l’aide du schéma d’authentification `Bearer` (c’est-à-dire `Authorization: Bearer <access_token>`).
 
    >[!IMPORTANT]
    >
    > Les API protégées par Adobe Pass valident le jeton d’accès pour s’assurer que les conditions de base sont remplies :
    >
-   > * _access_token_ doit être valide.
-   > * _access_token_ doit être associé à un _client_id_ et un _client_secret_ valide.
-   > * _access_token_ doit être associé à une _software_statement_ valide.
+   > * Le _access_token_ doit être valide.
+   > * Le _jeton_d’accès_ doit être associé à un _client_id_ et un _client_secret_ valides.
+   > * Le _jeton_d’accès_ doit être associé à une _instruction_logicielle_ valide.
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires conformes à la documentation [Enhanced Error Codes](../../../features-standard/error-reporting/enhanced-error-codes.md).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui sont conformes à la documentation [Codes d’erreur améliorés](../../../features-standard/error-reporting/enhanced-error-codes.md).

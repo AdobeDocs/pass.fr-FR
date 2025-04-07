@@ -2,9 +2,9 @@
 title: Authentification Single Sign-On - Jeton De Service - Flux
 description: API REST V2 - Authentification unique - Jeton de service - Flux
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1858'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Suivez les étapes données pour implémenter le flux d’authentification par a
 
    >[!TIP]
    >
-   > Suggestion : l’application de diffusion en continu peut attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil standard a bien été généré et enregistré.
+   > L’application de diffusion en continu doit attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil standard a bien été généré et enregistré.
 
 1. **Rechercher un profil normal :** le serveur Adobe Pass identifie un profil valide en fonction des paramètres et des en-têtes reçus.
 

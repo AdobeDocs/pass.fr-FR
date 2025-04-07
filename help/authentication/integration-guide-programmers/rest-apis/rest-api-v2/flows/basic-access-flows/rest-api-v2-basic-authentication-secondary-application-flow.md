@@ -2,9 +2,9 @@
 title: Authentification de base - Application Secondaire - Flux
 description: API REST V2 - Authentification de base - Application Secondaire - Flux
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2010'
+source-wordcount: '2006'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!TIP]
    >
-   > Suggestion : l’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller d’en utiliser une nouvelle.
+   > L’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller d’en réessayer un nouveau.
 
 1. **Ouvrir l’URL dans l’agent utilisateur :** l’application secondaire ouvre un agent utilisateur pour charger l’`url` calculée par l’utilisateur lui-même et envoie une requête au point d’entrée d’authentification. Ce flux peut inclure plusieurs redirections et conduire finalement l’utilisateur à la page de connexion de MVPD et fournir des informations d’identification valides.
 
@@ -168,7 +168,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!TIP]
    >
-   > Suggestion : l’application de diffusion en continu peut implémenter un mécanisme d’interrogation à l’aide de l’`code` pour vérifier si le profil standard a bien été généré et enregistré.
+   > L’application de diffusion en continu doit implémenter un mécanisme d’interrogation à l’aide de l’`code` pour vérifier si le profil standard a bien été généré et enregistré.
 
 1. **Renvoyer des informations sur le profil normal :** la réponse de point d’entrée des profils contient des informations sur le profil normal associé aux paramètres et en-têtes reçus.
 
@@ -277,7 +277,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!TIP]
    >
-   > Suggestion : l’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller d’en utiliser une nouvelle.
+   > L’application secondaire peut informer les utilisateurs que le `code` utilisé n’est pas valide en cas de réponse d’erreur indiquant une session d’authentification manquante et leur conseiller d’en réessayer un nouveau.
 
 1. **Indiquer le profil existant :** la réponse du point d’entrée des sessions contient les données suivantes :
    * L’attribut `actionName` est défini sur « autoriser ».
@@ -306,7 +306,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!TIP]
    >
-   > Suggestion : l’application de diffusion en continu peut implémenter un mécanisme d’interrogation à l’aide de l’`code` pour vérifier si le profil standard a bien été généré et enregistré.
+   > L’application de diffusion en continu doit implémenter un mécanisme d’interrogation à l’aide de l’`code` pour vérifier si le profil standard a bien été généré et enregistré.
 
 1. **Renvoyer des informations sur le profil normal :** la réponse de point d’entrée des profils contient des informations sur le profil normal associé aux paramètres et en-têtes reçus.
 

@@ -2,9 +2,9 @@
 title: Flux d’accès temporaires
 description: API REST V2 - Flux d’accès temporaires
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3225'
+source-wordcount: '3223'
 ht-degree: 0%
 
 ---
@@ -355,7 +355,7 @@ Suivez les étapes données pour implémenter le flux d’autorisation lors de l
 
    >[!TIP]
    >
-   > Suggestion : L’application de streaming peut informer les utilisateurs et utilisatrices que le nombre maximal de ressources a été dépassé et leur conseiller de lancer un flux d’authentification de base à l’aide d’un MVPD classique pour continuer à regarder.
+   > L’application de diffusion en continu peut informer les utilisateurs que le nombre maximal de ressources a été dépassé et leur conseiller de lancer un flux d’authentification de base à l’aide d’un MVPD standard pour continuer à regarder.
 
 ## Récupérer les décisions d’autorisation lorsque le TempPass de base ou promotionnel expire {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
@@ -435,7 +435,7 @@ Suivez les étapes données pour implémenter le flux d’autorisation lorsque l
 
    >[!TIP]
    >
-   > Suggestion : L’application de streaming peut informer les utilisateurs et utilisatrices que l’accès temporaire a expiré et leur conseiller de lancer un flux d’authentification de base à l’aide d’un MVPD standard pour continuer à regarder.
+   > L’application de diffusion en continu peut informer les utilisateurs que l’accès temporaire a expiré et leur conseiller de lancer un flux d’authentification de base à l’aide d’un MVPD standard pour continuer à regarder.
 
 ## Récupération du profil pour le TempPass de base {#retrieve-profile-for-basic-temppass}
 

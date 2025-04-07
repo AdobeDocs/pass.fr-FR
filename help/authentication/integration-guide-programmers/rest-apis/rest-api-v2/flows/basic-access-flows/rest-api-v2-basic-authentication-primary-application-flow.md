@@ -2,9 +2,9 @@
 title: Authentification de base - Application en Principal - Flux
 description: API REST V2 - Authentification de base - Application en Principal - Flux
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -127,7 +127,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!TIP]
    >
-   > Suggestion : l’application de diffusion en continu peut attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil standard a bien été généré et enregistré.
+   > L’application de diffusion en continu doit attendre que l’agent utilisateur atteigne le `redirectUrl` fourni pour vérifier si le profil standard a bien été généré et enregistré.
 
 1. **Renvoyer des informations sur le profil normal :** la réponse de point d’entrée des profils contient des informations sur le profil normal associé aux paramètres et en-têtes reçus.
 
