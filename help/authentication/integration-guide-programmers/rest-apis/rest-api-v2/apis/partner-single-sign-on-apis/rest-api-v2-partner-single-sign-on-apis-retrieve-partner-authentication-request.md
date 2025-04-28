@@ -2,7 +2,7 @@
 title: Récupérer la demande d’authentification du partenaire
 description: API REST V2 - Récupération de la demande d’authentification du partenaire
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 0%
@@ -307,7 +307,7 @@ ht-degree: 0%
                     <ul>
                         <li><b>type</b><br/>Indique le type de protocole pris en charge par le MVPD (SAML uniquement).</li>
                         <li><b>request</b><br/>Requête SAML.</li>
-                        <li><b>attributes</b><br/>Attributs de requête SAML.</li>
+                        <li><b>attributesNames</b><br/>Attributs de requête SAML.</li>
                     </ul>
                </td>
                <td>facultatif</td>
