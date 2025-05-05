@@ -55,7 +55,7 @@ L’exemple de code suivant montre comment découvrir et afficher le fournisseur
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer"> 
+        <a href="http://www.adobe.com/go/getflashplayer_fr"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

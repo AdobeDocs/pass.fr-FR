@@ -295,7 +295,7 @@ accessEnablerApi.preauthorize(request, callback);
     « status »: 403,
     « code »: « preauthorization_deny_by_mvpd »,
     « message »: « Le MVPD a renvoyé une décision \« Deny\ » lors de la demande de préautorisation pour la ressource spécifiée. »,
-    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « none »
     &rbrace;
     &rbrace;,
@@ -366,7 +366,7 @@ accessEnablerApi.preauthorize(request, callback);
     « status »: 403,
     « code »: « preauthorization_deny_by_mvpd »,
     « message »: « Le MVPD a renvoyé une décision \« Deny\ » lors de la demande de préautorisation pour la ressource spécifiée. »,
-    « Url »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « Url »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « none »
     &rbrace;
     &rbrace;,
@@ -376,7 +376,7 @@ accessEnablerApi.preauthorize(request, callback);
     « status »: 403,
     « code »: « preauthorization_deny_by_mvpd »,
     « message »: « Le MVPD a renvoyé une décision \« Deny\ » lors de la demande d&#39;autorisation préalable pour la ressource spécifiée. »,
-    « Url »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « Url »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « none »
     &rbrace;
     &rbrace;,
@@ -388,7 +388,7 @@ accessEnablerApi.preauthorize(request, callback);
      
      
     « message »: « La demande n&#39;a pas été effectuée dans le délai maximum autorisé. Réessayer la requête peut résoudre le problème. »,
-    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « retry »
     &rbrace;
     &rbrace;
@@ -423,7 +423,7 @@ accessEnablerApi.preauthorize(request, callback);
     « code »: « internal_error »,
     « message »: « La demande a échoué en raison d’une erreur interne. »,
     « details »: « Le paramètre de chaîne obligatoire[] &#39;resource&#39; n’est pas présent »,
-    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « none »
     &rbrace;,
     « decisions »: []
@@ -455,7 +455,7 @@ accessEnablerApi.preauthorize(request, callback);
     « status »: 412,
     « code »: « missing_resource »,
     « message »: « The resource parameter is missing »,
-    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « none »
     &rbrace;,
     « decisions »: []
@@ -491,7 +491,7 @@ accessEnablerApi.preauthorize(request, callback);
     « status »: 403,
     « code »: « network_received_error »,
     « message »: « Une erreur de lecture s’est produite lors de la récupération de la réponse du service partenaire associé. Réessayer la requête peut résoudre le problème. »,
-    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « retry »
     &rbrace;
     &rbrace;,
@@ -502,7 +502,7 @@ accessEnablerApi.preauthorize(request, callback);
     « status »: 403,
     « code »: « network_received_error »,
     « message »: « Une erreur de lecture s&#39;est produite lors de la récupération de la réponse du service partenaire associé. Réessayer la requête peut résoudre le problème. »,
-    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html »,
+    « helpUrl »: « https://experienceleague.adobe.com/docs/primetime/authentication/home.html?lang=fr »,
     « action »: « retry »
     &rbrace;
     &rbrace;

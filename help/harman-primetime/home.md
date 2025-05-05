@@ -21,7 +21,7 @@ Harman gère les produits de publicité et de publication Primetime, tandis qu�
 
 | Guide | Description |
 |--- |--- |
-| [Ad Insertion dynamique Primetime](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html) | Aide pour Adobe Pass Ad Insertion |
+| [Ad Insertion dynamique Primetime](https://experienceleague.adobe.com/docs/primetime/ad-insertion/home.html?lang=fr) | Aide pour Adobe Pass Ad Insertion |
 
 ## Guides Adobe Pass
 
