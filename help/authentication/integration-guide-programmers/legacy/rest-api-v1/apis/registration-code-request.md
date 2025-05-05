@@ -81,7 +81,7 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-<br>
+><br>
 
 ### JSON de réponse
 

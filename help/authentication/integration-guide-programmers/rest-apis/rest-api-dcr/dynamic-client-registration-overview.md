@@ -53,7 +53,7 @@ Pour en savoir plus sur la gestion et l’utilisation de l’enregistrement clie
 
 Le processus de gestion de l’enregistrement dynamique des clients permet aux applications clientes s’exécutant sur des plateformes spécifiques et ayant besoin d’accéder à des API d’authentification Adobe Pass spécifiques pour s’enregistrer via le tableau de bord [Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication).
 
-Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [](../../../user-guide-tve-dashboard/tve-dashboard-overview.md).
+Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [&#128279;](../../../user-guide-tve-dashboard/tve-dashboard-overview.md).
 
 Si vous avez accès au tableau de bord [Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication), suivez les étapes des sections ci-dessous pour créer une application enregistrée et télécharger la déclaration du logiciel.
 

@@ -29,7 +29,7 @@ Commencez par cette section si vous travaillez sur une application qui doit int�
 
 ### FAQ sur l’accès à l’API REST V2 {#rest-api-v2-access-faqs}
 
-Questions fréquentes sur l’accès à l’API +++REST V2
++++Questions fréquentes sur l’accès à l’API REST V2
 
 #### 1. Quel est l&#39;objectif de la phase d&#39;enregistrement ? {#rest-api-v2-access-faq1}
 
@@ -133,7 +133,7 @@ Passez à cette section si vous travaillez sur une application qui doit migrer u
 
 ### FAQ sur la migration vers la version 2 de l’API REST {#rest-api-v2-migration-faqs}
 
-FAQ sur la migration vers +++REST API V2
++++FAQ sur la migration vers REST API V2
 
 #### 1. L’application cliente peut-elle réutiliser les applications enregistrées existantes (déclarations de logiciel) ? {#rest-api-v2-migration-faq1}
 

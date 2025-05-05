@@ -85,6 +85,6 @@ L’équipe d’authentification d’Adobe Pass fournit une documentation compl�
 
 ## Accès à l’outil de gestion de la configuration {#access-configuration-management-tool}
 
-**L’Adobe permet d’accéder** par le biais du tableau de bord TVE d’Adobe Pass, à un outil en libre-service de gestion de votre configuration et de vos données](https://experience.adobe.com/pass/authentication).[
+**L’Adobe permet d’accéder** par le biais du tableau de bord TVE d’Adobe Pass, à un outil en libre-service de gestion de votre configuration et de vos données[&#128279;](https://experience.adobe.com/pass/authentication).
 
 L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [ Guide de l’utilisateur pour le tableau de bord TVE ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.

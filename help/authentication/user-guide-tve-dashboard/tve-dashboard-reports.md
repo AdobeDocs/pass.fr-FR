@@ -115,7 +115,7 @@ Pour en savoir plus sur le partage du type d’appareil souhaité, tel que **Rok
 
 >[!IMPORTANT]
 >
-> Les données agrégées sont basées sur la configuration spécifique de chaque environnement d’authentification Adobe Pass. Lorsque vous basculez entre différents environnements de tableaux de bord TVE, attendez-vous à des variations dans les données entre les rapports. Pour en savoir plus](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md) consultez [Environnements d’authentification Adobe Pass .
+> Les données agrégées sont basées sur la configuration spécifique de chaque environnement d’authentification Adobe Pass. Lorsque vous basculez entre différents environnements de tableaux de bord TVE, attendez-vous à des variations dans les données entre les rapports. Pour en savoir plus[&#128279;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md) consultez Environnements d’authentification Adobe Pass .
 
 ## Sélection de canaux et de MVPD spécifiques {#selecting-specific-channels-mvpds}
 

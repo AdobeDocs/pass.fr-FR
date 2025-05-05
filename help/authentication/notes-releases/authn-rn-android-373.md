@@ -26,7 +26,7 @@ Date De Publication : **09/19/2023**
 ## Présentation de la version {#release-overview-373}
 
 * Modifications pour prendre en charge Android 14 et les applications ciblant le niveau API 34
-   * Ajoutez l&#39;indicateur requis par les récepteurs de diffusions enregistrés à l&#39;exécution d&#39;Android 14 [](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
+   * Ajoutez l&#39;indicateur requis par les récepteurs de diffusions enregistrés à l&#39;exécution d&#39;Android 14 [&#128279;](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
 * Correction de l’absence d’ouverture de ChromeCustomTabs pour la connexion à MVPD sur l’API d’émulateur 32+
    * Remarque : une solution à ce problème sur SDK &lt;3.7.3 consiste à ouvrir l’application Chrome sur l’émulateur et à terminer sa configuration avant d’essayer d’ouvrir une session MVPD
 

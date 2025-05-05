@@ -130,12 +130,13 @@ est autorisé à afficher.
    a. Appelez [`init`](#$init) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
    * **Dépendance :** Bibliothèque iOS/tvOS native d’authentification Adobe Pass (AccessEnabler)
 
-   b. Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations](#create_dev) consultez la [documentation relative à Clientless .
+   b. Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations[&#128279;](#create_dev) consultez la documentation relative à Clientless .
 
    * **Dépendance :** ID de demandeur d’authentification Adobe Pass valide (utilisez votre compte d’authentification Adobe Pass)
 Manager pour organiser cela).
 
    * **Triggers:**
+
      Rappel [setRequestorComplete()](#$setReqComplete).
 
    >[!NOTE]

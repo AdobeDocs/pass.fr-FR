@@ -33,7 +33,7 @@ L’authentification est un processus qui permet à un utilisateur de prouver so
 
 Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [ session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
 
-Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [](#primary-application) ou une application (programmeur) Secondaire [](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
+Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [&#128279;](#primary-application) ou une application (programmeur) Secondaire [&#128279;](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
 
 Synonyme de l&#39;ancien terme utilisé code d&#39;enregistrement.
 

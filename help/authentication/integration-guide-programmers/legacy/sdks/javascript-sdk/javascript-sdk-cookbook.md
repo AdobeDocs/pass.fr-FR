@@ -86,7 +86,7 @@ Le paramètre mvpds est un tableau de fournisseurs disponibles pour l’utilisat
 
 - `selectedProvider(mvpd)`
 
-  **Trigger:** [`getSelectedProvider()`](#$getSelProv Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par
+  **Trigger:** [`getSelectedProvider()`] (#$getSelProv Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par
 l’utilisateur .
 
 - `setMetadataStatus(metadata, key, arguments)`

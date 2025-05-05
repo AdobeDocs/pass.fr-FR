@@ -171,7 +171,7 @@ Le service Programmer doit transmettre des informations d’identification d’a
     
     
     
-    L’en-tête doit être ajouté sur **regcode** et **authorize**appels
+    L’en-tête doit être ajouté sur **regcode** et **authorize**&#x200B;appels
     
     Exemples :
     

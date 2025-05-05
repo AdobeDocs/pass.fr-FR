@@ -34,6 +34,7 @@ Suivez les étapes des sections ci-dessous pour y accéder.
    3. Accédez à l’onglet *Applications enregistrées*
    4. Sélectionner une application
    5. Cliquez sur Télécharger sur la ligne de l’application enregistrée pour laquelle vous souhaitez obtenir un relevé logiciel et enregistrez-le sous forme de fichier sur votre ordinateur local.
+
       <figure>
           <img src="assets/programmer-download-software-statement-button.png"
                alt="Télécharger le relevé logiciel">
@@ -46,6 +47,7 @@ Suivez les étapes des sections ci-dessous pour y accéder.
 
 3. Obtention du jeton d’accès
    1. Obtenez les informations d’identification du client à l’aide de l’instruction logicielle obtenue ci-dessus et effectuez l’appel ci-dessous. De cette manière, une paire client_id - client_secret sera obtenue, qui peut être utilisée pour obtenir le jeton d’accès.
+
       *Cette étape ne doit pas être effectuée à chaque fois. Cela ne doit être fait que lorsque les informations d’identification expirent.*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
@@ -53,6 +55,7 @@ Suivez les étapes des sections ci-dessous pour y accéder.
        </figure>
 
    2. Obtenez un jeton d’accès à l’aide de l’appel ci-dessous. Utilisez ce jeton d’accès pour appeler toute API CMU jusqu’à ce que le jeton expire.
+
       *Cette étape ne doit être effectuée que si le dernier jeton généré a expiré.*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"

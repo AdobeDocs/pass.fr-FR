@@ -178,7 +178,7 @@ En cas de réussite, crée et stocke un jeton d’authentification pour l’util
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Description :** cette méthode est utilisée par l’application pour vérifier le statut d’autorisation du client actuel et de la ressource donnée. Il commence par vérifier d’abord le statut de l’authentification. Si elle n’est pas authentifiée, le rappel tokenRequestFailed() est déclenché et la méthode se ferme. Si l’utilisateur est authentifié, cela déclenche également le flux d’autorisation. Voir les détails sur la méthode [getAuthorization()](#getAuthZ.
+**Description :** cette méthode est utilisée par l’application pour vérifier le statut d’autorisation du client actuel et de la ressource donnée. Il commence par vérifier d’abord le statut de l’authentification. Si elle n’est pas authentifiée, le rappel tokenRequestFailed() est déclenché et la méthode se ferme. Si l’utilisateur est authentifié, cela déclenche également le flux d’autorisation. Voir les détails sur la méthode [getAuthorization()] (#getAuthZ.
 
 >[!TIP]
 >
@@ -415,7 +415,7 @@ Vous devez implémenter ces rappels pour gérer les réponses à vos appels de r
 
 **Description :** implémentez ce rappel si l’utilisateur a sélectionné un MVPD qui nécessite un iFrame pour afficher l’interface utilisateur de sa page de connexion d’authentification.
 
-**Déclenché par :**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Déclenché par :**&#x200B;[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Haut de la page](#top)
 

@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) [ dans leurs applications de streaming avec une architecture de serveur à serveur (S2S).
+Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)  dans leurs applications de streaming avec une architecture de serveur à serveur (S2S).
 
 ## Conditions préalables {#prerequisites}
 
@@ -185,7 +185,7 @@ Questions fréquentes
 
 * **Scénario 3 :** il n’existe aucun profil, le service de programmation peut procéder à la fourniture d’un accès temporaire à l’utilisateur par le biais de la fonctionnalité [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) consultez la documentation [ Flux d’accès temporaires .
+   * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) consultez la documentation  Flux d’accès temporaires .
 
 ### Étape 3 : Authentifier l’utilisateur {#step-3-authenticate-the-user}
 

@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Prise en charge de SFSafariViewController sur iOS SDK 3.2+ {#sfsafariviewcontroller-support-on-ios-sdk-3.2} (héritée)
+# Prise en charge de SFSafariViewController sur iOS SDK 3.2+ (héritée) {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
 >

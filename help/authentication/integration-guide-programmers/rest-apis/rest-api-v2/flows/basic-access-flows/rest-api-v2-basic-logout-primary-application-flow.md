@@ -61,7 +61,7 @@ Suivez les étapes ci-dessous pour mettre en oeuvre le flux de déconnexion de b
 
    >[!IMPORTANT]
    >
-   > Pour plus d’informations sur :[](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+   > Pour plus d’informations sur :[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
    >
    > * Tous les paramètres _required_, comme `serviceProvider`, `mvpd` et `redirectUrl`
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`
@@ -127,7 +127,7 @@ Suivez les étapes données pour mettre en oeuvre le flux de déconnexion de bas
 
    >[!IMPORTANT]
    >
-   > Pour plus d’informations sur :[](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+   > Pour plus d’informations sur :[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
    >
    > * Tous les paramètres _required_, comme `serviceProvider`, `mvpd` et `redirectUrl`
    > * Tous les en-têtes _requis_, comme `Authorization`, `AP-Device-Identifier`

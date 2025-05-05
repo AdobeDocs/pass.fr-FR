@@ -47,7 +47,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 * [`setOptions:options:`](#setOptions) - Configure les options SDK globales telles que le profil ou l’identifiant visiteur.
 
-* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Établit l’identité du programmeur.
+* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Établit l’identité du programmeur.
 
 * **[OBSOLÈTE]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Établit l’identité du programmeur.
 
@@ -59,7 +59,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 * [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) - Démarre le workflow d’authentification complet.
 
-* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) - Démarre le processus d’authentification complet.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) - Démarre le processus d’authentification complet.
 
 * [`displayProviderDialog:`](#dispProvDialog) - Indique à votre application d’instancier les éléments d’interface utilisateur appropriés pour que l’utilisateur puisse sélectionner un MVPD.
 
@@ -716,7 +716,7 @@ Comme le contrôleur UIWebView/WKWebView` `Controller passe par plusieurs redire
 
 Tout comme le rappel `navigateToUrl:`, le `navigateToUrl:useSVC:` est déclenché par AccessEnabler pour demander à votre application d’instancier un contrôleur de `SFSafariViewController` et de charger l’URL fournie dans le paramètre **`url`** du rappel. Le rappel transmet le paramètre **`url`** qui représente l’URL du point d’entrée d’authentification ou l’URL du point d’entrée de déconnexion, ainsi que le paramètre **`useSVC`** qui spécifie que l’application doit utiliser un `SFSafariViewController`.
 
-Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirections, votre application doit surveiller l&#39;activité du contrôleur et détecter le moment où il charge une URL personnalisée spécifique définie par votre `application's custom scheme` (par exemple ** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Il doit être interprété par votre application uniquement comme un signal indiquant que l’authentification ou le flux de déconnexion est terminé et qu’il est sûr de fermer le contrôleur. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le `SFSafariViewController` et appeler la méthode `handleExternalURL:url `API d&#39;AccessEnabler.
+Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirections, votre application doit surveiller l&#39;activité du contrôleur et détecter le moment où il charge une URL personnalisée spécifique définie par votre `application's custom scheme` (par exemple **&#x200B; **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Il doit être interprété par votre application uniquement comme un signal indiquant que l’authentification ou le flux de déconnexion est terminé et qu’il est sûr de fermer le contrôleur. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le `SFSafariViewController` et appeler la méthode `handleExternalURL:url `API d&#39;AccessEnabler.
 
 **Remarque :** Notez que dans le cas du flux d’authentification, il s’agit d’un point où l’utilisateur a la possibilité d’appuyer sur le bouton « Précédent », ce qui équivaut à l’abandon du flux d’authentification. Dans un tel scénario, votre application doit appeler la méthode [setSelectedProvider:](#setSelProv) en transmettant **`nil`** comme paramètre et en donnant une chance à AccessEnabler de réinitialiser son ordinateur d&#39;état d&#39;authentification.
 
@@ -732,19 +732,19 @@ Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirection
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**Disponibilité :**v 3.2+
+**Disponibilité :**&#x200B;v 3.2+
 
 **Paramètres** :
 
 * *url :* URL pointant vers la page de connexion de MVPD
 * *useSVC :* si l’URL doit être chargée dans SFSafariViewController.
 
-**Déclenché par:**[ setOptions:](#setOptions) avant [setSelectedProvider:](#setSelProv)
+**Déclenché par:**&#x200B;[ setOptions:](#setOptions) avant [setSelectedProvider:](#setSelProv)
 
 [Haut de la page...](#apis)
 

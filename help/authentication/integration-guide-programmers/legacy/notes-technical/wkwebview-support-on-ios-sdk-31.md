@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Prise en charge de WKWebView sur iOS SDK 3.1+ {#wkwebview-support-on-ios-sdk-3.1} (héritée)
+# Prise en charge de WKWebView sur iOS SDK 3.1+ (héritée) {#wkwebview-support-on-ios-sdk-3.1}
 
 >[!NOTE]
 >

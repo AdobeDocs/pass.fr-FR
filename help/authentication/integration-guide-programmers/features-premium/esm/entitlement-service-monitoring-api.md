@@ -22,7 +22,7 @@ ht-degree: 1%
 > * Obtenez les informations d’identification du client comme décrit dans la documentation de l’API [Récupération des informations d’identification du client](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 > * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
 >
-> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle](../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) reportez-vous à la documentation [Présentation de l’enregistrement du client dynamique.
+> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle[&#128279;](../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) reportez-vous à la documentation Présentation de l’enregistrement du client dynamique.
 
 ## Présentation de l’API {#api-overview}
 
