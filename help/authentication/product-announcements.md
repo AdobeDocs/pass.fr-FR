@@ -2,9 +2,9 @@
 title: Annonces de produit
 description: Annonces de produit
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: 13b0bb640aa599109e8c2f68d1e16fbdc3840951
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '793'
 ht-degree: 2%
 
 ---
@@ -33,6 +33,7 @@ Cette section compile les références à l’historique des versions et aux not
 
 | Notes de mise à jour | Dates |
 |-----------------------------------------------------------------------------------------------------------|-------------------------|
+| [Notes de mise à jour de l’authentification Adobe Pass 3.2.0](notes-releases/auth-rn-320.md) | 06/10/2025 - 06/12/2025 |
 | [Notes de mise à jour de l’authentification Adobe Pass 3.1.0](notes-releases/auth-rn-310.md) | 02/25/2025 - 02/27/2025 |
 | [Notes de mise à jour de la version 4.7.1 de JavaScript SDK Authentication Adobe Pass](notes-releases/authn-rn-javascript-471.md) | 02/25/2025 - 02/27/2025 |
 
