@@ -12,10 +12,10 @@ ht-degree: 0%
 
 # Liste MVPD des adresses IP
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de .
->> Adobe. Aucune utilisation non autorisée n’est autorisée.
+>&#x200B;> Adobe. Aucune utilisation non autorisée n’est autorisée.
 
 Pour une intégration de l’authentification MVPD/Adobe Pass , certaines adresses IP doivent être autorisées dans un pare-feu MVPD. Il s’agit des
 Adresses IP sortantes :
