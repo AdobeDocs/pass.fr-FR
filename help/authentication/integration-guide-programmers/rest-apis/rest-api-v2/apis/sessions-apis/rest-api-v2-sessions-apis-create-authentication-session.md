@@ -2,9 +2,9 @@
 title: Créer une session d’authentification
 description: API REST V2 - Créer une session d’authentification
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1064'
 ht-degree: 1%
 
 ---
@@ -316,12 +316,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Date et heure auxquelles le code d’authentification n’est pas valide.</td>
+               <td>Date et heure, en millisecondes, avant lesquelles le code d’authentification n’est pas valide.</td>
                <td>facultatif</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Date et heure après lesquelles le code d’authentification n’est pas valide.</td>
+               <td>Date et heure en millisecondes au-delà desquelles le code d’authentification n’est pas valide.</td>
                <td>facultatif</td>
             </tr>
 </table>
@@ -361,7 +361,7 @@ ht-degree: 1%
 
 ## Exemples {#samples}
 
-### 1. Créer une session d’authentification sans paramètres manquants
+### &#x200B;1. Créer une session d’authentification sans paramètres manquants
 
 >[!BEGINTABS]
 
@@ -405,7 +405,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Créer une session d’authentification avec des paramètres manquants
+### &#x200B;2. Créer une session d’authentification avec des paramètres manquants
 
 >[!BEGINTABS]
 
@@ -447,7 +447,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Créer une session d’authentification lorsqu’un profil valide existe déjà
+### &#x200B;3. Créer une session d’authentification lorsqu’un profil valide existe déjà
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Créer une session d’authentification à l’aide du TempPass de base ou promotionnel (non requis)
+### &#x200B;4. Créer une session d’authentification à l’aide du TempPass de base ou promotionnel (non requis)
 
 >[!BEGINTABS]
 
@@ -529,7 +529,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Créer une session d’authentification lorsque la dégradation est appliquée
+### &#x200B;5. Créer une session d’authentification lorsque la dégradation est appliquée
 
 >[!BEGINTABS]
 

@@ -2,9 +2,9 @@
 title: Reprendre la session d’authentification
 description: API REST V2 - Reprendre la session d’authentification
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
@@ -280,12 +280,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Date et heure auxquelles le code d’authentification n’est pas valide.</td>
+               <td>Date et heure, en millisecondes, avant lesquelles le code d’authentification n’est pas valide.</td>
                <td>facultatif</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Date et heure après lesquelles le code d’authentification n’est pas valide.</td>
+               <td>Date et heure en millisecondes au-delà desquelles le code d’authentification n’est pas valide.</td>
                <td>facultatif</td>
             </tr>
          </table>
@@ -325,7 +325,7 @@ ht-degree: 1%
 
 ## Exemples {#samples}
 
-### 1. Reprendre la session d’authentification sans paramètres manquants
+### &#x200B;1. Reprendre la session d’authentification sans paramètres manquants
 
 >[!BEGINTABS]
 
@@ -367,7 +367,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Reprendre la session d’authentification avec les paramètres manquants
+### &#x200B;2. Reprendre la session d’authentification avec les paramètres manquants
 
 >[!BEGINTABS]
 
@@ -410,7 +410,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Reprenez la session d’authentification tant qu’un profil valide existe déjà
+### &#x200B;3. Reprenez la session d’authentification tant qu’un profil valide existe déjà
 
 >[!BEGINTABS]
 
@@ -449,7 +449,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Reprendre la session d’authentification à l’aide du TempPass de base ou promotionnel (non requis)
+### &#x200B;4. Reprendre la session d’authentification à l’aide du TempPass de base ou promotionnel (non requis)
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Reprendre la session d’authentification pendant l’application de la dégradation
+### &#x200B;5. Reprendre la session d’authentification pendant l’application de la dégradation
 
 >[!BEGINTABS]
 

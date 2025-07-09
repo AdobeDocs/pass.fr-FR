@@ -2,9 +2,9 @@
 title: Récupération des profils
 description: API REST V2 - Récupération de profils
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '872'
 ht-degree: 1%
 
 ---
@@ -227,12 +227,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Date et heure auxquelles le profil n’est pas valide.</td>
+               <td>Date et heure, en millisecondes, avant lesquelles le profil n’est pas valide.</td>
                <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Date et heure après lesquelles le profil n’est plus valide.</td>
+               <td>Date et heure en millisecondes au-delà desquelles le profil n’est plus valide.</td>
                <td><i>obligatoire</i></td>
             </tr>
             <tr>
@@ -319,7 +319,7 @@ ht-degree: 1%
 
 ## Exemples {#samples}
 
-### 1. Récupérer les profils obtenus par l’intermédiaire de l’authentification de base
+### &#x200B;1. Récupérer les profils obtenus par l’intermédiaire de l’authentification de base
 
 >[!BEGINTABS]
 
@@ -382,7 +382,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode Jeton de service
+### &#x200B;2. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode Jeton de service
 
 >[!BEGINTABS]
 
@@ -446,7 +446,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode d’identification Platform
+### &#x200B;3. Récupérez les profils obtenus par authentification de base ou authentification unique à l’aide de la méthode d’identification Platform
 
 >[!BEGINTABS]
 

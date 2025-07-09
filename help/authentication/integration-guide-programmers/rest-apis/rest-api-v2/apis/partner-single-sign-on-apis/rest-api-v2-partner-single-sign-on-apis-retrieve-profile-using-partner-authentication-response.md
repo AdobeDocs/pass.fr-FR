@@ -2,9 +2,9 @@
 title: Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire
 description: API REST V2 - Création et récupération d’un profil à l’aide de la réponse d’authentification du partenaire
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '779'
 ht-degree: 1%
 
 ---
@@ -233,12 +233,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Date et heure auxquelles le profil n’est pas valide.</td>
+               <td>Date et heure, en millisecondes, avant lesquelles le profil n’est pas valide.</td>
                <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Date et heure après lesquelles le profil n’est plus valide.</td>
+               <td>Date et heure en millisecondes au-delà desquelles le profil n’est plus valide.</td>
                <td><i>obligatoire</i></td>
             </tr>
             <tr>
@@ -322,7 +322,7 @@ ht-degree: 1%
 
 ## Exemples {#samples}
 
-### 1. Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire
+### &#x200B;1. Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire
 
 >[!BEGINTABS]
 
@@ -379,7 +379,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Créer et récupérer le profil à l’aide de la réponse d’authentification du partenaire, mais la dégradation est appliquée
+### &#x200B;2. Créer et récupérer le profil à l’aide de la réponse d’authentification du partenaire, mais la dégradation est appliquée
 
 >[!BEGINTABS]
 

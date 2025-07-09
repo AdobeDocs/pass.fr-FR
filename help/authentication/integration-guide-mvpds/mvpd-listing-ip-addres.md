@@ -2,7 +2,7 @@
 title: Liste MVPD des adresses IP
 description: Liste MVPD des adresses IP
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
-source-git-commit: 0fd11dbcc9072fd14fb06e76f60c15d7729c3876
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
 source-wordcount: '139'
 ht-degree: 0%
@@ -12,10 +12,9 @@ ht-degree: 0%
 
 # Liste MVPD des adresses IP
 
-&#x200B;> [!NOTE]
+>[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de .
->&#x200B;> Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Pour une intégration de l’authentification MVPD/Adobe Pass , certaines adresses IP doivent être autorisées dans un pare-feu MVPD. Il s’agit des
 Adresses IP sortantes :

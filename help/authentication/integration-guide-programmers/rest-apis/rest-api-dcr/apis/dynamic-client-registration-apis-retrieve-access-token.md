@@ -1,23 +1,23 @@
 ---
-title: Récupération du jeton d’accès
-description: API d’enregistrement du client dynamique - Récupération du jeton d’accès
+title: Récupérer le jeton d’accès
+description: API d’enregistrement client dynamique - Récupération du jeton d’accès
 exl-id: 23287acf-5d56-46f0-b65e-79bf7d667708
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '456'
 ht-degree: 1%
 
 ---
 
-# Récupération du jeton d’accès {#retrieve-access-token}
+# Récupérer le jeton d’accès {#retrieve-access-token}
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
-> L’implémentation de l’API d’enregistrement de client dynamique est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md) .
+> L’implémentation de l’API d’enregistrement client dynamique est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
 ## Requête {#request}
 
@@ -28,13 +28,13 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">chemin</td>
       <td>/o/client/token</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
-      <td>POST</td>
+      <td style="background-color: #DEEBFF;">méthode</td>
+      <td>POSTER</td>
       <td></td>
    </tr>
    <tr>
@@ -47,27 +47,27 @@ ht-degree: 1%
       <td>
             Chaîne d’identifiant de l’application cliente.
             <br/><br/>
-            Pour plus d’informations sur la manière d’obtenir la chaîne d’identifiant du client, consultez la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md"> Récupérer les informations d’identification du client</a>.
+            Pour plus d’informations sur l’obtention de la chaîne d’identifiant client, reportez-vous à la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Récupération des informations d’identification client</a>.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">client_secret</td>
       <td>
             Chaîne secrète de l’application cliente.
             <br/><br/>
-            Pour plus d’informations sur la manière d’obtenir la chaîne du secret client, consultez la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Récupérer les informations d’identification du client</a>.
+            Pour plus d’informations sur l’obtention de la chaîne secrète client, reportez-vous à la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Récupération des informations d’identification client</a>.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">grant_type</td>
       <td>
-            Chaîne de type d’octroi (par exemple, "client_credentials") que l’application client peut utiliser pour le point de terminaison du jeton client.
+            Chaîne de type d’octroi (par exemple, « client_credentials ») que l’application cliente peut utiliser pour le point d’entrée du jeton client.
             <br/><br/>
-            Pour plus d’informations sur la manière d’obtenir la chaîne de type d’octroi, consultez la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md"> Récupérer les informations d’identification du client</a>.
+            Pour plus d’informations sur l’obtention de la chaîne de type d’octroi, consultez la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Récupération des informations d’identification du client</a>.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">En-têtes</th>
@@ -77,31 +77,31 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         Type de média accepté pour les ressources envoyées.
+         Type de média accepté pour les ressources en cours d’envoi.
          <br/><br/>
-         Il doit être application/x-www-form-urlencoded.
+         Il doit s’agir de application/x-www-form-urlencoded.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur l’appareil est décrite dans la documentation <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation de <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
          <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plate-forme d’appareil de l’application autorise la spécification explicite de valeurs valides.
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
          <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement les valeurs définies explicitement avec les valeurs extraites (par défaut).
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
          <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal d’authentification Adobe Pass utilise implicitement les valeurs extraites (par défaut).
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
          Type de média accepté par l’application cliente.
          <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json.
+         S’il est spécifié, il doit s’agir d’application/json.
       </td>
       <td>facultatif</td>
    </tr>
@@ -125,12 +125,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>201</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -149,32 +149,32 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">id</td>
-               <td>Identifiant opaque qui peut être utilisé pour le suivi de l’activité des utilisateurs.</td>
-               <td><i>required</i></td>
+               <td>Identifiant opaque pouvant être utilisé pour le suivi de l’activité des utilisateurs et utilisatrices.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">access_token</td>
-               <td>La valeur du jeton d’accès que l’application cliente doit utiliser pour l’en-tête Authorization.</td>
-               <td><i>required</i></td>
+               <td>Valeur du jeton d’accès que l’application cliente doit utiliser pour l’en-tête Autorisation .</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">created_at</td>
-               <td>Heure à laquelle le jeton d’accès a été émis.</td>
-               <td><i>required</i></td>
+               <td>Heure en millisecondes à laquelle le jeton d’accès a été émis.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">expires_in</td>
-               <td>Durée en secondes jusqu’à l’expiration du jeton d’accès.</td>
-               <td><i>required</i></td>
+               <td>Délai en secondes avant l’expiration du jeton d’accès.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">token_type</td>
-               <td>Type de jeton (par exemple, "porteur").</td>
-               <td><i>required</i></td>
+               <td>Type de jeton (par exemple, « porteur »).</td>
+               <td><i>obligatoire</i></td>
             </tr>
          </table>
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
 </table>
 
 ### Erreur {#error}
@@ -188,12 +188,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>400</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -213,9 +213,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">invalid_request</td>
                <td>
-                    La demande n’est pas valide pour l’une des raisons suivantes :
+                    La requête n’est pas valide pour l’une des raisons suivantes :
                     <ul>
-                        <li>Un paramètre requis n’est pas associé à la requête.</li>
+                        <li>Il manque un paramètre obligatoire à la requête.</li>
                         <li>La requête inclut une valeur de paramètre non prise en charge (autre que le type d’octroi).</li>
                         <li>La requête répète un paramètre.</li>
                         <li>La requête comprend plusieurs informations d’identification.</li>
@@ -226,21 +226,21 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">invalid_client</td>
-               <td>Les informations d’identification du client ne sont pas valides, le client doit obtenir de nouvelles informations d’identification du client et réessayer. Pour plus d’informations, reportez-vous à la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Récupérer les informations d’identification du client</a>.</td>
+               <td>Les informations d’identification du client ne sont pas valides. Le client doit obtenir de nouvelles informations d’identification du client et réessayer. Pour plus d’informations, consultez la documentation de l’API <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Récupération des informations d’identification du client</a> .</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">unauthorized_client</td>
-               <td>Le type d’octroi utilisé n’est pas valide.</td>
+               <td style="background-color: #DEEBFF;">authorized_client</td>
+               <td>Le type d'octroi utilisé n'est pas valide.</td>
             </tr>
          </table>
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
 </table>
 
 ## Exemples {#samples}
 
-### Récupération du jeton d’accès {#samples-retrieve-access-token}
+### Récupérer le jeton d’accès {#samples-retrieve-access-token}
 
 >[!BEGINTABS]
 
