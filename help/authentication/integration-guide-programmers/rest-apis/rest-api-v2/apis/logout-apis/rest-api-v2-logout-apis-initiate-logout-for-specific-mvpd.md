@@ -2,9 +2,9 @@
 title: Lancer la déconnexion pour un fichier mvpd spécifique
 description: API REST V2 - Lancement de la déconnexion pour un fichier mvpd spécifique
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1025'
 ht-degree: 1%
 
 ---
@@ -121,6 +121,12 @@ ht-degree: 1%
         <br/><br/>
         Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.
       </td>
+      <td>facultatif</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La génération de la payload de l’identifiant visiteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facultatif</td>
    </tr>
    <tr>
@@ -313,7 +319,7 @@ ht-degree: 1%
 
 ## Exemples {#samples}
 
-### 1. Lancer la déconnexion pour un mvpd spécifique ayant un point d’entrée de déconnexion
+### &#x200B;1. Lancer la déconnexion pour un mvpd spécifique ayant un point d’entrée de déconnexion
 
 >[!BEGINTABS]
 
@@ -350,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Lancer la déconnexion pour un mvpd spécifique sans point d’entrée de déconnexion
+### &#x200B;2. Lancer la déconnexion pour un mvpd spécifique sans point d’entrée de déconnexion
 
 >[!BEGINTABS]
 
@@ -386,7 +392,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Lancez une déconnexion unique pour un mvpd spécifique, y compris les profils obtenus par l’authentification unique à l’aide de la méthode Jeton de service.
+### &#x200B;3. Lancez une déconnexion unique pour un mvpd spécifique, y compris les profils obtenus par l’authentification unique à l’aide de la méthode Jeton de service.
 
 >[!IMPORTANT]
 >
@@ -432,7 +438,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Lancez une déconnexion unique pour un mvpd spécifique, y compris les profils obtenus par l’authentification unique à l’aide de la méthode d’identité de Platform
+### &#x200B;4. Lancez une déconnexion unique pour un mvpd spécifique, y compris les profils obtenus par l’authentification unique à l’aide de la méthode d’identité de Platform
 
 >[!IMPORTANT]
 >
@@ -478,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Déconnectez-vous d’une mvpd spécifique, y compris des profils obtenus par authentification unique à l’aide du partenaire (Apple).
+### &#x200B;5. Déconnectez-vous d’une mvpd spécifique, y compris des profils obtenus par authentification unique à l’aide du partenaire (Apple).
 
 >[!BEGINTABS]
 
@@ -514,7 +520,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6. Déclenchez la déconnexion d’un fichier mvpd spécifique pendant l’application de la dégradation
+### &#x200B;6. Déclenchez la déconnexion d’un fichier mvpd spécifique pendant l’application de la dégradation
 
 >[!BEGINTABS]
 
@@ -550,7 +556,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 7. Déconnectez-vous du TempPass de base ou promotionnel (non requis)
+### &#x200B;7. Déconnectez-vous du TempPass de base ou promotionnel (non requis)
 
 >[!BEGINTABS]
 

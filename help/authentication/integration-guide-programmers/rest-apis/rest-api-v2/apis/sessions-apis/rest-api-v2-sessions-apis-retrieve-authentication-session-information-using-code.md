@@ -2,9 +2,9 @@
 title: Récupérer une session d’authentification à l’aide du code
 description: API REST V2 - Récupérer une session d’authentification à l’aide du code
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '441'
 ht-degree: 2%
 
 ---
@@ -75,6 +75,12 @@ ht-degree: 2%
          <br/><br/>
          Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
       </td> 
+      <td>facultatif</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La génération de la payload de l’identifiant visiteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facultatif</td>
    </tr>
    <tr>
@@ -200,7 +206,7 @@ ht-degree: 2%
 
 ## Exemples {#samples}
 
-### 1. Récupérer la session d’authentification sans paramètres manquants
+### &#x200B;1. Récupérer la session d’authentification sans paramètres manquants
 
 >[!BEGINTABS]
 
@@ -233,7 +239,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 1. Récupérer la session d’authentification avec les paramètres manquants
+### &#x200B;1. Récupérer la session d’authentification avec les paramètres manquants
 
 >[!BEGINTABS]
 

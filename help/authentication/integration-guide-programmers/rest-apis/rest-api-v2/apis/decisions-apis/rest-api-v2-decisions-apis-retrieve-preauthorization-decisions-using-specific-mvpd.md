@@ -2,9 +2,9 @@
 title: Récupérer des décisions de préautorisation à l’aide de mvpd spécifiques
 description: API REST V2 - Récupération des décisions de préautorisation à l’aide de mvpd spécifiques
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '808'
 ht-degree: 1%
 
 ---
@@ -134,6 +134,12 @@ ht-degree: 1%
         La génération de la payload d’authentification unique pour la méthode Partner est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
         <br/><br/>
         Pour plus d’informations sur l’authentification unique activée pour les flux utilisant un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md"> Authentification unique à l’aide des flux de partenaire </a>.</td>
+      <td>facultatif</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La génération de la payload de l’identifiant visiteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facultatif</td>
    </tr>
    <tr>
@@ -306,7 +312,7 @@ ht-degree: 1%
 
 ## Exemples {#samples}
 
-### 1. Récupérer des décisions de préautorisation à l’aide de mvpd spécifique
+### &#x200B;1. Récupérer des décisions de préautorisation à l’aide de mvpd spécifique
 
 >[!BEGINTABS]
 
@@ -362,7 +368,7 @@ Content-Type: application/json;charset=UTF-8
             "status": 403,
             "code": "preauthorization_denied_by_mvpd",
             "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
-            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "action": "none"
          }
       }
@@ -372,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Récupérez les décisions de préautorisation à l’aide de mvpd spécifique pendant l’application de la dégradation
+### &#x200B;2. Récupérez les décisions de préautorisation à l’aide de mvpd spécifique pendant l’application de la dégradation
 
 >[!BEGINTABS]
 
@@ -468,7 +474,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -482,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }

@@ -2,9 +2,9 @@
 title: Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire
 description: API REST V2 - Création et récupération d’un profil à l’aide de la réponse d’authentification du partenaire
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '795'
 ht-degree: 1%
 
 ---
@@ -120,6 +120,12 @@ ht-degree: 1%
          <br/><br/>
          Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
       </td>
+      <td>facultatif</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La génération de la payload de l’identifiant visiteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facultatif</td>
    </tr>
    <tr>

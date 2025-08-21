@@ -2,9 +2,9 @@
 title: Récupérer la demande d’authentification du partenaire
 description: API REST V2 - Récupération de la demande d’authentification du partenaire
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1252'
 ht-degree: 0%
 
 ---
@@ -135,6 +135,12 @@ ht-degree: 0%
          <br/><br/>
          Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
       </td>
+      <td>facultatif</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La génération de la payload de l’identifiant visiteur est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facultatif</td>
    </tr>
    <tr>
@@ -364,7 +370,7 @@ ht-degree: 0%
 
 ## Exemples {#samples}
 
-### 1. Récupérer la demande d’authentification du partenaire
+### &#x200B;1. Récupérer la demande d’authentification du partenaire
 
 >[!BEGINTABS]
 
@@ -411,7 +417,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Récupérez la demande d’authentification du partenaire, mais la dégradation est appliquée
+### &#x200B;2. Récupérez la demande d’authentification du partenaire, mais la dégradation est appliquée
 
 >[!BEGINTABS]
 
@@ -453,7 +459,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Récupérer la demande d’authentification du partenaire, mais revient au flux d’authentification de base en raison d’une valeur d’en-tête AP-Partner-Framework-Status manquante ou non valide
+### &#x200B;3. Récupérer la demande d’authentification du partenaire, mais revient au flux d’authentification de base en raison d’une valeur d’en-tête AP-Partner-Framework-Status manquante ou non valide
 
 >[!BEGINTABS]
 
@@ -498,7 +504,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Récupérez la demande d’authentification du partenaire, mais retourne au flux d’authentification de base en raison de la configuration d’authentification unique du partenaire sur le serveur principal d’Adobe Pass
+### &#x200B;4. Récupérez la demande d’authentification du partenaire, mais retourne au flux d’authentification de base en raison de la configuration d’authentification unique du partenaire sur le serveur principal d’Adobe Pass
 
 >[!BEGINTABS]
 
@@ -543,7 +549,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Récupérer la demande d’authentification du partenaire, mais revient au flux d’authentification de base en raison de paramètres manquants
+### &#x200B;5. Récupérer la demande d’authentification du partenaire, mais revient au flux d’authentification de base en raison de paramètres manquants
 
 >[!BEGINTABS]
 
