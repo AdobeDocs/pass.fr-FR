@@ -2,9 +2,9 @@
 title: Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire
 description: API REST V2 - Création et récupération d’un profil à l’aide de la réponse d’authentification du partenaire
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '847'
 ht-degree: 1%
 
 ---
@@ -321,7 +321,22 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.</td>
+      <td>
+            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.
+            <br/><br/>
+            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :
+            <ul>
+                <li>invalid_header_pfs_permission_access_not_present</li>
+                <li>invalid_header_pfs_permission_access_not_determine</li>
+                <li>invalid_header_pfs_permission_access_not_granted</li>
+                <li>invalid_header_pfs_provider_id_not_determine</li>
+                <li>invalid_header_pfs_provider_id_mismatch</li>
+                <li>invalid_header_pfs_provider_info_expired</li>
+                <li>invalid_parameter_saml_response</li>
+                <li>etc.</li>
+            </ul>
+            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.
+      </td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
