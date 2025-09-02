@@ -45,9 +45,9 @@ Les codes d’erreur améliorés peuvent être représentés au format `JSON` ou
 
 | API d’authentification Adobe Pass | JSON | XML |
 |-------------------------------|---------|---------|
-| API REST v2 | &amp;check; |         |
-| API REST v1 | &amp;check; | &amp;check; |
-| API de préautorisation des SDK | &amp;check; |         |
+| API REST v2 | &check; |         |
+| API REST v1 | &check; | &check; |
+| API de préautorisation des SDK | &check; |         |
 
 >[!IMPORTANT]
 >
@@ -202,9 +202,9 @@ Les codes d’erreur améliorés incluent les champs de `JSON` ou les attributs 
 
 | Nom | Type | Exemple | Restricted | Description |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *action* | *chaîne* | *aucune* | &amp;check; | L’action recommandée Authentification Adobe Pass qui pourrait remédier à la situation telle que définie dans ce document. <br/><br/> Pour plus d’informations, consultez la section [Action](#enhanced-error-codes-action). |
-| *statut* | *entier* | 403 ** | &amp;check; | Le code de statut de la réponse HTTP tel que défini dans le document [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6). <br/><br/> Pour plus d&#39;informations, consultez la section [Statut](#enhanced-error-codes-status). |
-| *code* | *chaîne* | *authorization_deny_by_mvpd* | &amp;check; | Code d’identifiant unique d’authentification Adobe Pass associé à l’erreur, tel que défini dans ce document. <br/><br/> Pour plus d’informations, consultez la section [Code](#enhanced-error-codes-code). |
+| *action* | *chaîne* | *aucune* | &check; | L’action recommandée Authentification Adobe Pass qui pourrait remédier à la situation telle que définie dans ce document. <br/><br/> Pour plus d’informations, consultez la section [Action](#enhanced-error-codes-action). |
+| *statut* | *entier* | 403 ** | &check; | Le code de statut de la réponse HTTP tel que défini dans le document [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6). <br/><br/> Pour plus d&#39;informations, consultez la section [Statut](#enhanced-error-codes-status). |
+| *code* | *chaîne* | *authorization_deny_by_mvpd* | &check; | Code d’identifiant unique d’authentification Adobe Pass associé à l’erreur, tel que défini dans ce document. <br/><br/> Pour plus d’informations, consultez la section [Code](#enhanced-error-codes-code). |
 | *message* | *chaîne* | *Le MVPD a renvoyé une décision de refus lors de la demande d’autorisation pour la ressource spécifiée* |            | Message lisible par l’utilisateur ou l’utilisatrice final(e) qui peut s’afficher dans certains cas. <br/><br/> Pour plus d&#39;informations, consultez la section [Gestion des réponses](#enhanced-error-codes-response-handling). |
 | *détails* | *chaîne* | *Votre forfait d’abonnement n’inclut pas le canal « En direct »* |            | Le message détaillé qui peut être fourni par un partenaire de services dans certains cas, <br/><br/> Ce champ peut ne pas être présent si le partenaire de services ne fournit pas de message personnalisé. |
 | *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | URL de la documentation publique sur l’authentification Adobe Pass qui renvoie à des informations supplémentaires sur la raison de cette erreur et les solutions possibles. <br/><br/> Ce champ contient une URL absolue et ne doit pas être déduit du code d’erreur. Selon le contexte d’erreur, une autre URL peut être fournie. |
