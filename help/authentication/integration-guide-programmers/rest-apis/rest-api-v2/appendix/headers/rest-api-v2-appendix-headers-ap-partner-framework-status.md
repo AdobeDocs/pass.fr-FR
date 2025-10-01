@@ -2,9 +2,9 @@
 title: En-tête - AP-Partner-Framework-Status
 description: API REST V2 - En-tête - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '404'
 ht-degree: 1%
 
 ---
@@ -131,6 +131,8 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                   Il s’agit d’un attribut obligatoire.
                   <br/><br/>
                   Il s’agit de la date d’expiration du profil utilisateur authentifié, au cas où l’utilisateur s’est connecté avec succès à l’aide d’un MVPD pris en charge au niveau du framework du partenaire.
+                  <br/><br/>
+                  Il doit s’agir d’un horodatage en millisecondes depuis l’époque Unix (par exemple, « 1735689600000 »), exprimé sous la forme d’une chaîne.
                </td>
             </tr>
             <tr>
