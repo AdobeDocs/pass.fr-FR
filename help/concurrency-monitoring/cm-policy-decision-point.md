@@ -27,7 +27,7 @@ Pour chacune des stratégies applicables, nous devons ensuite collecter toutes l
 
 **Le flux &quot;S&quot; est démarré par une application qui inclut la stratégie &quot;P&quot; parmi ses stratégies.**
 
-![ Le flux &quot;S&quot; est démarré par une application qui inclut la stratégie &quot;P&quot; parmi ses stratégies.](assets/pdp-domain-model.png)
+![&#x200B; Le flux &quot;S&quot; est démarré par une application qui inclut la stratégie &quot;P&quot; parmi ses stratégies.](assets/pdp-domain-model.png)
 
 ## Cas d’utilisation d’exécution rapide {#dry-run-use-cases}
 

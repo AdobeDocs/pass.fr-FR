@@ -39,7 +39,7 @@ Suivez ces étapes pour passer en revue et pousser les modifications.
 
 1. Sélectionnez **Afficher** pour passer en revue les valeurs précédentes et nouvelles associées à un changement de configuration.
 
-   ![ Afficher les modifications de configuration ](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
+   ![&#x200B; Afficher les modifications de configuration &#x200B;](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
 
    *Afficher les modifications de configuration*
 

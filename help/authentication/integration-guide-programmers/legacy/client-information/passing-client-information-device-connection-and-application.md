@@ -388,7 +388,7 @@ Les informations d’application peuvent être structurées comme suit :
 >[!NOTE]
 >
 >**Ressources:**
->* [UIDevice ](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
+>* [UIDevice &#x200B;](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
 >* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
 >* [À propos de l’accessibilité](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 

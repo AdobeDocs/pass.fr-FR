@@ -339,7 +339,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 > 
 > Les fragments de code ne sont pas exhaustifs et peuvent nécessiter des modifications supplémentaires pour fonctionner dans votre projet.
 >
-> Quelle que soit votre implémentation actuelle, l’en-tête de `X-Device-Info` doit contenir une valeur formatée comme décrit dans la section [ Directives ](#directives).
+> Quelle que soit votre implémentation actuelle, l’en-tête de `X-Device-Info` doit contenir une valeur formatée comme décrit dans la section [&#x200B; Directives &#x200B;](#directives).
 
 ### Navigateurs {#browsers}
 

@@ -41,7 +41,7 @@ Pour gérer les différents paramètres d’un programmeur spécifique, procéde
    * [Applications enregistrées](#registered-applications)
    * [Schémas personnalisés](#custom-schemes)
 
-   ![ Paramètres du programmeur ](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
+   ![&#x200B; Paramètres du programmeur &#x200B;](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
 
    *Paramètres du programmeur*
 

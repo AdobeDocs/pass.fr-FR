@@ -238,9 +238,9 @@ La **documentation de l’API Privacy Service** explique en détail comment un c
 
 **Visualiser les appels API avec Postman (un logiciel tiers gratuit) :**
 
-* [ Collection Postman de l&#39;API Privacy Service sur GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [&#x200B; Collection Postman de l&#39;API Privacy Service sur GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
 * [Guide vidéo pour la création de l’environnement Postman](https://video.tv.adobe.com/v/31635?captions=fre_fr)
-* [ Étapes pour importer des environnements et des collections dans Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
+* [&#x200B; Étapes pour importer des environnements et des collections dans Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
 **Chemins d’accès API :**

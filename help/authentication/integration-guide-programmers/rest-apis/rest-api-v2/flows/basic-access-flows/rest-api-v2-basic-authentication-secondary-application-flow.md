@@ -129,7 +129,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!IMPORTANT]
    >
-   > Reportez-vous à la documentation de l’API [ Récupération des informations de session d’authentification ](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) pour plus d’informations sur les informations fournies dans une réponse de validation de session.
+   > Reportez-vous à la documentation de l’API [&#x200B; Récupération des informations de session d’authentification &#x200B;](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) pour plus d’informations sur les informations fournies dans une réponse de validation de session.
    >
    > <br/>
    >

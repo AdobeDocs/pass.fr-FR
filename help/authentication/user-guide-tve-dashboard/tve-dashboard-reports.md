@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
 
-La section **Rapports** du tableau de bord TVE permet d’accéder aux données agrégées pour les rapports AuthN TTL, AuthZ TTL et SSO. Ces rapports incluent vos intégrations de canaux avec différents MVPD sur toutes les [ plateformes ](#platforms).
+La section **Rapports** du tableau de bord TVE permet d’accéder aux données agrégées pour les rapports AuthN TTL, AuthZ TTL et SSO. Ces rapports incluent vos intégrations de canaux avec différents MVPD sur toutes les [&#x200B; plateformes &#x200B;](#platforms).
 
 Les rapports vous permettent de filtrer les données et de collecter des informations sur [des canaux ou MVPD spécifiques](#selecting-specific-channels-mvpds). Vous pouvez également exporter des rapports dans un fichier CSV pour une analyse plus approfondie.
 

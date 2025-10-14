@@ -27,7 +27,7 @@ Pour plus d’informations sur l’authentification à domicile (HBA) et les nor
 >
 > * [Accès instantané (HBA) par CTAM](http://www.ctamtve.com/instantaccess)
 > * [Cas d’utilisation et exigences de l’authentification à domicile par OATC](https://tve.helpdocsonline.com/topic/awsfiles/download_files?ref=https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf)
-> * [Infographie sur l’authentification à domicile par Adobe ](https://tve.helpdocsonline.com/topic/awsfiles/download_files?ref=https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640)
+> * [Infographie sur l’authentification à domicile par Adobe &#x200B;](https://tve.helpdocsonline.com/topic/awsfiles/download_files?ref=https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640)
 > * [Authentification avec MVPD activés OAuth2](/help/authentication/integration-guide-mvpds/authn-oauth2-protocol.md)
 > * [Authentification avec MVPD SAML](/help/authentication/integration-guide-mvpds/authn-usecase.md)
 > * [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)

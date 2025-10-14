@@ -21,7 +21,7 @@ L’en-tête de requête <b>AD-Service-Token</b> contient l’identifiant utilis
 
 Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode du jeton de service.
 
-Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode du jeton de service, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode du jeton de service, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux de jeton de service &#x200B;](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 ## Syntaxe {#syntax}
 

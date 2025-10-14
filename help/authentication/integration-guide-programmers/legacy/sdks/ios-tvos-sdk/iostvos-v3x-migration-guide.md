@@ -38,7 +38,7 @@ Cette version contient des fonctionnalités écrites en langage SWIFT. Si votre 
 
 > Pour plus d&#39;informations sur la façon d&#39;obtenir votre relevé de logiciel, rendez-vous sur
 > page :
-> [Enregistrement de la demande ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
+> [Enregistrement de la demande &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
 
 Une fois que vous disposez de votre déclaration logicielle, nous vous recommandons de l’héberger sur un serveur distant afin de pouvoir facilement la révoquer ou la modifier sans déployer une nouvelle version de l’application dans App Store. Lorsque l’application démarre, obtenez votre instruction logicielle à partir de l’emplacement distant et transmettez-la dans le constructeur AccessEnabler :
 

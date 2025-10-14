@@ -77,7 +77,7 @@ L’équipe d’authentification d’Adobe Pass est à votre disposition pour to
 
 **L’Adobe fournira** l’accès à notre documentation publique via [Adobe Experience League](https://experienceleague.adobe.com/fr/docs/pass/authentication/home).
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les API disponibles dans la section [ Guide d’intégration pour les programmeurs ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les API disponibles dans la section [&#x200B; Guide d’intégration pour les programmeurs &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
 
 ## Accès à l’outil de test {#access-testing-tool}
 
@@ -87,4 +87,4 @@ L’équipe d’authentification d’Adobe Pass fournit une documentation compl�
 
 **L’Adobe permet d’accéder** par le biais du tableau de bord TVE d’Adobe Pass, à un outil en libre-service de gestion de votre configuration et de vos données[&#128279;](https://experience.adobe.com/pass/authentication).
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [ Guide de l’utilisateur pour le tableau de bord TVE ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [&#x200B; Guide de l’utilisateur pour le tableau de bord TVE &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.

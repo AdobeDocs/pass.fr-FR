@@ -117,7 +117,7 @@ Pour modifier le délai d’activation de l’authentification et de l’autoris
    >
    >Si vous souhaitez modifier la durée de **AuthN TTL** et **AuthZ TTL** pour une catégorie de plateforme ou une plateforme spécifique, sélectionnez la plateforme en conséquence.
 
-   ![ Modifier la durée de durée de vie TTL AuthN TTL AuthZ sur toutes les plateformes](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
+   ![&#x200B; Modifier la durée de durée de vie TTL AuthN TTL AuthZ sur toutes les plateformes](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
 
    *Modifier la durée de durée de vie TTL AuthN TTL AuthZ sur toutes les plateformes*
 
@@ -305,7 +305,7 @@ Pour créer une nouvelle intégration avec un nouveau MVPD dans votre configurat
    >
    >Ne modifiez pas les points de terminaison par défaut dans aucun flux, sauf indication spécifique du MVPD.
 
-   ![Sélectionner des points de terminaison ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Sélectionner des points de terminaison &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Sélectionner des points de terminaison*
 

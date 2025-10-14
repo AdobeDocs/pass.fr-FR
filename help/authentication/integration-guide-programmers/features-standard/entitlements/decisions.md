@@ -24,7 +24,7 @@ Deux types de décisions sont fournis, selon l’API appelée :
 
 ## Décisions de pré-autorisation {#preauthorization-decisions}
 
-La décision de préautorisation est une décision informative qui permet à l’application cliente d’être informée si le MVPD peut autoriser ou refuser l’accès de l’utilisateur à une [ ressource protégée ](#protected-resources).
+La décision de préautorisation est une décision informative qui permet à l’application cliente d’être informée si le MVPD peut autoriser ou refuser l’accès de l’utilisateur à une [&#x200B; ressource protégée &#x200B;](#protected-resources).
 
 L’objectif de la préautorisation (autorisation de contrôle en amont) est de permettre à l’application d’afficher des informations précises sur le contenu que l’utilisateur peut être autorisé à consulter. Pour ce faire, l’interface utilisateur est améliorée à l’aide d’indicateurs, tels que des icônes verrouillées ou déverrouillées, afin de refléter le statut d’accès.
 
@@ -52,7 +52,7 @@ Pour plus d’informations sur les mécanismes existants prenant en charge la pr
 
 ## Décisions d’autorisation {#authorization-decisions}
 
-La décision d’autorisation est une décision faisant autorité qui permet à l’application cliente de se conformer à la décision MVPD d’autoriser ou de refuser l’accès de l’utilisateur à une [ ressource protégée ](#protected-resources).
+La décision d’autorisation est une décision faisant autorité qui permet à l’application cliente de se conformer à la décision MVPD d’autoriser ou de refuser l’accès de l’utilisateur à une [&#x200B; ressource protégée &#x200B;](#protected-resources).
 
 L’objectif de l’autorisation est de permettre à l’application de lire les ressources demandées par l’utilisateur, après validation des droits avec le MVPD et réception d’un jeton média provenant de l’authentification Adobe Pass.
 
@@ -127,7 +127,7 @@ Dans le cas d&#39;un identifiant de ressource plus complexe, l&#39;identifiant d
     </rss>
 ```
 
-Les identifiants uniques sont principalement opaques pour l’authentification Adobe Pass. Cependant, des transformateurs peuvent être appliqués en fonction des fonctionnalités et des exigences de MVPD. Si le MVPD ne peut pas reconnaître ou analyser un identifiant de ressource, il renvoie une erreur à l’authentification Adobe Pass, qui transmet ensuite l’erreur à l’application cliente à l’aide d’un [ Code d’erreur amélioré ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
+Les identifiants uniques sont principalement opaques pour l’authentification Adobe Pass. Cependant, des transformateurs peuvent être appliqués en fonction des fonctionnalités et des exigences de MVPD. Si le MVPD ne peut pas reconnaître ou analyser un identifiant de ressource, il renvoie une erreur à l’authentification Adobe Pass, qui transmet ensuite l’erreur à l’application cliente à l’aide d’un [&#x200B; Code d’erreur amélioré &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
 ## API REST V2 {#rest-api-v2}
 

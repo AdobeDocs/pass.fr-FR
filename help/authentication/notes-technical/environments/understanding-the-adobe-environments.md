@@ -32,6 +32,6 @@ Chaque environnement comporte deux profils : **évaluation** et **production**.
 
 La raison d’être de ces deux profils est que, sur le profil d’évaluation, nous préparons de nouveaux partenaires à passer en ligne. Ils souhaitent tester le système avec le build à venir (préqualification) ou avec le build de publication (plus stable).
 
-Si un partenaire souhaite tester la nouvelle version, quelques étapes supplémentaires doivent être effectuées. Voir [ Configuration de votre environnement et test dans Pre-qual](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
+Si un partenaire souhaite tester la nouvelle version, quelques étapes supplémentaires doivent être effectuées. Voir [&#x200B; Configuration de votre environnement et test dans Pre-qual](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
 
 En suivant les étapes ci-dessus, vous êtes assuré que la prochaine version sera testée dans l’environnement de préqualification.

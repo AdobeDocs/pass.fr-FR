@@ -46,10 +46,10 @@ Questions fréquentes sur les procédures de prise en charge de l’authentifica
 
 **Pour les programmeurs :**
 
-* [ Guide de démarrage rapide pour les programmeurs ](/help/authentication/kickstart/programmer-kickstart-guide.md)\
+* [&#x200B; Guide de démarrage rapide pour les programmeurs &#x200B;](/help/authentication/kickstart/programmer-kickstart-guide.md)\
   Prise en main de l’authentification Adobe Pass.
 
-* [ Guide d’intégration pour les programmeurs ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)\
+* [&#x200B; Guide d’intégration pour les programmeurs &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)\
   Découvrez comment intégrer l’authentification Adobe Pass à votre programmeur.
 
 **Pour les fichiers MVPD :**

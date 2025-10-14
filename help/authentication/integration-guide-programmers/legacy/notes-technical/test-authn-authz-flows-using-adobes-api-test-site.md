@@ -24,7 +24,7 @@ Afin de tester les flux AuthN et AuthZ, nous avons préparé un site de test **A
 
 ## Première partie {#part-I}
 
-Pour effectuer un test par rapport à l’environnement RELEASE, passez directement à la partie II.  Pour effectuer des tests dans l’environnement de préqualification, voir [ Configuration de votre environnement et Tests dans la préqualification ](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
+Pour effectuer un test par rapport à l’environnement RELEASE, passez directement à la partie II.  Pour effectuer des tests dans l’environnement de préqualification, voir [&#x200B; Configuration de votre environnement et Tests dans la préqualification &#x200B;](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
 
 ## Deuxième partie
 

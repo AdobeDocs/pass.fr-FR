@@ -42,7 +42,7 @@ Pour comparer des modifications, procédez comme suit :
 
 1. Sélectionnez **View** pour accéder aux valeurs modifiées.
 
-   ![ Afficher les modifications de configuration ](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
+   ![&#x200B; Afficher les modifications de configuration &#x200B;](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
 
    *Afficher les modifications de configuration*
 

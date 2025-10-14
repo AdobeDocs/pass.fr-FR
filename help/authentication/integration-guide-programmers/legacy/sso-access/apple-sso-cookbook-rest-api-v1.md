@@ -255,7 +255,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Conseil pro :</u>** prenez connaissance de l’extrait de code de l’étape [ Lancer le workflow de l’authentification unique du partenaire avec la configuration d’Adobe »](#step4) La connexion de l’utilisateur réussit si le *`vsaMetadata!.accountProviderIdentifier`* contient une valeur valide et que la date actuelle n’a pas transmis la valeur *`vsaMetadata!.authenticationExpirationDate`*.
+> **<u>Conseil pro :</u>** prenez connaissance de l’extrait de code de l’étape [&#x200B; Lancer le workflow de l’authentification unique du partenaire avec la configuration d’Adobe »](#step4) La connexion de l’utilisateur réussit si le *`vsaMetadata!.accountProviderIdentifier`* contient une valeur valide et que la date actuelle n’a pas transmis la valeur *`vsaMetadata!.authenticationExpirationDate`*.
 
 #### Étape « Obtenir une requête de profil de l’Adobe pour le MVPD sélectionné » {#step6}
 
@@ -352,7 +352,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l&#39;étape [ Transférer la demande d&#39;Adobe au SSO partenaire pour obtenir le profil](#step7). Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Exchange du jeton](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* codés par la suite) avant d’effectuer l’appel.
+> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l&#39;étape [&#x200B; Transférer la demande d&#39;Adobe au SSO partenaire pour obtenir le profil](#step7). Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Exchange du jeton](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* codés par la suite) avant d’effectuer l’appel.
 
 #### Étape : « Le jeton d’Adobe a-t-il été généré avec succès ? » {#step9}
 

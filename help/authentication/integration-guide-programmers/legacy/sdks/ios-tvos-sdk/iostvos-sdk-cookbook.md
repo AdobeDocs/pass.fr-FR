@@ -48,18 +48,18 @@ L’activité réseau d’AccessEnabler a lieu dans son propre thread, de sorte 
 
 ## Configuration du service d’ID Experience Cloud (identifiant visiteur) {#visitorIDSetup}
 
-La configuration de la valeur [ID Experience Cloud ](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
+La configuration de la valeur [ID Experience Cloud &#x200B;](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
 
 ## Flux de droits {#entitlement}
 
 A. [Conditions préalables](#prereqs) </br>
 B. [Flux de démarrage](#startup_flow) </br>
-C. [ Flux d’authentification avec le SSO d’Apple ](#authn_flow_wo_applesso) </br>
-D. [ Flux d’authentification avec le SSO Apple sur iOS ](#authn_flow_with_applesso) </br>
+C. [&#x200B; Flux d’authentification avec le SSO d’Apple &#x200B;](#authn_flow_wo_applesso) </br>
+D. [&#x200B; Flux d’authentification avec le SSO Apple sur iOS &#x200B;](#authn_flow_with_applesso) </br>
 E. [Flux d’authentification avec l’authentification unique Apple sur tvOS](#authn_flow_with_applesso_tvOS) </br>
-F. [ Flux d’autorisation ](#authz_flow) </br>
+F. [&#x200B; Flux d’autorisation &#x200B;](#authz_flow) </br>
 G. [Afficher le flux des médias](#media_flow) </br>
-H. [ Flux de déconnexion sans SSO Apple ](#logout_flow_wo_AppleSSO) </br>
+H. [&#x200B; Flux de déconnexion sans SSO Apple &#x200B;](#logout_flow_wo_AppleSSO) </br>
 I. [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_with_AppleSSO) </br>
 
 

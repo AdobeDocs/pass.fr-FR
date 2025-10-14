@@ -46,7 +46,7 @@ L’enregistrement client dynamique (DCR) est un mécanisme d’autorisation dé
 
 Le DCR est fourni à un [programmeur](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer) en tant que service d’authentification Adobe Pass pouvant autoriser l’accès aux API protégées.
 
-Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ### R {#r}
 
