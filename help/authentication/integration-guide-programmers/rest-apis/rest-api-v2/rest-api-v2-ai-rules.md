@@ -20,7 +20,7 @@ En suivant les règles de développement de l’IA décrites dans ce guide, les 
 
 ## Règles des assistants de codage {#coding-assistants-rules}
 
-Les règles fournissent des instructions au niveau du système aux agents. Considérez-les comme un contexte, des préférences ou des workflows persistants. Les règles de ce document sont compatibles avec les assistants de codage populaires optimisés par l’IA et transforment la [ Liste de contrôle V2 de l’API REST ](rest-api-v2-checklist.md) en directives de développement d’IA exploitables.
+Les règles fournissent des instructions au niveau du système aux agents. Considérez-les comme un contexte, des préférences ou des workflows persistants. Les règles de ce document sont compatibles avec les assistants de codage populaires optimisés par l’IA et transforment la [&#x200B; Liste de contrôle V2 de l’API REST &#x200B;](rest-api-v2-checklist.md) en directives de développement d’IA exploitables.
 
 Commencez dès aujourd’hui à configurer votre environnement de développement d’IA avec notre ensemble complet de règles et profitez des avantages de la génération de code intelligent et conforme pour votre intégration de l’API REST d’authentification Adobe Pass V2. Copiez et collez les règles ci-dessous dans le fichier de configuration de votre environnement de développement, en fonction de l’outil d’IA que vous utilisez.
 
