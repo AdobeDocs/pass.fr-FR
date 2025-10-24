@@ -2,9 +2,9 @@
 title: Liste de contrôle V2 de l’API REST
 description: Liste de contrôle V2 de l’API REST
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,13 @@ Ce document regroupe en un seul endroit les exigences obligatoires et les pratiq
 
 Ce document doit être considéré comme faisant partie de vos critères d’acceptation lors de la mise en œuvre de l’API REST V2 et doit être utilisé comme une liste de contrôle pour vous assurer que toutes les étapes nécessaires ont été prises pour obtenir une intégration réussie.
 
+>[!TIP]
+>
+> Pour le développement assisté par l’IA, consultez notre [règles d’IA](rest-api-v2-ai-rules.md) qui transforme ces exigences en règles structurées pour les assistants de codage d’IA.
+
 ## Exigences obligatoires {#mandatory-requirements}
 
-### 1. Phase d’enregistrement {#mandatory-requirements-registration-phase}
+### &#x200B;1. Phase d’enregistrement {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -46,7 +50,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 2. Phase de configuration {#mandatory-requirements-configuration-phase}
+### &#x200B;2. Phase de configuration {#mandatory-requirements-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -66,7 +70,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 3. Phase d’authentification {#mandatory-requirements-authentication-phase}
+### &#x200B;3. Phase d’authentification {#mandatory-requirements-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -96,7 +100,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 4. (Facultatif) Phase De Préautorisation {#mandatory-requirements-preauthorization-phase}
+### &#x200B;4. (Facultatif) Phase De Préautorisation {#mandatory-requirements-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -121,7 +125,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 5. Phase d’autorisation {#mandatory-requirements-authorization-phase}
+### &#x200B;5. Phase d’autorisation {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -141,7 +145,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 6. Phase de déconnexion {#mandatory-requirements-logout-phase}
+### &#x200B;6. Phase de déconnexion {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -156,7 +160,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 7. Paramètres et en-têtes {#mandatory-requirements-parameters-headers}
+### &#x200B;7. Paramètres et en-têtes {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -191,7 +195,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 8. Gestion des erreurs {#mandatory-requirements-error-handling}
+### &#x200B;8. Gestion des erreurs {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -211,7 +215,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 9. Tests {#mandatory-requirements-testing}
+### &#x200B;9. Tests {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -228,7 +232,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
 
 ## Pratiques recommandées {#recommended-practices}
 
-### 1. Phase d’enregistrement {#recommended-practices-registration-phase}
+### &#x200B;1. Phase d’enregistrement {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -243,7 +247,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 2. Phase de configuration {#recommended-practices-configuration-phase}
+### &#x200B;2. Phase de configuration {#recommended-practices-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -258,7 +262,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 3. Phase d’authentification {#recommended-practices-authentication-phase}
+### &#x200B;3. Phase d’authentification {#recommended-practices-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -283,7 +287,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 4. (Facultatif) Phase De Préautorisation {#recommended-practices-preauthorization-phase}
+### &#x200B;4. (Facultatif) Phase De Préautorisation {#recommended-practices-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -298,7 +302,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 5. Phase d’autorisation {#recommended-practices-authorization-phase}
+### &#x200B;5. Phase d’autorisation {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -318,7 +322,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 6. Phase de déconnexion {#recommended-practices-logout-phase}
+### &#x200B;6. Phase de déconnexion {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -333,7 +337,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 7. Paramètres et en-têtes {#recommended-practices-parameters-headers}
+### &#x200B;7. Paramètres et en-têtes {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -348,7 +352,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### 8. Tests {#recommended-practices-testing}
+### &#x200B;8. Tests {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>
