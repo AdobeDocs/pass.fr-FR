@@ -2,7 +2,7 @@
 title: Créer une session d’authentification
 description: API REST V2 - Créer une session d’authentification
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
 source-wordcount: '1080'
 ht-degree: 1%
@@ -303,7 +303,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">code</td>
                <td>Code d’authentification qui peut être utilisé sur une application secondaire pour reprendre la session d’authentification.</td>
-               <td><i>obligatoire</i></td>
+               <td>facultatif</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">sessionId</td>

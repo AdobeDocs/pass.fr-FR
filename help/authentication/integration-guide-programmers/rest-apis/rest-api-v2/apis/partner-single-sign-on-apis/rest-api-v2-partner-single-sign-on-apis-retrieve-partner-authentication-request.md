@@ -2,9 +2,9 @@
 title: Récupérer la demande d’authentification du partenaire
 description: API REST V2 - Récupération de la demande d’authentification du partenaire
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1280'
 ht-degree: 0%
 
 ---
@@ -292,7 +292,7 @@ ht-degree: 0%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>URL dans laquelle l’application cliente doit naviguer.</td>
-               <td><i>obligatoire</i></td>
+               <td>facultatif</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">code</td>
@@ -333,6 +333,16 @@ ht-degree: 0%
                <td style="background-color: #DEEBFF;">serviceProvider</td>
                <td>Identifiant unique interne associé au fournisseur de services lors du processus d’intégration.</td>
                <td><i>obligatoire</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>Date et heure, en millisecondes, avant lesquelles le code d’authentification n’est pas valide.</td>
+               <td>facultatif</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>Date et heure en millisecondes au-delà desquelles le code d’authentification n’est pas valide.</td>
+               <td>facultatif</td>
             </tr>
          </table>
       </td>
