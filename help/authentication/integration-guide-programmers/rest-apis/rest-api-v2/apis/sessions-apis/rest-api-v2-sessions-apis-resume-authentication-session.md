@@ -2,9 +2,9 @@
 title: Reprendre la session d’authentification
 description: API REST V2 - Reprendre la session d’authentification
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '953'
+source-wordcount: '956'
 ht-degree: 1%
 
 ---
@@ -131,7 +131,7 @@ ht-degree: 1%
       <td>
          Type de média accepté par l’application cliente.
          <br/><br/>
-         S’il est spécifié, il doit s’agir d’application/json.
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
       </td>
       <td>facultatif</td>
    </tr>

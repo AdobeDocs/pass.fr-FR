@@ -1,23 +1,23 @@
 ---
-title: Récupération des informations d’identification client
-description: API d’enregistrement du client dynamique - Récupération des informations d’identification du client
+title: Récupérer les informations d’identification du client
+description: API d’enregistrement client dynamique - Récupération des informations d’identification du client
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '437'
 ht-degree: 1%
 
 ---
 
-# Récupération des informations d’identification client {#retrieve-client-credentials}
+# Récupérer les informations d’identification du client {#retrieve-client-credentials}
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
-> L’implémentation de l’API d’enregistrement de client dynamique est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md) .
+> L’implémentation de l’API d’enregistrement client dynamique est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
 ## Requête {#request}
 
@@ -28,13 +28,13 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">chemin</td>
       <td>/o/client/register</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
-      <td>POST</td>
+      <td style="background-color: #DEEBFF;">méthode</td>
+      <td>POSTER</td>
       <td></td>
    </tr>
    <tr>
@@ -45,15 +45,15 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">software_statement</td>
       <td>
-            L’instruction logicielle associée à l’application enregistrée créée et téléchargée à partir du <a href="https://experience.adobe.com/#/pass/authentication">tableau de bord Adobe Pass TVE</a>.
+            Instruction logicielle associée à l'application enregistrée, créée et téléchargée à partir du tableau de bord Adobe Pass TVE <a href="https://experience.adobe.com/#/pass/authentication"></a>.
             <br/><br/>
-            La gestion des applications enregistrées est décrite dans la documentation <a href="../dynamic-client-registration-overview.md">Présentation de l’enregistrement du client dynamique</a> .
+            La gestion des applications enregistrées est décrite dans la documentation <a href="../dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a>.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirect_uri</td>
-      <td>L’URI de redirection associé à l’emplacement où navigue l’agent utilisateur une fois le flux d’authentification terminé.</td>
+      <td>URI de redirection associé à l’emplacement vers lequel l’agent utilisateur accède une fois le flux d’authentification terminé.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -64,31 +64,31 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         Type de média accepté pour les ressources envoyées.
+         Type de média accepté pour les ressources en cours d’envoi.
          <br/><br/>
-         Il doit s’agir de application/json.
+         Il doit s’agir de application/json;charset=utf-8.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur l’appareil est décrite dans la documentation <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation de <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
          <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plate-forme d’appareil de l’application autorise la spécification explicite de valeurs valides.
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
          <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement les valeurs définies explicitement avec les valeurs extraites (par défaut).
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
          <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal d’authentification Adobe Pass utilise implicitement les valeurs extraites (par défaut).
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
          Type de média accepté par l’application cliente.
          <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json.
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
       </td>
       <td>facultatif</td>
    </tr>
@@ -112,12 +112,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>201</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -137,36 +137,36 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">client_id</td>
                <td>Chaîne d’identifiant de l’application cliente.</td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">client_secret</td>
                <td>Chaîne secrète de l’application cliente.</td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">client_id_issue_at</td>
+               <td style="background-color: #DEEBFF;">client_id_issued_at</td>
                <td>Heure à laquelle l’identifiant de l’application cliente a été émis.</td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">redirect_uris</td>
+               <td style="background-color: #DEEBFF;">redirect_uri</td>
                <td>Tableau de chaînes URI de redirection que l’application cliente peut utiliser dans les flux basés sur la redirection.</td>
-               <td><i>required</i></td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">grant_types</td>
-               <td>Chaînes de type d’octroi que la demande client peut utiliser pour le point de terminaison du jeton client.</td>
-               <td><i>required</i></td>
+               <td>Chaînes de type grant que l’application cliente peut utiliser pour le point d’entrée du jeton client.</td>
+               <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">portées</td>
-               <td>Chaînes de portée définissant les API d’authentification Adobe Pass que l’application cliente peut utiliser.</td>
-               <td><i>required</i></td>
+               <td>Les chaînes de portée définissant les API d’authentification Adobe Pass que l’application cliente peut utiliser.</td>
+               <td><i>obligatoire</i></td>
             </tr>
          </table>
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
 </table>
 
 ### Erreur {#error}
@@ -180,12 +180,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Etat</td>
       <td>400</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>application/json</td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Corps</th>
@@ -205,9 +205,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">invalid_request</td>
                <td>
-                    La demande n’est pas valide pour l’une des raisons suivantes :
+                    La requête n’est pas valide pour l’une des raisons suivantes :
                     <ul>
-                        <li>Un paramètre requis n’est pas associé à la requête.</li>
+                        <li>Il manque un paramètre obligatoire à la requête.</li>
                         <li>La requête inclut une valeur de paramètre non prise en charge.</li>
                         <li>La requête répète un paramètre.</li>
                         <li>La requête est incorrecte.</li>
@@ -216,25 +216,25 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">invalid_redirect_uri</td>
-               <td>La requête inclut une valeur pour l’URI de redirection non valide.</td>
+               <td>La requête inclut une valeur non valide pour l’URI de redirection.</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">invalid_software_statement</td>
-               <td>La requête inclut une valeur pour l’instruction logicielle non valide.</td>
+               <td>La requête inclut une valeur non valide pour l’instruction du logiciel.</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">unapproved_software_statement</td>
-               <td>La requête inclut une valeur pour l’instruction logicielle qui n’est pas approuvée pour l’utilisation par le serveur d’authentification Adobe Pass.</td>
+               <td style="background-color: #DEEBFF;">unapprove_software_statement</td>
+               <td>La requête inclut une valeur pour l’instruction du logiciel qui n’est pas approuvée pour une utilisation par le serveur d’authentification Adobe Pass.</td>
             </tr>
          </table>
       </td>
-      <td><i>required</i></td>
+      <td><i>obligatoire</i></td>
    </tr>
 </table>
 
 ## Exemples {#samples}
 
-### Récupération des informations d’identification client {#samples-retrieve-client-credentials}
+### Récupérer les informations d’identification du client {#samples-retrieve-client-credentials}
 
 >[!BEGINTABS]
 

@@ -2,9 +2,9 @@
 title: Récupérer la demande d’authentification du partenaire
 description: API REST V2 - Récupération de la demande d’authentification du partenaire
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1283'
 ht-degree: 0%
 
 ---
@@ -148,7 +148,7 @@ ht-degree: 0%
       <td>
          Type de média accepté par l’application cliente.
          <br/><br/>
-         S’il est spécifié, il doit s’agir d’application/json.
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
       </td>
       <td>facultatif</td>
    </tr>
