@@ -63,7 +63,7 @@ Cette section vous permet de choisir les points d’entrée du MVPD utilisés po
 
 ### Paramètres de Platform {#platform-settings}
 
-Cette section vous permet d’afficher et de modifier les paramètres d’intégration sur toutes les [ plateformes ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Vous pouvez modifier ces paramètres en fonction des plateformes individuelles. Par exemple, vous pouvez ajuster la durée de vie d’autorisation sur Android tout en conservant une valeur par défaut pour une autre plateforme.
+Cette section vous permet d’afficher et de modifier les paramètres d’intégration sur toutes les [&#x200B; plateformes &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Vous pouvez modifier ces paramètres en fonction des plateformes individuelles. Par exemple, vous pouvez ajuster la durée de vie d’autorisation sur Android tout en conservant une valeur par défaut pour une autre plateforme.
 
 Chaque propriété des paramètres de la plateforme hérite d’une valeur par défaut définie par le MVPD, mais peut être ajustée si nécessaire.
 
@@ -204,7 +204,7 @@ Cependant, dans les cas où les fichiers MVPD acceptent d’augmenter cette limi
 
 **Ressources maximales de contrôle en amont** ajoute un nouvel attribut dans lequel la limite convenue avec le MVPD peut être spécifiée.
 
-![Ajouter la propriété Ressources maximales de contrôle en amont ](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
+![Ajouter la propriété Ressources maximales de contrôle en amont &#x200B;](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
 
 *Ajouter la propriété Ressources maximales de contrôle en amont*
 
@@ -305,7 +305,7 @@ Pour créer une intégration avec un nouveau MVPD sur votre configuration actuel
    >
    >Ne modifiez les points d’entrée par défaut dans aucun flux, sauf indication spécifique du MVPD.
 
-   ![Sélectionner les points d’entrée ](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Sélectionner les points d’entrée &#x200B;](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Sélectionner des points d’entrée*
 

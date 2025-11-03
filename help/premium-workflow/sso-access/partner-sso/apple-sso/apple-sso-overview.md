@@ -53,11 +53,11 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 
    * L’ancienne version de l’API REST d’authentification Adobe Pass prend en charge l’authentification unique (SSO) du partenaire.
 
-     Reportez-vous à la documentation du [ Guide pas à pas Apple (hérité) pour l’authentification unique (API REST V1)](/help/authentication/integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md) .
+     Reportez-vous à la documentation du [&#x200B; Guide pas à pas Apple (hérité) pour l’authentification unique (API REST V1)](/help/authentication/integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md) .
 
    * L’ancien SDK Adobe Pass Authentication AccessEnabler iOS/tvOS prend en charge l’authentification unique (SSO) des partenaires.
 
-     Reportez-vous à la documentation du guide [ (hérité) Apple SSO Cookbook (iOS/tvOS SDK)](/help/authentication/integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md) .
+     Reportez-vous à la documentation du guide [&#x200B; (hérité) Apple SSO Cookbook (iOS/tvOS SDK)](/help/authentication/integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md) .
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
