@@ -2,7 +2,7 @@
 title: Manuel d’Android SDK
 description: Manuel d’Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%
@@ -113,7 +113,7 @@ L’activité réseau d’AccessEnabler a lieu dans un thread différent, de sor
      Le paramètre `authorizedResources` présente les ressources que l’utilisateur est autorisé à afficher.
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B. Flux de démarrage {#startup_flow}
@@ -221,6 +221,6 @@ flux.
 
 ### Flux utilisateur pour la connexion avec plusieurs MVPD et la déconnexion {#user_flows}
 
-[Vous avez ici &#x200B;](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
+[Vous avez ici ](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
 
 Le comportement décrit est disponible lors de l’utilisation d’Android SDK version >= 2.0.0.

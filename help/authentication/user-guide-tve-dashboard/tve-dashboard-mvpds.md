@@ -1,8 +1,8 @@
 ---
-title: MVPD de tableau de bord TVE
+title: MVPD du tableau de bord TVE
 description: Découvrez les MVPD et leurs configurations dans le tableau de bord TVE.
 exl-id: 802c1570-9a5b-4bec-8fb2-6c7738b28bc9
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
@@ -13,18 +13,18 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-La section **MVPDs** du tableau de bord TVE vous permet d’afficher une liste des MVPD intégrés dans l’écosystème d’authentification Adobe Pass.
+La section **MVPD** du tableau de bord TVE vous permet d’afficher une liste des MVPD intégrés dans l’écosystème d’authentification Adobe Pass.
 
-L’onglet **MVPDs** du panneau de gauche affiche une liste des MVPD avec les détails suivants :
+L’onglet **MVPD** du panneau de gauche affiche une liste de MVPD avec les détails suivants :
 
-* **Nom d’affichage** : nom d’affichage dans le sélecteur de chaque MVPD.
+* **Nom d’affichage** : nom d’affichage dans le sélecteur pour chaque MVPD.
 
 * **MVPD ID** : identifiant unique de MVPD utilisé pour configurer une nouvelle intégration dans le système.
 
-![Liste des MVPD intégrés](../assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
+![Liste des MVPD intégrés](/help/authentication/assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
 
 *Liste des MVPD intégrés*
 
-Saisissez le nom d’un MVPD dans la barre **Rechercher** située au-dessus de la liste pour rechercher un MVPD spécifique.
+Saisissez le nom d’un MVPD dans la barre **Rechercher** au-dessus de la liste pour rechercher un MVPD spécifique.

@@ -2,9 +2,9 @@
 title: Guide pas à pas API REST V2 (serveur à serveur)
 description: Guide pas à pas API REST V2 (serveur à serveur)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '2510'
+source-wordcount: '2497'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)  dans leurs applications de streaming avec une architecture de serveur à serveur (S2S).
+Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2[ ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) dans leurs applications de streaming avec une architecture de serveur à serveur (S2S).
 
 ## Conditions préalables {#prerequisites}
 
@@ -183,9 +183,9 @@ Questions fréquentes
 * **Scénario 2 :** il n’existe aucun profil existant, le service de programmation peut passer à l’étape suivante pour [Authentifier l’utilisateur](#step-3-authenticate-the-user).
 
 
-* **Scénario 3 :** il n’existe aucun profil, le service de programmation peut procéder à la fourniture d’un accès temporaire à l’utilisateur par le biais de la fonctionnalité [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
+* **Scénario 3 :** il n’existe aucun profil, le service de programmation peut procéder à la fourniture d’un accès temporaire à l’utilisateur par le biais de la fonctionnalité [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md).
 
-   * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) consultez la documentation  Flux d’accès temporaires .
+   * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations[ consultez la documentation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) Flux d’accès temporaires .
 
 ### Étape 3 : Authentifier l’utilisateur {#step-3-authenticate-the-user}
 
@@ -266,7 +266,7 @@ Questions fréquentes
 
    * Le service de programmation n’est pas nécessaire pour stocker les décisions de préautorisation dans un stockage persistant. Cependant, il est recommandé de mettre en cache les décisions d’autorisation en mémoire pour améliorer l’expérience de l’utilisateur. Cela permet d’éviter les appels inutiles de ressources déjà préautorisées, ce qui réduit la latence et améliore les performances.
 
-   * Le service de programmation peut déterminer la raison d’un refus de décision de préautorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent des informations sur la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+   * Le service de programmation peut déterminer la raison d’un refus de décision de préautorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
 
    * Le service de programmation peut obtenir une décision de préautorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 5, en raison des conditions imposées par les MVPD. Ce nombre maximal de ressources peut être consulté et modifié après accord avec les MVPD via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre entreprise ou par un représentant Adobe Pass Authentication agissant en votre nom.
 
@@ -298,7 +298,7 @@ Questions fréquentes
 
    * Le service de programmation n’est pas nécessaire pour stocker les décisions d’autorisation dans un stockage persistant.
 
-   * Le service de programmation peut déterminer la raison d’un refus d’autorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée d’autorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application de diffusion en continu. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+   * Le service de programmation peut déterminer la raison d’un refus d’autorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée d’autorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application de diffusion en continu. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
 
    * Le service de programmation peut évaluer d&#39;autres règles métier et renvoyer une décision d&#39;autorisation appropriée à l&#39;application de streaming.
 

@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Authentification Adobe Pass
 user-guide-description: L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit.
-source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
-source-wordcount: '1279'
+source-wordcount: '1212'
 ht-degree: 3%
 
 ---
@@ -57,17 +57,17 @@ ht-degree: 3%
    - [Guide de démarrage rapide de MVPD](kickstart/mvpd-kickstart-guide.md)
    - [FAQ sur les procédures d’assistance](kickstart/support-procedures-faqs.md)
 - Guide D’Intégration Pour Les Programmeurs {#integration-guide-programmers}
-   - [Guide d’intégration du programmeur](integration-guide-programmers/programmer-integration-guide-overview.md)
+   - [Guide d’intégration du programmeur](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
    - [Configuration minimale requise](integration-guide-programmers/minimum-system-requirements.md)
    - [Mécanisme de limitation](integration-guide-programmers/throttling-mechanism.md)
    - API REST {#rest-apis}
       - DCR DE L’API REST {#rest-api-dcr}
-         - [Présentation de l’enregistrement client dynamique](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         - [Présentation de l’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
          - [Glossaire d’enregistrement client dynamique](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
          - [FAQ sur l’enregistrement de clients dynamiques](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          - API {#rest-api-dcr-apis}
             - [Récupérer les informations d’identification du client](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
-            - [Récupérer le jeton d’accès](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+            - [Récupérer le jeton d’accès](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
          - Flux {#rest-api-dcr-flows}
             - [Flux d’enregistrement client dynamique](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       - API REST V2 {#rest-api-v2}
@@ -137,33 +137,12 @@ ht-degree: 3%
          - [Jetons de média](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
       - Rapport d’erreurs {#error-reporting}
          - [Codes d’erreur améliorés](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
-      - Accès SSO {#sso-access}
-         - Authentification SSO Du Partenaire {#partner-sso}
-            - Authentification SSO Apple {#apple-sso}
-               - [Présentation de l’authentification unique (SSO) Apple](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
-               - [Manuel de l’authentification unique Apple (API REST V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
-         - Authentification Unique Platform {#platform-sso}
-            - Authentification SSO Amazon {#amazon-sso}
-               - [Manuel de l’authentification unique Amazon (API REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-            - Authentification Unique Roku {#roku-sso}
-               - [Guide pas à pas de Roku SSO (API REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
-      - Accès à l’authentification basée sur l’accueil {#hba-access}
-         - [Authentification à domicile (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       - Prise en charge de la confidentialité {#privacy-support}
-         - [Présentation de l’assistance en matière de confidentialité](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
-         - [Comment effectuer une demande d’accès à des informations personnelles](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
-   - Fonctionnalités Premium {#features-premium}
-      - Accès temporaire {#temporary-access}
-         - [Fonction TempPass](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-      - Accès dégradé {#degraded-access}
-         - [Fonctionnalité de dégradation](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-      - ESM {#esm}
-         - [Présentation de la surveillance du service de droit](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
-         - [API de surveillance du service de droit](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
-         - [Mesures côté serveur](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
+         - [Présentation de l’assistance en matière de confidentialité](integration-guide-programmers/features-standard/privacy-support/privacy-supp-overview.md)
+         - [Comment effectuer une demande d’accès à des informations personnelles](integration-guide-programmers/features-standard/privacy-support/make-privacy-req.md)
       - Analyses {#analytics}
-         - [Intégration des données côté serveur de l’authentification Adobe Pass dans Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         - [Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         - [Intégration des données côté serveur de l’authentification Adobe Pass dans Adobe Analytics](integration-guide-programmers/features-standard/analytics/integrate-authn-servr-data-analytics.md)
+         - [Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md)
    - Hérité {#legacy}
       - API REST V1 (héritée) {#rest-api-v1}
          - [Présentation de l’API REST V1 (héritée)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)

@@ -2,7 +2,7 @@
 title: Manuel de l’authentification unique Apple (API REST V1)
 description: Manuel de l’authentification unique Apple (API REST V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -43,21 +43,21 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 
 ### Authentification {#apple-sso-cookbook-rest-api-v1-authentication}
 
-* [Existe-t-il un jeton d’authentification d’Adobe valide ?](#step1)
+* [Existe-t-il un jeton d’authentification Adobe valide ?](#step1)
 * [L’utilisateur est-il connecté via l’authentification unique du partenaire ?](#step2)
-* [Récupérer la configuration de l’Adobe](#step3)
+* [Récupération de la configuration Adobe](#step3)
 * [Lancement du workflow SSO du partenaire avec la configuration d’Adobe](#step4)
 * [La connexion de l’utilisateur a-t-elle réussi ?](#step5)
-* [Obtenir une requête de profil de l’Adobe pour le MVPD sélectionné](#step6)
-* [Transférer la demande d’Adobe au SSO du partenaire pour obtenir le profil](#step7)
-* [Exchange du profil SSO du partenaire pour un jeton d’authentification Adobe](#step8)
-* [Le jeton d’Adobe est-il généré avec succès ?](#step9)
+* [Obtenir une requête de profil d’Adobe pour le MVPD sélectionné](#step6)
+* [Transférer la requête Adobe au SSO du partenaire pour obtenir le profil](#step7)
+* [Échanger le profil SSO du partenaire contre un jeton d’authentification Adobe](#step8)
+* [Le jeton Adobe a-t-il bien été généré ?](#step9)
 * [Lancement du workflow d’authentification standard](#step10)
 * [Poursuivre les flux d’autorisation](#step11)
 
-![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
-#### Étape : « Existe-t-il un jeton d’authentification d’Adobe valide ? » {#step1}
+#### Étape : « Existe-t-il un jeton d’authentification Adobe valide ? » {#step1}
 
 >[!TIP]
 >
@@ -131,7 +131,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 ...  
 ```
 
-#### Étape : « Récupérer la configuration de l’Adobe » {#step3}
+#### Étape : « Récupérer la configuration Adobe » {#step3}
 
 >[!TIP]
 >
@@ -141,7 +141,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Conseil pro :</u>** prenez connaissance des propriétés MVPD : *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* et prêtez une attention particulière aux commentaires présentés dans les fragments de code provenant d&#39;autres étapes.
 
-#### Étape « Lancer le workflow SSO du partenaire avec la configuration d’Adobe » {#step4}
+#### Étape « Lancer le workflow de connexion unique du partenaire avec la configuration Adobe » {#step4}
 
 >[!TIP]
 >
@@ -255,9 +255,9 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Conseil pro :</u>** prenez connaissance de l’extrait de code de l’étape [&#x200B; Lancer le workflow de l’authentification unique du partenaire avec la configuration d’Adobe »](#step4) La connexion de l’utilisateur réussit si le *`vsaMetadata!.accountProviderIdentifier`* contient une valeur valide et que la date actuelle n’a pas transmis la valeur *`vsaMetadata!.authenticationExpirationDate`*.
+> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l’étape [« Lancer le workflow de l’authentification unique du partenaire avec la configuration Adobe »](#step4). La connexion de l’utilisateur réussit si le *`vsaMetadata!.accountProviderIdentifier`* contient une valeur valide et que la date actuelle n’a pas transmis la valeur *`vsaMetadata!.authenticationExpirationDate`*.
 
-#### Étape « Obtenir une requête de profil de l’Adobe pour le MVPD sélectionné » {#step6}
+#### Étape « Obtenir une requête de profil d’Adobe pour le MVPD sélectionné » {#step6}
 
 >[!TIP]
 >
@@ -267,7 +267,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Conseil pro :</u>** sachez que l&#39;identifiant du fournisseur obtenu à partir du framework de compte d&#39;abonné vidéo représente le *`platformMappingId`* en termes de configuration de l&#39;authentification Adobe Pass. Par conséquent, l’application doit déterminer la valeur de la propriété d’identifiant MVPD, à l’aide de la valeur *`platformMappingId`*, par le biais du service d’API Authentification Adobe Pass [Fournir une liste MVPD](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md).
 
-#### Étape : « Transférer la demande d’Adobe au SSO du partenaire pour obtenir le profil » {#step7}
+#### Étape : « Transférer la requête Adobe au SSO du partenaire pour obtenir le profil » {#step7}
 
 >[!TIP]
 >
@@ -344,21 +344,21 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
     ...
 ```
 
-#### Étape : « Exchange du profil SSO du partenaire pour un jeton d’authentification Adobe » {#step8}
+#### Étape : « Échanger le profil SSO du partenaire contre un jeton d’authentification Adobe » {#step8}
 
 >[!TIP]
 >
-> **<u>Conseil :</u>** implémentez ceci par le biais du service d’API d’authentification Adobe Pass [Exchange du jeton](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md).
+> **<u>Conseil :</u>** implémentez ceci par le biais du service d’API d’authentification Adobe Pass [échange de jetons](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md).
 
 >[!TIP]
 >
-> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l&#39;étape [&#x200B; Transférer la demande d&#39;Adobe au SSO partenaire pour obtenir le profil](#step7). Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Exchange du jeton](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* codés par la suite) avant d’effectuer l’appel.
+> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l’étape [ Transférer la demande Adobe à l’authentification unique du partenaire pour obtenir le profil »](#step7) Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* par la suite) avant d’effectuer l’appel.
 
-#### Étape : « Le jeton d’Adobe a-t-il été généré avec succès ? » {#step9}
+#### Étape : « Le jeton Adobe a-t-il été généré avec succès ? » {#step9}
 
 >[!TIP]
 >
-> **<u>Conseil :</u>** implémentez ceci par le biais de l’authentification Adobe Pass [Exchange du jeton](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) réponse réussie, qui sera un *`204 No Content`*, indiquant que le jeton a été créé avec succès et est prêt à être utilisé pour les flux d’autorisation.
+> **<u>Conseil :</u>** implémentez ceci par le biais de l’authentification Adobe Pass [échange de jetons](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) une réponse réussie, qui sera un *`204 No Content`*, indiquant que le jeton a été créé avec succès et est prêt à être utilisé pour les flux d’autorisation.
 
 #### Étape : « Lancer le workflow d’authentification standard » {#step10}
 

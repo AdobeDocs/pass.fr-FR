@@ -2,7 +2,7 @@
 title: Authentification Adobe Pass et nouveau modèle d’autorisations Android 6 « Marshmallow »
 description: Authentification Adobe Pass et nouveau modèle d’autorisations Android 6 « Marshmallow »
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 La nouvelle version d’Android 6 Marshmallow introduit certaines mises à jour du modèle d’autorisations, ce qui peut affecter le comportement des applications qui utilisent la version 1.8 et ultérieure du SDK d’authentification Adobe Pass.
 
-Nouvelle fonctionnalité, le nouveau système d’exploitation Android offre un contrôle granulaire [&#x200B; sur les autorisations dont les applications ont besoin au moment de l’installation et de l’exécution](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
+Nouvelle fonctionnalité, le nouveau système d’exploitation Android offre un contrôle granulaire [ sur les autorisations dont les applications ont besoin au moment de l’installation et de l’exécution](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
 
 >[!IMPORTANT]
 >
@@ -77,10 +77,10 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 >Une fonctionnalité qui introduit la résilience du stockage est actuellement en développement pour Adobe Pass Authentication SDK 1.9. La nouvelle version de SDK devrait sortir **au cours de la dernière semaine d’octobre**. L’application revient à écrire dans le stockage sandbox de l’application chaque fois que le stockage général ne peut pas être utilisé. Cela couvre le cas où, pour les applications développées au niveau API 23, les utilisateurs n’acceptent PAS les autorisations de lecture/écriture dans le stockage global. Les jetons sont stockés individuellement par application, ce qui signifie que l’authentification unique entre les applications à l’aide de l’authentification Adobe Pass sera désactivée.
 
 
-![](../../../assets/android-permissions-request.png)
+![](/help/authentication/assets/android-permissions-request.png)
 
 *Figure : boîte de dialogue de demande d’autorisation pour les applications écrites ciblant le niveau d’API 23*
 
 >[!IMPORTANT]
 >
-> Adobe conseille à **ses partenaires de développer des applications à l’aide d’API de niveau 22 (targetSdkVersion=22) ou supérieur afin de garantir la meilleure expérience utilisateur possible dans le processus d’authentification**.
+> Adobe conseille à **ses partenaires de développer des applications à l’aide d’API de niveau 22 (targetSdkVersion=22) ou supérieur, afin de garantir la meilleure expérience utilisateur possible dans le processus d’authentification**.

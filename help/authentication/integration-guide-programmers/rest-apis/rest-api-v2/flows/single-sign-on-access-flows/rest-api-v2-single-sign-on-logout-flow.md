@@ -2,7 +2,7 @@
 title: Déconnexion unique - Flux
 description: API REST V2 - Déconnexion unique - Flux
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Avant de lancer une déconnexion unique pour un MVPD spécifique, assurez-vous q
 
 Suivez les étapes données pour implémenter le flux de déconnexion unique pour un MVPD spécifique, comme illustré dans le diagramme ci-dessous.
 
-![Lancer une déconnexion unique pour un fichier mvpd spécifique](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
+![Lancer une déconnexion unique pour un fichier mvpd spécifique](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
 *Lancer une déconnexion unique pour un fichier mvpd spécifique*
 

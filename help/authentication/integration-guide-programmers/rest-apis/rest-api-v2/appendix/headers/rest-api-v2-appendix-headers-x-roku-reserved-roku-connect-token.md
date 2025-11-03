@@ -1,7 +1,8 @@
 ---
 title: 'En-Tête : X-Roku-Reserved-Roku-Connect-Token'
 description: API REST V2 - En-tête - X-Roku-Reserved-Roku-Connect-Token
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+exl-id: 21016d5b-4d10-4018-a82c-f2797b2d9fb9
+source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 2%
@@ -20,7 +21,7 @@ L’en-tête de requête <b>X-Roku-Reserved-Roku-Connect-Token</b> contient l’
 
 Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode d’identification Platform.
 
-Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode d’identité de Platform, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux d’identité de Platform &#x200B;](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
+Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode d’identité de Platform, reportez-vous à la documentation [ Authentification unique à l’aide des flux d’identité de Platform ](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
 
 ## Syntaxe {#syntax}
 
@@ -46,4 +47,4 @@ La signature web JSON (`JWS`) ou le chiffrement web JSON (`JWE`) qui est un jeto
 
 Cette option est disponible pour les plateformes suivantes :
 
-* [Guide pas à pas de Roku SSO (API REST V2)](../../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+* [Guide pas à pas de Roku SSO (API REST V2)](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)

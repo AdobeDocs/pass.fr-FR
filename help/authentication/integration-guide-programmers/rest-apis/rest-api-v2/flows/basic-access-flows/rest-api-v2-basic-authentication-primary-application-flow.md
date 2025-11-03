@@ -2,7 +2,7 @@
 title: Authentification de base - Application en Principal - Flux
 description: API REST V2 - Authentification de base - Application en Principal - Flux
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '903'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Avant d’effectuer l’authentification par le biais de l’interaction utilisa
 
 Suivez les étapes données pour implémenter le flux d’authentification de base effectué dans une application principale, comme illustré dans le diagramme suivant.
 
-![Effectuer l’authentification dans l’application principale](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-primary-application.png)
+![Effectuer l’authentification dans l’application principale](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-primary-application.png)
 
 *Effectuer l’authentification dans l’application principale*
 

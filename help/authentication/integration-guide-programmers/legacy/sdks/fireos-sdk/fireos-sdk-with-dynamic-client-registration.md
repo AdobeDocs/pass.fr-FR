@@ -2,7 +2,7 @@
 title: SDK Amazon FireOS avec enregistrement client dynamique
 description: SDK Amazon FireOS avec enregistrement client dynamique
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 FireOS AccessEnabler SDK for FireTV a été modifié pour activer l’authentification sans utiliser de cookies de session. Comme de plus en plus de navigateurs restreignent l’accès aux cookies, une autre méthode était nécessaire pour autoriser l’authentification.
 
-**FireOS SDK 3.0.4** remplace le mécanisme actuel d’enregistrement de l’application basé sur l’ID du demandeur signé et l’authentification par cookie de session par [Présentation de l’enregistrement du client dynamique](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+**FireOS SDK 3.0.4** remplace le mécanisme actuel d’enregistrement de l’application basé sur l’ID du demandeur signé et l’authentification par cookie de session par [Présentation de l’enregistrement du client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Modifications d’API {#API}
@@ -54,11 +54,11 @@ FireOS AccessEnabler SDK for FireTV a été modifié pour activer l’authentifi
 
 ### setRequestor
 
-**Description :** établit l’identité du canal. Chaque canal se voit attribuer un identifiant unique lors de l’enregistrement auprès de l’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez avec des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est mise en premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
+**Description :** établit l’identité du canal. Chaque canal se voit attribuer un identifiant unique lors de son enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez avec des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est mise en premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
 
 La réponse du serveur contient une liste de fichiers MVPD ainsi que des informations de configuration liées à l’identité du canal. La réponse du serveur est utilisée en interne par le code d’activation d’Access. Seul le statut de l’opération (c’est-à-dire SUCCÈS/ÉCHEC) est présenté à votre application via le rappel setRequestorComplete().
 
-Si le paramètre *urls* n’est pas utilisé, l’appel réseau qui en résulte cible l’URL du fournisseur de services par défaut : l’environnement de production de publication d’Adobe.
+Si le paramètre *urls* n’est pas utilisé, l’appel réseau qui en résulte cible l’URL du fournisseur de services par défaut : l’environnement de production de la version Adobe.
 
 Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultant cible toutes les URL fournies dans le paramètre *urls*. Toutes les demandes de configuration sont déclenchées simultanément dans des threads distincts. Le premier répondant est prioritaire lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, Access Enabler mémorise l’URL du fournisseur d’accès associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
 

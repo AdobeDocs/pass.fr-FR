@@ -2,7 +2,7 @@
 title: Récupérer le jeton d’autorisation
 description: Récupérer le jeton d’autorisation
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '373'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -44,7 +44,7 @@ Récupère le jeton d’autorisation (AuthZ).
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  ressource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète) | GET | 1. Réussite</br>2.  </br> du jeton d’authentification    introuvable ou expiré :   </br>    XML expliquant le motif </br>    jeton d’authentification introuvable</br>3.  Jeton d’autorisation </br>    introuvable : </br>    Explication XML </br>4.  Jeton d’autorisation </br>    expiré : </br>    Explication XML | 200 - Succès </br>412 - Pas d’AuthN</br></br>404 - Pas d’AuthZ</br></br>410 - AuthZ expiré |
+| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  ressource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète) | GET | &#x200B;1. Réussite</br>2.  </br> du jeton d’authentification    introuvable ou expiré :   </br>    XML expliquant le motif </br>    jeton d’authentification introuvable</br>3.  Jeton d’autorisation </br>    introuvable : </br>    Explication XML </br>4.  Jeton d’autorisation </br>    expiré : </br>    Explication XML | 200 - Succès </br>412 - Pas d’AuthN</br></br>404 - Pas d’AuthZ</br></br>410 - AuthZ expiré |
 
 {style="table-layout:auto"}
 
@@ -55,8 +55,8 @@ Récupère le jeton d’autorisation (AuthZ).
 | demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’ID de l’appareil. |
 | ressource | Chaîne contenant un resourceId (ou un fragment MRSS), identifiant le contenu demandé par un utilisateur et reconnu par les points d’entrée d’autorisation MVPD. |
-| device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL de GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués, par exemple, Roku, AppleTV et Xbox.</br></br>Voir, [Avantages de l’utilisation d’un paramètre de type d’appareil sans client dans les mesures de réussite &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplacera ce paramètre. |
+| device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués, par exemple, Roku, AppleTV et Xbox.</br></br>Voir, [Avantages de l’utilisation d’un paramètre de type d’appareil sans client dans les mesures de réussite ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplacera ce paramètre. |
 | _deviceUser_ | Identifiant utilisateur de l’appareil. |
 | _appId_ | Nom/ID de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. |
 

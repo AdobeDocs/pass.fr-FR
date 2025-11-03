@@ -2,7 +2,7 @@
 title: Lancer l’autorisation
 description: Lancer l’autorisation
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Obtient la réponse d’autorisation.
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authorize. | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  ressource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète)</br>8.  paramètres supplémentaires (facultatif) | GET | XML ou JSON contenant les détails d’autorisation ou les détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 200 - Succès </br>403 - Aucun Succès |
+| &lt;SP_FQDN>/api/v1/authorize. | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  ressource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète)</br>8.  paramètres supplémentaires (facultatif) | GET | XML ou JSON contenant les détails d’autorisation ou les détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 200 - Succès </br>403 - Aucun Succès |
 
 {style="table-layout:auto"}
 
@@ -55,11 +55,11 @@ Obtient la réponse d’autorisation.
 | demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’ID de l’appareil. |
 | ressource | Chaîne contenant un resourceId (ou un fragment MRSS), identifiant le contenu demandé par un utilisateur et reconnu par les points d’entrée d’autorisation MVPD. |
-| device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL de GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Type d’appareil (par exemple Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br>Voir [Avantages du paramètre de type d’appareil sans client dans les mesures de réussite &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplacera ce paramètre. |
+| device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br>Voir [Avantages du paramètre de type d’appareil sans client dans les mesures de réussite ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplacera ce paramètre. |
 | _deviceUser_ | Identifiant utilisateur de l’appareil. |
 | _appId_ | Nom/ID de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. |
-| paramètres supplémentaires | L’appel peut également contenir des paramètres facultatifs qui activent d’autres fonctionnalités telles que :</br></br>* generic_data - permet l’utilisation de [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)</br></br>Exemple : `generic_data=("email":"email@domain.com")` |
+| paramètres supplémentaires | L’appel peut également contenir des paramètres facultatifs qui activent d’autres fonctionnalités telles que :</br></br>* generic_data - permet l’utilisation de [Promotional TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)</br></br>Exemple : `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 
@@ -87,7 +87,6 @@ Obtient la réponse d’autorisation.
 * **Cas 1 : Succès**
 </br>
   * **XML:**
-
   </br>
 
     « XML

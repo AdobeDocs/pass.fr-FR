@@ -2,7 +2,7 @@
 title: Authentification Single Sign-On - Jeton De Service - Flux
 description: API REST V2 - Authentification unique - Jeton de service - Flux
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1857'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Avant d’effectuer le flux d’authentification par authentification unique à 
 
 Suivez les étapes données pour implémenter le flux d’authentification par authentification unique à l’aide d’un jeton de service, comme illustré dans le diagramme suivant.
 
-![Authentification par authentification unique à l’aide du jeton de service](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
+![Authentification par authentification unique à l’aide du jeton de service](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
 
 *Authentification par authentification unique à l’aide du jeton de service*
 
@@ -230,7 +230,7 @@ Avant d’exécuter le flux d’autorisation par authentification unique à l’
 
 Suivez les étapes données pour implémenter le flux d’autorisation par le biais de l’authentification unique à l’aide d’un jeton de service, comme illustré dans le diagramme suivant.
 
-![Récupérer des décisions d’autorisation par authentification unique à l’aide d’un jeton de service](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
+![Récupérer des décisions d’autorisation par authentification unique à l’aide d’un jeton de service](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
 
 *Récupérer des décisions d’autorisation par authentification unique à l’aide d’un jeton de service*
 

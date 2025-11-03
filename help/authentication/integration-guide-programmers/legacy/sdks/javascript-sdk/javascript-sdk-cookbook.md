@@ -2,7 +2,7 @@
 title: Manuel de JavaScript SDK
 description: Manuel de JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '957'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -36,7 +36,7 @@ lien vers un ensemble d’exemples de code JavaScript.
 
 </br>
 
-![](../../../../assets/javascript-flows.png)
+![](/help//authentication/assets/javascript-flows.png)
 
 
 ## Conditions préalables {#prereq}
@@ -86,7 +86,7 @@ Le paramètre mvpds est un tableau de fournisseurs disponibles pour l’utilisat
 
 - `selectedProvider(mvpd)`
 
-  **Trigger:** [`getSelectedProvider()`] (#$getSelProv Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par
+  **Trigger:** [`getSelectedProvider()`]&#x200B;(#$getSelProv Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par
 l’utilisateur .
 
 - `setMetadataStatus(metadata, key, arguments)`
@@ -95,7 +95,7 @@ l’utilisateur .
   Le paramètre `metadata` fournit les données spécifiques que vous avez demandées ; le paramètre key est la clé utilisée dans la `getMetadata()`requête ; et le paramètre `arguments` est le même dictionnaire que celui transmis à `getMetadata()`.
 
 
-## 2. Flux de démarrage
+## &#x200B;2. Flux de démarrage
 
 **I. Chargez le JavaScript AccessEnabler :**
 
@@ -136,7 +136,7 @@ l’identité du programmeur ; transmettre le `requestorID` du programmeur ; et
 
 </br>
 
-## 3. Flux d’authentification </span>
+## &#x200B;3. Flux d’authentification </span>
 
 
 **Dépendance :** un appel réussi à `setRequestor()` (cette dépendance s’applique également à tous les appels suivants).
@@ -151,7 +151,7 @@ Appelez `getAuthentication()` pour obtenir le statut d’authentification OU pou
 
 La fin du flux d’authentification est atteinte lorsque l’AccessEnabler appelle `setAuthenticationStatus()`avec `isAuthenticated == 1`.
 
-## 4. Flux d’autorisation {#authz}
+## &#x200B;4. Flux d’autorisation {#authz}
 
 **Dépendances :**
 
@@ -175,7 +175,7 @@ Bibliothèque AccessEnabler)
 - Si la validation est réussie : affichez/lisez le média demandé pour l’utilisateur.
 - En cas d’échec : le jeton AuthZ n’était pas valide, la requête de média doit être refusée et un message d’erreur doit s’afficher pour l’utilisateur ou l’utilisatrice.
 
-## 5. Afficher le flux multimédia {#logout}
+## &#x200B;5. Afficher le flux multimédia {#logout}
 
 - L’utilisateur sélectionne le média à afficher.
    - Les médias sont-ils protégés ?
@@ -186,7 +186,7 @@ Bibliothèque AccessEnabler)
 
 ## Configuration de l’identifiant visiteur {#visitorID}
 
-La configuration d&#39;une valeur [visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr) Experience Cloud est très importante du point de vue analytique. Une fois qu’une valeur d’identifiant visiteur EC est définie, le SDK envoie ces informations avec chaque appel réseau et le service d’authentification Adobe Pass collecte ces informations. Vous pourrez ainsi mettre en corrélation les données d’analyse du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur EC [ici](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr).
+La configuration d’une valeur [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) est très importante du point de vue analytique. Une fois qu’une valeur d’identifiant visiteur EC est définie, le SDK envoie ces informations avec chaque appel réseau et le service d’authentification Adobe Pass collecte ces informations. Vous pourrez ainsi mettre en corrélation les données d’analyse du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur EC [ici](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

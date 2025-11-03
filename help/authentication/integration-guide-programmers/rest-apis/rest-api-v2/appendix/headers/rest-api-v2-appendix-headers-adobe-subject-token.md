@@ -2,7 +2,7 @@
 title: 'En-Tête : Adobe-Subject-Token.'
 description: API REST V2 - En-tête - Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 2%
@@ -21,7 +21,7 @@ L’en-tête de requête <b>Adobe-Subject-Token</b> contient l’identifiant uni
 
 Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode d’identification Platform.
 
-Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode d’identité de Platform, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux d’identité de Platform &#x200B;](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
+Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode d’identité de Platform, reportez-vous à la documentation [ Authentification unique à l’aide des flux d’identité de Platform ](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
 
 ## Syntaxe {#syntax}
 
@@ -47,10 +47,10 @@ La signature web JSON (`JWS`) ou le chiffrement web JSON (`JWE`) qui est un jeto
 
 Cette option est disponible pour les plateformes suivantes :
 
-* [Manuel de l’authentification unique Amazon (API REST V2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Manuel de l’authentification unique Amazon (API REST V2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 
 ## Exemples {#examples}
 
 Consultez les exemples tels que décrits pour les plateformes suivantes :
 
-* [Manuel de l’authentification unique Amazon (API REST V2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Manuel de l’authentification unique Amazon (API REST V2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)

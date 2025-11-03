@@ -2,7 +2,7 @@
 title: Référence de l’API JavaScript SDK
 description: Référence de l’API JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -40,7 +40,7 @@ Ces fonctions lancent des demandes d’interaction avec un MVPD. Tous les appels
 
 **Paramètres:**
 
-- *inRequestorID* - Identifiant unique attribué par l’Adobe au site d’origine lors de l’enregistrement.
+- *inRequestorID* - Identifiant unique attribué par Adobe au site d’origine lors de l’enregistrement.
 
 - *endpoints* - Ce paramètre est facultatif. Il peut s’agir de l’une des valeurs suivantes :
 
@@ -50,8 +50,8 @@ Ces fonctions lancent des demandes d’interaction avec un MVPD. Tous les appels
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *options* - Objet JSON contenant la valeur de l’ID d’application, la valeur de l’ID de visiteur sans actualisation (déconnexion en arrière-plan) et les paramètres MVPD (iFrame). Toutes les valeurs sont facultatives.
-   1. Si spécifié, l’identifiant visiteur Experience Cloud est signalé sur tous les appels réseau effectués par la bibliothèque. La valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
-   2. Si l’identifiant unique de l’application est spécifié -`applicationId` - la valeur sera ajoutée à tous les appels suivants effectués par l’application dans le cadre de l’en-tête HTTP X-Device-Info. Cette valeur peut être récupérée ultérieurement à partir des rapports [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) à l’aide de la requête appropriée.
+   1. S’il est spécifié, l’identifiant visiteur Experience Cloud est signalé sur tous les appels réseau effectués par la bibliothèque. La valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
+   2. Si l’identifiant unique de l’application est spécifié -`applicationId` - la valeur sera ajoutée à tous les appels suivants effectués par l’application dans le cadre de l’en-tête HTTP X-Device-Info. Cette valeur peut être récupérée ultérieurement à partir des rapports [ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md) à l’aide de la requête appropriée.
 
   **Remarque :** toutes les clés JSON sont sensibles à la casse.
 
@@ -178,7 +178,7 @@ En cas de réussite, crée et stocke un jeton d’authentification pour l’util
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Description :** cette méthode est utilisée par l’application pour vérifier le statut d’autorisation du client actuel et de la ressource donnée. Il commence par vérifier d’abord le statut de l’authentification. Si elle n’est pas authentifiée, le rappel tokenRequestFailed() est déclenché et la méthode se ferme. Si l’utilisateur est authentifié, cela déclenche également le flux d’autorisation. Voir les détails sur la méthode [getAuthorization()] (#getAuthZ.
+**Description :** cette méthode est utilisée par l’application pour vérifier le statut d’autorisation du client actuel et de la ressource donnée. Il commence par vérifier d’abord le statut de l’authentification. Si elle n’est pas authentifiée, le rappel tokenRequestFailed() est déclenché et la méthode se ferme. Si l’utilisateur est authentifié, cela déclenche également le flux d’autorisation. Voir les détails sur la méthode [getAuthorization()]&#x200B;(#getAuthZ.
 
 >[!TIP]
 >
@@ -241,7 +241,7 @@ Il existe deux types de métadonnées :
 
    - Si la clé est `"TTL_AUTHZ"` et que params est un tableau contenant l’ID de ressource sous la forme d’une chaîne, la requête est exécutée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
 
-   - Si la clé est `"DEVICEID"`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter l’Adobe pour plus d’informations sur l’activation et les frais.
+   - Si la clé est `"DEVICEID"`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
 
    - Si la clé figure dans la liste suivante des types de métadonnées utilisateur, un objet JSON contenant les métadonnées utilisateur correspondantes est envoyé à la fonction de rappel [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) :
 
@@ -309,7 +309,7 @@ Par exemple :
 **Description :** appelez cette fonction lorsque l’utilisateur a sélectionné un MVPD dans l’interface utilisateur de sélection de fournisseur afin d’envoyer la sélection de fournisseur à Access Enabler ou appelez cette fonction avec un paramètre null au cas où l’utilisateur aurait ignoré l’interface utilisateur de sélection de fournisseur sans sélectionner de fournisseur.
 
 **Rappels
-triggered:**[&#x200B; setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+triggered:**[ setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Vous devez implémenter ces rappels pour gérer les réponses à vos appels de r
 
 **Description :** implémentez ce rappel si l’utilisateur a sélectionné un MVPD qui nécessite un iFrame pour afficher l’interface utilisateur de sa page de connexion d’authentification.
 
-**Déclenché par :**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Déclenché par :**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Haut de la page](#top)
 
@@ -448,7 +448,7 @@ Vous devez implémenter ces rappels pour gérer les réponses à vos appels de r
 
 >[!CAUTION]
 >
->Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (<http://java.net/projects/user-agent-utils>) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre approximatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais que l’Adobe ne peut être tenu responsable de résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
+>Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (<http://java.net/projects/user-agent-utils>) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
 
 **Description :** implémentez ce rappel pour recevoir les données de suivi lorsque des événements spécifiques se produisent. Vous pouvez l’utiliser, par exemple, pour suivre le nombre d’utilisateurs qui se sont connectés avec les mêmes informations d’identification. Le tracking n’est actuellement pas configurable. Avec Adobe Pass Authentication 1.6, `sendTrackingData()` signale également les informations sur l’appareil, le client Access Enabler et le type de système d’exploitation. Le rappel `sendTrackingData()` reste rétrocompatible.
 

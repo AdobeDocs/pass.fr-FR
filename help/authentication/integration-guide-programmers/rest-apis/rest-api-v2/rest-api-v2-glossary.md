@@ -2,7 +2,7 @@
 title: Glossaire de l’API REST V2
 description: Glossaire de l’API REST V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Ce document fournit des définitions des termes utilisés lors de l’intégration de l’API REST d’authentification Adobe Pass V2.
 
@@ -23,7 +23,7 @@ Ce document fournit des définitions des termes utilisés lors de l’intégrati
 
 ## Glossaire {#glossary-terms}
 
-### UN {#a}
+### A {#a}
 
 #### Authentification {#authentication}
 
@@ -31,9 +31,9 @@ L’authentification est un processus qui permet à un utilisateur de prouver so
 
 #### Code d’authentification {#code}
 
-Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [&#x200B; session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
+Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [ session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
 
-Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [&#128279;](#primary-application) ou une application (programmeur) Secondaire [&#128279;](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
+Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [](#primary-application) ou une application (programmeur) Secondaire [](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
 
 Synonyme de l&#39;ancien terme utilisé code d&#39;enregistrement.
 
@@ -63,7 +63,7 @@ La décision est un concept d’authentification Adobe Pass qui stocke des infor
 
 La dégradation est une fonctionnalité d’authentification d’Adobe Pass qui permet à un utilisateur d’accéder au contenu protégé même lorsque son [MVPD](#mvpd) subit une interruption de service.
 
-Pour plus d’informations, consultez la documentation [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md).
+Pour plus d’informations, consultez la documentation [Fonctionnalité de dégradation](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 #### Identifiant de l’appareil {#device-id}
 
@@ -87,7 +87,7 @@ Pour plus d’informations, consultez la documentation [Codes d’erreur amélio
 
 L’authentification à domicile (HBA) est le processus par lequel un client se voit automatiquement accorder l’accès au contenu [TV Everywhere (TVE)](#tve) sur certains appareils connectés à son réseau domestique, qui fait partie de l’emplacement du contrat d’abonnement.
 
-### J&#39;{#i}
+### I {#i}
 
 #### Fournisseur d’identité {#identity-provider}
 
@@ -131,7 +131,7 @@ Synonyme de [Fournisseur TV](#tv-provider) et [Fournisseur d’identité](#ident
 
 Le partenaire est une société qui fournit un service ou une structure à un [programmeur](#programmer) pour permettre une expérience utilisateur d’authentification unique.
 
-Le partenaire est identifié par une valeur unique (par exemple, « apple ») définie lors du processus d’intégration entre le partenaire et l’Adobe.
+Le partenaire est identifié par une valeur unique (par exemple, « apple ») définie lors du processus d’intégration entre le partenaire et Adobe.
 
 #### Préautorisation {#preauthorization}
 
@@ -201,13 +201,13 @@ L’application secondaire peut s’exécuter sur le même appareil que l’appl
 
 Le jeton de service est un identifiant utilisateur unique généré par un service ou une structure (bibliothèque) lié à l’utilisateur et fourni au [programmeur](#programmer) pour activer une expérience utilisateur d’authentification unique.
 
-Pour plus d’informations, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux de jeton de service &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Pour plus d’informations, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 #### Prestataire {#service-provider}
 
 Le fournisseur est un canal (marque) détenu par un [programmeur](#programmer).
 
-Le fournisseur de services est identifié par une valeur unique définie lors du processus d’intégration entre le programmeur et l’Adobe.
+Le fournisseur de services est identifié par une valeur unique définie lors du processus d’intégration entre le programmeur et Adobe.
 
 Synonyme de l’ancien terme utilisé pour l’ID du demandeur.
 
@@ -229,13 +229,13 @@ L’authentification unique (SSO) est un processus qui permet à un utilisateur 
 
 Le TempPass de base est une fonction d’authentification d’Adobe Pass qui permet à un utilisateur d’accéder à un contenu protégé pendant une durée limitée sans avoir à s’authentifier avec un [MVPD](#mvpd).
 
-Pour plus d’informations, reportez-vous à la documentation [Basic TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass).
+Pour plus d’informations, reportez-vous à la documentation [Basic TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass).
 
 #### Promotionnel TempPass {#temp-pass-promotional}
 
 Le TempPass promotionnel est une fonction d’authentification d’Adobe Pass qui permet à un utilisateur d’accéder au contenu protégé pendant un nombre maximal de ressources et une durée limitée sans avoir à s’authentifier avec un [MVPD](#mvpd).
 
-Pour plus d’informations, consultez la documentation [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass).
+Pour plus d’informations, consultez la documentation [Promotional TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass).
 
 #### TTL {#ttl}
 
@@ -257,7 +257,7 @@ Pour plus d’informations, consultez la documentation du [Guide d’utilisation
 
 Le fournisseur de services de télévision est une entreprise qui fournit des services de télévision aux consommateurs par câble, par satellite ou par Internet.
 
-Le fournisseur de télévision est identifié par une valeur unique définie lors du processus d’intégration entre le fournisseur de télévision et l’Adobe.
+Le fournisseur de télévision est identifié par une valeur unique définie lors du processus d’intégration entre le fournisseur de télévision et Adobe.
 
 Synonyme de [MVPD](#mvpd) et [Fournisseur d&#39;identité](#identity-provider).
 

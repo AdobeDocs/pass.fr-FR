@@ -2,7 +2,7 @@
 title: Guide de démarrage rapide du programmeur
 description: Guide de démarrage rapide du programmeur
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -13,27 +13,27 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Ce guide de démarrage rapide est destiné aux fournisseurs de contenu (programmeurs) qui prévoient d’intégrer l’authentification Adobe ® Pass à leurs sites web ou applications.
+Ce guide de démarrage rapide est destiné aux fournisseurs de contenu (programmeurs) qui prévoient d’intégrer Adobe® Pass Authentication à leurs sites web ou applications.
 
 Ce document décrit les principales étapes initiales pour garantir un démarrage fluide et efficace du processus d’intégration. Il vise à clarifier les attentes et à fournir des conseils sur la façon dont nous collaborerons avec les partenaires pour réussir les intégrations.
 
-Adobe fournit diverses ressources pour vous aider à intégrer l’authentification Adobe Pass à votre site web ou application. Veuillez vous reporter aux mentions **« Vous fournirez »** et **« L’Adobe fournira »** de chaque section ci-dessous.
+Adobe fournit diverses ressources pour vous aider à intégrer l’authentification Adobe Pass à votre site web ou application. Reportez-vous aux mentions **« Vous fournirez »** et **« Adobe fournira »** de chaque section ci-dessous.
 
 ## Processus de configuration {#setup-process}
 
 Le processus de configuration comprend entre autres les étapes suivantes :
 
-![Processus D&#39;Intégration De L&#39;Authentification Adobe ® Pass](../assets/progr-flow-int-lifecycle.png)
+![Processus D’Intégration De L’Authentification Adobe® Pass](/help/authentication/assets/progr-flow-int-lifecycle.png)
 
-*Processus D&#39;Intégration De L&#39;Authentification Adobe ® Pass*
+*Processus D’Intégration De L’Authentification Adobe® Pass*
 
 **Vous fournirez** au cours de la phase de lancement :
 
 * **Prestataire (identifiant du demandeur)**
 
-  Il s’agit d’une chaîne qui identifie de manière unique la marque du site web ou l’application qui effectue des requêtes à l’authentification Adobe Pass. La chaîne elle-même est arbitraire, mais doit être acceptée par l’Adobe et le programmeur
+  Il s’agit d’une chaîne qui identifie de manière unique la marque du site web ou l’application qui effectue des requêtes à l’authentification Adobe Pass. La chaîne elle-même est arbitraire, mais doit être acceptée par Adobe et le programmeur
 
 * **Informations sur le canal**
 
@@ -41,7 +41,7 @@ Le processus de configuration comprend entre autres les étapes suivantes :
 
 * **Noms de domaine**
 
-  Cette liste inclut les noms de domaine réels répertoriés à l’Adobe pour représenter le fournisseur de services. Cela garantit que seuls vos domaines autorisés peuvent accéder à l’authentification Adobe Pass à l’aide de vos métadonnées. Veillez à fournir et à identifier clairement les noms de domaine pour les environnements de production et d’évaluation (tests), car ils peuvent différer.
+  Cette liste inclut les noms de domaine réels répertoriés dans Adobe pour représenter le fournisseur de services. Cela garantit que seuls vos domaines autorisés peuvent accéder à l’authentification Adobe Pass à l’aide de vos métadonnées. Veillez à fournir et à identifier clairement les noms de domaine pour les environnements de production et d’évaluation (tests), car ils peuvent différer.
 
 **Vous fournirez** via MVPD :
 
@@ -69,22 +69,22 @@ Le processus de configuration comprend entre autres les étapes suivantes :
 
 ## Accès au service clientèle {#access-customer-support}
 
-**Adobe fournira** l&#39;accès à notre système de service clientèle via [Zendesk](https://tve.zendesk.com/home). Pour accéder à Zendesk, vous devez vous enregistrer et créer un compte à l’adresse https://tve.zendesk.com/home. Le nombre d’utilisateurs pouvant être enregistrés n’est pas limité. Une fois enregistré, vous pouvez afficher et partager des commentaires sur n’importe quel ticket envoyé.
+**Adobe fournira** accès à notre système de service clientèle via [Zendesk](https://tve.zendesk.com/home). Pour accéder à Zendesk, vous devez vous enregistrer et créer un compte à l’adresse https://tve.zendesk.com/home. Le nombre d’utilisateurs pouvant être enregistrés n’est pas limité. Une fois enregistré, vous pouvez afficher et partager des commentaires sur n’importe quel ticket envoyé.
 
 L’équipe d’authentification d’Adobe Pass est à votre disposition pour toute question ou problème technique que vous pourriez rencontrer au cours du processus d’intégration. Veuillez nous contacter à [tve-support@adobe.com](mailto:tve-support@adobe.com).
 
 ## Accès à la documentation {#access-documentation}
 
-**L’Adobe fournira** l’accès à notre documentation publique via [Adobe Experience League](https://experienceleague.adobe.com/fr/docs/pass/authentication/home).
+**Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home), accès à notre documentation publique.
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les API disponibles dans la section [&#x200B; Guide d’intégration pour les programmeurs &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les API disponibles dans la section [ Guide d’intégration pour les programmeurs ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
 
 ## Accès à l’outil de test {#access-testing-tool}
 
-**L’Adobe donnera accès** via le site web [Adobe Developer](https://developer.adobe.com/adobe-pass/), à notre outil d’exploration des API.
+**Adobe fournira un accès** à notre outil d’exploration des API via le site web [Adobe Developer](https://developer.adobe.com/adobe-pass/).
 
 ## Accès à l’outil de gestion de la configuration {#access-configuration-management-tool}
 
-**L’Adobe permet d’accéder** par le biais du tableau de bord TVE d’Adobe Pass, à un outil en libre-service de gestion de votre configuration et de vos données[&#128279;](https://experience.adobe.com/pass/authentication).
+**Adobe vous donnera accès** via le tableau de bord TVE d’Adobe Pass[, à un outil en libre-service pour gérer votre configuration et vos données.](https://experience.adobe.com/pass/authentication)
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [&#x200B; Guide de l’utilisateur pour le tableau de bord TVE &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [ Guide de l’utilisateur pour le tableau de bord TVE ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.

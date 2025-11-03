@@ -1,14 +1,13 @@
 ---
 title: En-tête - AP-Visitor-Identifier
 description: API REST V2 - En-tête - AP-Visitor-Identifier
-exl-id: b4f8e2a1-9c7d-4e3a-8f5b-2d1c6e9a4b7f
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+exl-id: 216f398b-1cfa-4453-a81d-963675b33ec2
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 4%
 
 ---
-
 
 # En-tête - AP-Visitor-Identifier {#header-ap-visitor-identifier}
 
@@ -20,7 +19,7 @@ ht-degree: 4%
 
 L’en-tête de requête <b>AP-Visitor-Identifier</b> contient les `ECID` requises par l’application cliente pour identifier de manière unique un visiteur dans les solutions Adobe Experience Cloud.
 
-Pour plus d’informations sur l’utilisation de l’ECID dans l’authentification Adobe Pass, reportez-vous à la documentation [&#x200B; Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass &#x200B;](../../../../features-premium/analytics/exp-cloud-id-authn.md).
+Pour plus d’informations sur l’utilisation de l’ECID dans l’authentification Adobe Pass, reportez-vous à la documentation [ Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass ](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md).
 
 ## Syntaxe {#syntax}
 

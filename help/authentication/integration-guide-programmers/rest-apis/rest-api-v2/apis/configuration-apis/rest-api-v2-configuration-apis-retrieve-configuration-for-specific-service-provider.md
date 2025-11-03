@@ -2,7 +2,7 @@
 title: Récupération de la configuration pour un fournisseur de services spécifique
 description: API REST V2 - Récupération de la configuration pour un fournisseur de services spécifique
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+source-git-commit: 1c96904f67507ad127c29628963d74a9fb010e99
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 1%
@@ -229,7 +229,7 @@ ht-degree: 1%
                         <li><b>id</b><br/>identifiant unique interne associé au fournisseur d’identité lors du processus d’intégration.</li>
                         <li><b>displayName</b><br/>nom commercial (de marque) associé au fournisseur d’identité lors du processus d’intégration.</li>
                         <li><b>logoUrl</b><br>URL à partir de laquelle télécharger le logo associé au fournisseur d’identité.</li>
-                        <li><b>isTempPass</b><br/>Indicateur qui spécifie si le MVPD est conçu pour fournir la fonctionnalité <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
+                        <li><b>isTempPass</b><br/>Indicateur qui spécifie si le MVPD est conçu pour fournir la fonctionnalité <a href="/help/premium-workflow/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
                         <li><b>isProxy</b><br/>Indicateur qui spécifie si le MVPD est un MVPD proxy.</li>
                         <li><b>boardingStatus</b><br/>Statut spécifiant si le fournisseur d’identité est intégré par la plateforme d’appareil de diffusion en continu pour les flux d’authentification unique.</li>
                         <li><b>platformMappingId</b><br/>Identifiant unique interne associé au fournisseur d’identité par la plateforme de l’appareil de diffusion en continu pour les flux d’authentification unique.</li>

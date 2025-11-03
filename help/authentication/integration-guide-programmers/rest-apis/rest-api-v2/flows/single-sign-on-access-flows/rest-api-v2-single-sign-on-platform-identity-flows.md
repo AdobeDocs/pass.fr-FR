@@ -2,7 +2,7 @@
 title: Authentification Unique - Identité De La Plateforme - Flux
 description: API REST V2 - Authentification unique - Identité de plateforme - Flux
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
 workflow-type: tm+mt
 source-wordcount: '1855'
 ht-degree: 0%
@@ -33,8 +33,8 @@ Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Rese
 
 >[!MORELIKETHIS]
 > 
-> * [Manuel de l’authentification unique Amazon](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Guide pas à pas Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+> * [Manuel de l’authentification unique Amazon](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Guide pas à pas Roku SSO](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Authentification par authentification unique à l’aide de l’identité de la plateforme {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -62,7 +62,7 @@ Avant d’effectuer le flux d’authentification par authentification unique à 
 
 Suivez les étapes données pour implémenter le flux d’authentification par authentification unique à l’aide d’une identité de plateforme, comme illustré dans le diagramme suivant.
 
-![Authentification par authentification unique à l’aide de l’identité de la plateforme](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
+![Authentification par authentification unique à l’aide de l’identité de la plateforme](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
 
 *Authentification par authentification unique à l’aide de l’identité de la plateforme*
 
@@ -232,7 +232,7 @@ Avant d’exécuter le flux d’autorisation par authentification unique à l’
 
 Suivez les étapes données pour implémenter le flux d’autorisation par le biais de l’authentification unique à l’aide d’une identité de plateforme, comme illustré dans le diagramme suivant.
 
-![Récupérer des décisions d’autorisation par authentification unique à l’aide de l’identité de Platform](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
+![Récupérer des décisions d’autorisation par authentification unique à l’aide de l’identité de Platform](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
 
 *Récupérer des décisions d’autorisation par authentification unique à l’aide de l’identité de Platform*
 

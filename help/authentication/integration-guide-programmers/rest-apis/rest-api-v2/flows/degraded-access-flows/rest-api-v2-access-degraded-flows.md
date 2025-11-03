@@ -2,7 +2,7 @@
 title: Flux d’accès dégradés
 description: API REST V2 - Flux d’accès dégradés
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 La dégradation permet le contournement temporaire de points d’entrée d’authentification et d’autorisation MVPD spécifiques. En règle générale, le programmeur lance cette action, mais quelle que soit la personne qui déclenche un événement de dégradation, l’action dépend des dispositions préalables prises avec les MVPD affectées.
 
-Pour plus d’informations sur la fonctionnalité de dégradation, consultez la documentation [Dégradation](../../../../features-premium/degraded-access/degradation-feature.md).
+Pour plus d’informations sur la fonctionnalité de dégradation, consultez la documentation [Dégradation](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 Les flux d’accès dégradés vous permettent de rechercher les scénarios suivants :
 
@@ -55,7 +55,7 @@ Avant d’exécuter le flux d’authentification pendant l’application de la d
 
 Suivez les étapes données pour implémenter le flux d’authentification pendant l’application de la dégradation, comme illustré dans le diagramme suivant.
 
-![Effectuer une authentification en cas de dégradation](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
+![Effectuer une authentification en cas de dégradation](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
 
 *Effectuer une authentification en cas de dégradation*
 
@@ -123,7 +123,7 @@ Avant de récupérer des décisions d’autorisation lorsque la dégradation est
 
 Suivez les étapes données pour implémenter le flux d’autorisation pendant l’application de la dégradation, comme illustré dans le diagramme suivant.
 
-![Récupérer les décisions d’autorisation pendant l’application de la dégradation](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
+![Récupérer les décisions d’autorisation pendant l’application de la dégradation](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
 
 *Récupérer les décisions d’autorisation pendant l’application de la dégradation*
 
@@ -189,7 +189,7 @@ Avant de récupérer des décisions de préautorisation lorsque la dégradation 
 
 Suivez les étapes données pour implémenter le flux de préautorisation pendant l’application de la dégradation, comme illustré dans le diagramme suivant.
 
-![Récupérer les décisions de préautorisation lorsque la dégradation est appliquée](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
+![Récupérer les décisions de préautorisation lorsque la dégradation est appliquée](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
 
 *Récupérer les décisions de préautorisation lorsque la dégradation est appliquée*
 
@@ -263,7 +263,7 @@ Avant de récupérer le profil d’un MVPD spécifique pendant l’application d
 
 Suivez les étapes données pour implémenter le flux de récupération des profils pour un MVPD spécifique pendant l’application de la dégradation, comme illustré dans le diagramme ci-dessous.
 
-![Récupérer le profil lorsque la dégradation est appliquée](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
+![Récupérer le profil lorsque la dégradation est appliquée](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *Récupérer le profil lorsque la dégradation est appliquée*
 

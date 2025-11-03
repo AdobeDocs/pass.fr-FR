@@ -2,7 +2,7 @@
 title: Authentification Single Sign-On - Partenaire - Flux
 description: API REST V2 - Authentification unique - Partenaire - Flux
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Pour plus d’informations sur `AP-Partner-Framework-Status`’en-tête , consul
 
 L’API REST d’authentification Adobe Pass V2 prend en charge l’authentification unique (SSO) du partenaire pour les utilisateurs finaux des applications clientes s’exécutant sur iOS, iPadOS ou tvOS.
 
-Pour plus d’informations sur l’authentification unique (SSO) pour la plateforme Apple, reportez-vous à la documentation du [guide de cookie de l’authentification unique (API REST V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md) d’Apple .
+Pour plus d’informations sur l’authentification unique (SSO) pour la plateforme Apple, reportez-vous à la documentation du [guide de cookie de l’authentification unique (API REST V2)](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md) d’Apple .
 
 ## Récupérer la demande d’authentification du partenaire {#retrieve-partner-authentication-request}
 
@@ -59,7 +59,7 @@ Avant de récupérer la demande d’authentification du partenaire, assurez-vous
 
 Exécutez les étapes données pour récupérer la demande d’authentification du partenaire, comme illustré dans le diagramme suivant.
 
-![Récupérer la demande d’authentification du partenaire](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
+![Récupérer la demande d’authentification du partenaire](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
 
 *Récupérer la demande d’authentification du partenaire*
 
@@ -173,7 +173,7 @@ Avant de récupérer le profil à l’aide d’une réponse d’authentification
 
 Suivez les étapes données pour implémenter le flux de récupération des profils à l’aide d’une réponse d’authentification du partenaire, comme illustré dans le diagramme suivant.
 
-![Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
 *Créer et récupérer un profil authentifié à l’aide de la réponse d’authentification du partenaire*
 

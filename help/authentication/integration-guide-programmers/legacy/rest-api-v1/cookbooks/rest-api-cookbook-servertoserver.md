@@ -2,7 +2,7 @@
 title: Manuel de l’API REST (serveur à serveur)
 description: Serveur du guide pas à pas de l’API REST à serveur.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -39,7 +39,7 @@ Dans une solution de serveur à serveur opérationnelle, les composants suivants
 | | \[Facultatif\] Module AuthN | Si l’appareil de diffusion en continu dispose d’un agent utilisateur (c’est-à-dire un navigateur web), le module AuthN est chargé d’authentifier l’utilisateur sur l’IdP MVPD. |
 | \[Facultatif\] Périphérique AuthN | Application AuthN | Si l’appareil de diffusion en continu ne dispose pas d’un agent utilisateur (c’est-à-dire un navigateur web), l’application AuthN est une application web de programmation accessible à partir de l’appareil d’un utilisateur distinct à l’aide d’un navigateur web. |
 | Infrastructure du programmeur | Service de programmation | Service qui relie l’appareil de diffusion en continu au service Adobe Pass afin d’obtenir des décisions d’authentification et d’autorisation. |
-| Infrastructure d&#39;Adobe | Service Adobe Pass | Un service qui s’intègre aux services MVPD IdP et AuthZ et fournit des décisions d’authentification et d’autorisation. |
+| Infrastructure Adobe | Service Adobe Pass | Un service qui s’intègre aux services MVPD IdP et AuthZ et fournit des décisions d’authentification et d’autorisation. |
 | Infrastructure MVPD | IdP MVPD | Point d’entrée MVPD qui fournit un service d’authentification basé sur les informations d’identification pour valider l’identité de l’utilisateur. |
 | | Service MVPD AuthZ | Point d’entrée MVPD qui fournit des décisions d’autorisation basées sur les abonnements des utilisateurs, le contrôle parental, etc. |
 
@@ -48,7 +48,7 @@ Dans une solution de serveur à serveur opérationnelle, les composants suivants
 ### Enregistrement de client dynamique (DCR)
 
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Authentification (authN)
@@ -73,7 +73,7 @@ Le flux d’authentification est utilisé pour permettre à l’utilisateur de s
 
 Le diagramme suivant illustre le flux d’authentification :
 
-![](../../../../assets/authn-flow.png)
+![](/help//authentication/assets/authn-flow.png)
 
 ### Autorisation (authZ)
 
@@ -86,7 +86,7 @@ Le flux d’autorisation est utilisé pour déterminer si un utilisateur a le dr
 
 Le diagramme suivant illustre le flux d’autorisations :
 
-![](../../../../assets/authz-flow.png)
+![](/help//authentication/assets/authz-flow.png)
 
 ### Déconnexion
 
@@ -98,7 +98,7 @@ associé à l’application.
 
 Le diagramme suivant illustre le flux de déconnexion :
 
-![](../../../../assets/logout-flow.png)
+![](/help//authentication/assets/logout-flow.png)
 
 ### \[Facultatif\] Autorisation préalable (ou pré-vol)
 
@@ -114,7 +114,7 @@ La préautorisation peut être utilisée pour déterminer rapidement à partir d
 
 Le diagramme suivant illustre le flux de préautorisation :
 
-![](../../../../assets/preauthz-flow.png)
+![](/help//authentication/assets/preauthz-flow.png)
 
 
 ### \[Facultatif\] Métadonnées
@@ -130,7 +130,7 @@ Le diagramme suivant illustre le flux de préautorisation :
 
 
 
-![](../../../../assets/user-metadata-api-preauthz.png)
+![](/help//authentication/assets/user-metadata-api-preauthz.png)
 
 
 
@@ -152,10 +152,10 @@ Le service Adobe Pass s’exécute sur plusieurs centres de données répartis g
 les infrastructures.
 
 
-Le service de programmation doit limiter le cache DNS à un maximum de 30 s au cas où l’Adobe devrait réacheminer le trafic. Cela peut se produire si un centre de données devient indisponible.
+Le service de programmation doit limiter le cache DNS à un maximum de 30 s au cas où Adobe devrait réacheminer le trafic. Cela peut se produire si un centre de données devient indisponible.
 
 
-Le programmeur doit fournir la plage d’adresses IP publique de l’environnement de production. Ils seront entrés dans une liste autorisée d’adresses IP dans l’infrastructure Adobe Pass pour l’accès et gérés par les politiques d’utilisation équitable des API d’Adobe.
+Le programmeur doit fournir la plage d’adresses IP publique de l’environnement de production. Ils seront entrés dans une liste autorisée d’adresses IP dans l’infrastructure Adobe Pass pour l’accès et gérés par les politiques d’utilisation équitable de l’API d’Adobe.
 
 ### Évaluation
 
@@ -171,7 +171,7 @@ Le service Programmer doit transmettre des informations d’identification d’a
     
     
     
-    L’en-tête doit être ajouté sur **regcode** et **authorize**&#x200B;appels
+    L’en-tête doit être ajouté sur **regcode** et **authorize**calls
     
     Exemples :
     
@@ -192,4 +192,4 @@ Le service Programmer doit envoyer les données et le formatage requis par les M
 
 Le service de programmation doit respecter les TTL authN et authZ lors de la mise en cache et de l’invalidation des sessions authN ou authZ lorsqu’elles sont notifiées.
 
-Le programmeur doit conserver les certificats partagés avec l’Adobe.
+Le programmeur doit gérer les certificats partagés avec Adobe.

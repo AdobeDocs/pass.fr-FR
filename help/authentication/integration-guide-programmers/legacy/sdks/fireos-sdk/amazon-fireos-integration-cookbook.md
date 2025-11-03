@@ -2,7 +2,7 @@
 title: Manuel d’intégration d’Amazon FireOS
 description: Manuel d’intégration d’Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -107,7 +107,7 @@ Le paramètre `event` indique quel événement de droit s’est produit ; le par
       - Le paramètre `authorizedResources` présente les ressources que l’utilisateur est autorisé à afficher.
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B. Flux de démarrage {#startup_flow}

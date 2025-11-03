@@ -2,7 +2,7 @@
 title: Notes De Mise À Jour De L’Authentification Adobe Pass 2.69
 description: Notes De Mise À Jour De L’Authentification Adobe Pass 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -34,7 +34,7 @@ Date de publication : **02/27/2024 - 02/29/2024**
 
 * Correctifs de vulnérabilités de sécurité.
 * Améliorations de la couche de sécurité Réinitialiser la passe temporaire avec l’enregistrement client dynamique (DCR).
-   * Vous trouverez plus d’informations ici : [Fonction TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * Vous trouverez plus d’informations ici : [Fonction TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)
 * Améliorations apportées à la création de rapports d’identification de Platform.
 
 #### API REST

@@ -2,7 +2,7 @@
 title: Android SDK avec enregistrement client dynamique
 description: Android SDK avec enregistrement client dynamique
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -37,12 +37,12 @@ Pour Android, l’utilisation des onglets personnalisés Chrome limite l’accè
 
 ## Enregistrement dynamique de client {#DCR}
 
-Android SDK v3.0+ utilisera la procédure d’enregistrement client dynamique telle que définie dans [&#x200B; Présentation de l’enregistrement client dynamique](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Android SDK v3.0+ utilisera la procédure d’enregistrement client dynamique telle que définie dans [ Présentation de l’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Démonstration des fonctionnalités {#Demo}
 
-Regardez [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui fournit davantage de contexte pour cette fonctionnalité et contient une démonstration sur la gestion des instructions logicielles à l’aide du tableau de bord TVE et sur la manière de tester les instructions générées à l’aide d’une application de démonstration fournie par Adobe dans le cadre d’Android SDK.
+Regardez [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui donne plus de contexte sur la fonctionnalité et contient une démonstration sur la gestion des instructions logicielles à l&#39;aide du tableau de bord TVE et sur la manière de tester les instructions générées à l&#39;aide d&#39;une application de démonstration fournie par Adobe dans le cadre d&#39;Android SDK.
 
 ## Modifications d’API {#API}
 
@@ -71,11 +71,11 @@ Remarque : le paramètre redirectUrl ou redirect\_uri dans strings.xml doit corr
 
 ### setRequestor
 
-**Description :** établit l’identité du canal. Chaque canal se voit attribuer un identifiant unique lors de l’enregistrement auprès de l’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez avec des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est mise en premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
+**Description :** établit l’identité du canal. Chaque canal se voit attribuer un identifiant unique lors de son enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez avec des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est mise en premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
 
 La réponse du serveur contient une liste de fichiers MVPD ainsi que des informations de configuration liées à l’identité du canal. La réponse du serveur est utilisée en interne par le code d’activation d’Access. Seul le statut de l’opération (c’est-à-dire SUCCÈS/ÉCHEC) est présenté à votre application via le rappel setRequestorComplete().
 
-Si le paramètre *urls* n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement de publication/production d’Adobe.
+Si le paramètre *urls* n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement de publication/production Adobe.
 
 Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultant cible toutes les URL fournies dans le paramètre *urls*. Toutes les demandes de configuration sont déclenchées simultanément dans des threads distincts. Le premier répondant est prioritaire lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, Access Enabler mémorise l’URL du fournisseur d’accès associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
 
@@ -93,7 +93,7 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 **Paramètres:**
 
-- *requestorID* : ID unique associé au canal. Transmettez l’ID unique attribué par Adobe à votre site lors de votre premier enregistrement auprès du service d’authentification Adobe Pass.
+- *requestorID* : ID unique associé au canal. Transmettez l’ID unique attribué par Adobe à votre site lors de votre premier enregistrement auprès du service d’authentification d’Adobe Pass.
 - *urls* : paramètre facultatif ; par défaut, le fournisseur d’accès Adobe est utilisé [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances de fournisseur de services d’authentification Adobe Pass. Ce faisant, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
 
 Obsolète :
@@ -136,7 +136,7 @@ Appelez AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### 2. Configuration de l’application
+### &#x200B;2. Configuration de l’application
 
 a. setRequestor(requestor\_id)
 
