@@ -121,7 +121,7 @@ placer sur la liste autorisée **Vous allez fournir** un moyen de les adresses I
 
   L’environnement de publication héberge la version de production actuelle (stable).
 
-Pour plus d’informations sur l’utilisation de ces environnements, consultez la documentation [&#x200B; Présentation des environnements Adobe &#x200B;](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md).
+Pour plus d’informations sur l’utilisation de ces environnements, consultez la documentation [ Présentation des environnements Adobe ](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md).
 
 >[!IMPORTANT]
 > 
@@ -135,9 +135,9 @@ L’équipe d’authentification d’Adobe Pass est disponible pour répondre à
 
 ## Accès à la documentation {#access-documentation}
 
-**Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/fr/docs/pass/authentication/home), accès à notre documentation publique.
+**Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home), accès à notre documentation publique.
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les workflows disponibles dans la section [&#x200B; Guide d’intégration pour les fichiers MVPD &#x200B;](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les workflows disponibles dans la section [ Guide d’intégration pour les fichiers MVPD ](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
 
 ## Accès à l’outil de test {#access-testing-tool}
 

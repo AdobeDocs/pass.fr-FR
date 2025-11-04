@@ -52,7 +52,7 @@ Pour les MVPD SAML, l’adaptateur HBA n’est activé que du côté MVPD.
 
 **MVPD OAuth2**
 
-Pour les MVPD OAuth2, l’adaptateur HBA peut être activé ou désactivé via le tableau de bord Adobe Pass TVE [&#128279;](https://experience.adobe.com/#/pass/authentication) en suivant les étapes du Guide de l’utilisateur [Intégrations du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
+Pour les MVPD OAuth2, l’adaptateur HBA peut être activé ou désactivé via le tableau de bord Adobe Pass TVE [](https://experience.adobe.com/#/pass/authentication) en suivant les étapes du Guide de l’utilisateur [Intégrations du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
 ### MVPD {#hba-support-mvpds}
 

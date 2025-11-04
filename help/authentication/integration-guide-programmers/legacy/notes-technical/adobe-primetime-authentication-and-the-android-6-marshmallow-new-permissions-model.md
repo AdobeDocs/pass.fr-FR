@@ -23,7 +23,7 @@ ht-degree: 0%
 
 La nouvelle version d’Android 6 Marshmallow introduit certaines mises à jour du modèle d’autorisations, ce qui peut affecter le comportement des applications qui utilisent la version 1.8 et ultérieure du SDK d’authentification Adobe Pass.
 
-Nouvelle fonctionnalité, le nouveau système d’exploitation Android offre un contrôle granulaire [&#x200B; sur les autorisations dont les applications ont besoin au moment de l’installation et de l’exécution](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
+Nouvelle fonctionnalité, le nouveau système d’exploitation Android offre un contrôle granulaire [ sur les autorisations dont les applications ont besoin au moment de l’installation et de l’exécution](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
 
 >[!IMPORTANT]
 >

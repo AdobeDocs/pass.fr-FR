@@ -37,7 +37,7 @@ Pour Android, l’utilisation des onglets personnalisés Chrome limite l’accè
 
 ## Enregistrement dynamique de client {#DCR}
 
-Android SDK v3.0+ utilisera la procédure d’enregistrement client dynamique telle que définie dans [&#x200B; Présentation de l’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Android SDK v3.0+ utilisera la procédure d’enregistrement client dynamique telle que définie dans [ Présentation de l’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Démonstration des fonctionnalités {#Demo}

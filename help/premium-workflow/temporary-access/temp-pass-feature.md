@@ -190,7 +190,7 @@ Pendant le flux promotionnel de TempPass, les données de suivi utilisent une ve
 
 Avant d’accéder à l’API Reset TempPass, vous devez suivre les étapes requises dans le processus d’enregistrement client dynamique (DCR). Ce processus obligatoire garantit que vous disposez du jeton d’accès nécessaire pour interagir avec l’API Reset TempPass.
 
-Pour obtenir des instructions complètes, reportez-vous à la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour obtenir des instructions complètes, reportez-vous à la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Réinitialiser l’API TempPass - DELETE /reset-tempass/v3/reset {#reset-tempass-v3-reset}
 

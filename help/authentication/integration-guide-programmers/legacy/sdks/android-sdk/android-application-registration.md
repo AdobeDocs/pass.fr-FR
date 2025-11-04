@@ -41,7 +41,7 @@ Voici quelques moyens d’obtenir une déclaration logicielle.
 
 ### Si vous avez accès au tableau de bord Adobe TVE
 
-1. Ouvrez votre navigateur et accédez au tableau de bord Adobe Pass TVE [&#128279;](https://experience.adobe.com/#/pass/authentication).
+1. Ouvrez votre navigateur et accédez au tableau de bord Adobe Pass TVE [](https://experience.adobe.com/#/pass/authentication).
 
 1. Accédez à **[!UICONTROL Channels]** section, puis sélectionnez votre canal.
 
