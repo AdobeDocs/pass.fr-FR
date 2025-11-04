@@ -81,4 +81,4 @@ Le tableau ci-dessous répertorie les services web disponibles pour l’approche
 
 ## Sécurité de l’API REST {#security}
 
-Toutes les API REST d’authentification Adobe Pass doivent être appelées à l’aide du protocole HTTPS pour une communication sécurisée. En outre, la plupart des API appelées doivent contenir un jeton d’accès obtenu, comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+Toutes les API REST d’authentification Adobe Pass doivent être appelées à l’aide du protocole HTTPS pour une communication sécurisée. En outre, la plupart des API appelées doivent contenir un jeton d’accès obtenu, comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).

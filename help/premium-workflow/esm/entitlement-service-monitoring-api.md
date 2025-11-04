@@ -20,9 +20,9 @@ ht-degree: 1%
 > Avant d’utiliser l’API de dégradation, vérifiez que les conditions préalables suivantes sont remplies :
 >
 > * Obtenez les informations d’identification du client comme décrit dans la documentation de l’API [Récupération des informations d’identification du client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
-> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
+> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
 >
-> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle[ reportez-vous à la documentation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)Présentation de l’enregistrement du client dynamique.
+> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle[&#x200B; reportez-vous à la documentation &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)Présentation de l’enregistrement du client dynamique.
 
 ## Présentation de l’API {#api-overview}
 

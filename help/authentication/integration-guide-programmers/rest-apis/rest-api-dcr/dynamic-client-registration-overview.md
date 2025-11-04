@@ -53,7 +53,7 @@ Pour en savoir plus sur la gestion et l’utilisation de l’enregistrement clie
 
 Le processus de gestion de l’enregistrement dynamique des clients permet aux applications clientes s’exécutant sur des plateformes spécifiques et ayant besoin d’accéder à des API d’authentification Adobe Pass spécifiques pour s’enregistrer via le tableau de bord [Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication).
 
-Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [](../../../user-guide-tve-dashboard/tve-dashboard-overview.md).
+Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [&#128279;](../../../user-guide-tve-dashboard/tve-dashboard-overview.md).
 
 Si vous avez accès au tableau de bord [Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication), suivez les étapes des sections ci-dessous pour créer une application enregistrée et télécharger la déclaration du logiciel.
 
@@ -108,12 +108,12 @@ En résumé, le mécanisme d’autorisation de l’enregistrement client dynamiq
 
 **Gestion**
 
-* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [ Gérer les applications enregistrées ](#manage-registered-applications).
-* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [ Gérer les instructions logicielles ](#manage-software-statements).
+* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [&#x200B; Gérer les applications enregistrées &#x200B;](#manage-registered-applications).
+* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [&#x200B; Gérer les instructions logicielles &#x200B;](#manage-software-statements).
 
 **Flux**
 
-* L’application cliente doit obtenir les informations d’identification du client comme décrit dans la documentation de l’API [ Récupération des informations d’identification du client ](apis/dynamic-client-registration-apis-retrieve-client-credentials.md) .
-* L’application cliente doit obtenir le jeton d’accès comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
+* L’application cliente doit obtenir les informations d’identification du client comme décrit dans la documentation de l’API [&#x200B; Récupération des informations d’identification du client &#x200B;](apis/dynamic-client-registration-apis-retrieve-client-credentials.md) .
+* L’application cliente doit obtenir le jeton d’accès comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
 
 Reportez-vous à la documentation [Flux d’enregistrement client dynamique](flows/dynamic-client-registration-flow.md) pour mieux comprendre comment accéder aux API protégées Adobe Pass. De plus, vous pouvez également regarder cet enregistrement [webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui fournit plus de contexte et comprend une démonstration.

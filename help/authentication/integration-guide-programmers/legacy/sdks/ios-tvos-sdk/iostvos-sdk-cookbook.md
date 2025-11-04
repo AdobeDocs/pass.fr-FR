@@ -54,12 +54,12 @@ La configuration de la valeur [Experience Cloud ID](https://experienceleague.ado
 
 A. [Conditions préalables](#prereqs) </br>
 B. [Flux de démarrage](#startup_flow) </br>
-C. [ Flux d’authentification avec le SSO d’Apple ](#authn_flow_wo_applesso) </br>
-D. [ Flux d’authentification avec le SSO Apple sur iOS ](#authn_flow_with_applesso) </br>
+C. [&#x200B; Flux d’authentification avec le SSO d’Apple &#x200B;](#authn_flow_wo_applesso) </br>
+D. [&#x200B; Flux d’authentification avec le SSO Apple sur iOS &#x200B;](#authn_flow_with_applesso) </br>
 E. [Flux d’authentification avec l’authentification unique Apple sur tvOS](#authn_flow_with_applesso_tvOS) </br>
-F. [ Flux d’autorisation ](#authz_flow) </br>
+F. [&#x200B; Flux d’autorisation &#x200B;](#authz_flow) </br>
 G. [Afficher le flux des médias](#media_flow) </br>
-H. [ Flux de déconnexion sans SSO Apple ](#logout_flow_wo_AppleSSO) </br>
+H. [&#x200B; Flux de déconnexion sans SSO Apple &#x200B;](#logout_flow_wo_AppleSSO) </br>
 I. [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_with_AppleSSO) </br>
 
 
@@ -130,7 +130,7 @@ est autorisé à afficher.
    a. Appelez [`init`](#$init) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
    * **Dépendance :** Bibliothèque iOS/tvOS native d’authentification Adobe Pass (AccessEnabler)
 
-   b. Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations[ consultez la ](#create_dev)documentation relative à Clientless .
+   b. Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations[&#x200B; consultez la &#x200B;](#create_dev)documentation relative à Clientless .
 
    * **Dépendance :** ID de demandeur d’authentification Adobe Pass valide (utilisez votre compte d’authentification Adobe Pass)
 Manager pour organiser cela).

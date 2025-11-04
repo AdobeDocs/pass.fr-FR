@@ -175,7 +175,7 @@ Pour les programmeurs, l’authentification Adobe Pass fournit des API dans le c
       * [Fonctionnalité de dégradation](/help/premium-workflow/degraded-access/degradation-feature.md)
    * [API de surveillance du service de droit](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
 
-Pour plus d’informations sur le flux de droits, consultez la documentation du [ Guide d’intégration du programmeur ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
+Pour plus d’informations sur le flux de droits, consultez la documentation du [&#x200B; Guide d’intégration du programmeur &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
 #### Comprendre les droits {#understanding-entitlements}
 
