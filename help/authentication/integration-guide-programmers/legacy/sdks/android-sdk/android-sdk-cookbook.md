@@ -221,6 +221,6 @@ flux.
 
 ### Flux utilisateur pour la connexion avec plusieurs MVPD et la déconnexion {#user_flows}
 
-[Vous avez ici ](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
+[Vous avez ici &#x200B;](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
 
 Le comportement décrit est disponible lors de l’utilisation d’Android SDK version >= 2.0.0.

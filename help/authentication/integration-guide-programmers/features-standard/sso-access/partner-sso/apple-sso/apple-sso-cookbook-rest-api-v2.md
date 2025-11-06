@@ -39,7 +39,7 @@ Avant de poursuivre l’authentification unique Apple à l’aide des flux de pa
 >
 > <br/>
 >
-> * L’application de diffusion en continu a rempli les [ conditions préalables à l’intégration ](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites-programmer) qui s’appliquent à un programmeur et sont requises pour activer l’expérience utilisateur d’authentification unique d’Apple.
+> * L’application de diffusion en continu a rempli les [&#x200B; conditions préalables à l’intégration &#x200B;](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites-programmer) qui s’appliquent à un programmeur et sont requises pour activer l’expérience utilisateur d’authentification unique d’Apple.
 
 ### Workflow {#workflow}
 
@@ -75,7 +75,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupération des informations d’identification du client ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupération des informations d’identification du client &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
 
    >[!TIP]
    >
@@ -85,7 +85,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!IMPORTANT]
    >
-   > Consultez la documentation de l’API [ Récupération du jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
+   > Consultez la documentation de l’API [&#x200B; Récupération du jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
    >
    > * Tous les paramètres _obligatoires_ tels que `client_id`, `client_secret` et `grant_type`
    > * Tous les en-têtes _obligatoires_ tels que `Content-Type`, `X-Device-Info`
@@ -105,7 +105,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupérer le jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >
@@ -293,7 +293,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    Si le serveur principal Adobe Pass n’identifie pas de profil valide et que la validation de l’authentification unique du partenaire réussit, l’application de diffusion en continu reçoit une réponse avec des actions et des données à transmettre au framework du partenaire pour démarrer le flux d’authentification avec MVPD.
 
-1. **Authentification MVPD complète avec le framework du partenaire :** transférez la demande d’authentification du partenaire (demande SAML) obtenue à l’étape précédente vers le [ Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount). Si le flux d’authentification est réussi, l’interaction du [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) avec le MVPD produit une réponse d’authentification du partenaire (réponse SAML) qui est renvoyée avec les informations de statut du framework du partenaire.
+1. **Authentification MVPD complète avec le framework du partenaire :** transférez la demande d’authentification du partenaire (demande SAML) obtenue à l’étape précédente vers le [&#x200B; Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount). Si le flux d’authentification est réussi, l’interaction du [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) avec le MVPD produit une réponse d’authentification du partenaire (réponse SAML) qui est renvoyée avec les informations de statut du framework du partenaire.
 
    >[!IMPORTANT]
    >

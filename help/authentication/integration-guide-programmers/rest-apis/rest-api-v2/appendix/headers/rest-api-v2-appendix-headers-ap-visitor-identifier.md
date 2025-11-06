@@ -19,7 +19,7 @@ ht-degree: 4%
 
 L’en-tête de requête <b>AP-Visitor-Identifier</b> contient les `ECID` requises par l’application cliente pour identifier de manière unique un visiteur dans les solutions Adobe Experience Cloud.
 
-Pour plus d’informations sur l’utilisation de l’ECID dans l’authentification Adobe Pass, reportez-vous à la documentation [ Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass ](../../../../features-premium/analytics/exp-cloud-id-authn.md).
+Pour plus d’informations sur l’utilisation de l’ECID dans l’authentification Adobe Pass, reportez-vous à la documentation [&#x200B; Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass &#x200B;](../../../../features-premium/analytics/exp-cloud-id-authn.md).
 
 ## Syntaxe {#syntax}
 

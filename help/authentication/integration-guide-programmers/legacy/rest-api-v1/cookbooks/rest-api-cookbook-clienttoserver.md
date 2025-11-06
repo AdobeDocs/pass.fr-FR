@@ -49,7 +49,7 @@ Dans une solution client à serveur opérationnelle, les composants suivants son
 
 ### Enregistrement de client dynamique (DCR)
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Flux D’Applications De Diffusion En Continu (Smart Device)

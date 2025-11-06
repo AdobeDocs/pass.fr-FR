@@ -48,7 +48,7 @@ Dans une solution de serveur à serveur opérationnelle, les composants suivants
 ### Enregistrement de client dynamique (DCR)
 
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Authentification (authN)
@@ -171,7 +171,7 @@ Le service Programmer doit transmettre des informations d’identification d’a
     
     
     
-    L’en-tête doit être ajouté sur **regcode** et **authorize**calls
+    L’en-tête doit être ajouté sur **regcode** et **authorize**&#x200B;calls
     
     Exemples :
     

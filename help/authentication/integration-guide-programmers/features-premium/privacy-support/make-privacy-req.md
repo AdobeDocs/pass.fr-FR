@@ -234,7 +234,7 @@ Dans l’interface utilisateur , les clients doivent charger leur propre IMSOrgI
 
 Adobe Experience Platform Privacy Service fournit une facilitation commune et centralisée des demandes d’accès/de suppression et des demandes d’opposition à la vente de données privées.
 
-La documentation de l’API Privacy Service **** explique en détail comment un client Adobe peut s’intégrer à l’API Adobe.
+La documentation de l’API Privacy Service **&#x200B;**&#x200B;explique en détail comment un client Adobe peut s’intégrer à l’API Adobe.
 
 **Visualiser les appels d’API avec Postman (un logiciel tiers gratuit) :**
 

@@ -20,7 +20,7 @@ ht-degree: 3%
 
 L’en-tête de requête <b>Authorization</b> contient le jeton d’accès `Bearer` requis par l’application cliente pour accéder aux API protégées d’Adobe Pass.
 
-Pour plus d’informations sur le mécanisme d’accès aux API protégées d’Adobe Pass, reportez-vous à la documentation [ Présentation de l’enregistrement client dynamique ](../../../rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations sur le mécanisme d’accès aux API protégées d’Adobe Pass, reportez-vous à la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](../../../rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Syntaxe {#syntax}
 
