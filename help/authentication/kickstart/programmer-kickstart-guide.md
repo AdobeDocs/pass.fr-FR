@@ -75,7 +75,7 @@ L’équipe d’authentification d’Adobe Pass est à votre disposition pour to
 
 ## Accès à la documentation {#access-documentation}
 
-**Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home), accès à notre documentation publique.
+**Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/fr/docs/pass/authentication/home), accès à notre documentation publique.
 
 L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les API disponibles dans la section [&#x200B; Guide d’intégration pour les programmeurs &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
 
