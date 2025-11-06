@@ -2,7 +2,7 @@
 title: Programmeurs
 description: Découvrez les programmeurs et leurs configurations dans le tableau de bord TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -22,7 +22,7 @@ L’onglet **Programmeurs** dans le panneau de gauche affiche une liste des prog
 * **ID du programmeur** : identifiant de société de médias dans le système.
 * **Canaux** : nombre de canaux associés à un programmeur.
 
-![Liste des programmeurs existants](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
+![Liste des programmeurs existants](../assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
 
 *Liste des programmeurs existants*
 
@@ -41,7 +41,7 @@ Pour gérer les différents paramètres d’un programmeur spécifique, procéde
    * [Applications enregistrées](#registered-applications)
    * [Schémas personnalisés](#custom-schemes)
 
-   ![&#x200B; Paramètres du programmeur &#x200B;](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
+   ![ Paramètres du programmeur ](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
 
    *Paramètres du programmeur*
 
@@ -55,7 +55,7 @@ Cet onglet affiche la liste des canaux associés à un programmeur courant. Sél
 
 Pour ajouter un nouveau canal pour le programmeur sélectionné, sélectionnez **Ajouter un nouveau canal** dans le coin supérieur droit de la section **Canaux disponibles**. Découvrez [comment ajouter un nouveau canal](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#add-new-channel).
 
-![Ajouter un nouveau canal](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
+![Ajouter un nouveau canal](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
 
 *Ajouter un nouveau canal*
 
@@ -86,7 +86,7 @@ Pour ajouter un nouveau certificat, procédez comme suit.
 
 1. Sélectionnez **Ajouter un nouveau certificat** dans le coin supérieur droit de la section **Certificats disponibles**.
 
-   ![Ajouter un nouveau certificat](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
+   ![Ajouter un nouveau certificat](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
 
    *Ajouter un nouveau certificat*
 
@@ -112,7 +112,7 @@ Pour supprimer un certificat, procédez comme suit.
 
 1. Sélectionnez **Supprimer**.
 
-   ![Supprimer le certificat sélectionné](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
+   ![Supprimer le certificat sélectionné](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
 
    *Supprimer le certificat sélectionné*
 
@@ -122,7 +122,7 @@ Une nouvelle modification de configuration a été créée et est prête pour la
 
 ### Applications enregistrées {#registered-applications}
 
-Cet onglet affiche la liste des applications enregistrées. Pour plus d’informations sur l’utilisation des applications enregistrées, reportez-vous à la documentation [présentation de l’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Cet onglet affiche la liste des applications enregistrées. Pour plus d’informations sur l’utilisation des applications enregistrées, reportez-vous à la documentation [présentation de l’enregistrement client dynamique](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 Vous pouvez effectuer les actions suivantes avec les applications enregistrées :
 
@@ -135,7 +135,7 @@ Pour ajouter une nouvelle application enregistrée, procédez comme suit.
 
 1. Sélectionnez **Ajouter une nouvelle application** dans le coin supérieur droit de la section **Applications enregistrées**.
 
-   ![Ajouter une nouvelle application](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
+   ![Ajouter une nouvelle application](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
 
    *Ajouter une nouvelle application*
 
@@ -179,7 +179,7 @@ Pour télécharger un relevé de logiciel, procédez comme suit.
 
 1. Sélectionnez **Télécharger**.
 
-   ![Téléchargement d’une déclaration de logiciel](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
+   ![Téléchargement d’une déclaration de logiciel](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
 
    *Téléchargement d’une déclaration de logiciel*
 
@@ -198,7 +198,7 @@ Pour générer un nouveau schéma personnalisé, procédez comme suit.
 
 1. Sélectionnez **Générer un nouveau schéma personnalisé**.
 
-   ![Générer un nouveau schéma personnalisé](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
+   ![Générer un nouveau schéma personnalisé](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
 
    *Générer un nouveau schéma personnalisé*
 
@@ -212,7 +212,7 @@ Pour ajouter une nouvelle entité de programmation, procédez comme suit.
 
 1. Sélectionnez **Ajouter un nouveau programmeur** dans le coin supérieur droit de la section **Programmeurs**.
 
-   ![Ajouter un nouveau programmeur](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
+   ![Ajouter un nouveau programmeur](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
 
    *Ajouter un nouveau programmeur*
 

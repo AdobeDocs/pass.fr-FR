@@ -2,7 +2,7 @@
 title: Authentification de base - Application Secondaire - Flux
 description: API REST V2 - Authentification de base - Application Secondaire - Flux
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2006'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Avant de démarrer le flux d’authentification dans une application principale 
 
 Suivez les étapes données pour implémenter le flux d’authentification de base effectué dans une application secondaire avec un MVPD présélectionné, comme illustré dans le diagramme ci-dessous.
 
-![Authentification dans l’application secondaire avec mvpd présélectionné](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
+![Authentification dans l’application secondaire avec mvpd présélectionné](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
 *Authentification dans l’application secondaire avec mvpd présélectionné*
 
@@ -129,7 +129,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!IMPORTANT]
    >
-   > Reportez-vous à la documentation de l’API [&#x200B; Récupération des informations de session d’authentification &#x200B;](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) pour plus d’informations sur les informations fournies dans une réponse de validation de session.
+   > Reportez-vous à la documentation de l’API [ Récupération des informations de session d’authentification ](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) pour plus d’informations sur les informations fournies dans une réponse de validation de session.
    >
    > <br/>
    >
@@ -209,7 +209,7 @@ Avant de démarrer le flux d’authentification dans une application principale 
 
 Suivez les étapes données pour implémenter le flux d’authentification de base effectué dans une application secondaire sans MVPD présélectionné, comme illustré dans le diagramme ci-dessous.
 
-![Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
+![Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
 *Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné*
 

@@ -41,7 +41,7 @@ Les profils stockent des données clés qui permettent aux applications clientes
 * Identifiez le fournisseur d’identité.
 * Accédez à [métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 
-Les profils sont stockés en toute sécurité dans le serveur principal de l’authentification Adobe Pass et sont liés à l’application, à l’appareil et à l’identifiant du fournisseur de services qui les demandent. Ils restent valides pour une durée limitée, comme défini par la [&#x200B; Durée de vie (TTL) de l’authentification &#x200B;](#authentication-ttl-management).
+Les profils sont stockés en toute sécurité dans le serveur principal de l’authentification Adobe Pass et sont liés à l’application, à l’appareil et à l’identifiant du fournisseur de services qui les demandent. Ils restent valides pour une durée limitée, comme défini par la [ Durée de vie (TTL) de l’authentification ](#authentication-ttl-management).
 
 ## Gestion de la durée de vie (TTL) de l’authentification {#authentication-ttl-management}
 

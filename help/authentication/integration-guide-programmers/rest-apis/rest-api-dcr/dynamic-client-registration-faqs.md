@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+> Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Ce document fournit des réponses générales aux questions les plus fréquentes sur l’adoption de l’enregistrement client dynamique (DCR) d’Adobe Pass Authentication.
 
-Pour plus d’informations sur l’enregistrement client dynamique (DCR) dans son ensemble, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations sur l’enregistrement client dynamique (DCR) dans son ensemble, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Questions fréquentes d’ordre général {#general-faqs}
 
@@ -29,21 +29,21 @@ Commencez par cette section si vous travaillez sur une application qui doit int�
 
 ### FAQ sur l’accès à l’API REST V2 {#rest-api-v2-access-faqs}
 
-+++Questions fréquentes sur l’accès à l’API REST V2
++++FAQ sur l’accès à l’API REST V2
 
-#### 1. Quel est l&#39;objectif de la phase d&#39;enregistrement ? {#rest-api-v2-access-faq1}
+#### &#x200B;1. Quel est l&#39;objectif de la phase d&#39;enregistrement ? {#rest-api-v2-access-faq1}
 
 La phase d’enregistrement a pour but d’enregistrer l’application cliente par rapport à l’authentification Adobe Pass par le biais du processus [Enregistrement client dynamique (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr).
 
 Le processus d’enregistrement client dynamique (DCR) nécessite que l’application cliente obtienne une paire d’informations d’identification client et récupère un jeton d’accès en tant qu’objectif final de la phase d’enregistrement.
 
-Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
-#### 2. La phase d’enregistrement est-elle obligatoire ? {#rest-api-v2-access-faq2}
+#### &#x200B;2. La phase d’enregistrement est-elle obligatoire ? {#rest-api-v2-access-faq2}
 
 La phase d’enregistrement est obligatoire, mais l’application cliente peut ignorer cette phase si elle dispose d’une paire d’informations d’identification client mises en cache et d’un jeton d’accès toujours valides.
 
-#### 3. Qu&#39;est-ce qu&#39;un énoncé de logiciel et combien de temps est-il valide ? {#rest-api-v2-access-faq3}
+#### &#x200B;3. Qu&#39;est-ce qu&#39;un énoncé de logiciel et combien de temps est-il valide ? {#rest-api-v2-access-faq3}
 
 L&#39;instruction logicielle est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement).
 
@@ -53,21 +53,21 @@ L’instruction du logiciel est valide pour une durée illimitée, mais vous pou
 
 L’application cliente doit stocker l’instruction du logiciel et l’utiliser lorsque vous avez besoin de récupérer les informations d’identification du client.
 
-Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
-#### 4. Comment générer et télécharger une déclaration de logiciel ? {#rest-api-v2-access-faq4}
+#### &#x200B;4. Comment générer et télécharger une déclaration de logiciel ? {#rest-api-v2-access-faq4}
 
 Cette opération peut être effectuée via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre organisation ou par un représentant Adobe Pass Authentication agissant en votre nom.
 
 Pour plus d’informations, reportez-vous à la documentation [Guide de l’utilisateur des canaux du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications) ou [Guide de l’utilisateur des programmeurs du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications).
 
-#### 5. Que se passe-t-il si une déclaration de logiciel est révoquée ? {#rest-api-v2-access-faq5}
+#### &#x200B;5. Que se passe-t-il si une déclaration de logiciel est révoquée ? {#rest-api-v2-access-faq5}
 
 Lorsque l’instruction du logiciel est révoquée, il existe une conséquence importante à prendre en compte :
 
 * Les applications clientes qui utilisent l’instruction logicielle révoquée ne pourront plus passer par les flux [droits](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#entitlement), ce qui signifie que les utilisateurs seront bloqués pour lire le contenu.
 
-#### 6. Que sont les informations d’identification du client et pendant combien de temps sont-elles valides ? {#rest-api-v2-access-faq6}
+#### &#x200B;6. Que sont les informations d’identification du client et pendant combien de temps sont-elles valides ? {#rest-api-v2-access-faq6}
 
 Les informations d’identification du client sont un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#client-credentials).
 
@@ -79,15 +79,15 @@ L’application cliente doit stocker les informations d’identification du clie
 
 Pour plus d’informations, consultez la documentation [Récupération des informations d’identification client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-#### 7. Comment gérer les informations d’identification du client ? {#rest-api-v2-access-faq7}
+#### &#x200B;7. Comment gérer les informations d’identification du client ? {#rest-api-v2-access-faq7}
 
 Nous recommandons à l’application cliente de gérer une paire unique d’informations d’identification client pour chaque instance d’application utilisateur dans le cas des intégrations client à serveur et serveur à serveur avec l’authentification Adobe Pass.
 
-#### 8. L’application cliente doit-elle mettre en cache les informations d’identification du client dans un stockage persistant ? {#rest-api-v2-access-faq8}
+#### &#x200B;8. L’application cliente doit-elle mettre en cache les informations d’identification du client dans un stockage persistant ? {#rest-api-v2-access-faq8}
 
 L’application cliente doit stocker les informations d’identification du client et les utiliser indéfiniment lorsqu’elle a besoin de récupérer un jeton d’accès.
 
-#### 9. Que se passe-t-il si les informations d’identification du client mises en cache sont perdues ? {#rest-api-v2-access-faq9}
+#### &#x200B;9. Que se passe-t-il si les informations d’identification du client mises en cache sont perdues ? {#rest-api-v2-access-faq9}
 
 Lorsque les informations d’identification du client mises en cache sont perdues, trois conséquences importantes doivent être prises en compte :
 
@@ -95,7 +95,7 @@ Lorsque les informations d’identification du client mises en cache sont perdue
 * L’application cliente doit obtenir un nouveau jeton d’accès à l’aide de la nouvelle paire d’informations d’identification client.
 * L’application cliente devra demander à l’utilisateur de s’authentifier à nouveau, car elle perdra l’accès aux profils authentifiés obtenus précédemment.
 
-#### 10. Qu’est-ce qu’un jeton d’accès et combien de temps est-il valide ? {#rest-api-v2-access-faq10}
+#### &#x200B;10. Qu’est-ce qu’un jeton d’accès et combien de temps est-il valide ? {#rest-api-v2-access-faq10}
 
 Le jeton d’accès est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#access-token).
 
@@ -109,11 +109,11 @@ L’application cliente doit obtenir un nouveau jeton d’accès avant l’expir
 
 Pour plus d’informations, consultez la documentation [Récupérer le jeton d’accès](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
-#### 11. L’application cliente doit-elle mettre en cache le jeton d’accès dans un stockage persistant ? {#rest-api-v2-access-faq11}
+#### &#x200B;11. L’application cliente doit-elle mettre en cache le jeton d’accès dans un stockage persistant ? {#rest-api-v2-access-faq11}
 
 L’application cliente doit stocker et utiliser le jeton d’accès jusqu’à son expiration, puis le supprimer et en obtenir un nouveau.
 
-#### 12. Comment l’application cliente peut-elle actualiser un jeton d’accès ? {#rest-api-v2-access-faq12}
+#### &#x200B;12. Comment l’application cliente peut-elle actualiser un jeton d’accès ? {#rest-api-v2-access-faq12}
 
 L’application cliente doit actualiser un jeton d’accès de la même manière que pour récupérer un nouveau jeton d’accès, mais en utilisant les informations d’identification du client mises en cache.
 
@@ -133,9 +133,9 @@ Passez à cette section si vous travaillez sur une application qui doit migrer u
 
 ### FAQ sur la migration vers la version 2 de l’API REST {#rest-api-v2-migration-faqs}
 
-+++FAQ sur la migration vers REST API V2
++++FAQ sur la migration vers la version 2 de l’API REST
 
-#### 1. L’application cliente peut-elle réutiliser les applications enregistrées existantes (déclarations de logiciel) ? {#rest-api-v2-migration-faq1}
+#### &#x200B;1. L’application cliente peut-elle réutiliser les applications enregistrées existantes (déclarations de logiciel) ? {#rest-api-v2-migration-faq1}
 
 L’application cliente ne peut pas réutiliser les applications enregistrées existantes (instructions logicielles). Elle doit donc générer et télécharger une nouvelle application enregistrée (instructions logicielles) dédiée à l’utilisation de l’API REST V2.
 
@@ -147,7 +147,7 @@ Pour le moment, vous devrez demander à un représentant de l’authentification
 
 Afin de distinguer les applications enregistrées (instructions logicielles) utilisées dans les applications clientes utilisant l’API REST V2, vous devez ajouter un suffixe spécifique au nom de l’application enregistrée, tel que « RESTV2 ».
 
-#### 2. L’application cliente peut-elle réutiliser les schémas personnalisés existants ? {#rest-api-v2-migration-faq2}
+#### &#x200B;2. L’application cliente peut-elle réutiliser les schémas personnalisés existants ? {#rest-api-v2-migration-faq2}
 
 L’application cliente peut réutiliser les schémas personnalisés existants générés via le tableau de bord Adobe Pass [TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard).
 

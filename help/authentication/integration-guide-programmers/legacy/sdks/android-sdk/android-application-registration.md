@@ -2,7 +2,7 @@
 title: Enregistrement de l’application Android
 description: Enregistrement de l’application Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 À compter de la version 3.0 du SDK AccessEnabler d’Android, nous modifions le mécanisme d’authentification avec les serveurs d’Adobe. Au lieu d’utiliser une clé publique et un système secret pour signer l’ID du demandeur, nous introduisons le concept d’une chaîne d’instruction logicielle qui peut être utilisée pour obtenir un jeton d’accès qui est ensuite utilisé pour tous les appels que le SDK effectue à nos serveurs. Outre une déclaration de logiciel, vous devrez également créer un lien profond pour votre application.
 
-Pour plus d’informations, voir [Présentation de l’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, voir [Présentation de l’enregistrement client dynamique](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Qu’est-ce qu’une déclaration de logiciel ? {#what}
 
@@ -41,7 +41,7 @@ Voici quelques moyens d’obtenir une déclaration logicielle.
 
 ### Si vous avez accès au tableau de bord Adobe TVE
 
-1. Ouvrez votre navigateur et accédez au tableau de bord Adobe Pass TVE [&#128279;](https://experience.adobe.com/#/pass/authentication).
+1. Ouvrez votre navigateur et accédez au tableau de bord Adobe Pass TVE [](https://experience.adobe.com/#/pass/authentication).
 
 1. Accédez à **[!UICONTROL Channels]** section, puis sélectionnez votre canal.
 
@@ -61,7 +61,7 @@ Voici quelques moyens d’obtenir une déclaration logicielle.
 
    Un fichier texte est téléchargé. Utilisez son contenu comme déclaration de logiciel.
 
-Pour plus d’informations, voir [Dynamic Client Registration Management](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Pour plus d’informations, voir [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Si vous n’avez pas accès au tableau de bord Adobe TVE
 

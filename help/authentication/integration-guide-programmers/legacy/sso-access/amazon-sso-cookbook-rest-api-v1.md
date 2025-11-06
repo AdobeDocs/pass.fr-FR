@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -139,7 +139,7 @@ Assurez-vous que l’application de diffusion en continu gère :
    * L’application de diffusion en continu peut rencontrer une `ClassNotFoundException` au moment de l’exécution sur la `com.amazon.ottssotokenlib.SSOEnabler` de classe suivante.
 
 * L’absence de payload du jeton SSO (identité de plateforme) qui doit être renvoyée par les API ci-dessus.
-   * L’application de streaming peut contacter Amazon et les représentants de l’Adobe pour en savoir plus.
+   * L’application de streaming peut contacter les représentants d’Amazon et d’Adobe pour en savoir plus.
 
 ### Workflow {#workflow}
 

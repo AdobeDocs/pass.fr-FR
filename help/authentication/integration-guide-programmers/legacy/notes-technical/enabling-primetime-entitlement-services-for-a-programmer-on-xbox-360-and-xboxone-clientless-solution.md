@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 1. Adobe crée les certificats X509 et configure la clé privée et le mot de passe à son extrémité.
 
-1. L’Adobe fournira le certificat public (du certificat X509) au programmeur dans le ticket ou par e-mail.
+1. Adobe fournira le certificat public (du certificat X509) au programmeur dans le ticket ou par e-mail.
 
 1. Le programmeur devra ensuite installer ce certificat public sur le portail GDNP pour l’application enregistrée auprès de Microsoft.
 
@@ -49,4 +49,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->En raison de la grande longueur du jeton XSTS, la console XBox présente une limitation technique : elle ne peut pas envoyer le jeton en tant que paramètre de GET HTTP aux API d’authentification de télévision à péage d’Adobe Pass. Pour gérer ce problème, l’authentification de la télévision payante Adobe Pass permet d’envoyer le jeton XSTS dans le cadre de l’en-tête HTTP « Authorization » lors de l’appel des API. Le jeton XSTS doit être chiffré à l’aide de la clé publique du certificat X.509 émis au programmeur par l’authentification de la télévision payante Adobe Pass. L’authentification de la télévision payante Adobe Pass stocke la clé privée associée et l’utilise pour déchiffrer le jeton XSTS et en extraire l’ID d’appareil.
+>En raison de la grande longueur du jeton XSTS, la console XBox présente une limitation technique : elle ne peut pas envoyer le jeton en tant que paramètre HTTP GET aux API d’authentification de télévision à péage d’Adobe Pass. Pour gérer ce problème, l’authentification de la télévision payante Adobe Pass permet d’envoyer le jeton XSTS dans le cadre de l’en-tête HTTP « Authorization » lors de l’appel des API. Le jeton XSTS doit être chiffré à l’aide de la clé publique du certificat X.509 émis au programmeur par l’authentification de la télévision payante Adobe Pass. L’authentification de la télévision payante Adobe Pass stocke la clé privée associée et l’utilise pour déchiffrer le jeton XSTS et en extraire l’ID d’appareil.

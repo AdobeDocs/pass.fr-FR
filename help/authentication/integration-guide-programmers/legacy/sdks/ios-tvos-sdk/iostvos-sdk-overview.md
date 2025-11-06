@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -90,7 +90,7 @@ Pour les clients natifs, la déconnexion est gérée de la même manière que le
 
 1. À la fin, AccessEnabler appelle le rappel [`setAuthenticationStatus()`](#setAuthNStatus) avec un code d&#39;état de 0, indiquant le succès du flux de déconnexion.
 
-Le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir de quelque manière que ce soit avec le contrôleur de `UIWebView/WKWebView or SFSafariViewController`. Par conséquent, Adobe recommande de rendre le contrôle invisible (c’est-à-dire masqué) pendant le processus de déconnexion.
+Le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir de quelque manière que ce soit avec le contrôleur de `UIWebView/WKWebView or SFSafariViewController`. Par conséquent, Adobe vous recommande de rendre le contrôle invisible (c’est-à-dire masqué) pendant le processus de déconnexion.
 
 ## Jetons {#tokens}
 
@@ -317,7 +317,7 @@ Dans les listes XML ci-dessus, notez la balise intitulée `simpleTokenFingerprin
 
 
 
-Comme il s’agit évidemment d’une fonctionnalité liée à la sécurité, ces informations sont par nature « sensibles » du point de vue de la sécurité. Par conséquent, ces renseignements doivent être protégés contre l&#39;altération et l&#39;écoute électronique. Le problème d’écoute est résolu en envoyant les demandes d’authentification/autorisation via le protocole HTTPS. La protection contre l&#39;altération est gérée en signant numériquement les informations d&#39;identification du dispositif. La bibliothèque AccessEnabler calcule un identifiant d’appareil à partir des informations fournies par l’appareil, puis envoie l’identifiant d’appareil « en clair » aux serveurs d’authentification Adobe Pass en tant que paramètre de requête. Les serveurs d’authentification d’Adobe Pass signent numériquement l’ID d’appareil avec la clé privée d’Adobe et l’ajoutent au jeton d’authentification renvoyé à AccessEnabler. Ainsi, l’ID de l’appareil est lié au jeton d’authentification. Pendant le flux d’autorisation, AccessEnabler envoie à nouveau l’ID d’appareil en clair, ainsi que le jeton d’authentification. L’échec du processus de validation entraîne automatiquement l’échec des workflows d’authentification/autorisation. Les serveurs d’authentification d’Adobe Pass appliquent la clé privée à l’ID d’appareil et la comparent à la valeur du jeton d’authentification. S’ils ne correspondent pas, ce flux de droits échoue.
+Comme il s’agit évidemment d’une fonctionnalité liée à la sécurité, ces informations sont par nature « sensibles » du point de vue de la sécurité. Par conséquent, ces renseignements doivent être protégés contre l&#39;altération et l&#39;écoute électronique. Le problème d’écoute est résolu en envoyant les demandes d’authentification/autorisation via le protocole HTTPS. La protection contre l&#39;altération est gérée en signant numériquement les informations d&#39;identification du dispositif. La bibliothèque AccessEnabler calcule un identifiant d’appareil à partir des informations fournies par l’appareil, puis envoie l’identifiant d’appareil « en clair » aux serveurs d’authentification Adobe Pass en tant que paramètre de requête. Les serveurs d’authentification d’Adobe Pass signent numériquement l’ID d’appareil avec la clé privée Adobe et l’ajoutent au jeton d’authentification renvoyé à AccessEnabler. Ainsi, l’ID de l’appareil est lié au jeton d’authentification. Pendant le flux d’autorisation, AccessEnabler envoie à nouveau l’ID d’appareil en clair, ainsi que le jeton d’authentification. L’échec du processus de validation entraîne automatiquement l’échec des workflows d’authentification/autorisation. Les serveurs d’authentification d’Adobe Pass appliquent la clé privée à l’ID d’appareil et la comparent à la valeur du jeton d’authentification. S’ils ne correspondent pas, ce flux de droits échoue.
 
 
 

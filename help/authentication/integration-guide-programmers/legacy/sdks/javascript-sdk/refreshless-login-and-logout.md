@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -59,7 +59,7 @@ Il existe également une situation dans laquelle l’utilisateur ou l’utilisat
 
 1. **Redirection de page entière -** Lorsque la page de connexion est fermée, l’utilisateur doit de nouveau accéder au site web du programmeur et lancer l’ensemble du flux depuis le début. Aucune action explicite n’est requise de la part du programmeur dans ce scénario.
 1. **iFrame -** Il est recommandé au programmeur d’héberger l’iFrame dans un `div` (ou un composant d’IU similaire) auquel est associé un bouton Fermer. Lorsque l’utilisateur appuie sur le bouton Fermer, le programmeur détruit l’iFrame ainsi que l’interface utilisateur associée et effectue des `setSelectedProvider(null)`. Cet appel permet à AccessEnabler d’effacer son état interne et permet à l’utilisateur de lancer un flux d’authentification suivant. `setAuthenticationStatus` et `sendTrackingData(AUTHENTICATION_DETECTION...)` seront déclenchés pour signaler un flux d’authentification ayant échoué (à la fois sur `getAuthentication` et `getAuthorization`).
-1. **Fenêtre contextuelle -** Certains navigateurs ne peuvent pas détecter avec précision l’événement de fermeture de fenêtre. Une approche différente doit donc être adoptée ici (contrairement au flux iFrame ci-dessus). Adobe recommande au programmeur d’initialiser un minuteur qui vérifie périodiquement l’existence de la fenêtre contextuelle de connexion. Si la fenêtre n’existe pas, le programmeur peut s’assurer que l’utilisateur a annulé manuellement le flux de connexion et qu’il peut procéder à l’appel de `setSelectedProvider(null)`. Les rappels déclenchés sont les mêmes que dans le flux 2 ci-dessus.
+1. **Fenêtre contextuelle -** Certains navigateurs ne peuvent pas détecter avec précision l’événement de fermeture de fenêtre. Une approche différente doit donc être adoptée ici (contrairement au flux iFrame ci-dessus). Adobe recommande au programmeur d’initialiser un minuteur qui vérifie régulièrement l’existence de la fenêtre contextuelle de connexion. Si la fenêtre n’existe pas, le programmeur peut s’assurer que l’utilisateur a annulé manuellement le flux de connexion et qu’il peut procéder à l’appel de `setSelectedProvider(null)`. Les rappels déclenchés sont les mêmes que dans le flux 2 ci-dessus.
 
 </br>
 
@@ -77,7 +77,7 @@ L’API de déconnexion d’AccessEnabler efface le statut local de la biblioth�
 
 >[!NOTE]
 >
->L’amélioration des flux de connexion et de déconnexion sans actualisation nécessite que le navigateur prenne en charge les technologies modernes d’HTML 5, y compris la messagerie web.
+>L’amélioration des flux de connexion et de déconnexion sans actualisation nécessite que le navigateur prenne en charge les technologies HTML5 modernes, y compris la messagerie web.
 
 Les flux d’authentification (connexion) et de déconnexion décrits ci-dessus offrent à l’utilisateur une expérience similaire en rechargeant la page principale une fois chaque flux terminé.  La fonctionnalité actuelle vise à améliorer l’expérience utilisateur en fournissant une connexion et une déconnexion sans actualisation (en arrière-plan). Le programmeur peut activer/désactiver la connexion et la déconnexion en arrière-plan en transmettant deux indicateurs booléens (`backgroundLogin` et `backgroundLogout`) au paramètre `configInfo` de l’API `setRequestor`. Par défaut, la connexion/déconnexion en arrière-plan est désactivée (ce qui permet d’assurer la compatibilité avec la mise en œuvre précédente).
 

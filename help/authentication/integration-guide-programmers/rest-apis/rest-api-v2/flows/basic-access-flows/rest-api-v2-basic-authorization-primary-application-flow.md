@@ -2,7 +2,7 @@
 title: Autorisation de base - Demande de Principal - Flux
 description: API REST V2 - Autorisation de base - Application de Principal - Flux
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Avant de récupérer des décisions d’autorisation à l’aide d’un MVPD sp�
 
 Suivez les étapes données pour implémenter le flux d’autorisation de base à l’aide d’un MVPD spécifique exécuté dans une application principale, comme illustré dans le diagramme ci-dessous.
 
-![Récupérer des décisions d’autorisation à l’aide de mvpd spécifiques](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png)
+![Récupérer des décisions d’autorisation à l’aide de mvpd spécifiques](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png)
 
 *Récupérer des décisions d’autorisation à l’aide de mvpd spécifiques*
 

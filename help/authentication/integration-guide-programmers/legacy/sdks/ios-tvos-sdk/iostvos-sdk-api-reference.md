@@ -4,7 +4,7 @@ description: Référence de l’API iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
 source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '6942'
+source-wordcount: '6935'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -47,7 +47,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 * [`setOptions:options:`](#setOptions) - Configure les options SDK globales telles que le profil ou l’identifiant visiteur.
 
-* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Établit l’identité du programmeur.
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Établit l’identité du programmeur.
 
 * **[OBSOLÈTE]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Établit l’identité du programmeur.
 
@@ -59,7 +59,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 * [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) - Démarre le workflow d’authentification complet.
 
-* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) - Démarre le processus d’authentification complet.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) - Démarre le processus d’authentification complet.
 
 * [`displayProviderDialog:`](#dispProvDialog) - Indique à votre application d’instancier les éléments d’interface utilisateur appropriés pour que l’utilisateur puisse sélectionner un MVPD.
 
@@ -123,7 +123,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 **Paramètres:**
 
-* **softwareStatement :** chaîne qui identifie l’application dans le système d’Adobe. Découvrez comment obtenir une déclaration logicielle.
+* **softwareStatement :** chaîne qui identifie l’application dans le système Adobe. Découvrez comment obtenir une déclaration logicielle.
 
 [Haut de la page...](#apis)
 
@@ -165,7 +165,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 * *options* : un NSDictionary contenant des options SDK globales. Actuellement, les options suivantes sont disponibles :
    * **applicationProfile** - Peut être utilisé pour effectuer des configurations de serveur en fonction de cette valeur.
-   * **visitorID** - Service d’identification des Experience Cloud. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
+   * **visitorID** - Service Experience Cloud ID. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
    * **handleSVC** - Valeur booléenne indiquant si le programmeur gérera SFSafariViewControllers. Pour plus d’informations, consultez la section Prise en charge de [SFSafariViewController sur iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md).
       * Si cette valeur est définie sur **false** le SDK présente automatiquement un SFSafariViewController à l’utilisateur final. Le SDK accède ensuite à l’URL de la page de connexion des MVPD.
       * Si la valeur est définie sur **true** le SDK **NOT** présente automatiquement un SFSafariViewController à l&#39;utilisateur final. Le SDK se déclenchera en outre **navigate(toUrl:{url}, useSVC:YES)**.
@@ -178,11 +178,11 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 **Fichier:** AccessEnabler/headers/AccessEnabler.h
 
-**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un ID unique lors de l’enregistrement avec l’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est amenée au premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
+**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un identifiant unique lors de son enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est amenée au premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
 
 La réponse du serveur contient une liste de fichiers MVPD ainsi que des informations de configuration associées à l’identité du programmeur. La réponse du serveur est utilisée en interne par le code AccessEnabler. Seul le statut de l’opération (c’est-à-dire SUCCÈS/ÉCHEC) est présenté à votre application via le rappel `setRequestorComplete:`.
 
-Si le paramètre `urls` n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement RELEASE/production d’Adobe.
+Si le paramètre `urls` n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement de production/VERSION Adobe.
 
 
 Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultant cible toutes les URL fournies dans le paramètre `urls`. Toutes les demandes de configuration sont déclenchées simultanément dans des threads distincts. Le premier répondant est prioritaire lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, AccessEnabler mémorise l’URL du fournisseur d’accès associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
@@ -220,11 +220,11 @@ Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultan
 
 **Fichier:** AccessEnabler/headers/AccessEnabler.h
 
-**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un ID unique lors de l’enregistrement avec l’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez avec des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est mise en premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
+**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un identifiant unique lors de son enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Lorsque vous traitez avec des jetons SSO et distants, l&#39;état d&#39;authentification peut changer lorsque l&#39;application est en arrière-plan, setRequestor peut être appelé à nouveau lorsque l&#39;application est mise en premier plan afin de se synchroniser avec l&#39;état du système (récupérer un jeton distant si SSO est activé ou supprimer le jeton local si une déconnexion s&#39;est produite en attendant).
 
 La réponse du serveur contient une liste de fichiers MVPD ainsi que des informations de configuration associées à l’identité du programmeur. La réponse du serveur est utilisée en interne par le code AccessEnabler. Seul le statut de l’opération (c’est-à-dire SUCCÈS/ÉCHEC) est présenté à votre application via le rappel `setRequestorComplete:`.
 
-Si le paramètre `urls` n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement RELEASE/production d’Adobe.
+Si le paramètre `urls` n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement de production/VERSION Adobe.
 
 Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultant cible toutes les URL fournies dans le paramètre `urls`. Toutes les demandes de configuration sont déclenchées simultanément dans des threads distincts. Le premier répondant est prioritaire lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, AccessEnabler mémorise l’URL du fournisseur d’accès associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
 
@@ -242,7 +242,7 @@ Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultan
 
 **Paramètres:**
 
-* *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site lors de votre premier enregistrement auprès du service d’authentification Adobe Pass.
+* *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site lors de votre premier enregistrement auprès du service d’authentification d’Adobe Pass.
 * *signedRequestorID* : **ce paramètre existe dans iOS AccessEnabler versions 1.2 et ultérieures.** Une copie de l’ID du demandeur qui est signée numériquement avec votre clé privée. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
 * *urls* : paramètre facultatif ; par défaut, le fournisseur d’accès Adobe est utilisé (http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances de fournisseur de services d’authentification Adobe Pass. Ce faisant, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
 
@@ -257,11 +257,11 @@ Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultan
 
 **Fichier:** AccessEnabler/headers/AccessEnabler.h
 
-**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un ID unique lors de l’enregistrement avec l’Adobe pour le système d’authentification Adobe Pass. Ce réglage ne doit être effectué qu&#39;une seule fois pendant le cycle de vie de l&#39;application.
+**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un identifiant unique lors de son enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Ce réglage ne doit être effectué qu&#39;une seule fois pendant le cycle de vie de l&#39;application.
 
 La réponse du serveur contient une liste de fichiers MVPD ainsi que des informations de configuration associées à l’identité du programmeur. La réponse du serveur est utilisée en interne par le code AccessEnabler. Seul le statut de l’opération (c’est-à-dire SUCCÈS/ÉCHEC) est présenté à votre application via le rappel `setRequestorComplete:`.
 
-Si le paramètre `urls` n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement RELEASE/production d’Adobe.
+Si le paramètre `urls` n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement de production/VERSION Adobe.
 
 Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultant cible toutes les URL fournies dans le paramètre `urls`. Toutes les demandes de configuration sont déclenchées simultanément dans des threads distincts. Le premier répondant est prioritaire lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, AccessEnabler mémorise l’URL du fournisseur d’accès associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
 
@@ -313,7 +313,7 @@ Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultan
 
 **Paramètres:**
 
-* *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site la première fois   enregistré auprès du service d’authentification Adobe Pass.
+* *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site la première fois que vous   enregistré auprès du service d’authentification Adobe Pass.
 * *signedRequestorID* : **Ce paramètre existe dans iOS AccessEnabler   versions 1.2 et ultérieures.** Une copie de l’ID du demandeur qui est signée numériquement avec votre clé privée. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
 * *urls* : paramètre facultatif ; par défaut, le fournisseur d’accès d’Adobe   est utilisé (http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances de fournisseur de services d’authentification Adobe Pass. Ce faisant, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
 * secret et publicKey : clé secrète et publique utilisée pour signer les deuxièmes appels à l’écran. Pour plus d’informations, consultez la [documentation relative à Clienteless](#create_dev).
@@ -712,11 +712,11 @@ Comme le contrôleur UIWebView/WKWebView` `Controller passe par plusieurs redire
 
 **Fichier:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Description :** rappel déclenché par AccessEnabler au lieu du rappel `navigateToUrl:` au cas où votre application aurait activé la gestion manuelle du contrôleur de vue Safari (SVC) via l’appel [setOptions(\[« handleSVC »:true »\])](#setOptions) et uniquement dans le cas de MVPD nécessitant le contrôleur de vue Safari (SVC). Pour tous les autres MVPD, le rappel `navigateToUrl:` est appelé. Veuillez consulter la prise en charge [&#x200B; SFSafariViewController sur iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md) pour plus d’informations sur la manière dont Safari View Controller (SVC) doit être géré.
+**Description :** rappel déclenché par AccessEnabler au lieu du rappel `navigateToUrl:` au cas où votre application aurait précédemment activé la gestion manuelle de Safari View Controller (SVC) via l’appel [setOptions(\[« handleSVC »:true« \])](#setOptions) et uniquement dans le cas de MVPD nécessitant Safari View Controller (SVC). Pour tous les autres MVPD, le rappel `navigateToUrl:` est appelé. Veuillez consulter la prise en charge [ SFSafariViewController sur iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md) pour plus d’informations sur la manière dont Safari View Controller (SVC) doit être géré.
 
 Tout comme le rappel `navigateToUrl:`, le `navigateToUrl:useSVC:` est déclenché par AccessEnabler pour demander à votre application d’instancier un contrôleur de `SFSafariViewController` et de charger l’URL fournie dans le paramètre **`url`** du rappel. Le rappel transmet le paramètre **`url`** qui représente l’URL du point d’entrée d’authentification ou l’URL du point d’entrée de déconnexion, ainsi que le paramètre **`useSVC`** qui spécifie que l’application doit utiliser un `SFSafariViewController`.
 
-Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirections, votre application doit surveiller l&#39;activité du contrôleur et détecter le moment où il charge une URL personnalisée spécifique définie par votre `application's custom scheme` (par exemple **&#x200B; &#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Il doit être interprété par votre application uniquement comme un signal indiquant que l’authentification ou le flux de déconnexion est terminé et qu’il est sûr de fermer le contrôleur. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le `SFSafariViewController` et appeler la méthode `handleExternalURL:url `API d&#39;AccessEnabler.
+Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirections, votre application doit surveiller l&#39;activité du contrôleur et détecter le moment où il charge une URL personnalisée spécifique définie par votre `application's custom scheme` (par exemple ** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Il doit être interprété par votre application uniquement comme un signal indiquant que l’authentification ou le flux de déconnexion est terminé et qu’il est sûr de fermer le contrôleur. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le `SFSafariViewController` et appeler la méthode `handleExternalURL:url `API d&#39;AccessEnabler.
 
 **Remarque :** Notez que dans le cas du flux d’authentification, il s’agit d’un point où l’utilisateur a la possibilité d’appuyer sur le bouton « Précédent », ce qui équivaut à l’abandon du flux d’authentification. Dans un tel scénario, votre application doit appeler la méthode [setSelectedProvider:](#setSelProv) en transmettant **`nil`** comme paramètre et en donnant une chance à AccessEnabler de réinitialiser son ordinateur d&#39;état d&#39;authentification.
 
@@ -732,19 +732,19 @@ Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirection
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**Disponibilité :**&#x200B;v 3.2+
+**Disponibilité :**v 3.2+
 
 **Paramètres** :
 
 * *url :* URL pointant vers la page de connexion de MVPD
 * *useSVC :* si l’URL doit être chargée dans SFSafariViewController.
 
-**Déclenché par:**&#x200B;[&#x200B; setOptions:](#setOptions) avant [setSelectedProvider:](#setSelProv)
+**Déclenché par:**[ setOptions:](#setOptions) avant [setSelectedProvider:](#setSelProv)
 
 [Haut de la page...](#apis)
 
@@ -1176,7 +1176,7 @@ pour la ressource donnée
 
 **Description :** cette méthode est appelée par votre application pour lancer le flux de déconnexion. La déconnexion est le résultat d’une série d’opérations de redirection HTTP en raison du fait que l’utilisateur doit être déconnecté des serveurs d’authentification Adobe Pass et des serveurs de MVPD. Comme ce flux ne peut pas être exécuté avec une simple requête HTTP émise par la bibliothèque AccessEnabler, un contrôleur `UIWebView/WKWebView or SFSafariViewController` doit être instancié pour pouvoir suivre les opérations de redirection HTTP.
 
-Le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir de quelque manière que ce soit avec le contrôleur de `UIWebView/WKWebView or SFSafariViewController`. Par conséquent, Adobe recommande de rendre le contrôle invisible (c’est-à-dire masqué) pendant le processus de déconnexion.
+Le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir de quelque manière que ce soit avec le contrôleur de `UIWebView/WKWebView or SFSafariViewController`. Par conséquent, Adobe vous recommande de rendre le contrôle invisible (c’est-à-dire masqué) pendant le processus de déconnexion.
 
 Un motif similaire au flux d’authentification est utilisé. IOS AccessEnabler déclenche le rappel `navigateToUrl:` ou le `navigateToUrl:useSVC:` pour créer un contrôleur de `UIWebView/WKWebView or SFSafariViewController` et charger l’URL fournie dans le paramètre `url` du rappel. Il s’agit de l’URL du point d’entrée de déconnexion sur le serveur principal. Pour tvOS AccessEnabler, ni le rappel `navigateToUrl:` ni le rappel `navigateToUrl:useSVC:` n’est appelé.
 
@@ -1317,7 +1317,7 @@ format :
    * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_AUTHENTICATION`, la requête est exécutée pour obtenir le délai d’expiration du jeton d’authentification.
    * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_AUTHORIZATION` **et**\
      La clé est `METADATA_RESOURCE_ID_KEY` et la valeur est un identifiant de ressource particulier, puis la requête est effectuée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
-   * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_DEVICE_ID`, la requête est exécutée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter l’Adobe pour plus d’informations sur l’activation et les frais.
+   * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_DEVICE_ID`, la requête est exécutée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
    * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_USER_META` **et** la clé est `METADATA_USER_META_KEY` et que la valeur est le nom des métadonnées, la requête porte sur les métadonnées de l’utilisateur. Liste des types de métadonnées utilisateur disponibles :
       * `zip` - Liste des codes postaux
       * `householdID` - Identifiant du ménage. Dans le cas où un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à `userID`.
@@ -1514,7 +1514,7 @@ AccessEnabler déclenche un rappel supplémentaire qui n’est pas nécessaireme
 
 **Disponibilité :** v1.0+
 
-**Remarque :** le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (<http://java.net/projects/user-agent-utils>) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre approximatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais que l’Adobe ne peut être tenu responsable de résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
+**Remarque :** le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (<http://java.net/projects/user-agent-utils>) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
 
 * Valeurs possibles pour le type d’appareil :
    * `computer`

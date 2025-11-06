@@ -2,7 +2,7 @@
 title: Manuel de l’API REST (client à serveur)
 description: Client de guide pas à pas de l’API REST au serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -49,12 +49,12 @@ Dans une solution client à serveur opérationnelle, les composants suivants son
 
 ### Enregistrement de client dynamique (DCR)
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Flux D’Applications De Diffusion En Continu (Smart Device)
 
-![](/help//authentication/assets/smart-device-app-flow.png)
+![](../../../../assets/smart-device-app-flow.png)
 
 #### Flux de démarrage
 
@@ -119,7 +119,7 @@ utilisateur.
 
 ### Flux d’application AuthN (deuxième écran)
 
-![](/help//authentication/assets/secnd-screen-authn-flow.png)
+![](../../../../assets/secnd-screen-authn-flow.png)
 
 1. Obtenez une liste des fichiers MVPD pour cet utilisateur. Par exemple : [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
 
@@ -148,4 +148,4 @@ Pour les implémentations TempPass et Promotionnel TempPass où l’utilisateur 
 **Pour utiliser cette API, l’application de diffusion en continu doit s’assurer de l’unicité de l’identifiant de l’appareil, car il est utilisé pour identifier le jeton, avec les données supplémentaires facultatives.**
 
 
-![](/help//authentication/assets/temp-pass-promo-temppass.png)
+![](../../../../assets/temp-pass-promo-temppass.png)

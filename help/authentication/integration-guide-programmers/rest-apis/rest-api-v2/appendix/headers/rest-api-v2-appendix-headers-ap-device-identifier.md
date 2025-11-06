@@ -83,7 +83,7 @@ AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMW
 >
 > Les ressources de documentation ne sont pas exhaustives et peuvent nécessiter des modifications supplémentaires pour fonctionner dans votre projet.
 > 
-> Quelle que soit votre implémentation réelle, l’en-tête de `AP-Device-Identifier` doit contenir une valeur formatée comme décrit dans la section [&#x200B; Directives &#x200B;](#directives).
+> Quelle que soit votre implémentation réelle, l’en-tête de `AP-Device-Identifier` doit contenir une valeur formatée comme décrit dans la section [ Directives ](#directives).
 
 ### Navigateurs {#browsers}
 

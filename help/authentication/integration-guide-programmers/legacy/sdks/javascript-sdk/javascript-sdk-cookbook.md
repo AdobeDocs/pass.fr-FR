@@ -2,7 +2,7 @@
 title: Manuel de JavaScript SDK
 description: Manuel de JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '957'
 ht-degree: 0%
@@ -36,7 +36,7 @@ lien vers un ensemble d’exemples de code JavaScript.
 
 </br>
 
-![](/help//authentication/assets/javascript-flows.png)
+![](../../../../assets/javascript-flows.png)
 
 
 ## Conditions préalables {#prereq}
@@ -186,7 +186,7 @@ Bibliothèque AccessEnabler)
 
 ## Configuration de l’identifiant visiteur {#visitorID}
 
-La configuration d’une valeur [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr) est très importante du point de vue analytique. Une fois qu’une valeur d’identifiant visiteur EC est définie, le SDK envoie ces informations avec chaque appel réseau et le service d’authentification Adobe Pass collecte ces informations. Vous pourrez ainsi mettre en corrélation les données d’analyse du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur EC [ici](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr).
+La configuration d’une valeur [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) est très importante du point de vue analytique. Une fois qu’une valeur d’identifiant visiteur EC est définie, le SDK envoie ces informations avec chaque appel réseau et le service d’authentification Adobe Pass collecte ces informations. Vous pourrez ainsi mettre en corrélation les données d’analyse du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur EC [ici](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

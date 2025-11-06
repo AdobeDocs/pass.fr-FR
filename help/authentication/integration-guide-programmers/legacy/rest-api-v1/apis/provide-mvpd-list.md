@@ -4,7 +4,7 @@ description: Fourniture d’une liste MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '254'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Renvoie la liste des fichiers MVPD configurés pour le demandeur.
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Authentification Adobe Pass | 1. Demandeur </br>    (Composant Chemin d’accès)</br>_2.  deviceType (obsolète)_ | GET | XML ou JSON contenant la liste des fichiers MVPD. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Authentification Adobe Pass | &#x200B;1. Demandeur </br>    (Composant Chemin d’accès)</br>_2.  deviceType (obsolète)_ | GET | XML ou JSON contenant la liste des fichiers MVPD. | 200 |
 
 {style="table-layout:auto"}
 

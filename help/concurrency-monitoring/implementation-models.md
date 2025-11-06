@@ -13,6 +13,6 @@ ht-degree: 0%
 
 ## Stratégies côté serveur {#ss-policies}
 
-Ce modèle utilisera CM comme point de décision de stratégie, déléguant ainsi la décision d’accès au service.
+Ce modèle utilisera CM comme point de décision de politique, déléguant ainsi la décision d’accès au service.
 
-Puisque le client ne doit pas présumer des stratégies appliquées, l’implémentation doit vérifier la décision lors de l’initialisation de la session, ainsi que régulièrement, pendant la lecture à partir de la réponse de pulsation.
+Étant donné que le client ne doit pas faire d’hypothèses concernant les politiques appliquées, l’implémentation doit vérifier la décision lors de l’initialisation de la session, ainsi que régulièrement, pendant la lecture à partir de la réponse de pulsation.

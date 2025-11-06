@@ -2,7 +2,7 @@
 title: Déboguer le SDK AccessEnabler iOS/tvOS à l’aide des journaux d’application de la console
 description: Déboguer le SDK AccessEnabler iOS/tvOS à l’aide des journaux d’application de la console
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -50,19 +50,19 @@ En fonction des problèmes étudiés, vous souhaiterez peut-être inclure ou exc
 
 Tout d’abord, pour pouvoir consulter l’un des messages de journalisation émis par le framework AccessEnabler **vous** devez sélectionner « Inclure les messages d’informations » et « Inclure les messages de débogage » dans la section Action de l’application Console, comme illustré dans l’image ci-dessous.
 
-![](/help/authentication/assets/include-info-debug-msg.png)
+![](../../../assets/include-info-debug-msg.png)
 
 
 Pour pouvoir déboguer la fonctionnalité du SDK AccessEnabler iOS/tvOS et **voir** les journaux de framework AccessEnabler, vous pouvez :
 
 * Recherchez dans l’application Console à l’aide de l’option **Subsystem** qui est égale à la valeur com.adobe.pass.AccessEnabler comme dans l’image ci-dessous.
 
-![](/help/authentication/assets/subsys-console-app.png)
+![](../../../assets/subsys-console-app.png)
 
 * Recherchez dans l’application de console à l’aide de l’option **Any** qui contient les
   Valeur [AccessEnabler] comme dans l’image ci-dessous.
 
-![](/help/authentication/assets/any-optn-console-app.png)
+![](../../../assets/any-optn-console-app.png)
 
 Outre les deux critères ci-dessus, vous pouvez également utiliser l’option **Catégorie** conjointement avec **Sous-système** ou **N’importe lequel (préfixe)** pour rechercher explicitement des messages de niveau **débogage** ou **erreur** émis par le SDK AccessEnabler iOS/tvOS.
 

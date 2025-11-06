@@ -1,6 +1,6 @@
 ---
-title: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API d’Adobe
-description: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API d’Adobe
+title: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe
+description: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
 source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# (Hérité) Comment tester les flux d’authentification et d’autorisation à l’aide du site de test d’API d’Adobe {#How-to-test-auth-flows}
+# (Hérité) Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe {#How-to-test-auth-flows}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -24,7 +24,7 @@ Afin de tester les flux AuthN et AuthZ, nous avons préparé un site de test **A
 
 ## Première partie {#part-I}
 
-Pour effectuer un test par rapport à l’environnement RELEASE, passez directement à la partie II.  Pour effectuer des tests dans l’environnement de préqualification, voir [&#x200B; Configuration de votre environnement et Tests dans la préqualification &#x200B;](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
+Pour effectuer un test par rapport à l’environnement RELEASE, passez directement à la partie II.  Pour effectuer des tests dans l’environnement de préqualification, voir [ Configuration de votre environnement et Tests dans la préqualification ](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
 
 ## Deuxième partie
 

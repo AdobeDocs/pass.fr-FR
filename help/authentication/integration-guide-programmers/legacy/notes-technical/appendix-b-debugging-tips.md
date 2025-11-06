@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -34,7 +34,7 @@ Il est fiable par le navigateur, mais dans Firefox : « Tools » -\> « Clear Re
 
 ## Effacement du cache des LSO {#clearing-lsos-cache}
 
-Accédez à l&#39;aide du Flash Player [&#128279;](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Accédez à l&#39;aide de [Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
 Sélectionnez le ```entitlement.\*``` (en fonction de ce qui a été testé) et cliquez sur « Supprimer le site web ».
 

@@ -1,6 +1,6 @@
 ---
-title: Mise en oeuvre de CM pour un client/une stratégie unique et plusieurs applications
-description: Mise en oeuvre de CM pour un client/une stratégie unique et plusieurs applications
+title: Mise en œuvre de CM pour un client/une politique unique et plusieurs applications
+description: Mise en œuvre de CM pour un client/une politique unique et plusieurs applications
 exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,27 +9,27 @@ ht-degree: 0%
 
 ---
 
-# Mise en oeuvre de CM pour un client/une stratégie unique et plusieurs applications {#imp-cm}
+# Mise en œuvre de CM pour un client/une politique unique et plusieurs applications {#imp-cm}
 
 
 
 ## Cas d’utilisation
 
-Le programmeur P dispose d’une application iPhone, d’une application iPad et d’un site web. Il doit s’intégrer à la surveillance de la simultanéité des Adobes (CM) pour limiter le nombre de diffusions simultanées entre ces applications. Le programmeur crée des stratégies qui limitent l’utilisation simultanée. Nous allons examiner deux exemples :
+Le programmeur P dispose d’une application iPhone, d’une application iPad et d’un site web. Il doit s’intégrer à la surveillance de simultanéité (CM) d’Adobe pour limiter le nombre de flux simultanés entre ces applications. Le programmeur crée des politiques qui restreignent l’utilisation simultanée. Nous examinerons deux exemples :
 
-La première stratégie contient une règle qui n’autorise pas plus de 2 flux simultanés. La dernière diffusion sera autorisée à être lue.
-La seconde stratégie contient deux règles. Elle ne permet pas plus de 3 diffusions simultanées à partir de 2 appareils au maximum et la dernière diffusion sera autorisée à être lue.
+La première politique contient une règle qui n’autorise pas plus de 2 flux simultanés. Le dernier flux sera autorisé à être lu.
+La deuxième politique contient deux règles. Il n’autorise pas plus de 3 flux simultanés provenant de plus de 2 appareils et le dernier flux sera autorisé à être lu.
 
 
-## Une stratégie avec une règle
+## Une politique avec une règle
 
-Notre première stratégie contient une seule règle : pas plus de 2 diffusions simultanées sont autorisées, le premier flux à démarrer sera arrêté au cas où trois flux simultanés seraient lus.
+Notre première politique contient une seule règle : pas plus de 2 flux simultanés sont autorisés, le premier flux à démarrer sera arrêté au cas où trois flux simultanés sont en cours de lecture.
 
-Deux applications + un site web sont utilisés pour démarrer des flux :
+Deux applications + un site web sont utilisées pour démarrer les flux :
 
-1. L’utilisateur lance un flux à partir de l’application iPhone et un flux à partir de l’application iPad. La politique permet cela.
+1. L’utilisateur ou l’utilisatrice démarre un flux à partir de l’application iPhone et un flux à partir de l’application iPad. La politique le permet.
 1. L’utilisateur lance ensuite un troisième flux à partir du site web du programmeur.
-1. La règle dans la stratégie (flux max 2, dernières victoires) permet à la dernière diffusion de se lire, de sorte que **le premier flux qui a été démarré sera marqué comme non conforme à la stratégie et sera arrêté.**
+1. La règle de la politique (2 flux max., derniers succès) permet au dernier flux de s’exécuter. **le premier flux qui a été démarré sera marqué comme non conforme à la politique et sera arrêté.**
 
 
 

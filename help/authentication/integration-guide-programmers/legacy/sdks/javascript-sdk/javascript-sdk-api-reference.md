@@ -2,7 +2,7 @@
 title: Référence de l’API JavaScript SDK
 description: Référence de l’API JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Ces fonctions lancent des demandes d’interaction avec un MVPD. Tous les appels
 
 - *options* - Objet JSON contenant la valeur de l’ID d’application, la valeur de l’ID de visiteur sans actualisation (déconnexion en arrière-plan) et les paramètres MVPD (iFrame). Toutes les valeurs sont facultatives.
    1. S’il est spécifié, l’identifiant visiteur Experience Cloud est signalé sur tous les appels réseau effectués par la bibliothèque. La valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
-   2. Si l’identifiant unique de l’application est spécifié -`applicationId` - la valeur sera ajoutée à tous les appels suivants effectués par l’application dans le cadre de l’en-tête HTTP X-Device-Info. Cette valeur peut être récupérée ultérieurement à partir des rapports [ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md) à l’aide de la requête appropriée.
+   2. Si l’identifiant unique de l’application est spécifié -`applicationId` - la valeur sera ajoutée à tous les appels suivants effectués par l’application dans le cadre de l’en-tête HTTP X-Device-Info. Cette valeur peut être récupérée ultérieurement à partir des rapports [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) à l’aide de la requête appropriée.
 
   **Remarque :** toutes les clés JSON sont sensibles à la casse.
 
@@ -309,7 +309,7 @@ Par exemple :
 **Description :** appelez cette fonction lorsque l’utilisateur a sélectionné un MVPD dans l’interface utilisateur de sélection de fournisseur afin d’envoyer la sélection de fournisseur à Access Enabler ou appelez cette fonction avec un paramètre null au cas où l’utilisateur aurait ignoré l’interface utilisateur de sélection de fournisseur sans sélectionner de fournisseur.
 
 **Rappels
-triggered:**[&#x200B; setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+triggered:**[ setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Vous devez implémenter ces rappels pour gérer les réponses à vos appels de r
 
 **Description :** implémentez ce rappel si l’utilisateur a sélectionné un MVPD qui nécessite un iFrame pour afficher l’interface utilisateur de sa page de connexion d’authentification.
 
-**Déclenché par :**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Déclenché par :**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Haut de la page](#top)
 

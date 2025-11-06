@@ -1,6 +1,6 @@
 ---
-title: Point de décision de la stratégie
-description: Point de décision de la stratégie
+title: Point de décision de politique
+description: Point de décision de politique
 exl-id: 94bc638c-bef8-45ea-b20a-9b7038adecdd
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,83 +9,83 @@ ht-degree: 0%
 
 ---
 
-# Point de décision de la stratégie {#policy-desc-pt}
+# Point de décision de politique {#policy-desc-pt}
 
 ## Modèle de domaine {#domain-model}
 
-Cette page est destinée à servir de référence pour différents cas d’utilisation et mises en oeuvre de stratégies. Nous vous conseillons également de consulter la partie [Glossaire](/help/concurrency-monitoring/cm-glossary.md) de la documentation pour obtenir des définitions de termes.
+Cette page est destinée à servir de référence pour différents cas d’utilisation et implémentations de politiques. Nous vous conseillons également de consulter la partie [Glossaire](/help/concurrency-monitoring/cm-glossary.md) de la documentation pour obtenir des définitions de termes.
 
-Un **tenant** possède **applications** pour lesquelles il souhaite appliquer **policies**. **Les applications clientes** doivent être configurées avec l’ **ID d’application** (fourni par Adobe).
+Un **client** possède des **applications** pour lesquelles il souhaite appliquer des **politiques**. **Applications clientes** doit être configuré avec l’**ID d’application** (fourni par Adobe).
 
-Le client associe ensuite chaque application à une ou plusieurs stratégies, qu’elles soient créées par lui ou créées et partagées par d’autres. Les stratégies peuvent être liées entre plusieurs clients.
+Le client associe ensuite chaque application à une ou plusieurs politiques, qu’elles soient créées par lui ou créées et partagées par d’autres. Les politiques peuvent être liées entre plusieurs clients.
 
-L’ **activité d’objet** est constitué de tous les flux (quelle que soit l’application) qui sont signalés à la surveillance simultanée pour un certain sujet.
+L’**activité du sujet** se compose de tous les flux (quelle que soit l’application) qui sont signalés à la surveillance de simultanéité pour un sujet donné.
 
-Lorsqu’un flux doit être autorisé pour un sujet donné, le système vérifie d’abord toutes les stratégies définies pour l’application qui a créé le flux.
+Lorsqu’un flux doit être autorisé pour un objet donné, le système vérifie d’abord toutes les politiques définies pour l’application qui a créé le flux.
 
-Pour chacune des stratégies applicables, nous devons ensuite collecter toutes les **activités pertinentes** qui seront transmises à la règle. L’ **activité pertinente** pour une stratégie P inclura uniquement un flux S s’il répond à la condition suivante :
+Pour chacune des politiques applicables, nous devons ensuite collecter toutes les **activités pertinentes** qui seront transmises à la règle. L&#39;**activité pertinente** d&#39;une politique P ne comprendra un flux S que si elle remplit la condition suivante :
 
-**Le flux &quot;S&quot; est démarré par une application qui inclut la stratégie &quot;P&quot; parmi ses stratégies.**
+**Le flux « S » est démarré par une application qui inclut la politique « P » parmi ses politiques.**
 
-![&#x200B; Le flux &quot;S&quot; est démarré par une application qui inclut la stratégie &quot;P&quot; parmi ses stratégies.](assets/pdp-domain-model.png)
+![Le flux « S » est démarré par une application qui inclut la politique « P » parmi ses politiques.](assets/pdp-domain-model.png)
 
-## Cas d’utilisation d’exécution rapide {#dry-run-use-cases}
+## Cas D’Utilisation De L’Exécution D’Essai {#dry-run-use-cases}
 
 La présentation ci-dessous vise à valider le modèle par rapport à certains cas d’utilisation. Nous le ferons progressivement, en commençant par une configuration de base et en ajoutant de la complexité de différentes manières.
 
-### 1. Un client. Une application. Une seule politique. Un flux {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. Un locataire. Une application. Une seule politique. Un flux {#onetenant-oneapp-onepolicy-onestream}
 
-Nous commencerons avec un seul client, associé à une seule application et à une seule stratégie. Supposons que la stratégie indique qu’il peut y avoir au plus un flux actif pour n’importe quel utilisateur (le dernier flux est autorisé à être lu).
+Nous allons commencer avec un seul client, avec une seule application et une seule politique associée. Supposons que la politique indique qu’il peut y avoir au plus un flux actif pour n’importe quel utilisateur (le dernier flux est autorisé à être lu).
 
-Une fois qu’un flux est démarré, l’activité ne comprend que ce flux et il est autorisé à le lire.
+Une fois qu’un flux est démarré, l’activité ne consiste qu’en ce flux et sa lecture est autorisée.
 
 ![Un client. Une application. Une seule politique. Un flux](assets/onetenant-app-policy-stream.png)
 
 
-### 2. Un client. Une application. Une seule politique. Deux ruisseaux. {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. Un locataire. Une application. Une seule politique. Deux courants. {#onetenant-oneapp-onepolicy-twostreams}
 
-Une fois qu’un deuxième flux est démarré (par le même sujet utilisant la même application), l’activité utilisée pour la validation sera composée à la fois de **s1** et de **s2**.
+Une fois qu’un second flux est démarré (par le même sujet utilisant la même application), l’activité utilisée pour la validation se compose de **s1** et **s2**.
 
-La limite est dépassée, car la stratégie indique qu’un seul flux est autorisé à être lu. Par conséquent, nous autoriserons uniquement la lecture du dernier flux (**s2**).
+La limite est dépassée, car la politique indique qu’un seul flux est autorisé à être lu. Nous n’autoriserons donc que le dernier flux (**s2**) à être lu.
 
-![Un client. Une application. Une seule politique. Deux diffusions.](assets/tenant-app-policy-twostream.png)
+![Un client. Une application. Une seule politique. Deux flux.](assets/tenant-app-policy-twostream.png)
 
 >[!NOTE]
 >
->Les diagrammes représentent la vue système sur l’activité de l’utilisateur. Pour les tentatives d’initialisation du flux, la décision d’accès sera incluse dans la réponse. Pour les flux actifs, la décision est renvoyée sur la réponse de pulsation.
+>Les diagrammes représentent la vue du système sur l’activité de l’utilisateur. Pour les tentatives d’initialisation de flux, la décision d’accès sera incluse dans la réponse. Pour les flux actifs, la décision est renvoyée lors de la réponse de pulsation.
 
-### 3. Deux locataires. Deux applications. Une seule politique. Deux ruisseaux. {#twotenant-twoapp-onepolicy-twostreams}
+### &#x200B;3. Deux locataires. Deux applications. Une seule politique. Deux courants. {#twotenant-twoapp-onepolicy-twostreams}
 
-Supposons maintenant qu’un nouveau client souhaite appliquer la même stratégie dans ses applications :
+Supposons maintenant qu’un nouveau client souhaite appliquer la même politique dans ses applications :
 
-![Deux clients. Deux applications. Une seule politique. Deux diffusions.](assets/onepolicy-twotenant-app-stream.png)
+![Deux locataires. Deux applications. Une seule politique. Deux flux.](assets/onepolicy-twotenant-app-stream.png)
 
-Comme les deux clients sont liés par la même politique, la situation décrite dans le cas d’utilisation 2 s’applique ici et **s3** est autorisé à jouer car il s’agit du dernier flux.
+Comme les deux clients sont liés par la même politique, la situation décrite dans le cas d’utilisation 2 s’applique ici et **s3** est autorisé à être lu, car il s’agit du dernier flux.
 
-### 4. Deux locataires. Trois applications. Deux politiques. Deux ruisseaux. {#twotenants-threeapps-twopolicies-twostreams}
+### &#x200B;4. Deux locataires. Trois applications. Deux politiques. Deux courants. {#twotenants-threeapps-twopolicies-twostreams}
 
-Maintenant, supposons que le deuxième client déploie une nouvelle application et souhaite définir une nouvelle stratégie qui sera partagée entre **app2** et **app3**.
+Maintenant, supposons que le deuxième client déploie une nouvelle application et souhaite définir une nouvelle politique qui sera partagée entre **app2** et **app3**.
 
-![Deux clients. Trois applications. Deux politiques. Deux diffusions.](assets/twotenant-policies-streams-threeapps.png)
+![Deux locataires. Trois applications. Deux politiques. Deux flux.](assets/twotenant-policies-streams-threeapps.png)
 
-Actuellement, les flux actifs **s3** et **s4** sont tous deux autorisés. Pour **s3**, lorsque la stratégie **P1** est évaluée, le système comptabilise uniquement **s3** comme **l’activité pertinente** (**s4** n’est en aucun cas lié à la stratégie **P1**), il n’y a donc aucune violation.
+A ce moment, les flux actifs **s3** et **s4** sont tous deux autorisés. Pour **s3**, lorsque la politique **P1** est évaluée, le système ne comptabilise que **s3** comme **activité pertinente** (**s4** n’est en aucun cas lié à la politique **P1**), il n’y a donc aucune violation.
 
-La stratégie **P2** est appliquée aux deux flux et elle inclura à la fois **s3** et **s4** comme activité pertinente. Comme cette activité se trouve dans les limites de deux diffusions, les deux diffusions sont autorisées.
+La politique **P2** s&#39;applique aux deux volets et inclut les **s3** et **s4** comme activité pertinente. Comme cette activité se trouve dans les limites de deux flux, les deux flux sont autorisés.
 
-### 5. Deux locataires. Trois applications. Deux politiques. Trois ruisseaux. {#twotenants-threeapps-twopolicies-threestreams}
+### &#x200B;5. Deux locataires. Trois applications. Deux politiques. Trois courants. {#twotenants-threeapps-twopolicies-threestreams}
 
-Maintenant, en supposant qu’une nouvelle tentative d’initialisation de flux soit effectuée à l’aide de **app2** :
+En supposant maintenant qu’une nouvelle tentative d’initialisation de flux soit effectuée à l’aide de **app2** :
 
-![Deux clients. Trois applications. Deux politiques. Trois diffusions.](assets/twotenants-policies-threeapps-streams.png)
+![Deux locataires. Trois applications. Deux politiques. Trois flux.](assets/twotenants-policies-threeapps-streams.png)
 
-**s5** est autorisé à commencer par **P1** (ce qui permet à de nouveaux flux de prendre le relais), mais il est refusé par **P2**, de sorte qu&#39;il ne démarrera pas.
+**s5** est autorisé à commencer par **P1** (ce qui permet à de nouveaux flux de prendre le relais) mais il est refusé par **P2**, donc il ne commencera pas.
 
-La même chose se produit si une initialisation de flux est tentée avec app3 : la même stratégie P2 lui refuse l’accès.
+La même chose se produit si une init de flux est tentée avec app3 : la même politique P2 refuse l’accès pour elle.
 
 ![](assets/stream-init-attempted-app3.png)
 
-Maintenant, voyons ce qui se passerait si l’utilisateur tentait de créer un flux à l’aide d’app1 :
+Maintenant, voyons ce qui se passerait si l’utilisateur ou l’utilisatrice tentait de créer un flux à l’aide d’app1 :
 
 ![](assets/new-stream-with-app1.png)
 
-L’application app1 n’est en aucun cas liée à la stratégie **P2**. Elle n’appliquera donc que la stratégie **P1** : qui permet au nouveau flux de démarrer et refuse l’ancien (**s3** dans ce cas).
+L’application app1 n’est en aucun cas liée à la politique **P2**, elle appliquera donc uniquement la politique **P1** : qui permet au nouveau flux de démarrer et refuse l’ancien (**s3** dans ce cas).

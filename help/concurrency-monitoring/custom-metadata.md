@@ -13,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Cette page est obsolète car elle s’applique à la version précédente de l’API qui n’est plus recommandée pour les nouvelles intégrations.
+> Cette page est obsolète, car elle s’applique à la version précédente de l’API qui n’est plus recommandée pour les nouvelles intégrations
 
-Le service permet aux clients d’utiliser des champs standard et personnalisés dans les requêtes et la prise de décision. Les champs standard sont toujours disponibles pour n’importe quel flux (car ils sont obligatoires pour la création de flux ou générés par le serveur) :
+Le service permet aux clients d’utiliser à la fois les champs standard et personnalisés dans les requêtes et la prise de décision. Les champs standard sont toujours disponibles pour n’importe quel flux (car ils sont obligatoires pour la création du flux ou générés par le serveur) :
 
 * application
 * mvpd
@@ -25,23 +25,23 @@ Le service permet aux clients d’utiliser des champs standard et personnalisés
 * initiateur
 
 
-Les champs personnalisés sont toutes les paires clé/valeur transmises lors de l’initialisation du flux, sous la forme de paramètres de chaîne de formulaire ou de requête. Les champs standard et personnalisés peuvent ensuite être utilisés dans les scénarios suivants (pour plus d’informations, consultez la documentation réelle des ressources API impliquées ci-dessous) :
+Les champs personnalisés sont toutes les paires clé/valeur transmises lors de l’initialisation du flux, sous la forme de paramètres de formulaire ou de chaîne de requête. Les champs standard et personnalisés peuvent ensuite être utilisés dans les scénarios suivants (pour plus d’informations, consultez la documentation réelle pour les ressources d’API impliquées ci-dessous) :
 
-* Demande de champs supplémentaires (via le paramètre de chaîne de requête des champs) lors de la récupération de la liste de diffusion pour un compte (la ressource /streams)
-* Ventilation de l’activité de compte en spécifiant les dimensions de groupe par (la ressource /activity)
-* Définition de stratégies côté serveur basées sur des valeurs de champ ou des cardinalités (les exemples utilisent pseudo-SQL uniquement pour plus de clarté) :
-* Configurez une stratégie de sorte qu’elle s’applique uniquement à des valeurs de champ spécifiques (par exemple, une stratégie iOS dédiée : WHERE osType IS &#39;iOS&#39;).
-* Limitez le nombre de valeurs distinctes pour un champ donné (par exemple, pas plus de X appareils distincts : AVING DISTINCT COUNT(deviceId) >= 2)
-* Limitez le nombre de diffusions actives par valeur de champ (par exemple, pas plus de X diffusions actives pour un seul type d’appareil : GROUP BY deviceType HAVING COUNT(streamId) >= 3)
+* Demande de champs supplémentaires (via le paramètre de chaîne de requête fields) lors de la récupération de la liste de flux pour un compte (la ressource /streams)
+* Répartir l’activité du compte en spécifiant les dimensions à regrouper (la ressource /activity)
+* Définir des politiques côté serveur en fonction des valeurs de champ ou des cardinalités (les exemples utilisent le langage pseudo-SQL uniquement pour plus de clarté) :
+* Configurez une politique à appliquer uniquement à des valeurs de champ spécifiques (par exemple, une politique iOS dédiée : OÙ osType EST « iOS »).
+* Limitez le nombre de valeurs distinctes pour un champ donné (par exemple, pas plus de X appareils distincts : HAVING DISTINCT COUNT(deviceId) >= 2)
+* Limitez le nombre de flux actifs par valeur de champ (par exemple, pas plus de X flux actifs pour un seul type d’appareil : GROUP BY deviceType HAVING COUNT(streamId) >= 3)
 
 
-En fonction de ces clés/valeurs envoyées, différentes règles peuvent être établies. Il peut s’agir de l’une des étapes suivantes :
+En fonction de ces clés/valeurs envoyées, différentes règles peuvent être établies. Il pourrait s’agir de l’un des éléments suivants :
 
-1. Le client décide d’envoyer le groupe de paramètres, qui aura comme valeurs &quot;SPORTS&quot; et &quot;KIDS&quot;.
-1. Ensuite, l’application doit procéder comme suit :
-   * Pour les canaux sportifs, lors de l’initialisation du flux, l’application enverrait ***type=SPORTS*** comme paramètre de requête.
-   * Pour les canaux avec du contenu lié aux enfants, lors de l’initialisation du flux, l’application enverrait ***type=KIDS*** comme paramètre de requête.
-1. Une stratégie de ce type peut ensuite être définie :
+1. Le client décide d&#39;envoyer le groupe de paramètres qui aura pour valeurs « SPORTS » et « KIDS ».
+1. L’application doit alors effectuer les opérations suivantes :
+   * Pour les canaux sportifs, à l’initialisation du flux, l’application enverrait ***type=SPORTS*** comme paramètre de requête
+   * Pour les canaux avec du contenu associé aux enfants, à l’initialisation du flux, l’application enverrait ***type=KIDS*** comme paramètre de requête
+1. Ensuite, une politique comme celle-ci peut être définie :
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
-1. Cela signifie essentiellement que lorsqu’un utilisateur regarde du sport, il ne peut pas le faire sur plus d’un appareil. Toutefois, lorsque l’utilisateur regarde le contenu des enfants, l’affichage est autorisé sur les appareils 3 max.
+1. Cela signifie essentiellement que lorsqu’un utilisateur regarde un sport, il ne peut pas le faire sur plus d’un appareil, mais lorsque l’utilisateur regarde du contenu pour enfants, la visualisation est autorisée sur 3 appareils au maximum.

@@ -1,6 +1,6 @@
 ---
-title: Présentation de la surveillance des simultanés
-description: Présentation de la surveillance des simultanés
+title: Présentation de la surveillance de la simultanéité
+description: Présentation de la surveillance de la simultanéité
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,20 +9,20 @@ ht-degree: 0%
 
 ---
 
-# Présentation de la surveillance des simultanés {#intro}
+# Présentation de la surveillance de la simultanéité {#intro}
 
-Pour en savoir plus sur les [procédures de réaffectation](/help/concurrency-monitoring/cm-escalation-procedures.md) concernant la surveillance de la simultanéité, consultez l’article sur les procédures de réaffectation .
+Pour en savoir plus sur les [procédures d’escalade](/help/concurrency-monitoring/cm-escalation-procedures.md) concernant la surveillance de simultanéité, consultez l’article sur les procédures d’escalade.
 
-La surveillance simultanée permet aux fournisseurs d’identité et de contenu (MVPD et programmeurs) de définir et d’appliquer des limites sur l’utilisation simultanée dans plusieurs applications (potentiellement propriété de plusieurs partenaires).
+La surveillance de simultanéité permet aux fournisseurs d’identité et de contenu (MVPD et programmeurs) de définir et d’appliquer des limites à l’utilisation simultanée sur plusieurs applications (potentiellement détenues par plusieurs partenaires).
 
-**L’API de surveillance de la simultanéité est hébergée à l’emplacement suivant :**
+**L’API de surveillance d’accès simultané est hébergée à l’emplacement suivant :**
 
-* **V2.0 : [API de surveillance de la simultanéité](http://docs.adobeptime.io/cm-api-v2/)**
+* **V2.0 : [API de surveillance de simultanéité](http://docs.adobeptime.io/cm-api-v2/)**
 
-Pour vous inscrire à notre service de surveillance de la simultanéité, contactez notre [équipe d’assistance](mailto:tve-support@adobe.com). Indiquez les informations suivantes et notre équipe se fera un plaisir de vous aider :
+Pour vous inscrire à notre service de surveillance simultanée, contactez notre [équipe d’assistance](mailto:tve-support@adobe.com). Indiquez les informations suivantes et notre équipe se fera un plaisir de vous aider :
 
 1. Nom de votre société
-1. Applications que vous souhaitez intégrer à la surveillance simultanée. Pour chaque application, veuillez fournir :
+1. Applications que vous souhaitez intégrer à la surveillance de simultanéité. Pour chaque application, veuillez fournir :
    * Nom de l’application
-   * Plateformes d&#39;application
-1. Le tiers qui a demandé l’intégration (si vous vous abonnez à la surveillance de la simultanéité sur demande d’une autre partie, d’un programmeur ou d’une MVPD)
+   * Plateforme(s) applicative(s)
+1. Tiers ayant demandé l’intégration (si vous vous abonnez à la surveillance de simultanéité à la demande d’un autre tiers, d’un autre programmeur ou d’un autre MVPD)

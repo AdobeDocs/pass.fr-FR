@@ -1,6 +1,6 @@
 ---
-title: Comment faire la distinction entre contenu VOD et contenu réel dans la surveillance de la simultanéité
-description: Comment faire la distinction entre contenu VOD et contenu réel dans la surveillance de la simultanéité
+title: Comment faire la distinction entre VOD et le contenu dynamique dans la surveillance simultanée
+description: Comment faire la distinction entre VOD et le contenu dynamique dans la surveillance simultanée
 exl-id: 51ba686a-7c1f-4403-9e8e-cd247bf9e345
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,28 +9,28 @@ ht-degree: 0%
 
 ---
 
-# Comment : distinguer le contenu VOD du contenu en direct dans la surveillance simultanée {#dist-vod-live}
+# Comment : faire la distinction entre VOD et le contenu dynamique dans la surveillance simultanée {#dist-vod-live}
 
-**Q :** Le service de surveillance de la simultanéité peut-il faire la distinction entre le type de contenu en cours de lecture (contenu en direct et vidéo à la demande) ?
+**Q :** Le service de surveillance simultanée peut-il faire la distinction entre le type de contenu lu (contenu en direct et vidéo à la demande) ?
 
 
 
-**A :** La surveillance de la simultanéité ne peut pas directement faire la distinction entre le contenu en direct et la vidéo à la demande (VOD). Le lecteur vidéo doit connaître le type de contenu en cours de lecture et envoyer ces informations lors de l’ [appel d’initialisation de session](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (requis pour la surveillance de la simultanéité). Le workflow normal ressemble à ceci :
+La surveillance simultanée **A:** ne peut pas faire directement la distinction entre le contenu en direct et la vidéo à la demande (VOD). Le lecteur vidéo doit connaître le type de contenu qu’il lit et envoyer ces informations pendant l’appel d’initialisation de la session [session](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (obligatoire pour la surveillance d’accès simultané). Le workflow standard ressemble à ceci :
 
-1. Les clients de surveillance de la simultanéité définissent un ensemble de métadonnées sur lesquelles ils souhaitent que des règles soient implémentées (par exemple, content-type=live|vod, device-type=mobile|console|bureau).
-1. L’équipe de surveillance de la simultanéité met en oeuvre la stratégie souhaitée. Exemple :
-   1. si content-type=live, max streams=3, la dernière gagne
-   1. si content-type=vod, max streams=1, la dernière gagne
+1. Les clients de la surveillance de simultanéité définissent un ensemble de métadonnées sur lesquelles ils souhaitent que des règles soient implémentées (par exemple, content-type=live|vod, device-type=mobile|console|desktop).
+1. L’équipe de surveillance de concurrence met en œuvre la politique souhaitée. Exemple :
+   1. si content-type=live, max streams=3, latest gagne
+   1. si content-type=vod, max streams=1, latest gagne
 
-1. Lorsque l’utilisateur final lit le contenu, le lecteur vidéo doit envoyer des valeurs pour les champs de métadonnées qui ont été définis comme faisant partie d’une stratégie.
+1. Lorsque l’utilisateur final lit le contenu, le lecteur vidéo doit envoyer des valeurs pour les champs de métadonnées qui ont été établis dans le cadre d’une politique.
 
-1. Le service de surveillance de la simultanéité, basé sur la stratégie définie et les valeurs reçues, émet une décision (lecture/arrêt).
+1. Le service de surveillance d’accès simultané, en fonction de la politique définie et des valeurs reçues, émettra une décision (play/stop).
 
-1. Pour que le système fonctionne, la décision doit être respectée par le lecteur vidéo.
+1. Le lecteur vidéo doit respecter cette décision pour que le système fonctionne.
 
 
 
 ## Informations connexes {#related-info-vod-live-dist}
 
-* [Surveillance simultanée des attributs de métadonnées standard](/help/concurrency-monitoring/standard-metadata-attributes.md)
-* [Présentation de l’API de surveillance de la simultanéité](/help/concurrency-monitoring/cm-api-overview.md)
+* [Attributs de métadonnées standard de surveillance de simultanéité](/help/concurrency-monitoring/standard-metadata-attributes.md)
+* [Présentation de l’API de surveillance de simultanéité](/help/concurrency-monitoring/cm-api-overview.md)

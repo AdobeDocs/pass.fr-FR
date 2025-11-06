@@ -2,7 +2,7 @@
 title: Présentation de l’enregistrement client dynamique
 description: Présentation de l’enregistrement client dynamique
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
 source-wordcount: '809'
 ht-degree: 0%
@@ -20,10 +20,10 @@ L’enregistrement client dynamique représente un mécanisme d’autorisation d
 Adobe Pass fournit un service d’enregistrement client dynamique qui permet d’accéder aux API protégées suivantes :
 
 * API Adobe Pass Authentication Management :
-   * [Réinitialiser l’API Temp Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [API de dégradation](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
+   * [Réinitialiser l’API Temp Pass](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [API de dégradation](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
    * [API Proxy MVPD](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [API de surveillance du service de droit](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [API de surveillance du service de droit](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * API REST d&#39;authentification Adobe Pass :
    * [API REST V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
    * [API REST V1 (héritée)](../../legacy/rest-api-v1/rest-api-reference.md)
@@ -53,7 +53,7 @@ Pour en savoir plus sur la gestion et l’utilisation de l’enregistrement clie
 
 Le processus de gestion de l’enregistrement dynamique des clients permet aux applications clientes s’exécutant sur des plateformes spécifiques et ayant besoin d’accéder à des API d’authentification Adobe Pass spécifiques pour s’enregistrer via le tableau de bord [Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication).
 
-Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [&#128279;](../../../user-guide-tve-dashboard/tve-dashboard-overview.md).
+Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [](../../../user-guide-tve-dashboard/tve-dashboard-overview.md).
 
 Si vous avez accès au tableau de bord [Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication), suivez les étapes des sections ci-dessous pour créer une application enregistrée et télécharger la déclaration du logiciel.
 
@@ -108,12 +108,12 @@ En résumé, le mécanisme d’autorisation de l’enregistrement client dynamiq
 
 **Gestion**
 
-* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [&#x200B; Gérer les applications enregistrées &#x200B;](#manage-registered-applications).
-* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [&#x200B; Gérer les instructions logicielles &#x200B;](#manage-software-statements).
+* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [ Gérer les applications enregistrées ](#manage-registered-applications).
+* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [ Gérer les instructions logicielles ](#manage-software-statements).
 
 **Flux**
 
-* L’application cliente doit obtenir les informations d’identification du client comme décrit dans la documentation de l’API [&#x200B; Récupération des informations d’identification du client &#x200B;](apis/dynamic-client-registration-apis-retrieve-client-credentials.md) .
-* L’application cliente doit obtenir le jeton d’accès comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
+* L’application cliente doit obtenir les informations d’identification du client comme décrit dans la documentation de l’API [ Récupération des informations d’identification du client ](apis/dynamic-client-registration-apis-retrieve-client-credentials.md) .
+* L’application cliente doit obtenir le jeton d’accès comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](apis/dynamic-client-registration-apis-retrieve-access-token.md) .
 
 Reportez-vous à la documentation [Flux d’enregistrement client dynamique](flows/dynamic-client-registration-flow.md) pour mieux comprendre comment accéder aux API protégées Adobe Pass. De plus, vous pouvez également regarder cet enregistrement [webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui fournit plus de contexte et comprend une démonstration.

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -36,9 +36,9 @@ Certaines limitations, décrites ci-dessous, peuvent être rencontrées par les 
    >
    >* L’authentification unique (SSO) au niveau du système (Apple) ne sera pas affectée.
    >
-   >* La connexion unique régulière (Adobe) continuera à fonctionner si les deux applications sont développées par le même fournisseur et utilisent la ou les versions d&#39;AccessEnabler inférieures à 3.7.0 !
+   >* La connexion unique standard (Adobe) continuera à fonctionner si les deux applications sont développées par le même fournisseur et utilisent une ou plusieurs versions d’AccessEnabler inférieures à la version 3.7.0.
    >
-   >* Une connexion unique standard (Adobe) fonctionne si les deux applications sont développées par le même fournisseur et utilisent la version 3.7.0 d&#39;AccessEnabler !
+   >* L’authentification unique (SSO) régulière (Adobe) fonctionne si les deux applications sont développées par le même fournisseur et utilisent la version 3.7.0 d’AccessEnabler !
 
 
 1. En cas de rétrogradation d’une application à l’aide d’AccessEnabler version 3.7.0 vers une version inférieure d’AccessEnabler, les nouveaux jetons générés ne seront pas migrés. Par conséquent, les utilisateurs finaux peuvent subir la perte de sessions d’authentification/d’autorisation, sans s’y attendre.

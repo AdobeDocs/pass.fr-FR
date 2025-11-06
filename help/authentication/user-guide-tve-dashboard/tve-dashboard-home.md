@@ -2,7 +2,7 @@
 title: Tableau de bord
 description: Découvrez la page d’accueil du tableau de bord TVE.
 exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Dans cette section, vous pouvez accéder directement à la documentation publiqu
 * **Mises à jour de la base de données** : nombre de modifications de configuration apportées à l’environnement actuel. Sélectionnez **Afficher plus dans la section Journal des modifications** pour accéder à des informations détaillées dans la section [Journal des modifications](tve-dashboard-changes-log.md).
 * **Tableau de bord ESM** : gardez un œil sur le prochain tableau de bord ESM, qui offre des mesures détaillées sur l’utilisation des propriétés dans l’environnement actuel. Cette fonctionnalité sera accessible dans les futures mises à jour.
 
-![Écran de bienvenue](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
+![Écran de bienvenue](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
 
 *Écran de bienvenue*
 
@@ -43,7 +43,7 @@ Cette section présente les 10 modifications de configuration les plus récentes
 * **poussé par** : compte responsable de la modification.
 * **Date push** : date à laquelle la modification a été effectuée.
 
-![Statut de configuration d’un journal des modifications](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
+![Statut de configuration d’un journal des modifications](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
 
 *Statut de configuration d’un journal des modifications*
 

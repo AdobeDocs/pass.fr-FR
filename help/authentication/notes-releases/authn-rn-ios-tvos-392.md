@@ -27,7 +27,7 @@ Date De Publication : **03/26/2024**
 
 * Met à jour le manifeste de confidentialité de SDK conformément aux exigences de confidentialité d’iOS 17.
 * Correction d’un problème en raison duquel les utilisateurs et utilisatrices restaient parfois sur un écran vide pendant le flux d’authentification.
-* Ajoute la journalisation de l’appareil et de serveur pour obtenir des informations sur l’état du trousseau.
+* Ajoute la journalisation de l’appareil et de serveur pour obtenir des informations insight sur l’état du trousseau.
 
 ## Package de version {#release-package-392}
 

@@ -2,7 +2,7 @@
 title: Rapports
 description: Découvrez comment les données sont agrégées dans les rapports du tableau de bord TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-La section **Rapports** du tableau de bord TVE permet d’accéder aux données agrégées pour les rapports AuthN TTL, AuthZ TTL et SSO. Ces rapports incluent vos intégrations de canaux avec différents MVPD sur toutes les [&#x200B; plateformes &#x200B;](#platforms).
+La section **Rapports** du tableau de bord TVE permet d’accéder aux données agrégées pour les rapports AuthN TTL, AuthZ TTL et SSO. Ces rapports incluent vos intégrations de canaux avec différents MVPD sur toutes les [ plateformes ](#platforms).
 
 Les rapports vous permettent de filtrer les données et de collecter des informations sur [des canaux ou MVPD spécifiques](#selecting-specific-channels-mvpds). Vous pouvez également exporter des rapports dans un fichier CSV pour une analyse plus approfondie.
 
@@ -29,7 +29,7 @@ Pour afficher un rapport spécifique, procédez comme suit.
    * [Rapports de durée de vie AuthZ](#authz-ttl-reports)
    * [Rapports SSO](#sso-reports)
 
-   ![Type de rapports](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
+   ![Type de rapports](../assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
 
    *Type de rapports*
 
@@ -39,7 +39,7 @@ Les rapports AuthN TTL, également appelés Durée de vie (TTL) de l’authentif
 
 Vous pouvez également afficher et télécharger des données pour [des canaux spécifiques ou des MVPD](#selecting-specific-channels-mvpds).
 
-![Exporter des rapports de durée de vie AuthN](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
+![Exporter des rapports de durée de vie AuthN](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
 
 *Exporter des rapports de durée de vie AuthN*
 
@@ -55,7 +55,7 @@ Les rapports de durée de vie (TTL) AuthZ, également appelés durée de vie (TT
 
 Vous pouvez également afficher et télécharger les données pour [des canaux spécifiques ou des MVPD](#selecting-specific-channels-mvpds).
 
-![Exporter des rapports de durée de vie AuthZ](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
+![Exporter des rapports de durée de vie AuthZ](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
 
 *Exporter des rapports de durée de vie AuthZ*
 
@@ -71,7 +71,7 @@ Les rapports SSO, également appelés authentification unique, affichent le stat
 
 Vous pouvez également afficher et télécharger des données pour [des canaux spécifiques ou des MVPD](#selecting-specific-channels-mvpds).
 
-![Exporter des rapports SSO](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
+![Exporter des rapports SSO](../assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
 
 *Exporter des rapports SSO*
 
@@ -115,7 +115,7 @@ Pour en savoir plus sur le partage du type d’appareil souhaité, tel que **Rok
 
 >[!IMPORTANT]
 >
-> Les données agrégées sont basées sur la configuration spécifique de chaque environnement d’authentification Adobe Pass. Lorsque vous basculez entre différents environnements de tableaux de bord TVE, attendez-vous à des variations dans les données entre les rapports. Pour en savoir plus[&#x200B; consultez &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)Environnements d’authentification Adobe Pass .
+> Les données agrégées sont basées sur la configuration spécifique de chaque environnement d’authentification Adobe Pass. Lorsque vous basculez entre différents environnements de tableaux de bord TVE, attendez-vous à des variations dans les données entre les rapports. Pour en savoir plus[ consultez ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)Environnements d’authentification Adobe Pass .
 
 ## Sélection de canaux et de MVPD spécifiques {#selecting-specific-channels-mvpds}
 
@@ -129,7 +129,7 @@ Pour générer un rapport pour des canaux spécifiques, procédez comme suit :
 
 1. Sélectionnez le menu déroulant **Canaux inclus** en haut du rapport sélectionné.
 
-   ![Menu déroulant Canaux inclus](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
+   ![Menu déroulant Canaux inclus](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
 
    *Menu déroulant Canaux inclus*
 
@@ -145,7 +145,7 @@ Pour générer un rapport pour des fichiers MVPD spécifiques, procédez comme s
 
 1. Sélectionnez le menu déroulant **MVPD inclus** en haut du rapport sélectionné.
 
-   ![Menu déroulant MVPD inclus](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
+   ![Menu déroulant MVPD inclus](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
 
    *Menu déroulant MVPD inclus*
 

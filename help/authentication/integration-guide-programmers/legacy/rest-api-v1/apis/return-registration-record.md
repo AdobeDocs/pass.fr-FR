@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -49,7 +49,7 @@ Renvoie l’enregistrement du code d’enregistrement contenant l’UUID du code
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. </br> du demandeur    (Composant Chemin d’accès)</br>2.  </br> du code d’enregistrement    (Composant Chemin) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir le schéma et l’exemple ci-dessous. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. </br> du demandeur    (Composant Chemin d’accès)</br>2.  </br> du code d’enregistrement    (Composant Chemin) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir le schéma et l’exemple ci-dessous. | 200 |
 
 {style="table-layout:auto"}
 

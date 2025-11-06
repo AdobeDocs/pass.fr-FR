@@ -2,7 +2,7 @@
 title: Environnements de tableaux de bord TVE
 description: Découvrez l’utilisation et le fonctionnement des différents environnements dans le tableau de bord TVE.
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Suivez les étapes pour basculer entre les environnements de tableau de bord TVE
 
 1. Sélectionnez l’environnement d’évaluation ou de production requis dans le menu déroulant **Environnement** en haut du panneau de gauche.
 
-   ![Liste déroulante Environnements de tableau de bord TVE](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![Liste déroulante Environnements de tableau de bord TVE](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Menu déroulant Environnement de tableau de bord TVE d’authentification Adobe Pass*
 

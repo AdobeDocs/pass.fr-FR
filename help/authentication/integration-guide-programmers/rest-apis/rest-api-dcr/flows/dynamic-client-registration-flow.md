@@ -2,7 +2,7 @@
 title: Flux d’enregistrement client dynamique
 description: Flux d’enregistrement client dynamique
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
@@ -25,8 +25,8 @@ ht-degree: 0%
 
 Avant d’accéder aux API protégées d’Adobe Pass, assurez-vous que les conditions préalables suivantes sont remplies :
 
-* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [&#x200B; Gérer les applications enregistrées &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-registered-applications).
-* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [&#x200B; Gérer les instructions logicielles &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-software-statements).
+* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [ Gérer les applications enregistrées ](../dynamic-client-registration-overview.md#manage-registered-applications).
+* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [ Gérer les instructions logicielles ](../dynamic-client-registration-overview.md#manage-software-statements).
 
 >[!IMPORTANT]
 >
@@ -38,7 +38,7 @@ Avant d’accéder aux API protégées d’Adobe Pass, assurez-vous que les cond
 
 Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, comme illustré dans le diagramme ci-dessous.
 
-![Accès aux API protégées par Adobe Pass](/help//authentication/assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
+![Accès aux API protégées par Adobe Pass](../../../../assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
 
 *Accès aux API protégées par Adobe Pass*
 
@@ -66,7 +66,7 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupération des informations d’identification du client &#x200B;](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupération des informations d’identification du client ](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
 
    >[!TIP]
    >
@@ -76,7 +76,7 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
 
    >[!IMPORTANT]
    >
-   > Consultez la documentation de l’API [&#x200B; Récupération du jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
+   > Consultez la documentation de l’API [ Récupération du jeton d’accès ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
    >
    > * Tous les paramètres _obligatoires_ tels que `client_id`, `client_secret` et `grant_type`
    > * Tous les en-têtes _obligatoires_ tels que `Content-Type`, `X-Device-Info`
@@ -86,7 +86,7 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
 
    >[!IMPORTANT]
    >
-   > Reportez-vous à la documentation de l’API [Récupérer le jeton d’accès](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) pour plus d’informations sur les informations fournies dans une réponse de jeton d’accès.
+   > Reportez-vous à la documentation de l’API [Récupérer le jeton d’accès](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) pour plus d’informations sur les informations fournies dans une réponse de jeton d’accès.
    >
    > <br/>
    >
@@ -96,7 +96,7 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupérer le jeton d’accès ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >

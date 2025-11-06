@@ -4,7 +4,7 @@ description: Supprimer l'enregistrement
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '174'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -44,7 +44,7 @@ Supprime l’enregistrement du code rég. et libère le code rég. pour réutili
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Par exemple :</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. ID du demandeur </br>    (Composant Chemin d’accès)</br>2.  Code d’enregistrement </br>    (Composant Chemin) | DELETE | Aucun | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Par exemple :</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. ID du demandeur </br>    (Composant Chemin d’accès)</br>2.  Code d’enregistrement </br>    (Composant Chemin) | DELETE | Aucun | 204 |
 
 {style="table-layout:auto"}
 

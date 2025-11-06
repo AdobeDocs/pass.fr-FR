@@ -2,7 +2,7 @@
 title: Guide d’intégration du programmeur
 description: Guide d’intégration du programmeur
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Ce guide d’intégration est destiné aux fournisseurs de contenu (programmeurs) qui prévoient de s’intégrer à l’authentification Adobe® Pass.
 
-Dans le paysage numérique actuel, les internautes peuvent accéder à Internet n&#39;importe où et n&#39;importe quand, et demander l&#39;accès à votre contenu protégé. Il peut s&#39;agir d&#39;un événement ponctuel ou d&#39;une demande de droits de diffusion d&#39;une série télévisée complète que vous diffusez.
+Dans le paysage numérique d’aujourd’hui, les internautes peuvent accéder à Internet n’importe où et à tout moment, et demander l’accès à votre contenu protégé. Il peut s&#39;agir d&#39;un événement ponctuel ou d&#39;une demande de droits de diffusion d&#39;une série télévisée complète que vous diffusez.
 
 Avant d’accorder l’accès à un contenu protégé, vous devez déterminer si la visionneuse y a droit. Les questions clés sont les suivantes :
 
@@ -28,13 +28,13 @@ Avant d’accorder l’accès à un contenu protégé, vous devez déterminer si
 
 Pour les programmeurs, déterminer les droits n’est pas toujours simple. Les MVPD sont les dépositaires des données d’identification et des privilèges d’accès de leurs clients. Pour compliquer encore les choses, les téléspectateurs de Programmers peuvent s&#39;abonner à une grande variété de MVPD, chacun fonctionnant avec des systèmes uniques. Ces complexités rendent la vérification des droits à la fois techniquement difficile et gourmande en ressources.
 
-![Droit De L’Utilisateur Déterminé Directement Par Le Programmeur](/help/authentication/assets/user-ent-by-progr.png){align="center"}
+![Droit De L’Utilisateur Déterminé Directement Par Le Programmeur](../assets/user-ent-by-progr.png){align="center"}
 
 *Droit De L’Utilisateur Déterminé Directement Par Le Programmeur*
 
 L’authentification Adobe Pass facilite en toute sécurité les transactions de droits entre les programmeurs et les MVPD, ce qui rend rapide, facile et sécurisé la fourniture de contenu protégé aux visiteurs et visiteuses éligibles.
 
-![Droits d’utilisateur arbitrés par l’authentification Adobe Pass](/help/authentication/assets/user-ent-mediatedby-authn.png){align="center"}
+![Droits d’utilisateur arbitrés par l’authentification Adobe Pass](../assets/user-ent-mediatedby-authn.png){align="center"}
 
 *Droits d’utilisateur arbitrés par l’authentification Adobe Pass*
 
@@ -47,11 +47,11 @@ Pour les programmeurs, l’authentification Adobe Pass fournit des API dans le c
    * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API d’authentification Premium Adobe Pass :
-   * [Réinitialiser l’API Temp Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Fonction TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [API de dégradation](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Fonctionnalité de dégradation](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [API de surveillance du service de droit](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [Réinitialiser l’API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [API de surveillance du service de droit](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Cas d’utilisation {#use-cases}
 
@@ -72,8 +72,8 @@ Cette section décrit plus en détail les cas d’utilisation de l’intégratio
 | **Phase** | **Priorité** | **Cas d’utilisation** | **Documents** |
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Authentification** | **Élevé** | Authentification | Pour plus d’informations, reportez-vous aux documents agrégés dans la section [Phase d’authentification](#authentication-phase). |
-|                      | **Élevé** | Authentification à domicile (HBA) | Pour plus d’informations, reportez-vous à la section [Authentification basée sur l’accueil](/help/premium-workflow/hba-access/home-based-authentication.md). |
-|                      | **Élevé** | Authentification unique (SSO) | Pour plus d&#39;informations, reportez-vous aux documents agrégés sous la section [&#x200B; Authentification unique (SSO)](#sso). |
+|                      | **Élevé** | Authentification à domicile (HBA) | Pour plus d’informations, reportez-vous à la section [Authentification basée sur l’accueil](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md). |
+|                      | **Élevé** | Authentification unique (SSO) | Pour plus d&#39;informations, reportez-vous aux documents agrégés sous la section [ Authentification unique (SSO)](#sso). |
 |                      | **Élevé** | Sélectionner le MVPD | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de configuration](#configuration-phase). |
 |                      | **Medium** | Page de connexion à Brand MVPD | Permet aux MVPD de fournir aux pages de connexion des marques spécifiques au programmeur ou au fournisseur de services, y compris la prise en charge des préférences linguistiques par défaut. |
 |                      | **Élevé** | Configurer les valeurs de durée de vie (TTL) par plateforme | Pour plus d’informations, consultez le [Guide de l’utilisateur des intégrations de tableaux de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows). |

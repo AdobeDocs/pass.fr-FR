@@ -1,6 +1,6 @@
 ---
-title: Restreindre l’utilisation simultanée avec plusieurs applications appartenant à différents propriétaires
-description: Limitation de l’utilisation simultanée avec plusieurs applications appartenant à différents propriétaires
+title: Limiter l’utilisation simultanée avec plusieurs applications appartenant à différents propriétaires
+description: Limiter l’utilisation simultanée avec plusieurs applications appartenant à différents propriétaires
 exl-id: c358befc-36d6-4f55-92cc-4d02064c65fb
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,12 +9,12 @@ ht-degree: 1%
 
 ---
 
-# Limitation de l’utilisation simultanée avec plusieurs applications appartenant à différents propriétaires {#restr-concurr-usage}
+# Limiter l’utilisation simultanée avec plusieurs applications appartenant à différents propriétaires {#restr-concurr-usage}
 
 
 ## Description du cas d’utilisation
 
-MVPD M possède une application iPhone, une application iPad et un site web. Il doit s’intégrer à la surveillance de la simultanéité des Adobes (CM) à la demande du programmeur P. Le programmeur P a défini dans CM un ensemble de stratégies avec des règles qui limiteront l’utilisation simultanée. CM prendra les décisions sur les flux autorisés à jouer en fonction des stratégies et des règles définies. Cela signifie que même si un flux a été autorisé à démarrer et à se lire, CM peut décider de l’arrêter pendant la lecture.
+MVPD M dispose d’une application iPhone, d’une application iPad et d’un site web. Il doit s’intégrer à la surveillance simultanée d’Adobe (CM) à la demande du programmeur P. Le programmeur P a défini dans CM un ensemble de politiques avec des règles qui limiteront l’utilisation simultanée. CM prendra des décisions sur les flux autorisés à être lus en fonction des politiques et des règles définies. Cela signifie que même si un flux a été autorisé à démarrer et à être lu, pendant la lecture, CM peut décider de l’arrêter.
 
 
 
@@ -25,34 +25,34 @@ MVPD M possède une application iPhone, une application iPad et un site web. Il 
 
 ## Conditions préalables
 
-Pour s&#39;intégrer à CM, un ticket Zendesk (https://adobeprimetime.zendesk.com) doit être créé et les informations suivantes doivent être spécifiées :
+Pour intégrer à CM, un ticket Zendesk (https://adobeprimetime.zendesk.com) devra être créé et les informations suivantes spécifiées :
 
-1. le nom de la société
-1. les applications que vous souhaitez intégrer à CM. Pour chaque application, vous devez fournir :
+1. nom de la société
+1. les applications à intégrer à CM. Pour chaque application, vous devez fournir :
    - nom de l’application
    - plateforme applicative
-1. le tiers qui a demandé l’intégration (le cas échéant) ;
+1. tiers qui a demandé l’intégration (le cas échéant)
 
 
-Après la création du ticket, les informations suivantes seront publiées pour utilisation :
+Une fois le ticket créé, les informations suivantes sont publiées pour utilisation :
 
 | type | description | exemple de valeur | valeur par défaut |
 | --- | --- | --- | --- |
-| endpoint | le point de terminaison pour la surveillance de la simultanéité des Adobes | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
-| applicationId | ID d’application iPhone | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
-| applicationId | ID d’application iPad | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
-| applicationId | identifiant de l’application web | website4-75b4-431b-adb2-eb6b9e546013 | - |
-| intervalle des pulsations | Intervalle en secondes pour envoyer des appels de pulsation à la surveillance de la simultanéité des Adobes | 60 | 60 |
-| intervalle de conformité du flux | Intervalle en secondes pour vérifier la conformité du flux à la surveillance de la simultanéité des Adobes | 180 | 180 |
+| point d&#39;entrée | Point d’entrée pour la surveillance simultanée d’Adobe | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
+| applicationId | ID de l’application iPhone | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
+| applicationId | ID de l’application iPad | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
+| applicationId | Identifiant de l’application du site web | website4-75b4-431b-adb2-eb6b9e546013 | - |
+| intervalle pour les pulsations | Intervalle en secondes pour envoyer les appels de pulsation à la surveillance simultanée d’Adobe | 60 | 60 |
+| intervalle pour la conformité du flux | Intervalle en secondes pour vérifier la conformité du flux à la surveillance simultanée d’Adobe | 180 | 180 |
 
 
-## Instructions de mise en oeuvre
+## Instructions de mise en œuvre
 
-Les éléments suivants DOIVENT être mis en package dans la ou les applications :
+Les articles suivants DOIVENT être emballés dans la ou les applications :
 
-1. endpoint
-1. ID d’application
-1. intervalle des pulsations
+1. point d&#39;entrée
+1. ID de l’application
+1. intervalle pour les pulsations
 1. intervalle de vérification de la conformité
 
 <!---

@@ -2,7 +2,7 @@
 title: Manuel d’iOS/tvOS
 description: Manuel d’iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '2424'
 ht-degree: 0%
@@ -48,18 +48,18 @@ L’activité réseau d’AccessEnabler a lieu dans son propre thread, de sorte 
 
 ## Configuration du service Experience Cloud ID (identifiant visiteur) {#visitorIDSetup}
 
-La configuration de la valeur [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
+La configuration de la valeur [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
 
 ## Flux de droits {#entitlement}
 
 A. [Conditions préalables](#prereqs) </br>
 B. [Flux de démarrage](#startup_flow) </br>
-C. [&#x200B; Flux d’authentification avec le SSO d’Apple &#x200B;](#authn_flow_wo_applesso) </br>
-D. [&#x200B; Flux d’authentification avec le SSO Apple sur iOS &#x200B;](#authn_flow_with_applesso) </br>
+C. [ Flux d’authentification avec le SSO d’Apple ](#authn_flow_wo_applesso) </br>
+D. [ Flux d’authentification avec le SSO Apple sur iOS ](#authn_flow_with_applesso) </br>
 E. [Flux d’authentification avec l’authentification unique Apple sur tvOS](#authn_flow_with_applesso_tvOS) </br>
-F. [&#x200B; Flux d’autorisation &#x200B;](#authz_flow) </br>
+F. [ Flux d’autorisation ](#authz_flow) </br>
 G. [Afficher le flux des médias](#media_flow) </br>
-H. [&#x200B; Flux de déconnexion sans SSO Apple &#x200B;](#logout_flow_wo_AppleSSO) </br>
+H. [ Flux de déconnexion sans SSO Apple ](#logout_flow_wo_AppleSSO) </br>
 I. [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_with_AppleSSO) </br>
 
 
@@ -120,7 +120,7 @@ est autorisé à afficher.
       * Déclenché par une action de l’utilisateur (en sélectionnant « Annuler » ou « Autres fournisseurs de télévision » dans la boîte de dialogue SSO d’Apple).
       * Le paramètre viewController correspond à la boîte de dialogue SSO d’Apple et doit être ignoré du contrôleur de vue principal.
 
-![](/help//authentication/assets/iOS-flows.png)
+![](../../../../assets/iOS-flows.png)
 
 ### B. Flux de démarrage {#startup_flow}
 
@@ -130,7 +130,7 @@ est autorisé à afficher.
    a. Appelez [`init`](#$init) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
    * **Dépendance :** Bibliothèque iOS/tvOS native d’authentification Adobe Pass (AccessEnabler)
 
-   b. Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations[&#x200B; consultez la &#x200B;](#create_dev)documentation relative à Clientless .
+   b. Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations[ consultez la ](#create_dev)documentation relative à Clientless .
 
    * **Dépendance :** ID de demandeur d’authentification Adobe Pass valide (utilisez votre compte d’authentification Adobe Pass)
 Manager pour organiser cela).

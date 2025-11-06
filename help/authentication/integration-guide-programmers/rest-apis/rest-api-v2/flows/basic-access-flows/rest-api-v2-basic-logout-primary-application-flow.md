@@ -2,7 +2,7 @@
 title: Déconnexion de base - Application en Principal - Flux
 description: API REST V2 - Déconnexion de base - Application en Principal - Flux
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Avant de lancer la déconnexion pour un MVPD spécifique avec un point d’entr�
 
 Suivez les étapes données pour implémenter le flux de déconnexion de base pour un MVPD spécifique avec un point d’entrée de déconnexion exécuté dans une application principale, comme illustré dans le diagramme ci-dessous.
 
-![Lancer la déconnexion pour un mvpd spécifique avec le point d’entrée de déconnexion](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Lancer la déconnexion pour un mvpd spécifique avec le point d’entrée de déconnexion](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Lancer la déconnexion pour un mvpd spécifique avec le point d’entrée de déconnexion*
 
@@ -119,7 +119,7 @@ Avant de lancer la déconnexion pour un MVPD spécifique sans point d’entrée 
 
 Suivez les étapes données pour implémenter le flux de déconnexion de base pour un MVPD spécifique sans point d’entrée de déconnexion effectué dans une application principale, comme illustré dans le diagramme ci-dessous.
 
-![Lancer la déconnexion pour un mvpd spécifique sans point d’entrée de déconnexion](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Lancer la déconnexion pour un mvpd spécifique sans point d’entrée de déconnexion](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Lancer la déconnexion pour un mvpd spécifique sans point d’entrée de déconnexion*
 

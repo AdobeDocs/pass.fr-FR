@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 Le tableau de bord [[!DNL Adobe] Pass TVE Dashboard](https://experience.adobe.com/pass/authentication) est un outil permettant aux clients (programmeurs) d’Adobe Pass Authentication de gérer leur configuration et leurs données. Ce tableau de bord en libre-service permet de bénéficier de nombreuses fonctionnalités, notamment :
 
@@ -48,7 +48,7 @@ L’authentification Adobe Pass fournit les sections suivantes dans le tableau d
 
 ## Ressources {#resources-tve-dashboard}
 
-Adobe suggère d’utiliser les ressources suivantes pour bien comprendre les flux et les fonctionnalités, ce qui vous aidera à vous familiariser avec la terminologie utilisée dans ce guide :
+Adobe vous suggère d’utiliser les ressources suivantes pour bien comprendre les flux et les fonctionnalités, ce qui vous aidera à vous familiariser avec la terminologie utilisée dans ce guide :
 
 * [Document Technique TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guide De Démarrage Rapide Du Programmeur](/help/authentication/kickstart/programmer-kickstart-guide.md)

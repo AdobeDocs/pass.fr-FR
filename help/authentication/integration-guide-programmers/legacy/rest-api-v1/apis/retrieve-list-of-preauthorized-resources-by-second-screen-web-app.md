@@ -4,7 +4,7 @@ description: Récupération de la liste des ressources préautorisées par l’a
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
 source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -46,7 +46,7 @@ Il existe deux ensembles d’API : l’un pour l’application de diffusion en c
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Module AuthN | 1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  demandeur (obligatoire)</br>3.  resource (obligatoire) | GET | XML ou JSON contenant des décisions de pré-autorisation individuelles ou des détails d’erreur. Voir les exemples ci-dessous. | 200 - Succès </br></br> 400 - Requête incorrecte </br></br> 401 - Non autorisé </br></br> 405 - Méthode non autorisée </br></br>412 - Échec de la condition préalable </br></br> 500 - Erreur de serveur interne |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Module AuthN | &#x200B;1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  demandeur (obligatoire)</br>3.  resource (obligatoire) | GET | XML ou JSON contenant des décisions de pré-autorisation individuelles ou des détails d’erreur. Voir les exemples ci-dessous. | 200 - Succès </br></br> 400 - Requête incorrecte </br></br> 401 - Non autorisé </br></br> 405 - Méthode non autorisée </br></br>412 - Échec de la condition préalable </br></br> 500 - Erreur de serveur interne |
 
 
 

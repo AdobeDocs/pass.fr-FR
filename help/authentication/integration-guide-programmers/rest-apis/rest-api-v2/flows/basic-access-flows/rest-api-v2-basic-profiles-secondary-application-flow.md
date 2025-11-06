@@ -2,7 +2,7 @@
 title: Profils De Base - Application Secondaire - Flux
 description: API REST V2 - Profils de base - Application Secondaire - Flux
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '418'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Avant de récupérer le profil pour un code d’authentification spécifique, as
 
 Suivez les étapes données pour implémenter le flux de récupération des profils de base pour un code d’authentification spécifique effectué dans une application secondaire, comme illustré dans le diagramme suivant.
 
-![Récupérer le profil pour un code spécifique](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
+![Récupérer le profil pour un code spécifique](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
 
 *Récupérer le profil pour un code spécifique*
 

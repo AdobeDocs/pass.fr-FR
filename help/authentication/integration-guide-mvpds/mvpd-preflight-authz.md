@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 ## Introduction {#mvpd-preflight-authz-intro}
 
@@ -117,7 +117,7 @@ L’authentification Adobe Pass reçoit la liste des ressources de l’applicati
 
 Certaines MVPD disposent de points d’entrée d’autorisation qui prennent en charge l’autorisation de plusieurs ressources dans une seule requête, mais elles ne relèvent pas du scénario décrit dans Authentification multicanal. Ces fichiers MVPD spécifiques nécessitent un travail personnalisé.
 
-Adobe peut également prendre en charge l’autorisation de plusieurs canaux sans modifier l’implémentation existante.  Cette approche doit être revue par l’équipe technique d’Adobe et de MVPD pour s’assurer qu’elle fonctionne comme prévu.
+Adobe peut également prendre en charge l’autorisation multicanal sans modifier l’implémentation existante.  Cette approche doit être revue par Adobe et l&#39;équipe technique de MVPD pour s&#39;assurer qu&#39;elle fonctionne comme prévu.
 
 ## MVPD qui prennent en charge l’autorisation de contrôle en amont {#mvpds-supp-preflight-authz}
 

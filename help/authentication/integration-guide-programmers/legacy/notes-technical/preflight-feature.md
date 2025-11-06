@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -24,11 +24,11 @@ L’interface externe de l’API PreAuthorization reste inchangée ; aucune mise
 
 Les ressources de contrôle en amont sont calculées de trois manières différentes :
 
-* **Méthode de branchement et de jointure à MVPD** : cela implique que l&#39;Adobe effectue plusieurs appels d&#39;autorisation vers MVPD (le client devra toutefois effectuer un seul appel de contrôle en amont).
-* **Alignement des canaux** : le MVPD expose l’alignement des canaux pour l’utilisateur connecté dans la réponse d’authentification SAML et l’Adobe renvoie les ressources autorisées en fonction de cela. La réponse authN SAML dans le traceur SAML doit exposer cette liste.
-* **Autorisation multicanal** : l’authentification du client et de l’Adobe effectuent un seul appel à MVPD pour un ensemble de ressources.
+* **Méthode de branchement et de jointure à MVPD** : cela implique la réalisation par Adobe de plusieurs appels d&#39;autorisation vers le MVPD (le client devra toutefois effectuer un seul appel de contrôle en amont).
+* **Alignement des canaux** : le MVPD expose l’alignement des canaux pour l’utilisateur connecté dans la réponse d’authentification SAML et Adobe renvoie les ressources autorisées en fonction de cela. La réponse authN SAML dans le traceur SAML doit exposer cette liste.
+* **Autorisation multicanal** : l&#39;authentification du client et d&#39;Adobe effectuent un seul appel vers le MVPD pour un ensemble de ressources.
 
-Quel que soit le MVPD, l’application cliente effectue un seul appel au point d’entrée de contrôle en amont (checkPreauthorizedResources API), en transmettant un ensemble d’ID de ressource. Adobe utilisera l’une des méthodes ci-dessus prises en charge par MVPD pour renvoyer les ResourceID préautorisés.
+Quel que soit le MVPD, l’application cliente effectue un seul appel au point d’entrée de contrôle en amont (checkPreauthorizedResources API), en transmettant un ensemble d’ID de ressource. En fonction de l’une des méthodes ci-dessus prises en charge par MVPD, Adobe renverra les ResourceID préautorisés.
 
 Si le contrôle en amont repose sur la méthode branchement et jointure, le serveur principal d’authentification Adobe Pass vérifie une valeur définie pour les « appels de préautorisation max. » dans sa configuration. Elle est configurée par Adobe.
 

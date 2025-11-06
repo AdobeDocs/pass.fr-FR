@@ -1,6 +1,6 @@
 ---
-title: Notes de mise à jour d’Adobe Pass Concurrency Monitoring 2.6.0
-description: Notes de mise à jour d’Adobe Pass Concurrency Monitoring 2.6.0
+title: Notes De Mise À Jour De La Surveillance Simultanée D’Adobe Pass Version 2.6.0
+description: Notes De Mise À Jour De La Surveillance Simultanée D’Adobe Pass Version 2.6.0
 exl-id: f24980e3-ffe8-4b5e-8adc-ae443baed40f
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 1%
 
 ---
 
-# Notes de mise à jour d’Adobe Pass Concurrency Monitoring 2.6.0 {#cm-260}
+# Notes De Mise À Jour De La Surveillance Simultanée D’Adobe Pass Version 2.6.0 {#cm-260}
 
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
@@ -22,19 +22,19 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 ## Nouvelles fonctionnalités
 
-Cette version permet de mettre fin à un ou plusieurs flux existants afin de permettre au flux actuel de démarrer (c’est-à-dire de tuer le flux).
+Cette version ajoute la possibilité de terminer le ou les flux existants afin de permettre au flux actuel de démarrer (c’est-à-dire le flux kill ).
 
 
 
-**Arrêt à distance**
+**Terminaison à distance**
 
-* Dans une réponse de conflit 409, chaque session répertoriée dans le champ &quot;conflits&quot; du conseil porte un attribut terminationCode .
-* L’utilisateur peut être invité à saisir la liste des sessions en conflit et être autorisé à choisir celle ou les sessions à supprimer.
-* Les sessions distantes ne peuvent être interrompues qu’en transmettant un en-tête de requête X-Terminate (avec les codes d’arrêt sélectionnés comme valeurs) au sein d’une tentative d’initialisation de session.
-* Un nouveau type de &quot;conseil&quot; a été défini pour la réponse 410 Gone pour indiquer la session qui a tué la session actuelle.
+* Sur une réponse 409 Conflit, chaque session répertoriée dans le champ « conflits » des conseils contiendra un attribut terminateCode.
+* L’utilisateur peut être invité à fournir la liste des sessions en conflit et être autorisé à choisir celle ou celles à supprimer
+* Les sessions distantes ne peuvent être interrompues qu’en transmettant un en-tête de requête X-Terminate (avec les codes de terminaison sélectionnés comme valeurs) lors d’une tentative d’initialisation de session.
+* Un nouveau type de « conseil » a été défini pour la réponse 410 Gone afin d’indiquer la session qui a tué la session actuelle.
 
 
-Pour plus d’informations, voir la documentation mise à jour .
+Voir la documentation mise à jour pour plus d’informations.
 
 
 
@@ -47,7 +47,7 @@ Pour plus d’informations, voir la documentation mise à jour .
 
 ## Correctifs {#bug-fixes}
 
-Suppression des en-têtes en double dans la réponse du serveur (le correctif implique à la fois les en-têtes CORS et la date 1).
+Suppression des en-têtes en double dans la réponse du serveur (le correctif implique les en-têtes CORS et la date un).
 
 
 

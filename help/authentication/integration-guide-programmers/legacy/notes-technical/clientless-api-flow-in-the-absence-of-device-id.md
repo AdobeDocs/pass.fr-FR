@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Une fois ces étapes effectuées, l’authentification Adobe Pass utilise l’UU
 
 ## Solution Permanente
 
-L’Adobe changera cela dans une version ultérieure, en `deviceId` une payload facultative lors de la création du code d’enregistrement et en utilisant UUID comme clé de jeton au lieu de `deviceId`, lorsque `deviceId` n’est pas présent.
+Adobe changera cela dans une prochaine version, en `deviceId` une payload facultative lors de la création du code d’enregistrement et en utilisant UUID comme clé de jeton au lieu de `deviceId`, lorsque `deviceId` n’est pas présent.
 
 <!--
 ## Related Information

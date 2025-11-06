@@ -4,7 +4,7 @@ description: Transmission des informations client (appareil, connexion et applic
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 3%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
 > Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
-## Champ d’application {#pass-client-info-scope}
+## Portée {#pass-client-info-scope}
 
 Ce document agrège les détails et les cookies pour transmettre les informations du client (appareil, connexion et application) d’une application de programmation aux API REST d’authentification Adobe Pass ou aux SDK.
 
@@ -93,7 +93,7 @@ Les services d’authentification Adobe Pass prennent en charge la réception de
 
 Le SDK JavaScript AccessEnabler crée par défaut un objet JSON d’informations client, qui sera transmis aux services d’authentification Adobe Pass, sauf si vous le remplacez.
 
-Le SDK JavaScript AccessEnabler prend en charge **en remplaçant uniquement** la clé « applicationId » de l’objet JSON d’informations client via le paramètre d’options *applicationId* de [setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)).
+Le SDK JavaScript AccessEnabler prend en charge **en remplaçant uniquement** la clé « applicationId » de l’objet JSON d’informations client via le paramètre d’options [applicationId](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)) de *setRequestor*.
 
 >[!CAUTION]
 >
@@ -116,7 +116,7 @@ Le SDK AccessEnabler iOS/tvOS prend en charge **en remplaçant l’ensemble** de
 
 Le SDK Android/FireOS `AccessEnabler` crée par défaut un objet JSON d’informations client, qui sera transmis aux services d’authentification Adobe Pass, sauf si vous le remplacez.
 
-Le SDK Android/FireOS `AccessEnabler` prend en charge **le remplacement de l’ensemble** de l’objet JSON d’informations client par le paramètre `device_info` de [setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)&#39;s/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption).
+Le SDK Android/FireOS `AccessEnabler` prend en charge **le remplacement de l’ensemble** de l’objet JSON d’informations client par le paramètre [ de ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >
@@ -388,7 +388,7 @@ Les informations d’application peuvent être structurées comme suit :
 >[!NOTE]
 >
 >**Ressources:**
->* [UIDevice &#x200B;](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
+>* [UIDevice ](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
 >* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
 >* [À propos de l’accessibilité](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 

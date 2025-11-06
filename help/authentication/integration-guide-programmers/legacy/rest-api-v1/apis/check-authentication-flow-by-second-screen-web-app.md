@@ -4,7 +4,7 @@ description: Vérifier le flux d’authentification par application web du deuxi
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -44,7 +44,7 @@ Cette API doit être utilisée par l’application web de connexion du deuxième
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{registration code} | Application Web de connexion | 1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  </br> du demandeur    (Obligatoire) | GET | XML ou JSON contenant les détails de l’erreur en cas d’échec. | 200 - Succès   </br>403 - Interdit |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Application Web de connexion | &#x200B;1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  </br> du demandeur    (Obligatoire) | GET | XML ou JSON contenant les détails de l’erreur en cas d’échec. | 200 - Succès   </br>403 - Interdit |
 
 </br>
 

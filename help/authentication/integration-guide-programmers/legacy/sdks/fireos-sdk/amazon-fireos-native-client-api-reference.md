@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -91,11 +91,11 @@ Reportez-vous à <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV
 
 ### setRequestor {#setRequestor}
 
-**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un ID unique lors de l’enregistrement avec l’Adobe pour le système d’authentification Adobe Pass. Ce réglage ne doit être effectué qu&#39;une seule fois pendant le cycle de vie de l&#39;application.
+**Description :** établit l’identité du programmeur. Chaque programmeur se voit attribuer un identifiant unique lors de son enregistrement auprès d’Adobe pour le système d’authentification Adobe Pass. Ce réglage ne doit être effectué qu&#39;une seule fois pendant le cycle de vie de l&#39;application.
 
 La réponse du serveur contient une liste de fichiers MVPD ainsi que des informations de configuration associées à l’identité du programmeur. La réponse du serveur est utilisée en interne par le code d’activation d’Access. Seul le statut de l’opération (c’est-à-dire SUCCÈS/ÉCHEC) est présenté à votre application via le rappel setRequestorComplete().
 
-Si le paramètre *urls* n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement de publication/production d’Adobe.
+Si le paramètre *urls* n’est pas utilisé, l’appel réseau résultant cible l’URL du fournisseur de services par défaut : l’environnement de publication/production Adobe.
 
 Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultant cible toutes les URL fournies dans le paramètre *urls*. Toutes les demandes de configuration sont déclenchées simultanément dans des threads distincts. Le premier répondant est prioritaire lors de la compilation de la liste des MVPD. Pour chaque MVPD de la liste, Access Enabler mémorise l’URL du fournisseur d’accès associé. Toutes les demandes de droits suivantes sont dirigées vers l’URL associée au fournisseur de services qui a été associé au MVPD cible pendant la phase de configuration.
 
@@ -116,7 +116,7 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 **Paramètres:**
 
-- *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site lors de votre premier enregistrement auprès du service d’authentification Adobe Pass.
+- *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site lors de votre premier enregistrement auprès du service d’authentification d’Adobe Pass.
 - *urls* : paramètre facultatif ; par défaut, le fournisseur d’accès Adobe est utilisé (http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances de fournisseur de services d’authentification Adobe Pass. Ce faisant, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
 
 **Rappels déclenchés :** `setRequestorComplete()`
@@ -175,7 +175,7 @@ Les valeurs seront transmises au serveur indépendamment du flux actuel (authent
 
 - *options* : mappage\&lt;chaîne, chaîne\> contenant des options SDK globales. Actuellement, les options suivantes sont disponibles :
    - **applicationProfile** - Peut être utilisé pour effectuer des configurations de serveur en fonction de cette valeur.
-   - **ap\_vi** - Service d’ID Experience Cloud. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
+   - **ap\_vi** - Service Experience Cloud ID. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
    - **device\_info** - Informations sur l’appareil, comme décrit dans **Guide pas à pas des informations sur l’appareil**
 
 </br>
@@ -260,7 +260,7 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilité :**&#x200B;v 1.0+
+**Disponibilité :**v 1.0+
 
 **Paramètres:** Aucun
 
@@ -355,7 +355,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilité :**&#x200B;v 1.0+
+**Disponibilité :**v 1.0+
 
 **Paramètres :** le paramètre `resources` est un tableau de ressources que l’utilisateur est déjà autorisé à afficher.
 
@@ -427,7 +427,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilité :**&#x200B;v 1.0+
+**Disponibilité :**v 1.0+
 
 **Paramètres:**
 
@@ -529,7 +529,7 @@ Les programmeurs ont accès à deux types de métadonnées :
 - *metadataKey* : structure de données qui encapsule une clé et une variable args, avec la signification suivante :
    - Si la clé est `METADATA_KEY_TTL_AUTHN`, la requête est effectuée pour obtenir le délai d’expiration du jeton d’authentification.
    - Si la clé est `METADATA_KEY_TTL_AUTHZ` et que les arguments contiennent un objet SerializableNameValuePair avec le nom = `METADATA_ARG_RESOURCE_ID` et la valeur = `[resource_id]`, la requête est exécutée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
-   - Si la clé est `METADATA_KEY_DEVICE_ID`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter l’Adobe pour plus d’informations sur l’activation et les frais.
+   - Si la clé est `METADATA_KEY_DEVICE_ID`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
    - Si la clé est `METADATA_KEY_USER_META` et que les arguments contiennent un objet SerializableNameValuePair avec le nom = `METADATA_KEY_USER_META` et la valeur = `[metadata_name]`, la requête porte sur les métadonnées de l’utilisateur. Liste actuelle des types de métadonnées utilisateur disponibles :
       - `zip` - Code postal
       - `householdID` - Identifiant du ménage. Si un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à `userID`.
@@ -625,7 +625,7 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
 
 >[!WARNING]
 >
-> Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (http://java.net/projects/user-agent-utils) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre approximatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais que l’Adobe ne peut être tenu responsable de résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
+> Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (http://java.net/projects/user-agent-utils) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
 
 - Valeurs possibles pour le type d’appareil :
    - `computer`

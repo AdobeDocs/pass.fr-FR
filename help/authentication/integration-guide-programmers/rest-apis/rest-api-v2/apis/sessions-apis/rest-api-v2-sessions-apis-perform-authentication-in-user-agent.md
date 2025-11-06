@@ -142,7 +142,7 @@ La réponse réussie est une série d’une ou de plusieurs redirections jusqu�
 
 ## Exemples {#samples}
 
-### 1. Effectuer l’authentification dans l’agent utilisateur
+### &#x200B;1. Effectuer l’authentification dans l’agent utilisateur
 
 >[!BEGINTABS]
 

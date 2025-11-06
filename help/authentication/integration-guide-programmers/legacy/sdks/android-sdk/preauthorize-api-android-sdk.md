@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -167,7 +167,7 @@ fonctionnalités)**
 ```
 
 
-**class Status** {#status}
+**statut de la classe** {#status}
 
 ```java
 ///
@@ -231,7 +231,7 @@ fonctionnalités)**
 
 </br>
 
->**class Decision** {#decision}
+>**décision de classe** {#decision}
 
 ```
     ///

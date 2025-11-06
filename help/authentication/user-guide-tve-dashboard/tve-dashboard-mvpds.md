@@ -2,7 +2,7 @@
 title: MVPD du tableau de bord TVE
 description: Découvrez les MVPD et leurs configurations dans le tableau de bord TVE.
 exl-id: 802c1570-9a5b-4bec-8fb2-6c7738b28bc9
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
@@ -23,7 +23,7 @@ L’onglet **MVPD** du panneau de gauche affiche une liste de MVPD avec les dét
 
 * **MVPD ID** : identifiant unique de MVPD utilisé pour configurer une nouvelle intégration dans le système.
 
-![Liste des MVPD intégrés](/help/authentication/assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
+![Liste des MVPD intégrés](../assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
 
 *Liste des MVPD intégrés*
 

@@ -4,7 +4,7 @@ description: Manuel de l’authentification unique Apple (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -106,14 +106,14 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
    * ***VSA404*** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est indéterminée pour l&#39;application.
    * ***APPL*** - La communication entre le SDK AccessEnabler iOS/tvOS et le framework de compte d’abonné vidéo a rencontré une erreur.
 
-   Cette deuxième étape tente d’effectuer un exchange silencieux du profil SSO Apple pour un jeton d’authentification Adobe, au cas où **tous les éléments ci-dessus sont faux** et **tous les éléments suivants sont vrais** :
+   Cette deuxième étape tente d’échanger silencieusement le profil SSO d’Apple contre un jeton d’authentification Adobe, au cas où **tout ce qui précède est faux** et **tout ce qui suit est vrai** :
 
    * L’autorisation Fournisseur TV de l’utilisateur est accordée pour l’application.
    * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil.
    * Le SDK AccessEnabler iOS/tvOS a reçu l’identifiant de fournisseur de télévision de l’utilisateur de la structure du compte d’abonné vidéo.
-   * L’intégration du fournisseur de télévision de l’utilisateur à l’application est activée via le tableau de bord Adobe Primetime TVE.
-   * L’authentification unique du fournisseur de télévision de l’utilisateur avec l’application est activée via le tableau de bord Adobe Primetime TVE.
-   * Le fournisseur TV de l’utilisateur n’est pas dégradé via le tableau de bord Adobe Primetime TVE.
+   * L’intégration du fournisseur de télévision de l’utilisateur à l’application est activée via le tableau de bord TVE d’Adobe Primetime.
+   * L’authentification unique du fournisseur de télévision de l’utilisateur avec l’application est activée via le tableau de bord TVE d’Adobe Primetime.
+   * Le fournisseur de télévision de l’utilisateur n’est pas dégradé via le tableau de bord TVE d’Adobe Primetime.
    * Le SDK AccessEnabler iOS/tvOS a reçu la réponse SAML du fournisseur de télévision de l’utilisateur de la structure du compte d’abonné vidéo.
 
    **<u>Conseil pro :</u>** cette deuxième étape ne déclenchera aucun autre rappel, à part le rappel [setRequestorComplete](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setrequestorcomplete-setreqcomplete), car l&#39;authentification n&#39;a pas été explicitement initiée par l&#39;application.
@@ -138,8 +138,8 @@ la structure a rencontré une erreur.
 
    * L’utilisateur n’est pas connecté à son compte de fournisseur de télévision au niveau du système de l’appareil ou par le biais d’un flux d’authentification régulier.
    * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil ou par le biais d’un flux d’authentification normal, mais la TTL du jeton d’authentification du fournisseur de télévision de l’utilisateur est passée.
-   * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil ou par le biais d’un flux d’authentification régulier, mais l’intégration du fournisseur de télévision de l’utilisateur à l’application est désactivée via le tableau de bord Adobe Primetime TVE.
-   * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil, mais l’authentification unique du fournisseur de télévision de l’utilisateur avec l’application est désactivée via le tableau de bord Adobe Primetime TVE.
+   * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil ou par le biais d’un flux d’authentification régulier, mais l’intégration du fournisseur de télévision de l’utilisateur à l’application est désactivée via le tableau de bord TVE d’Adobe Primetime.
+   * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil, mais l’authentification unique du fournisseur de télévision de l’utilisateur avec l’application est désactivée via le tableau de bord TVE d’Adobe Primetime.
    * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil, mais l’autorisation du fournisseur de télévision de l’utilisateur est refusée pour l’application.
    * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil, mais l’autorisation du fournisseur de télévision de l’utilisateur est indéterminée pour l’application.
    * L’utilisateur est connecté à son compte de fournisseur de télévision au niveau du système de l’appareil, mais la communication entre le SDK AccessEnabler iOS/tvOS et la structure du compte d’abonné vidéo a rencontré une erreur.
@@ -149,7 +149,7 @@ la structure a rencontré une erreur.
 
 1. L’application doit [initialiser l’authentification](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn) au cas où la vérification du statut d’authentification précédent déclenchait le rappel [*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) avec *status* égal à 0.
 
-   **<u>Conseil pro :</u>** implémentez l&#39;une des API SDK AccessEnabler iOS/tvOS suivantes [getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) ou [getAuthentication:filter](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN_filter).
+   **<u>Conseil de pro :</u>** implémentez l’une des API SDK AccessEnabler iOS/tvOS suivantes [getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) ou [getAuthentication:filter](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN_filter).
 
    **Important :** cette quatrième étape peut déclencher un [code d’erreur avancé](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) spécifique au workflow SSO d’Apple, dans le cas où **l’un des scénarios suivants est vrai** :
 
@@ -162,18 +162,18 @@ la structure a rencontré une erreur.
 
    **Important :** cette quatrième étape revient au flux d’authentification normal, en déclenchant le rappel [displayProviderDialog](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#dispProvDialog) et **l’un** des [codes d’erreur avancés](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) ci-dessus, au cas où **l’un des deux est vrai**.
 
-   **Important :** cette quatrième étape revient au flux d’authentification standard, en déclenchant le rappel [navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url) ou [navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC) et **none** des [codes d’erreur avancés](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) ci-dessus, au cas où l’utilisateur ou l’utilisatrice sélectionne un fournisseur de télévision qui ne prend pas en charge la connexion unique Apple, mais qui est présent dans le sélecteur Apple MVPD.
+   **Important :** cette quatrième étape revient au flux d’authentification standard, en déclenchant le rappel [navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url) ou [navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC) et **aucun** des [codes d’erreur avancés](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) ci-dessus, au cas où l’utilisateur ou l’utilisatrice sélectionne un fournisseur de télévision qui ne prend pas en charge la connexion unique Apple, mais qui est présent dans le sélecteur Apple MVPD.
 
    **<u>Conseil pro :</u>** le SDK AccessEnabler iOS/tvOS appelle silencieusement l’API [setSelectedProvder](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv), au cas où l’utilisateur ou l’utilisatrice sélectionnerait un fournisseur de télévision qui ne prend pas en charge l’authentification unique Apple, mais qui est présent dans le sélecteur Apple MVPD.
 
-   **Important :** cette quatrième étape tente d’effectuer un exchange silencieux du profil SSO d’Apple pour un jeton d’authentification d’Adobe, au cas où **tout ce qui précède est faux** et **tout ce qui suit est vrai** :
+   **Important :** cette quatrième étape tente d’échanger silencieusement le profil SSO d’Apple contre un jeton d’authentification Adobe, au cas où **tout ce qui précède est faux** et **tout ce qui suit est vrai** :
 
    * L’autorisation Fournisseur TV de l’utilisateur est accordée pour l’application.
    * L’utilisateur est connecté/se connecte actuellement à son compte de fournisseur de télévision au niveau du système de l’appareil.
    * Le SDK AccessEnabler iOS/tvOS a reçu l’identifiant de fournisseur de télévision de l’utilisateur de la structure du compte d’abonné vidéo.
-   * L’intégration du fournisseur de télévision de l’utilisateur à l’application est activée via le tableau de bord Adobe Primetime TVE.
-   * L’authentification unique du fournisseur de télévision de l’utilisateur avec l’application est activée via le tableau de bord Adobe Primetime TVE.
-   * Le fournisseur TV de l’utilisateur n’est pas dégradé via le tableau de bord Adobe Primetime TVE.
+   * L’intégration du fournisseur de télévision de l’utilisateur à l’application est activée via le tableau de bord TVE d’Adobe Primetime.
+   * L’authentification unique du fournisseur de télévision de l’utilisateur avec l’application est activée via le tableau de bord TVE d’Adobe Primetime.
+   * Le fournisseur de télévision de l’utilisateur n’est pas dégradé via le tableau de bord TVE d’Adobe Primetime.
    * Le SDK AccessEnabler iOS/tvOS a reçu la réponse SAML du fournisseur de télévision de l’utilisateur de la structure du compte d’abonné vidéo.
 
    **<u>Conseil pro :</u>** cette quatrième étape déclenche le rappel [*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setAuthNStatus), quel que soit le résultat *status*, car l&#39;authentification a été explicitement initiée par l&#39;application.

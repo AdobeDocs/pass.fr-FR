@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Adobe vous recommande vivement de migrer vers la dernière version de JS v4.x de la bibliothèque AccessEnabler.
 
-L’intégration de JavaScript d’authentification Adobe Pass offre aux programmeurs une solution TV-Everywhere dans l’environnement de développement d’applications web JS habituel. Les principaux composants de l’intégration sont votre application « de haut niveau » (interaction utilisateur, présentation vidéo) et la bibliothèque AccessEnabler « de bas niveau » fournie par l’Adobe, qui fournit votre entrée aux flux de droits et gère la communication avec les serveurs d’authentification Adobe Pass.
+L’intégration de JavaScript d’authentification Adobe Pass offre aux programmeurs une solution TV-Everywhere dans l’environnement de développement d’applications web JS habituel. Les principaux composants de l’intégration sont votre application « de haut niveau » (interaction utilisateur, présentation vidéo) et la bibliothèque AccessEnabler « de bas niveau » fournie par Adobe qui fournit votre entrée aux flux de droits et gère la communication avec les serveurs d’authentification Adobe Pass.
 
 Les sections suivantes fournissent des descriptions et des exemples spécifiques à l’intégration JavaScript AccessEnabler.
 
@@ -55,7 +55,7 @@ L’exemple de code suivant montre comment découvrir et afficher le fournisseur
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_fr"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

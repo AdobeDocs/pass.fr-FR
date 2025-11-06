@@ -2,7 +2,7 @@
 title: Log des modifications
 description: Savoir comment un administrateur peut surveiller les modifications de configuration dans le tableau de bord TVE.
 exl-id: 9b53a61b-679f-491e-90f3-5d827e21b32c
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Pour comparer les modifications, procédez comme suit :
 
 1. Sélectionnez dans la liste deux modifications de configuration à comparer.
 
-   ![Comparer les modifications de configuration](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
+   ![Comparer les modifications de configuration](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
 
    *Comparer les modifications de configuration*
 
@@ -42,12 +42,12 @@ Pour comparer les modifications, procédez comme suit :
 
 1. Sélectionnez **Affichage** pour accéder aux valeurs modifiées.
 
-   ![Afficher les modifications de configuration](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
+   ![Afficher les modifications de configuration](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
 
    *Afficher les modifications de configuration*
 
 Voici un exemple de modification apportée à la configuration sélectionnée. Vous pouvez voir la différence entre l’ancienne et la nouvelle valeur au sein de la modification.
 
-![ancienne et nouvelle valeur](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
+![ancienne et nouvelle valeur](../assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
 
 *ancienne et nouvelle valeur*

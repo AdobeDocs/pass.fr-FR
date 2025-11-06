@@ -4,7 +4,7 @@ description: Guide de migration d’iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -24,7 +24,7 @@ ht-degree: 0%
 > **Remarques :**
 >
 > - À partir de la version 3.1 du sdk iOS, les personnes en charge de l’implémentation peuvent désormais utiliser WKWebView ou UIWebView de manière interchangeable. Comme UIWebView est obsolète, les applications doivent migrer vers WKWebView afin d’éviter tout problème avec les futures versions d’iOS.
-> - Notez que la migration impliquerait simplement de changer la classe UIWebView avec WKWebView. Il n’y a pas de travail spécifique à effectuer concernant AccessEnabler d’Adobe.
+> - Notez que la migration impliquerait simplement de changer la classe UIWebView avec WKWebView. Il n’y a pas de travail spécifique à effectuer concernant Adobe AccessEnabler.
 
 </br>
 
@@ -38,7 +38,7 @@ Cette version contient des fonctionnalités écrites en langage SWIFT. Si votre 
 
 > Pour plus d&#39;informations sur la façon d&#39;obtenir votre relevé de logiciel, rendez-vous sur
 > page :
-> [Enregistrement de la demande &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
+> [Enregistrement de la demande ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
 
 Une fois que vous disposez de votre déclaration logicielle, nous vous recommandons de l’héberger sur un serveur distant afin de pouvoir facilement la révoquer ou la modifier sans déployer une nouvelle version de l’application dans App Store. Lorsque l’application démarre, obtenez votre instruction logicielle à partir de l’emplacement distant et transmettez-la dans le constructeur AccessEnabler :
 
@@ -72,7 +72,7 @@ Une fois que vous avez obtenu le schéma d’URL personnalisé, vous devez l’a
 
 ## Interception des appels sur le schéma d’URL personnalisé {#intercept}
 
-Cela s’applique uniquement au cas où votre application a précédemment activé la gestion manuelle de Safari View Controller (SVC) via l’appel [setOptions(\[« handleSVC »:true »\])](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md) et pour les MVPD spécifiques nécessitant Safari View Controller (SVC), nécessitant donc le chargement des URL des points d’entrée d’authentification et de déconnexion par un contrôleur SFSafariViewController au lieu d’un contrôleur UIWebView/WKWebView.
+Cela s’applique uniquement au cas où votre application a précédemment activé la gestion manuelle de Safari View Controller (SVC) via l’appel [setOptions(\[« handleSVC »:true« \])](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md) et pour les MVPD spécifiques nécessitant Safari View Controller (SVC), nécessitant donc le chargement des URL des points d’entrée d’authentification et de déconnexion par un contrôleur SFSafariViewController au lieu d’un contrôleur UIWebView/WKWebView.
 
 Pendant les flux d&#39;authentification et de déconnexion, votre application doit surveiller l&#39;activité du `SFSafariViewController `contrôleur qui passe par plusieurs redirections. Votre application doit détecter le moment où elle charge une URL personnalisée spécifique définie par votre `application's custom URL scheme` (par ex`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le `SFSafariViewController` et appeler la méthode `handleExternalURL:url `API d&#39;AccessEnabler.
 

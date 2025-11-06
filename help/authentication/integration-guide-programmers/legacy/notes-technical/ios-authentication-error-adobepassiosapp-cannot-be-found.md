@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# Erreur d’authentification iOS (héritée) - adobepass.ios.app est {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
+# Erreur d’authentification iOS (héritée) - adobepass.ios.app introuvable {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >

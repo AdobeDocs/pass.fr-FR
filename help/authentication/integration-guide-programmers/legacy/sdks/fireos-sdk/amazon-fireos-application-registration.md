@@ -2,7 +2,7 @@
 title: Enregistrement de l’application Amazon FireOS
 description: Enregistrement de l’application Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 À compter de la version 3.0 du SDK FireOS AccessEnabler, nous modifions le mécanisme d’authentification avec les serveurs Adobe. Au lieu d’utiliser une clé publique et un système secret pour signer l’ID du demandeur, nous introduisons le concept d’une chaîne d’instruction logicielle qui peut être utilisée pour obtenir un jeton d’accès qui est ensuite utilisé pour tous les appels que le SDK effectue à nos serveurs. En plus d&#39;une déclaration logicielle, vous devrez également créer un lien profond pour votre application.
 
-Pour plus d’informations, voir [Présentation de l’enregistrement client dynamique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, voir [Présentation de l’enregistrement client dynamique](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Qu’est-ce qu’une déclaration de logiciel ? {#what}
 
@@ -59,7 +59,7 @@ Une instruction logicielle est un jeton JWT contenant des informations sur votre
 
    Un fichier texte est téléchargé. Utilisez son contenu comme déclaration de logiciel.
 
-Pour plus d’informations, voir [Dynamic Client Registration Management](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Pour plus d’informations, voir [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Si vous n’avez pas accès au tableau de bord Adobe TVE :
 

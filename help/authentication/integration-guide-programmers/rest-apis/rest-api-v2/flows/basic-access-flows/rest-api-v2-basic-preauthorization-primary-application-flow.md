@@ -2,7 +2,7 @@
 title: Préautorisation de base - Demande de Principal - Flux
 description: API REST V2 - Préautorisation de base - Application de Principal - Flux
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Avant de récupérer des décisions de préautorisation à l’aide d’un MVPD 
 
 Suivez les étapes données pour implémenter le flux de préautorisation de base à l’aide d’un MVPD spécifique exécuté dans une application principale, comme illustré dans le diagramme ci-dessous.
 
-![Récupérer des décisions de préautorisation à l’aide de mvpd spécifiques](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
+![Récupérer des décisions de préautorisation à l’aide de mvpd spécifiques](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
 
 *Récupérer des décisions de préautorisation à l’aide de mvpd spécifiques*
 

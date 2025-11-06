@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -23,17 +23,17 @@ ht-degree: 0%
 
 ## Introduction {#intro}
 
-Ce document décrit les informations nécessaires pour intégrer le nouveau SDK fireTV d’Adobe Pass Authentication **&#x200B;**&#x200B;dans votre application fireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme fireTV d’Amazon, offrant ainsi la prise en charge de l’authentification unique **Single Sign On**. Pour bénéficier de l’authentification SSO, vous devez fournir quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK fireTV. Certaines modifications apportées aux flux d’authentification sont détaillées ci-dessous.
+Ce document décrit les informations nécessaires pour intégrer le nouveau SDK fireTV d’Adobe Pass Authentication **** dans votre application fireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme fireTV d’Amazon, offrant ainsi la prise en charge de l’authentification unique **Single Sign On**. Pour bénéficier de l’authentification SSO, vous devez fournir quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK fireTV. Certaines modifications apportées aux flux d’authentification sont détaillées ci-dessous.
 
 ## Architecture de haut niveau et intégration au niveau du système d’exploitation {#high}
 
-Afin d&#39;obtenir l&#39;authentification unique entre les applications TV Everywhere sur la plateforme Amazon fireTV et d&#39;améliorer l&#39;expérience globale sur cette plateforme, nous avons décidé d&#39;intégrer notre SDK principal au niveau du système d&#39;exploitation fireTV. Les programmeurs devront compiler par rapport à une bibliothèque de stub fournie par Adobe. Les fonctionnalités réelles seront fournies par la bibliothèque d’Adobe présente dans Amazon fireTV OS.
+Afin d&#39;obtenir l&#39;authentification unique entre les applications TV Everywhere sur la plateforme Amazon fireTV et d&#39;améliorer l&#39;expérience globale sur cette plateforme, nous avons décidé d&#39;intégrer notre SDK principal au niveau du système d&#39;exploitation fireTV. Les programmeurs devront compiler par rapport à une bibliothèque de stub fournie par Adobe. Les fonctionnalités réelles seront fournies par la bibliothèque Adobe présente dans Amazon fireTV OS.
 
 Jusqu’à ce qu’Amazon fournisse un simulateur fireTV qui intègre notre bibliothèque au niveau du système d’exploitation, le développement ne serait possible qu’en utilisant des appareils fireTV réels.
 
 ## Avantages {#bene}
 
-* Connexion unique entre toutes les applications TV Everywhere alimentées par l&#39;Adobe sur la plateforme Amazon fireTV avec tous les MVPD intégrés.
+* Connexion unique entre toutes les applications TV Everywhere optimisées par Adobe sur la plateforme Amazon fireTV avec tous les MVPD intégrés.
 * Possibilité de bénéficier d&#39;un adaptateur HBA (avec prise en charge des MVPD).
 * Possibilité d&#39;utiliser le dernier SDK fireTV sans avoir à mettre à jour vos applications chaque fois qu&#39;une nouvelle version de SDK est publiée.
 * Toutes les applications TVE bénéficient de l&#39;utilisation de la bibliothèque système partagée en supprimant la nécessité d&#39;avoir une copie locale de la bibliothèque AccessEnabler. Cela garantit également que toutes les applications utilisent la même version de SDK.
@@ -83,6 +83,6 @@ Par rapport au SDK Android existant, sur FireTV SDK, le processus d’authentifi
 
    * Les flux TempPass sont à écran unique et se comportent comme sur tout autre appareil natif.
 
-1. D’autres fonctionnalités d’Adobe fonctionneront-elles comme auparavant ?
+1. Les autres fonctionnalités d’Adobe fonctionneront-elles comme auparavant ?
 
    * Toutes les fonctionnalités d’authentification d’Adobe Pass fonctionnent sur fireTV comme sur les appareils Android.

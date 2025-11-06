@@ -154,7 +154,7 @@ Suivez les étapes ci-dessous pour vous assurer que le certificat est généré 
 >
 > Si vous n’avez pas accès au tableau de bord Adobe Pass TVE, créez un ticket via notre [Zendesk](https://adobeprimetime.zendesk.com) et demandez à votre gestionnaire de compte technique (TAM) d’apporter les modifications appropriées pour vous.
 
-Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [&#128279;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md).
+Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md).
 
 Pour passer en revue et gérer les attributs de métadonnées utilisateur rendus disponibles par un MVPD, suivez les étapes de la documentation du [Guide d’utilisation du tableau de bord TVE pour les intégrations](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#user-metadata) .
 

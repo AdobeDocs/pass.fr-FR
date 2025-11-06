@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -105,7 +105,7 @@ Voici un exemple de requête SAML pour le flux d’authentification passif :
 </saml2p:AuthnRequest>
 ```
 
-## Règles commerciales
+## Règles métier
 
 Les fichiers MVPD comportent des restrictions de domaine de définition de la portée SSO spécifiques. Par exemple, seuls certains domaines peuvent être autorisés par certains MVPD (SSO pour la même société de médias, mais pas entre les sociétés).
 Certaines MVPD peuvent nécessiter l’application de règles d’authentification différentes. Par exemple, les MVPD peuvent avoir des TTL d’authentification différentes pour différents réseaux. En outre, les MVPD peuvent permettre l’authentification à domicile pour certains réseaux, mais pas pour d’autres (les cas d’utilisation du contrôle parental sont fortement représentés ici).

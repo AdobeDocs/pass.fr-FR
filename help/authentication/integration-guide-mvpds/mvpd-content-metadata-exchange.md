@@ -1,6 +1,6 @@
 ---
-title: Exchange de métadonnées de contenu MVPD
-description: Exchange de métadonnées de contenu MVPD
+title: Échange de métadonnées de contenu MVPD
+description: Échange de métadonnées de contenu MVPD
 exl-id: d17e60dc-6c61-4ca2-bad8-1840c95261e0
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,41 +9,41 @@ ht-degree: 0%
 
 ---
 
-# Exchange de métadonnées de contenu MVPD
+# Échange de métadonnées de contenu MVPD
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 ## Vue d’ensemble {#content-metadat-exchange-overview}
 
-Cette page décrit deux mises en oeuvre standard qu’Adobe Pass Authentication utilise pour envoyer des données structurées aux MVPD sur la demande d’autorisation.  Les données structurées représentent la ressource (le programmeur) qui effectue la requête et, éventuellement, des données supplémentaires telles que l’évaluation du contenu.
+Cette page décrit deux mises en œuvre standard que l’authentification Adobe Pass utilise pour envoyer des données structurées aux MVPD lors de la demande d’autorisation.  Les données structurées représentent la ressource (le programmeur) qui effectue la requête, ainsi que, éventuellement, des données supplémentaires telles que l’évaluation du contenu.
 
-Côté programmeur, l’authentification Adobe Pass prend en charge les ressources de données MRSS structurées comme suit :
+En ce qui concerne le programmeur, l’authentification Adobe Pass prend en charge les ressources de données MRSS structurées comme suit :
 
-1. Le programmeur envoie la ressource sous la forme d’une chaîne MRSS. L’authentification Adobe Pass ne le code pas côté client pour les appareils web ou natifs. Le MRSS est envoyé comme chaîne régulière au serveur d&#39;authentification Adobe Pass.
-1. Côté serveur, le MRSS est validé par rapport au schéma prédéfini (http://search.yahoo.com/mrss/).  Si la validation est acceptée, l’authentification Adobe Pass extrait les informations des champs MRSS, notamment :
+1. Le programmeur envoie la ressource sous la forme d’une chaîne MRSS. L’authentification Adobe Pass ne l’encode pas côté client pour les appareils web ou natifs. Le SMS est envoyé en tant que chaîne régulière au serveur d’authentification Adobe Pass.
+1. Côté serveur, le MRSS est validé par rapport au schéma prédéfini (http://search.yahoo.com/mrss/).  Si la validation réussit, l’authentification Adobe Pass extrait les informations des champs MRSS, notamment :
    * titre du canal
-   * titre de l’élément
-   * identifiant de ressource
-   * valeur d’évaluation et type
-1. Les valeurs extraites du MRSS sont utilisées pour créer la demande d’autorisation qui est transmise au MVPD.
+   * titre de l&#39;objet
+   * identifiant de la ressource
+   * valeur et type d’évaluation
+1. Les valeurs extraites du MRSS sont utilisées pour construire la demande d&#39;autorisation qui est transmise au MVPD.
 
-L’authentification Adobe Pass prend en charge deux approches pour traduire le MRSS en formats pris en charge par les MVPD :
+L’authentification Adobe Pass prend en charge deux approches pour traduire les fichiers MRSS dans des formats pris en charge par les fichiers MVPD :
 
-* **XACML**.  La première approche s’aligne sur la norme OLCA.  Il utilise XACML, dans lequel les valeurs MRSS sont extraites pour créer une XACMLResource avec des attributs qui correspondent aux éléments MRSS.  Il est ensuite transmis au MVPD.
-* **REST**.  La seconde approche est basée sur REST.  Le MRSS est codé en base64 et transmis en tant que paramètre d&#39;URL lors de l&#39;appel REST.
+* **XACML**  La première approche est conforme à la norme OLCA.  Il utilise XACML, dans lequel les valeurs MRSS sont extraites pour créer une XACMLResource avec des attributs qui mappent aux éléments MRSS.  Elle est ensuite transmise au MVPD.
+* **REPOS**.  La deuxième approche est basée sur REST.  Le MRSS est codé en base64 et transmis en tant que paramètre d’URL sur l’appel REST.
 
 Dans les deux approches, le MVPD traite la demande d’autorisation en incluant les valeurs extraites dans son propre flux logique et en renvoyant une réponse d’autorisation.
 
 ## Détails de l’intégration {#integration-details}
 
-* Ressource structurée XACML basée sur OLCA
+* Ressource structurée XML basée sur OLCA
 * Ressource structurée basée sur REST
 
-### Ressource structurée XACML basée sur OLCA {#olca-based-xacml-struc-resource}
+### Ressource structurée XML basée sur OLCA {#olca-based-xacml-struc-resource}
 
-La plupart des MVPD câblés utilisent l’approche basée sur XACML, mais ne prennent pas encore en charge l’approche de données structurées complètes.  Les autres MVPD qui prennent en charge le langage XACML prennent le titre du canal et acceptent cela pour l’attribut ResourceID. L’exemple ci-dessous illustre l’approche complète structurée basée sur XACML. L’équipe d’authentification Adobe Pass recommande que les MVPD qui utilisent XACML, mais ne prennent pas encore en charge des fonctionnalités telles que les contrôles parentaux, adaptent leur intégration XACML à l’exemple suivant :
+La plupart des MVPD orientées câble utilisent l’approche basée sur XML, mais ne prennent pas encore en charge l’approche de données structurées complètes.  D’autres MVPD qui prennent en charge XACML prennent le titre de canal et l’acceptent pour l’attribut ResourceID. L’exemple ci-dessous illustre l’approche entièrement structurée basée sur XML. L’équipe d’authentification d’Adobe Pass recommande aux MVPD qui utilisent XACML, mais qui ne prennent pas encore en charge des fonctionnalités telles que le contrôle parental, d’adapter leur intégration XACML à l’exemple suivant :
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,7 +106,7 @@ La plupart des MVPD câblés utilisent l’approche basée sur XACML, mais ne pr
 
 ### Ressource structurée basée sur REST {#rest-based-struct-resource}
 
-Certains MVPD ont normalisé le protocole REST suivant pour l’autorisation. Cette approche est aussi complète que l’approche XACML, mais fournit une mise en oeuvre &quot;plus légère&quot;.
+Certains MVPD ont standardisé le protocole REST suivant pour l&#39;autorisation. Cette approche est aussi complète que l’approche XML, mais fournit une implémentation « plus légère ».
 
 `// The MRSS is base64 encoded by Adobe Pass Authentication, and passed in that format to the REST-based Authorization endpoint.`
 

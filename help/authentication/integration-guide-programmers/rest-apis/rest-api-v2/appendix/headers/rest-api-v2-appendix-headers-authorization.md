@@ -2,7 +2,7 @@
 title: En-tête - Autorisation
 description: API REST V2 - En-tête - Autorisation
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 3%
@@ -20,7 +20,7 @@ ht-degree: 3%
 
 L’en-tête de requête <b>Authorization</b> contient le jeton d’accès `Bearer` requis par l’application cliente pour accéder aux API protégées d’Adobe Pass.
 
-Pour plus d’informations sur le mécanisme d’accès aux API protégées d’Adobe Pass, reportez-vous à la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations sur le mécanisme d’accès aux API protégées d’Adobe Pass, reportez-vous à la documentation [ Présentation de l’enregistrement client dynamique ](../../../rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Syntaxe {#syntax}
 
@@ -42,7 +42,7 @@ Pour plus d’informations sur le mécanisme d’accès aux API protégées d’
 
 <b>&lt;access_token></b>
 
-La valeur du jeton d’accès est une valeur opaque dont la durée de vie est limitée (par exemple, 24 heures) et qui doit être obtenue auprès d’Adobe Pass, comme décrit dans la documentation de l’API [Récupérer le jeton d’accès](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+La valeur du jeton d’accès est une valeur opaque dont la durée de vie est limitée (par exemple, 24 heures) et qui doit être obtenue auprès d’Adobe Pass, comme décrit dans la documentation de l’API [Récupérer le jeton d’accès](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## Exemples {#examples}
 

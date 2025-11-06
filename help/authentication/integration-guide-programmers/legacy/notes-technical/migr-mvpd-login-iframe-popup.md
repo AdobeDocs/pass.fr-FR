@@ -4,7 +4,7 @@ description: Comment migrer la page de connexion MVPD d’iFrame vers une fenêt
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -36,7 +36,7 @@ L’exemple de code présenté dans cette note technique utilise une implémenta
 
 ## Sélecteur MVPD avec page de connexion dans un iFrame {#mvpd-pickr-iframe}
 
-Les exemples de code précédents montraient une page d’HTML contenant la balise &lt;div> dans laquelle l’iFrame doit être créé avec le bouton Fermer l’iFrame :
+Les exemples de code précédents illustraient une page HTML contenant la balise &lt;div> dans laquelle l’iFrame doit être créé avec le bouton de fermeture de l’iFrame :
 
 ```HTML
 <body> 
@@ -109,7 +109,7 @@ function setSelectedProvider(providerID) {
 
 ## Sélecteur MVPD avec page de connexion dans une fenêtre contextuelle {#mvpd-pickr-popup}
 
-Comme nous n&#39;utiliserons plus d&#39;iFrame **iFrame**, le code d&#39;HTML ne contiendra ni l&#39;iFrame ni le bouton de fermeture de l&#39;iFrame. La balise div qui contenait auparavant l’iFrame (**mvpddiv**) est conservée et utilisée pour les opérations suivantes :
+Comme nous n’utiliserons plus d’iFrame **iFrame**, le code HTML ne contiendra pas l’iFrame ni le bouton de fermeture de l’iFrame. La balise div qui contenait auparavant l’iFrame (**mvpddiv**) est conservée et utilisée pour les opérations suivantes :
 
 * pour informer l’utilisateur que la page de connexion de MVPD est déjà ouverte en cas de perte du focus de la fenêtre contextuelle :
 * pour fournir un lien afin de réactiver le focus sur la fenêtre contextuelle :

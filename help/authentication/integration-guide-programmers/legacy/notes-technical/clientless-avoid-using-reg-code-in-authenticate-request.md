@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -37,7 +37,7 @@ Si la requête `/authenticate` est composée comme suit...
 ```
 
 
-...il sera interprété par le navigateur d’IE comme ci-dessous et sera envoyé à l’Adobe au format suivant :
+...il sera interprété par le navigateur d’IE comme ci-dessous et sera envoyé à Adobe au format suivant :
 
 
 ```
@@ -45,7 +45,7 @@ Si la requête `/authenticate` est composée comme suit...
 ```
 
 
-Le demandeur\_id sera interprété comme univision®\_code=EKAFMFI, puisqu’il n’existe aucun «&amp; », et l’Adobe ne trouvera pas de paramètre `regCode` auquel associer le jeton.  Il est possible que le jeton AuthN ne soit pas créé du tout, auquel cas les appels `/checkauthn` ne trouveront aucun jeton.
+Le demandeur\_id sera interprété comme univision®\_code=EKAFMFI, puisqu’il n’existe aucun «&amp; », et Adobe ne trouvera pas de paramètre `regCode` auquel associer le jeton.  Il est possible que le jeton AuthN ne soit pas créé du tout, auquel cas les appels `/checkauthn` ne trouveront aucun jeton.
 
 
 
@@ -63,4 +63,4 @@ L’une des options suivantes devrait résoudre ce problème :
 
 1. Normalisez les `&reg_code` comme si vous utilisiez `&amp;reg_code`.
 
-1. L’Adobe peut introduire une nouvelle fonctionnalité permettant de renvoyer un code d’erreur au deuxième écran en réponse à un appel d’authentification, si la création du jeton AuthN a échoué.
+1. Adobe peut introduire une nouvelle fonctionnalité permettant de renvoyer un code d’erreur au deuxième écran en réponse à un appel d’authentification, si la création du jeton AuthN a échoué.

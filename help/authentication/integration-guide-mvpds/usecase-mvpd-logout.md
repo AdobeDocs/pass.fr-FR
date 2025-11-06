@@ -1,6 +1,6 @@
 ---
-title: Déconnexion MVPD
-description: Déconnexion MVPD
+title: Déconnexion de MVPD
+description: Déconnexion de MVPD
 exl-id: a2b57d02-9688-48e3-beff-1012cd361d0c
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# Déconnexion MVPD
+# Déconnexion de MVPD
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Les cas d’utilisation de déconnexion peuvent être implémentés par une requête de déconnexion SAML envoyée à IdP ou par un point de terminaison de déconnexion personnalisé appelé.  Les exemples de requête et de réponse ci-dessous fournissent des exemples de mise en oeuvre de la déconnexion SAML.
+Les cas d’utilisation de déconnexion peuvent être implémentés par une requête de déconnexion SAML envoyée à l’IdP ou par un point d’entrée de déconnexion personnalisé appelé.  Les exemples de requête et de réponse ci-dessous fournissent des exemples d’implémentation de la déconnexion SAML.
 
-## Exemple de demande de connexion {#sample-logout-request}
+## Exemple de demande de déconnexion {#sample-logout-request}
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

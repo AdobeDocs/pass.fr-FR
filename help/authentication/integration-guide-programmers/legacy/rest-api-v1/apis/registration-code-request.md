@@ -4,7 +4,7 @@ description: Page d'inscription
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 
 | Point d’entrée | Appelé <br>Par | Entrée   <br>Paramètre | HTTP <br>Méthode | Réponse | HTTP <br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Service de programmation<br>ou<br>d’application en flux continu | 1. <br> du demandeur    (Composant Chemin d’accès)<br>2.  deviceId (haché)   <br>    (Obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POST | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Service de programmation<br>ou<br>d’application en flux continu | &#x200B;1. <br> du demandeur    (Composant Chemin d’accès)<br>2.  deviceId (haché)   <br>    (Obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POSTER | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
 
 {style="table-layout:auto"}
 
@@ -53,7 +53,7 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 | Accepter | Valeur de <br> d’en-tête : application/json. | indiquer le type de contenu que le client doit pouvoir comprendre |
 | demandeur | Paramètre de requête | ID de demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Paramètre de requête | Octets d’ID de l’appareil. |
-| device_info/<br>X-Device-Info | device_info : Corps <br> X-Device-Info : En-tête | Informations sur l’appareil de diffusion en continu.<br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL de GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. <br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-Device-Info | device_info : Corps <br> X-Device-Info : En-tête | Informations sur l’appareil de diffusion en continu.<br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. <br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Paramètre de requête | Identifiant MVPD pour lequel cette opération est valide. |
 | ttl | Paramètre de requête | Durée pendant laquelle ce regcode doit durer en secondes.<br>**Remarque** : la valeur maximale autorisée pour ttl est de 36000 secondes (10 heures). Des valeurs plus élevées entraînent une réponse HTTP 400 (requête incorrecte). Si `ttl` n’est pas renseigné, l’authentification Adobe Pass définit une valeur par défaut de 30 minutes. |
 | _deviceType_ | Paramètre de requête | Obsolète, ne doit pas être utilisé. |
@@ -81,7 +81,7 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### JSON de réponse
 
@@ -122,12 +122,12 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 | généré | Date et heure de création du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
 | expire | Date et heure d’expiration du code d’enregistrement (en millisecondes depuis le 1er janvier 1970 GMT) |
 | deviceId | ID d’appareil unique Base64 |
-| info:deviceId | Type d’appareil Base64 |
-| info:deviceInfo | Base64 Normalised Device Information s&#39;appuie sur les informations reçues de User-Agent, X-Device-Info ou device_info |
-| info:userAgent | Agent utilisateur envoyé par l’application |
-| info:originalUserAgent | Agent utilisateur envoyé par l’application |
-| info:authorizationType | OAUTH2 des appels à l’aide de DCR |
-| info:sourceApplicationInformation | Informations sur l’application telles que configurées dans le DCR |
+| infos :deviceId | Type d’appareil Base64 |
+| infos :deviceInfo | Base64 Normalised Device Information s&#39;appuie sur les informations reçues de User-Agent, X-Device-Info ou device_info |
+| infos :userAgent | Agent utilisateur envoyé par l’application |
+| infos :originalUserAgent | Agent utilisateur envoyé par l’application |
+| infos :authorizationType | OAUTH2 des appels à l’aide de DCR |
+| infos :sourceApplicationInformation | Informations sur l’application telles que configurées dans le DCR |
 
 {style="table-layout:auto"}
 

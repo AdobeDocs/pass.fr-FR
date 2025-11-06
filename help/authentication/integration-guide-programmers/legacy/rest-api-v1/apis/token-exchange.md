@@ -1,6 +1,6 @@
 ---
-title: Exchange d’un jeton SSO Platform pour un jeton d’Adobe
-description: Exchange d’un jeton SSO Platform pour un jeton d’Adobe
+title: Échanger un jeton SSO Platform contre un jeton Adobe
+description: Échanger un jeton SSO Platform contre un jeton Adobe
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# (Hérité) Exchange d’un jeton SSO Platform pour un jeton d’Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
+# (Hérité) Échanger un jeton SSO Platform contre un jeton Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
 >[!IMPORTANT]
 >
@@ -39,11 +39,11 @@ ht-degree: 0%
 
 ## Description {#description}
 
-Permet l’« échange » d’un profil SSO de Platform contre un jeton d’Adobe.
+Permet l’« échange » d’un profil SSO de Platform contre un jeton Adobe.
 
 | Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | Service de programmation</br></br>ou</br></br>d’application en flux continu | 1. demandeur (obligatoire)</br>    </br>2.  deviceId (obligatoire)</br>    3 </br>.  mvpd (obligatoire)</br>    4 </br>.  deviceType (obligatoire)</br>    5 </br>.  SAMLResponse (obligatoire)</br>    6 </br>.  deviceUser (obsolète)</br>    7 </br>.  appId (obsolète) | POST | La réponse réussie sera un 204 No Content, indiquant que le jeton a été créé avec succès et est prêt à être utilisé pour les flux authz. | 204 - Aucun contenu   </br>400 - Requête incorrecte |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. demandeur (obligatoire)</br>    </br>2.  deviceId (obligatoire)</br>    3 </br>.  mvpd (obligatoire)</br>    4 </br>.  deviceType (obligatoire)</br>    5 </br>.  SAMLResponse (obligatoire)</br>    6 </br>.  deviceUser (obsolète)</br>    7 </br>.  appId (obsolète) | POSTER | La réponse réussie sera un 204 No Content, indiquant que le jeton a été créé avec succès et est prêt à être utilisé pour les flux authz. | 204 - Aucun contenu   </br>400 - Requête incorrecte |
 
 
 | Paramètre d’entrée | Description |

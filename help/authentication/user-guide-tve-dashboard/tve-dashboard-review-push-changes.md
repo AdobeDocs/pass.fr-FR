@@ -2,7 +2,7 @@
 title: Vérifier et transmettre les modifications
 description: Découvrez comment vérifier et pousser les modifications dans le tableau de bord TVE.
 exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Suivez ces étapes pour réviser et pousser les modifications.
 
 1. Recherchez la notification de révision et de modification push en bas de l’écran.
 
-   ![Notification des modifications de révision et de notification push](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
+   ![Notification des modifications de révision et de notification push](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
 
    *Boîte de notification Vérifier et envoyer les modifications*
 
@@ -29,7 +29,7 @@ Suivez ces étapes pour réviser et pousser les modifications.
 
 1. Saisissez une brève description de la modification dans **Description de la configuration** pour suivre et comprendre efficacement l’objectif de chaque modification.
 
-   ![Ajouter une description de configuration](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
+   ![Ajouter une description de configuration](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
 
    *Ajouter une description de configuration*
 
@@ -39,7 +39,7 @@ Suivez ces étapes pour réviser et pousser les modifications.
 
 1. Sélectionnez **Affichage** pour passer en revue les valeurs précédentes et nouvelles associées à une modification de configuration.
 
-   ![Afficher les modifications de configuration](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
+   ![Afficher les modifications de configuration](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
 
    *Afficher les modifications de configuration*
 
@@ -49,7 +49,7 @@ Suivez ces étapes pour réviser et pousser les modifications.
    >
    >Le bouton **Push changes** n’est actif qu’après l’ajout d’une **Description de la configuration**.
 
-   ![Intégrer les modifications](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
+   ![Intégrer les modifications](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
 
    *Intégrer les modifications*
 

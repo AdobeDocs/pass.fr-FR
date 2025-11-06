@@ -2,9 +2,9 @@
 title: À propos de l'authentification Adobe Pass
 description: À propos de l'authentification Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1828'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## À propos de TV Everywhere {#about-tv-everywhere}
 
-Les téléspectateurs d&#39;aujourd&#39;hui s&#39;attendent à un accès continu au contenu de la télévision payante, en tout temps et n&#39;importe où. Avec l&#39;essor des appareils connectés à Internet, les auditoires consomment du contenu sur une gamme croissante de plateformes, notamment :
+Les téléspectateurs d’aujourd’hui s’attendent à un accès transparent au contenu de la télévision payante, où que ce soit et à tout moment. Avec l&#39;essor des appareils connectés à Internet, les auditoires consomment du contenu sur une gamme croissante de plateformes, notamment :
 
 * Ordinateurs portables
 * Comprimés
@@ -72,7 +72,7 @@ Pour surmonter ces obstacles, **Adobe® Pass Authentication** simplifie et ratio
 
 L’authentification Adobe Pass assure l’intermédiation sécurisée des transactions de droits entre les programmeurs et les fournisseurs de télévision payante, en veillant à ce que les bons clients puissent accéder au bon contenu facilement.
 
-![](/help/authentication/assets/programmers-connect-authn.png)
+![](../assets/programmers-connect-authn.png)
 
 *Certains des programmeurs et des fournisseurs de télévision payante qui se connectent via l’authentification Adobe Pass*
 
@@ -132,7 +132,7 @@ Des conseils supplémentaires sont disponibles une fois l’intégration officie
 * Intégrez l’authentification Adobe Pass [vérificateur de jeton de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 * Développez une interface utilisateur pour les workflows d’authentification, d’autorisation et de déconnexion.
 
-Pour plus d’informations sur le processus d’intégration du programmeur, reportez-vous aux documents [Guide de démarrage rapide du programmeur](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md) .
+Pour plus d’informations sur le processus d’intégration du programmeur, reportez-vous aux documents [Guide de démarrage rapide du programmeur](/help/authentication/kickstart/programmer-kickstart-guide.md) et [Guide d’intégration du programmeur](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
 
 #### Processus d&#39;intégration du fournisseur de télévision payante {#pay-tv-provider-integration-process}
 
@@ -169,13 +169,13 @@ Pour les programmeurs, l’authentification Adobe Pass fournit des API dans le c
    * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API d’authentification Premium Adobe Pass :
-   * [Réinitialiser l’API Temp Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Fonction TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [API de dégradation](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Fonctionnalité de dégradation](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [API de surveillance du service de droit](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [Réinitialiser l’API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [API de surveillance du service de droit](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
-Pour plus d’informations sur le flux de droits, consultez la documentation du [&#x200B; Guide d’intégration du programmeur &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
+Pour plus d’informations sur le flux de droits, consultez la documentation du [ Guide d’intégration du programmeur ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
 #### Comprendre les droits {#understanding-entitlements}
 
@@ -241,7 +241,7 @@ L’authentification Adobe Pass offre plusieurs avantages par rapport aux autres
 
 * **Authentification unique (SSO) transparente** - Contrairement aux intégrations directes avec des fournisseurs individuels, l’authentification Adobe Pass permet une expérience de connexion persistante lorsque les utilisateurs passent d’un site web ou d’une application à l’autre.
 * **Large Market Penetration** - Une fois qu’un programmeur s’intègre à l’authentification Adobe Pass, il a immédiatement accès aux opérateurs de télévision payante qui couvrent plus de 90 % des foyers américains.
-* **Intégration à l’écosystème Adobe** - Fonctionne en toute transparence avec d’autres solutions Adobe pour la diffusion, la protection et la monétisation de contenu, y compris Adobe Analytics.
+* **Intégration à l’écosystème d’Adobe** - Fonctionne en toute transparence avec d’autres solutions Adobe pour la diffusion, la protection et la monétisation de contenu, y compris Adobe Analytics.
 
 **Dans quelle mesure l’authentification Adobe Pass est-elle sécurisée ?**
 

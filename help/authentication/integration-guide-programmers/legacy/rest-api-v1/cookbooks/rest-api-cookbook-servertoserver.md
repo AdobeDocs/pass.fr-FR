@@ -2,7 +2,7 @@
 title: Manuel de l’API REST (serveur à serveur)
 description: Serveur du guide pas à pas de l’API REST à serveur.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Dans une solution de serveur à serveur opérationnelle, les composants suivants
 ### Enregistrement de client dynamique (DCR)
 
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Authentification (authN)
@@ -73,7 +73,7 @@ Le flux d’authentification est utilisé pour permettre à l’utilisateur de s
 
 Le diagramme suivant illustre le flux d’authentification :
 
-![](/help//authentication/assets/authn-flow.png)
+![](../../../../assets/authn-flow.png)
 
 ### Autorisation (authZ)
 
@@ -86,7 +86,7 @@ Le flux d’autorisation est utilisé pour déterminer si un utilisateur a le dr
 
 Le diagramme suivant illustre le flux d’autorisations :
 
-![](/help//authentication/assets/authz-flow.png)
+![](../../../../assets/authz-flow.png)
 
 ### Déconnexion
 
@@ -98,7 +98,7 @@ associé à l’application.
 
 Le diagramme suivant illustre le flux de déconnexion :
 
-![](/help//authentication/assets/logout-flow.png)
+![](../../../../assets/logout-flow.png)
 
 ### \[Facultatif\] Autorisation préalable (ou pré-vol)
 
@@ -114,7 +114,7 @@ La préautorisation peut être utilisée pour déterminer rapidement à partir d
 
 Le diagramme suivant illustre le flux de préautorisation :
 
-![](/help//authentication/assets/preauthz-flow.png)
+![](../../../../assets/preauthz-flow.png)
 
 
 ### \[Facultatif\] Métadonnées
@@ -130,7 +130,7 @@ Le diagramme suivant illustre le flux de préautorisation :
 
 
 
-![](/help//authentication/assets/user-metadata-api-preauthz.png)
+![](../../../../assets/user-metadata-api-preauthz.png)
 
 
 
@@ -171,7 +171,7 @@ Le service Programmer doit transmettre des informations d’identification d’a
     
     
     
-    L’en-tête doit être ajouté sur **regcode** et **authorize**&#x200B;calls
+    L’en-tête doit être ajouté sur **regcode** et **authorize**calls
     
     Exemples :
     

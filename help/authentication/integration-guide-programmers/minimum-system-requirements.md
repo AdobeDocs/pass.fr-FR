@@ -13,17 +13,17 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence actuelle de Adobe. Aucune utilisation non autorisée n’est autorisée.
+>Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Ce document présente les exigences actuelles pour la mise en oeuvre des intégrations d’authentification Adobe Pass sur les plateformes prises en charge.
+Ce document présente les exigences actuelles de la mise en œuvre des intégrations de l’authentification Adobe Pass sur les plateformes prises en charge.
 
-Les navigateurs et les systèmes d’exploitation répertoriés ci-dessous bénéficieront de la prise en charge de l’équipe d’authentification Adobe Pass, liée aux contrats de niveau de service approuvés. Nous encourageons l’utilisation des dernières versions stables des navigateurs et des systèmes d’exploitation à bénéficier de la prise en charge complète de l’authentification Adobe Pass pour tous les problèmes potentiels, en plus des améliorations de performances, d’efficacité et de sécurité.
+Les navigateurs et systèmes d’exploitation répertoriés ci-dessous bénéficieront de la prise en charge de l’équipe d’authentification d’Adobe Pass, dans le respect des contrats de niveau de service convenus. Nous vous encourageons à utiliser les dernières versions stables des navigateurs et des systèmes d’exploitation pour bénéficier de la prise en charge complète de l’authentification Adobe Pass pour tout problème potentiel, en plus des améliorations de performances, d’efficacité et de sécurité.
 
-Nous reconnaissons également l’existence d’anciens navigateurs et de systèmes d’exploitation actuellement utilisés. Ces appareils obsolètes peuvent toujours fonctionner sans problème, mais ils seront plus sujets aux erreurs. L’approche initiale pour atténuer les problèmes qui apparaissent sur ces plateformes obsolètes doit être mise à niveau vers les versions les plus récentes, qui peuvent être la version du système d’exploitation, la version du navigateur ou la version de l’application installée. Tous les problèmes apparaissant sur ces plateformes seront traités au mieux par l’équipe d’authentification Adobe Pass.
+Nous reconnaissons également l’existence d’anciens navigateurs et systèmes d’exploitation actuellement utilisés. Ces appareils obsolètes peuvent toujours fonctionner sans problème, mais ils seront plus sujets aux erreurs. L’approche initiale pour atténuer les problèmes apparaissant sur ces plateformes obsolètes doit être de mettre à niveau vers les dernières versions, qui peuvent être la version du système d’exploitation, la version du navigateur ou la version de l’application installée. Tout problème apparaissant sur ces plateformes sera traité au mieux par l’équipe d’authentification d’Adobe Pass.
 
-## Configuration requise du navigateur et du système d’exploitation {#browser-OS-system-requirements}
+## Configuration requise pour le navigateur et le système d’exploitation {#browser-OS-system-requirements}
 
-| Navigateur web/mobile (†) | Versions prises en charge |
+| Navigateur Web/Mobile (†) | Versions prises en charge |
 |------------------------------|--------------------|
 | Google Chrome | **90** ou version ultérieure |
 | Mozilla Firefox | **57** ou version ultérieure |
@@ -32,7 +32,7 @@ Nous reconnaissons également l’existence d’anciens navigateurs et de systè
 
 >[!IMPORTANT]
 > 
-> Adobe Pass Authentication recommande de ne pas utiliser le mode privé ou incognito.
+> L’authentification Adobe Pass déconseille d’utiliser le mode privé ou incognito.
 
 | Système d’exploitation | Versions prises en charge |
 |---------------------|------------------------------|
