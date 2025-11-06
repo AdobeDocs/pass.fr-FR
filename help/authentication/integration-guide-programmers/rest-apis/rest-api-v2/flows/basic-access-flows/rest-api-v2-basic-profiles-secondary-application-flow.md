@@ -2,7 +2,7 @@
 title: Profils De Base - Application Secondaire - Flux
 description: API REST V2 - Profils de base - Application Secondaire - Flux
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '418'
 ht-degree: 0%

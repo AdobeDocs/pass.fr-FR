@@ -2,7 +2,7 @@
 title: Récupération de la liste des ressources préautorisées
 description: Récupération de la liste des ressources préautorisées
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '390'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Il existe deux ensembles d’API : l’un pour l’application de diffusion en c
 | deviceId | Octets d’ID de l’appareil. |
 | ressource | Chaîne contenant une liste délimitée par des virgules de resourceId qui identifie le contenu susceptible d’être accessible à un utilisateur ou une utilisatrice et qui est reconnue par les points d’entrée d’autorisation MVPD. |
 | device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués, par exemple, Roku, AppleTV et Xbox.</br></br>Voir, [avantages de l’utilisation du paramètre de type d’appareil sans client dans les mesures de réussite &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : le `device_info` remplacera ce paramètre. |
+| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués, par exemple, Roku, AppleTV et Xbox.</br></br>Voir, [avantages de l’utilisation du paramètre de type d’appareil sans client dans les mesures de réussite ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : le `device_info` remplacera ce paramètre. |
 | _deviceUser_ | Identifiant utilisateur de l’appareil. |
 | _appId_ | Nom/ID de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. |
 

@@ -2,7 +2,7 @@
 title: Authentification Adobe Pass et nouveau modèle d’autorisations Android 6 « Marshmallow »
 description: Authentification Adobe Pass et nouveau modèle d’autorisations Android 6 « Marshmallow »
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 La nouvelle version d’Android 6 Marshmallow introduit certaines mises à jour du modèle d’autorisations, ce qui peut affecter le comportement des applications qui utilisent la version 1.8 et ultérieure du SDK d’authentification Adobe Pass.
 
-Nouvelle fonctionnalité, le nouveau système d’exploitation Android offre un contrôle granulaire [&#x200B; sur les autorisations dont les applications ont besoin au moment de l’installation et de l’exécution](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
+Nouvelle fonctionnalité, le nouveau système d’exploitation Android offre un contrôle granulaire [ sur les autorisations dont les applications ont besoin au moment de l’installation et de l’exécution](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
 
 >[!IMPORTANT]
 >

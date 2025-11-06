@@ -2,7 +2,7 @@
 title: Récupération de la configuration pour un fournisseur de services spécifique
 description: API REST V2 - Récupération de la configuration pour un fournisseur de services spécifique
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 1%

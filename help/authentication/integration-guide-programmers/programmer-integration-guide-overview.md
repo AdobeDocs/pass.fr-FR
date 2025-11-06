@@ -2,7 +2,7 @@
 title: Guide d’intégration du programmeur
 description: Guide d’intégration du programmeur
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -73,7 +73,7 @@ Cette section décrit plus en détail les cas d’utilisation de l’intégratio
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Authentification** | **Élevé** | Authentification | Pour plus d’informations, reportez-vous aux documents agrégés dans la section [Phase d’authentification](#authentication-phase). |
 |                      | **Élevé** | Authentification à domicile (HBA) | Pour plus d’informations, reportez-vous à la section [Authentification basée sur l’accueil](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md). |
-|                      | **Élevé** | Authentification unique (SSO) | Pour plus d&#39;informations, reportez-vous aux documents agrégés sous la section [&#x200B; Authentification unique (SSO)](#sso). |
+|                      | **Élevé** | Authentification unique (SSO) | Pour plus d&#39;informations, reportez-vous aux documents agrégés sous la section [ Authentification unique (SSO)](#sso). |
 |                      | **Élevé** | Sélectionner le MVPD | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de configuration](#configuration-phase). |
 |                      | **Medium** | Page de connexion à Brand MVPD | Permet aux MVPD de fournir aux pages de connexion des marques spécifiques au programmeur ou au fournisseur de services, y compris la prise en charge des préférences linguistiques par défaut. |
 |                      | **Élevé** | Configurer les valeurs de durée de vie (TTL) par plateforme | Pour plus d’informations, consultez le [Guide de l’utilisateur des intégrations de tableaux de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows). |

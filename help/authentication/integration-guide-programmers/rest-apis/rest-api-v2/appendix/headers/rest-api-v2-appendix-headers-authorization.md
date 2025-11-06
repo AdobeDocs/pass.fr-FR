@@ -2,7 +2,7 @@
 title: En-tête - Autorisation
 description: API REST V2 - En-tête - Autorisation
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 3%
@@ -20,7 +20,7 @@ ht-degree: 3%
 
 L’en-tête de requête <b>Authorization</b> contient le jeton d’accès `Bearer` requis par l’application cliente pour accéder aux API protégées d’Adobe Pass.
 
-Pour plus d’informations sur le mécanisme d’accès aux API protégées d’Adobe Pass, reportez-vous à la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](../../../rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations sur le mécanisme d’accès aux API protégées d’Adobe Pass, reportez-vous à la documentation [ Présentation de l’enregistrement client dynamique ](../../../rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Syntaxe {#syntax}
 

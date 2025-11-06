@@ -2,7 +2,7 @@
 title: Manuel d’Android SDK
 description: Manuel d’Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%
@@ -221,6 +221,6 @@ flux.
 
 ### Flux utilisateur pour la connexion avec plusieurs MVPD et la déconnexion {#user_flows}
 
-[Vous avez ici &#x200B;](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
+[Vous avez ici ](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
 
 Le comportement décrit est disponible lors de l’utilisation d’Android SDK version >= 2.0.0.

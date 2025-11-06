@@ -2,7 +2,7 @@
 title: Manuel de l’API REST (serveur à serveur)
 description: Serveur du guide pas à pas de l’API REST à serveur.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Dans une solution de serveur à serveur opérationnelle, les composants suivants
 ### Enregistrement de client dynamique (DCR)
 
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Authentification (authN)
@@ -171,7 +171,7 @@ Le service Programmer doit transmettre des informations d’identification d’a
     
     
     
-    L’en-tête doit être ajouté sur **regcode** et **authorize**&#x200B;calls
+    L’en-tête doit être ajouté sur **regcode** et **authorize**calls
     
     Exemples :
     

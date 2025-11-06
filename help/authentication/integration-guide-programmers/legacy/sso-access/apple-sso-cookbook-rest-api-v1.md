@@ -2,7 +2,7 @@
 title: Manuel de l’authentification unique Apple (API REST V1)
 description: Manuel de l’authentification unique Apple (API REST V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -352,7 +352,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l’étape [&#x200B; Transférer la demande Adobe à l’authentification unique du partenaire pour obtenir le profil »](#step7) Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* par la suite) avant d’effectuer l’appel.
+> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l’étape [ Transférer la demande Adobe à l’authentification unique du partenaire pour obtenir le profil »](#step7) Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* par la suite) avant d’effectuer l’appel.
 
 #### Étape : « Le jeton Adobe a-t-il été généré avec succès ? » {#step9}
 

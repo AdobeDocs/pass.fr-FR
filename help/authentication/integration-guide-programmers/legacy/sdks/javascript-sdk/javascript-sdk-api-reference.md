@@ -2,7 +2,7 @@
 title: Référence de l’API JavaScript SDK
 description: Référence de l’API JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -309,7 +309,7 @@ Par exemple :
 **Description :** appelez cette fonction lorsque l’utilisateur a sélectionné un MVPD dans l’interface utilisateur de sélection de fournisseur afin d’envoyer la sélection de fournisseur à Access Enabler ou appelez cette fonction avec un paramètre null au cas où l’utilisateur aurait ignoré l’interface utilisateur de sélection de fournisseur sans sélectionner de fournisseur.
 
 **Rappels
-triggered:**[&#x200B; setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+triggered:**[ setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Vous devez implémenter ces rappels pour gérer les réponses à vos appels de r
 
 **Description :** implémentez ce rappel si l’utilisateur a sélectionné un MVPD qui nécessite un iFrame pour afficher l’interface utilisateur de sa page de connexion d’authentification.
 
-**Déclenché par :**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Déclenché par :**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Haut de la page](#top)
 

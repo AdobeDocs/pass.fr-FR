@@ -2,7 +2,7 @@
 title: Glossaire de l’API REST V2
 description: Glossaire de l’API REST V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -31,9 +31,9 @@ L’authentification est un processus qui permet à un utilisateur de prouver so
 
 #### Code d’authentification {#code}
 
-Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [&#x200B; session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
+Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [ session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
 
-Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [&#128279;](#primary-application) ou une application (programmeur) Secondaire [&#128279;](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
+Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [](#primary-application) ou une application (programmeur) Secondaire [](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
 
 Synonyme de l&#39;ancien terme utilisé code d&#39;enregistrement.
 
@@ -201,7 +201,7 @@ L’application secondaire peut s’exécuter sur le même appareil que l’appl
 
 Le jeton de service est un identifiant utilisateur unique généré par un service ou une structure (bibliothèque) lié à l’utilisateur et fourni au [programmeur](#programmer) pour activer une expérience utilisateur d’authentification unique.
 
-Pour plus d’informations, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux de jeton de service &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Pour plus d’informations, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 #### Prestataire {#service-provider}
 
