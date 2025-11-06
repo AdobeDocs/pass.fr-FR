@@ -352,7 +352,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l’étape [ Transférer la demande Adobe à l’authentification unique du partenaire pour obtenir le profil »](#step7) Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* par la suite) avant d’effectuer l’appel.
+> **<u>Conseil pro :</u>** prenez connaissance du fragment de code de l’étape [&#x200B; Transférer la demande Adobe à l’authentification unique du partenaire pour obtenir le profil »](#step7) Cette *`vsaMetadata!.samlAttributeQueryResponse!`* représente le *`SAMLResponse`*, qui doit être transmis sur [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) et nécessite une manipulation et un codage de chaîne (codés en *Base64* et en *URL* par la suite) avant d’effectuer l’appel.
 
 #### Étape : « Le jeton Adobe a-t-il été généré avec succès ? » {#step9}
 

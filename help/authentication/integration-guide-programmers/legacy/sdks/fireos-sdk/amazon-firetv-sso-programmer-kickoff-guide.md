@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Introduction {#intro}
 
-Ce document décrit les informations nécessaires pour intégrer le nouveau SDK fireTV d’Adobe Pass Authentication **** dans votre application fireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme fireTV d’Amazon, offrant ainsi la prise en charge de l’authentification unique **Single Sign On**. Pour bénéficier de l’authentification SSO, vous devez fournir quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK fireTV. Certaines modifications apportées aux flux d’authentification sont détaillées ci-dessous.
+Ce document décrit les informations nécessaires pour intégrer le nouveau SDK fireTV d’Adobe Pass Authentication **&#x200B;**&#x200B;dans votre application fireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme fireTV d’Amazon, offrant ainsi la prise en charge de l’authentification unique **Single Sign On**. Pour bénéficier de l’authentification SSO, vous devez fournir quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK fireTV. Certaines modifications apportées aux flux d’authentification sont détaillées ci-dessous.
 
 ## Architecture de haut niveau et intégration au niveau du système d’exploitation {#high}
 

@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Objet {#subj-defn}
 
-* Consommateur du contenu (vidéo) sur Internet. Nous évitons délibérément le terme _**utilisateur**_, car la surveillance de simultanéité traite généralement des ID de compte MVPD (qui impliquent plusieurs utilisateurs réels partageant le même contrat, par exemple des membres de la famille d’un foyer).
+* Consommateur du contenu (vidéo) sur Internet. Nous évitons délibérément le terme _&#x200B;**utilisateur**&#x200B;_, car la surveillance de simultanéité traite généralement des ID de compte MVPD (qui impliquent plusieurs utilisateurs réels partageant le même contrat, par exemple des membres de la famille d’un foyer).
 
 * Pour chaque flux, le sujet peut être amélioré avec des attributs liés à la personne réelle utilisant le service, à son appareil connecté au réseau, etc.
 

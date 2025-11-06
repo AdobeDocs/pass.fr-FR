@@ -57,4 +57,4 @@ n’hésitez pas à contacter les responsables existants pour en discuter.
 
 ## Problèmes de sécurité
 
-Les problèmes de sécurité ne doivent pas être signalés dans ce dispositif de suivi de problèmes. Soumettez plutôt [ problème à nos experts en sécurité](https://helpx.adobe.com/security/alertus.html)
+Les problèmes de sécurité ne doivent pas être signalés dans ce dispositif de suivi de problèmes. Soumettez plutôt [&#x200B; problème à nos experts en sécurité](https://helpx.adobe.com/security/alertus.html)

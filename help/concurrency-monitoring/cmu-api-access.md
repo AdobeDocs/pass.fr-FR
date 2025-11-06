@@ -29,7 +29,7 @@ Suivez les étapes des sections ci-dessous pour y accéder.
 1. disposer d’une application enregistrée dans le serveur Adobe Pass DCR ; Pour cette étape, veuillez contacter notre [équipe d’assistance](mailto:tve-support@adobe.com).
 
 2. Obtenir le relevé du logiciel
-   1. Accédez au tableau de bord Adobe Pass TVE [](https://experience.adobe.com/#/pass/authentication)
+   1. Accédez au tableau de bord Adobe Pass TVE [&#128279;](https://experience.adobe.com/#/pass/authentication)
    2. Sélectionner le programmeur
    3. Accédez à l’onglet *Applications enregistrées*
    4. Sélectionner une application

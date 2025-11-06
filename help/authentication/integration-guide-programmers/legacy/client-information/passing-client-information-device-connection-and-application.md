@@ -116,7 +116,7 @@ Le SDK AccessEnabler iOS/tvOS prend en charge **en remplaçant l’ensemble** de
 
 Le SDK Android/FireOS `AccessEnabler` crée par défaut un objet JSON d’informations client, qui sera transmis aux services d’authentification Adobe Pass, sauf si vous le remplacez.
 
-Le SDK Android/FireOS `AccessEnabler` prend en charge **le remplacement de l’ensemble** de l’objet JSON d’informations client par le paramètre [ de ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
+Le SDK Android/FireOS `AccessEnabler` prend en charge **le remplacement de l’ensemble** de l’objet JSON d’informations client par le paramètre [&#x200B; de &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >
@@ -388,7 +388,7 @@ Les informations d’application peuvent être structurées comme suit :
 >[!NOTE]
 >
 >**Ressources:**
->* [UIDevice ](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
+>* [UIDevice &#x200B;](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
 >* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
 >* [À propos de l’accessibilité](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 

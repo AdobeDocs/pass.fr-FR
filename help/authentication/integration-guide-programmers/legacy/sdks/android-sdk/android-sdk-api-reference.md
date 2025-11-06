@@ -172,7 +172,7 @@ Les valeurs seront transmises au serveur indépendamment du flux actuel (authent
 
 **Description :** vérifie le statut d’authentification. Pour ce faire, il recherche un jeton d’authentification valide dans l’espace de stockage du jeton local. Cette méthode n’effectue aucun appel réseau et nous vous recommandons de l’appeler sur le thread principal. Il est utilisé par l’application pour interroger le statut d’authentification de l’utilisateur et mettre à jour l’interface utilisateur en conséquence (c’est-à-dire mettre à jour l’interface utilisateur de connexion/déconnexion). Le statut de l&#39;authentification est communiqué à l&#39;application via le rappel [*setAuthenticationStatus()*](#setAuthNStatus).
 
-Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil.  Pour plus d’informations sur cette fonctionnalité, consultez la section [ Instructions de mise en cache ](#$caching) de la présentation technique d’Android.
+Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil.  Pour plus d’informations sur cette fonctionnalité, consultez la section [&#x200B; Instructions de mise en cache &#x200B;](#$caching) de la présentation technique d’Android.
 
 | Appel API : vérification du statut d&#39;authentification |
 | --- |
@@ -196,7 +196,7 @@ Si un MVPD prend en charge la fonction « Authentification par demandeur », plu
 
 Comme les informations d’identification de l’utilisateur sont vérifiées sur la page de connexion de MVPD, votre application doit surveiller les multiples opérations de redirection qui ont lieu lorsque l’utilisateur s’authentifie sur la page de connexion de MVPD. Lorsque les informations d&#39;identification correctes sont saisies, le contrôle WebView est redirigé vers une URL personnalisée définie par la constante *AccessEnabler.ADOBEPASS\_REDIRECT\_URL*. Cette URL ne doit pas être chargée par le WebView. L’application doit intercepter cette URL et interpréter cet événement comme un signal indiquant que la phase de connexion est terminée. Il doit ensuite transmettre le contrôle à Access Enabler pour terminer le flux d’authentification (en appelant la méthode *getAuthenticationToken()*).
 
-Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil (un par programmeur).  Pour plus d’informations sur cette fonctionnalité, consultez la section [ Instructions de mise en cache ](#$caching) de la présentation technique d’Android.
+Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil (un par programmeur).  Pour plus d’informations sur cette fonctionnalité, consultez la section [&#x200B; Instructions de mise en cache &#x200B;](#$caching) de la présentation technique d’Android.
 
 Enfin, le statut de l&#39;authentification est communiqué à l&#39;application via le rappel *setAuthenticationStatus()*.
 
