@@ -59,7 +59,7 @@ curl -i -X POST -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/se
 
 Il n’est pas nécessaire de fournir un code de terminaison lors du premier appel, car nous n’avons pas d’autres flux actifs. Et aucun attribut de métadonnées, car aucun n’a été renvoyé par l’appel de récupération des métadonnées .
 
-Les paramètres **subject** et **idp** sont obligatoires, ils sont spécifiés comme des variables de chemin URI. Vous pouvez obtenir les paramètres **subject** et **idp** en effectuant un appel pour les champs de métadonnées **mvpd** et **amontUserID** à partir de l’authentification Adobe Pass. Consultez également la [présentation des API de métadonnées](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). Pour cet exemple, nous indiquerons la valeur « 12345 » comme objet et « adobe » comme fournisseur d’identité.
+Les paramètres **subject** et **idp** sont obligatoires, ils sont spécifiés comme des variables de chemin URI. Vous pouvez obtenir les paramètres **subject** et **idp** en effectuant un appel pour les champs de métadonnées **mvpd** et **amontUserID** à partir de l’authentification Adobe Pass. Consultez également la [présentation des API de métadonnées](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=fr#). Pour cet exemple, nous indiquerons la valeur « 12345 » comme objet et « adobe » comme fournisseur d’identité.
 
 ```
 # Response Code
