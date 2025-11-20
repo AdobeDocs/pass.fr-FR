@@ -34,7 +34,7 @@ ht-degree: 5%
    - [Modèles de mise en œuvre](technical/implementation-models.md)
    - [Politique De Client Unique - Applications Multiples](technical/single-tenant-policy-mult-app.md)
    - [Limiter L’Utilisation Simultanée De Plusieurs Applications](technical/restrict-concurr-usage-mult-apps.md)
-- [&#x200B; Rapports d’utilisation de CM &#x200B;](reports/cm-usage-reports.md) {#cm-usage-reports}
+- [ Rapports d’utilisation de CM ](reports/cm-usage-reports.md) {#cm-usage-reports}
 - Notes techniques {#tech-notes}
    - [Attributs de métadonnées standard](technical/standard-metadata-attributes.md)
    - [Métadonnées personnalisées](technical/custom-metadata.md)
