@@ -44,7 +44,7 @@ En mode LIFO, lorsqu&#39;un utilisateur tente de démarrer un nouveau flux et at
 
 ### Diagramme de flux LIFO
 
-![ Diagramme de flux LIFO ](../assets/lifo-flow-diagram.png)
+![&#x200B; Diagramme de flux LIFO &#x200B;](../assets/lifo-flow-diagram.png)
 
 *Image : flux de stratégie LIFO (Last In, First Out) : les nouvelles sessions sont bloquées lorsque les limites sont atteintes, ce qui nécessite l’arrêt manuel des sessions existantes.*
 
@@ -73,7 +73,7 @@ En mode FIFO, lorsqu&#39;un utilisateur tente de démarrer un nouveau flux et at
 
 ### Diagramme de flux FIFO
 
-![ Diagramme de flux FIFO ](../assets/fifo-flow-diagram.png)
+![&#x200B; Diagramme de flux FIFO &#x200B;](../assets/fifo-flow-diagram.png)
 
 *Image : flux de stratégie FIFO (First In, First Out) : les nouvelles sessions peuvent commencer par mettre fin aux sessions existantes avec une sélection de l’utilisateur.*
 
