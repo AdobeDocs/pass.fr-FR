@@ -2,7 +2,7 @@
 title: Glossaire
 description: Glossaire des termes dans la surveillance de simultanéité
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 ## Application {#application-defn}
 
 * Développé par le client pour l’accès au contenu vidéo
-* prend et applique les décisions concernant l’accès au contenu en fonction des informations fournies par le service de surveillance simultanée (cela est valide dans le cas du [point d’information sur les politiques](/help/concurrency-monitoring/policy-info-pt-versionone.md)) ;
+* prend et applique les décisions concernant l’accès au contenu en fonction des informations fournies par le service de surveillance simultanée (cela est valide dans le cas du [point d’information sur les politiques](/help/concurrency-monitoring/technical/policy-info-pt-versionone.md)) ;
 * Disposera d’un **ID d’application** unique fourni par Adobe.
 
 ## Service de surveillance de concurrence {#cm-service-defn}
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Objet {#subj-defn}
 
-* Consommateur du contenu (vidéo) sur Internet. Nous évitons délibérément le terme _&#x200B;**utilisateur**&#x200B;_, car la surveillance de simultanéité traite généralement des ID de compte MVPD (qui impliquent plusieurs utilisateurs réels partageant le même contrat, par exemple des membres de la famille d’un foyer).
+* Consommateur du contenu (vidéo) sur Internet. Nous évitons délibérément le terme _**utilisateur**_, car la surveillance de simultanéité traite généralement des ID de compte MVPD (qui impliquent plusieurs utilisateurs réels partageant le même contrat, par exemple des membres de la famille d’un foyer).
 
 * Pour chaque flux, le sujet peut être amélioré avec des attributs liés à la personne réelle utilisant le service, à son appareil connecté au réseau, etc.
 
