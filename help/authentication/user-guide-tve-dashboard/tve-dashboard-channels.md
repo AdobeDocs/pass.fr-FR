@@ -2,9 +2,9 @@
 title: Canaux
 description: Découvrez les canaux et leurs différentes configurations dans le tableau de bord TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -88,9 +88,9 @@ Une nouvelle modification de configuration a été créée et est prête pour la
 
 ### Intégrations {#integrations}
 
-Cet onglet affiche la liste des intégrations disponibles entre le canal actuellement sélectionné et les MVPD. La liste présente chaque intégration avec son statut, en indiquant si elle est activée ou non. Sélectionnez une intégration spécifique dans cette liste pour accéder à des informations détaillées dans la section [&#x200B; Intégrations &#x200B;](tve-dashboard-integrations.md).
+Cet onglet affiche la liste des intégrations disponibles entre le canal actuellement sélectionné et les MVPD. La liste présente chaque intégration avec son statut, en indiquant si elle est activée ou non. Sélectionnez une intégration spécifique dans cette liste pour accéder à des informations détaillées dans la section [ Intégrations ](tve-dashboard-integrations.md).
 
-![&#x200B; Liste des intégrations disponibles &#x200B;](../assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
+![ Liste des intégrations disponibles ](../assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
 
 *Liste des intégrations disponibles*
 
@@ -268,7 +268,8 @@ Pour télécharger un relevé de logiciel, procédez comme suit.
 
 ### Schémas personnalisés {#custom-schemes}
 
-Cet onglet affiche une liste des schémas personnalisés. Pour plus d’informations sur l’utilisation des schémas personnalisés, reportez-vous à l’enregistrement de l’application [iOS/tvOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md).
+Cet onglet affiche une liste des schémas personnalisés.
+Les schémas personnalisés peuvent être utilisés pour les appareils Android et iOS.
 
 Vous pouvez apporter les modifications suivantes aux schémas personnalisés :
 
@@ -286,11 +287,42 @@ Pour générer un nouveau schéma personnalisé, procédez comme suit.
 
 Une nouvelle modification de configuration a été créée et est prête pour la mise à jour du serveur. Pour utiliser le nouveau schéma personnalisé répertorié dans la section **Schémas personnalisés**, passez au flux [réviser et pousser les modifications](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
-#### Schémas personnalisés hérités {#inherited-custom-schemes}
+#### Si vous n’avez pas accès au tableau de bord Adobe TVE :
+
+Envoyez un ticket à <tve-support@adobe.com>. Veuillez indiquer l’ID du canal. Une personne de notre équipe d’assistance créera un schéma personnalisé pour vous.
+
+#### ANDROID {#Android}
+
+1. Schéma personnalisé - Le schéma personnalisé créé dans le tableau de bord TVE peut être utilisé pour les applications d’appareils Android.
+
+1. Dans le fichier de ressources de votre application, `strings.xml` ajoutez le code suivant :
+
+```XML
+       <string name="software_statement">softwarestatement value</string>
+       <string name="redirect_uri">adbe.TTIFAaWuR-CmxXv1Di8PlQ://</string>
+```
+
+#### iOS {#iOS}
+
+Le schéma personnalisé peut être utilisé dans le fichier `info.plist` de votre application. Vous trouverez ci-dessous l&#39;exemple où vous devez ajouter l&#39;URL générée dans le tableau de bord TVE :
+
+```plist
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>adbe.u-XFXJeTSDuJiIQs0HVRAg</string> // replace this with your custom scheme
+            </array>
+        </dict>
+    </array>
+```
+
+### Schémas personnalisés hérités {#inherited-custom-schemes}
 
 Les sociétés de médias définissent ces schémas personnalisés à leur propre niveau. Tous les canaux associés à la même société de médias peuvent utiliser ces schémas personnalisés.
 
-![&#x200B; Schémas personnalisés hérités &#x200B;](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+![ Schémas personnalisés hérités ](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
 
 *Schémas personnalisés hérités*
 
