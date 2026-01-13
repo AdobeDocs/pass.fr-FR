@@ -2,9 +2,9 @@
 title: En-tête - AP-Partner-Framework-Status
 description: API REST V2 - En-tête - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
+source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '415'
 ht-degree: 1%
 
 ---
@@ -70,8 +70,8 @@ La valeur `Base64-encoded` de l’élément JSON contenant les attributs suivant
                   <ul>
                      <li><b>authorized</b><br/>L’utilisateur a autorisé l’application à accéder aux informations d’abonnement.</li>
                      <li><b>refusé</b><br/>L’utilisateur a refusé que l’application accède aux informations d’abonnement.</li>
-                     <li><b>pending</b><br/>L'utilisateur n'a pas encore choisi d'autoriser l'application à accéder aux informations d'abonnement.</li>
-                     <li><b>notDefined</b><br/>L’application n’est pas autorisée à accéder aux informations d’abonnement.</li>
+                     <li><b>restreint</b><br/>L’application n’est pas autorisée à accéder aux informations d’abonnement.</li>
+                     <li><b>notDefined</b><br/>L’utilisateur n’a pas choisi d’autoriser l’application à accéder aux informations d’abonnement.</li>
                   </ul>
                </td>
             </tr>
