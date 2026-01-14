@@ -2,9 +2,9 @@
 title: Manuel de l’authentification unique Apple (API REST V2)
 description: Manuel de l’authentification unique Apple (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 63ffde4a32f003d7232d2c79ed6878ca59748f74
 workflow-type: tm+mt
-source-wordcount: '3609'
+source-wordcount: '3857'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Avant de poursuivre l’authentification unique Apple à l’aide des flux de pa
 >
 > <br/>
 >
-> * L’application de diffusion en continu a rempli les [&#x200B; conditions préalables à l’intégration &#x200B;](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites-programmer) qui s’appliquent à un programmeur et sont requises pour activer l’expérience utilisateur d’authentification unique d’Apple.
+> * L’application de diffusion en continu a rempli les [ conditions préalables à l’intégration ](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites-programmer) qui s’appliquent à un programmeur et sont requises pour activer l’expérience utilisateur d’authentification unique d’Apple.
 
 ### Workflow {#workflow}
 
@@ -75,7 +75,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupération des informations d’identification du client &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupération des informations d’identification du client ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
 
    >[!TIP]
    >
@@ -85,7 +85,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!IMPORTANT]
    >
-   > Consultez la documentation de l’API [&#x200B; Récupération du jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
+   > Consultez la documentation de l’API [ Récupération du jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
    >
    > * Tous les paramètres _obligatoires_ tels que `client_id`, `client_secret` et `grant_type`
    > * Tous les en-têtes _obligatoires_ tels que `Content-Type`, `X-Device-Info`
@@ -105,7 +105,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupérer le jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >
@@ -131,6 +131,62 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    > <br/>
    >
    > L’application de diffusion en continu doit s’assurer de spécifier une valeur booléenne égale à `false` pour la propriété [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) dans l’objet `VSAccountMetadataRequest`, afin d’indiquer que l’utilisateur ne peut pas être interrompu à cette phase.
+
+   >[!TIP]
+   >
+   > **<u>Conseil pro :</u>** suivez le fragment de code et prêtez une attention particulière aux commentaires.
+
+   ```swift
+   ...
+   let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+   videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+            switch (accessStatus) {
+            // The user allows the application to access subscription information.
+            case VSAccountAccessStatus.granted:
+                    // Construct the request for subscriber account information.
+                    let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                    // This is actually the SAML Issuer not the channel ID.
+                    vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                    // This is the subscription account information needed at this step.
+                    vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                    // This is the subscription account information needed at this step.
+                    vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                    // This is going to make the Video Subscriber Account Framework to refrain from prompting the user with the providers picker at this step. 
+                    vsaMetadataRequest.isInterruptionAllowed = false;
+   
+                    // Submit the request for subscriber account information - accountProviderIdentifier.
+                    videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in        
+                        if (vsaMetadata != nil && vsaMetadata!.accountProviderIdentifier != nil) {
+                            // The vsaMetadata!.authenticationExpirationDate will contain the expiration date for current authentication session.
+                            // The vsaMetadata!.authenticationExpirationDate should be compared against current date.
+                            ...
+                            // The vsaMetadata!.accountProviderIdentifier will contain the provider identifier as it is known for the platform configuration.
+                            // The vsaMetadata!.accountProviderIdentifier represents the platformMappingId in terms of Adobe Pass Authentication configuration.
+                            ...
+                            // The application must determine the MVPD id property value based on the platformMappingId property value obtained above.
+                            // The application must use the MVPD id further in its communication with Adobe Pass Authentication services.
+                            ...
+                            // Continue with the "Retrieve profiles" step.
+                            ...
+                        } else {
+                            // The user is not authenticated at platform level, continue with the "Retrieve profiles" step.
+                            ...
+                        }
+                    }
+   
+            // The user has not yet made a choice or does not allow the application to access subscription information.
+            default:
+                // Continue with the "Retrieve profiles" step.
+                ...
+            }
+   }
+   ...
+   ```
 
 1. **Renvoyer les informations de statut du framework du partenaire :** l’application de diffusion en continu valide les données de réponse pour s’assurer que les conditions de base sont remplies :
    * Le statut d’accès de l’autorisation utilisateur est accordé.
@@ -216,6 +272,102 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > L’application de diffusion en continu doit s’assurer de spécifier une valeur booléenne égale à `true` pour la propriété [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) dans l’objet `VSAccountMetadataRequest`, afin d’indiquer que l’utilisateur peut être interrompu pour sélectionner le fournisseur de télévision à cette phase.
 
+   >[!TIP]
+   >
+   > **<u>Conseil pro :</u>** suivez le fragment de code et prêtez une attention particulière aux commentaires.
+
+   ```swift
+    ...
+    let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+    // This must be a class implementing the VSAccountManagerDelegate protocol.
+    let videoSubscriberAccountManagerDelegate: VideoSubscriberAccountManagerDelegate = VideoSubscriberAccountManagerDelegate();
+   
+    videoSubscriberAccountManager.delegate = videoSubscriberAccountManagerDelegate;
+   
+    videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+                switch (accessStatus) {
+                // The user allows the application to access subscription information.
+                case VSAccountAccessStatus.granted:
+                        // Construct the request for subscriber account information.
+                        let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                        // This is actually the SAML Issuer not the channel ID.
+                        vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                        // This is the subscription account information needed at this step.
+                        vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                        // This is the subscription account information needed at this step.
+                        vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                        // This is going to make the Video Subscriber Account Framework to prompt the user with the providers picker at this step. 
+                        vsaMetadataRequest.isInterruptionAllowed = true;
+   
+                        // This can be computed from the Configuration service response in order to filter the TV providers from the Apple picker.
+                        vsaMetadataRequest.supportedAccountProviderIdentifiers = supportedAccountProviderIdentifiers;
+   
+                        // This can be computed from the Configuration service response in order to sort the TV providers from the Apple picker.
+                        if #available(iOS 11.0, tvOS 11, *) {
+                            vsaMetadataRequest.featuredAccountProviderIdentifiers = featuredAccountProviderIdentifiers;
+                        }
+   
+                        // Submit the request for subscriber account information - accountProviderIdentifier.
+                        videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in                        
+                            if (vsaMetadata != nil && vsaMetadata!.accountProviderIdentifier != nil) {
+                                // The vsaMetadata!.authenticationExpirationDate will contain the expiration date for current authentication session.
+                                // The vsaMetadata!.authenticationExpirationDate should be compared against current date.
+                                ...
+                                // The vsaMetadata!.accountProviderIdentifier will contain the provider identifier as it is known for the platform configuration.
+                                // The vsaMetadata!.accountProviderIdentifier represents the platformMappingId in terms of Adobe Pass Authentication configuration.
+                                ...
+                                // The application must determine the MVPD id property value based on the platformMappingId property value obtained above.
+                                // The application must use the MVPD id further in its communication with Adobe Pass Authentication services.
+                                ...
+                                // Continue with the "Retrieve partner authentication request" step.
+                                ...
+                            } else {
+                                // The user is not authenticated at platform level.
+                                if (vsaError != nil) {
+                                    // The application can check to see if the user selected a provider which is present in Apple picker, but the provider is not onboarded in platform SSO.
+                                    if let error: NSError = (vsaError! as NSError), error.code == 1, let appleMsoId = error.userInfo["VSErrorInfoKeyUnsupportedProviderIdentifier"] as! String? {
+                                        var mvpd: Mvpd? = nil;
+   
+                                        // The requestor.mvpds must be computed during the "Return configuration" step. 
+                                        for provider in requestor.mvpds {
+                                            if provider.platformMappingId == appleMsoId {
+                                                mvpd = provider;
+                                                break;
+                                            }
+                                        }
+   
+                                        if mvpd != nil {
+                                            // Continue with the "Proceed with basic authentication flow" step, but you can skip prompting the user with your MVPD picker and use the mvpd selection, therefore creating a better UX.
+                                            ...
+                                        } else {
+                                            // Continue with the "Proceed with basic authentication flow" step.
+                                            ...
+                                        }
+                                    } else {
+                                        // Continue with the "Proceed with basic authentication flow" step.
+                                        ...
+                                    }
+                                } else {
+                                    // Continue with the "Proceed with basic authentication flow" step.
+                                    ...
+                                }
+                            }
+                        }
+   
+                // The user has not yet made a choice or does not allow the application to access subscription information.
+                default:
+                    // Continue with the "Proceed with basic authentication flow" step.
+                    ...
+                }
+    }
+    ...
+   ```
+
 1. **Renvoyer les informations de statut du framework du partenaire :** l’application de diffusion en continu valide les données de réponse pour s’assurer que les conditions de base sont remplies :
    * Le statut d’accès de l’autorisation utilisateur est accordé.
    * L’identifiant de mappage du fournisseur d’utilisateurs est présent et valide.
@@ -293,7 +445,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    Si le serveur principal Adobe Pass n’identifie pas de profil valide et que la validation de l’authentification unique du partenaire réussit, l’application de diffusion en continu reçoit une réponse avec des actions et des données à transmettre au framework du partenaire pour démarrer le flux d’authentification avec MVPD.
 
-1. **Authentification MVPD complète avec le framework du partenaire :** transférez la demande d’authentification du partenaire (demande SAML) obtenue à l’étape précédente vers le [&#x200B; Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount). Si le flux d’authentification est réussi, l’interaction du [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) avec le MVPD produit une réponse d’authentification du partenaire (réponse SAML) qui est renvoyée avec les informations de statut du framework du partenaire.
+1. **Authentification MVPD complète avec le framework du partenaire :** transférez la demande d’authentification du partenaire (demande SAML) obtenue à l’étape précédente vers le [ Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount). Si le flux d’authentification est réussi, l’interaction du [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) avec le MVPD produit une réponse d’authentification du partenaire (réponse SAML) qui est renvoyée avec les informations de statut du framework du partenaire.
 
    >[!IMPORTANT]
    >
@@ -309,6 +461,72 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    > <br/>
    >
    > L’application de diffusion en continu doit s’assurer de spécifier une valeur booléenne égale à `true` pour la propriété [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) dans l’objet `VSAccountMetadataRequest`, afin d’indiquer que l’utilisateur peut être interrompu pour s’authentifier auprès du fournisseur de télévision sélectionné à cette phase.
+
+   >[!TIP]
+   >
+   > **<u>Conseil pro :</u>** suivez le fragment de code et prêtez une attention particulière aux commentaires.
+
+   ```swift
+    ...
+    let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+    videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+                switch (accessStatus) {
+                // The user allows the application to access subscription information.
+                case VSAccountAccessStatus.granted:
+                        // Construct the request for subscriber account information.
+                        let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                        // This is actually the SAML Issuer not the channel ID.
+                        vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                        // This is going to include subscription account information which should match the provider determined in a previous step.
+                        vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                        // This is going to include subscription account information which should match the provider determined in a previous step.
+                        vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                        // This is going to make the Video Subscriber Account Framework to refrain from prompting the user with the providers picker at this step. 
+                        vsaMetadataRequest.isInterruptionAllowed = false;
+   
+                        // This are the user metadata fields expected to be available on a successful login and are determined from the Sessions SSO service. Look for the authenticationRequest > attributesNames associated with the provider determined in a previous step.
+                        vsaMetadataRequest.attributeNames = attributesNames;
+   
+                        // This is the authenticationRequest > request field from Sessions SSO service.
+                        vsaMetadataRequest.verificationToken = authenticationRequestPayload;
+   
+                        // Submit the request for subscriber account information.
+                        videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in
+                            if (vsaMetadata != nil && vsaMetadata!.samlAttributeQueryResponse != nil) {
+                                var samlResponse: String? = vsaMetadata!.samlAttributeQueryResponse!;
+   
+                                // Remove new lines, new tabs and spaces.
+                                samlResponse = samlResponse?.replacingOccurrences(of: "[ \\t]+", with: " ", options: String.CompareOptions.regularExpression);
+                                samlResponse = samlResponse?.components(separatedBy: CharacterSet.newlines).joined(separator: "");
+                                samlResponse = samlResponse?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
+   
+                                // Base64 encode.
+                                samlResponse = samlResponse?.data(using: .utf8)?.base64EncodedString(options: []);
+   
+                                // URL encode. Please be aware not to double URL encode it further.
+                                samlResponse = samlResponse?.addingPercentEncoding(withAllowedCharacters: CharacterSet.init(charactersIn: "!*'();:@&=+$,/?%#[]").inverted);
+   
+                                // Continue with the "Create and retrieve profile using partner authentication response" step.
+                                ...
+                            } else {
+                                // Continue with the "Proceed with basic authentication flow" step.
+                                ...
+                            }
+                        }
+   
+                // The user has not yet made a choice or does not allow the application to access subscription information.
+                default:
+                    // Continue with the "Proceed with basic authentication flow" step.
+                    ...
+                }
+    }
+    ...
+   ```
 
 1. **Réponse d’authentification du partenaire de retour :** l’application de diffusion en continu valide les données de réponse pour s’assurer que les conditions de base sont remplies :
    * Le statut d’accès de l’autorisation utilisateur est accordé.
