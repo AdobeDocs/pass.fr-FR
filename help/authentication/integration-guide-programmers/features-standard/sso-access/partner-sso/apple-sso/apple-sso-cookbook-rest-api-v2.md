@@ -2,9 +2,9 @@
 title: Manuel de l’authentification unique Apple (API REST V2)
 description: Manuel de l’authentification unique Apple (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 63ffde4a32f003d7232d2c79ed6878ca59748f74
+source-git-commit: 0be4216ba816ddace095e557f9f61a8a42e1a1ff
 workflow-type: tm+mt
-source-wordcount: '3857'
+source-wordcount: '3908'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Avant de poursuivre l’authentification unique Apple à l’aide des flux de pa
 >
 > <br/>
 >
-> * L’application de diffusion en continu a rempli les [&#x200B; conditions préalables à l’intégration &#x200B;](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites-programmer) qui s’appliquent à un programmeur et sont requises pour activer l’expérience utilisateur d’authentification unique d’Apple.
+> * L’application de diffusion en continu a rempli les [ conditions préalables à l’intégration ](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites-programmer) qui s’appliquent à un programmeur et sont requises pour activer l’expérience utilisateur d’authentification unique d’Apple.
 
 ### Workflow {#workflow}
 
@@ -75,7 +75,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupération des informations d’identification du client &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupération des informations d’identification du client ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
 
    >[!TIP]
    >
@@ -85,7 +85,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    >[!IMPORTANT]
    >
-   > Consultez la documentation de l’API [&#x200B; Récupération du jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
+   > Consultez la documentation de l’API [ Récupération du jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
    >
    > * Tous les paramètres _obligatoires_ tels que `client_id`, `client_secret` et `grant_type`
    > * Tous les en-têtes _obligatoires_ tels que `Content-Type`, `X-Device-Info`
@@ -105,7 +105,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupérer le jeton d’accès ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >
@@ -196,10 +196,22 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 1. **Récupérer les profils :** l’application de diffusion en continu rassemble toutes les données nécessaires pour récupérer toutes les informations de profil en envoyant une requête au point d’entrée des profils.
 
    >[!IMPORTANT]
+   > 
+   > Le point d’entrée v2 de l’API REST que vous **devez** utiliser à cette étape est :
    >
-   > Consultez la documentation de l’API [Récupération des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) pour plus d’informations sur :
+   > * [Récupération des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) API
+   > 
+   > ou
+   > 
+   > * [Récupération des profils pour une API mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md#Request) spécifique
    >
-   > * Tous les paramètres _obligatoires_ comme `serviceProvider`
+   > Veillez à **ne pas** utiliser l’API [Créer et récupérer le profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) à cette étape.
+
+   >[!IMPORTANT]
+   >
+   > Consultez la documentation [Récupération des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) API ou [Récupération des profils pour les API mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md#Request) spécifiques pour plus d’informations sur :
+   >
+   > * Tous les paramètres _obligatoires_ tels que `serviceProvider` (ou `mvpd`)
    > * Tous les en-têtes _obligatoires_ tels que `Authorization`, `AP-Device-Identifier` et `AP-Partner-Framework-Status`
    > * Tous les paramètres _facultatifs_ et en-têtes
    >
@@ -445,7 +457,7 @@ Suivez les étapes données pour implémenter l’authentification unique Apple 
 
    Si le serveur principal Adobe Pass n’identifie pas de profil valide et que la validation de l’authentification unique du partenaire réussit, l’application de diffusion en continu reçoit une réponse avec des actions et des données à transmettre au framework du partenaire pour démarrer le flux d’authentification avec MVPD.
 
-1. **Authentification MVPD complète avec le framework du partenaire :** transférez la demande d’authentification du partenaire (demande SAML) obtenue à l’étape précédente vers le [&#x200B; Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount). Si le flux d’authentification est réussi, l’interaction du [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) avec le MVPD produit une réponse d’authentification du partenaire (réponse SAML) qui est renvoyée avec les informations de statut du framework du partenaire.
+1. **Authentification MVPD complète avec le framework du partenaire :** transférez la demande d’authentification du partenaire (demande SAML) obtenue à l’étape précédente vers le [ Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount). Si le flux d’authentification est réussi, l’interaction du [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) avec le MVPD produit une réponse d’authentification du partenaire (réponse SAML) qui est renvoyée avec les informations de statut du framework du partenaire.
 
    >[!IMPORTANT]
    >
