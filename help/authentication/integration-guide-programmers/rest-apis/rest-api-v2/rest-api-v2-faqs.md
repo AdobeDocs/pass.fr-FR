@@ -2,10 +2,10 @@
 title: FAQ sur l’API REST V2
 description: FAQ sur l’API REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: eaadf0aa7ddc58250e23715b7068d3497a30d258
 workflow-type: tm+mt
-source-wordcount: '9682'
-ht-degree: 0%
+source-wordcount: '11089'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Ce document fournit des réponses générales aux questions fréquentes sur l’adoption de l’API REST d’authentification Adobe Pass V2.
 
-Pour plus d’informations sur l’API REST V2 dans son ensemble, consultez la documentation [&#x200B; Présentation de l’API REST V2 &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) .
+Pour plus d’informations sur l’API REST V2 dans son ensemble, consultez la documentation [ Présentation de l’API REST V2 ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) .
 
 ## Questions fréquentes d’ordre général {#general-faqs}
 
@@ -39,7 +39,7 @@ Reportez-vous à la documentation [FAQ sur l’enregistrement client dynamique (
 
 #### &#x200B;1. Quel est l’objectif de la phase de configuration ? {#configuration-phase-faq1}
 
-La phase de configuration a pour but de fournir à l’application cliente la liste des fichiers MVPD auxquels elle est activement intégrée, ainsi que les détails de la configuration (par exemple, `id`, `displayName`, `logoUrl`, etc.) enregistrés par l’authentification Adobe Pass pour chaque MVPD.
+La phase de configuration a pour but de fournir à l’application cliente la liste des fichiers MVPD avec lesquels elle est activement intégrée, ainsi que des informations de configuration (par exemple, `id`, `displayName`, `logoUrl`, etc.) enregistré par l’authentification Adobe Pass pour chaque MVPD.
 
 La phase de configuration fait office d’étape préalable à la phase d’authentification lorsque l’application cliente doit demander à l’utilisateur de sélectionner son fournisseur de télévision.
 
@@ -77,7 +77,7 @@ La configuration n’est pas spécifique à un utilisateur.
 
 Pour les applications clientes utilisant une architecture serveur à serveur, il est recommandé de mettre en cache la réponse de configuration (par exemple, avec une durée de vie de 2 minutes) pour chaque type de plateforme dans le stockage de la mémoire côté serveur. Cela réduit les requêtes inutiles pour chaque utilisateur et améliore l’expérience globale de l’utilisateur.
 
-#### &#x200B;5. L’application cliente doit-elle mettre en cache les informations de réponse de configuration dans un espace de stockage persistant ? {#configuration-phase-faq5}
+#### &#x200B;5. L’application cliente doit-elle mettre en cache les informations de réponse de configuration dans un stockage persistant ? {#configuration-phase-faq5}
 
 >[!IMPORTANT]
 > 
@@ -112,14 +112,14 @@ Lorsque l’intégration à un MVPD est désactivée et marquée comme inactive,
 
 L’application cliente recevrait une [erreur](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) de l’API REST d’authentification Adobe Pass V2 si l’utilisateur a sélectionné MVPD ne dispose plus d’une intégration active avec le [fournisseur de services](rest-api-v2-glossary.md#service-provider) spécifié.
 
-#### &#x200B;9. Que se passe-t-il si l’intégration à un MVPD est activée à l’arrière et marquée comme active ? {#configuration-phase-faq9}
+#### &#x200B;9. Que se passe-t-il si l’intégration à un MVPD est réactivée et marquée comme active ? {#configuration-phase-faq9}
 
 Lorsque l’intégration à un MVPD est réactivée et marquée comme active, le MVPD est de nouveau inclus dans la liste des MVPD fournie dans les autres réponses de configuration. Il faut tenir compte de deux conséquences importantes :
 
 * Les utilisateurs non authentifiés de ce MVPD pourront à nouveau terminer la phase d’authentification à l’aide de ce MVPD.
 * Les utilisateurs authentifiés de ce MVPD pourront à nouveau terminer les phases de préautorisation, d’autorisation ou de déconnexion à l’aide de ce MVPD.
 
-#### &#x200B;10. Comment activer ou désactiver l’intégration à un MVPD ? {#configuration-phase-faq10}
+#### &#x200B;10. Comment activer ou désactiver l’intégration à MVPD ? {#configuration-phase-faq10}
 
 Cette opération peut être effectuée via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre organisation ou par un représentant Adobe Pass Authentication agissant en votre nom.
 
@@ -165,7 +165,7 @@ Pour plus d’informations, consultez les documents suivants :
 * [Flux d’authentification de base effectué dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [Flux d’authentification de base effectué dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### &#x200B;4. Qu’est-ce qu’un code d’authentification et combien de temps est-il valide ? {#authentication-phase-faq4}
+#### &#x200B;4. Qu&#39;est-ce qu&#39;un code d&#39;authentification et combien de temps est-il valide ? {#authentication-phase-faq4}
 
 Le code d’authentification est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code).
 
@@ -205,7 +205,7 @@ Pour plus d’informations, reportez-vous aux documents suivants :
 * [Flux de profils de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flux de profils de base exécuté dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### &#x200B;7. Qu’est-ce qu’un profil et combien de temps est-il valide ? {#authentication-phase-faq7}
+#### &#x200B;7. Qu&#39;est-ce qu&#39;un profil et combien de temps est-il valide ? {#authentication-phase-faq7}
 
 Le profil est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile).
 
@@ -227,15 +227,15 @@ Cette période limitée appelée authentification (authN) [TTL](/help/authentica
 
 Pour plus d’informations, reportez-vous à la documentation du [Guide d’utilisation des intégrations de tableaux de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
-#### &#x200B;8. L’application cliente doit-elle mettre en cache les informations de profil de l’utilisateur dans un espace de stockage persistant ? {#authentication-phase-faq8}
+#### &#x200B;8. L’application cliente doit-elle mettre en cache les informations de profil de l’utilisateur dans un stockage persistant ? {#authentication-phase-faq8}
 
 L’application cliente doit mettre en cache certaines parties des informations de profil de l’utilisateur dans un stockage persistant afin d’éviter les requêtes inutiles et d’améliorer l’expérience utilisateur, en tenant compte des aspects suivants :
 
 | Attribut | Expérience utilisateur |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mvpd` | L’application cliente peut l’utiliser pour suivre le fournisseur de télévision sélectionné par l’utilisateur et continuer à l’utiliser pendant les phases de préautorisation ou d’autorisation.<br/><br/>À l’expiration du profil utilisateur actuel, l’application cliente peut utiliser la sélection MVPD mémorisée et demander à l’utilisateur de confirmer. |
-| `attributes` | L’application cliente peut l’utiliser pour personnaliser l’expérience utilisateur en fonction de différentes clés [métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) (par exemple, `zip`, `maxRating`, etc.).<br/><br/>Les métadonnées utilisateur sont disponibles une fois le flux d’authentification terminé. Par conséquent, l’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les informations [métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), car elles sont déjà incluses dans les informations de profil.<br/><br/>Certains attributs de métadonnées peuvent être mis à jour au cours du flux d’autorisation, selon le MVPD et l’attribut de métadonnées spécifique. Par conséquent, l’application cliente peut avoir besoin d’interroger à nouveau les API Profiles pour récupérer les dernières métadonnées de l’utilisateur. |
-| `notAfter` | L’application cliente peut l’utiliser pour suivre la date d’expiration du profil utilisateur.<br/><br/>La gestion des erreurs de l’application cliente nécessite de gérer les codes [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) (par exemple, `authenticated_profile_missing`, `authenticated_profile_expired`, `authenticated_profile_invalidated`, etc.), ce qui indique que l’application cliente nécessite que l’utilisateur s’authentifie. |
+| `mvpd` | L’application cliente peut l’utiliser pour suivre le fournisseur de télévision sélectionné par l’utilisateur et continuer à l’utiliser pendant les phases de préautorisation ou d’autorisation. <br/><br/>Lorsque le profil utilisateur actuel expire, l’application cliente peut utiliser la sélection MVPD mémorisée et demander à l’utilisateur de confirmer. |
+| `attributes` | L’application cliente peut l’utiliser pour personnaliser l’expérience utilisateur en fonction de différentes clés [métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) (par exemple, `zip`, `maxRating`, etc.).<br/><br/>Les métadonnées utilisateur sont disponibles une fois le flux d’authentification terminé. Par conséquent, l’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les informations [métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), car elles sont déjà incluses dans les informations de profil.<br/><br/>Certains attributs de métadonnées peuvent être mis à jour pendant le flux d’autorisation, selon le MVPD et l’attribut de métadonnées spécifique. Par conséquent, l’application cliente peut avoir besoin d’interroger à nouveau les API Profiles pour récupérer les dernières métadonnées de l’utilisateur. |
+| `notAfter` | L’application cliente peut l’utiliser pour suivre la date d’expiration du profil utilisateur. <br/><br/>La gestion des erreurs de l’application cliente nécessite de gérer les codes [erreur](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) (par exemple, `authenticated_profile_missing`, `authenticated_profile_expired`, `authenticated_profile_invalidated`, etc.), ce qui indique que l’application cliente nécessite que l’utilisateur s’authentifie. |
 
 #### &#x200B;9. L’application cliente peut-elle étendre le profil de l’utilisateur sans nécessiter de réauthentification ? {#authentication-phase-faq9}
 
@@ -254,24 +254,24 @@ Les points d’entrée de profils de base sont conçus pour permettre à l’app
 Chaque point d’entrée correspond à un cas d’utilisation spécifique, comme suit :
 
 | API | Description | Cas d’utilisation |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [API du point d’entrée des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | Récupérez tous les profils utilisateur. | **L’utilisateur ouvre l’application cliente pour la première fois**<br/><br/> Dans ce scénario, l’application cliente ne dispose pas de l’identifiant MVPD sélectionné par l’utilisateur mis en cache dans le stockage persistant.<br/><br/>Par conséquent, il envoie une seule demande pour récupérer tous les profils utilisateur disponibles. |
-| [Point d’entrée des profils pour une API MVPD spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Récupérez le profil utilisateur associé à un MVPD spécifique. | **L’utilisateur revient à l’application cliente après s’être authentifié lors d’une visite précédente**<br/><br/> Dans ce cas, l’application cliente doit avoir l’identifiant MVPD de l’utilisateur précédemment sélectionné mis en cache dans le stockage persistant.<br/><br/>Par conséquent, il envoie une seule demande pour récupérer le profil de l’utilisateur pour ce MVPD spécifique. |
-| [&#x200B; Point d’entrée des profils pour une API de code (d’authentification) spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Récupérez le profil utilisateur associé à un code d’authentification spécifique. | **L’utilisateur lance le processus d’authentification**<br/><br/> Dans ce scénario, l’application cliente doit déterminer si l’utilisateur a terminé l’authentification avec succès et récupérer ses informations de profil.<br/><br/>Par conséquent, il lance un mécanisme d’interrogation pour récupérer le profil de l’utilisateur associé au code d’authentification. |
+|--- |--- |--- |
+| [API du point d’entrée des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | Récupérez tous les profils utilisateur. | **L’utilisateur ouvre l’application cliente pour la première fois**<br/><br/> Dans ce scénario, l’application cliente ne dispose pas de l’identifiant MVPD sélectionné par l’utilisateur mis en cache dans un stockage persistant.<br/><br/>Par conséquent, elle envoie une seule demande pour récupérer tous les profils utilisateur disponibles. |
+| [Point d’entrée des profils pour une API MVPD spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Récupérez le profil utilisateur associé à un MVPD spécifique. | **L’utilisateur revient à l’application cliente après s’être authentifié lors d’une visite précédente**<br/><br/> Dans ce cas, l’application cliente doit avoir l’identifiant MVPD de l’utilisateur précédemment sélectionné mis en cache dans un stockage persistant.<br/><br/>Par conséquent, elle envoie une seule requête pour récupérer le profil de l’utilisateur pour ce MVPD spécifique. |
+| [ Point d’entrée des profils pour une API de code (d’authentification) spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Récupérez le profil utilisateur associé à un code d’authentification spécifique. | **L’utilisateur lance le processus d’authentification**<br/><br/> Dans ce scénario, l’application cliente doit déterminer si l’utilisateur a terminé l’authentification avec succès et récupérer les informations de son profil.<br/><br/>Par conséquent, elle lance un mécanisme d’interrogation pour récupérer le profil de l’utilisateur associé au code d’authentification. |
 
 Pour plus d’informations, reportez-vous aux documents [Flux de profils de base exécuté dans l’application principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md) et [Flux de profils de base exécuté dans l’application secondaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md).
 
 Le point d’entrée de l’authentification unique des profils a un autre objectif. Il permet à l’application cliente de créer un profil utilisateur à l’aide de la réponse d’authentification du partenaire et de le récupérer en une seule opération unique.
 
 | API | Description | Cas d’utilisation |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | [API du point d’entrée de l’authentification unique des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | Créez et récupérez un profil utilisateur à l’aide de la réponse d’authentification du partenaire. | **L’utilisateur autorise l’application à utiliser l’authentification unique du partenaire pour s’authentifier**<br/><br/> Dans ce scénario, l’application cliente doit créer un profil utilisateur après avoir reçu la réponse d’authentification du partenaire et la récupérer en une seule opération unique. |
 
 Pour toute requête ultérieure, les points d’entrée Profils de base doivent être utilisés pour déterminer le statut d’authentification de l’utilisateur, accéder aux informations de métadonnées de l’utilisateur, trouver la méthode utilisée pour l’authentification ou l’entité utilisée pour fournir l’identité.
 
-Pour plus d’informations, reportez-vous aux documents [&#x200B; Authentification unique à l’aide des flux de partenaire &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) et [Cookbook SSO d’Apple (API REST V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
+Pour plus d’informations, reportez-vous aux documents [ Authentification unique à l’aide des flux de partenaire ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) et [Cookbook SSO d’Apple (API REST V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
-#### &#x200B;11. Que doit faire l’application cliente si l’utilisateur dispose de plusieurs profils MVPD ? {#authentication-phase-faq11}
+#### &#x200B;11. Que doit faire l’application cliente si l’utilisateur possède plusieurs profils MVPD ? {#authentication-phase-faq11}
 
 La décision de prendre en charge plusieurs profils dépend des exigences commerciales de l’application cliente.
 
@@ -294,7 +294,7 @@ Si le point d’entrée Profils renvoie une réponse de mappage de profils vide,
 
 Pour plus d’informations, consultez la documentation [Créer une API de session d’authentification](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-#### &#x200B;13. À quel moment les profils utilisateur deviennent-ils non valides ? {#authentication-phase-faq13}
+#### &#x200B;13. Quand les profils utilisateur deviennent-ils non valides ? {#authentication-phase-faq13}
 
 Les profils utilisateur ne sont plus valides dans les scénarios suivants :
 
@@ -347,7 +347,7 @@ La gestion des erreurs de l’application cliente doit être en mesure de gérer
 
 Pour plus d’informations, consultez la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-#### &#x200B;18. Comment l’application cliente peut-elle obtenir les informations sur les métadonnées de l’utilisateur ? {#authentication-phase-faq18}
+#### &#x200B;18. Comment l’application cliente peut-elle obtenir les informations de métadonnées de l’utilisateur ? {#authentication-phase-faq18}
 
 L’application cliente peut interroger l’un des points d’entrée suivants capables de renvoyer des informations [métadonnées de l’utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) dans le cadre des informations de profil :
 
@@ -388,13 +388,13 @@ Avec l’API REST v2, l’application cliente peut basculer facilement entre un 
 
 Pour plus d&#39;informations, consultez la documentation [Flux d&#39;accès temporaires](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
 
-#### &#x200B;21. Comment l’application cliente doit-elle gérer l’accès avec authentification unique sur plusieurs appareils ? {#authentication-phase-faq21}
+#### &#x200B;21. Comment l’application cliente doit-elle gérer l’accès avec authentification unique sur l’ensemble des appareils ? {#authentication-phase-faq21}
 
 L’API REST v2 peut activer l’authentification unique entre appareils si l’application cliente fournit un identifiant utilisateur unique cohérent entre les appareils.
 
 Cet identifiant, appelé jeton de service, doit être généré par l’application cliente par l’implémentation ou l’intégration d’un service d’identités externe de votre choix.
 
-Pour plus d’informations, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux de jeton de service &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Pour plus d’informations, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 +++
 
@@ -431,7 +431,7 @@ L’application cliente n’est pas nécessaire pour stocker les décisions de p
 
 #### &#x200B;5. Comment l’application cliente peut-elle déterminer pourquoi une décision de préautorisation a été refusée ? {#preauthorization-phase-faq5}
 
-L’application cliente peut déterminer la raison d’un refus de décision de préautorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application.
+L’application cliente peut déterminer la raison d’un refus de décision de préautorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application.
 
 Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée.
 
@@ -482,7 +482,7 @@ La phase d’autorisation a pour but de permettre à l’application cliente de 
 
 La phase d’autorisation est obligatoire, l’application cliente ne peut pas ignorer cette phase si elle souhaite lire les ressources demandées par l’utilisateur ou l’utilisatrice, car elle doit vérifier auprès du MVPD que l’utilisateur ou l’utilisatrice a le droit de lire avant de libérer le flux.
 
-#### &#x200B;3. Qu&#39;est-ce qu&#39;une décision d&#39;autorisation et quelle est sa durée de validité ? {#authorization-phase-faq3}
+#### &#x200B;3. Qu&#39;est-ce qu&#39;une décision d&#39;autorisation et combien de temps est-elle valide ? {#authorization-phase-faq3}
 
 L’autorisation est un terme défini dans la documentation [Glossaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#authorization), tandis que le terme de décision se trouve également dans le [Glossaire](rest-api-v2-glossary.md#decision).
 
@@ -507,7 +507,7 @@ L’application cliente n’est pas nécessaire pour stocker les décisions d’
 
 #### &#x200B;5. Comment l’application cliente peut-elle déterminer pourquoi une décision d’autorisation a été refusée ? {#authorization-phase-faq5}
 
-L’application cliente peut déterminer la raison d’un refus d’autorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée Autoriser les décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application.
+L’application cliente peut déterminer la raison d’un refus d’autorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée Autoriser les décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application.
 
 Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée.
 
@@ -542,7 +542,7 @@ Non.
 
 L’application cliente n’est pas tenue d’actualiser un jeton de média expiré pendant que le flux est en cours de lecture. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire une ressource.
 
-#### &#x200B;9. À quoi sert chaque attribut d’horodatage dans la décision d’autorisation ? {#authorization-phase-faq9}
+#### &#x200B;9. Quel est l’objectif de chaque attribut d’horodatage dans la décision d’autorisation ? {#authorization-phase-faq9}
 
 La décision d’autorisation comprend plusieurs attributs d’horodatage qui fournissent un contexte essentiel sur la période de validité de l’autorisation elle-même et du jeton de média associé. Ces horodatages ont des fins différentes, selon qu’ils se rapportent à la décision d’autorisation ou au jeton multimédia.
 
@@ -551,9 +551,9 @@ La décision d’autorisation comprend plusieurs attributs d’horodatage qui fo
 Ces dates et heures décrivent la période de validité de la décision d’autorisation globale :
 
 | Attribut | Description | Notes |
-|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------|-------------|---------|
 | `notBefore` | Heure en millisecondes à laquelle la décision d’autorisation a été émise. | Ceci marque le début de la fenêtre de validité de l’autorisation. |
-| `notAfter` | Heure en millisecondes à laquelle la décision d’autorisation expire. | La [&#x200B; durée de vie (TTL) de l’autorisation détermine &#x200B;](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) durée pendant laquelle l’autorisation reste valide avant d’exiger une nouvelle autorisation. Cette TTL est négociée avec les représentants de MVPD. |
+| `notAfter` | Heure en millisecondes à laquelle la décision d’autorisation expire. | La [ durée de vie (TTL) de l’autorisation détermine ](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) durée pendant laquelle l’autorisation reste valide avant d’exiger une nouvelle autorisation. Cette TTL est négociée avec les représentants de MVPD. |
 
 **Horodatages au niveau des jetons**
 
@@ -577,7 +577,7 @@ L’identifiant unique de la ressource peut avoir deux formats :
 
 Pour plus d’informations, consultez la documentation [Ressources protégées](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
-#### &#x200B;11. Pour combien de ressources la demande du client peut-elle obtenir une décision d’autorisation à la fois ? {#authorization-phase-faq11}
+#### &#x200B;11. Pour combien de ressources l’application cliente peut-elle obtenir une décision d’autorisation à la fois ? {#authorization-phase-faq11}
 
 L’application cliente peut obtenir une décision d’autorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 1, en raison des conditions imposées par les MVPD.
 
@@ -640,7 +640,7 @@ La documentation de l’en-tête [X-Device-Info](/help/authentication/integratio
 
 Si l’en-tête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) est manquant ou contient des valeurs incorrectes, la requête peut être classée comme provenant d’une plateforme `unknown`.
 
-Cela peut entraîner le traitement de la requête comme non sécurisée et soumise à des règles plus restrictives, telles que des TTL d’authentification plus courtes. De plus, certains champs, comme le `connectionIp` et le `connectionPort` de l&#39;appareil de diffusion en continu, sont obligatoires pour des fonctions comme l&#39;authentification de base d&#39;accueil [&#x200B; de Spectrum](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md).
+Cela peut entraîner le traitement de la requête comme non sécurisée et soumise à des règles plus restrictives, telles que des TTL d’authentification plus courtes. De plus, certains champs, comme le `connectionIp` et le `connectionPort` de l&#39;appareil de diffusion en continu, sont obligatoires pour des fonctions comme l&#39;authentification de base d&#39;accueil [ de Spectrum](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md).
 
 Même lorsque la requête provient d’un serveur pour le compte d’un appareil, la valeur de l’en-tête [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) doit refléter les informations réelles de l’appareil de diffusion en continu.
 
@@ -656,7 +656,7 @@ Oui.
 
 Vous pouvez explorer l’API REST V2 via notre site web [Adobe Developer](https://developer.adobe.com/adobe-pass/) dédié. Le site Web d’Adobe Developer offre un accès illimité aux éléments suivants :
 
-* [&#x200B; API DCR &#x200B;](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
+* [API DCR](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [API REST V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
 Pour interagir avec [API REST V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/), vous devez inclure l’en-tête [Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md) avec un jeton d’accès `Bearer` obtenu via l’API [DCR](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/).
@@ -672,7 +672,7 @@ Vous pouvez télécharger les fichiers de spécification OpenAPI pour l’API [D
 Pour télécharger les fichiers de spécification OpenAPI, cliquez sur les boutons de téléchargement pour enregistrer les fichiers suivants sur votre ordinateur local :
 
 * [JSON DE L’API DCR](https://developer.adobe.com/adobe-pass/dcrApi.json)
-* [JSON DE L’API REST V2](https://developer.adobe.com/adobe-pass/restApiV2.json)
+* [API REST V2 JSON](https://developer.adobe.com/adobe-pass/restApiV2.json)
 
 Vous pouvez ensuite importer ces fichiers dans votre outil de développement d’API préféré pour explorer les requêtes et réponses de l’API REST V2 et tester l’API.
 
@@ -682,12 +682,207 @@ Non.
 
 Les applications clientes qui migrent vers l’API REST V2 doivent utiliser le nouvel outil de test hébergé sur https://developer.adobe.com/adobe-pass/. Le site Web d’Adobe Developer offre un accès illimité aux éléments suivants :
 
-* [&#x200B; API DCR &#x200B;](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
+* [API DCR](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [API REST V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
 Pour interagir avec [API REST V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/), vous devez inclure l’en-tête [Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md) avec un jeton d’accès `Bearer` obtenu via l’API [DCR](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/).
 
 Pour utiliser l’[API DCR](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/), une instruction logicielle avec la portée API REST V2 est requise. Pour plus d’informations, consultez le document [FAQ sur l’enregistrement client dynamique (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md).
+
++++
+
+### FAQ sur l’authentification unique Apple {#apple-sso-general}
+
++++FAQ sur l’authentification unique Apple
+
+#### &#x200B;1. Qu’est-ce que l’authentification unique Apple et comment fonctionne-t-elle avec l’API REST V2 ? {#apple-sso-faq1}
+
+L’authentification unique (SSO) d’Apple permet aux utilisateurs de se connecter à leur compte de fournisseur de télévision au niveau du système de l’appareil à l’aide d’Apple [structure de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount), ce qui élimine la nécessité de s’authentifier application par application.
+
+L’API REST V2 prend en charge l’authentification unique (SSO) du partenaire pour les utilisateurs finaux d’applications clientes s’exécutant sur iOS, iPadOS ou tvOS via les flux du partenaire.
+
+Pour plus d’informations, reportez-vous aux documents suivants :
+
+* [Présentation de l’authentification unique (SSO) Apple](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
+* [Manuel de l’authentification unique Apple (API REST V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
+* [Authentification unique à l’aide des flux de partenaires](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
+
+#### &#x200B;2. Quelles sont les conditions préalables à la mise en œuvre de l’authentification unique Apple ? {#apple-sso-faq2}
+
+Avant d’implémenter la fonction SSO d’Apple, assurez-vous que les conditions préalables suivantes sont remplies :
+
+**Exigences relatives aux applications en flux continu :**
+
+* Contactez Apple pour activer le [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) dans le cadre de votre ID d’équipe Apple.
+* Configurez le droit d’authentification unique de l’abonné à la vidéo dans le cadre de votre compte de développeur Apple.
+* Utilisez Xcode version 8 ou ultérieure et iOS/tvOS version 10 ou ultérieure.
+* Demandez à l’utilisateur l’autorisation d’accéder aux informations d’abonnement au niveau de l’appareil.
+* Incluez les en-têtes `X-Device-Info` et/ou `User-Agent` afin que le serveur principal de l’authentification Adobe Pass puisse identifier la plateforme de l’appareil.
+* Incluez l’en-tête `AP-Partner-Framework-Status` avec un statut de framework de partenaire valide dans toutes les requêtes API pertinentes.
+
+**Configuration Adobe Pass:**
+
+* Activez l’authentification unique (SSO) pour chaque intégration et plateforme souhaitée (iOS/tvOS) via le tableau de bord Adobe Pass TVE en définissant la propriété `Enable Single Sign On` sur `Yes`.
+
+**Conditions requises pour MVPD :**
+
+* Le MVPD doit être intégré à Apple pour la prise en charge de l’authentification unique Apple.
+* Le MVPD doit être intégré à l’authentification Adobe Pass pour la configuration de l’authentification unique du partenaire.
+
+Pour plus d’informations, consultez la documentation [Présentation de l’authentification unique d’Apple - Conditions préalables](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites) .
+
+#### &#x200B;3. Qu’est-ce que l’en-tête AP-Partner-Framework-Status et pourquoi est-il requis ? {#apple-sso-faq3}
+
+L’en-tête `AP-Partner-Framework-Status` contient des informations de statut sur le framework du partenaire extraites du framework de compte d’abonné vidéo Apple.
+
+**Toujours requis :**
+
+* [Récupérer la demande d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+* [Créer et récupérer un profil à l’aide de la réponse d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+
+**Requis de manière conditionnelle :**
+
+* [Récupération des profils](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+* [Récupération du profil pour un fichier mvpd spécifique](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [Récupérer des décisions d’autorisation à l’aide de mvpd spécifiques](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+* [Récupérer des décisions de préautorisation à l’aide de mvpd spécifiques](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+
+L’application de diffusion en continu doit récupérer ces informations en appelant la structure de compte d’abonné vidéo et les inclure en tant que payload JSON codée en base64 dans l’en-tête.
+
+**Bonne pratique :**
+
+* L’application de diffusion en continu doit récupérer le statut de framework du partenaire lorsque l’application passe en premier plan.
+* Mettez en cache les informations de statut du framework du partenaire et actualisez-les lorsque l’application passe de l’arrière-plan au premier plan.
+* Assurez-vous que le statut du framework du partenaire contient des valeurs valides (autorisation utilisateur accordée, identifiant de fournisseur valide, date d’expiration valide).
+
+Pour plus d’informations, consultez la documentation [AP-Partner-Framework-Status](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md).
+
+#### &#x200B;4. Comment résoudre les problèmes d’authentification unique Apple ? {#apple-sso-faq4}
+
+Lors de la résolution des problèmes d’authentification unique Apple, suivez cette approche générale :
+
+**Étape 1 : vérifier la génération de la requête SAML**
+
+* Vérifiez que le point d’entrée [Récupérer la demande d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md) renvoie une demande d’authentification de partenaire valide (demande SAML).
+* Vérifiez que l’attribut `authenticationRequest - request` contient une requête SAML correctement formatée après le décodage base64.
+* Assurez-vous que l’en-tête `AP-Partner-Framework-Status` contient des informations valides sur le statut du framework du partenaire.
+
+**Étape 2 : identifier les erreurs VSA**
+
+* Consultez les réponses d’erreur de la structure du compte d’abonné vidéo.
+* Consultez la documentation [Structure de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount/vserror#Error-codes) pour obtenir les codes d’erreur et leur description.
+* Notez que la documentation relative aux erreurs VSA est assez générique et peut ne pas fournir d’informations détaillées sur les causes profondes.
+
+**Étape 3 : vérifier les problèmes courants**
+
+* Le statut d&#39;accès aux autorisations utilisateur doit être accordé (cochez la case `VSAccountAccessStatus.granted`).
+* L’identifiant de mappage du fournisseur d’utilisateurs doit être présent et valide (`accountProviderIdentifier`).
+* La date d’expiration du profil du fournisseur d’utilisateurs doit être valide (`authenticationExpirationDate`).
+* Le MVPD doit être intégré à Apple (vérifiez `boardingStatus` dans la réponse du point d’entrée de configuration).
+* L’intégration de MVPD doit disposer de l’authentification unique (SSO) Apple activée dans le tableau de bord TVE.
+
+**Étape 4 : impliquer MVPD pour les investigations**
+
+* Si le framework de compte d’abonné vidéo reçoit une requête SAML valide mais ne renvoie pas de réponse SAML suite à une interaction avec MVPD, impliquez le MVPD compatible avec l’authentification unique d’Apple pour résoudre le problème.
+* Le problème peut également être lié à la configuration ou à l’implémentation spécifique à MVPD du côté d’Apple.
+
+#### &#x200B;5. Quelles sont les erreurs VSA courantes et comment dois-je les gérer ? {#apple-sso-faq5}
+
+Scénarios courants et leur gestion :
+
+**L’Utilisateur Refuse L’Autorisation :**
+
+* Le `VSAccountAccessStatus` ne sera pas `.granted`.
+* Revenez au flux d’authentification de base et présentez le propre sélecteur MVPD de l’application.
+
+**MVPD non intégré à Apple (code d’erreur 1) :**
+
+* Le framework VSA renvoie une erreur avec `error.code == 1`.
+* Le `error.userInfo["VSErrorInfoKeyUnsupportedProviderIdentifier"]` contient l’identifiant MSO d’Apple.
+* Revenez au flux d’authentification de base, mais vous pouvez ignorer l’invite de l’utilisateur avec votre sélecteur MVPD si vous pouvez mapper l’identifiant MSO Apple à un MVPD dans votre configuration.
+
+**Aucune Métadonnée Renvoyée :**
+
+* Le `vsaMetadata` est `nil` ou les champs obligatoires sont manquants.
+* Revenez au flux d’authentification de base.
+
+**Réponse SAML non renvoyée :**
+
+* Le `samlAttributeQueryResponse` est `nil` après l’authentification MVPD.
+* Cela peut indiquer un problème avec l’implémentation de l’authentification unique (SSO) MVPD Apple.
+* Envisagez de contacter Adobe, MVPD et Apple pour enquête.
+
+Pour obtenir des informations détaillées sur les erreurs, consultez la documentation [Framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount).
+
+#### &#x200B;6. Qu’indique le type de profil « appleSSO » ? {#apple-sso-faq6}
+
+Un profil avec `type` défini sur « appleSSO » indique que l’utilisateur s’est authentifié via le flux d’authentification unique du partenaire Apple à l’aide du framework de compte d’abonné vidéo.
+
+Ce type de profil a des exigences spécifiques :
+
+* Lors de la prise de décisions (préautorisation/autorisation) avec un profil « appleSSO », l’application de diffusion en continu doit inclure un en-tête `AP-Partner-Framework-Status` valide avec le statut actuel du framework du partenaire.
+* Lors de la déconnexion, la réponse inclut la `actionName` définie sur « partner_logout » et `actionType` définie sur « partner_interactive », indiquant que l’utilisateur doit terminer la déconnexion au niveau du partenaire (système).
+
+Les profils standard (non-SSO Apple) ne répondent pas à ces exigences et suivent les flux d’authentification de base.
+
+#### &#x200B;7. Comment gérer la déconnexion pour les profils SSO Apple ? {#apple-sso-faq7}
+
+Lors de l’initialisation de la déconnexion pour un utilisateur avec un profil de type « appleSSO » :
+
+* La réponse du point d’entrée de déconnexion Adobe Pass comprend :
+   * `actionName` défini sur « partner_logout »
+   * `actionType` défini sur « partner_interactive »
+   * L’attribut `url` sera manquant
+
+* L’application de diffusion en continu doit inviter l’utilisateur à terminer le processus de déconnexion au niveau du partenaire (système) en accédant à :
+   * `Settings -> TV Provider` sous iOS/iPadOS
+   * `Settings -> Accounts -> TV Provider` sous tvOS
+
+* L’utilisateur doit se déconnecter manuellement de son fournisseur de télévision au niveau du système pour terminer le processus de déconnexion.
+
+Pour plus d’informations, reportez-vous à la documentation [Cookbook SSO d’Apple (API REST V2) - Phase de déconnexion](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md#cookbook) .
+
+#### &#x200B;8. Puis-je revenir à l’authentification de base en cas d’échec de la connexion unique d’Apple ? {#apple-sso-faq8}
+
+Oui, l’API REST d’authentification Adobe Pass V2 retourne automatiquement au flux d’authentification de base dans les scénarios suivants :
+
+**Secours automatique :**
+
+* La validation de l’authentification unique du partenaire échoue sur le serveur principal Adobe Pass
+* L’utilisateur refuse l’autorisation d’accéder aux informations d’abonnement
+* MVPD n’est pas intégré à Apple
+* VSA Framework ne renvoie pas de métadonnées valides
+
+**Indication de réponse :**
+
+Lors du retour à l’authentification de base, la réponse de point d’entrée [Récupérer la requête d’authentification du partenaire](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md) contiendra :
+
+* `actionName` défini sur « authentifier » ou « reprendre »
+* `actionType` défini sur « interactif » ou « direct »
+
+L’application de diffusion en continu doit gérer ces réponses en initiant le flux d’authentification de base.
+
+**Secours manuel :**
+
+Pour désactiver l’authentification unique Apple pour une intégration spécifique et toujours utiliser l’authentification de base :
+
+* Définissez la propriété `Enable Single Sign On` sur `No` dans le tableau de bord Adobe Pass TVE pour l’intégration et la plateforme souhaitées (iOS/tvOS).
+
+Pour plus d’informations, reportez-vous à la documentation [Authentification unique à l’aide des flux de partenaires](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
+
+#### &#x200B;9. Où puis-je trouver plus d’informations sur le framework de compte d’abonné vidéo ? {#apple-sso-faq9}
+
+Pour plus d’informations sur le framework de compte d’abonné aux vidéos Apple, notamment la référence d’API, les codes d’erreur et les directives d’intégration, consultez la documentation officielle d’Apple :
+
+* [Documentation du framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount)
+
+Clés de classes et de protocoles à examiner :
+
+* [VSAccountManager](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager) - Gestionnaire principal pour les opérations de compte d’abonné
+* [VSAccountMetadataRequest](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) - Demande d’informations sur le compte d’abonné
+* [VSAccountMetadata](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) - Réponse contenant des informations sur le compte de l’abonné
+* [VSAccountManagerDelegate](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) - Protocole de délégation pour les événements du gestionnaire de compte
+* [VSAccountAccessStatus](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountaccessstatus) - Énumération du statut des autorisations utilisateur
 
 +++
 
@@ -711,7 +906,7 @@ L’application cliente n’est pas tenue de déployer simultanément une nouvel
 
 L’authentification Adobe Pass continuera à prendre en charge les anciennes versions d’applications clientes intégrant l’API REST V1 ou SDK jusqu’à la fin de 2025.
 
-#### &#x200B;2. Dois-je déployer simultanément une nouvelle application cliente migrée vers l’API REST V2 sur toutes les API et tous les flux ? {#migration-faq2}
+#### &#x200B;2. Dois-je déployer simultanément une nouvelle application cliente migrée vers l’API REST V2 sur l’ensemble des API et flux ? {#migration-faq2}
 
 Oui.
 
