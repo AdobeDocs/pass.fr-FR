@@ -18,7 +18,7 @@ Dernière mise à jour : Mar Dec 09 2025 00:00:00 GMT+0000 (Temps Universel Coor
 
 >[!IMPORTANT]
 >
-> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements).
+> Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](https://experienceleague.adobe.com/fr/docs/pass/authentication/product-announcements).
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
 
