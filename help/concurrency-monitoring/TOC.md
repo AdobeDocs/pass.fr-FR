@@ -4,17 +4,17 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Surveillance de la simultanéité dans Adobe Pass
 user-guide-description: Découvrez comment définir et appliquer des limites à l’utilisation simultanée dans plusieurs applications.
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '276'
-ht-degree: 5%
+source-wordcount: '252'
+ht-degree: 6%
 
 ---
 
 
 # Aide sur la surveillance simultanée d’Adobe Pass {#cm}
 
-- [Présentation de CM](cm-home.md) {#cm-intro}
+- [Présentation de CM](cm-home.md)
 - Prise en main {#getting-started}
    - [Prise en main de la surveillance de la simultanéité](getting-started/getting-started-overview.md)
    - [Concepts clés](getting-started/key-concepts.md)
@@ -34,7 +34,7 @@ ht-degree: 5%
    - [Modèles de mise en œuvre](technical/implementation-models.md)
    - [Politique De Client Unique - Applications Multiples](technical/single-tenant-policy-mult-app.md)
    - [Limiter L’Utilisation Simultanée De Plusieurs Applications](technical/restrict-concurr-usage-mult-apps.md)
-- [&#x200B; Rapports d’utilisation de CM &#x200B;](reports/cm-usage-reports.md) {#cm-usage-reports}
+- [Rapports d’utilisation de CM](reports/cm-usage-reports.md)
 - Notes techniques {#tech-notes}
    - [Attributs de métadonnées standard](technical/standard-metadata-attributes.md)
    - [Métadonnées personnalisées](technical/custom-metadata.md)
@@ -72,4 +72,4 @@ ht-degree: 5%
    - [Surveillance de l’accès simultané - Notes de mise à jour 2.5.0](releases/rn-cm-250.md)
    - [Surveillance de l’accès simultané - Notes de mise à jour 2.3.2](releases/rn-cm-232.md)
    - [Surveillance de l’accès simultané - Notes de mise à jour 2.2.2](releases/rn-cm-222.md)
-- [Procédures d’assistance](support/cm-escalation-procedures.md) {#support-procedures}
+- [Procédures d’assistance](support/cm-escalation-procedures.md)

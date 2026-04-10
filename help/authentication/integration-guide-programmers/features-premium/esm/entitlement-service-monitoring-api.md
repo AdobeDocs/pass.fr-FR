@@ -2,9 +2,9 @@
 title: API de surveillance du service de droit
 description: API de surveillance du service de droit
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2098'
 ht-degree: 1%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 1%
 > Avant d’utiliser l’API de dégradation, vérifiez que les conditions préalables suivantes sont remplies :
 >
 > * Obtenez les informations d’identification du client comme décrit dans la documentation de l’API [Récupération des informations d’identification du client](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
-> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
+> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
 >
-> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle[&#x200B; reportez-vous à la documentation &#x200B;](../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)Présentation de l’enregistrement du client dynamique.
+> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle](../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) reportez-vous à la documentation [Présentation de l’enregistrement du client dynamique.
 
 ## Présentation de l’API {#api-overview}
 
@@ -94,9 +94,9 @@ Les options de filtrage disponibles sont les suivantes :
 
 * Les filtres **IN** peuvent être spécifiés en ajoutant le même paramètre dimension-name plusieurs fois avec des valeurs différentes : dimension=value1\&amp;dimension=value2
 
-* **différent de** les filtres doivent utiliser le caractère &#39;\!&#39; symbole après le nom de la dimension générant le caractère &#39;\!=&#39; « operator » : dimension\!=valeur
+* **Est différent de** les filtres doivent utiliser le symbole « \! » après le nom de dimension qui génère l’« opérateur » « \!= » : dimension\!=value
 
-* Les filtres **NOT IN** nécessitent le caractère &#39;\!Opérateur =&#39; à utiliser plusieurs fois, une fois pour chaque valeur de l&#39;ensemble : dimension\!=valeur1\&amp;dimension\!=valeur2&amp;...
+* Les filtres **NOT IN** nécessitent que l’opérateur &#39;\!=&#39; soit utilisé plusieurs fois, une fois pour chaque valeur de l’ensemble : dimension\!=value1\&amp;dimension\!=value2&amp;...
 
 Il existe également une utilisation spéciale pour les noms de dimension dans la chaîne de requête : si le nom de la dimension est utilisé comme paramètre de chaîne de requête sans valeur, l’API est chargée de renvoyer une projection qui inclut cette dimension dans le rapport.
 
@@ -106,8 +106,8 @@ Il existe également une utilisation spéciale pour les noms de dimension dans l
 |---|---|
 | /dimension1/dimension2/dimension3?dimension1=valeur1 | SELECT * from projection WHERE dimension1 = &#39;valeur1&#39; </br> GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projection WHERE dimension1 IN (&#39;valeur1&#39;, &#39;valeur2&#39;) </br> GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=valeur1 | SELECT * from projection WHERE dimension1 &lt;> &#39;valeur1&#39; | </br> GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=valeur1&amp;dimension2 !=valeur2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;valeur1&#39;, &#39;valeur2&#39;) | </br> GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from projection WHERE dimension1 &lt;> &#39;value1&#39; \| </br> GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;valeur1&#39;, &#39;valeur2&#39;) \| </br> GROUP BY dimension1, dimension2, dimension3 |
 | Supposons qu’il n’y ait pas de chemin direct : /dimension1/dimension3 </br>, mais qu’il y ait un chemin : /dimension1/dimension2/dimension3 </br> </br> /dimension1?dimension3 | SELECT * from projection GROUP BY dimension1, dimension3 |
 
 >[!NOTE]

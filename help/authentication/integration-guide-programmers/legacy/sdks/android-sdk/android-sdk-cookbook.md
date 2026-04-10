@@ -2,9 +2,9 @@
 title: Manuel d’Android SDK
 description: Manuel d’Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1703'
+source-wordcount: '1690'
 ht-degree: 0%
 
 ---
@@ -121,12 +121,12 @@ L’activité réseau d’AccessEnabler a lieu dans un thread différent, de sor
 1. Démarrez l’application de niveau supérieur.
 1. Lancement de l’authentification Adobe Pass
 
-   a. Appelez [`getInstance`](#$getInstance) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
+   a.  Appelez [`getInstance`](#$getInstance) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
 
    - **Dépendance :** Authentification Adobe Pass Native
 Bibliothèque Android (AccessEnabler)
 
-   b. Appelez ` setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass.
+   b.  Appelez ` setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass.
 
    - **Dépendance : ID** demandeur d’authentification Adobe Pass valide\
      (Contactez votre gestionnaire de compte d’authentification Adobe Pass pour organiser cette opération.)
@@ -134,8 +134,8 @@ Bibliothèque Android (AccessEnabler)
    - Rappel **Triggers:** setRequestorComplete()
 
    | REMARQUE |     |
-   | --- | --- |  
-   |  | Aucune demande de droit ne peut être traitée tant que l’identité du demandeur n’est pas entièrement établie. Cela signifie effectivement que, pendant que setRequestor() est toujours en cours d’exécution, toutes les demandes de droits suivantes (par exemple, `checkAuthentication()`) sont bloquées.<br><br>Vous disposez de deux options d’implémentation : une fois les informations d’identification du demandeur envoyées au serveur principal, la couche d’application de l’interface utilisateur peut choisir l’une des deux approches suivantes :<br><br>1.  Attendez le déclenchement du rappel `setRequestorComplete()` (partie du délégué AccessEnabler).  Cette option offre la plus grande certitude quant à la réalisation de l`setRequestor()`opération. Elle est donc recommandée pour la plupart des implémentations.<br>2.  Continuez sans attendre le déclenchement du rappel `setRequestorComplete()` et commencez à émettre des demandes de droits. Ces appels (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sont mis en file d&#39;attente par la bibliothèque AccessEnabler, qui effectuera les appels réseau réels après l&#39;`setRequestor(). `Cette option peut parfois être interrompue si, par exemple, la connexion réseau est instable. |
+   | --- | --- |
+   |  | Aucune demande de droit ne peut être traitée tant que l’identité du demandeur n’est pas entièrement établie. Cela signifie effectivement que, pendant que setRequestor() est toujours en cours d’exécution, toutes les demandes de droits suivantes (par exemple, `checkAuthentication()`) sont bloquées.<br><br>Vous disposez de deux options d’implémentation : une fois les informations d’identification du demandeur envoyées au serveur principal, la couche d’application de l’interface utilisateur peut choisir l’une des deux approches suivantes :<br><br>1.  Attendez le déclenchement du rappel `setRequestorComplete()` (partie du délégué AccessEnabler).  Cette option offre la plus grande certitude quant à la réalisation de l’`setRequestor()`. Elle est donc recommandée pour la plupart des implémentations.<br>2.  Continuez sans attendre le déclenchement du rappel `setRequestorComplete()` et commencez à émettre des demandes de droits. Ces appels (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sont mis en file d&#39;attente par la bibliothèque AccessEnabler, qui effectuera les appels réseau réels après l&#39;`setRequestor(). `Cette option peut parfois être interrompue si, par exemple, la connexion réseau est instable. |
 
    <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
@@ -187,7 +187,7 @@ flux.
    - Si `getAuthorization()` échoue : examinez l’exception renvoyée pour déterminer son type (AuthN, AuthZ ou autre chose) :
       - S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
       - S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
-      - S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.), affichez un message d’erreur approprié à l’intention de l’utilisateur.
+      - S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
 
 1. Validez le jeton de média court.\
    Utilisez la bibliothèque Vérificateur de jeton de média d’authentification Adobe Pass pour vérifier le jeton de média de courte durée renvoyé par l’appel `getAuthorization()` ci-dessus :
@@ -211,9 +211,9 @@ flux.
 1. Appelez [`logout()`](#$logout) pour déconnecter l’utilisateur.\
    AccessEnabler efface toutes les valeurs et tous les jetons mis en cache pour le MVPD actuel pour le demandeur actuel et également pour les demandeurs avec authentification SSO. Après avoir effacé le cache, AccessEnabler effectue un appel au serveur pour nettoyer les sessions côté serveur.  Notez que puisque l’appel au serveur peut entraîner une redirection SAML vers l’IdP (cela permet le nettoyage de la session du côté IdP), cet appel doit suivre toutes les redirections. Pour cette raison, cet appel doit être géré dans un contrôle WebView.
 
-   a. Suivant le même modèle que le workflow d’authentification, le domaine AccessEnabler effectue une requête à la couche d’application de l’interface utilisateur (via le rappel `navigateToUrl()`) pour créer un contrôle WebView et demander à ce contrôle de charger l’URL du point d’entrée de déconnexion sur le serveur principal.
+   a.  Suivant le même modèle que le workflow d’authentification, le domaine AccessEnabler effectue une requête à la couche d’application de l’interface utilisateur (via le rappel `navigateToUrl()`) pour créer un contrôle WebView et demander à ce contrôle de charger l’URL du point d’entrée de déconnexion sur le serveur principal.
 
-   b. Là encore, l&#39;interface utilisateur doit surveiller l&#39;activité du contrôle WebView et détecter le moment où le contrôle, lorsqu&#39;il passe par plusieurs redirections, charge l&#39;URL personnalisée de l&#39;application (c&#39;est-à-dire : `http://adobepass.android.app/`). Une fois cet événement effectué, la couche d’application de l’interface utilisateur ferme le WebView et le processus de déconnexion est terminé.
+   b.  Là encore, l&#39;interface utilisateur doit surveiller l&#39;activité du contrôle WebView et détecter le moment où le contrôle, lorsqu&#39;il passe par plusieurs redirections, charge l&#39;URL personnalisée de l&#39;application (c&#39;est-à-dire : `http://adobepass.android.app/`). Une fois cet événement effectué, la couche d’application de l’interface utilisateur ferme le WebView et le processus de déconnexion est terminé.
 
    **Remarque :** le flux de déconnexion diffère du flux d’authentification dans la mesure où l’utilisateur n’est pas tenu d’interagir avec le WebView de quelque manière que ce soit. La couche d’application de l’interface utilisateur utilise un WebView pour s’assurer que toutes les redirections sont suivies. Il est donc possible (et recommandé) de rendre le contrôle WebView invisible (c&#39;est-à-dire masqué) pendant le processus de déconnexion.
 
@@ -221,6 +221,6 @@ flux.
 
 ### Flux utilisateur pour la connexion avec plusieurs MVPD et la déconnexion {#user_flows}
 
-[Vous avez ici &#x200B;](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
+[Vous avez ici ](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) document décrivant le comportement lors de l’utilisation de plusieurs fichiers MVPD et ce qui se passe lorsque l’utilisateur se déconnecte d’une application.
 
 Le comportement décrit est disponible lors de l’utilisation d’Android SDK version >= 2.0.0.

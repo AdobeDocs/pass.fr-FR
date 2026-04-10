@@ -2,9 +2,9 @@
 title: Référence de l’API JavaScript SDK
 description: Référence de l’API JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2883'
+source-wordcount: '2902'
 ht-degree: 0%
 
 ---
@@ -274,7 +274,7 @@ Il existe deux types de métadonnées :
   **Remarque** : les métadonnées d’utilisateur réellement disponibles pour un programmeur dépendent de ce qu’un MVPD rend disponible.  Consultez [Métadonnées utilisateur](#UserMetadata) pour obtenir la liste actuelle des métadonnées utilisateur disponibles.
 
 
-Par exemple :
+Par exemple :
 
 ```JSON
     // Assume that a reference to the AccessEnabler has been previously 
@@ -309,7 +309,7 @@ Par exemple :
 **Description :** appelez cette fonction lorsque l’utilisateur a sélectionné un MVPD dans l’interface utilisateur de sélection de fournisseur afin d’envoyer la sélection de fournisseur à Access Enabler ou appelez cette fonction avec un paramètre null au cas où l’utilisateur aurait ignoré l’interface utilisateur de sélection de fournisseur sans sélectionner de fournisseur.
 
 **Rappels
-triggered:**[&#x200B; setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+triggered:**[ setAuthentcationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Vous devez implémenter ces rappels pour gérer les réponses à vos appels de r
 
 **Description :** implémentez ce rappel si l’utilisateur a sélectionné un MVPD qui nécessite un iFrame pour afficher l’interface utilisateur de sa page de connexion d’authentification.
 
-**Déclenché par :**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Déclenché par :**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Haut de la page](#top)
 
@@ -531,7 +531,7 @@ Les données sont spécifiques à chaque type d’événement :
 
 - *inRequestedResourceID* - Chaîne fournissant l’identifiant de ressource utilisé dans la demande d’autorisation.
 - *inRequestErrorCode* - Chaîne qui affiche le code d’erreur d’authentification Adobe Pass, indiquant la raison de l’échec. Les valeurs possibles sont « Erreur d’utilisateur non authentifié » et « Erreur d’utilisateur non autorisé ». Pour plus d’informations, consultez la section « Codes d’erreur de rappel » ci-dessous.
-- *inRequestDetailedErrorMessage* - Chaîne descriptive supplémentaire pouvant être affichée. Si cette chaîne descriptive n’est disponible pour aucune raison, l’authentification Adobe Pass envoie une chaîne vide **(«  »)**.  Il peut être utilisé par un MVPD pour transmettre des messages d’erreur personnalisés ou des messages liés aux ventes. Par exemple, si l’autorisation d’accès à une ressource est refusée à un abonné, le MVPD peut répondre avec une `*inRequestDetailedErrorMessage*` telle que : **« Vous n’avez actuellement pas accès à ce canal dans votre package. Si vous souhaitez mettre à niveau votre package, cliquez sur \*here\*. »** Le message est transmis par l’authentification Adobe Pass via ce rappel au site du programmeur. Le programmeur a alors la possibilité de l’afficher ou de l’ignorer. L’authentification Adobe Pass peut également utiliser `*inRequestDetailedErrorMessage*` pour informer le programmeur de la condition qui a pu entraîner une erreur. Par exemple, **« Une erreur réseau s’est produite lors de la communication avec le service d’autorisation du fournisseur ».**
+- *inRequestDetailedErrorMessage* - Chaîne descriptive supplémentaire pouvant être affichée. Si cette chaîne descriptive n’est disponible pour aucune raison, l’authentification Adobe Pass envoie une chaîne vide **(«  »)**.  Il peut être utilisé par un MVPD pour transmettre des messages d’erreur personnalisés ou des messages liés aux ventes. Par exemple, si l’autorisation d’accès à une ressource est refusée à un abonné, le MVPD peut répondre avec une `*inRequestDetailedErrorMessage*` telle que : **« Vous n’avez actuellement pas accès à ce canal dans votre package. Si vous souhaitez mettre à niveau votre package, cliquez sur \*here\*.«** Le message est transmis par l’authentification Adobe Pass via ce rappel au site du programmeur. Le programmeur a alors la possibilité de l’afficher ou de l’ignorer. L’authentification Adobe Pass peut également utiliser `*inRequestDetailedErrorMessage*` pour informer le programmeur de la condition qui a pu entraîner une erreur. Par exemple, **« Une erreur réseau s’est produite lors de la communication avec le service d’autorisation du fournisseur ».**
 
 
 
@@ -568,7 +568,7 @@ Les données sont spécifiques à chaque type d’événement :
 
 - *key (chaîne)* : clé des métadonnées pour lesquelles la requête a été effectuée.
 - *chiffré (booléen)* : indicateur qui signale si la « valeur » est chiffrée ou non. Si cette valeur est définie sur « true », « value » est une représentation chiffrée par le Web JSON de la valeur réelle.
-- *data (objet JSON)* : objet JSON avec la représentation des métadonnées. Pour les requêtes simples (&#39;`TTL_AUTHN`&#39;, &#39;`TTL_AUTHZ`&#39;, &#39;`DEVICEID`&#39;), le résultat est une chaîne (représentant la TTL d’authentification, la TTL d’autorisation ou l’ID d’appareil). Dans le cas d’une requête de métadonnées utilisateur, le résultat peut être un objet primitif ou JSON représentant la payload des métadonnées. La structure réelle des objets de métadonnées d’utilisateur JSON est similaire à ce qui suit :
+- *data (objet JSON)* : objet JSON avec la représentation des métadonnées.Pour les requêtes simples (&#39;`TTL_AUTHN`&#39;, &#39;`TTL_AUTHZ`&#39;, &#39;`DEVICEID`&#39;), le résultat est une chaîne (représentant la TTL d&#39;authentification, la TTL d&#39;autorisation ou l&#39;ID d&#39;appareil). Dans le cas d’une requête de métadonnées utilisateur, le résultat peut être un objet primitif ou JSON représentant la payload des métadonnées. La structure réelle des objets de métadonnées d’utilisateur JSON est similaire à ce qui suit :
 
 ```JSON
     {
@@ -588,7 +588,7 @@ Les données sont spécifiques à chaque type d’événement :
 ```
 
 
-Par exemple :
+Par exemple :
 
 ```JSON
     // Implement the setMetadataStatus() callback
@@ -627,20 +627,20 @@ Par exemple :
 ### Codes d’erreur de rappel {#callback-error-codes}
 
 | Erreurs génériques | |
-|:--- | :--- | 
+|:--- | :--- |
 | Erreur interne | Une erreur système s’est produite lors de la tentative de traitement de la demande. |
 | Erreur de fournisseur non sélectionné | Se produit lorsque le client annule dans la boîte de dialogue de sélection du fournisseur |
 | Erreur de fournisseur non disponible | Se produit lorsqu&#39;aucun fournisseur n&#39;est disponible. |
 
 | Erreurs d’authentification | |
-|:--- | :--- | 
+|:--- | :--- |
 | Erreur d’authentification générique | Renvoyé lorsque la raison n’est pas connue ou ne peut pas être publiée. |
 | Erreur d’authentification interne | Une erreur système s’est produite lors de la tentative d’authentification. |
 | Erreur Utilisateur non authentifié | L’utilisateur n’est pas authentifié. |
 | Erreur de plusieurs demandes d’authentification | D’autres demandes d’authentification ont été reçues avant la fin de la première. |
 
 | Erreurs d’autorisation | |
-|:--- | :--- | 
+|:--- | :--- |
 | Erreur d’autorisation générique | Renvoyé lorsque la raison n’est pas connue ou ne peut pas être publiée. |
 | Erreur d’autorisation interne | Une erreur système s’est produite lors de la tentative d’autorisation. |
 | Erreur Utilisateur non autorisé | Le client n’est pas autorisé à consulter le contenu demandé. |

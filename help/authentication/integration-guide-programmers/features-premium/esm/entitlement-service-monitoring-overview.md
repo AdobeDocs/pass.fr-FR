@@ -2,9 +2,9 @@
 title: Présentation de la surveillance du service de droits
 description: Présentation de la surveillance du service de droits
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -44,8 +44,8 @@ L’API ESM n’est généralement pas disponible.  Contactez votre représentan
 | authz-failed | Nombre de tentatives d&#39;autorisation considérées comme malveillantes par Adobe Service Provider et rejetées suite à une prévention d&#39;attaque par déni de service |
 | aut-latence | Nombre total de millisecondes passées sur le point d’entrée de MVPD |
 | media-tokens | Nombre de jetons de médias courts générés (qui sont assimilés au nombre de requêtes de lecture) |
-| comptes uniques | Nombre d’utilisateurs uniques ayant effectué des actions de droits (AuthN / AuthZ) dans l’intervalle de temps sélectionné. (Cette mesure s’affiche uniquement si des valeurs quotidiennes sont demandées.) </br> Elle est calculée pour chaque centre de données individuel. Lorsque la dimension « dc » n’est pas demandée, cette mesure ne s’affiche pas. |
-| uniques-sessions | Nombre de sessions uniques qui ont effectué des appels de flux d’authentification au service d’authentification Adobe Pass dans l’intervalle de temps sélectionné. (Cette mesure s’affiche uniquement si des valeurs quotidiennes sont demandées.) </br> Elle est calculée pour chaque centre de données individuel. Lorsque la dimension « dc » n’est pas demandée, cette mesure ne s’affiche pas. |
+| comptes uniques | Nombre d’utilisateurs uniques ayant effectué des actions de droits (AuthN / AuthZ) dans l’intervalle de temps sélectionné. (Cette mesure s’affichera uniquement si des valeurs quotidiennes sont demandées.) </br> Il est calculé pour chaque centre de données individuel. Lorsque la dimension « dc » n’est pas demandée, cette mesure ne s’affiche pas. |
+| uniques-sessions | Nombre de sessions uniques qui ont effectué des appels de flux d’authentification au service d’authentification Adobe Pass dans l’intervalle de temps sélectionné. (Cette mesure s’affichera uniquement si des valeurs quotidiennes sont demandées.) </br> Il est calculé pour chaque centre de données individuel. Lorsque la dimension « dc » n’est pas demandée, cette mesure ne s’affiche pas. |
 | comptage | Compteur simple utilisé dans les rapports orientés événement |
 
 </br>
@@ -53,7 +53,7 @@ L’API ESM n’est généralement pas disponible.  Contactez votre représentan
 ### Les programmeurs peuvent filtrer les mesures répertoriées ci-dessus en fonction des dimensions suivantes : {#progr-filter-metrics}
 
 
-| *Nom du Dimension* | *Description* |
+| *Nom du* | *Description* |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | année | L’année à 4 chiffres |
 | mois | Le mois de l&#39;année (1-12) |
@@ -68,10 +68,10 @@ L’API ESM n’est généralement pas disponible.  Contactez votre représentan
 | canal | Site web du canal, extrait du champ de la ressource (extrait de la payload MRSS comme canal/titre si fourni, ou mappé à la valeur de la ressource si elle n’est pas au format RSS). |
 | resource-id | Le titre réel de la ressource impliqué dans la demande d’autorisation (extrait de la payload MRSS comme l’élément/le titre, le cas échéant). |
 | appareil | Plateforme de l’appareil (PC, mobile, console, etc.) |
-| japper | Fournisseur d’authentification externe lorsque le flux d’authentification est effectué via un système externe. </br> Les valeurs peuvent être les suivantes : </br> - S.O. - l’authentification a été fournie par Adobe Pass Authentication </br> - Apple - le système externe qui a fourni l’authentification est Apple |
+| japper | Fournisseur d’authentification externe lorsque le flux d’authentification est effectué via un système externe. </br> Les valeurs peuvent être les suivantes : </br> - S/O - l’authentification a été fournie par Adobe Pass Authentication </br> - Apple - le système externe qui a fourni l’authentification est Apple |
 | famille du système d’exploitation | Système d’exploitation s’exécutant sur l’appareil |
 | browser-family | Agent utilisateur utilisé pour accéder à l’authentification Adobe Pass |
-| cdt | Plateforme d’appareil (alternative) actuellement utilisée pour le sans client. </br> Les valeurs peuvent être les suivantes : </br> - S/O - l’événement n’a pas été généré à partir d’un </br> SDK sans client - Inconnu - Étant donné que le paramètre deviceType d’une API sans client est facultatif, certains appels ne contiennent aucune valeur. </br> - toute autre valeur envoyée par l’intermédiaire de l’API Clientless, par exemple xbox, appletv, roku, etc. </br> |
+| cdt | Plateforme d’appareil (alternative) actuellement utilisée pour le sans client. </br>  Les valeurs peuvent être les suivantes : </br> - S/O - l’événement n’provient pas d’un </br> SDK sans client - Inconnu - Étant donné que le paramètre deviceType d’une API sans client est facultatif, certains appels ne contiennent aucune valeur. </br> - toute autre valeur envoyée par l’intermédiaire de l’API Clientless, par exemple xbox, appletv, roku, etc. </br> |
 | platform-version | Version du SDK sans client |
 | type de système d’exploitation | Système d’exploitation s’exécutant sur l’appareil, alternative (non utilisé actuellement) |
 | browser-version | Version de l’agent utilisateur |
@@ -104,7 +104,7 @@ L’API ESM n’est généralement pas disponible.  Contactez votre représentan
 
 ### Les MVPD peuvent filtrer les mesures répertoriées ci-dessus en fonction des dimensions suivantes :
 
-| *Nom du Dimension* | *Description* |
+| *Nom du* | *Description* |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | année | L’année à 4 chiffres |
 | mois | Le mois de l&#39;année (1-12) |
@@ -113,8 +113,8 @@ L’API ESM n’est généralement pas disponible.  Contactez votre représentan
 | minute | La minute de l&#39;heure |
 | mvpd | Identifiant mvpd utilisé pour effectuer la demande de droits |
 | requestor-id | Identifiant du demandeur utilisé pour effectuer la demande de droit |
-| japper | Fournisseur d’authentification externe lorsque le flux d’authentification est effectué via un système externe. </br> Les valeurs peuvent être les suivantes : </br> - S.O. - l’authentification a été fournie par Adobe Pass Authentication </br> - Apple - le système externe qui a fourni l’authentification est Apple |
-| cdt | Plateforme d’appareil (alternative) actuellement utilisée pour le sans client. </br> Les valeurs peuvent être les suivantes : </br> - S/O - l’événement n’a pas été généré à partir d’un </br> SDK sans client - Inconnu - Étant donné que le paramètre deviceType d’une API sans client est facultatif, certains appels ne contiennent aucune valeur. </br> - toute autre valeur envoyée par l’intermédiaire de l’API Clientless, par exemple xbox, appletv, roku, etc. </br> |
+| japper | Fournisseur d’authentification externe lorsque le flux d’authentification est effectué via un système externe. </br> Les valeurs peuvent être les suivantes : </br> - S/O - l’authentification a été fournie par Adobe Pass Authentication </br> - Apple - le système externe qui a fourni l’authentification est Apple |
+| cdt | Plateforme d’appareil (alternative) actuellement utilisée pour le sans client. </br>  Les valeurs peuvent être les suivantes : </br> - S/O - l’événement n’provient pas d’un </br> SDK sans client - Inconnu - Étant donné que le paramètre deviceType d’une API sans client est facultatif, certains appels ne contiennent aucune valeur. </br> - toute autre valeur envoyée par l’intermédiaire de l’API Clientless, par exemple xbox, appletv, roku, etc. </br> |
 | type-sdk | Le SDK client utilisé (Flash, HTML5, Android natif, iOS, Clientless, etc.) |
 | plate-forme | Plateforme identifiée par l’appareil. Valeurs possibles : </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
 | nsdk | Le SDK client utilisé (android, fireTV, js, iOS, tvOS, non-sdk) |

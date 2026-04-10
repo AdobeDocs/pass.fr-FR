@@ -2,9 +2,9 @@
 title: Manuel de l’API REST (client à serveur)
 description: Client de guide pas à pas de l’API REST au serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '906'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Vue d’ensemble {#overview}
 
-Ce document fournit des instructions détaillées à l’équipe d’ingénierie d’un programmeur pour intégrer un « appareil intelligent » (console de jeu, application de télévision intelligente, décodeur, etc.) à l’authentification Adobe Pass à l’aide des services d’API REST. Cette approche client à serveur, qui utilise des API REST plutôt qu’un SDK client, permet une prise en charge plus large de différentes plateformes pour lesquelles le développement d’un nombre important de SDK uniques ne serait pas possible. Pour une présentation technique générale du fonctionnement de la solution découplée, reportez-vous à la [Présentation technique du découplage](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
+Ce document fournit des instructions détaillées à l&#39;équipe d&#39;ingénieurs d&#39;un programmeur pour intégrer un « appareil intelligent » (console de jeux, application de télévision intelligente, décodeur, etc.) avec l’authentification Adobe Pass à l’aide des services d’API REST. Cette approche client à serveur, qui utilise des API REST plutôt qu’un SDK client, permet une prise en charge plus large de différentes plateformes pour lesquelles le développement d’un nombre important de SDK uniques ne serait pas possible. Pour une présentation technique générale du fonctionnement de la solution découplée, reportez-vous à la [Présentation technique du découplage](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
 
 
 Cette approche nécessite deux composants (application de streaming et application AuthN) pour terminer les flux requis : les flux de démarrage, d’enregistrement, d’autorisation et de média d’affichage dans l’application de streaming, ainsi que le flux d’authentification dans votre application AuthN.
@@ -49,7 +49,7 @@ Dans une solution client à serveur opérationnelle, les composants suivants son
 
 ### Enregistrement de client dynamique (DCR)
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Flux D’Applications De Diffusion En Continu (Smart Device)
@@ -72,11 +72,11 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
 
 1. Obtenez un code d’enregistrement et une URL que votre utilisateur peut utiliser pour accéder à l’application de connexion du deuxième écran, puis présentez-les à l’utilisateur :
 
-   a. Envoyez une requête POST au service Adobe Registration Code, en transmettant un ID d’appareil haché et une « URL d’enregistrement ».  Par exemple : [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a.  Envoyez une requête POST au service de code d’enregistrement Adobe, en transmettant un ID d’appareil haché et une « URL d’enregistrement ».  Par exemple : [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
-   b. Présentez le code d’enregistrement et l’URL renvoyés à l’utilisateur.
+   b.  Présentez le code d’enregistrement et l’URL renvoyés à l’utilisateur.
 
-   c. Demandez à l’utilisateur de passer à un appareil compatible avec le Web, accédez à l’URL, puis saisissez le code d’enregistrement.
+   c.  Demandez à l’utilisateur de passer à un appareil compatible web, accédez à l’URL, puis saisissez le code d’enregistrement.
 
 
 
@@ -96,7 +96,7 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
 
    * S’il s’agissait d’une erreur AuthZ, l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
 
-   * Si une autre erreur s’est produite (erreur de connexion, erreur réseau, etc.), affichez un message d’erreur approprié à l’intention de l’utilisateur.
+   * S’il y a eu une autre erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
 
 
 
@@ -106,12 +106,12 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
 
 2. Les médias sont-ils protégés ?
 
-   a. Votre application vérifie si le média est protégé.
+   a.  Votre application vérifie si le média est protégé.
 
-   b. Si le média est protégé, votre application démarre l’autorisation.
+   b.  Si le média est protégé, votre application lance l’autorisation.
 (AuthZ) Flux ci-dessus.
 
-   c. Si le média n’est pas protégé, lisez le média pour le
+   c.  Si le média n’est pas protégé, lisez le média pour le
 utilisateur.
 
 3. Lire le média.

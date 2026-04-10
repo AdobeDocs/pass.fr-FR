@@ -2,10 +2,10 @@
 title: Page d'inscription
 description: Page d'inscription
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '509'
-ht-degree: 0%
+source-wordcount: '528'
+ht-degree: 1%
 
 ---
 
@@ -43,7 +43,7 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 
 | Point d’entrée | Appelé <br>Par | Entrée   <br>Paramètre | HTTP <br>Méthode | Réponse | HTTP <br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Service de programmation<br>ou<br>d’application en flux continu | &#x200B;1. <br> du demandeur    (Composant Chemin d’accès)<br>2.  deviceId (haché)   <br>    (Obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POSTER | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Service de programmation<br>ou<br>d’application en flux continu | &#x200B;1.  <br> du demandeur    (Composant Chemin d’accès)<br>2.  deviceId (haché)   <br>    (Obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POSTER | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
 
 {style="table-layout:auto"}
 
@@ -55,7 +55,7 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 | deviceId | Paramètre de requête | Octets d’ID de l’appareil. |
 | device_info/<br>X-Device-Info | device_info : Corps <br> X-Device-Info : En-tête | Informations sur l’appareil de diffusion en continu.<br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. <br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Paramètre de requête | Identifiant MVPD pour lequel cette opération est valide. |
-| ttl | Paramètre de requête | Durée pendant laquelle ce regcode doit durer en secondes.<br>**Remarque** : la valeur maximale autorisée pour ttl est de 36000 secondes (10 heures). Des valeurs plus élevées entraînent une réponse HTTP 400 (requête incorrecte). Si `ttl` n’est pas renseigné, l’authentification Adobe Pass définit une valeur par défaut de 30 minutes. |
+| ttl | Paramètre de requête | Durée de vie de ce regcode en secondes.<br>**Remarque** : la valeur maximale autorisée pour ttl est de 36000 secondes (10 heures). Des valeurs plus élevées entraînent une réponse HTTP 400 (requête incorrecte). Si `ttl` n’est pas renseigné, l’authentification Adobe Pass définit une valeur par défaut de 30 minutes. |
 | _deviceType_ | Paramètre de requête | Obsolète, ne doit pas être utilisé. |
 | _deviceUser_ | Paramètre de requête | Obsolète, ne doit pas être utilisé. |
 | _appId_ | Paramètre de requête | Obsolète, ne doit pas être utilisé. |
@@ -64,9 +64,8 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 
 >[!CAUTION]
 >
->**Adresse IP de l’appareil de streaming**
-><br>
->Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué par le service de programmation et non par l’appareil de diffusion en continu, l’en-tête suivant est requis pour transmettre l’adresse IP de l’appareil de diffusion en continu :
+>**Adresse IP de l’appareil de diffusion en continu**
+><br>>Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué par le service de programmation et non par l’appareil de diffusion en continu, l’en-tête suivant est requis pour transmettre l’adresse IP de l’appareil de diffusion en continu :
 >
 >
 >```
@@ -74,14 +73,13 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 >```
 >
 >où `<streaming\_device\_ip>` est l’adresse IP publique de l’appareil de diffusion en continu.
-><br><br>
->Exemple : <br>
+><br><br>>Exemple : <br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### JSON de réponse
 

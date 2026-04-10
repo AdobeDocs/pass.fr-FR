@@ -2,9 +2,9 @@
 title: Comment migrer la page de connexion MVPD d’iFrame vers une fenêtre contextuelle
 description: Comment migrer la page de connexion MVPD d’iFrame vers une fenêtre contextuelle
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ ht-degree: 0%
 ## Fenêtre contextuelle par rapport à iFrame {#popup-vs-iframe}
 
 Certains utilisateurs ont rencontré des problèmes de cookies tiers avec l’implémentation iFrame d’une page de connexion MVPD.
-<!--These issues are described in the tech notes linked below:
+<!--
+These issues are described in the tech notes linked below:
 
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
-* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
+* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)
+-->
 
 L’équipe Authentification Adobe Pass **recommande d’implémenter la page de connexion de la fenêtre contextuelle/nouvelle fenêtre** plutôt que la version iFrame sur Firefox et Safari.  Cependant, si vous implémentez une page de connexion pour Internet Explorer, vous pouvez rencontrer des problèmes avec l’implémentation de la fenêtre contextuelle. Les problèmes d’IE sont dus au fait que, une fois que l’utilisateur s’authentifie avec son MVPD dans la fenêtre contextuelle, l’authentification Adobe Pass force une redirection de la page parente, qui est considérée comme un bloqueur de fenêtres contextuelles par Internet Explorer. L’équipe Authentification Adobe Pass **recommande d’implémenter la connexion iFrame pour Internet Explorer**.
 
@@ -52,7 +54,7 @@ Les exemples de code précédents illustraient une page HTML contenant la balise
 </body>
 ```
 
-Voici le code **JavaScript** associé :
+Voici le code **** associé :
 
 ```JavaScript
 /*

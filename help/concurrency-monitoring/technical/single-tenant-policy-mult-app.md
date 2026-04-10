@@ -2,9 +2,9 @@
 title: Mise en œuvre de CM pour un client/une politique unique et plusieurs applications
 description: Mise en œuvre de CM pour un client/une politique unique et plusieurs applications
 exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '241'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Deux applications + un site web sont utilisées pour démarrer les flux :
 
 
 
-<!---
+<!--
 
 Figure 1: Policy with one rule
 
@@ -471,4 +471,4 @@ Related Information
 Introduction - Adobe Concurrency Monitoring
 API Console - Adobe Concurrency Monitoring
 User Metadata - Adobe Pass Authentication
---->
+-->

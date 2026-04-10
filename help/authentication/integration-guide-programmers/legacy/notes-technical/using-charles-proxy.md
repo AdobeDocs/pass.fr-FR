@@ -2,9 +2,9 @@
 title: Utilisation du proxy Charles
 description: Utilisation du proxy Charles
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: 175755aa7463257487b29c5f4da989cf34e91bfd
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,8 @@ Activer la `\[ *Proxy -\> Proxy Settings... -\> SSL* \]` de proxy SSL
 
 Cochez la case « Activer le proxy SSL » et ajoutez tous les emplacements HTTPS.
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/ProxySettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/SSLSettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AddHttpsLocations.PNG)
 -->
 
@@ -68,7 +69,8 @@ Si votre sortie devient trop encombrée, vous pouvez choisir d’ignorer ou d’
 
 L’usurpation DNS est très utile lorsque vous essayez de rediriger une requête vers une autre adresse IP, en particulier lorsque vous utilisez des appareils mobiles :
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/DNSSpoofing.PNG)
 -->
 
@@ -83,7 +85,8 @@ L’usurpation DNS est très utile lorsque vous essayez de rediriger une requêt
 
 Avec Map Remote, vous pouvez rediriger une requête « entrante » vers un autre point d’entrée. Le cas d’utilisation le plus courant de cette fonctionnalité est de « mapper » les `AccessEnabler.swf` aux `AccessEnablerDebug.swf:`
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
 -->
 
@@ -103,7 +106,8 @@ Avec Map Remote, vous pouvez rediriger une requête « entrante » vers un autre
 
 Accédez à <http://charlesproxy.com/charles.crt> à partir de votre appareil iOS.  La boîte de dialogue d’installation du certificat démarre :
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
 -->
 
@@ -122,7 +126,8 @@ Sur votre appareil iOS, sélectionnez `\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIF
 
 </br>
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy1.png)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy2.PNG)
 -->
 
@@ -131,7 +136,8 @@ Ici, vous devez spécifier l’adresse IP et le port de la machine sur laquelle 
 
 </br>
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
 -->
 
