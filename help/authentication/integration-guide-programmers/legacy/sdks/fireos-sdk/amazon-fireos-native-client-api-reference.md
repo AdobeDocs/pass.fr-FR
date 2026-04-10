@@ -259,7 +259,7 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilité :**v 1.0+
+**Disponibilité :**&#x200B;v 1.0+
 
 **Paramètres:** Aucun
 
@@ -354,7 +354,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilité :**v 1.0+
+**Disponibilité :**&#x200B;v 1.0+
 
 **Paramètres :** le paramètre `resources` est un tableau de ressources que l’utilisateur est déjà autorisé à afficher.
 
@@ -426,7 +426,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilité :**v 1.0+
+**Disponibilité :**&#x200B;v 1.0+
 
 **Paramètres:**
 

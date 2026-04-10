@@ -54,7 +54,7 @@ Les exemples de code précédents illustraient une page HTML contenant la balise
 </body>
 ```
 
-Voici le code **** associé :
+Voici le code **&#x200B;**&#x200B;associé :
 
 ```JavaScript
 /*
