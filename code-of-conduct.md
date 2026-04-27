@@ -1,7 +1,7 @@
 ---
 source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ défini et clarifié par les responsables du projet.
 ## Application
 
 Les cas de comportement abusif, de harcèlement ou autrement inacceptable peuvent être
-signalement effectué en contactant l’équipe du projet à l’adresse Grp-opensourceoffice@adobe.com. Tous
+signalement effectué en contactant l’équipe du projet à l’adresse Grp-opensourceoffice@adobe.com. TOUTES
 les plaintes seront examinées et feront l&#39;objet d&#39;une enquête et donneront lieu à une réponse qui :
 est jugée nécessaire et adaptée aux circonstances. L’équipe du projet est
 l&#39;obligation de respecter la confidentialité à l&#39;égard de la personne signalant un incident.
@@ -75,4 +75,4 @@ membres de la direction du projet.
 ## Attribution
 
 Le présent Code de conduite est adapté du [Pacte du contributeur](https://contributor-covenant.org), version 1.4,
-disponible sur [https://contributor-covenant.org/version/1/4](https://contributor-covenant.org/version/1/4/)
+disponible à l’adresse [https://contributor-covenant.org/version/1/4](https://contributor-covenant.org/version/1/4/)
