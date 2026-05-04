@@ -1,5 +1,5 @@
 ---
-source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
+source-git-commit: 8d0633f64edecfacc3569d91931a204fac2d5e44
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 0%
@@ -8,6 +8,7 @@ ht-degree: 0%
 # Article de contribution
 
 Nous acceptons les contributions de notre communauté ainsi que celles des employés d’Adobe qui ne font pas partie des équipes de documentation.
+
 
 ## Code de conduite d’Adobe Open Source
 
@@ -29,7 +30,7 @@ Si vous contribuez à une mise à jour mineure :
 1. Dans la rubrique « Ce contenu a-t-il été utile ? » La bannière qui s’affiche en bas de la fenêtre du navigateur, cliquez sur **Options détaillées relatives aux commentaires**.
 1. Cliquez sur **Suggérer une modification** et envoyez une requête de tirage (PR) avec vos modifications dans l’interface utilisateur GitHub.
 
-   Pour plus d’informations[&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=fr) consultez le guide du contributeur aux documents Adobe .
+   Pour plus d’informations](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) consultez le guide du contributeur aux [documents Adobe .
 
 Les modifications ou précisions mineures que vous apportez aux documents et aux exemples de code dans ce référentiel sont soumises aux conditions d’utilisation d’Adobe.
 
@@ -43,7 +44,7 @@ Si vous faites partie de la communauté Adobe et que vous souhaitez créer une r
 
 Les contributeurs de la communauté peuvent utiliser l’interface utilisateur de GitHub pour apporter des modifications mineures, ou dupliquer le référentiel pour apporter des contributions majeures.
 
-Pour plus d’informations, consultez le Guide du contributeur aux documents Adobe [&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=fr).
+Pour plus d’informations, consultez le Guide du contributeur aux documents Adobe [](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 ## Contributeurs internes
 
