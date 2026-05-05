@@ -4,7 +4,8 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Surveillance de la simultanéité dans Adobe Pass
 user-guide-description: Découvrez comment définir et appliquer des limites à l’utilisation simultanée dans plusieurs applications.
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+nudge: true
+source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 6%
