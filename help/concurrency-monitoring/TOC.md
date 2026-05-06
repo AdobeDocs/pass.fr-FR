@@ -5,9 +5,9 @@ audience: end-user
 user-guide-title: Surveillance de la simultanéité dans Adobe Pass
 user-guide-description: Découvrez comment définir et appliquer des limites à l’utilisation simultanée dans plusieurs applications.
 nudge: true
-source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
+source-git-commit: 80ffef1e8e0cfb3752c01e155854f7d87dfa134c
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '257'
 ht-degree: 6%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 6%
    - [Comment : faire la distinction entre VOD et le contenu dynamique dans la surveillance simultanée](technical/vod-live-dist.md)
    - [Politique de conservation des données](technical/data-retention-policy.md)
 - Versions {#cm-release-notes}
+   - [Surveillance de la simultanéité - Notes de mise à jour 4.0.1](releases/rn-cm-services-401.md)
    - [Surveillance de l’accès simultané - Notes de mise à jour 3.6.2](releases/rn-cm-services-362.md)
    - [Surveillance de l’accès simultané - Notes de mise à jour 3.6.1](releases/rn-cm-services-361.md)
    - [Surveillance de l’accès simultané - Notes de mise à jour 3.6.0](releases/rn-cm-services-360.md)
