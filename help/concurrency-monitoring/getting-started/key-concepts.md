@@ -1,13 +1,13 @@
 ---
 title: Concepts clés
 description: Découvrez les concepts fondamentaux de la surveillance d’accès simultané, notamment les sessions, les politiques, les métadonnées, etc
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
-
 
 # Concepts clés {#key-concepts}
 
@@ -269,4 +269,3 @@ Tenant: "Streaming Company"
 | **FIFO** | Résolution des conflits du premier entré, premier sorti |
 | **Client** | Application propriétaire de l’organisation |
 | **Application** | Programme logiciel utilisant CM |
-
