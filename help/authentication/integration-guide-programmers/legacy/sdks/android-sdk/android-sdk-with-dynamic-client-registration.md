@@ -2,10 +2,10 @@
 title: Android SDK avec enregistrement client dynamique
 description: Android SDK avec enregistrement client dynamique
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1301'
-ht-degree: 0%
+source-wordcount: '1321'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ Pour Android, l’utilisation des onglets personnalisés Chrome limite l’accè
 
 ## Enregistrement dynamique de client {#DCR}
 
-Android SDK v3.0+ utilisera la procédure d’enregistrement client dynamique telle que définie dans [&#x200B; Présentation de l’enregistrement client dynamique](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Android SDK v3.0+ utilisera la procédure d’enregistrement client dynamique telle que définie dans [ Présentation de l’enregistrement client dynamique](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Démonstration des fonctionnalités {#Demo}
@@ -53,7 +53,7 @@ Regardez [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui donne plu
 
 | Appel API : constructeur |
 | --- |
-| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        renvoie AccessEnablerException |
+| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> renvoie AccessEnablerException |
 
 
 **Disponibilité :** v3.0+
@@ -64,8 +64,7 @@ Regardez [ce webinaire](https://my.adobeconnect.com/pzkp8ujrigg1/) qui donne plu
 - softwareStatement : valeur obtenue à partir de TVE Dashboard ou *null* si « software\_statement » est défini dans strings.xml
 - redirectUrl : url unique, l’un des domaines dans l’ordre inverse, explicitement ajouté dans le tableau de bord TVE ou *null* si « redirect\_uri » est défini dans strings.xml
 
-Remarque : softwareStatement ou redirectUrl non valide empêchera l&#39;application d&#39;initialiser AccessEnabler ou d&#39;enregistrer l&#39;application pour l&#39;authentification et l&#39;autorisation Adobe Pass
-</br>
+Remarque : softwareStatement ou redirectUrl non valide empêchera l&#39;application d&#39;initialiser AccessEnabler ou d&#39;enregistrer l&#39;application pour l&#39;authentification et l&#39;autorisation Adobe Pass</br>
 Remarque : le paramètre redirectUrl ou redirect\_uri dans strings.xml doit correspondre à la valeur du domaine ajouté dans TVE Dashboard pour l’application dans l’ordre inverse ( par exemple : pour le domaine &#39;adobe.com&#39; ajouté dans TVE Dashboard, redirectUrl doit être &#39;com.adobe&#39;.
 
 
@@ -81,13 +80,13 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Disponibilité :** v3.0+
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilité :** v3.0+
 
@@ -114,14 +113,14 @@ Obsolète :
 
 **Paramètres:** Aucun
 
-**Rappels déclenchés :** `setAuthenticationStatus()`
-</br></br>
+**Rappels déclenchés :** 
+
 
 ## Flux de mise en œuvre du programmeur {#Progr}
 
 ### **1. Enregistrer l’application**
 
-a. Obtenir le logiciel\_instruction et rediriger\_uri depuis Adobe Pass ( Tableau de bord TVE )
+a. Obtention du logiciel\_instruction et redirection\_uri depuis Adobe Pass ( Tableau de bord TVE )
 
 b. Il existe deux options pour transmettre ces valeurs à Adobe Pass SDK :
 
@@ -136,7 +135,7 @@ Appelez AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### &#x200B;2. Configuration de l’application
+### &#x200B;2. Configurer l’application
 
 a. setRequestor(requestor\_id)
 

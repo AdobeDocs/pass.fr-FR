@@ -2,10 +2,10 @@
 title: SDK Amazon FireOS avec enregistrement client dynamique
 description: SDK Amazon FireOS avec enregistrement client dynamique
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 0%
+source-wordcount: '1185'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ FireOS AccessEnabler SDK for FireTV a été modifié pour activer l’authentifi
 
 | Appel API : constructeur |
 | --- |
-| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        renvoie AccessEnablerException |
+| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> renvoie AccessEnablerException |
 
 **Disponibilité :** v3.0+
 
@@ -70,7 +70,7 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilité :** v3.0+
 
@@ -119,7 +119,7 @@ Obsolète :
 
 ### **2. Configurez l’application**
 
-- a. setRequestor(requestor\_id)
+- a.  setRequestor(requestor\_id)
 
   Le SDK va effectuer les opérations suivantes :
 
