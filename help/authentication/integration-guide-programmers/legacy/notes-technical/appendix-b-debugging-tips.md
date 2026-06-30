@@ -2,9 +2,9 @@
 title: Annexe B « Conseils de débogage »
 description: Annexe B « Conseils de débogage »
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '192'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Il est fiable par le navigateur, mais dans Firefox : « Tools » -\> « Clear Re
 
 Accédez à l&#39;aide de [Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-Sélectionnez le ```entitlement.\*``` (en fonction de ce qui a été testé) et cliquez sur « Supprimer le site web ».
+Sélectionnez le `entitlement.\*` (en fonction de ce qui a été testé) et cliquez sur « Supprimer le site web ».
 
 
 ## Outils de débogage {#tools}

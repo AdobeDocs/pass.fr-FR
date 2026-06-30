@@ -2,9 +2,9 @@
 title: Référence de l’API iOS/tvOS
 description: Référence de l’API iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '6935'
+source-wordcount: '7035'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Cette page décrit les méthodes et les fonctions de rappel exposées par le cli
 Documentation associée :
 
 * Pour une présentation détaillée de la mise en œuvre d’Adobe Pass
-Flux de droits d’authentification utilisant cette API, consultez le [guide pas à pas d’intégration d’iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md).
+Flux de droits d’authentification utilisant cette API, consultez le [guide pas à pas d’intégration d’](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md).
 * Pour la dernière version du SDK AccessEnabler iOS, consultez [Bibliothèque iOS Native Access Enabler](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
 
 >[!NOTE]
@@ -137,7 +137,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 | Appel API : constructeur iOS AccessEnabler |
 | --- |
-| ```- (id) init;``` |
+| `- (id) init;` |
 
 **Disponibilité :** v1.0+ **Jusqu’au :** v3.0
 
@@ -157,7 +157,7 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 
 | Appel API : setOptions |
 | --- |
-| ```- (void) setOptions:(NSDictionary *)options;``` |
+| `- (void) setOptions:(NSDictionary *)options;` |
 
 **Disponibilité :** v2.3.0+
 
@@ -189,7 +189,7 @@ Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultan
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```- (void) setRequestor:(NSString *)requestorID``` |
+| `- (void) setRequestor:(NSString *)requestorID` |
 
 
 **Disponibilité :** v3.0+
@@ -313,9 +313,9 @@ Si une valeur est fournie pour le paramètre `urls`, l’appel réseau résultan
 
 **Paramètres:**
 
-* *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site la première fois que vous   enregistré auprès du service d’authentification Adobe Pass.
-* *signedRequestorID* : **Ce paramètre existe dans iOS AccessEnabler   versions 1.2 et ultérieures.** Une copie de l’ID du demandeur qui est signée numériquement avec votre clé privée. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
-* *urls* : paramètre facultatif ; par défaut, le fournisseur d’accès d’Adobe   est utilisé (http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances de fournisseur de services d’authentification Adobe Pass. Ce faisant, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
+* *requestorID* : ID unique associé au programmeur. Transmettez l’ID unique attribué par Adobe à votre site lors de votre premier enregistrement auprès du service d’authentification d’Adobe Pass.
+* *signedRequestorID* : **ce paramètre existe dans iOS AccessEnabler versions 1.2 et ultérieures.** Une copie de l’ID du demandeur qui est signée numériquement avec votre clé privée. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
+* *urls* : paramètre facultatif ; par défaut, le fournisseur d’accès Adobe est utilisé (http://sp.auth.adobe.com/). Ce tableau vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Vous pouvez l’utiliser pour spécifier plusieurs instances de fournisseur de services d’authentification Adobe Pass. Ce faisant, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD.
 * secret et publicKey : clé secrète et publique utilisée pour signer les deuxièmes appels à l’écran. Pour plus d’informations, consultez la [documentation relative à Clienteless](#create_dev).
 
 Si elle est appelée sans le paramètre `serviceProviders`, la bibliothèque récupère la configuration auprès du fournisseur de services par défaut (à savoir, `https://sp.auth.adobe.com` pour le profil de production ou https://sp.auth-staging.adobe.com pour le profil d’évaluation). Si le paramètre `serviceProviders` est fourni, il doit s’agir d’un tableau d’URL. Les informations de configuration sont récupérées à partir de tous les points d’entrée spécifiés et sont fusionnées. S&#39;il existe des informations en double dans les différentes réponses du fournisseur de services, le conflit est résolu en faveur du serveur qui répond le plus rapidement (c&#39;est-à-dire que le serveur qui a le temps de réponse le plus court est prioritaire).
@@ -369,10 +369,8 @@ Si elle est appelée sans le paramètre `serviceProviders`, la bibliothèque ré
 
 **Fichier:** AccessEnabler/headers/AccessEnabler.h
 
-**Description :** vérifie le statut d’authentification de l’utilisateur actuel.
-Pour ce faire, il recherche un jeton d’authentification valide dans le fichier local
-espace de stockage des jetons. Cette méthode n’effectue aucun appel réseau et nous vous recommandons de l’appeler sur le thread principal.
-Il est utilisé par l’application pour interroger le statut d’authentification de l’utilisateur et
+**Description :** vérifie le statut d’authentification de l’utilisateur actuel.Pour ce faire, il recherche un jeton d’authentification valide dans le fichier local
+espace de stockage des jetons. Cette méthode n’effectue aucun appel réseau et nous vous recommandons de l’appeler sur le thread principal.Il est utilisé par l’application pour interroger le statut d’authentification de l’utilisateur et
 mettez à jour l’interface utilisateur en conséquence (c’est-à-dire, mettez à jour l’interface utilisateur de connexion/déconnexion). Le
 le statut d’authentification est communiqué à l’application via .
 le rappel [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
@@ -398,8 +396,8 @@ le rappel [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 **Paramètres:** Aucun
 
-**Rappels déclenchés :**
-[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
+**Rappels déclenchés :
+
 
 [Haut de la page...](#apis)
 
@@ -411,8 +409,8 @@ le rappel [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 **Description :** démarre le workflow d’authentification complet. Il commence par vérifier le statut de l’authentification. S’il n’est pas déjà authentifié, la machine d’état du flux d’authentification est démarrée :
 
-* si la dernière tentative d’authentification a réussi, le MVPD   la phase de sélection est ignorée et   le rappel [`navigateToUrl:`](#nav2url) est déclenché. Le   L’application utilise ce rappel pour instancier le contrôle WebView qui présente à l’utilisateur la page de connexion MVPD. **[REMARQUE : à compter de la version 1.5 de l’activateur d’accès, cette fonctionnalité n’est plus disponible en raison d’une limitation dans SDK].**
-* si la dernière tentative d’authentification a échoué ou si l’utilisateur s’est explicitement déconnecté, le rappel [`displayProviderDialog:`](#dispProvDialog) est   déclenché. Votre application utilise ce rappel pour afficher l’interface utilisateur de sélection de MVPD. Votre application doit également reprendre le flux d’authentification en informant la bibliothèque AccessEnabler de la sélection MVPD de l’utilisateur via la méthode [`setSelectedProvider:`](#setSelProv).
+* si la dernière tentative d’authentification a réussi, la phase de sélection du MVPD est ignorée et le rappel [`navigateToUrl:`](#nav2url) est déclenché. L&#39;application utilise ce rappel pour instancier le contrôle WebView qui présente à l&#39;utilisateur la page de connexion MVPD. **[REMARQUE : à compter de la version 1.5 de l’activateur d’accès, cette fonctionnalité n’est plus disponible en raison d’une limitation dans SDK].**
+* si la dernière tentative d’authentification a échoué ou si l’utilisateur s’est explicitement déconnecté, le rappel [`displayProviderDialog:`](#dispProvDialog) est déclenché. Votre application utilise ce rappel pour afficher l’interface utilisateur de sélection de MVPD. Votre application doit également reprendre le flux d’authentification en informant la bibliothèque AccessEnabler de la sélection MVPD de l’utilisateur via la méthode [`setSelectedProvider:`](#setSelProv).
 
 Comme les informations d’identification de l’utilisateur sont vérifiées sur la page de connexion de MVPD, votre application doit surveiller les multiples opérations de redirection qui ont lieu lorsque l’utilisateur s’authentifie sur la page de connexion de MVPD. Lorsque les informations d&#39;identification correctes sont saisies, le contrôle WebView est redirigé vers une URL personnalisée définie par la constante `ADOBEPASS_REDIRECT_URL`. Cette URL ne doit pas être chargée par le WebView. L’application doit intercepter cette URL et interpréter cet événement comme un signal indiquant que la phase de connexion est terminée. Il doit ensuite transmettre le contrôle à AccessEnabler pour terminer le flux d’authentification (en appelant la méthode [handleExternalURL](#handleExternalURL)).
 
@@ -716,7 +714,7 @@ Comme le contrôleur UIWebView/WKWebView` `Controller passe par plusieurs redire
 
 Tout comme le rappel `navigateToUrl:`, le `navigateToUrl:useSVC:` est déclenché par AccessEnabler pour demander à votre application d’instancier un contrôleur de `SFSafariViewController` et de charger l’URL fournie dans le paramètre **`url`** du rappel. Le rappel transmet le paramètre **`url`** qui représente l’URL du point d’entrée d’authentification ou l’URL du point d’entrée de déconnexion, ainsi que le paramètre **`useSVC`** qui spécifie que l’application doit utiliser un `SFSafariViewController`.
 
-Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirections, votre application doit surveiller l&#39;activité du contrôleur et détecter le moment où il charge une URL personnalisée spécifique définie par votre `application's custom scheme` (par exemple **&#x200B; &#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Il doit être interprété par votre application uniquement comme un signal indiquant que l’authentification ou le flux de déconnexion est terminé et qu’il est sûr de fermer le contrôleur. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le `SFSafariViewController` et appeler la méthode `handleExternalURL:url `API d&#39;AccessEnabler.
+Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirections, votre application doit surveiller l&#39;activité du contrôleur et détecter le moment où il charge une URL personnalisée spécifique définie par votre `application's custom scheme` (par exemple **&#x200B; **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Il doit être interprété par votre application uniquement comme un signal indiquant que l’authentification ou le flux de déconnexion est terminé et qu’il est sûr de fermer le contrôleur. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le `SFSafariViewController` et appeler la méthode `handleExternalURL:url `API d&#39;AccessEnabler.
 
 **Remarque :** Notez que dans le cas du flux d’authentification, il s’agit d’un point où l’utilisateur a la possibilité d’appuyer sur le bouton « Précédent », ce qui équivaut à l’abandon du flux d’authentification. Dans un tel scénario, votre application doit appeler la méthode [setSelectedProvider:](#setSelProv) en transmettant **`nil`** comme paramètre et en donnant une chance à AccessEnabler de réinitialiser son ordinateur d&#39;état d&#39;authentification.
 
@@ -853,7 +851,7 @@ Dans le cas du flux d’authentification, AccessEnabler termine le flux en récu
    * `ACCESS_ENABLER_STATUS_ERROR` - échec du flux d’authentification
 * *code* : raison de l’échec. Si *status* est `ACCESS_ENABLER_STATUS_SUCCESS`, alors *code* est une chaîne vide (c’est-à-dire définie par la constante `USER_AUTHENTICATED`). En cas d’échec, ce paramètre peut prendre l’une des valeurs suivantes :
    * `USER_NOT_AUTHENTICATED_ERROR` - L’utilisateur n’est pas authentifié. En réponse à l’appel de la méthode [checkAuthentication:](#checkAuthN) lorsqu’il n’existe aucun jeton d’authentification valide dans le cache de jetons local.
-   * `PROVIDER_NOT_SELECTED_ERROR` - L&#39;AccessEnabler a réinitialisé       machine d’état d’authentification après l’application de la couche supérieure       a transmis *null* à [`setSelectedProvider:`](#setSelProv) pour abandonner le flux d’authentification.  L’utilisateur a probablement annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton « Précédent »).
+   * `PROVIDER_NOT_SELECTED_ERROR` - L’AccessEnabler a réinitialisé l’ordinateur d’état d’authentification après que l’application de couche supérieure a transmis *null* à [`setSelectedProvider:`](#setSelProv) pour abandonner le flux d’authentification.  L’utilisateur a probablement annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton « Précédent »).
    * `GENERIC_AUTHENTICATION_ERROR` - Le flux d’authentification a échoué pour des raisons telles que l’indisponibilité du réseau ou l’annulation explicite du flux d’authentification.
 
 **Déclenché par :** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ)
@@ -889,7 +887,7 @@ Dans le cas du flux d’authentification, AccessEnabler termine le flux en récu
 
 **Paramètres:**
 
-* *resources:* tableau de ressources pour lesquelles l’autorisation doit être vérifiée. Chaque élément de la liste doit être une chaîne représentant l’identifiant de la ressource. Le     L’ID de ressource est soumis aux mêmes limitations que l’ID de ressource dans l’appel à , c’est-à-dire qu’il doit s’agir d’une valeur convenue entre le programmeur et le MVPD ou d’un fragment RSS de média.
+* *resources:* tableau de ressources pour lesquelles l’autorisation doit être vérifiée. Chaque élément de la liste doit être une chaîne représentant l’identifiant de la ressource. L’ID de ressource est soumis aux mêmes limitations que l’ID de ressource dans l’appel à , c’est-à-dire qu’il doit s’agir d’une valeur convenue entre le programmeur et le MVPD ou d’un fragment RSS de média.
 
 **Rappel déclenché :** [`preauthorizedResources:`](#preauthResources)
 

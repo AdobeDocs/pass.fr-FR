@@ -2,9 +2,9 @@
 title: Référence de l’API du client natif Amazon FireOS
 description: Référence de l’API du client natif Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3519'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ Reportez-vous à <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV
 
 | Appel API : constructeur |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> public statique AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) lève AccessEnablerException </code> |
+| <code>public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> lève AccessEnablerException<br><br> public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) lève AccessEnablerException </code> |
 
 **Disponibilité :** v3.0+
 
@@ -100,7 +100,7 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 
 **Disponibilité :** v3.0+
@@ -108,7 +108,7 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilité :** v3.0+
 
@@ -139,7 +139,7 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 | Rappel : configuration du demandeur terminée |
 | --- |
-| ```public void setRequestorComplete(int status)``` |
+| `public void setRequestorComplete(int status)` |
 
 **Disponibilité :** v1.0+
 
@@ -158,7 +158,7 @@ la phase s’est terminée avec succès
 
 ### setOptions {#fire_setOption}
 
-**Description :** configure les options globales de SDK. Elle accepte un argument **Map\&lt;String, String\>**. Les valeurs du mappage seront transmises au serveur avec chaque appel réseau effectué par le SDK.
+**Description :** configure les options globales de SDK. Elle accepte un **Map\&lt;String, String\>** comme argument. Les valeurs du mappage seront transmises au serveur avec chaque appel réseau effectué par le SDK.
 
 Les valeurs seront transmises au serveur indépendamment du flux actuel (authentification/autorisation). Si vous souhaitez modifier les valeurs, vous pouvez appeler cette méthode à tout moment.
 
@@ -166,7 +166,7 @@ Les valeurs seront transmises au serveur indépendamment du flux actuel (authent
 
 | Appel API : setOptions |
 | --- |
-| ```public void setOptions(HashMap<String,String> options)``` |
+| `public void setOptions(HashMap<String,String> options)` |
 
 **Disponibilité :** v3.0+
 
@@ -187,7 +187,7 @@ Si un MVPD prend en charge la fonction « Authentification par demandeur », plu
 
 | Appel API : vérification du statut d&#39;authentification |
 | --- |
-| ```public void checkAuthentication()``` |
+| `public void checkAuthentication()` |
 
 **Disponibilité :** v1.0+
 
@@ -210,13 +210,13 @@ Enfin, le statut de l&#39;authentification est communiqué à l&#39;application 
 
 | Appel API : lance le flux d&#39;authentification |
 | --- |
-| ```public void getAuthentication()``` |
+| `public void getAuthentication()` |
 
 **Disponibilité :** v1.0+
 
 | Appel API : lance le flux d&#39;authentification |
 | --- |
-| ```public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)``` |
+| `public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)` |
 
 **Disponibilité :** v1.0+
 
@@ -238,7 +238,7 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 
 | **Rappel : affiche l’interface utilisateur de sélection de MVPD** |
 | --- |
-| ```public void displayProviderDialog(ArrayList<Mvpd> mvpds)``` |
+| `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **Disponibilité :** v1.0+
 
@@ -256,15 +256,15 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 
 | **Appel API : définissez le fournisseur actuellement sélectionné** |
 | --- |
-| ```public void setSelectedProvider(String mvpdId)``` |
+| `public void setSelectedProvider(String mvpdId)` |
 
 
 **Disponibilité :**&#x200B;v 1.0+
 
 **Paramètres:** Aucun
 
-**Rappels déclenchés :** `setAuthenticationStatus(), sendTrackingData()`
-</br>
+**Rappels déclenchés :** 
+
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -272,7 +272,7 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 
 | **Rappel : affichage de la page de connexion de MVPD** |
 | --- |
-| ```public void navigateToUrl(String url)``` |
+| `public void navigateToUrl(String url)` |
 
 **Disponibilité :** v1.0+
 
@@ -290,7 +290,7 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 
 | **Appel API : récupérer le jeton d&#39;authentification** |
 | --- |
-| ```public void getAuthenticationToken(String cookies)``` |
+| `public void getAuthenticationToken(String cookies)` |
 
 **Disponibilité :** v1.0+
 
@@ -310,7 +310,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Rappel : indiquez le statut du flux d’authentification** |
 | --- |
-| ```public void setAuthenticationStatus(int status, String errorCode)``` |
+| `public void setAuthenticationStatus(int status, String errorCode)` |
 
 **Disponibilité :** v1.0+
 
@@ -336,7 +336,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Appel API : définissez le fournisseur actuellement sélectionné** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Disponibilité :** v1.0+
 
@@ -352,7 +352,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Appel API : définissez le fournisseur actuellement sélectionné** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Disponibilité :**&#x200B;v 1.0+
 
@@ -368,13 +368,13 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Appel API : vérification du statut d&#39;autorisation** |
 | --- |
-| ```public void checkAuthorization(String resourceId)``` |
+| `public void checkAuthorization(String resourceId)` |
 
 **Disponibilité :** v1.0+
 
 | **Appel API : vérification du statut d&#39;autorisation** |
 | --- |
-| ```public void checkAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void checkAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilité :** v1.0+
 
@@ -393,13 +393,13 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Appel API : lancement du flux d’autorisation** |
 | --- |
-| ```public void getAuthorization(String resourceId)``` |
+| `public void getAuthorization(String resourceId)` |
 
 **Disponibilité :** v1.0+
 
 | **Appel API : lancement du flux d’autorisation** |
 | --- |
-| ```public void getAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void getAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilité :** v1.0+
 
@@ -424,7 +424,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Rappel : flux d’autorisation terminé avec succès** |
 | --- |
-| ```public void setToken(String token, String resourceId)``` |
+| `public void setToken(String token, String resourceId)` |
 
 **Disponibilité :**&#x200B;v 1.0+
 
@@ -443,7 +443,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Rappel : échec du flux d’autorisation** |
 | --- |
-| ```public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription)``` |
+| <code>public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription)</code> |
 
 **Disponibilité :** v1.0+
 
@@ -464,7 +464,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Appel API : lancement du flux de déconnexion** |
 | --- |
-| ```public void logout()``` |
+| `public void logout()` |
 
 **Disponibilité :** v1.0+
 
@@ -480,7 +480,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Appel API : déterminer le MVPD actuellement sélectionné** |
 | --- |
-| ```public void getSelectedProvider()``` |
+| `public void getSelectedProvider()` |
 
 **Disponibilité :** v1.0+
 
@@ -496,7 +496,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Rappel : informations sur le MVPD actuellement sélectionné** |
 | --- |
-| ```public void selectedProvider(Mvpd mvpd)``` |
+| `public void selectedProvider(Mvpd mvpd)` |
 
 **Disponibilité :** v1.0+
 
@@ -514,7 +514,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 | **Appel API : demande des métadonnées à AccessEnabler** |
 | --- |
-| ```public void getMetadata(MetadataKey metadataKey)``` |
+| `public void getMetadata(MetadataKey metadataKey)` |
 
 **Disponibilité :** v1.0+
 
@@ -550,7 +550,7 @@ Les métadonnées d’utilisateur réellement disponibles pour un programmeur d�
 
 | **Rappel : résultat de la demande de récupération des métadonnées** |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Disponibilité :** v1.0+
 
@@ -612,7 +612,7 @@ Cette valeur est nulle lorsque la demande porte sur des métadonnées simples (T
 
 | **Appel API : obtenir la version AccessEnabler** |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 ## Suivi des événements {#tracking}
 
@@ -643,7 +643,7 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
 
 | Rappel : suivi des événements |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Disponibilité :** v1.0+
 

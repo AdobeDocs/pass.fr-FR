@@ -2,9 +2,9 @@
 title: Référence de l’API Android SDK
 description: Référence de l’API Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '4560'
+source-wordcount: '4628'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Ce document présente les méthodes et rappels exposés par Android SDK pour l’authentification Adobe Pass, prise en charge avec Adobe Pass Authentication versions 1.7 et ultérieures. Les méthodes et fonctions de rappel décrites ici sont définies dans les fichiers d’en-tête AccessEnabler.h et EntitlementDelegate.h .
 
-Reportez-vous à [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) pour la dernière version du SDK AccessEnabler Android.
+Reportez-vous à [&#128279;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) pour la dernière version du SDK AccessEnabler Android.
 
 
 **Remarque :** l’équipe Authentification Adobe Pass vous incite à utiliser uniquement les API d’authentification Adobe Pass *publiques* :
@@ -92,13 +92,13 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Disponibilité :** v3.0+
 
 | Appel API : configuration du demandeur |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilité :** v3.0+
 
@@ -161,7 +161,7 @@ Les valeurs seront transmises au serveur indépendamment du flux actuel (authent
 
 - *options* : Map&lt;String, String> contenant des options SDK globales. Actuellement, les options suivantes sont disponibles :
    - **applicationProfile** - Peut être utilisé pour effectuer des configurations de serveur en fonction de cette valeur.
-   - **ap_vi** - Identifiant Experience Cloud (visitorID). Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
+   - **ap_vi** - Experience Cloud ID (visitorID). Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
    - **ap_ai** - Advertising ID
    - **device_info** - Informations du client comme décrit ici : [Transmission des informations du client, connexion du périphérique et application](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
@@ -232,9 +232,7 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 
 >[!NOTE]
 >
-> Abandon du flux d’authentification
-> </br></br>
-> Notez qu’il s’agit d’un point où l’utilisateur ou l’utilisatrice peut appuyer sur le bouton « Précédent », ce qui équivaut à l’abandon du flux d’authentification. Dans un tel scénario, votre application doit appeler la méthode `setSelectedProvider()`, en transmettant *null* comme paramètre, pour donner à Access Enabler la possibilité de réinitialiser son ordinateur d’état d’authentification.
+> Abandon du flux d’authentificationNotez qu’il s’agit d’un point où l’utilisateur ou l’utilisatrice peut appuyer sur le bouton « Précédent », ce qui équivaut à l’abandon du flux d’authentification. Dans un tel scénario, votre application doit appeler la méthode `setSelectedProvider()`, en transmettant *null* comme paramètre, pour donner à Access Enabler la possibilité de réinitialiser son ordinateur d’état d’authentification.
 
 | Rappel : affichage de l’interface utilisateur de sélection de MVPD |
 | --- |
@@ -493,7 +491,7 @@ Le paramètre `cache` indique si la réponse de préautorisation mise en cache p
 
 | Rappel : échec du flux d’autorisation |
 | --- |
-| public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription) |
+| public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription) |
 
 **Disponibilité :** v1.0+
 
@@ -624,7 +622,7 @@ Les programmeurs ont accès à deux types de métadonnées :
 
 | Rappel : résultat de la requête de récupération des métadonnées |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Disponibilité :** v1.0+
 
@@ -635,7 +633,7 @@ Les programmeurs ont accès à deux types de métadonnées :
    - *simpleResult* : une chaîne qui représente la valeur des métadonnées au moment où la demande a été faite pour la TTL d’authentification, la TTL d’autorisation ou l’ID d’appareil. Cette valeur est nulle si la demande porte sur les métadonnées de l’utilisateur.
 
    - *userMetadataResult* : objet contenant la représentation Java d’une payload de métadonnées d’utilisateur JSON.\
-     Par exemple :
+     Par exemple :
 
 ```json
           '{
@@ -688,7 +686,7 @@ Cette valeur est nulle lorsque la demande porte sur des métadonnées simples (T
 
 | Appel API : obtenir la version AccessEnabler |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 
 [Retour à l’API Android...](#api)
@@ -706,7 +704,7 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
 
 >[!WARNING]
 >
-> Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique ([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils)) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
+> Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique ([&#128279;](http://java.net/projects/user-agent-utils)) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
 
 
 - Valeurs possibles pour le type d’appareil :
@@ -727,7 +725,7 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
 
 | Rappel : suivi des événements |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Disponibilité :** v1.0+
 
@@ -739,7 +737,7 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
    - **mvpdSelection :** lorsque l’utilisateur sélectionne un MVPD dans le formulaire de sélection MVPD (le type d’événement est `EVENT_MVPD_SELECTION`)
 - *data* : données supplémentaires associées à l’événement signalé. Ces données sont présentées sous la forme d’une liste de valeurs.
 
-Vous trouverez ci-dessous des instructions pour interpréter les valeurs dans le *data*
+Vous trouverez ci-dessous des instructions pour interpréter les valeurs dans les *données*
 tableau :
 
 - Pour le type d’événement *`EVENT_AUTHN_DETECTION`:*

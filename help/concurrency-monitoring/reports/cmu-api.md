@@ -2,9 +2,9 @@
 title: Présentation de l’API
 description: Présentation de l’API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '2043'
+source-wordcount: '2102'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ L’API CMU fournit une vue hiérarchique des cubes OLAP sous-jacents. Chaque re
 
 L’API REST fournit les données disponibles dans un intervalle de temps spécifié dans la requête (en revenant aux valeurs par défaut si aucune valeur n’est fournie), en fonction du chemin d’accès à la dimension, des filtres fournis et des mesures sélectionnées. La période ne sera pas appliquée aux rapports qui ne contiennent pas de dimensions temporelles (année, mois, jour, heure, minute, seconde).
 
-Le chemin d’accès racine de l’URL du point d’entrée renvoie les mesures agrégées globales dans un seul enregistrement, ainsi que les liens vers les options d’analyse disponibles. La version de l’API est mappée comme segment de fin du chemin d’URI du point d’entrée. Par exemple, https://mgmt.auth.adobe.com/cmu/*v2* signifie que les clients accéderont à la version 2 de WOLAP.
+Le chemin d’accès racine de l’URL du point d’entrée renvoie les mesures agrégées globales dans un seul enregistrement, ainsi que les liens vers les options d’analyse disponibles. La version de l’API est mappée comme segment de fin du chemin d’URI du point d’entrée. Par exemple, *v2* signifie que les clients accéderont à la version 2 de WOLAP.
 
 Les chemins d’URL disponibles sont détectables via les liens contenus dans la réponse. Des chemins d’URL valides sont conservés pour mapper un chemin dans l’arborescence d’exploration en profondeur sous-jacente qui contient des mesures (pré) agrégées. Un chemin sous la forme /dimension1/dimension2/dimension3 reflétera une pré-agrégation de ces trois dimensions (l’équivalent d’une clause SQL GROUP BY dimension1, dimension2, dimension3). Si une telle pré-agrégation n’existe pas et que le système ne peut pas la calculer à la volée, l’API renvoie une réponse 404 Introuvable.
 
@@ -64,8 +64,8 @@ Les options de filtrage disponibles sont les suivantes :
 
 * Les filtres **Est égal à** sont fournis en définissant le nom de la dimension sur une valeur particulière dans la chaîne de requête.
 * Les filtres **IN** peuvent être spécifiés en ajoutant le même paramètre dimension-name plusieurs fois avec des valeurs différentes : dimension=value1&amp;dimension=value2
-* **Est différent de** les filtres doivent utiliser le signe « ! » symbole après le nom de la dimension générant le caractère &#39;!=&#39; « operator » : dimension !=valeur
-* Les filtres **NOT IN** nécessitent le caractère &#39;!Opérateur =&#39; à utiliser plusieurs fois, une fois pour chaque valeur de l&#39;ensemble : dimension !=valeur1&amp;dimension !=valeur2&amp;...
+* **Différent de l’égal à** les filtres doivent utiliser le symbole « ! » après le nom de la dimension entraînant l’« opérateur » « != » : dimension!=value
+* Les filtres **NOT IN** nécessitent que l&#39;opérateur &#39;!=&#39; soit utilisé plusieurs fois, une fois pour chaque valeur de l&#39;ensemble : dimension!=value1&amp;dimension!=value2&amp;...
 
 
 Il existe également une utilisation spéciale pour les noms de dimension dans la chaîne de requête : si le nom de la dimension est utilisé comme paramètre de chaîne de requête sans valeur, l’API est chargée de renvoyer une projection qui inclut cette dimension dans le rapport.
@@ -76,8 +76,8 @@ Exemples de requêtes CMU :
 |:---|:---|
 | /dimension1/dimension2/dimension3?dimension1=valeur1 | SELECT * from projection WHERE dimension1 = &#39;valeur1&#39; GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projection WHERE dimension1 IN (&#39;valeur1&#39;, &#39;valeur2&#39;) GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=valeur1 | SELECT * from projection WHERE dimension1 &lt;> &#39;valeur1&#39; GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=valeur1&amp;dimension2 !=valeur2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;valeur1&#39;, &#39;valeur2&#39;) GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from projection WHERE dimension1 &lt;> &#39;valeur1&#39; GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;valeur1&#39;, &#39;valeur2&#39;) GROUP BY dimension1, dimension2, dimension3 |
 | En supposant qu’il n’existe pas de chemin direct : /dimension1/dimension3, mais un chemin : /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * from projection GROUP BY dimension1,dimension3 |
 
 >[!NOTE]
@@ -232,7 +232,7 @@ Le fichier CSV contient une ligne d’en-tête, puis les données du rapport en 
 
 L’ordre des champs dans la ligne d’en-tête reflète l’ordre de tri des données du tableau.
 
-Exemple : https://mgmt.auth.adobe.com/cmu/v2/year/month.csv génère un fichier nommé ```report__2012-07-20_2012-08-20_1000.csv``` avec le contenu suivant :
+Exemple : https://mgmt.auth.adobe.com/cmu/v2/year/month.csv génère un fichier nommé `report__2012-07-20_2012-08-20_1000.csv` avec le contenu suivant :
 
 | Année | Mois | Clients |
 |:----:|:-----:|:-------:|
