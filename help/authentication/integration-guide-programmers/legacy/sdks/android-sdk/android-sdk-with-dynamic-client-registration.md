@@ -2,7 +2,7 @@
 title: Android SDK avec enregistrement client dynamique
 description: Android SDK avec enregistrement client dynamique
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
@@ -193,3 +193,4 @@ f. déconnexion :
 | invalid_request | 400 | La requête est incorrecte. Le SDK doit arrêter d’effectuer des appels au serveur . |
 | invalid_client | 403 | L’identifiant client n’est plus autorisé à effectuer des requêtes. Le sdk DOIT à nouveau effectuer l’enregistrement du client. |
 | access_deny | 401 | Le jeton access\_token n’est pas valide. Le sdk DOIT demander un nouveau jeton access_token. |
+

@@ -2,9 +2,9 @@
 title: Référence de l’API Android SDK
 description: Référence de l’API Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
-source-wordcount: '4628'
+source-wordcount: '4610'
 ht-degree: 0%
 
 ---
@@ -778,3 +778,4 @@ tableau :
 - [Android Technical Overview](/help/authentication/android-sdk-overview.md)
 
 -->
+
