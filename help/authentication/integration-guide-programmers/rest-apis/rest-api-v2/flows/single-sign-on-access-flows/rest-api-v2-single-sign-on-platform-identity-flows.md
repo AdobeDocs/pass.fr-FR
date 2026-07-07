@@ -33,7 +33,7 @@ Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Rese
 
 >[!MORELIKETHIS]
 > 
-> * [Manuel de l’authentification unique ](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Manuel de l’authentification unique &#x200B;](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 > * [Guide pas à pas Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Authentification par authentification unique à l’aide de l’identité de la plateforme {#perform-authentication-through-single-sign-on-using-platform-identity}

@@ -31,9 +31,9 @@ L’authentification est un processus qui permet à un utilisateur de prouver so
 
 #### Code d’authentification {#code}
 
-Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [ session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
+Le code d’authentification est un concept d’authentification Adobe Pass qui stocke une valeur unique générée lorsqu’un utilisateur ou une utilisatrice lance le processus d’authentification [authentication](#authentication) et identifie de manière unique la [&#x200B; session d’authentification d’un utilisateur ou d’une utilisatrice](#session) jusqu’à ce que le processus d’authentification soit terminé.
 
-Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [](#primary-application) ou une application (programmeur) Secondaire [](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
+Le code d’authentification peut être utilisé à la fois par une application (programmeur) de Principal [&#128279;](#primary-application) ou une application (programmeur) Secondaire [&#128279;](#secondary-application) pour terminer le processus [authentification](#authentication), récupérer des informations sur la [session d’authentification](#session) ou accéder au [profil](#profile) de l’utilisateur.
 
 Synonyme de l&#39;ancien terme utilisé code d&#39;enregistrement.
 
@@ -93,7 +93,7 @@ L’authentification à domicile (HBA) est le processus par lequel un client se 
 
 Le fournisseur d’identité est une société qui fournit des services d’identité aux consommateurs par le biais de services par câble, par satellite ou par Internet dans le contexte de [TV Everywhere (TVE)](#tve).
 
-Synonyme de [](#mvpd) et [Fournisseur TV](#tv-provider).
+Synonyme de [&#128279;](#mvpd) et [Fournisseur TV](#tv-provider).
 
 ### L {#l}
 
@@ -201,7 +201,7 @@ L’application secondaire peut s’exécuter sur le même appareil que l’appl
 
 Le jeton de service est un identifiant utilisateur unique généré par un service ou une structure (bibliothèque) lié à l’utilisateur et fourni au [programmeur](#programmer) pour activer une expérience utilisateur d’authentification unique.
 
-Pour plus d’informations, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Pour plus d’informations, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux de jeton de service &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 #### Prestataire {#service-provider}
 
@@ -259,21 +259,21 @@ Le fournisseur de services de télévision est une entreprise qui fournit des se
 
 Le fournisseur de télévision est identifié par une valeur unique définie lors du processus d’intégration entre le fournisseur de télévision et Adobe.
 
-Synonyme de [](#mvpd) et [Fournisseur d&#39;identité](#identity-provider).
+Synonyme de [&#128279;](#mvpd) et [Fournisseur d&#39;identité](#identity-provider).
 
 ### U {#u}
 
 #### Agent utilisateur {#user-agent}
 
-L&#39;agent utilisateur fait référence à un navigateur ou à un composant similaire (spécifique à la plateforme) capable de naviguer sur le Web et de générer la page de connexion de [](#mvpd).
+L&#39;agent utilisateur fait référence à un navigateur ou à un composant similaire (spécifique à la plateforme) capable de naviguer sur le Web et de générer la page de connexion de [&#128279;](#mvpd).
 
 #### Identifiant utilisateur {#user-id}
 
-L&#39;identifiant utilisateur est un identifiant unique lié à l&#39;utilisateur et provient du processus d&#39;authentification [](#mvpd).
+L&#39;identifiant utilisateur est un identifiant unique lié à l&#39;utilisateur et provient du processus d&#39;authentification [&#128279;](#mvpd).
 
 #### Métadonnées utilisateur {#user-metadata}
 
-Les métadonnées utilisateur font référence à des attributs spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) qui sont gérées par [](#mvpd) et fournies par l’authentification Adobe Pass dans le cadre d’un [profil](#profile).
+Les métadonnées utilisateur font référence à des attributs spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) qui sont gérées par [&#128279;](#mvpd) et fournies par l’authentification Adobe Pass dans le cadre d’un [profil](#profile).
 
 Pour plus d’informations, consultez la documentation [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 

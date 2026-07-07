@@ -87,7 +87,7 @@ Les services d’authentification Adobe Pass prennent en charge la réception de
 >
 >Dans les trois scénarios, la payload de l’en-tête ou du paramètre doit être codée en **Base64 et en URL**.
 
-****
+**&#x200B;**
 
 #### JavaScript SDK {#js-sdk}
 
@@ -387,7 +387,7 @@ Les informations d’application peuvent être structurées comme suit :
 >[!NOTE]
 >
 >**Ressources:**
->* [UIDevice ](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
+>* [UIDevice &#x200B;](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
 >* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
 >* [À propos de l’accessibilité](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 

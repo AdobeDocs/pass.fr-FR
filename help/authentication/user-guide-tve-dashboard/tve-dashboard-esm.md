@@ -94,7 +94,7 @@ Vous pouvez télécharger les données brutes :
 Utilisez des filtres pour affiner le jeu de données et cibler l’analyse. Les filtres suivants sont disponibles :
 
 - **Canal** : inclut tous les canaux (marques) disponibles
-- **** : sélection sur un ou plusieurs fournisseurs
+- **&#x200B;**&#x200B;: sélection sur un ou plusieurs fournisseurs
 - **Plateforme** : web, mobile, télévision connectée ou famille d’appareils
 
 Pour ajouter un nouveau filtre, sélectionnez le bouton « Ajouter des filtres ».

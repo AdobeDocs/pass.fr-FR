@@ -94,4 +94,4 @@ Regardez le webinaire sur la nouvelle API REST V2, où nous vous avons fourni un
 
 ## Vous souhaitez essayer l’API REST V2 ? {#rest-api-v2-want-to-try}
 
-Vous pouvez désormais explorer l’API REST V2 via notre page dédiée aux produits sur le site web [](https://developer.adobe.com/adobe-pass/).
+Vous pouvez désormais explorer l’API REST V2 via notre page dédiée aux produits sur le site web [&#128279;](https://developer.adobe.com/adobe-pass/).
