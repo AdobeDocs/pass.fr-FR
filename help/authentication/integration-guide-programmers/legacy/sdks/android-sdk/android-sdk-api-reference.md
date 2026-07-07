@@ -2,9 +2,9 @@
 title: Référence de l’API Android SDK
 description: Référence de l’API Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
-source-wordcount: '4628'
+source-wordcount: '4610'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Ce document présente les méthodes et rappels exposés par Android SDK pour l’authentification Adobe Pass, prise en charge avec Adobe Pass Authentication versions 1.7 et ultérieures. Les méthodes et fonctions de rappel décrites ici sont définies dans les fichiers d’en-tête AccessEnabler.h et EntitlementDelegate.h .
 
-Reportez-vous à [&#128279;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) pour la dernière version du SDK AccessEnabler Android.
+Reportez-vous à [](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) pour la dernière version du SDK AccessEnabler Android.
 
 
 **Remarque :** l’équipe Authentification Adobe Pass vous incite à utiliser uniquement les API d’authentification Adobe Pass *publiques* :
@@ -172,7 +172,7 @@ Les valeurs seront transmises au serveur indépendamment du flux actuel (authent
 
 **Description :** vérifie le statut d’authentification. Pour ce faire, il recherche un jeton d’authentification valide dans l’espace de stockage du jeton local. Cette méthode n’effectue aucun appel réseau et nous vous recommandons de l’appeler sur le thread principal. Il est utilisé par l’application pour interroger le statut d’authentification de l’utilisateur et mettre à jour l’interface utilisateur en conséquence (c’est-à-dire mettre à jour l’interface utilisateur de connexion/déconnexion). Le statut de l&#39;authentification est communiqué à l&#39;application via le rappel [*setAuthenticationStatus()*](#setAuthNStatus).
 
-Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil.  Pour plus d’informations sur cette fonctionnalité, consultez la section [&#x200B; Instructions de mise en cache &#x200B;](#$caching) de la présentation technique d’Android.
+Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil.  Pour plus d’informations sur cette fonctionnalité, consultez la section [ Instructions de mise en cache ](#$caching) de la présentation technique d’Android.
 
 | Appel API : vérification du statut d&#39;authentification |
 | --- |
@@ -196,7 +196,7 @@ Si un MVPD prend en charge la fonction « Authentification par demandeur », plu
 
 Comme les informations d’identification de l’utilisateur sont vérifiées sur la page de connexion de MVPD, votre application doit surveiller les multiples opérations de redirection qui ont lieu lorsque l’utilisateur s’authentifie sur la page de connexion de MVPD. Lorsque les informations d&#39;identification correctes sont saisies, le contrôle WebView est redirigé vers une URL personnalisée définie par la constante *AccessEnabler.ADOBEPASS\_REDIRECT\_URL*. Cette URL ne doit pas être chargée par le WebView. L’application doit intercepter cette URL et interpréter cet événement comme un signal indiquant que la phase de connexion est terminée. Il doit ensuite transmettre le contrôle à Access Enabler pour terminer le flux d’authentification (en appelant la méthode *getAuthenticationToken()*).
 
-Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil (un par programmeur).  Pour plus d’informations sur cette fonctionnalité, consultez la section [&#x200B; Instructions de mise en cache &#x200B;](#$caching) de la présentation technique d’Android.
+Si un MVPD prend en charge la fonction « Authentification par demandeur », plusieurs jetons d’authentification peuvent être stockés sur un appareil (un par programmeur).  Pour plus d’informations sur cette fonctionnalité, consultez la section [ Instructions de mise en cache ](#$caching) de la présentation technique d’Android.
 
 Enfin, le statut de l&#39;authentification est communiqué à l&#39;application via le rappel *setAuthenticationStatus()*.
 
@@ -704,7 +704,7 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
 
 >[!WARNING]
 >
-> Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique ([&#128279;](http://java.net/projects/user-agent-utils)) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
+> Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique ([](http://java.net/projects/user-agent-utils)) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
 
 
 - Valeurs possibles pour le type d’appareil :
@@ -778,3 +778,4 @@ tableau :
 - [Android Technical Overview](/help/authentication/android-sdk-overview.md)
 
 -->
+
