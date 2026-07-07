@@ -120,7 +120,7 @@ Le jeton de service comporte les heures d’expiration « iat » - émis à et �
 
 ### Étape 3 : S’authentifier à l’aide de l’API REST Adobe Pass V2 avec un MVPD TVE {#step-3}
 
-L’authentification avec Adobe Pass doit être mise en œuvre à l’aide du jeton de service : [API REST V2 - Flux de jetons de service d’authentification unique](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-flows/rest-api-v2-single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows)
+L’authentification avec Adobe Pass doit être mise en œuvre à l’aide du jeton de service : [API REST V2 - Flux de jetons de service d’authentification unique](https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-flows/rest-api-v2-single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows)
 
 ### Étape 4 - Lier un autre appareil {#step-4}
 
@@ -210,20 +210,20 @@ Si la requête de l’API du jeton de service n’a pas pu être traitée en rai
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
       <td>
-         La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.<br/><br/>
+         La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.<br/><br/>
          Cet identifiant est utilisé comme identifiant SSO par défaut lorsque X-SSO-ID n'est pas fourni.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         Les informations sur le périphérique comme spécifié dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>.<br/><br/>
+         Les informations sur le périphérique comme spécifié dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>.<br/><br/>
          <b>Fortement recommandé</b> à utiliser lorsque la plateforme d’appareil de l’application permet de fournir explicitement des valeurs valides.<br/><br/>
          Le serveur principal de l’authentification Adobe Pass fusionnera les valeurs définies explicitement avec les valeurs extraites implicitement. Si elles ne sont pas fournies, les valeurs extraites par défaut seront utilisées.</td>
       <td><i>obligatoire</i></td>
@@ -275,19 +275,19 @@ Si la requête de l’API du jeton de service n’a pas pu être traitée en rai
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -361,7 +361,7 @@ Si la requête de l’API du jeton de service n’a pas pu être traitée en rai
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
@@ -472,7 +472,7 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -515,19 +515,19 @@ Content-Type: application/json
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès ou le jeton de service n’est pas valide, le client doit obtenir un nouveau jeton d’accès ou de service et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
+        Le jeton d’accès ou le jeton de service n’est pas valide, le client doit obtenir un nouveau jeton d’accès ou de service et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -601,7 +601,7 @@ Content-Type: application/json
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
@@ -689,12 +689,12 @@ Si la requête de l’API Link n’a pas pu être traitée en raison d’une err
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
+      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -737,19 +737,19 @@ Si la requête de l’API Link n’a pas pu être traitée en raison d’une err
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -823,7 +823,7 @@ Si la requête de l’API Link n’a pas pu être traitée en raison d’une err
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
@@ -924,7 +924,7 @@ Si la demande d’API Unlink n’a pas pu être traitée en raison d’une erreu
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -936,7 +936,7 @@ Si la demande d’API Unlink n’a pas pu être traitée en raison d’une erreu
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
+      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -979,13 +979,13 @@ Si la demande d’API Unlink n’a pas pu être traitée en raison d’une erreu
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>405</td>
@@ -998,7 +998,7 @@ Si la demande d’API Unlink n’a pas pu être traitée en raison d’une erreu
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -1064,7 +1064,7 @@ Si la demande d’API Unlink n’a pas pu être traitée en raison d’une erreu
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
@@ -1209,12 +1209,12 @@ Si la requête de l’API List n’a pas pu être traitée en raison d’une err
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisation</td>
-      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
+      <td>La génération de la payload du jeton porteur est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-authorization">Authorization</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
+      <td>La génération de la payload de l’identifiant d’appareil est décrite dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -1257,13 +1257,13 @@ Si la requête de l’API List n’a pas pu être traitée en raison d’une err
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>405</td>
@@ -1276,7 +1276,7 @@ Si la requête de l’API List n’a pas pu être traitée en raison d’une err
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -1307,7 +1307,7 @@ Si la requête de l’API List n’a pas pu être traitée en raison d’une err
       <td style="background-color: #DEEBFF;">appareils</td>
       <td>
          JSON contenant un mappage de paires clé-valeur.<br/><br/>
-         <b>Key:</b> deviceId : payload de l’identifiant d’appareil comme décrit dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a><br/><br/>
+         <b>Key:</b> deviceId : payload de l’identifiant d’appareil comme décrit dans la documentation d’en-tête <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a><br/><br/>
          <b>Value:</b> attributes - JSON contenant un mappage des attributs de métadonnées de l’appareil, notamment :<ul>
             <li>type d’appareil</li>
             <li>plate-forme</li>
@@ -1345,7 +1345,7 @@ Si la requête de l’API List n’a pas pu être traitée en raison d’une err
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
+      <td>Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes"> Codes d’erreur améliorés </a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
@@ -1462,7 +1462,7 @@ Toutes les réponses d’erreur incluent les champs suivants :
     "code": "header_missing",
     "message": "Required header is missing",
     "action": "check_headers",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
     "trace": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
   }
 }

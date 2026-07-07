@@ -25,7 +25,7 @@ Le tableau de bord ESM fournit une vue unifiée des données de droits et d’é
 - Comparaison des performances de MVPD
 - Comprendre l’utilisation des clients par application
 
-Vous trouverez plus d’informations sur les données et les événements ESM dans la section [Présentation de la surveillance du service de droit](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Vous trouverez plus d’informations sur les données et les événements ESM dans la section [Présentation de la surveillance du service de droit](https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Rapports {#reports}
 
