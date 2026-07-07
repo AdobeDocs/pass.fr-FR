@@ -4,8 +4,8 @@ description: API REST V2 - Récupérer une session d’authentification à l’a
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '532'
-ht-degree: 2%
+source-wordcount: '549'
+ht-degree: 3%
 
 ---
 
@@ -69,12 +69,9 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Adresse IP de l’appareil de diffusion en continu.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
-         <br/><br/>
-         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
-      </td> 
+         Adresse IP de l’appareil de diffusion en continu.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.<br/><br/>
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.</td> 
       <td>facultatif</td>
    </tr>
    <tr>
@@ -86,10 +83,8 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
-         Type de média accepté par l’application cliente.
-         <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
-      </td>
+         Type de média accepté par l’application cliente.<br/><br/>
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -118,29 +113,25 @@ ht-degree: 2%
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
-      </td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
-      </td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -228,16 +219,13 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.
-            <br/><br/>
-            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :
-            <ul>
+            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.<br/><br/>
+            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>etc.</li>
             </ul>
-            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.
-      </td>
+            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>

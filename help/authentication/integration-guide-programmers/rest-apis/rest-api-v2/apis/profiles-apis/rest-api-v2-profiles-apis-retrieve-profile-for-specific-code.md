@@ -4,8 +4,8 @@ description: API REST V2 - Récupération d’un profil pour un code spécifique
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '822'
-ht-degree: 1%
+source-wordcount: '851'
+ht-degree: 3%
 
 ---
 
@@ -69,12 +69,9 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Adresse IP de l’appareil de diffusion en continu.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
-         <br/><br/>
-         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
-      </td>
+         Adresse IP de l’appareil de diffusion en continu.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.<br/><br/>
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -91,10 +88,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
-         Type de média accepté par l’application cliente.
-         <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
-      </td>
+         Type de média accepté par l’application cliente.<br/><br/>
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -123,36 +118,31 @@ ht-degree: 1%
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
-      </td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>403</td>
       <td>Interdit</td>
       <td>
-        La durée de vie (TTL) d’accès temporaire a expiré ou le nombre maximal de ressources est dépassé. Le client doit indiquer à l’utilisateur de lancer un flux d’authentification de base à l’aide d’un MVPD standard. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        La durée de vie (TTL) d’accès temporaire a expiré ou le nombre maximal de ressources est dépassé. Le client doit indiquer à l’utilisateur de lancer un flux d’authentification de base à l’aide d’un MVPD standard. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr> 
    <tr>
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
-      </td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -182,10 +172,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">profils</td>
       <td>
-        JSON contenant un mappage de paires clé-valeur.
-        <br/><br/>
-        L'élément clé est défini par la valeur suivante :
-        <table style="table-layout:auto">
+        JSON contenant un mappage de paires clé-valeur.<br/><br/>
+        L'élément clé est défini par la valeur suivante :<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valeur</th>
                <th style="background-color: #EFF2F7"></th>
@@ -217,22 +205,18 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">émetteur</td>
                <td>
-                  Entité propriétaire du profil.
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
-                    <li><b>mvpd (par exemple, Spectrum, Télévision par câble, etc.)</b><br/>Le profil a été créé suite à : authentification de base.</li>
-                    <li><b>Adobe</b><br/>Le profil a été créé suite à : un accès dégradé, un accès temporaire.</li>
+                  Entité propriétaire du profil.<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
+                    <li><b>mvpd (par exemple, Spectrum, Cablevision, etc.)</b><br/>Le profil a été créé suite à : authentification de base.</li>
+                    <li><b></b><br/>Le profil a été créé suite à : un accès dégradé, un accès temporaire.</li>
                   </ul>
                <td><i>obligatoire</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  Type du profil.
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
+                  Type du profil.<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
                     <li><b>standard</b><br/>Le profil a été créé suite à : authentification de base.</li>
                     <li><b>degraded</b><br/>Le profil a été créé suite à : un accès dégradé.</li>
                     <li><b>temporaire</b><br/>Le profil a été créé suite à : accès temporaire.</li>
@@ -242,10 +226,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">attributs</td>
                <td>
-                    JSON contenant un mappage de paires clé-valeur.
-                    <br/><br/>
-                    L’élément clé est défini par les attributs de métadonnées de l’utilisateur et peut être :
-                    <ul>
+                    JSON contenant un mappage de paires clé-valeur.<br/><br/>
+                    L’élément clé est défini par les attributs de métadonnées de l’utilisateur et peut être :<ul>
                         <li>Obligatoire, comme 'userID'</li>
                         <li>Non obligatoire, comme « zip », « householdID », « maxRating », etc.</li>
                     </ul>
@@ -290,16 +272,13 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.
-            <br/><br/>
-            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :
-            <ul>
+            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.<br/><br/>
+            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>etc.</li>
             </ul>
-            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.
-      </td>
+            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
@@ -409,7 +388,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -425,7 +404,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "configuration"
 }
 ```
@@ -500,7 +479,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -516,7 +495,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_resources_limit_exceeded",
     "message": "The temporary access resources limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -532,7 +511,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "configuration"
 }
 ```
@@ -548,7 +527,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 400,
     "code": "invalid_header_identity_for_temporary_access",
     "message": "The identity for temporary access header value is missing or invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=fr",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```

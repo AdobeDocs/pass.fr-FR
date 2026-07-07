@@ -4,7 +4,7 @@ description: Guide d’intégration de MVPD
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
 source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1326'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Ce guide d’intégration est destiné aux distributeurs de programmation vidéo multicanaux (MVPD) qui prévoient de s’intégrer à l’authentification Adobe® Pass.
+Ce guide d’intégration est destiné aux distributeurs de programmation vidéo multicanaux (MVPD) qui prévoient de s’intégrer à l’authentification ® Pass.
 
 TV Everywhere (TVE) est une initiative transformatrice dans l&#39;industrie de la télévision payante, qui permet aux abonnés d&#39;accéder au contenu pour lequel ils paient déjà sur plusieurs appareils, que ce soit à la maison ou en déplacement. Pour les fournisseurs de télévision payante, TVE offre des opportunités significatives parmi lesquelles le renforcement des relations client existantes et l&#39;ouverture de portes à de nouvelles. Toutefois, ces possibilités s&#39;accompagnent de défis.
 
 Dans l’écosystème TVE, les **programmeurs** fournissent le contenu, tandis que les **MVPD** (Multichannel Video Programming Distributors) gèrent les données client nécessaires pour vérifier si les téléspectateurs sont des abonnés éligibles. Bien que la coordination de l&#39;authentification et de l&#39;autorisation avec un seul programmeur puisse être gérable, le faire avec des dizaines ou même des centaines de programmeurs introduit une complexité considérable.
 
-C’est là que l’authentification **Adobe® Pass** simplifie le processus. Les MVPD n’ont qu’à mettre en œuvre une seule intégration rationalisée avec Adobe Pass pour accéder à l’ensemble de l’écosystème TVE. La structure d’intégration fournie accélère la mise sur le marché, fournit un environnement sécurisé pour atténuer la fraude et améliore l’expérience client en fournissant plus de contenu TV sur plusieurs plateformes.
+C’est là que l’authentification **® Pass** simplifie le processus. Les MVPD n’ont qu’à mettre en œuvre une seule intégration rationalisée avec Adobe Pass pour accéder à l’ensemble de l’écosystème TVE. La structure d’intégration fournie accélère la mise sur le marché, fournit un environnement sécurisé pour atténuer la fraude et améliore l’expérience client en fournissant plus de contenu TV sur plusieurs plateformes.
 
 ## Authentification Adobe Pass pour TV Everywhere {#adobe-pass-authentication-for-tv-everywhere}
 
@@ -71,7 +71,7 @@ Lors de la visite initiale d’un utilisateur ou d’une utilisatrice dans une a
 
 >[!NOTE]
 >
-> L’application Programmeur (TVE) est utilisée dans ce document pour faire référence collectivement aux types d’applications s’exécutant sur différentes plateformes (navigateurs, appareils mobiles, appareils connectés à la télévision, etc.) prises en charge par l’authentification Adobe Pass.
+> L’application Programmeur (TVE) est utilisée dans ce document pour faire référence collectivement aux types d’applications s’exécutant sur différentes plateformes (navigateurs, appareils mobiles, appareils connectés à la télévision, etc.) pris en charge par l’authentification Adobe Pass.
 
 ### Phase d’authentification {#authentication-phase}
 
@@ -86,7 +86,7 @@ Les étapes suivantes décrivent les étapes de haut niveau dans le cas d’une 
 1. **Initialisation de la demande d’authentification**\
    Lorsque MVPD est sélectionné, l’utilisateur est redirigé vers un serveur d’authentification Adobe Pass. Ici, une demande d’authentification SAML chiffrée pour le MVPD sélectionné est générée, en cas d’intégration SAML. Cette demande est envoyée au MVPD au nom du programmeur. Selon le système de MVPD, le navigateur de l’utilisateur est redirigé vers la page de connexion de MVPD ou un iFrame de connexion est intégré à l’application du programmeur.
 
-1. **Connexion à MVPD**\
+1. **Connexion à**\
    Le MVPD accepte la demande et présente son interface de connexion, soit par redirection, soit par iFrame.
 
 1. **Connexion utilisateur et validation**\
@@ -107,7 +107,7 @@ Les étapes suivantes décrivent les étapes de haut niveau :
 1. **Gestion des identifiants de ressource**\
    Le contenu protégé est identifié par un [identifiant de ressource](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier), qui peut être une simple chaîne ou une structure plus complexe. Cet identifiant est prédéfini et accepté par le programmeur et le MVPD. L’application du programmeur envoie l’identifiant de la ressource à l’API REST [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) d’Adobe Pass Authentication.
 
-1. **Vérification De L’Autorisation MVPD**\
+1. **Vérification De L’Autorisation**\
    Le serveur d’authentification Adobe Pass communique avec le point d’entrée d’autorisation MVPD à l’aide de protocoles normalisés.
 
 1. **Réponse de MVPD à l&#39;authentification Adobe Pass**\

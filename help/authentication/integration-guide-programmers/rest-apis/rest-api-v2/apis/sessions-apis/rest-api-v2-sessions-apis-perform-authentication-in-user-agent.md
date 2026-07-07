@@ -4,8 +4,8 @@ description: API REST V2 - Authentification dans l’agent utilisateur
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '240'
-ht-degree: 3%
+source-wordcount: '242'
+ht-degree: 6%
 
 ---
 
@@ -94,8 +94,7 @@ ht-degree: 3%
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
-      </td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
    </tr>
    <tr>
       <td>500</td>
@@ -142,7 +141,7 @@ La réponse réussie est une série d’une ou de plusieurs redirections jusqu�
 
 ## Exemples {#samples}
 
-### &#x200B;1. Effectuer l’authentification dans l’agent utilisateur
+### &#x200B;1. Authentification dans l’agent utilisateur
 
 >[!BEGINTABS]
 

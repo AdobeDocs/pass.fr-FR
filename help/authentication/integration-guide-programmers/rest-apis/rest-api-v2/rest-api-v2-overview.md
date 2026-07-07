@@ -4,7 +4,7 @@ description: Présentation de l’API REST V2
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -94,4 +94,4 @@ Regardez le webinaire sur la nouvelle API REST V2, où nous vous avons fourni un
 
 ## Vous souhaitez essayer l’API REST V2 ? {#rest-api-v2-want-to-try}
 
-Vous pouvez désormais explorer l’API REST V2 via notre page dédiée aux produits sur le site web [Adobe Developer](https://developer.adobe.com/adobe-pass/).
+Vous pouvez désormais explorer l’API REST V2 via notre page dédiée aux produits sur le site web [](https://developer.adobe.com/adobe-pass/).

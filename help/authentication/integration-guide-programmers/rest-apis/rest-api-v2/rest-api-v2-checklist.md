@@ -4,7 +4,7 @@ description: Liste de contrôle V2 de l’API REST
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    <tr>
       <td style="background-color: #DEEBFF;"><i>Récupération Des Décisions De Préautorisation</i></td>
       <td>Utilisez les décisions de préautorisation pour le filtrage de contenu et jamais pour les décisions de lecture.</td>
-      <td>Risque de violer les accords contractuels entre Programmer, MVPD et Adobe.<br/><br/>Risques de contournement de nos systèmes de surveillance et d'alerte.</td>
+      <td>Risques de non-respect des contrats entre Programmer, MVPD et Adobe.<br/><br/>Risques de contournement de nos systèmes de surveillance et d'alerte.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Reprise Des Décisions De Préautorisation</i></td>
@@ -136,7 +136,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    <tr>
       <td style="background-color: #DEEBFF;"><i>Récupération des décisions d’autorisation</i></td>
       <td>Obtention des décisions d’autorisation avant la lecture, qu’une décision de préautorisation existe ou non.<br/><br/>Autorisez les flux à continuer sans interruption même si le jeton multimédia expire pendant la lecture et demandez une nouvelle décision d’autorisation contenant un jeton multimédia (frais) lorsque l’utilisateur effectue sa prochaine demande de lecture, que ce soit pour la même ressource ou pour une autre ressource.<br/><br/>Les diffusions en direct s’exécutant pendant des périodes prolongées peuvent choisir de demander une nouvelle décision d’autorisation à la suite d’opérations vidéo, telles que la suspension du contenu, le lancement d’interruptions commerciales ou la modification des configurations au niveau des ressources lorsque le MRSS est soumis à des modifications.</td>
-      <td>Risque de violer les accords contractuels entre Programmer, MVPD et Adobe.<br/><br/>Risques de contournement de nos systèmes de surveillance et d'alerte.</td>
+      <td>Risques de non-respect des contrats entre Programmer, MVPD et Adobe.<br/><br/>Risques de contournement de nos systèmes de surveillance et d'alerte.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Reprise De Décisions D’Autorisation</i></td>
@@ -181,7 +181,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    <tr>
       <td style="background-color: #DEEBFF;"><i>Envoyer L’En-Tête X-Device-Info</i></td>
       <td>Envoyez l’en-tête <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> pour chaque requête v2 de l’API REST.<br/><br/>Même lorsque la requête provient d’un serveur pour le compte d’un appareil, la valeur de l’en-tête X-Device-Info doit refléter les informations réelles de l’appareil de diffusion en continu.</td>
-      <td>Risques classés comme provenant d’une plateforme inconnue et traités comme non sécurisés, devenant ainsi soumis à des règles plus restrictives, telles que des TTL d’authentification plus courtes.<br/><br/>De plus, certains champs, comme connectionIp et connectionPort, sont obligatoires pour des fonctions comme l’authentification de base à domicile de Spectrum.</td>
+      <td>Risques classés comme provenant d'une plateforme inconnue et traités comme non sécurisés, devenant soumis à des règles plus restrictives, telles que des TTL d'authentification plus courtes.<br/><br/>De plus, certains champs, tels que le périphérique de streaming connectionIp et connectionPort, sont obligatoires pour des fonctionnalités telles que l'authentification de base d'accueil de Spectrum.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Identifiant d’appareil stable</i></td>
@@ -215,7 +215,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### &#x200B;9. Tests {#mandatory-requirements-testing}
+### &#x200B;9. Test {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -225,7 +225,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Test du cycle de vie</i></td>
-      <td>Développez et testez l’application à l’aide des environnements hors production Adobe Pass Authentication officiels :<ul><li>Préproduction</li><li>Release-Staging</li></ul><br/>Effectuez une assurance qualité (QA) approfondie dans ces environnements avant de passer en version de production.<br/><br/>Les applications clientes ne doivent pas passer en version de production sans avoir d’abord effectué la validation de bout en bout dans les environnements hors production.</td>
+      <td>Développez et testez l’application à l’aide des environnements hors production Adobe Pass Authentication officiels :<ul><li>Préproduction</li><li>Release-Staging</li></ul><br/>Effectuez une assurance qualité (QA) approfondie dans ces environnements avant de lancer la production des versions.<br/><br/>Les applications clientes ne doivent pas passer à la production des versions sans avoir d’abord effectué la validation de bout en bout dans les environnements hors production.</td>
       <td>Risques de lancement avec des défauts critiques et majeurs.<br/><br/>L’absence d’un chemin de débogage court et efficace peut empêcher l’assistance et l’ingénierie Adobe d’intervenir rapidement.</td>
    </tr>
 </table>
@@ -272,7 +272,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Validation du code d’authentification (authentification du deuxième écran)</i></td>
-      <td>Validez le code d’authentification envoyé par le biais de l’entrée utilisateur sur la deuxième application secondaire (écran) avant d’appeler l’API /api/v2/authenticate dans les conditions suivantes :<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">Authentification effectuée dans l’application secondaire (écran) avec mvpd présélectionné</a></b><ul><li>Utilisez la <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">Reprendre la session d’authentification</a> - POST /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">Authentification effectuée dans l’application secondaire (écran) sans mvpd présélectionné</a></b><ul><li>Utilisez l’option <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">Récupérer la session d’authentification</a> - GET /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/>L’application cliente recevait une erreur si le code d’authentification fourni était mal saisi ou si la session d’authentification arrivait à expiration.</td>
+      <td>Validez le code d’authentification envoyé par le biais de l’entrée utilisateur sur la deuxième application secondaire (écran) avant d’appeler l’API /api/v2/authenticate dans les conditions suivantes :<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">Authentification effectuée dans l’application secondaire (écran) avec mvpd présélectionné</a></b><ul><li>Utilisez la <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">Reprendre la session d’authentification</a> - POST /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">Authentification effectuée dans l’application secondaire (écran) sans mvpd présélectionné</a></b><ul><li>Utilisez la méthode <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">Récupérer la session d’authentification</a> - GET /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/>L’application cliente recevait une erreur si le code d’authentification fourni était mal saisi ou si la session d’authentification arrivait à expiration.</td>
       <td>Risque diverses réponses d'erreur et problèmes de workflow lors de l'authentification.</td>
    </tr>
    <tr>
@@ -352,7 +352,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
 </table>
 
-### &#x200B;8. Tests {#recommended-practices-testing}
+### &#x200B;8. Test {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -367,7 +367,7 @@ Ce document doit être considéré comme faisant partie de vos critères d’acc
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Outils de test</i></td>
-      <td>Utilisez le site web <a href="https://developer.adobe.com/adobe-pass/">Adobe Developer</a>.</td>
+      <td>Utilisez le site web <a href="https://developer.adobe.com/adobe-pass/"></a>.</td>
       <td>-</td>
    </tr>
 </table>

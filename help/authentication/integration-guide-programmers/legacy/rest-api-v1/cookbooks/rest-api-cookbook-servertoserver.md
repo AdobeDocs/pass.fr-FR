@@ -4,8 +4,8 @@ description: Serveur du guide pas à pas de l’API REST à serveur.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1856'
-ht-degree: 0%
+source-wordcount: '1891'
+ht-degree: 1%
 
 ---
 
@@ -48,7 +48,7 @@ Dans une solution de serveur à serveur opérationnelle, les composants suivants
 ### Enregistrement de client dynamique (DCR)
 
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Authentification (authN)
@@ -119,8 +119,7 @@ Le diagramme suivant illustre le flux de préautorisation :
 
 ### \[Facultatif\] Métadonnées
 
-Les métadonnées peuvent être utilisées pour récupérer les informations utilisateur partagées par le MVPD.
-Par exemple, l’identifiant utilisateur, le code postal, etc.
+Les métadonnées peuvent être utilisées pour récupérer les informations utilisateur partagées par le MVPD.Par exemple, l’identifiant utilisateur, le code postal, etc.
 
 1. Une fois l’utilisateur authentifié, le service de programmation peut appeler l’API Adobe Pass **usermetadata** pour demander des informations sur l’utilisateur authentifié.
 
@@ -165,13 +164,13 @@ L’environnement d’évaluation peut être minimal, mais il doit inclure tous 
 
 Le service Programmer doit transmettre des informations d’identification d’appareil précises pour l’appareil pour lequel il exécute les flux. En outre, le service Programmer doit transmettre l’adresse IP de l’appareil pour lequel il exécute les flux (dans un en-tête x-forwarded-for) avec le port source de connexion (dans le champ informations sur l’appareil ) :
 
-    **X-Forwarded-For : \&lt;client\_ip\>**
+**X-Forwarded-For : \&lt;client\_ip\>**
     
     où \&lt;client\_ip\> est l’adresse IP publique du client
     
     
     
-    L’en-tête doit être ajouté sur **regcode** et **authorize**&#x200B;calls
+    L’en-tête doit être ajouté sur **regcode** et **authorize**calls
     
     Exemples :
     
@@ -184,10 +183,10 @@ Le service Programmer doit transmettre des informations d’identification d’a
     GET /api/v1/authorize HTTP/1.1.1
     
     X-Forwarded-For:203.45.101.20
+    
 
 
-
-Le service Programmer doit envoyer les données et le formatage requis par les MVPD individuelles ou les applications intégrées (par exemple, l’adresse IP de l’appareil, le port source, les informations sur l’appareil, le MRSS, les données facultatives telles que l’ECID). <!--Please see the documentation for [Passing Device and Connection Information Cookbook](http://tve.helpdocsonline.com/passing-device-information-cookbook)-->.
+Le service Programmer doit envoyer les données et le formatage requis par les MVPD individuelles ou les applications intégrées (par exemple, l’adresse IP de l’appareil, le port source, les informations sur l’appareil, le SMS, les données facultatives telles que l’ECID). <!--Please see the documentation for [Passing Device and Connection Information Cookbook](http://tve.helpdocsonline.com/passing-device-information-cookbook)-->.
 
 
 Le service de programmation doit respecter les TTL authN et authZ lors de la mise en cache et de l’invalidation des sessions authN ou authZ lorsqu’elles sont notifiées.
