@@ -4,7 +4,7 @@ description: Glossaire de l’API REST V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ L’authentification à domicile (HBA) est le processus par lequel un client se 
 
 Le fournisseur d’identité est une société qui fournit des services d’identité aux consommateurs par le biais de services par câble, par satellite ou par Internet dans le contexte de [TV Everywhere (TVE)](#tve).
 
-Synonyme de [MVPD](#mvpd) et [Fournisseur TV](#tv-provider).
+Synonyme de [&#128279;](#mvpd) et [Fournisseur TV](#tv-provider).
 
 ### L {#l}
 
@@ -259,21 +259,21 @@ Le fournisseur de services de télévision est une entreprise qui fournit des se
 
 Le fournisseur de télévision est identifié par une valeur unique définie lors du processus d’intégration entre le fournisseur de télévision et Adobe.
 
-Synonyme de [MVPD](#mvpd) et [Fournisseur d&#39;identité](#identity-provider).
+Synonyme de [&#128279;](#mvpd) et [Fournisseur d&#39;identité](#identity-provider).
 
 ### U {#u}
 
 #### Agent utilisateur {#user-agent}
 
-L&#39;agent utilisateur fait référence à un navigateur ou à un composant similaire (spécifique à la plateforme) capable de naviguer sur le Web et de générer la page de connexion de [MVPD](#mvpd).
+L&#39;agent utilisateur fait référence à un navigateur ou à un composant similaire (spécifique à la plateforme) capable de naviguer sur le Web et de générer la page de connexion de [&#128279;](#mvpd).
 
 #### Identifiant utilisateur {#user-id}
 
-L&#39;identifiant utilisateur est un identifiant unique lié à l&#39;utilisateur et provient du processus d&#39;authentification [MVPD](#mvpd).
+L&#39;identifiant utilisateur est un identifiant unique lié à l&#39;utilisateur et provient du processus d&#39;authentification [&#128279;](#mvpd).
 
 #### Métadonnées utilisateur {#user-metadata}
 
-Les métadonnées utilisateur font référence à des attributs spécifiques à l&#39;utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) gérés par le [MVPD](#mvpd) et fournis par l&#39;authentification Adobe Pass dans le cadre d&#39;un [profil](#profile).
+Les métadonnées utilisateur font référence à des attributs spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) qui sont gérées par [&#128279;](#mvpd) et fournies par l’authentification Adobe Pass dans le cadre d’un [profil](#profile).
 
 Pour plus d’informations, consultez la documentation [Métadonnées utilisateur](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 

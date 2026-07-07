@@ -4,7 +4,7 @@ description: Guide d’intégration du programmeur
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2119'
+source-wordcount: '2152'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Ce guide d’intégration est destiné aux fournisseurs de contenu (programmeurs) qui prévoient de s’intégrer à l’authentification Adobe® Pass.
+Ce guide d’intégration est destiné aux fournisseurs de contenu (programmeurs) qui prévoient de s’intégrer à l’authentification ® Pass.
 
 Dans le paysage numérique d’aujourd’hui, les internautes peuvent accéder à Internet n’importe où et à tout moment, et demander l’accès à votre contenu protégé. Il peut s&#39;agir d&#39;un événement ponctuel ou d&#39;une demande de droits de diffusion d&#39;une série télévisée complète que vous diffusez.
 
@@ -75,20 +75,20 @@ Cette section décrit plus en détail les cas d’utilisation de l’intégratio
 |                      | **Élevé** | Authentification à domicile (HBA) | Pour plus d’informations, reportez-vous à la section [Authentification basée sur l’accueil](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md). |
 |                      | **Élevé** | Authentification unique (SSO) | Pour plus d&#39;informations, reportez-vous aux documents agrégés sous la section [&#x200B; Authentification unique (SSO)](#sso). |
 |                      | **Élevé** | Sélectionner le MVPD | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de configuration](#configuration-phase). |
-|                      | **Medium** | Page de connexion à Brand MVPD | Permet aux MVPD de fournir aux pages de connexion des marques spécifiques au programmeur ou au fournisseur de services, y compris la prise en charge des préférences linguistiques par défaut. |
+|                      | **&#x200B;**&#x200B;| Page de connexion à Brand MVPD | Permet aux MVPD de fournir aux pages de connexion des marques spécifiques au programmeur ou au fournisseur de services, y compris la prise en charge des préférences linguistiques par défaut. |
 |                      | **Élevé** | Configurer les valeurs de durée de vie (TTL) par plateforme | Pour plus d’informations, consultez le [Guide de l’utilisateur des intégrations de tableaux de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows). |
 | **Préautorisation** | **Faible** | Autorisation préalable (autorisation de contrôle en amont) | Pour plus d’informations, reportez-vous aux documents agrégés dans la section [Phase de préautorisation](#preauthorization-phase). |
-|                      | **Medium** | Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
+|                      | **&#x200B;**&#x200B;| Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
 | **Autorisation** | **Élevé** | Autorisation | Pour plus d’informations, reportez-vous aux documents agrégés dans la section [Phase d’autorisation](#authorization-phase). |
 |                      | **Élevé** | Autorisation de canal distinct | Permet aux utilisateurs d’accéder au contenu de plusieurs réseaux à travers une seule application TVE. Les programmeurs peuvent effectuer des appels d’autorisation spécifiques au canal pour vérifier les droits. |
 |                      | **Faible** | Autorisation au niveau des ressources | Permet aux MVPD de collecter des analyses détaillées pour des ressources de contenu individuelles pendant l’autorisation. |
-|                      | **Medium** | Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
+|                      | **&#x200B;**&#x200B;| Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
 |                      | **Élevé** | Programmer Federated Player - Avec Autorisation Au Niveau De La Page | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
-|                      | **Medium** | Programmer Federated Player - Avec Autorisation Interne Du Lecteur | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
+|                      | **&#x200B;**&#x200B;| Programmer Federated Player - Avec Autorisation Interne Du Lecteur | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
 |                      | **Élevé** | Lecteur syndiqué : hébergé sur le portail MVPD avec une autorisation au niveau de la page | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
 |                      | **Faible** | Contrôle parental - Notation du contenu dans les demandes d’autorisation | Permet au programmeur d’inclure des évaluations de contenu dans le cadre de la demande d’autorisation au MVPD qui sont utiles pour l’autorisation au niveau des ressources. |
 |                      | **Faible** | Contrôle parental - Filtrage du contenu en fonction des attributs de l’utilisateur | Permet au programmeur de vérifier la note maximale autorisée pour un utilisateur et de filtrer le contenu disponible en conséquence. |
-| **Déconnexion** | **Medium** | Déconnexion | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de déconnexion](#logout-phase). |
+| **Déconnexion** | **&#x200B;**&#x200B;| Déconnexion | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de déconnexion](#logout-phase). |
 
 ## Flux de droits {#entitlement-flow}
 
@@ -110,7 +110,7 @@ Pour une exploration détaillée du flux de droits et de ses phases, poursuivez 
 
 >[!NOTE]
 >
-> L’application Programmeur (TVE) est utilisée dans ce document pour faire référence collectivement aux types d’applications s’exécutant sur différentes plateformes (navigateurs, appareils mobiles, appareils connectés à la télévision, etc.) prises en charge par l’authentification Adobe Pass.
+> L’application Programmeur (TVE) est utilisée dans ce document pour faire référence collectivement aux types d’applications s’exécutant sur différentes plateformes (navigateurs, appareils mobiles, appareils connectés à la télévision, etc.) pris en charge par l’authentification Adobe Pass.
 
 ### Phase d’enregistrement {#registration-phase}
 
@@ -170,7 +170,7 @@ Les étapes suivantes décrivent les étapes de haut niveau dans le cas d’une 
 1. **Initialisation de la demande d’authentification**\
    Lorsque MVPD est sélectionné, l’utilisateur est redirigé vers un serveur d’authentification Adobe Pass. Ici, une demande d’authentification SAML chiffrée pour le MVPD sélectionné est générée, en cas d’intégration SAML. Cette demande est envoyée au MVPD au nom du programmeur. Selon le système de MVPD, le navigateur de l’utilisateur est redirigé vers la page de connexion de MVPD ou un iFrame de connexion est intégré à l’application du programmeur.
 
-1. **Connexion à MVPD**\
+1. **Connexion à**\
    Le MVPD accepte la demande et présente son interface de connexion, soit par redirection, soit par iFrame.
 
 1. **Connexion utilisateur et validation**\
@@ -255,7 +255,7 @@ Les étapes suivantes décrivent les étapes de haut niveau :
 1. **Gestion des identifiants de ressource**\
    Le contenu protégé est identifié par un [identifiant de ressource](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier), qui peut être une simple chaîne ou une structure plus complexe. Cet identifiant est prédéfini et accepté par le programmeur et le MVPD. L’application du programmeur envoie l’identifiant de la ressource à l’API REST [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) d’Adobe Pass Authentication.
 
-1. **Vérification De L’Autorisation MVPD**\
+1. **Vérification De L’Autorisation**\
    Le serveur d’authentification Adobe Pass communique avec le point d’entrée d’autorisation MVPD à l’aide de protocoles normalisés.
 
 1. **Réponse de MVPD à l&#39;authentification Adobe Pass**\

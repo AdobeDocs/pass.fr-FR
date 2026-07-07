@@ -4,12 +4,12 @@ description: À propos de l'authentification Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1832'
+source-wordcount: '1863'
 ht-degree: 0%
 
 ---
 
-# À Propos De L’Authentification Adobe® Pass {#about-adobe-pass-authentication}
+# À Propos De L’Authentification ® Pass {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
 >
@@ -66,7 +66,7 @@ Au-delà des droits, plusieurs défis techniques et d’intégration se posent, 
 
 Ces défis rendent les intégrations directes entre les programmeurs et les multiples systèmes d&#39;authentification de la télévision payante très gourmandes en ressources, nécessitant à la fois du temps et une expertise technique.
 
-Pour surmonter ces obstacles, **Adobe® Pass Authentication** simplifie et rationalise la vérification des droits, permettant un accès transparent et sécurisé au contenu TV Everywhere.
+Pour surmonter ces obstacles, **® Pass Authentication** simplifie et rationalise la vérification des droits, permettant un accès transparent et sécurisé au contenu TV Everywhere.
 
 ## Présentation de l’authentification Adobe Pass {#introduction-adobe-pass-authentication}
 
@@ -127,7 +127,7 @@ Des conseils supplémentaires sont disponibles une fois l’intégration officie
 
 **Tâches d&#39;intégration**
 
-* Intégrez le DCR de l’API REST [Adobe Pass Authentication](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+* Intégrez le DCR de l’API REST Adobe Pass Authentication[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 * Intégrez l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md).
 * Intégrez l’authentification Adobe Pass [vérificateur de jeton de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 * Développez une interface utilisateur pour les workflows d’authentification, d’autorisation et de déconnexion.
@@ -156,7 +156,7 @@ L’authentification Adobe Pass peut prendre en charge efficacement la logique c
 * Pour une logique commerciale autonome appliquée par le fournisseur de télévision payante à la réception d’une demande d’autorisation, Adobe fournit les données nécessaires (par exemple, identifiant unique de l’appareil, adresse IP) pour prendre en charge l’application.
 * Pour la logique commerciale qui nécessite l’intervention de l’utilisateur ou une gestion spécifique par Adobe, les propriétés personnalisées peuvent être conservées pour chaque fournisseur de télévision payante. Ces configurations peuvent inclure des workflows prédéfinis déclenchés à des moments spécifiques du processus d’authentification.
 
-Pour plus d&#39;informations sur le processus d&#39;intégration des fournisseurs de télévision payante, consultez les documents Guide de démarrage rapide de [MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md) et Guide d&#39;intégration de [MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md).
+Pour plus d&#39;informations sur le processus d&#39;intégration des fournisseurs de télévision payante, consultez les documents Guide de démarrage rapide de [&#128279;](/help/authentication/kickstart/mvpd-kickstart-guide.md) et Guide d&#39;intégration de [MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md).
 
 ### Flux de droits {#entitlement-flow}
 

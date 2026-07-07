@@ -4,8 +4,8 @@ description: API REST V2 - Récupération des décisions d’autorisation à l�
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1006'
-ht-degree: 1%
+source-wordcount: '1137'
+ht-degree: 2%
 
 ---
 
@@ -75,10 +75,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         Type de média accepté pour les ressources en cours d’envoi.
-         <br/><br/>
-         Il doit s’agir de application/json;charset=utf-8.
-      </td>
+         Type de média accepté pour les ressources en cours d’envoi.<br/><br/>
+         Il doit s’agir de application/json;charset=utf-8.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -89,50 +87,38 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
-         <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
-         <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
-      </td>
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.<br/><br/>
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.<br/><br/>
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Adresse IP de l’appareil de diffusion en continu.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
-         <br/><br/>
-         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
-      </td>
+         Adresse IP de l’appareil de diffusion en continu.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.<br/><br/>
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.</td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>or<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
-        <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md"> Authentification unique à l’aide des flux d’identité de plateforme </a>.
-      </td>
+        La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md"> Authentification unique à l’aide des flux d’identité de plateforme </a>.</td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Jeton de service AD</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode de jeton de service est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.
-      </td>
+        La génération de la payload d’authentification unique pour la méthode de jeton de service est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.</td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode Partner est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
+        La génération de la payload d’authentification unique pour la méthode Partner est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.<br/><br/>
         Pour plus d’informations sur l’authentification unique activée pour les flux utilisant un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md"> Authentification unique à l’aide des flux de partenaire </a>.</td>
       <td>facultatif</td>
    </tr>
@@ -150,10 +136,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
-         Type de média accepté par l’application cliente.
-         <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
-      </td>
+         Type de média accepté par l’application cliente.<br/><br/>
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -182,29 +166,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
-      </td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
-      </td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -264,10 +244,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">source</td>
                <td>
-                  Informations sur la source de décision.
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
+                  Informations sur la source de décision.<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
                     <li><b>mvpd</b><br/>Decision est émis par le point d’entrée d’autorisation MVPD.</li>
                     <li><b>dégradation</b><br/>La décision est émise en raison d’un accès dégradé.</li>
                     <li><b>temppass</b><br/>Decision est émis suite à un accès temporaire.</li>
@@ -278,10 +256,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">jeton</td>
                <td>
-                  Informations sur le jeton multimédia.
-                  <br/><br/>
-                  Objet JSON possédant les attributs suivants :
-                  <ul>
+                  Informations sur le jeton multimédia.<br/><br/>
+                  Objet JSON possédant les attributs suivants :<ul>
                     <li><b>notBefore</b><br/>Horodatage en millisecondes avant lequel le jeton de média n’est pas valide.</li>
                     <li><b>notAfter</b><br/>Horodatage en millisecondes au-delà duquel le jeton de média n’est pas valide.</li>
                     <li><b>serializedToken</b><br/>Jeton de média codé en Base64.</li>
@@ -334,25 +310,22 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.
-            <br/><br/>
-            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :
-            <ul>
+            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.<br/><br/>
+            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :<ul>
                 <li>authenticated_profile_missing</li>
                 <li>authenticated_profile_expired</li>
                 <li>authorization_deny_by_mvpd</li>
                 <li>network_received_error</li>
                 <li>etc.</li>
             </ul>
-            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.
-      </td>
+            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>
 
 ## Exemples {#samples}
 
-### &#x200B;1. Récupérez les décisions d’autorisation à l’aide de mvpd spécifique tant que la décision est autorisée.
+### &#x200B;1. Récupérer les décisions d’autorisation à l’aide d’un fichier mvpd spécifique lorsque la décision est autorisée
 
 >[!BEGINTABS]
 
@@ -404,7 +377,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Récupérez les décisions d’autorisation à l’aide de mvpd spécifiques lorsque la décision est refusée
+### &#x200B;2. Récupérer les décisions d’autorisation à l’aide d’un mvpd spécifique lorsque la décision est refusée
 
 >[!BEGINTABS]
 
@@ -460,7 +433,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;3. Récupérez les décisions d’autorisation à l’aide de mvpd spécifique pendant l’application de la dégradation
+### &#x200B;3. Récupérer les décisions d’autorisation à l’aide de mvpd spécifique pendant l’application de la dégradation
 
 >[!BEGINTABS]
 

@@ -4,8 +4,8 @@ description: API REST V2 - Créer une session d’authentification
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1083'
-ht-degree: 1%
+source-wordcount: '1190'
+ht-degree: 2%
 
 ---
 
@@ -59,30 +59,23 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        Identifiant unique interne associé au fournisseur d’identité lors du processus d’intégration.
-        <br/><br/>
-        Si la plateforme de l’appareil de diffusion en continu présente des limites dans la fourniture d’une valeur, une application doit reprendre la session d’authentification et fournir une valeur valide.
-      </td>
+        Identifiant unique interne associé au fournisseur d’identité lors du processus d’intégration.<br/><br/>
+        Si la plateforme de l’appareil de diffusion en continu présente des limites dans la fourniture d’une valeur, une application doit reprendre la session d’authentification et fournir une valeur valide.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        Domaine d’origine de l’application qui effectue la connexion à MVPD.
-        <br/><br/>
-        Si la plateforme de l’appareil de diffusion en continu présente des limites dans la fourniture d’une valeur, une application doit reprendre la session d’authentification et fournir une valeur valide.
-      </td>
+        Domaine d’origine de l’application qui effectue la connexion à MVPD.<br/><br/>
+        Si la plateforme de l’appareil de diffusion en continu présente des limites dans la fourniture d’une valeur, une application doit reprendre la session d’authentification et fournir une valeur valide.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        URL de redirection finale vers laquelle l’agent utilisateur accède une fois le flux d’authentification pour MVPD terminé.
-        <br/><br/>
-        La valeur doit être encodée en URL.
-        <br/><br/>
-        Si la plateforme de l’appareil de diffusion en continu présente des limites dans la fourniture d’une valeur, une application doit reprendre la session d’authentification et fournir une valeur valide.
-        </td>
+        URL de redirection finale vers laquelle l’agent utilisateur accède une fois le flux d’authentification pour MVPD terminé.<br/><br/>
+        La valeur doit être encodée en URL.<br/><br/>
+        Si la plateforme de l’appareil de diffusion en continu présente des limites dans la fourniture d’une valeur, une application doit reprendre la session d’authentification et fournir une valeur valide.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -98,10 +91,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         Type de média accepté pour les ressources en cours d’envoi.
-         <br/><br/>
-         Il doit s’agir de application/x-www-form-urlencoded.
-      </td>
+         Type de média accepté pour les ressources en cours d’envoi.<br/><br/>
+         Il doit s’agir de application/x-www-form-urlencoded.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -112,43 +103,32 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
-         <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
-         <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
-      </td>
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.<br/><br/>
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.<br/><br/>
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Adresse IP de l’appareil de diffusion en continu.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
-         <br/><br/>
-         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
-      </td>
+         Adresse IP de l’appareil de diffusion en continu.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.<br/><br/>
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.</td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>or<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
-        <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md"> Authentification unique à l’aide des flux d’identité de plateforme </a>.
-      </td>
+        La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md"> Authentification unique à l’aide des flux d’identité de plateforme </a>.</td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Jeton de service AD</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode de jeton de service est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.
-      <td>facultatif</td>
+        La génération de la payload d’authentification unique pour la méthode de jeton de service est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.<td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
@@ -159,10 +139,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
-         Type de média accepté par l’application cliente.
-         <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
-      </td>
+         Type de média accepté par l’application cliente.<br/><br/>
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -191,29 +169,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
-      </td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
-      </td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -253,10 +227,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux d’authentification.
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
+                  Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux d’authentification.<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
                     <li><b>authentifier</b><br/>L’appareil de diffusion en continu ou un autre appareil doit ouvrir l’URL fournie dans un agent utilisateur.</li>
                     <li><b>resume</b><br/> L’appareil de diffusion en continu ou un autre appareil doit fournir les paramètres manquants et reprendre la session d’authentification à l’aide du code .</li>
                     <li><b>authorize</b><br/>L’appareil de diffusion en continu peut traiter directement les flux de décisions.</li>
@@ -266,10 +238,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut « actionName ».
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
+                  Type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut « actionName ».<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
                     <li><b>interactif</b><br/>Le flux se poursuit avec une navigation vers l’URL fournie à l’aide d’un agent utilisateur.</li>
                     <li><b>direct</b><br/>Le flux se poursuit par un appel direct à l’URL fournie à l’aide d’un client HTTP disponible pour l’implémentation du client.</li>
                   </ul>
@@ -278,10 +248,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Type de raison qui explique le « actionName ».
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
+                  Type de raison qui explique le « actionName ».<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
                     <li><b>none</b><br/>L’application cliente est requise pour continuer à s’authentifier.</li>
                     <li><b>authentifié</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès de base.</li>
                     <li><b>temporaire</b><br/>L’application cliente est déjà authentifiée par le biais de flux d’accès temporaires.</li>
@@ -453,7 +421,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;3. Créer une session d’authentification lorsqu’un profil valide existe déjà
+### &#x200B;3. Créer une session d’authentification tant qu’un profil valide existe déjà
 
 >[!BEGINTABS]
 
@@ -535,7 +503,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;5. Créer une session d’authentification lorsque la dégradation est appliquée
+### &#x200B;5. Créer une session d’authentification pendant l’application de la dégradation
 
 >[!BEGINTABS]
 

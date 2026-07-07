@@ -4,8 +4,8 @@ description: API REST V2 - Création et récupération d’un profil à l’aide
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '850'
-ht-degree: 1%
+source-wordcount: '934'
+ht-degree: 2%
 
 ---
 
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
       <td>
-        Réponse d’authentification du partenaire contenant les métadonnées utilisateur nécessaires pour créer et enregistrer un profil de partenaire.
-        <br/><br/>
-        La valeur doit être codée en Base64 et par la suite en URL.
-      </td>
+        Réponse d’authentification du partenaire contenant les métadonnées utilisateur nécessaires pour créer et enregistrer un profil de partenaire.<br/><br/>
+        La valeur doit être codée en Base64 et par la suite en URL.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -79,10 +77,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         Type de média accepté pour les ressources en cours d’envoi.
-         <br/><br/>
-         Il doit s’agir de application/x-www-form-urlencoded.
-      </td>
+         Type de média accepté pour les ressources en cours d’envoi.<br/><br/>
+         Il doit s’agir de application/x-www-form-urlencoded.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -93,33 +89,25 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
-         <br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
-         <br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
-      </td>
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.<br/><br/>
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.<br/><br/>
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.</td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode Partner est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
+        La génération de la payload d’authentification unique pour la méthode Partner est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.<br/><br/>
         Pour plus d’informations sur l’authentification unique activée pour les flux utilisant un partenaire, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md"> Authentification unique à l’aide des flux de partenaire </a>.</td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Adresse IP de l’appareil de diffusion en continu.
-         <br/><br/>
-         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
-         <br/><br/>
-         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
-      </td>
+         Adresse IP de l’appareil de diffusion en continu.<br/><br/>
+         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.<br/><br/>
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -131,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
-         Type de média accepté par l’application cliente.
-         <br/><br/>
-         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
-      </td>
+         Type de média accepté par l’application cliente.<br/><br/>
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.</td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -163,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
-      </td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
-      </td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
-      </td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
    </tr>
 </table>
 
@@ -215,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">profils</td>
       <td>
-         JSON contenant un mappage de paires clé-valeur.
-         <br/><br/>
-         L'élément clé est défini par la valeur suivante :
-         <table style="table-layout:auto">
+         JSON contenant un mappage de paires clé-valeur.<br/><br/>
+         L'élément clé est défini par la valeur suivante :<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valeur</th>
                <th style="background-color: #EFF2F7"></th>
@@ -250,11 +230,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">émetteur</td>
                <td>
-                  Entité propriétaire du profil.
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
-                    <li><b>Apple</b><br/>Le profil a été créé suite à : authentification unique à l'aide d'Apple partenaire.</li>
+                  Entité propriétaire du profil.<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
+                    <li><b></b><br/>Le profil a été créé suite à : authentification unique à l'aide d'Apple partenaire.</li>
                   </ul>
                </td>
                <td><i>obligatoire</i></td>
@@ -262,10 +240,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  Type du profil.
-                  <br/><br/>
-                  Les valeurs possibles sont les suivantes :
-                  <ul>
+                  Type du profil.<br/><br/>
+                  Les valeurs possibles sont les suivantes :<ul>
                     <li><b>appleSSO</b><br/>Le profil a été créé suite à : authentification unique à l’aide d’Apple partenaire.</li>
                   </ul>
                </td>
@@ -274,10 +250,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">attributs</td>
                <td>
-                    JSON contenant un mappage de paires clé-valeur.
-                    <br/><br/>
-                    L’élément clé est défini par les attributs de métadonnées de l’utilisateur et peut être :
-                    <ul>
+                    JSON contenant un mappage de paires clé-valeur.<br/><br/>
+                    L’élément clé est défini par les attributs de métadonnées de l’utilisateur et peut être :<ul>
                         <li>Obligatoire, comme 'userID'</li>
                         <li>Non obligatoire, comme « zip », « householdID », « maxRating », etc.</li>
                     </ul>
@@ -322,10 +296,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.
-            <br/><br/>
-            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :
-            <ul>
+            Le corps de la réponse peut fournir des informations d’erreur supplémentaires conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md"> Codes d’erreur améliorés </a>.<br/><br/>
+            L’application cliente doit mettre en œuvre un mécanisme de gestion des erreurs capable de traiter correctement les codes d’erreur les plus couramment renvoyés par cette API :<ul>
                 <li>invalid_header_pfs_permission_access_not_present</li>
                 <li>invalid_header_pfs_permission_access_not_determine</li>
                 <li>invalid_header_pfs_permission_access_not_granted</li>
@@ -335,8 +307,7 @@ ht-degree: 1%
                 <li>invalid_parameter_saml_response</li>
                 <li>etc.</li>
             </ul>
-            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.
-      </td>
+            La liste ci-dessus n’est pas exhaustive. L’application cliente doit être capable de gérer tous les codes d’erreur améliorés définis dans la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentation publique</a>.</td>
       <td><i>obligatoire</i></td>
    </tr>
 </table>

@@ -4,7 +4,7 @@ description: API REST V2 - En-tête - AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
 source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '561'
 ht-degree: 1%
 
 ---
@@ -51,10 +51,8 @@ Un seul type est pris en charge, comme illustré ci-dessous.
    <tr>
       <td>empreinte digitale</td>
       <td>
-            L’identifiant de l’appareil est constitué d’un identifiant stable et unique créé et géré par l’application cliente pour chaque appareil.
-            <br/>
-            L’application cliente doit mettre en cache l’identifiant de périphérique dans le stockage persistant, car la perte ou la modification de cet identifiant invalidera l’authentification. L’application cliente doit empêcher les modifications de valeur causées par des actions de l’utilisateur telles que la désinstallation, la réinstallation ou les mises à niveau de l’application.
-      </td>
+            L’identifiant de l’appareil est constitué d’un identifiant stable et unique créé et géré par l’application cliente pour chaque appareil.<br/>
+            L’application cliente doit mettre en cache l’identifiant de périphérique dans le stockage persistant, car la perte ou la modification de cet identifiant invalidera l’authentification. L’application cliente doit empêcher les modifications de valeur causées par des actions de l’utilisateur telles que la désinstallation, la réinstallation ou les mises à niveau de l’application.</td>
    </tr>
 </table>
 

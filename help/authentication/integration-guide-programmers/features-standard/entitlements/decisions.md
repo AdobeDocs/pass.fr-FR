@@ -4,7 +4,7 @@ description: Décisions
 exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
 source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '1014'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Si l’application cliente a l’intention d’utiliser cette fonctionnalité, i
 
 Les MVPD peuvent prendre en charge la préautorisation par le biais de divers mécanismes, chacun ayant des implications distinctes en termes de performances et de nombre maximal de ressources pouvant être traitées dans une seule requête API.
 
-Pour plus d’informations sur les mécanismes existants prenant en charge la préautorisation, reportez-vous à la documentation relative à l’[autorisation de contrôle en amont de MVPD](/help/authentication/integration-guide-mvpds/mvpd-preflight-authz.md).
+Pour plus d’informations sur les mécanismes existants prenant en charge la préautorisation, reportez-vous à la documentation relative à l’[autorisation de contrôle en amont de &#x200B;](/help/authentication/integration-guide-mvpds/mvpd-preflight-authz.md).
 
 >[!IMPORTANT]
 >
@@ -148,5 +148,4 @@ Pour plus d’informations sur comment et à quel moment intégrer les API ci-de
 
 >[!MORELIKETHIS]
 >
-> [FAQ sur la phase de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
-> [FAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
+> [FAQ sur la phase de préautorisationFAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

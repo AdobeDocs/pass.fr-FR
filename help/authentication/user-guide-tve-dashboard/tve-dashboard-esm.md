@@ -1,13 +1,13 @@
 ---
 title: Tableau de bord ESM
 description: Découvrez comment utiliser le tableau de bord ESM pour surveiller les données de droits et d’événements entre les partenaires MVPD.
-source-git-commit: 53ebbd82fc160f68fccdddb18cf98e249ad6ecce
+exl-id: ac5f289a-c26d-4156-bc56-7968c49c100f
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '487'
 ht-degree: 1%
 
 ---
-
 
 # Tableau de bord ESM {#esm-dashboard}
 
@@ -94,7 +94,7 @@ Vous pouvez télécharger les données brutes :
 Utilisez des filtres pour affiner le jeu de données et cibler l’analyse. Les filtres suivants sont disponibles :
 
 - **Canal** : inclut tous les canaux (marques) disponibles
-- **MVPD** : sélection sur un ou plusieurs fournisseurs
+- **&#x200B;**&#x200B;: sélection sur un ou plusieurs fournisseurs
 - **Plateforme** : web, mobile, télévision connectée ou famille d’appareils
 
 Pour ajouter un nouveau filtre, sélectionnez le bouton « Ajouter des filtres ».

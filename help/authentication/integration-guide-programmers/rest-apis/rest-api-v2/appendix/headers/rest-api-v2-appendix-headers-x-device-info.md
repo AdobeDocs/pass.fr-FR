@@ -4,8 +4,8 @@ description: API REST V2 - En-tête - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 3%
+source-wordcount: '1234'
+ht-degree: 4%
 
 ---
 
@@ -228,7 +228,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td>browserVersion</td>
         <td>Version du navigateur de l’appareil.</td>
         <td></td>
-        <td>par ex. 60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td>displayPpi</td>
         <td>Densité en pixels de l’écran physique de l’appareil.</td>
         <td></td>
-        <td>par ex. 294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
         <td>Dimension diagonale de l’écran physique de l’appareil en pouces.</td>
         <td></td>
-        <td>par ex. 5.5, 10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIp</td>
         <td>Adresse IP de l’appareil utilisée pour envoyer les requêtes HTTP.</td>
         <td></td>
-        <td>par ex. 8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>Port de l’appareil utilisé pour l’envoi de requêtes HTTP.</td>
         <td></td>
-        <td>par ex. 53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>obligatoire</i></td>
@@ -434,7 +434,7 @@ Les informations sur le périphérique peuvent être structurées de la manière
 | displayWidth | UIScreen.mainScreen | 320 |
 | displayHeight | UIScreen.mainScreen | 568 |
 | osName | UIDevice.systemName | iOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Les informations de connexion peuvent être construites comme suit :
 
@@ -642,7 +642,7 @@ Les informations sur le périphérique peuvent être structurées de la manière
 | displayWidth | UIScreen.mainScreen | 1920 |
 | displayHeight | UIScreen.mainScreen | 1080 |
 | osName | UIDevice.systemName | tvOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Les informations de connexion peuvent être construites comme suit :
 
@@ -703,7 +703,7 @@ Les informations sur le périphérique peuvent être structurées de la manière
 | modèle | codé en dur | « Roku » |
 | marchand | ifDeviceInfo.GetModelDetails().VendorName | « Sharp », « Roku » |
 | fabricant | ifDeviceInfo.GetModelDetails().VendorName | « Sharp », « Roku » |
-| version | ifDeviceInfo.GetModelDetails().ModelNumber |  »5303X » |
+| version | ifDeviceInfo.GetModelDetails().ModelNumber | « 5303X » |
 | displayWidth | ifDeviceInfo.GetDisplaySize().w | 1920 |
 | displayHeight | ifDeviceInfo.GetDisplaySize().h | 1080 |
 | osName | codé en dur | « Roku » |
