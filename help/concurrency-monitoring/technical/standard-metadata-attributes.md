@@ -4,8 +4,8 @@ description: Attributs de métadonnées standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '1053'
-ht-degree: 4%
+source-wordcount: '1295'
+ht-degree: 3%
 
 ---
 
@@ -41,7 +41,7 @@ Avec [API v2.0](https://streams-stage.adobeprimetime.com/swagger-ui/index.html),
 |                 | assetId | chaîne | Titre « convivial » ou lisible par le consommateur à présenter pour ce contenu | [Référence des champs de données EIDR 2.0](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/EIDR_2_0_Data_Fields.pdf){target=_blank} | Ben-Hur |                                                                                   |
 |                 | type | énumération | Valeur décrivant le type général de contenu représenté par TveItem. Les valeurs énumérées incluent : film broadcastÉpisode nonDiffusionMusique d&#39;épisodePrix vidéoMontrer clip concert conférence newsÉvénement sportifBande-annonce d&#39;événement | [Pratique recommandée pour les flux de métadonnées OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | broadcastEpisode | Le champ doit correspondre à l’un des éléments de l’énumération . |
 |                 | contentType | chaîne | Ce champ détermine si le contenu demandé est en ligne ou VOD. | S/O | live, vod | live ou vod |
-|                 | genre | chaîne | Genre du contenu diffusé en continu. Décrit le type de programmation général | [Flux de métadonnées OATC recommandé &#x200B;](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} pratique | Comédie | Type de genre valide |
+|                 | genre | chaîne | Genre du contenu diffusé en continu. Décrit le type de programmation général | [Flux de métadonnées OATC recommandé ](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} pratique | Comédie | Type de genre valide |
 |                 | durée | nombre | Durée de l’élément média en secondes | [Pratique recommandée pour les flux de métadonnées OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | 1800 | souche de numéros |
 | Appareil/Navigateur | deviceId | chaîne | Identifiant d’appareil unique. | [Propriétés de Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | 2b6f0cc904d137be2e1730235f5664094b831186 |                                                                                   |
 |                 | deviceName | chaîne | Nom convivial de cet appareil. |                                                   | IPad de Joe |                                                                                   |
@@ -57,9 +57,9 @@ Avec [API v2.0](https://streams-stage.adobeprimetime.com/swagger-ui/index.html),
 |                 | applicationVersion | chaîne | Cette valeur peut être utilisée à des fins d’analyse | S/O | 1.0, 2.0 |                                                                                   |
 | Objet | accountId | chaîne | Identifiant de compte de l’objet Surveillance d’accès simultané (dans le champ d’application du MVPD) | S/O | compte-test |                                                                                   |
 |                 | ContractType | chaîne | premium, de base. Les clients sont libres de l’ajouter en tant que métadonnées personnalisées et de l’utiliser dans leurs propres domaines | S/O | premium, de base |                                                                                   |
-| Utilisateur | name | chaîne | Certains fichiers MVPD fournissent des informations relatives à l’utilisateur spécifique qui lit du contenu. | S/O |                                                                                                                                                         |                                                                                   |
+| Utilisateur | nom | chaîne | Certains fichiers MVPD fournissent des informations relatives à l’utilisateur spécifique qui lit du contenu. | S/O |                                                                                                                                                         |                                                                                   |
 |                 | hba | booléen | Indique si l’utilisateur tente de lancer le flux à partir de son emplacement d’origine | S/O | true, false | vrai ou faux |
-| Lieu | continent | chaîne | Continent d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | Amérique du Nord | nom de continent valide |
+| Emplacement | continent | chaîne | Continent d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | Amérique du Nord | nom de continent valide |
 |                 | pays | chaîne | Pays d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | USA | nom de pays valide |
 |                 | état | chaîne | État d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | CA | nom d’état valide |
 |                 | ville | chaîne | Ville d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | Cupertino | nom de ville valide |
@@ -84,4 +84,4 @@ Contactez l’équipe de surveillance de l’accès simultané en [créant un ti
 Vous trouverez d’autres exemples de politiques et de livres de cookie d’intégration dans les sections suivantes :
 
 * [Point de décision de politique](/help/concurrency-monitoring/technical/cm-policy-decision-point.md)
-* [Console API - Surveillance d’accès simultané Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
+* [Console d’API - Surveillance de simultanéité d’Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)

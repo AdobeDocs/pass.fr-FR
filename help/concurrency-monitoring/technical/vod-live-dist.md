@@ -4,7 +4,7 @@ description: Comment faire la distinction entre VOD et le contenu dynamique dans
 exl-id: 51ba686a-7c1f-4403-9e8e-cd247bf9e345
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---

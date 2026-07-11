@@ -4,7 +4,7 @@ description: Utilisation du point d’entrée de l’API pour la surveillance de
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2083'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ curl -i -X POST -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/se
 
 Il n’est pas nécessaire de fournir un code de terminaison lors du premier appel, car nous n’avons pas d’autres flux actifs. Et aucun attribut de métadonnées, car aucun n’a été renvoyé par l’appel de récupération des métadonnées .
 
-Les paramètres **subject** et **idp** sont obligatoires, ils sont spécifiés comme des variables de chemin URI. Vous pouvez obtenir les paramètres **subject** et **idp** en effectuant un appel pour les champs de métadonnées **mvpd** et **amontUserID** à partir de l’authentification Adobe Pass. Consultez également la [présentation des API de métadonnées](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=fr#). Pour cet exemple, nous indiquerons la valeur « 12345 » comme objet et « adobe » comme fournisseur d’identité.
+Les paramètres **subject** et **idp** sont obligatoires, ils sont spécifiés comme des variables de chemin URI. Vous pouvez obtenir les paramètres **subject** et **idp** en effectuant un appel pour les champs de métadonnées **mvpd** et **amontUserID** à partir de l’authentification Adobe Pass. Consultez également la [présentation des API de métadonnées](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). Pour cet exemple, nous indiquerons la valeur « 12345 » comme objet et « adobe » comme fournisseur d’identité.
 
 ```
 # Response Code
@@ -188,10 +188,7 @@ Lorsque vous passez l’appel , vous obtenez la réponse suivante :
 
 Pour chaque session, un utilisateur obtient le **terminationCode** et complète les métadonnées.
 
-Notez l’en-tête **Expires**. Il s’agit de l’heure à laquelle la première session doit expirer, sauf si une pulsation est envoyée.
-Le champ de métadonnées est renseigné avec toutes les métadonnées envoyées au démarrage de la session. Nous ne le filtrons pas, vous recevrez tout ce que vous avez envoyé.
-La réponse inclut tous les flux s’exécutant sur les applications d’autres clients tant que les applications partagent la même politique.
-Si aucune session n’est en cours pour un utilisateur spécifique lorsque vous passez l’appel, vous obtenez la réponse suivante :
+Notez l’en-tête **Expires**. Il s’agit de l’heure à laquelle la première session doit expirer, sauf si une pulsation est envoyée.Le champ de métadonnées est renseigné avec toutes les métadonnées envoyées au démarrage de la session. Nous ne le filtrons pas, vous recevrez tout ce que vous avez envoyé.La réponse inclut tous les flux s’exécutant sur les applications d’autres clients tant que les applications partagent la même politique.Si aucune session n’est en cours pour un utilisateur spécifique lorsque vous passez l’appel, vous obtenez la réponse suivante :
 
 ```http
 # Response Code

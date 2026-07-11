@@ -1,13 +1,13 @@
 ---
 title: Gestion des erreurs de conflit 409
 description: Découvrez comment gérer les erreurs de conflit 409 lorsque des limites d’utilisation simultanées sont atteintes
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 23a73e48-8ae0-4e0e-85db-dfc09d1386a7
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
 source-wordcount: '283'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
-
 
 # Gestion des erreurs de conflit 409 {#handling-409-errors}
 
@@ -116,16 +116,14 @@ Un conflit 409 survient lorsque :
 - **Proposer des alternatives** - Proposer des moyens de résoudre le conflit
 - **Enregistrer l’état utilisateur** - Ne perdez pas leur sélection de contenu
 
-### &#x200B;3. Considérations Relatives À L’Expérience Utilisateur
+### &#x200B;3. Considérations relatives à l’expérience utilisateur
 
 - **Résolution rapide** - Faciliter la résolution des conflits
 - **Des choix clairs** - Les utilisateurs doivent comprendre leurs options.
 - **Comportement cohérent** - Gérez les conflits de la même manière à chaque fois
 
-### &#x200B;4. Considérations Techniques
+### &#x200B;4. Considérations techniques
 
 - **Analyser la réponse avec soin** - Extraire toutes les informations pertinentes
 - **Gérer les cas de périphérie** - Que se passe-t-il si aucun conflit n’est renvoyé ?
 - **Consignation des conflits** - Suivi des violations de politique pour analyse
-
-
