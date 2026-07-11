@@ -4,8 +4,8 @@ description: Attributs de métadonnées standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '1053'
-ht-degree: 4%
+source-wordcount: '1295'
+ht-degree: 3%
 
 ---
 
@@ -57,9 +57,9 @@ Avec [API v2.0](https://streams-stage.adobeprimetime.com/swagger-ui/index.html),
 |                 | applicationVersion | chaîne | Cette valeur peut être utilisée à des fins d’analyse | S/O | 1.0, 2.0 |                                                                                   |
 | Objet | accountId | chaîne | Identifiant de compte de l’objet Surveillance d’accès simultané (dans le champ d’application du MVPD) | S/O | compte-test |                                                                                   |
 |                 | ContractType | chaîne | premium, de base. Les clients sont libres de l’ajouter en tant que métadonnées personnalisées et de l’utiliser dans leurs propres domaines | S/O | premium, de base |                                                                                   |
-| Utilisateur | name | chaîne | Certains fichiers MVPD fournissent des informations relatives à l’utilisateur spécifique qui lit du contenu. | S/O |                                                                                                                                                         |                                                                                   |
+| Utilisateur | nom | chaîne | Certains fichiers MVPD fournissent des informations relatives à l’utilisateur spécifique qui lit du contenu. | S/O |                                                                                                                                                         |                                                                                   |
 |                 | hba | booléen | Indique si l’utilisateur tente de lancer le flux à partir de son emplacement d’origine | S/O | true, false | vrai ou faux |
-| Lieu | continent | chaîne | Continent d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | Amérique du Nord | nom de continent valide |
+| Emplacement | continent | chaîne | Continent d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | Amérique du Nord | nom de continent valide |
 |                 | pays | chaîne | Pays d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | USA | nom de pays valide |
 |                 | état | chaîne | État d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | CA | nom d’état valide |
 |                 | ville | chaîne | Ville d’où provient l’ID d’appareil qui envoie la demande de lecture | S/O | Cupertino | nom de ville valide |
@@ -84,4 +84,4 @@ Contactez l’équipe de surveillance de l’accès simultané en [créant un ti
 Vous trouverez d’autres exemples de politiques et de livres de cookie d’intégration dans les sections suivantes :
 
 * [Point de décision de politique](/help/concurrency-monitoring/technical/cm-policy-decision-point.md)
-* [Console API - Surveillance d’accès simultané Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
+* [Console d’API - Surveillance de simultanéité d’Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
