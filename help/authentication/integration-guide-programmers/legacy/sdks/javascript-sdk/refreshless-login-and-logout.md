@@ -4,7 +4,7 @@ description: Connexion et déconnexion sans actualisation
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1817'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Pour les applications web, vous devez tenir compte de différents scénarios pos
 - Certains MVPD nécessitent que vous ouvriez un iFrame sur votre site pour afficher la page de connexion de MVPD
 - Certains navigateurs ne gèrent pas bien le scénario iFrame. Pour ces navigateurs, une meilleure alternative consiste donc à utiliser une fenêtre contextuelle au lieu de l’iFrame
 
-Avant l’authentification Adobe Pass 2.7, tous ces scénarios d’authentification d’un utilisateur impliquaient une actualisation complète de la page du programmeur. Pour la version 2.7 et les versions ultérieures, l’équipe Authentification Adobe Pass a amélioré ces flux afin que l’utilisateur n’ait pas à effectuer une actualisation de la page de votre application lors de la connexion et de la déconnexion.
+Avant Adobe Pass Authentication 2.7, tous ces scénarios d’authentification d’un utilisateur impliquaient une actualisation complète de la page du programmeur.Pour la version 2.7 et les versions ultérieures, l’équipe Authentification Adobe Pass a amélioré ces flux afin que l’utilisateur n’ait pas à actualiser la page de votre application lors de la connexion et de la déconnexion.
 
 
 ## Description détaillée {#detailed_description}
@@ -48,7 +48,7 @@ Commençons par un résumé des flux d’authentification et de déconnexion d�
 
 Les clients web Adobe Pass Authentication disposent de deux méthodes d’authentification, selon les exigences des fichiers MVPD :
 
-1. **Redirection de page entière -** après la sélection d’un fournisseur par l’utilisateur ou l’utilisatrice    (configurée avec la redirection de page complète) à partir du sélecteur MVPD sur le    Site web du programmeur, `setSelectedProvider(<mvpd>)` est appelé sur l’AccessEnabler et l’utilisateur est redirigé vers la page de connexion de MVPD. Une fois que l’utilisateur a fourni des informations d’identification valides, il est redirigé vers le site web du programmeur. L’AccessEnabler est initialisé et le jeton d’authentification est récupéré à partir de l’authentification Adobe Pass lors de la `setRequestor`.
+1. **Redirection de page entière -** Une fois que l’utilisateur a sélectionné un fournisseur (configuré avec la redirection de page entière) à partir du sélecteur MVPD sur le site web du programmeur, `setSelectedProvider(<mvpd>)` est appelé sur l’AccessEnabler et l’utilisateur est redirigé vers la page de connexion de MVPD. Une fois que l’utilisateur a fourni des informations d’identification valides, il est redirigé vers le site web du programmeur. L’AccessEnabler est initialisé et le jeton d’authentification est récupéré à partir de l’authentification Adobe Pass lors de la `setRequestor`.
 1. **iFrame / Fenêtre contextuelle -** Une fois que l’utilisateur a sélectionné un fournisseur (configuré avec iFrame), `setSelectedProvider(<mvpd>)` est appelé sur l’AccessEnabler. Cette action déclenche le rappel `createIFrame(width, height)`, en informant le programmeur de la création d’un iFrame (ou d’une fenêtre contextuelle, selon le navigateur/les préférences) avec le nom `"mvpdframe"` et les dimensions fournies. Une fois l’iFrame/la fenêtre contextuelle créée, AccessEnabler charge la page de connexion MVPD dans l’iFrame/la fenêtre contextuelle. L’utilisateur fournit des informations d’identification valides et l’iFrame/popup est redirigé vers l’authentification Adobe Pass, qui renvoie un extrait de code JS qui ferme l’iFrame/popup et recharge la page parente (site web du programmeur). De même que pour le flux 1, le jeton d’authentification est récupéré pendant l’`setRequestor`.
 
 Le rappel `displayProviderDialog` (déclenché par `getAuthentication`/`getAuthorization`) renvoie une liste de fichiers MVPD et leurs paramètres appropriés. La propriété `iFrameRequired` d’un MVPD permet au programmeur de savoir s’il doit activer le flux 1 ou le flux 2. Notez que le programmeur doit effectuer une action supplémentaire (créer un iFrame/une fenêtre contextuelle) uniquement pour le flux 2.

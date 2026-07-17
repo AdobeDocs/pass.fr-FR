@@ -4,7 +4,7 @@ description: Manuel d’iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2424'
+source-wordcount: '2436'
 ht-degree: 0%
 
 ---
@@ -29,9 +29,9 @@ La solution Droits d’authentification Adobe Pass pour iOS/tvOS est divisée en
 
 * Le domaine AccessEnabler - c’est là que les workflows de droits sont implémentés sous la forme de :
 
-   * Appels réseau effectués aux serveurs principaux d’Adobe
-   * Règles de logique commerciale liées aux workflows d’authentification et d’autorisation
-   * Gestion de diverses ressources et traitement de l’état des workflows (tel que le cache de jetons)
+  * Appels réseau effectués aux serveurs principaux d’Adobe
+  * Règles de logique commerciale liées aux workflows d’authentification et d’autorisation
+  * Gestion de diverses ressources et traitement de l’état des workflows (tel que le cache de jetons)
 
 L’objectif du domaine AccessEnabler est de masquer toutes les complexités des workflows de droits et de fournir à l’application de couche supérieure (par le biais de la bibliothèque AccessEnabler) un ensemble de primitives de droits simples avec lesquelles vous implémentez les workflows de droits :
 
@@ -48,19 +48,19 @@ L’activité réseau d’AccessEnabler a lieu dans son propre thread, de sorte 
 
 ## Configuration du service Experience Cloud ID (identifiant visiteur) {#visitorIDSetup}
 
-La configuration de la valeur [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
+La configuration de la valeur [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
 
 ## Flux de droits {#entitlement}
 
-A. [Conditions préalables](#prereqs) </br>
-B. [Flux de démarrage](#startup_flow) </br>
-C. [&#x200B; Flux d’authentification avec le SSO d’Apple &#x200B;](#authn_flow_wo_applesso) </br>
-D. [&#x200B; Flux d’authentification avec le SSO Apple sur iOS &#x200B;](#authn_flow_with_applesso) </br>
-E. [Flux d’authentification avec l’authentification unique Apple sur tvOS](#authn_flow_with_applesso_tvOS) </br>
-F. [&#x200B; Flux d’autorisation &#x200B;](#authz_flow) </br>
-G. [Afficher le flux des médias](#media_flow) </br>
-H. [&#x200B; Flux de déconnexion sans SSO Apple &#x200B;](#logout_flow_wo_AppleSSO) </br>
-I. [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_with_AppleSSO) </br>
+A.  [Conditions préalables](#prereqs) </br>
+B.  [Flux de démarrage](#startup_flow) </br>
+C.  [Flux d’authentification avec le SSO d’Apple](#authn_flow_wo_applesso)  </br>
+D.  [Flux d’authentification avec l’authentification unique Apple sur iOS](#authn_flow_with_applesso) </br>
+E.  [Flux d’authentification avec SSO Apple sur tvOS](#authn_flow_with_applesso_tvOS) </br>
+F.  [ Flux d’autorisation ](#authz_flow) </br>
+G.  [Afficher le flux multimédia](#media_flow) </br>
+H.  [ Flux de déconnexion sans SSO Apple ](#logout_flow_wo_AppleSSO) </br>
+I.  [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_with_AppleSSO) </br>
 
 
 ### A. Prérequis {#prereqs}
@@ -71,54 +71,54 @@ I. [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_wi
    * La réussite indique que vous pouvez poursuivre les appels de droits.
 
    * [`displayProviderDialog(mvpds)`](#$dispProvDialog) </br>
-      * Déclenché par [`getAuthentication()`](#$getAuthN) uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié. </br>
-      * Le paramètre `mvpds` est un tableau de fournisseurs disponibles pour l’utilisateur.
+     * Déclenché par [`getAuthentication()`](#$getAuthN) uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié. </br>
+     * Le paramètre `mvpds` est un tableau de fournisseurs disponibles pour l’utilisateur.
 
    * `setAuthenticationStatus(status, errorcode)` </br>
-      * Déclenché par `checkAuthentication()` à chaque fois. </br>
-      * Déclenché par [`getAuthentication()`](#$getAuthN) uniquement si l’utilisateur est déjà authentifié et a sélectionné un fournisseur. </br>
-      * Le statut renvoyé est succès ou échec. Le code d’erreur décrit le type de l’échec.
+     * Déclenché par `checkAuthentication()` à chaque fois. </br>
+     * Déclenché par [`getAuthentication()`](#$getAuthN) uniquement si l’utilisateur est déjà authentifié et a sélectionné un fournisseur. </br>
+     * Le statut renvoyé est succès ou échec. Le code d’erreur décrit le type de l’échec.
 
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * Déclenché par [`getAuthentication()`](#$getAuthN) après la sélection d’un MVPD par l’utilisateur. Le paramètre `url` indique l’emplacement de la page de connexion de MVPD.
+     * Déclenché par [`getAuthentication()`](#$getAuthN) après la sélection d’un MVPD par l’utilisateur. Le paramètre `url` indique l’emplacement de la page de connexion de MVPD.
 
    * `sendTrackingData(event, data)` </br>
-      * Déclenché par `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
-      * Le paramètre `event` indique quel événement de droit s’est produit ; le paramètre `data` est une liste de valeurs relatives à l’événement.
+     * Déclenché par `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
+     * Le paramètre `event` indique quel événement de droit s’est produit ; le paramètre `data` est une liste de valeurs relatives à l’événement.
 
    * `setToken(token, resource)`
 
-      * Déclenché par [checkAuthorization()](#checkAuthZ) et [getAuthorization()](#$getAuthZ) après une autorisation réussie d’affichage d’une ressource.
-      * Le paramètre `token` est le jeton de média de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
+     * Déclenché par [checkAuthorization()](#checkAuthZ) et [getAuthorization()](#$getAuthZ) après une autorisation réussie d’affichage d’une ressource.
+     * Le paramètre `token` est le jeton de média de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
 
    * `tokenRequestFailed(resource, code, description)` </br>
-      * Déclenché par [checkAuthorization()](#checkAuthZ) et [getAuthorization()](#$getAuthZ) après une autorisation infructueuse.
-      * Le paramètre `resource` correspond au contenu que l’utilisateur tentait d’afficher ; le paramètre `code` correspond au code d’erreur indiquant le type d’échec ; le paramètre `description` décrit l’erreur associée au code d’erreur.
+     * Déclenché par [checkAuthorization()](#checkAuthZ) et [getAuthorization()](#$getAuthZ) après une autorisation infructueuse.
+     * Le paramètre `resource` correspond au contenu que l’utilisateur tentait d’afficher ; le paramètre `code` correspond au code d’erreur indiquant le type d’échec ; le paramètre `description` décrit l’erreur associée au code d’erreur.
 
    * `selectedProvider(mvpd)` </br>
-      * Déclenché par [`getSelectedProvider()`](#getSelProv).
-      * Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par l’utilisateur ou l’utilisatrice.
+     * Déclenché par [`getSelectedProvider()`](#getSelProv).
+     * Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par l’utilisateur ou l’utilisatrice.
 
    * `setMetadataStatus(metadata, key, arguments)`
-      * Déclenché par `getMetadata().`
-      * Le paramètre `metadata` fournit les données spécifiques que vous avez demandées ; le paramètre `key` est la clé utilisée dans la requête [getMetadata()](#getMeta) et le paramètre `arguments` est le même dictionnaire que celui transmis à [getMetadata()](#getMeta).
+     * Déclenché par `getMetadata().`
+     * Le paramètre `metadata` fournit les données spécifiques que vous avez demandées ; le paramètre `key` est la clé utilisée dans la requête [getMetadata()](#getMeta) et le paramètre `arguments` est le même dictionnaire que celui transmis à [getMetadata()](#getMeta).
 
    * [`preauthorizedResources(authorizedResources)`](#preauthResources)
 
-      * Déclenché par [`checkPreauthorizedResources()`](#checkPreauth).
+     * Déclenché par [`checkPreauthorizedResources()`](#checkPreauth).
 
-      * Le paramètre `authorizedResources` présente les ressources que l’utilisateur
-est autorisé à afficher.
+     * Le paramètre `authorizedResources` présente les ressources que l’utilisateur
+       est autorisé à afficher.
 
    * [`presentTvProviderDialog(viewController)`](#presentTvDialog)
 
-      * Déclenché par [getAuthentication()](#getAuthN) lorsque le demandeur actuel prend en charge au moins un MVPD prenant en charge la connexion unique.
-      * Le paramètre viewController correspond à la boîte de dialogue SSO d’Apple et doit être présenté sur le contrôleur de vue principal.
+     * Déclenché par [getAuthentication()](#getAuthN) lorsque le demandeur actuel prend en charge au moins un MVPD prenant en charge la connexion unique.
+     * Le paramètre viewController correspond à la boîte de dialogue SSO d’Apple et doit être présenté sur le contrôleur de vue principal.
 
    * [`dismissTvProviderDialog(viewController)`](#dismissTvDialog)
 
-      * Déclenché par une action de l’utilisateur (en sélectionnant « Annuler » ou « Autres fournisseurs de télévision » dans la boîte de dialogue SSO d’Apple).
-      * Le paramètre viewController correspond à la boîte de dialogue SSO d’Apple et doit être ignoré du contrôleur de vue principal.
+     * Déclenché par une action de l’utilisateur (en sélectionnant « Annuler » ou « Autres fournisseurs de télévision » dans la boîte de dialogue SSO d’Apple).
+     * Le paramètre viewController correspond à la boîte de dialogue SSO d’Apple et doit être ignoré du contrôleur de vue principal.
 
 ![](../../../../assets/iOS-flows.png)
 
@@ -127,15 +127,15 @@ est autorisé à afficher.
 1. Démarrez l’application de niveau supérieur.</br>
 1. Lancement du </br> d’authentification Adobe Pass
 
-   a. Appelez [`init`](#$init) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
+   a.  Appelez [`init`](#$init) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
    * **Dépendance :** Bibliothèque iOS/tvOS native d’authentification Adobe Pass (AccessEnabler)
 
-   b. Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations[&#x200B; consultez la &#x200B;](#create_dev)documentation relative à Clientless .
+   b.  Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations](#create_dev) consultez la [documentation relative à Clientless .
 
    * **Dépendance :** ID de demandeur d’authentification Adobe Pass valide (utilisez votre compte d’authentification Adobe Pass)
-Manager pour organiser cela).
+     Manager pour organiser cela).
 
-   * **Triggers:**
+   * **Déclencheurs :**
      Rappel [setRequestorComplete()](#$setReqComplete).
 
    >[!NOTE]
@@ -236,9 +236,9 @@ authentifié.
    * Si l’appel [getAuthorization()](#$getAuthZ) réussit : l’utilisateur possède des jetons AuthN et AuthZ valides (l’utilisateur est authentifié et autorisé à regarder le média demandé).
 
    * Si [getAuthorization()](#$getAuthZ) échoue : examinez l’exception renvoyée pour déterminer son type (AuthN, AuthZ ou autre) :
-      * S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
-      * S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
-      * S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.), affichez un message d’erreur approprié à l’intention de l’utilisateur.
+     * S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
+     * S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
+     * S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
 
 1. Validez le jeton de média court.\
    Utilisez la bibliothèque Vérificateur de jeton de média d’authentification Adobe Pass pour vérifier le jeton de média de courte durée renvoyé par l’appel [getAuthorization()](#$getAuthZ) ci-dessus :
@@ -257,15 +257,15 @@ authentifié.
    * Si le média sélectionné est protégé, votre application lance le [flux d’autorisation](#authz_flow) ci-dessus.
 
    * Si le média sélectionné n’est pas protégé, lisez le média pendant
-l’utilisateur .
+     l’utilisateur .
 
 ### H. Flux de déconnexion sans SSO Apple {#logout_flow_wo_AppleSSO}
 
 1. Appelez [`logout()`](#$logout) pour déconnecter l’utilisateur. AccessEnabler efface toutes les valeurs et tous les jetons mis en cache. Après avoir effacé le cache, AccessEnabler effectue un appel au serveur pour nettoyer les sessions côté serveur. Notez que puisque l’appel au serveur peut entraîner une redirection SAML vers l’IdP (cela permet le nettoyage de la session du côté IdP), cet appel doit suivre toutes les redirections. Pour cette raison, cet appel doit être géré à l&#39;intérieur d&#39;un contrôleur UIWebView/WKWebView ou SFSafariViewController.
 
-   a. En suivant le même modèle que le workflow d’authentification, le domaine AccessEnabler effectue une requête à la couche d’application de l’interface utilisateur, via le rappel `navigateToUrl:` ou `navigateToUrl:useSVC:`, pour créer un contrôleur UIWebView/WKWebView ou SFSafariViewController et lui demander de charger l’URL fournie dans le paramètre `url` du rappel. Il s’agit de l’URL du point d’entrée de déconnexion sur le serveur principal.
+   a.  Suivant le même modèle que le workflow d’authentification, le domaine AccessEnabler effectue une requête à la couche d’application de l’interface utilisateur, via le rappel `navigateToUrl:` ou `navigateToUrl:useSVC:`, pour créer un contrôleur UIWebView/WKWebView ou SFSafariViewController et lui demander de charger l’URL fournie dans le paramètre `url` du rappel. Il s’agit de l’URL du point d’entrée de déconnexion sur le serveur principal.
 
-   b. Votre application doit surveiller l’activité du contrôleur de `UIWebView/WKWebView or SFSafariViewController` et détecter le moment où il charge une URL personnalisée spécifique, car il passe par plusieurs redirections. Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Votre application doit l&#39;interpréter uniquement comme un signal indiquant que le flux de déconnexion est terminé et qu&#39;il est sûr de fermer le contrôleur `UIWebView/WKWebView` ou `SFSafariViewController`. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le contrôleur `UIWebView/WKWebView or SFSafariViewController` et appeler la méthode `handleExternalURL:url`API AccessEnabler. Si l’utilisation d’un `SFSafariViewController`contrôleur est requise, l’URL personnalisée spécifique est définie par le **`application's custom scheme`** (par exemple, `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`), sinon cette URL personnalisée spécifique est définie par la constante **`ADOBEPASS_REDIRECT_URL`** (c’est-à-dire `adobepass://ios.app`).
+   b.  Votre application doit surveiller l&#39;activité du contrôleur de `UIWebView/WKWebView or SFSafariViewController` et détecter le moment où il charge une URL personnalisée spécifique, car il passe par plusieurs redirections. Notez que cette URL personnalisée spécifique n&#39;est pas valide et qu&#39;elle n&#39;est pas destinée à être chargée par le contrôleur. Votre application doit l&#39;interpréter uniquement comme un signal indiquant que le flux de déconnexion est terminé et qu&#39;il est sûr de fermer le contrôleur `UIWebView/WKWebView` ou `SFSafariViewController`. Lorsque le contrôleur charge cette URL personnalisée spécifique, votre application doit fermer le contrôleur `UIWebView/WKWebView or SFSafariViewController` et appeler la méthode `handleExternalURL:url`API AccessEnabler. Si l’utilisation d’un `SFSafariViewController`contrôleur est requise, l’URL personnalisée spécifique est définie par le **`application's custom scheme`** (par exemple, `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`), sinon cette URL personnalisée spécifique est définie par la constante **`ADOBEPASS_REDIRECT_URL`** (c’est-à-dire `adobepass://ios.app`).
 
    >[!NOTE]
    >

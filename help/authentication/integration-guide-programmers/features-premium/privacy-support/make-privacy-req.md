@@ -4,7 +4,7 @@ description: Comment effectuer une demande d’accès à des informations person
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Lors de l’envoi d’une demande d’accès à des informations personnelles ou
 
 * **mvpdID** - Identifiant unique du MVPD.
 * **userID** - Identifie de manière unique l’utilisateur de l’application d’un programmeur, mais provient de MVPD. Consultez Présentation des ID utilisateur dans la Présentation du programmeur.
-* **IMSOrgID** : ID d’organisation du service Adobe Experience Cloud Identity Management qui identifie de manière unique le client dans le Adobe Experience Cloud
+* **IMSOrgID** : ID d’organisation du service Adobe Experience Cloud Identity Management qui identifie de manière unique le client dans Adobe Experience Cloud
 
 
 Veuillez vérifier l’exemple ci-dessous :
@@ -226,7 +226,7 @@ Il existe deux options permettant aux clients d’envoyer des demandes d’accè
 
 ### En utilisant l’interface utilisateur de Privacy Service {#privacy-service-ui}
 
-Un [tutoriel complet](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=fr#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sur l’accès et l’utilisation de l’interface utilisateur de Privacy Service est disponible en ligne via les services Adobe I/O. De plus, les clients peuvent utiliser ce lien pour accéder à la bibliothèque de vidéos et d’articles sur les réglementations de confidentialité. Cliquez sur le menu Adobe Experience Cloud et RGPD . Un certain nombre de vidéos s’ouvrent : la rubrique « Comment faire pour l’interface utilisateur RGPD » explique comment l’utiliser.
+Un [tutoriel complet](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sur l’accès et l’utilisation de l’interface utilisateur de Privacy Service est disponible en ligne via les services Adobe I/O. De plus, les clients peuvent utiliser ce lien pour accéder à la bibliothèque de vidéos et d’articles sur les réglementations de confidentialité. Cliquez sur le menu Adobe Experience Cloud et RGPD . Un certain nombre de vidéos s’ouvrent : la rubrique « Comment faire pour l’interface utilisateur RGPD » explique comment l’utiliser.
 
 Dans l’interface utilisateur , les clients doivent charger leur propre IMSOrgID et un fichier JSON contenant les détails des requêtes relatives au RGPD pour chaque produit.
 
@@ -234,12 +234,12 @@ Dans l’interface utilisateur , les clients doivent charger leur propre IMSOrgI
 
 Adobe Experience Platform Privacy Service fournit une facilitation commune et centralisée des demandes d’accès/de suppression et des demandes d’opposition à la vente de données privées.
 
-La documentation de l’API Privacy Service **&#x200B;**&#x200B;explique en détail comment un client Adobe peut s’intégrer à l’API Adobe.
+La documentation de l’API Privacy Service **** explique en détail comment un client Adobe peut s’intégrer à l’API Adobe.
 
 **Visualiser les appels d’API avec Postman (un logiciel tiers gratuit) :**
 
-* [Collection de Postman de l’API Privacy Service sur GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Guide vidéo pour la création de l’environnement Postman](https://video.tv.adobe.com/v/31635?captions=fre_fr)
+* [Collection Postman de l’API Privacy Service sur GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [Guide vidéo pour la création de l’environnement Postman](https://video.tv.adobe.com/v/28832)
 * [Procédure d’importation d’environnements et de collections dans Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
@@ -259,7 +259,7 @@ La documentation de l’API Privacy Service **&#x200B;**&#x200B;explique en dét
 
 >[!RELATEDINFORMATION]
 >
->* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=fr#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
+>* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
 >* Privacy Service API documentation
 
 -->
