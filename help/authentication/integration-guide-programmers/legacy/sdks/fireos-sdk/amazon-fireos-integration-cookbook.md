@@ -4,7 +4,7 @@ description: Manuel d’intégration d’Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,9 @@ La solution Droits d’authentification Adobe Pass pour Amazon FireOS est finale
 
 - Le domaine de l’interface utilisateur : il s’agit de la couche d’application de niveau supérieur qui implémente l’interface utilisateur et utilise les services fournis par la bibliothèque `AccessEnabler` pour fournir l’accès au contenu limité.
 - Le domaine `AccessEnabler` où les workflows de droits sont implémentés sous la forme de :
-   - Appels réseau effectués aux serveurs principaux d’Adobe
-   - Règles de logique commerciale liées aux workflows d’authentification et d’autorisation
-   - Gestion de diverses ressources et traitement de l’état des workflows (tel que le cache de jetons)
+  - Appels réseau effectués aux serveurs principaux d’Adobe
+  - Règles de logique commerciale liées aux workflows d’authentification et d’autorisation
+  - Gestion de diverses ressources et traitement de l’état des workflows (tel que le cache de jetons)
 
 L’objectif du domaine `AccessEnabler` est de masquer toutes les complexités des workflows de droits et de fournir à l’application de couche supérieure (par le biais de la bibliothèque de `AccessEnabler`) un ensemble de primitives de droits simples. Ce processus permet de mettre en œuvre les workflows de droits :
 
@@ -60,51 +60,51 @@ L’activité réseau de l’`AccessEnabler` se déroule dans un autre thread, d
 1. Créez vos fonctions de rappel :
    - [`setRequestorComplete()`](#$setRequestorComplete)
 
-      - Déclenché par `setRequestor()`, renvoie un succès ou un échec.     La réussite indique que vous pouvez poursuivre les appels de droits.
+     - Déclenché par `setRequestor()`, renvoie un succès ou un échec.     La réussite indique que vous pouvez poursuivre les appels de droits.
 
    - [displayProviderDialog(mvpds)](#$displayProviderDialog)
 
-      - Déclenché par `getAuthentication()` uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié. Le paramètre `mvpds` est un tableau de fournisseurs disponibles pour l’utilisateur.
+     - Déclenché par `getAuthentication()` uniquement si l’utilisateur n’a pas sélectionné de fournisseur (MVPD) et n’est pas encore authentifié. Le paramètre `mvpds` est un tableau de fournisseurs disponibles pour l’utilisateur.
 
    - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
-      - Déclenché par `checkAuthentication()` à chaque fois. Déclenché par `getAuthentication()` uniquement si l’utilisateur est déjà authentifié et a sélectionné un fournisseur.
+     - Déclenché par `checkAuthentication()` à chaque fois. Déclenché par `getAuthentication()` uniquement si l’utilisateur est déjà authentifié et a sélectionné un fournisseur.
 
-      - Le statut renvoyé est authentifié ou non authentifié. La raison décrit un échec d’authentification ou une action de déconnexion.
+     - Le statut renvoyé est authentifié ou non authentifié. La raison décrit un échec d’authentification ou une action de déconnexion.
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - Ignorée dans AmazonFireOS SDK, la méthode est utilisée sur les plateformes Android où est déclenchée par `getAuthentication()` une fois que l’utilisateur a sélectionné un MVPD.  Le paramètre `url` indique l’emplacement de la page de connexion de MVPD.
+     - Ignorée dans AmazonFireOS SDK, la méthode est utilisée sur les plateformes Android où est déclenchée par `getAuthentication()` une fois que l’utilisateur a sélectionné un MVPD.  Le paramètre `url` indique l’emplacement de la page de connexion de MVPD.
 
    - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
-      - Déclenché par `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
-Le paramètre `event` indique quel événement de droit s’est produit ; le paramètre `data` est une liste de valeurs relatives à l’événement.
+     - Déclenché par `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
+       Le paramètre `event` indique quel événement de droit s’est produit ; le paramètre `data` est une liste de valeurs relatives à l’événement.
 
    - [`setToken(token, resource)`](#$setToken)
 
-      - Déclenché par `checkAuthorization()` et `getAuthorization()` après une autorisation réussie d’affichage d’une ressource.
-      - Le paramètre `token` est le jeton de média de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
+     - Déclenché par `checkAuthorization()` et `getAuthorization()` après une autorisation réussie d’affichage d’une ressource.
+     - Le paramètre `token` est le jeton de média de courte durée ; le paramètre `resource` est le contenu que l’utilisateur est autorisé à afficher.
 
    - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
-      - Déclenché par `checkAuthorization()` et `getAuthorization()` après une autorisation infructueuse.
-      - Le paramètre `resource` correspond au contenu que l’utilisateur tentait d’afficher ; le paramètre `code` correspond au code d’erreur indiquant le type d’échec ; le paramètre `description` décrit l’erreur associée au code d’erreur.
+     - Déclenché par `checkAuthorization()` et `getAuthorization()` après une autorisation infructueuse.
+     - Le paramètre `resource` correspond au contenu que l’utilisateur tentait d’afficher ; le paramètre `code` correspond au code d’erreur indiquant le type d’échec ; le paramètre `description` décrit l’erreur associée au code d’erreur.
 
    - [`selectedProvider(mvpd)`](#$selectedProvider)
 
-      - Déclenché par `getSelectedProvider()`.
-      - Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par l’utilisateur ou l’utilisatrice.
+     - Déclenché par `getSelectedProvider()`.
+     - Le paramètre `mvpd` fournit des informations sur le fournisseur sélectionné par l’utilisateur ou l’utilisatrice.
 
    - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
-      - Déclenché par `getMetadata().`
-      - Le paramètre `metadata` fournit les données spécifiques que vous avez demandées ; le paramètre `key` est la clé utilisée dans la requête `getMetadata()` ; et le paramètre `arguments` est le même dictionnaire que celui transmis à `getMetadata()`.
+     - Déclenché par `getMetadata().`
+     - Le paramètre `metadata` fournit les données spécifiques que vous avez demandées ; le paramètre `key` est la clé utilisée dans la requête `getMetadata()` ; et le paramètre `arguments` est le même dictionnaire que celui transmis à `getMetadata()`.
 
    - [`preauthorizedResources(resources)`](#$preauthResources)
 
-      - Déclenché par `checkPreauthorizedResources()`.
-      - Le paramètre `authorizedResources` présente les ressources que l’utilisateur est autorisé à afficher.
+     - Déclenché par `checkPreauthorizedResources()`.
+     - Le paramètre `authorizedResources` présente les ressources que l’utilisateur est autorisé à afficher.
 
 
 ![](../../../../assets/android-entitlement-flows.png)
@@ -117,7 +117,7 @@ Le paramètre `event` indique quel événement de droit s’est produit ; le par
 
    1. Appelez [`getInstance`](#$getInstance) pour créer une instance unique de l’`AccessEnabler` d’authentification Adobe Pass.
 
-      - Adobe Pass **Dépendance :** Bibliothèque FireOS native d’authentification Amazon (`AccessEnabler`)
+      - **Dépendance :** Bibliothèque FireOS native d’authentification Amazon (`AccessEnabler`)
 
    1. Appelez ` setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass.
 
@@ -176,9 +176,9 @@ Le paramètre `event` indique quel événement de droit s’est produit ; le par
 
    - Si l’appel `getAuthorization()` réussit : l’utilisateur dispose de jetons AuthN et AuthZ valides (l’utilisateur est authentifié et autorisé à regarder le média demandé).
    - Si `getAuthorization()` échoue : examinez l’exception renvoyée pour déterminer son type (AuthN, AuthZ ou autre chose) :
-      - S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
-      - S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
-      - S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.), affichez un message d’erreur approprié à l’intention de l’utilisateur.
+     - S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
+     - S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
+     - S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
 
 1. Validez le jeton de média court.
 

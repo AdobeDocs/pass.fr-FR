@@ -4,7 +4,7 @@ description: Guide pas à pas API REST V2 (client à serveur)
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1833'
+source-wordcount: '1842'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2[&#x200B; &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) dans leurs applications de streaming avec une architecture client à serveur (C2S).
+Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)  dans leurs applications de streaming avec une architecture client à serveur (C2S).
 
 ## Conditions préalables {#prerequisites}
 
@@ -58,12 +58,12 @@ La phase d’enregistrement est obligatoire, mais l’application de diffusion e
 
 * **Récupérer les informations d’identification du client :** l’application de diffusion en continu récupère les informations d’identification du client en appelant le point d’entrée [**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-   * L’application de diffusion en continu doit stocker les informations d’identification du client et les utiliser indéfiniment lorsque vous devez récupérer un jeton d’accès.
+  * L’application de diffusion en continu doit stocker les informations d’identification du client et les utiliser indéfiniment lorsque vous devez récupérer un jeton d’accès.
 
 
 * **Récupérer le jeton d’accès :** l’application de diffusion en continu récupère le jeton d’accès en appelant le point d’entrée [**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
-   * L’application de diffusion en continu doit stocker et utiliser le jeton d’accès jusqu’à son expiration, puis le supprimer et en obtenir un nouveau.
+  * L’application de diffusion en continu doit stocker et utiliser le jeton d’accès jusqu’à son expiration, puis le supprimer et en obtenir un nouveau.
 
 ## B. Phase d’authentification {#authentication-phase}
 
@@ -109,13 +109,13 @@ La phase d’authentification agit comme une étape préalable à la phase de pr
 
 * **Scénario 3 :** il n’existe aucun profil, l’application de diffusion en continu peut procéder à la fourniture d’un accès temporaire à l’utilisateur par le biais de la fonctionnalité [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations[&#x200B; consultez la documentation &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) Flux d’accès temporaires .
+  * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) consultez la documentation  Flux d’accès temporaires .
 
 ### Étape 3 : Authentifier l’utilisateur {#step-3-authenticate-the-user}
 
 * **Récupérer la configuration :** l’application de diffusion en continu récupère la liste des MVPD disponibles en appelant le point d’entrée [**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-   * L’application de diffusion en continu peut mettre en œuvre un mécanisme de filtrage personnalisé pour affiner la liste des MVPD à partir de la réponse de configuration, en affichant uniquement les fournisseurs prévus tout en masquant les autres (par exemple, les MVPD en cours de développement, les MVPD de test, TempPass). Cela permet de s’assurer que les utilisateurs disposent d’une sélection organisée lors du choix de leur fournisseur de télévision.
+  * L’application de diffusion en continu peut mettre en œuvre un mécanisme de filtrage personnalisé pour affiner la liste des MVPD à partir de la réponse de configuration, en affichant uniquement les fournisseurs prévus tout en masquant les autres (par exemple, les MVPD en cours de développement, les MVPD de test, TempPass). Cela permet de s’assurer que les utilisateurs disposent d’une sélection organisée lors du choix de leur fournisseur de télévision.
 
 
 * **Créer une session d’authentification :** l’application de diffusion en continu lance une session d’authentification en appelant le point d’entrée [**/api/v2/{serviceProvider}/sessions**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
@@ -123,40 +123,40 @@ La phase d’authentification agit comme une étape préalable à la phase de pr
 
 * **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` d’authentification.
 
-   * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
+  * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
 
 
 * **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Elle doit donc afficher le `code` d’authentification. Une application web distincte est nécessaire pour inviter l’utilisateur à saisir le `code`, à créer le `url` d’authentification et à l’ouvrir : [**/api/v2/authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
-   * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
+  * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
 
 ### Étape 4 : rechercher des profils authentifiés {#step-4-check-for-authenticated-profiles}
 
 * **Récupérer le profil pour un code spécifique :** l’application de diffusion en continu doit implémenter un mécanisme d’interrogation à l’aide de l’`code` pour vérifier si le profil a été généré et enregistré avec succès en appelant le point d’entrée [**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md).
 
-   * L’application de diffusion en continu doit **démarrer le mécanisme d’interrogation** dans les conditions suivantes :
+  * L’application de diffusion en continu doit **démarrer le mécanisme d’interrogation** dans les conditions suivantes :
 
-      * **Authentification effectuée dans l’application principale (écran) :** l’application principale (streaming) doit commencer à interroger l’utilisateur ou l’utilisatrice lorsqu’il ou elle atteint la page de destination finale, une fois que le composant de navigateur charge l’URL spécifiée pour le paramètre `redirectUrl` dans la requête de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+    * **Authentification effectuée dans l’application principale (écran) :** l’application principale (streaming) doit commencer à interroger l’utilisateur ou l’utilisatrice lorsqu’il ou elle atteint la page de destination finale, une fois que le composant de navigateur charge l’URL spécifiée pour le paramètre `redirectUrl` dans la requête de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-      * **Authentification effectuée dans une application secondaire (écran) :** l’application principale (streaming) doit commencer à interroger les utilisateurs et utilisatrices dès qu’ils ou elles lancent le processus d’authentification, juste après avoir reçu la réponse du point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) et affiché le code d’authentification à l’utilisateur ou à l’utilisatrice.
+    * **Authentification effectuée dans une application secondaire (écran) :** l’application principale (streaming) doit commencer à interroger les utilisateurs et utilisatrices dès qu’ils ou elles lancent le processus d’authentification, juste après avoir reçu la réponse du point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) et affiché le code d’authentification à l’utilisateur ou à l’utilisatrice.
 
-   * L’application en flux continu doit **arrêter le mécanisme d’interrogation** dans les conditions suivantes :
+  * L’application en flux continu doit **arrêter le mécanisme d’interrogation** dans les conditions suivantes :
 
-      * **Authentification réussie :** les informations de profil de l’utilisateur sont récupérées avec succès, confirmant leur statut d’authentification. À ce stade, l’interrogation n’est plus nécessaire.
+    * **Authentification réussie :** les informations de profil de l’utilisateur sont récupérées avec succès, confirmant leur statut d’authentification. À ce stade, l’interrogation n’est plus nécessaire.
 
-      * **Session d’authentification et expiration du code :** la session d’authentification et le code expirent, comme indiqué par la date et l’heure `notAfter` (par exemple, 30 minutes) dans la réponse de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Si cela se produit, l’utilisateur ou l’utilisatrice doit redémarrer le processus d’authentification et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
+    * **Session d’authentification et expiration du code :** la session d’authentification et le code expirent, comme indiqué par la date et l’heure `notAfter` (par exemple, 30 minutes) dans la réponse de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Si cela se produit, l’utilisateur ou l’utilisatrice doit redémarrer le processus d’authentification et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
 
-      * **Nouveau code d’authentification généré :** si l’utilisateur demande un nouveau code d’authentification sur l’appareil principal (écran), la session existante n’est plus valide et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
+    * **Nouveau code d’authentification généré :** si l’utilisateur demande un nouveau code d’authentification sur l’appareil principal (écran), la session existante n’est plus valide et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
 
-   * L’application de diffusion en continu doit **configurer la fréquence du mécanisme d’interrogation** dans les conditions suivantes :
+  * L’application de diffusion en continu doit **configurer la fréquence du mécanisme d’interrogation** dans les conditions suivantes :
 
-      * **Authentification effectuée dans l’application principale (écran) :** l’application principale (streaming) doit interroger les utilisateurs toutes les 3 à 5 secondes ou plus.
+    * **Authentification effectuée dans l’application principale (écran) :** l’application principale (streaming) doit interroger les utilisateurs toutes les 3 à 5 secondes ou plus.
 
-      * **Authentification effectuée dans une application secondaire (écran) :** l’application principale (streaming) doit interroger les utilisateurs toutes les 3 à 5 secondes ou plus.
+    * **Authentification effectuée dans une application secondaire (écran) :** l’application principale (streaming) doit interroger les utilisateurs toutes les 3 à 5 secondes ou plus.
 
-   * L’application de diffusion en continu doit mettre en cache certaines parties des informations de profil de l’utilisateur dans un stockage persistant afin d’éviter les requêtes inutiles et d’améliorer l’expérience de l’utilisateur.
+  * L’application de diffusion en continu doit mettre en cache certaines parties des informations de profil de l’utilisateur dans un stockage persistant afin d’éviter les requêtes inutiles et d’améliorer l’expérience de l’utilisateur.
 
-## C. Phase De Préautorisation (Facultatif) {#preauthorization-phase}
+## C. (Facultatif) Phase De Préautorisation {#preauthorization-phase}
 
 L’objectif de la phase de préautorisation est de fournir à l’application de streaming la possibilité de présenter un sous-ensemble de ressources de son catalogue auxquelles l’utilisateur ou l’utilisatrice serait autorisé à accéder.
 
@@ -184,11 +184,11 @@ La phase de préautorisation n’est pas obligatoire, l’application de diffusi
 
 * **Récupérer les décisions de préautorisation :** l’application de diffusion en continu récupère les décisions de préautorisation pour une liste de ressources en appelant le point d’entrée [**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md).
 
-   * L’application de diffusion en continu n’est pas nécessaire pour stocker les décisions de préautorisation dans le stockage persistant. Cependant, il est recommandé de mettre en cache les décisions d’autorisation en mémoire pour améliorer l’expérience de l’utilisateur. Cela permet d’éviter les appels inutiles de ressources déjà préautorisées, ce qui réduit la latence et améliore les performances.
+  * L’application de diffusion en continu n’est pas nécessaire pour stocker les décisions de préautorisation dans le stockage persistant. Cependant, il est recommandé de mettre en cache les décisions d’autorisation en mémoire pour améliorer l’expérience de l’utilisateur. Cela permet d’éviter les appels inutiles de ressources déjà préautorisées, ce qui réduit la latence et améliore les performances.
 
-   * L’application de diffusion en continu peut déterminer la raison d’un refus de décision de préautorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+  * L’application de diffusion en continu peut déterminer la raison d’un refus de décision de préautorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
 
-   * L’application de diffusion en continu peut obtenir une décision de préautorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 5, en raison des conditions imposées par les MVPD. Ce nombre maximal de ressources peut être consulté et modifié après accord avec les MVPD via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre entreprise ou par un représentant Adobe Pass Authentication agissant en votre nom.
+  * L’application de diffusion en continu peut obtenir une décision de préautorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 5, en raison des conditions imposées par les MVPD. Ce nombre maximal de ressources peut être consulté et modifié après accord avec les MVPD via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre entreprise ou par un représentant Adobe Pass Authentication agissant en votre nom.
 
 
 ## D. Phase d’autorisation {#authorization-phase}
@@ -217,13 +217,13 @@ La phase d’autorisation est obligatoire, l’application de diffusion en conti
 
 * **Récupérer la décision d’autorisation :** l’application de diffusion en continu récupère la décision d’autorisation pour une ressource spécifique en appelant le point d’entrée [**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md).
 
-   * L’application de diffusion en continu n’est pas nécessaire pour stocker les décisions d’autorisation dans un stockage persistant.
+  * L’application de diffusion en continu n’est pas nécessaire pour stocker les décisions d’autorisation dans un stockage persistant.
 
-   * L’application de diffusion en continu peut déterminer la raison d’un refus de décision d’autorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée Autoriser les décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+  * L’application de diffusion en continu peut déterminer la raison d’un refus de décision d’autorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée Autoriser les décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
 
-   * L’application de diffusion en continu n’est pas nécessaire pour actualiser un jeton de média expiré pendant la lecture du flux. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire une ressource.
+  * L’application de diffusion en continu n’est pas nécessaire pour actualiser un jeton de média expiré pendant la lecture du flux. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire une ressource.
 
-   * L’application de diffusion en continu peut obtenir une décision d’autorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 1, en raison des conditions imposées par les MVPD.
+  * L’application de diffusion en continu peut obtenir une décision d’autorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 1, en raison des conditions imposées par les MVPD.
 
 ## E. Phase de déconnexion {#logout-phase}
 
@@ -251,10 +251,10 @@ La phase de déconnexion est obligatoire, l’application de diffusion en contin
 
 * **Lancer la déconnexion d’Adobe Pass :** l’application de diffusion en continu lance le flux de déconnexion en appelant le point d’entrée [**/api/v2/{serviceProvider}/logout/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md).
 
-   * L’application de diffusion en continu doit suivre les instructions fournies dans les attributs `actionName` et `actionType` de la réponse de point d’entrée de déconnexion pour s’assurer que le processus de déconnexion est correctement terminé.
+  * L’application de diffusion en continu doit suivre les instructions fournies dans les attributs `actionName` et `actionType` de la réponse de point d’entrée de déconnexion pour s’assurer que le processus de déconnexion est correctement terminé.
 
-      * Si l’attribut `actionType` de la réponse est défini sur « interactif » :
+    * Si l’attribut `actionType` de la réponse est défini sur « interactif » :
 
-         * **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` de déconnexion.
+      * **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` de déconnexion.
 
-         * **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Par conséquent, le processus de déconnexion peut être arrêté, car la session MVPD n’a pas été conservée dans le cache du navigateur d’un appareil de diffusion en continu.
+      * **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Par conséquent, le processus de déconnexion peut être arrêté, car la session MVPD n’a pas été conservée dans le cache du navigateur d’un appareil de diffusion en continu.
