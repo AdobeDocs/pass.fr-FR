@@ -2,9 +2,9 @@
 title: Supprimer enregistrement d'enregistrement
 description: Supprimer l'enregistrement
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '180'
 ht-degree: 2%
 
 ---
@@ -42,9 +42,9 @@ ht-degree: 2%
 
 Supprime l’enregistrement du code rég. et libère le code rég. pour réutilisation.
 
-| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
+| Point d’entrée | Appelé </br>Par | Input </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Par exemple :</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. ID du demandeur </br>    (Composant Chemin d’accès)</br>2.  Code d’enregistrement </br>    (Composant Chemin) | DELETE | Aucun | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Par exemple :</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1.  ID du demandeur </br> (composant de chemin)</br>2.  Code d’enregistrement </br> (composant Chemin) | DELETE | Aucun | 204 |
 
 {style="table-layout:auto"}
 
@@ -59,4 +59,4 @@ Supprime l’enregistrement du code rég. et libère le code rég. pour réutili
 
 </br>
 
-### [Retour à la référence de l’API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[Retour à la référence de l’API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**

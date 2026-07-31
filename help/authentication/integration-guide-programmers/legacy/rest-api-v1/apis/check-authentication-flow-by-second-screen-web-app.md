@@ -2,10 +2,10 @@
 title: Vérifier le flux d’authentification par application web du deuxième écran
 description: Vérifier le flux d’authentification par application web du deuxième écran
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '232'
-ht-degree: 0%
+source-wordcount: '240'
+ht-degree: 1%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 0%
 Cette API doit être utilisée par l’application web de connexion du deuxième écran pour confirmer que l’authentification Adobe Pass a confirmé une connexion réussie à partir de MVPD. Nous vous recommandons d’appeler cette API avant d’afficher un message de réussite indiquant à l’utilisateur final de passer à la console de l’appareil pour poursuivre les workflows.
 
 
-| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
+| Point d’entrée | Appelé </br>Par | Input </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{registration code} | Application Web de connexion | &#x200B;1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  </br> du demandeur    (Obligatoire) | GET | XML ou JSON contenant les détails de l’erreur en cas d’échec. | 200 - Succès   </br>403 - Interdit |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Application Web de connexion | &#x200B;1.  code d’enregistrement </br> (composant Chemin d’accès)</br>2.  </br> du demandeur (obligatoire) | GET | XML ou JSON contenant les détails de l’erreur en cas d’échec. | 200 - Succès </br>403 - Interdit |
 
 </br>
 
@@ -63,4 +63,4 @@ Cette API doit être utilisée par l’application web de connexion du deuxième
     }
 ```
 
-### [Retour à la référence de l’API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[Retour à la référence de l’API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
