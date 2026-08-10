@@ -4,7 +4,7 @@ description: Manuel de l’authentification unique Amazon (API REST V1)
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '629'
 ht-degree: 0%
 
 ---
@@ -89,13 +89,13 @@ L’application de diffusion en continu peut choisir l’une des deux options en
   ```
 
   Le lot de réponse de succès du jeton SSO contiendra :
-   * Un jeton SSO en tant que `string` avec la clé « SSOToken ».
+  * Un jeton SSO en tant que `string` avec la clé « SSOToken ».
 
   <br/>
 
   Le lot de réponse d’échec du jeton SSO contient :
-   * Un code d’erreur en tant que `int` avec la clé « ErrorCode ».
-   * Une description d’erreur en tant que `string` avec la clé « ErrorDescription ».
+  * Un code d’erreur en tant que `int` avec la clé « ErrorCode ».
+  * Une description d’erreur en tant que `string` avec la clé « ErrorDescription ».
 
   <br/>
 
@@ -136,10 +136,10 @@ L’application de diffusion en continu doit gérer les scénarios de secours du
 Assurez-vous que l’application de diffusion en continu gère :
 
 * L’absence de l’application Amazon complémentaire qui doit s’exécuter sur l’appareil Amazon.
-   * L’application de diffusion en continu peut rencontrer une `ClassNotFoundException` au moment de l’exécution sur la `com.amazon.ottssotokenlib.SSOEnabler` de classe suivante.
+  * L’application de diffusion en continu peut rencontrer une `ClassNotFoundException` au moment de l’exécution sur la `com.amazon.ottssotokenlib.SSOEnabler` de classe suivante.
 
 * L’absence de payload du jeton SSO (identité de plateforme) qui doit être renvoyée par les API ci-dessus.
-   * L’application de streaming peut contacter les représentants d’Amazon et d’Adobe pour en savoir plus.
+  * L’application de streaming peut contacter les représentants d’Amazon et d’Adobe pour en savoir plus.
 
 ### Workflow {#workflow}
 
