@@ -4,7 +4,7 @@ description: Mécanisme de limitation
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Lorsque la limite est atteinte, les requêtes sont marquées avec un statut de r
 ## Présentation du mécanisme {#mechanism-overview}
 
 Le mécanisme détermine le nombre maximal d’appels acceptés pour chaque point d’entrée de la surveillance d’accès simultané dans un intervalle de temps spécifique.
-Une fois ce nombre maximum d&#39;appels atteint, notre service répondra avec &#39;429 Too many requests&#39;. L’en-tête « Expires » de la réponse 429 inclut la date et l’heure de validité de l’appel suivant ou de l’expiration de la limitation. Pour l’instant, la limitation expire après une   minute depuis la première réponse 429.
+Une fois ce nombre maximum d&#39;appels atteint, notre service répondra avec &#39;429 Too many requests&#39;. L’en-tête « Expires » de la réponse 429 inclut la date et l’heure de validité de l’appel suivant ou de l’expiration de la limitation. Pour l’instant, la limitation expire au bout d’une minute à partir de la première réponse 429.
 
 Les points d’entrée configurés avec le ralentissement sont les suivants :
 1. Créez une session : POST /sessions/{idp}/{subject}

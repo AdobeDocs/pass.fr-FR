@@ -4,7 +4,7 @@ description: Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.
 exl-id: d465f895-ebc0-4f8d-9172-bcc868741820
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '123'
+source-wordcount: '132'
 ht-degree: 0%
 
 ---
