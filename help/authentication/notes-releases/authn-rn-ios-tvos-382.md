@@ -4,7 +4,7 @@ description: Authentification Adobe Pass Notes de mise à jour d’iOS / tvOS 3.
 exl-id: 67562582-8f93-4293-bb1b-b7a6d9364c32
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '126'
+source-wordcount: '135'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 Authentification Adobe Pass : iOS / tvOS 3.8.2
 
-Date De Publication : **02/10/2023**
+Date De Publication : ****
 
 ## Présentation de la version {#release-overview-382}
 
