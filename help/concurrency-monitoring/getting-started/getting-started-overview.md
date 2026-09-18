@@ -85,5 +85,5 @@ Pour commencer à utiliser la surveillance simultanée, contactez notre [équipe
 
 - **Explorateur d’API** - Testez les API de manière interactive sur [interface utilisateur Swagger](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
 - **Termes et définitions clés** - [Glossaire](../cm-glossary.md)
-- **Comment obtenir de l’aide ?** - [ Procédures d’assistance ](../support/cm-escalation-procedures.md)
+- **Comment obtenir de l’aide ?** - [&#x200B; Procédures d’assistance &#x200B;](../support/cm-escalation-procedures.md)
 - **Assistance** - Contactez [tve-support@adobe.com](mailto:tve-support@adobe.com)
