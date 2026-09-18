@@ -1,14 +1,12 @@
 ---
 title: Prise en main de la surveillance de la simultanéité
 description: Découvrez les principes de base de la surveillance d’accès simultané et comment commencer à utiliser votre intégration
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: d2b8c7c4-b02d-4bea-9310-162064fd7216
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '372'
 ht-degree: 0%
-
 ---
-
-
 # Prise en main de la surveillance de la simultanéité {#getting-started-overview}
 
 Bienvenue dans la surveillance simultanée ! Ce guide vous aidera à comprendre les principes de base et à mettre votre intégration en service rapidement.
@@ -87,5 +85,5 @@ Pour commencer à utiliser la surveillance simultanée, contactez notre [équipe
 
 - **Explorateur d’API** - Testez les API de manière interactive sur [interface utilisateur Swagger](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
 - **Termes et définitions clés** - [Glossaire](../cm-glossary.md)
-- **Comment obtenir de l’aide ?** - [Procédures d’assistance](../support/cm-escalation-procedures.md)
+- **Comment obtenir de l’aide ?** - [ Procédures d’assistance ](../support/cm-escalation-procedures.md)
 - **Assistance** - Contactez [tve-support@adobe.com](mailto:tve-support@adobe.com)

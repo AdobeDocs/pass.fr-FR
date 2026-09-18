@@ -1,14 +1,12 @@
 ---
 title: Points d’entrée de l’API
 description: Liste complète des API de surveillance de simultanéité
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: e8a9dfd2-cd16-4971-b9bc-9646987dd3ce
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
 source-wordcount: '54'
 ht-degree: 3%
-
 ---
-
-
 # Points d’entrée de l’API
 
 ## Gestion des sessions principales
