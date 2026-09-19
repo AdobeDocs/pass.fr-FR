@@ -1,13 +1,12 @@
 ---
 title: Notes De Mise À Jour D’Adobe Concurrency Monitoring Services 3.2.3
 description: Notes De Mise À Jour D’Adobe Concurrency Monitoring Services 3.2.3
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 6dc475fa-21c0-42f2-af2b-9892a6bb605b
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '54'
+source-wordcount: '52'
 ht-degree: 5%
-
 ---
-
 # Notes De Mise À Jour D’Adobe Concurrency Monitoring Services 3.2.3 {#cm-services-rns}
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version.

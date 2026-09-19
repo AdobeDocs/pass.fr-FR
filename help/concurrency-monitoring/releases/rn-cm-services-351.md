@@ -1,13 +1,12 @@
 ---
 title: Notes De Mise À Jour D’Adobe Concurrency Monitoring Services 3.5.1
 description: Notes De Mise À Jour D’Adobe Concurrency Monitoring Services 3.5.1
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: a09704d8-6db8-418a-ad70-81ca63f915a6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '64'
+source-wordcount: '62'
 ht-degree: 4%
-
 ---
-
 # Notes De Mise À Jour D’Adobe Concurrency Monitoring Services 3.5.1 {#cm-services-rns}
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version.
