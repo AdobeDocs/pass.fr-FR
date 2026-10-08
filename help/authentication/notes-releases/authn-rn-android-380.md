@@ -2,13 +2,14 @@
 title: Notes de mise à jour de l’authentification Adobe Pass Android 3.8.0
 description: Notes de mise à jour de l’authentification Adobe Pass Android 3.8.0
 exl-id: ad020b9a-61ad-492f-9522-d0e7a668196a
-source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '148'
 ht-degree: 0%
-
 ---
-
 # Notes de mise à jour de l’authentification Adobe Pass Android 3.8.0 {#android-sdk-380-rn}
 
 >[!IMPORTANT]
@@ -21,13 +22,13 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 Authentification Adobe Pass : Android 3.8.0
 
-Date De Publication : **09/18/2025**
+Date De Publication : **&#x200B;**
 
 ## Présentation de la version {#release-overview-380}
 
 * Correction d’une vulnérabilité avec le récepteur de diffusion de stockage SDK. Une application malveillante peut présenter un faux lien pour interroger le stockage partagé des jetons Adobe.
 Toutefois, aucune information critique n’est stockée et la probabilité qu’un utilisateur ou une utilisatrice ait été affecté(e) par cette vulnérabilité est très faible.
-   * Remarque : en raison de la modification, les utilisateurs seront déconnectés.
+  * Remarque : en raison de la modification, les utilisateurs seront déconnectés.
 
 ## Package de version {#release-package-380}
 

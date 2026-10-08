@@ -1,15 +1,16 @@
 ---
-title: Bienvenue dans Adobe&reg; Transmettre l’authentification
-description: Bienvenue dans Adobe&reg; Transmettre l’authentification
+title: Bienvenue dans Adobe&-160;Workfront AI Collaboratorsreg ; transmettez l’authentification
+description: Bienvenue dans Adobe&-160;Workfront AI Collaboratorsreg ; transmettez l’authentification
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '414'
+source-wordcount: '433'
 ht-degree: 0%
-
 ---
-
-# Bienvenue dans l’authentification Adobe® Pass {#welcome}
+# Bienvenue dans l’authentification ® Pass {#welcome}
 
 >[!IMPORTANT]
 >
@@ -54,7 +55,7 @@ Questions fréquentes sur les procédures de prise en charge de l’authentifica
 
 **Pour les fichiers MVPD :**
 
-* [Guide de démarrage rapide de MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)\
+* [Guide de démarrage rapide de &#x200B;](/help/authentication/kickstart/mvpd-kickstart-guide.md)\
   Prise en main de l’authentification Adobe Pass.
 
 * [Guide d’intégration pour les MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)\
@@ -64,7 +65,7 @@ Questions fréquentes sur les procédures de prise en charge de l’authentifica
 
 ## Outils et bibliothèques 🛠️
 
-* [Site Web Adobe Developer](https://developer.adobe.com/adobe-pass/)\
+* [Site Web &#x200B;](https://developer.adobe.com/adobe-pass/)\
   Accédez au site web d’Adobe Developer pour tester les API REST d’authentification Adobe Pass.
 
 * [Vérificateur de jeton multimédia](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\

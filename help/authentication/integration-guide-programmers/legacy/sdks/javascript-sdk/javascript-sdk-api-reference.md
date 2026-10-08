@@ -2,13 +2,14 @@
 title: Référence de l’API JavaScript SDK
 description: Référence de l’API JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2904'
 ht-degree: 0%
-
 ---
-
 # Référence de l’API SDK JavaScript (héritée) {#javascript-sdk-api-reference}
 
 >[!NOTE]
@@ -44,14 +45,14 @@ Ces fonctions lancent des demandes d’interaction avec un MVPD. Tous les appels
 
 - *endpoints* - Ce paramètre est facultatif. Il peut s’agir de l’une des valeurs suivantes :
 
-   - Un tableau qui vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Si plusieurs URL sont fournies, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD. Par défaut (si aucune valeur n’est spécifiée), le fournisseur Adobe est utilisé (<http://sp.auth.adobe.com/>).
+  - Un tableau qui vous permet de spécifier des points d’entrée pour les services d’authentification et d’autorisation fournis par Adobe (différentes instances peuvent être utilisées à des fins de débogage). Si plusieurs URL sont fournies, la liste MVPD est composée des points d’entrée de tous les fournisseurs de services. Chaque MVPD est associé au fournisseur de services le plus rapide, c’est-à-dire le fournisseur qui a répondu en premier et qui prend en charge ce MVPD. Par défaut (si aucune valeur n’est spécifiée), le fournisseur Adobe est utilisé (<http://sp.auth.adobe.com/>).
 
   Exemple :
-   - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
+  - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *options* - Objet JSON contenant la valeur de l’ID d’application, la valeur de l’ID de visiteur sans actualisation (déconnexion en arrière-plan) et les paramètres MVPD (iFrame). Toutes les valeurs sont facultatives.
-   1. S’il est spécifié, l’identifiant visiteur Experience Cloud est signalé sur tous les appels réseau effectués par la bibliothèque. La valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
-   2. Si l’identifiant unique de l’application est spécifié -`applicationId` - la valeur sera ajoutée à tous les appels suivants effectués par l’application dans le cadre de l’en-tête HTTP X-Device-Info. Cette valeur peut être récupérée ultérieurement à partir des rapports [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) à l’aide de la requête appropriée.
+  1. S’il est spécifié, l’identifiant visiteur Experience Cloud est signalé sur tous les appels réseau effectués par la bibliothèque. La valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
+  2. Si l’identifiant unique de l’application est spécifié -`applicationId` - la valeur sera ajoutée à tous les appels suivants effectués par l’application dans le cadre de l’en-tête HTTP X-Device-Info. Cette valeur peut être récupérée ultérieurement à partir des rapports [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) à l’aide de la requête appropriée.
 
   **Remarque :** toutes les clés JSON sont sensibles à la casse.
 
@@ -237,39 +238,39 @@ Il existe deux types de métadonnées :
 **Paramètres:**
 
 - *key* : identifiant qui spécifie les métadonnées demandées :
-   - Si la clé est `"TTL_AUTHN",`, la requête est effectuée pour obtenir le délai d’expiration du jeton d’authentification.
+  - Si la clé est `"TTL_AUTHN",`, la requête est effectuée pour obtenir le délai d’expiration du jeton d’authentification.
 
-   - Si la clé est `"TTL_AUTHZ"` et que params est un tableau contenant l’ID de ressource sous la forme d’une chaîne, la requête est exécutée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
+  - Si la clé est `"TTL_AUTHZ"` et que params est un tableau contenant l’ID de ressource sous la forme d’une chaîne, la requête est exécutée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
 
-   - Si la clé est `"DEVICEID"`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
+  - Si la clé est `"DEVICEID"`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
 
-   - Si la clé figure dans la liste suivante des types de métadonnées utilisateur, un objet JSON contenant les métadonnées utilisateur correspondantes est envoyé à la fonction de rappel [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) :
+  - Si la clé figure dans la liste suivante des types de métadonnées utilisateur, un objet JSON contenant les métadonnées utilisateur correspondantes est envoyé à la fonction de rappel [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) :
 
-   - `"zip"` - Code postal
+  - `"zip"` - Code postal
 
-   - `"encryptedZip"` - Code Postal Chiffré
+  - `"encryptedZip"` - Code Postal Chiffré
 
-   - `"householdID"` - Identifiant du ménage. Dans le cas où un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à l’ID utilisateur.
+  - `"householdID"` - Identifiant du ménage. Dans le cas où un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à l’ID utilisateur.
 
-   - `"maxRating"` - Évaluation parentale maximale pour l&#39;utilisateur
+  - `"maxRating"` - Évaluation parentale maximale pour l&#39;utilisateur
 
-   - `"userID"` - Identifiant de l’utilisateur. Si un MVPD prend en charge les sous-comptes et que l’utilisateur n’est pas le compte principal, userID sera différent de householdID.
+  - `"userID"` - Identifiant de l’utilisateur. Si un MVPD prend en charge les sous-comptes et que l’utilisateur n’est pas le compte principal, userID sera différent de householdID.
 
-   - `"channelID"` - Liste des canaux que l’utilisateur est autorisé à afficher
+  - `"channelID"` - Liste des canaux que l’utilisateur est autorisé à afficher
 
-   - `"is_hoh"` - Indicateur qui identifie si un utilisateur est le chef de ménage
+  - `"is_hoh"` - Indicateur qui identifie si un utilisateur est le chef de ménage
 
-   - `"encryptedZip"` - Code postal chiffré
+  - `"encryptedZip"` - Code postal chiffré
 
-   - `"typeID"` - Indicateur identifiant si le compte utilisateur est un compte principal/secondaire
+  - `"typeID"` - Indicateur identifiant si le compte utilisateur est un compte principal/secondaire
 
-   - `"primaryOID"` - Identifiant du ménage
+  - `"primaryOID"` - Identifiant du ménage
 
-   - `"postalCode"` - Similaire au code postal
+  - `"postalCode"` - Similaire au code postal
 
-   - `"acctID"` - ID de compte
+  - `"acctID"` - ID de compte
 
-   - `"acctParentID"` - ID parent du compte
+  - `"acctParentID"` - ID parent du compte
 
   **Remarque** : les métadonnées d’utilisateur réellement disponibles pour un programmeur dépendent de ce qu’un MVPD rend disponible.  Consultez [Métadonnées utilisateur](#UserMetadata) pour obtenir la liste actuelle des métadonnées utilisateur disponibles.
 
@@ -453,16 +454,16 @@ Vous devez implémenter ces rappels pour gérer les réponses à vos appels de r
 **Description :** implémentez ce rappel pour recevoir les données de suivi lorsque des événements spécifiques se produisent. Vous pouvez l’utiliser, par exemple, pour suivre le nombre d’utilisateurs qui se sont connectés avec les mêmes informations d’identification. Le tracking n’est actuellement pas configurable. Avec Adobe Pass Authentication 1.6, `sendTrackingData()` signale également les informations sur l’appareil, le client Access Enabler et le type de système d’exploitation. Le rappel `sendTrackingData()` reste rétrocompatible.
 
 - Valeurs possibles pour le type d’appareil :
-   - ordinateur
-   - tablette
-   - mobile
-   - console de jeux
-   - inconnu
+  - ordinateur
+  - tablette
+  - mobile
+  - console de jeux
+  - inconnu
 
 - Valeurs possibles pour le type de client Access Enabler :
-   - html5
-   - ios
-   - android
+  - html5
+  - ios
+  - android
 
 
 Transmet le type d’événement et un tableau d’informations associées. Les types d’événements sont les suivants :

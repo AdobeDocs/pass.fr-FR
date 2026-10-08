@@ -2,13 +2,14 @@
 title: Métadonnées utilisateur
 description: Métadonnées utilisateur
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '530'
 ht-degree: 0%
-
 ---
-
 # Métadonnées utilisateur (héritées) {#user-metadata}
 
 >[!NOTE]
@@ -25,12 +26,12 @@ ht-degree: 0%
 
 ## Points d’entrée de l’API REST {#clientless-endpoints}
 
-`<REGGIE_FQDN>` :
+`<REGGIE_FQDN>`:
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-`<SP_FQDN>` :
+`<SP_FQDN>`:
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -42,17 +43,17 @@ ht-degree: 0%
 Récupérez les métadonnées que MVPD a partagées à propos de l’utilisateur authentifié.
 
 
-| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
+| Point d’entrée | Appelé </br>Par | Input </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| `<SP_FQDN>`/api/v1/tokens/usermetadata | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. demandeur</br>2.  deviceId (obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  deviceType</br>5.  deviceUser (obsolète)</br>6.  appId (obsolète) | GET | XML ou JSON contenant des métadonnées utilisateur ou des détails d’erreur en cas d’échec. | 200 - Succès<p>404 - Aucune métadonnée trouvée<p>412 - Jeton AuthN non valide (par exemple, jeton expiré) |
+| `<SP_FQDN>`/api/v1/tokens/usermetadata | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1.  demandeur</br>2.  deviceId (obligatoire)</br>3.  device_info/X-Device-Info (obligatoire)</br>4.  deviceType</br>5.  deviceUser (obsolète)</br>6.  appId (obsolète) | GET | XML ou JSON contenant des métadonnées utilisateur ou des détails d’erreur en cas d’échec. | 200 - Succès<p>404 - Aucune métadonnée trouvée<p>412 - Jeton AuthN non valide (par exemple, jeton expiré) |
 
 
 | Paramètre d’entrée | Description |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’ID de l’appareil. |
-| device_info/<p>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br> **Remarque :** cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations sur la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br> Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Type d’appareil (par exemple Roku, PC).</br></br> Si ce paramètre est défini correctement, ESM propose des mesures [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br> Voir [Avantages de l’utilisation du paramètre de type d’appareil sans client dans les mesures Pass](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Remarque :** l’`device_info` remplace ce paramètre. |
+| device_info/<p>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br> **Remarque :** Ceci PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations sur la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br> Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Type d’appareil (par exemple Roku, PC).</br></br> Si ce paramètre est défini correctement, ESM propose des mesures qui sont [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) lors de l’utilisation de Clientless, de sorte que différents types d’analyse puissent être effectués pour, par exemple, Roku, AppleTV, Xbox, etc.</br></br> Voir [Avantages de l’utilisation du paramètre de type d’appareil sans client dans les mesures Pass](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Remarque :** l’`device_info` remplace ce paramètre. |
 | _deviceUser_ | Identifiant utilisateur de l’appareil.</br></br> **Remarque :** s’il est utilisé, `deviceUser` doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | _appId_ | Nom/ID de l’application. </br></br> **Remarque :** l’`device_info` remplace ce paramètre. S’il est utilisé, `appId` doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 

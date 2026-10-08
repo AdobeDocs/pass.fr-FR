@@ -2,13 +2,14 @@
 title: Gestion des erreurs de conflit 409
 description: Découvrez comment gérer les erreurs de conflit 409 lorsque des limites d’utilisation simultanées sont atteintes
 exl-id: 23a73e48-8ae0-4e0e-85db-dfc09d1386a7
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '283'
 ht-degree: 1%
-
 ---
-
 # Gestion des erreurs de conflit 409 {#handling-409-errors}
 
 Lorsqu’un utilisateur ou une utilisatrice tente de démarrer un nouveau flux et atteint une limite d’utilisation simultanée, la surveillance de simultanéité renvoie une réponse de conflit **409**. Il est essentiel de comprendre comment gérer cette erreur pour offrir une bonne expérience utilisateur.

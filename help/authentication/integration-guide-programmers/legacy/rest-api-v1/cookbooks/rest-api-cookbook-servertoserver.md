@@ -2,13 +2,14 @@
 title: Manuel de l’API REST (serveur à serveur)
 description: Serveur du guide pas à pas de l’API REST à serveur.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1891'
 ht-degree: 1%
-
 ---
-
 # Manuel de l’API REST (hérité) (serveur à serveur) {#rest-api-cookbook-server-to-server}
 
 >[!NOTE]
@@ -119,7 +120,8 @@ Le diagramme suivant illustre le flux de préautorisation :
 
 ### \[Facultatif\] Métadonnées
 
-Les métadonnées peuvent être utilisées pour récupérer les informations utilisateur partagées par le MVPD.Par exemple, l’identifiant utilisateur, le code postal, etc.
+Les métadonnées peuvent être utilisées pour récupérer les informations utilisateur partagées par le MVPD.
+Par exemple, l’identifiant utilisateur, le code postal, etc.
 
 1. Une fois l’utilisateur authentifié, le service de programmation peut appeler l’API Adobe Pass **usermetadata** pour demander des informations sur l’utilisateur authentifié.
 

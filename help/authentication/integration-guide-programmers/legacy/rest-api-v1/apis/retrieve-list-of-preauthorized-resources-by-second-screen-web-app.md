@@ -2,13 +2,14 @@
 title: Récupération de la liste des ressources préautorisées par l’application web du deuxième écran
 description: Récupération de la liste des ressources préautorisées par l’application web du deuxième écran
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '273'
-ht-degree: 0%
-
+source-wordcount: '278'
+ht-degree: 1%
 ---
-
 # (Hérité) Récupérer la liste des ressources préautorisées par l’application web du deuxième écran {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
@@ -44,9 +45,9 @@ Une requête à l’Authentification Adobe Pass pour obtenir la liste des ressou
 Il existe deux ensembles d’API : l’un pour l’application de diffusion en continu ou le service de programmation, l’autre pour la deuxième application web Screens. Cette page décrit l’API de l’application AuthN.
 
 
-| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
+| Point d’entrée | Appelé </br>Par | Input </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Module AuthN | &#x200B;1. code d’enregistrement </br>    (Composant Chemin d’accès)</br>2.  demandeur (obligatoire)</br>3.  resource (obligatoire) | GET | XML ou JSON contenant des décisions de pré-autorisation individuelles ou des détails d’erreur. Voir les exemples ci-dessous. | 200 - Succès </br></br> 400 - Requête incorrecte </br></br> 401 - Non autorisé </br></br> 405 - Méthode non autorisée </br></br>412 - Échec de la condition préalable </br></br> 500 - Erreur de serveur interne |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Module AuthN | &#x200B;1.  code d’enregistrement </br> (composant Chemin d’accès)</br>2.  demandeur (obligatoire)</br>3.  resource (obligatoire) | GET | XML ou JSON contenant des décisions de pré-autorisation individuelles ou des détails d’erreur. Voir les exemples ci-dessous. | 200 - Succès </br></br> 400 - Requête incorrecte </br></br> 401 - Non autorisé </br></br> 405 - Méthode non autorisée </br></br>412 - Échec de la condition préalable </br></br> 500 - Erreur de serveur interne |
 
 
 

@@ -2,13 +2,14 @@
 title: Attributs de métadonnées standard
 description: Attributs de métadonnées standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1295'
 ht-degree: 3%
-
 ---
-
 # Attributs de métadonnées standard {#std-metadata-attributes}
 
 Cette page vise à fournir une liste exhaustive des attributs de métadonnées que le service de surveillance simultanée peut traiter et qui peuvent être utilisés comme base pour les politiques qui peuvent être mises en œuvre. Les attributs de métadonnées standard peuvent être classés comme suit :
@@ -73,11 +74,11 @@ Les champs de métadonnées standard peuvent être utilisés pour définir des p
 
 * Vous pouvez configurer une politique pour qu’elle s’applique uniquement à des valeurs de champ spécifiques (par exemple, une politique iOS dédiée : où `osType` est `iOS`)
 * Vous pouvez limiter le nombre de valeurs distinctes pour un champ donné. Voici quelques exemples :
-   * pas plus de X appareils distincts : `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * pas plus de X codes postaux distincts : `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * pas plus de X appareils distincts : `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * pas plus de X codes postaux distincts : `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Vous pouvez limiter le nombre de flux actifs par valeur de champ. Voici quelques exemples :
-   * pas plus de X flux actifs pour un seul type d’appareil : `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * pas plus de X flux actifs pour les flux de contenu en direct : `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * pas plus de X flux actifs pour un seul type d’appareil : `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * pas plus de X flux actifs pour les flux de contenu en direct : `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
 Contactez l’équipe de surveillance de l’accès simultané en [créant un ticket dans Zendesk](mailto:tve-support@adobe.com) et indiquez les politiques que vous souhaitez mettre en œuvre.
 

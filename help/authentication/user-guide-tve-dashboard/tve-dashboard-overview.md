@@ -2,13 +2,14 @@
 title: Présentation du tableau de bord TVE
 description: Connaître le tableau de bord TVE et les ressources.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '314'
 ht-degree: 0%
-
 ---
-
 # Présentation du tableau de bord TVE {#tve-db-overview}
 
 >[!NOTE]
@@ -22,8 +23,8 @@ Le tableau de bord [[!DNL Adobe] Pass TVE Dashboard](https://experience.adobe.co
 * **Configuration des propriétés** : configurez plusieurs propriétés pour chaque intégration afin d’implémenter des règles métier granulaires personnalisées en fonction des besoins spécifiques de la plateforme.
 
 * **Génération de rapports** : accédez aux rapports détaillés sur la configuration de la configuration et exportez-les dans les MVPD. Ces rapports incluent les éléments suivants :
-   * Catégories de plateforme telles que *Ordinateur de bureau, mobile et appareils connectés à la télévision*
-   * Plateformes telles que *iOS, Android™, tvOS, Roku et FireTV*
+  * Catégories de plateforme telles que *Ordinateur de bureau, mobile et appareils connectés à la télévision*
+  * Plateformes telles que *iOS, Android™, tvOS, Roku et FireTV*
 
   Les rapports fournissent des informations sur la prise en charge de l’authentification unique (SSO) et la durée de session d’authentification ou d’autorisation des abonnés au niveau de MVPD et de la plateforme.
 

@@ -2,13 +2,14 @@
 title: Notes De Mise À Jour De JavaScript 4.1.0 D’Authentification Adobe Pass
 description: Notes De Mise À Jour De JavaScript 4.1.0 D’Authentification Adobe Pass
 exl-id: aaee88cb-a9b9-4474-9860-a527a47768b9
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '111'
+source-wordcount: '118'
 ht-degree: 0%
-
 ---
-
 # Notes De Mise À Jour De JavaScript 4.1.0 D’Authentification Adobe Pass {#javascript-sdk-410-rn}
 
 >[!IMPORTANT]
@@ -21,7 +22,7 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 Authentification Adobe Pass : JavaScript 4.1.0
 
-Date De Publication : **10/04/2018**
+Date De Publication : **&#x200B;**
 
 ## Présentation de la version {#release-overview-410}
 

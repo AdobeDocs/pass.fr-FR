@@ -2,13 +2,14 @@
 title: Référence de l’API iOS/tvOS
 description: Référence de l’API iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '7035'
 ht-degree: 0%
-
 ---
-
 # Référence de l’API SDK iOS/tvOS (héritée) {#iostvos-sdk-api-reference}
 
 >[!NOTE]
@@ -164,11 +165,11 @@ Flux de droits d’authentification utilisant cette API, consultez le [guide pas
 **Paramètres:**
 
 * *options* : un NSDictionary contenant des options SDK globales. Actuellement, les options suivantes sont disponibles :
-   * **applicationProfile** - Peut être utilisé pour effectuer des configurations de serveur en fonction de cette valeur.
-   * **visitorID** - Service Experience Cloud ID. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
-   * **handleSVC** - Valeur booléenne indiquant si le programmeur gérera SFSafariViewControllers. Pour plus d’informations, consultez la section Prise en charge de [SFSafariViewController sur iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md).
-      * Si cette valeur est définie sur **false** le SDK présente automatiquement un SFSafariViewController à l’utilisateur final. Le SDK accède ensuite à l’URL de la page de connexion des MVPD.
-      * Si la valeur est définie sur **true** le SDK **NOT** présente automatiquement un SFSafariViewController à l&#39;utilisateur final. Le SDK se déclenchera en outre **navigate(toUrl:{url}, useSVC:YES)**.
+  * **applicationProfile** - Peut être utilisé pour effectuer des configurations de serveur en fonction de cette valeur.
+  * **visitorID** - Service Experience Cloud ID. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
+  * **handleSVC** - Valeur booléenne indiquant si le programmeur gérera SFSafariViewControllers. Pour plus d’informations, consultez la section Prise en charge de [SFSafariViewController sur iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md).
+    * Si cette valeur est définie sur **false** le SDK présente automatiquement un SFSafariViewController à l’utilisateur final. Le SDK accède ensuite à l’URL de la page de connexion des MVPD.
+    * Si la valeur est définie sur **true** le SDK **NOT** présente automatiquement un SFSafariViewController à l&#39;utilisateur final. Le SDK se déclenchera en outre **navigate(toUrl:{url}, useSVC:YES)**.
 * **device\_info** - Informations du client comme décrit dans [Transmission des informations du client](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 [Haut de la page...](#apis)
@@ -354,8 +355,8 @@ Si elle est appelée sans le paramètre `serviceProviders`, la bibliothèque ré
 **Paramètres** :
 
 * *status* : peut prendre l&#39;une des valeurs suivantes :
-   * `ACCESS_ENABLER_STATUS_SUCCESS` - la phase de configuration s’est terminée avec succès
-   * `ACCESS_ENABLER_STATUS_ERROR` - échec de la phase de configuration
+  * `ACCESS_ENABLER_STATUS_SUCCESS` - la phase de configuration s’est terminée avec succès
+  * `ACCESS_ENABLER_STATUS_ERROR` - échec de la phase de configuration
 
 **Déclenché par :**
 
@@ -369,8 +370,10 @@ Si elle est appelée sans le paramètre `serviceProviders`, la bibliothèque ré
 
 **Fichier:** AccessEnabler/headers/AccessEnabler.h
 
-**Description :** vérifie le statut d’authentification de l’utilisateur actuel.Pour ce faire, il recherche un jeton d’authentification valide dans le fichier local
-espace de stockage des jetons. Cette méthode n’effectue aucun appel réseau et nous vous recommandons de l’appeler sur le thread principal.Il est utilisé par l’application pour interroger le statut d’authentification de l’utilisateur et
+**Description :** vérifie le statut d’authentification de l’utilisateur actuel.
+Pour ce faire, il recherche un jeton d’authentification valide dans le fichier local
+espace de stockage des jetons. Cette méthode n’effectue aucun appel réseau et nous vous recommandons de l’appeler sur le thread principal.
+Il est utilisé par l’application pour interroger le statut d’authentification de l’utilisateur et
 mettez à jour l’interface utilisateur en conséquence (c’est-à-dire, mettez à jour l’interface utilisateur de connexion/déconnexion). Le
 le statut d’authentification est communiqué à l’application via .
 le rappel [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
@@ -396,8 +399,8 @@ le rappel [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 **Paramètres:** Aucun
 
-**Rappels déclenchés :
-
+**Rappels déclenchés :**
+[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 [Haut de la page...](#apis)
 
@@ -528,8 +531,8 @@ Enfin, le statut d&#39;authentification est communiqué à l&#39;application via
 * *forceAuthn* : indicateur qui spécifie si le flux d’authentification doit être démarré, que l’utilisateur soit déjà authentifié ou non.
 * *data* : dictionnaire composé de paires clé-valeur à envoyer au service de pass de télévision à péage. Adobe peut utiliser ces données pour activer les fonctionnalités futures sans modifier le SDK.
 * filter : un dictionnaire contenant deux listes d’identifiants MVPD qui doivent apparaître dans la boîte de dialogue SSO d’Apple. Tout MVPD qui ne prend pas en charge la connexion unique sera ignoré, mais l’ordre sera respecté. Le dictionnaire doit comporter deux clés :
-   * TV\_PROVIDERS : liste de tous les MVPD qui doivent apparaître dans le sélecteur
-   * FEATURED\_TV\_PROVIDERS : liste de tous les MVPD qui doivent être marqués comme figurant dans le sélecteur. Les fichiers MVPD de cette liste doivent également être spécifiés dans la liste TV\_PROVIDERS.
+  * TV\_PROVIDERS : liste de tous les MVPD qui doivent apparaître dans le sélecteur
+  * FEATURED\_TV\_PROVIDERS : liste de tous les MVPD qui doivent être marqués comme figurant dans le sélecteur. Les fichiers MVPD de cette liste doivent également être spécifiés dans la liste TV\_PROVIDERS.
 
 **Disponibilité :** v2.0 - v2.3.1
 
@@ -730,7 +733,7 @@ Comme le contrôleur de `SFSafariViewController` passe par plusieurs redirection
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -847,12 +850,12 @@ Dans le cas du flux d’authentification, AccessEnabler termine le flux en récu
 **Paramètres** :
 
 * *status* : peut prendre l&#39;une des valeurs suivantes :
-   * `ACCESS_ENABLER_STATUS_SUCCESS` - flux d’authentification terminé avec succès
-   * `ACCESS_ENABLER_STATUS_ERROR` - échec du flux d’authentification
+  * `ACCESS_ENABLER_STATUS_SUCCESS` - flux d’authentification terminé avec succès
+  * `ACCESS_ENABLER_STATUS_ERROR` - échec du flux d’authentification
 * *code* : raison de l’échec. Si *status* est `ACCESS_ENABLER_STATUS_SUCCESS`, alors *code* est une chaîne vide (c’est-à-dire définie par la constante `USER_AUTHENTICATED`). En cas d’échec, ce paramètre peut prendre l’une des valeurs suivantes :
-   * `USER_NOT_AUTHENTICATED_ERROR` - L’utilisateur n’est pas authentifié. En réponse à l’appel de la méthode [checkAuthentication:](#checkAuthN) lorsqu’il n’existe aucun jeton d’authentification valide dans le cache de jetons local.
-   * `PROVIDER_NOT_SELECTED_ERROR` - L’AccessEnabler a réinitialisé l’ordinateur d’état d’authentification après que l’application de couche supérieure a transmis *null* à [`setSelectedProvider:`](#setSelProv) pour abandonner le flux d’authentification.  L’utilisateur a probablement annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton « Précédent »).
-   * `GENERIC_AUTHENTICATION_ERROR` - Le flux d’authentification a échoué pour des raisons telles que l’indisponibilité du réseau ou l’annulation explicite du flux d’authentification.
+  * `USER_NOT_AUTHENTICATED_ERROR` - L’utilisateur n’est pas authentifié. En réponse à l’appel de la méthode [checkAuthentication:](#checkAuthN) lorsqu’il n’existe aucun jeton d’authentification valide dans le cache de jetons local.
+  * `PROVIDER_NOT_SELECTED_ERROR` - L’AccessEnabler a réinitialisé l’ordinateur d’état d’authentification après que l’application de couche supérieure a transmis *null* à [`setSelectedProvider:`](#setSelProv) pour abandonner le flux d’authentification.  L’utilisateur a probablement annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton « Précédent »).
+  * `GENERIC_AUTHENTICATION_ERROR` - Le flux d’authentification a échoué pour des raisons telles que l’indisponibilité du réseau ou l’annulation explicite du flux d’authentification.
 
 **Déclenché par :** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ)
 
@@ -1157,8 +1160,8 @@ Cette méthode peut également déclencher les rappels suivants (si le flux d’
 
 * *resource* : ressource pour laquelle l’autorisation a été obtenue.
 * *code* : code d’erreur associé au scénario d’échec. Valeurs possibles :
-   * `USER_NOT_AUTHORIZED_ERROR` - l&#39;utilisateur n&#39;a pas pu autoriser
-pour la ressource donnée
+  * `USER_NOT_AUTHORIZED_ERROR` - l&#39;utilisateur n&#39;a pas pu autoriser
+    pour la ressource donnée
 * *description* : informations supplémentaires sur le scénario d’échec. Si cette chaîne descriptive n’est disponible pour aucune raison, l’authentification Adobe Pass envoie une chaîne vide **(«  »)**.\
   Cette chaîne peut être utilisée par un MVPD pour transmettre des messages d’erreur personnalisés ou des messages liés aux ventes. Par exemple, si l’autorisation d’accès à une ressource est refusée à un abonné, le MVPD peut envoyer un message du type : « Vous n’avez pas accès à ce canal dans votre package. Si vous souhaitez mettre à niveau votre package, cliquez **ici**. » Le message est transmis par l’authentification Adobe Pass via ce rappel au programmeur, qui a la possibilité de l’afficher ou de l’ignorer. L’authentification Adobe Pass peut également utiliser ce paramètre pour fournir une notification de la condition qui a pu entraîner une erreur. Par exemple, « Une erreur réseau s’est produite lors de la communication avec le service d’autorisation du fournisseur ».
 
@@ -1312,16 +1315,16 @@ Les programmeurs ont accès à deux types de métadonnées :
 
 * *keyDictionary* : structure de données de dictionnaire avec les éléments suivants.
 format :
-   * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_AUTHENTICATION`, la requête est exécutée pour obtenir le délai d’expiration du jeton d’authentification.
-   * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_AUTHORIZATION` **et**\
-     La clé est `METADATA_RESOURCE_ID_KEY` et la valeur est un identifiant de ressource particulier, puis la requête est effectuée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
-   * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_DEVICE_ID`, la requête est exécutée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
-   * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_USER_META` **et** la clé est `METADATA_USER_META_KEY` et que la valeur est le nom des métadonnées, la requête porte sur les métadonnées de l’utilisateur. Liste des types de métadonnées utilisateur disponibles :
-      * `zip` - Liste des codes postaux
-      * `householdID` - Identifiant du ménage. Dans le cas où un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à `userID`.
-      * `maxRating` - Ensemble de notes parentales maximales attribuées à l’utilisateur
-      * `userID` - Identifiant de l’utilisateur. Si un MVPD prend en charge les sous-comptes et que l’utilisateur n’est pas le compte principal, `userID` sera différent de `householdID.`
-      * `channelID` - Liste des canaux qu’un utilisateur est autorisé à afficher.
+  * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_AUTHENTICATION`, la requête est exécutée pour obtenir le délai d’expiration du jeton d’authentification.
+  * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_AUTHORIZATION` **et**\
+    La clé est `METADATA_RESOURCE_ID_KEY` et la valeur est un identifiant de ressource particulier, puis la requête est effectuée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
+  * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_DEVICE_ID`, la requête est exécutée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
+  * Si la clé est `METADATA_OPCODE_KEY` et que la valeur est `METADATA_USER_META` **et** la clé est `METADATA_USER_META_KEY` et que la valeur est le nom des métadonnées, la requête porte sur les métadonnées de l’utilisateur. Liste des types de métadonnées utilisateur disponibles :
+    * `zip` - Liste des codes postaux
+    * `householdID` - Identifiant du ménage. Dans le cas où un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à `userID`.
+    * `maxRating` - Ensemble de notes parentales maximales attribuées à l’utilisateur
+    * `userID` - Identifiant de l’utilisateur. Si un MVPD prend en charge les sous-comptes et que l’utilisateur n’est pas le compte principal, `userID` sera différent de `householdID.`
+    * `channelID` - Liste des canaux qu’un utilisateur est autorisé à afficher.
 
   >[!NOTE]
   >
@@ -1485,9 +1488,9 @@ format :
 * (NSString) logoURL : adresse du logo MVPD.
 * (BOOL) enablePlatformServices : si la valeur est true, le MVPD prend en charge les services SSO tels que [Apple SSO](#presentTvDialog).
 * (NSString) boardingStatus - Peut avoir 3 valeurs :
-   * néant - Le MVPD ne prend pas en charge l’authentification unique (SSO) Apple.
-   * SÉLECTEUR - Le MVPD peut apparaître dans le sélecteur Apple, mais le flux d’authentification est effectué par Adobe.
-   * PRIS EN CHARGE - Le MVPD est entièrement pris en charge par Apple et utilisera le jeton SSO d’Apple.
+  * néant - Le MVPD ne prend pas en charge l’authentification unique (SSO) Apple.
+  * SÉLECTEUR - Le MVPD peut apparaître dans le sélecteur Apple, mais le flux d’authentification est effectué par Adobe.
+  * PRIS EN CHARGE - Le MVPD est entièrement pris en charge par Apple et utilisera le jeton SSO d’Apple.
 
 [Haut de la page...](#apis)
 
@@ -1515,25 +1518,25 @@ AccessEnabler déclenche un rappel supplémentaire qui n’est pas nécessaireme
 **Remarque :** le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (<http://java.net/projects/user-agent-utils>) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
 
 * Valeurs possibles pour le type d’appareil :
-   * `computer`
-   * `tablet`
-   * `mobile`
-   * `gameconsole`
-   * `unknown`
+  * `computer`
+  * `tablet`
+  * `mobile`
+  * `gameconsole`
+  * `unknown`
 
 * Valeurs possibles pour le type de client AccessEnabler :
-   * `flash`
-   * `html5`
-   * `ios`
-   * `android`
+  * `flash`
+  * `html5`
+  * `ios`
+  * `android`
 
 
 **Paramètres** :
 
 * *event* : code de l’événement qui fait l’objet d’un suivi. Il existe trois types d&#39;événements de tracking possibles :
-   * **authorizationDetection :** chaque fois qu’une demande de jeton d’autorisation est renvoyée (événement `TRACKING_AUTHORIZATION`)
-   * **authenticationDetection :** chaque fois qu’une vérification d’authentification se produit (l’événement est `TRACKING_AUTHENTICATION`)
-   * **mvpdSelection :** lorsque l’utilisateur sélectionne un MVPD dans le formulaire de sélection MVPD (l’événement est `TRACKING_GET_SELECTED_PROVIDER`)
+  * **authorizationDetection :** chaque fois qu’une demande de jeton d’autorisation est renvoyée (événement `TRACKING_AUTHORIZATION`)
+  * **authenticationDetection :** chaque fois qu’une vérification d’authentification se produit (l’événement est `TRACKING_AUTHENTICATION`)
+  * **mvpdSelection :** lorsque l’utilisateur sélectionne un MVPD dans le formulaire de sélection MVPD (l’événement est `TRACKING_GET_SELECTED_PROVIDER`)
 * *data* : données supplémentaires associées à l’événement signalé. Ces données sont présentées sous la forme d’une liste de valeurs.
 
 **Déclenché par :** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ), `getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ), `setSelectedProvider:`
@@ -1541,29 +1544,29 @@ AccessEnabler déclenche un rappel supplémentaire qui n’est pas nécessaireme
 Instructions pour interpréter les valeurs du tableau *data* :
 
 * Pour trackingEventType `TRACKING_AUTHENTICATION:`
-   * **0** - Indique si la demande de jeton a réussi (true/false) et, si elle a réussi :
-   * **1** - Chaîne d’identifiant MVPD
-   * **2** - GUID (md5 haché)
-   * **3** - Jeton déjà présent dans le cache (true/false)
-   * **4** - Type d’appareil
-   * **5** - Type de client AccessEnabler
-   * **6** - Type de système d’exploitation
+  * **0** - Indique si la demande de jeton a réussi (true/false) et, si elle a réussi :
+  * **1** - Chaîne d’identifiant MVPD
+  * **2** - GUID (md5 haché)
+  * **3** - Jeton déjà présent dans le cache (true/false)
+  * **4** - Type d’appareil
+  * **5** - Type de client AccessEnabler
+  * **6** - Type de système d’exploitation
 
 * Pour trackingEventType `TRACKING_AUTHORIZATION:`
-   * **0** - Indique si la demande de jeton a réussi (true/false) et, si elle a réussi :
-   * **1** - MVPD ID
-   * **2** - GUID (md5 haché)
-   * **3** - Jeton déjà présent dans le cache (true/false)
-   * **4** - Erreur
-   * **5** - Détails
-   * **6** - Type d’appareil
-   * **7** - Type de client AccessEnabler
-   * **8** - Type de système d’exploitation
+  * **0** - Indique si la demande de jeton a réussi (true/false) et, si elle a réussi :
+  * **1** - MVPD ID
+  * **2** - GUID (md5 haché)
+  * **3** - Jeton déjà présent dans le cache (true/false)
+  * **4** - Erreur
+  * **5** - Détails
+  * **6** - Type d’appareil
+  * **7** - Type de client AccessEnabler
+  * **8** - Type de système d’exploitation
 * Pour trackingEventType `TRACKING_GET_SELECTED_PROVIDER:`
-   * **0** - ID du MVPD actuellement sélectionné
-   * **1** - Type d’appareil
-   * **2** - Type de client AccessEnabler
-   * **3** - Type de système d’exploitation
+  * **0** - ID du MVPD actuellement sélectionné
+  * **1** - Type d’appareil
+  * **2** - Type de client AccessEnabler
+  * **3** - Type de système d’exploitation
 
 </br>
 

@@ -2,13 +2,14 @@
 title: Enregistrement d'enregistrement de retour
 description: Enregistrement d'enregistrement de retour
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '285'
 ht-degree: 2%
-
 ---
-
 # Enregistrement d’enregistrement de retour (hérité) {#return-registration-record}
 
 >[!NOTE]
@@ -25,12 +26,12 @@ ht-degree: 2%
 
 ## Points d’entrée de l’API REST {#clientless-endpoints}
 
-`<REGGIE_FQDN>` :
+`<REGGIE_FQDN>`:
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-`<SP_FQDN>` :
+`<SP_FQDN>`:
 
 * Production - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Évaluation - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -47,9 +48,9 @@ Renvoie l’enregistrement du code d’enregistrement contenant l’UUID du code
 
 
 
-| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
+| Point d’entrée | Appelé </br>Par | Input </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. </br> du demandeur    (Composant Chemin d’accès)</br>2.  </br> du code d’enregistrement    (Composant Chemin) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir le schéma et l’exemple ci-dessous. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Par exemple :<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK?format=xml | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1.  </br> du demandeur (composant de chemin d’accès)</br>2.  </br> du code d’enregistrement (composant Chemin d’accès) | GET | XML ou JSON contenant un code d’enregistrement et des informations. Voir le schéma et l’exemple ci-dessous. | 200 |
 
 {style="table-layout:auto"}
 

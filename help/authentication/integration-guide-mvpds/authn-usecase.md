@@ -2,13 +2,14 @@
 title: Authentification MVPD
 description: Authentification MVPD
 exl-id: 9ff4a46e-a37b-414c-a163-9e586252a9c3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1851'
+source-wordcount: '1908'
 ht-degree: 0%
-
 ---
-
 # Authentification MVPD {#mvpd-authn}
 
 >[!NOTE]
@@ -67,7 +68,7 @@ Le tableau ci-dessous explique les attributs et les balises qui doivent être pr
 
 | samlp :AuthnRequest | &lt;AuthnRequest> émis par le fournisseur de services au fournisseur d&#39;identité. |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AssertionConsumerServiceURL | Il s’agit du point d’entrée Adobe à utiliser dans la réponse ultérieure. Valeur par défaut : **http://sp.auth.adobe.com/sp/saml/SAMLAssertionConsumer** |
+| AssertionConsumerServiceURL | Il s’agit du point d’entrée Adobe à utiliser dans la réponse ultérieure. Valeur par défaut : **&#x200B;**&#x200B;|
 | Destination | Référence URI indiquant l’adresse à laquelle cette requête a été envoyée. Cela s’avère utile pour empêcher le transfert malveillant des requêtes vers des destinataires non prévus, une protection requise par certaines liaisons de protocole. S’il est présent, le destinataire doit vérifier que la référence URI identifie l’emplacement où le message a été reçu. Dans le cas contraire, la requête DOIT être ignorée. Certaines liaisons de protocole peuvent nécessiter l’utilisation de cet attribut. |
 | ForceAuthn | L’attribut ForceAuthn, s’il est présent avec une valeur true, oblige le fournisseur d’identité à établir cette identité à nouveau, plutôt que de compter sur une session existante qu’il peut avoir avec le principal. |
 | ID | Identifiant de la requête. Voir [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} section 1.3.4 pour plus de détails. |

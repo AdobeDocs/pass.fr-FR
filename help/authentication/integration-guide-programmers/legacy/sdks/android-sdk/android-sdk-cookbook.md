@@ -2,13 +2,14 @@
 title: Manuel d’Android SDK
 description: Manuel d’Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1690'
 ht-degree: 0%
-
 ---
-
 # Manuel Android SDK (hérité) {#android-sdk-cookbook}
 
 >[!NOTE]
@@ -30,9 +31,9 @@ La solution Droits d’authentification Adobe Pass pour Android est finalement d
 
 - Le domaine de l’interface utilisateur : il s’agit de la couche d’application de niveau supérieur qui implémente l’interface utilisateur et utilise les services fournis par la bibliothèque AccessEnabler pour fournir l’accès au contenu limité.
 - Le domaine AccessEnabler - c’est là que les workflows de droits sont implémentés sous la forme de :
-   - Appels réseau effectués aux serveurs principaux d’Adobe
-   - Règles de logique commerciale liées aux workflows d’authentification et d’autorisation
-   - Gestion de diverses ressources et traitement de l’état des workflows (tel que le cache de jetons)
+  - Appels réseau effectués aux serveurs principaux d’Adobe
+  - Règles de logique commerciale liées aux workflows d’authentification et d’autorisation
+  - Gestion de diverses ressources et traitement de l’état des workflows (tel que le cache de jetons)
 
 L’objectif du domaine AccessEnabler est de masquer toutes les complexités des workflows de droits et de fournir à l’application de couche supérieure (par le biais de la bibliothèque AccessEnabler) un ensemble de primitives de droits simples avec lesquelles vous implémentez les workflows de droits :
 
@@ -124,7 +125,7 @@ L’activité réseau d’AccessEnabler a lieu dans un thread différent, de sor
    a.  Appelez [`getInstance`](#$getInstance) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
 
    - **Dépendance :** Authentification Adobe Pass Native
-Bibliothèque Android (AccessEnabler)
+     Bibliothèque Android (AccessEnabler)
 
    b.  Appelez ` setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass.
 
@@ -185,9 +186,9 @@ flux.
 
    - Si l’appel `getAuthorization()` réussit : l’utilisateur dispose de jetons AuthN et AuthZ valides (l’utilisateur est authentifié et autorisé à regarder le média demandé).
    - Si `getAuthorization()` échoue : examinez l’exception renvoyée pour déterminer son type (AuthN, AuthZ ou autre chose) :
-      - S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
-      - S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
-      - S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
+     - S’il s’agissait d’une erreur d’authentification (AuthN), redémarrez le flux d’authentification.
+     - S’il s’agissait d’une erreur d’autorisation (AuthZ), l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
+     - S’il y a eu un autre type d’erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
 
 1. Validez le jeton de média court.\
    Utilisez la bibliothèque Vérificateur de jeton de média d’authentification Adobe Pass pour vérifier le jeton de média de courte durée renvoyé par l’appel `getAuthorization()` ci-dessus :

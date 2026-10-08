@@ -2,13 +2,14 @@
 title: Page d'inscription
 description: Page d'inscription
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '529'
 ht-degree: 1%
-
 ---
-
 # Page d’enregistrement (héritée) {#registration-page}
 
 ## Points d’entrée de l’API REST {#clientless-endpoints}
@@ -41,9 +42,9 @@ ht-degree: 1%
 
 Renvoie le code d’enregistrement et l’URI de page de connexion générés de manière aléatoire.
 
-| Point d’entrée | Appelé <br>Par | Entrée   <br>Paramètre | HTTP <br>Méthode | Réponse | HTTP <br>Réponse |
+| Point d’entrée | Appelé <br>Par | Input <br>Parameter | HTTP <br>Méthode | Réponse | HTTP <br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Service de programmation<br>ou<br>d’application en flux continu | &#x200B;1.  <br> du demandeur    (Composant Chemin d’accès)<br>2.  deviceId (haché)   <br>    (Obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POSTER | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Par exemple :<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Service de programmation<br>ou<br>d’application en flux continu | &#x200B;1.  <br> du demandeur (composant de chemin d’accès)<br>2.  deviceId (haché) <br> (obligatoire)<br>3.  device_info/X-Device-Info (obligatoire)<br>4.  mvpd (facultatif)<br>5.  ttl (facultatif)<br> | POSTER | XML ou JSON contenant un code d’enregistrement et des informations ou des détails d’erreur en cas d’échec. Voir les exemples ci-dessous. | 201 |
 
 {style="table-layout:auto"}
 
@@ -65,7 +66,8 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 >[!CAUTION]
 >
 >**Adresse IP de l’appareil de diffusion en continu**
-><br>>Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué par le service de programmation et non par l’appareil de diffusion en continu, l’en-tête suivant est requis pour transmettre l’adresse IP de l’appareil de diffusion en continu :
+><br>
+>Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est implicitement envoyée avec cet appel.  Pour les implémentations serveur à serveur, où l’appel **regcode** est effectué par le service de programmation et non par l’appareil de diffusion en continu, l’en-tête suivant est requis pour transmettre l’adresse IP de l’appareil de diffusion en continu :
 >
 >
 >```
@@ -73,7 +75,8 @@ Renvoie le code d’enregistrement et l’URI de page de connexion générés de
 >```
 >
 >où `<streaming\_device\_ip>` est l’adresse IP publique de l’appareil de diffusion en continu.
-><br><br>>Exemple : <br>
+><br><br>
+>Exemple : <br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20

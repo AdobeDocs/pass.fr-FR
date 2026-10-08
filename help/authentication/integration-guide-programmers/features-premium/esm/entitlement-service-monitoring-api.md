@@ -2,13 +2,14 @@
 title: API de surveillance du service de droit
 description: API de surveillance du service de droit
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 1%
-
 ---
-
 # API de surveillance du service de droit {#entitlement-service-monitoring-api}
 
 >[!IMPORTANT]
@@ -63,13 +64,13 @@ Les arborescences détaillées suivantes illustrent les dimensions (ressources) 
 
 ![](../../../assets/esm-mvpd-dimensions.png)
 
-Un GET vers le point d’entrée de l’API `https://mgmt.auth.adobe.com/esm/v3` renvoie une représentation contenant les éléments suivants :
+Une GET au point d’entrée de l’API `https://mgmt.auth.adobe.com/esm/v3` renvoie une représentation contenant les éléments suivants :
 
 * Liens vers les chemins d’accès d’analyse racine disponibles :
 
-   * `<link rel="drill-down" href="/v3/dimensionA"/>`
+  * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v3/dimensionB"/>`
+  * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * Un résumé (valeurs agrégées) pour toutes les mesures (dans la valeur par défaut
 intervalle, puisqu’aucun paramètre de chaîne de requête n’est fourni, voir ci-dessous).

@@ -2,13 +2,14 @@
 title: Authentification utilisant le protocole OAuth 2.0
 description: Authentification utilisant le protocole OAuth 2.0
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1111'
 ht-degree: 0%
-
 ---
-
 # Authentification utilisant le protocole OAuth 2.0
 
 >[!NOTE]
@@ -44,21 +45,21 @@ Tout d’abord, le MVPD doit s’assurer qu’il prend en charge le flux [Octroi
 Après avoir confirmé qu’il prend en charge le flux , le MVPD doit nous fournir les informations suivantes :
 
 * le point d’entrée d’authentification
-   * le point d’entrée fournit le code d’autorisation qui sera utilisé ultérieurement en échange du jeton d’actualisation et d’accès
+  * le point d’entrée fournit le code d’autorisation qui sera utilisé ultérieurement en échange du jeton d’actualisation et d’accès
 * le point d’entrée /token
-   * ceci fournira le jeton d’actualisation et le jeton d’accès
-   * le jeton d’actualisation doit être stable (il ne doit pas changer à chaque fois que nous demandons un nouveau jeton d’accès)
-   * le MVPD doit autoriser plusieurs jetons d’accès actifs pour chaque jeton d’actualisation
-   * ce point d’entrée échange également un jeton d’actualisation contre un jeton d’accès
+  * ceci fournira le jeton d’actualisation et le jeton d’accès
+  * le jeton d’actualisation doit être stable (il ne doit pas changer à chaque fois que nous demandons un nouveau jeton d’accès)
+  * le MVPD doit autoriser plusieurs jetons d’accès actifs pour chaque jeton d’actualisation
+  * ce point d’entrée échange également un jeton d’actualisation contre un jeton d’accès
 * nous avons besoin d’un **point d’entrée pour le profil utilisateur**
-   * ce point d’entrée fournit l’identifiant utilisateur, qui doit être unique pour un compte et ne doit contenir aucune information d’identification personnelle
+  * ce point d’entrée fournit l’identifiant utilisateur, qui doit être unique pour un compte et ne doit contenir aucune information d’identification personnelle
 * le point d’entrée **/logout** (facultatif)
-   * L’authentification Adobe Pass redirige vers ce point d’entrée et fournit au MVPD un URI de redirection. Sur ce point d’entrée, le MVPD peut effacer les cookies de l’ordinateur client ou appliquer la logique de déconnexion souhaitée
+  * L’authentification Adobe Pass redirige vers ce point d’entrée et fournit au MVPD un URI de redirection. Sur ce point d’entrée, le MVPD peut effacer les cookies de l’ordinateur client ou appliquer la logique de déconnexion souhaitée
 * il est vivement recommandé de disposer d’une prise en charge pour les clients autorisés (applications clientes qui ne déclenchent pas de page d’autorisation utilisateur)
 * nous aurons également besoin des éléments suivants :
-   * **clientID** et **client secret** pour les configurations d’intégration
-   * **durée de vie** (TTL) du jeton d’actualisation et du jeton d’accès
-   * Nous pouvons fournir au MVPD un URI de rappel d’autorisation et de rappel de déconnexion. En outre, si nécessaire, nous pouvons fournir aux MVPD une liste d&#39;adresses IP à whitelister dans les paramètres de votre pare-feu.
+  * **clientID** et **client secret** pour les configurations d’intégration
+  * **durée de vie** (TTL) du jeton d’actualisation et du jeton d’accès
+  * Nous pouvons fournir au MVPD un URI de rappel d’autorisation et de rappel de déconnexion. En outre, si nécessaire, nous pouvons fournir aux MVPD une liste d&#39;adresses IP à whitelister dans les paramètres de votre pare-feu.
 
 
 ## Flux d’authentification {#authn-flow}

@@ -2,13 +2,14 @@
 title: Obtention d’un jeton de média court
 description: obtention d’un jeton de média court
 exl-id: 667eaaba-423e-4d54-9dbe-084b3c049e1f
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '401'
 ht-degree: 0%
-
 ---
-
 # (Hérité) Obtention D’Un Jeton Multimédia Court {#obtain-short-media-token}
 
 >[!NOTE]
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 Obtient un jeton de média court.
 
-| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
+| Point d’entrée | Appelé </br>Par | Input </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/mediatoken</br></br> ou</br></br>&lt;SP_FQDN>/api/v1/tokens/media</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/tokens/media | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1. demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  ressource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète) | GET | XML ou JSON contenant un jeton de média codé en Base64 ou des détails d’erreur en cas d’échec. | 200 - Succès </br>403 - Aucun Succès |
+| &lt;SP_FQDN>/api/v1/mediatoken</br></br> ou</br></br>&lt;SP_FQDN>/api/v1/tokens/media</br></br>Par exemple :</br></br>&lt;SP_FQDN>/api/v1/tokens/media | Service de programmation</br></br>ou</br></br>d’application en flux continu | &#x200B;1.  demandeur (obligatoire)</br>2.  deviceId (obligatoire)</br>3.  ressource (obligatoire)</br>4.  device_info/X-Device-Info (obligatoire)</br>5.  _deviceType_</br> 6  _deviceUser_ (obsolète)</br>7.  _appId_ (obsolète) | GET | XML ou JSON contenant un jeton de média codé en Base64 ou des détails d’erreur en cas d’échec. | 200 - Succès </br>403 - Aucun Succès |
 
 {style="table-layout:auto"}
 
@@ -61,8 +62,8 @@ Obtient un jeton de média court.
 | deviceId | Octets d’ID de l’appareil. |
 | ressource | Chaîne contenant un resourceId (ou un fragment MRSS), identifiant le contenu demandé par un utilisateur et reconnu par les points d’entrée d’autorisation MVPD. |
 | device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br>Voir les détails complets dans [Transmettre les informations sur l’appareil et la connexion](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM offre des mesures qui sont [ventilées par type d’appareil]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse peuvent être effectués pour. Par exemple, Roku, AppleTV et Xbox.</br></br>Voir [Avantages de l’utilisation du paramètre devicetype sans client &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplacera ce paramètre. |
-| _deviceUser_ | Identifiant utilisateur de l’appareil.</br></br>**Remarque** : si cette option est utilisée, deviceUser doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
+| _deviceType_ | Le type d’appareil (par exemple, Roku, PC).</br></br>Si ce paramètre est défini correctement, ESM offre des mesures qui sont [réparties par type d’appareil]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de Clientless, de sorte que différents types d’analyse peuvent être effectués pour. Par exemple, Roku, AppleTV et Xbox.</br></br>Voir [Avantages de l’utilisation du paramètre devicetype sans client &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Remarque** : device_info remplacera ce paramètre. |
+| _deviceUser_ | L’identifiant utilisateur de l’appareil.</br></br>**Remarque** : s’il est utilisé, deviceUser doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | _appId_ | Nom/ID de l’application. </br></br>**Remarque** : device_info remplace ce paramètre. S’il est utilisé, `appId` doit avoir les mêmes valeurs que dans la requête [Créer un code d’enregistrement](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 
 {style="table-layout:auto"}

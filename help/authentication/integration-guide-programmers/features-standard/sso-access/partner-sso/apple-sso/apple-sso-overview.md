@@ -2,13 +2,14 @@
 title: Présentation de l’authentification unique (SSO) Apple
 description: Présentation de l’authentification unique (SSO) Apple
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1311'
 ht-degree: 0%
-
 ---
-
 # Présentation de l’authentification unique (SSO) Apple {#apple-sso-overview}
 
 >[!IMPORTANT]
@@ -36,28 +37,28 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 
 * Contactez Apple pour activer le [framework de compte d’abonné vidéo](https://developer.apple.com/documentation/videosubscriberaccount) dans le cadre de votre ID d’équipe Apple et configurez le [droit d’authentification unique de l’abonné vidéo](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) dans le cadre de votre compte de développeur Apple.
 
-   * Utilisez Xcode version 8 ou ultérieure et iOS/tvOS version 10 ou ultérieure.
+  * Utilisez Xcode version 8 ou ultérieure et iOS/tvOS version 10 ou ultérieure.
 
 * Activez l’authentification unique (SSO) pour chaque intégration et plateforme souhaitée (iOS/tvOS) via le [tableau de bord Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication) en définissant la propriété `Enable Single Sign On` sur `Yes`.
 
 | Adobe Enable Single Sign On | MVPD Apple **intégrées (prises en charge)** | Apple **Sélecteur** MVPD | Apple **non intégré (non pris en charge)** MVPD |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Oui (Activé) | Les flux d’authentification et de déconnexion impliqueront les solutions d’authentification Apple et Adobe Pass, tandis que tous les autres flux (autorisation, préautorisation, métadonnées, etc.) seront traités uniquement par l’authentification Adobe Pass. | Les flux d’authentification et de déconnexion reviendront aux flux standard gérés uniquement par l’authentification Adobe Pass. | Les flux d’authentification et de déconnexion reviendront aux flux standard gérés uniquement par l’authentification Adobe Pass. |
+| Oui (Activé) | Les flux d’authentification et de déconnexion impliqueront les solutions d’authentification Apple et Adobe Pass, tandis que tous les autres flux (autorisation, préautorisation, métadonnées, etc.) sera pris en charge uniquement par l’authentification Adobe Pass. | Les flux d’authentification et de déconnexion reviendront aux flux standard gérés uniquement par l’authentification Adobe Pass. | Les flux d’authentification et de déconnexion reviendront aux flux standard gérés uniquement par l’authentification Adobe Pass. |
 | Non (désactivé) | Les flux d’authentification et de déconnexion reviendront aux flux standard gérés uniquement par l’authentification Adobe Pass. | Les flux d’authentification et de déconnexion reviendront aux flux standard gérés uniquement par l’authentification Adobe Pass. | Les flux d’authentification et de déconnexion reviendront aux flux standard gérés uniquement par l’authentification Adobe Pass. |
 
 * Intégrez les flux d’utilisateurs de l’authentification unique (SSO) à l’aide de l’une des solutions suivantes proposées par l’Authentification Adobe Pass pour les utilisateurs finaux des applications clientes s’exécutant sur iOS, iPadOS ou tvOS.
 
-   * L’API REST d’authentification Adobe Pass V2 prend en charge l’authentification unique (SSO) du partenaire.
+  * L’API REST d’authentification Adobe Pass V2 prend en charge l’authentification unique (SSO) du partenaire.
 
-     Reportez-vous à la documentation du [Guide pas à pas Apple SSO (API REST V2)](apple-sso-cookbook-rest-api-v2.md) .
+    Reportez-vous à la documentation du [Guide pas à pas Apple SSO (API REST V2)](apple-sso-cookbook-rest-api-v2.md) .
 
-   * L’ancienne version de l’API REST d’authentification Adobe Pass prend en charge l’authentification unique (SSO) du partenaire.
+  * L’ancienne version de l’API REST d’authentification Adobe Pass prend en charge l’authentification unique (SSO) du partenaire.
 
-     Reportez-vous à la documentation du [&#x200B; Guide pas à pas Apple (hérité) pour l’authentification unique (API REST V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md) .
+    Reportez-vous à la documentation du [&#x200B; Guide pas à pas Apple (hérité) pour l’authentification unique (API REST V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md) .
 
-   * L’ancien SDK Adobe Pass Authentication AccessEnabler iOS/tvOS prend en charge l’authentification unique (SSO) des partenaires.
+  * L’ancien SDK Adobe Pass Authentication AccessEnabler iOS/tvOS prend en charge l’authentification unique (SSO) des partenaires.
 
-     Reportez-vous à la documentation du guide [&#x200B; (hérité) Apple SSO Cookbook (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md) .
+    Reportez-vous à la documentation du guide [&#x200B; (hérité) Apple SSO Cookbook (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md) .
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -65,11 +66,11 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 
 * Contactez Apple pour lancer le processus d’intégration du côté Apple.
 
-   * Demandez la documentation technique sur la façon d’intégrer et de développer une application JavaScript TVML capable de gérer le formulaire de connexion de l’utilisateur.
+  * Demandez la documentation technique sur la façon d’intégrer et de développer une application JavaScript TVML capable de gérer le formulaire de connexion de l’utilisateur.
 
 * Contactez l’Authentification Adobe Pass pour lancer le processus d’intégration du côté Adobe.
 
-   * Fournissez la valeur de chaîne représentant l’identifiant du fournisseur de télévision attribué par Apple lors du processus d’intégration.
+  * Fournissez la valeur de chaîne représentant l’identifiant du fournisseur de télévision attribué par Apple lors du processus d’intégration.
 
 ## FAQ {#FAQ}
 

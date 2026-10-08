@@ -2,13 +2,14 @@
 title: Présentation de la surveillance de la simultanéité
 description: Présentation de la surveillance de la simultanéité
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # Présentation de la surveillance de la simultanéité {#intro}
 
 La surveillance de simultanéité est un service qui permet aux fournisseurs de contenu et aux fournisseurs d’identité (MVPD et programmeurs) de définir et d’appliquer des limites sur la diffusion vidéo en continu simultanée sur plusieurs applications, appareils et plateformes. Que vous soyez un programmeur cherchant à contrôler le nombre de flux qu’un abonné peut regarder simultanément ou un MVPD voulant appliquer des politiques d’utilisation à l’ensemble de vos partenaires de contenu, la surveillance de simultanéité fournit les outils dont vous avez besoin.

@@ -2,13 +2,14 @@
 title: Cas d’utilisation
 description: Cas d’utilisation dans la surveillance de la simultanéité.
 exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '446'
 ht-degree: 0%
-
 ---
-
 # Cas d’utilisation {#use-cases}
 
 Le principal cas d’utilisation du service de comptage de flux consiste à compter le nombre de flux vidéo simultanés regardés par un utilisateur et à fournir une décision concernant son utilisation simultanée pour le même identifiant de compte.

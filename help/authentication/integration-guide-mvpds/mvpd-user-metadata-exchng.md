@@ -2,13 +2,14 @@
 title: Échange de métadonnées d’utilisateur MVPD
 description: Échange de métadonnées d’utilisateur MVPD
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '947'
 ht-degree: 0%
-
 ---
-
 # Échange de métadonnées d’utilisateur MVPD
 
 >[!NOTE]
@@ -105,9 +106,9 @@ L’authentification Adobe Pass repose sur les hypothèses suivantes :
 
 ### Notes {#notes-mvpd-progr-metadata-exch-flow}
 
-**Normalisation et validation des ressources.** identifiants de ressource peuvent être transmis sous la forme d’une chaîne simple ou d’une chaîne MRSS. Un programmeur peut décider d’utiliser soit le format de chaîne simple, soit le format MRSS, mais il aura besoin d’un accord préalable avec le MVPD afin que le MVPD sache comment traiter cette ressource.
+**Normalisation et validation des ressources.** Les identifiants de ressource peuvent être transmis sous la forme d’une chaîne simple ou d’une chaîne SMS. Un programmeur peut décider d’utiliser soit le format de chaîne simple, soit le format MRSS, mais il aura besoin d’un accord préalable avec le MVPD afin que le MVPD sache comment traiter cette ressource.
 
-**Identifiant de ressource et spécification de métadonnées.**’authentification Adobe Pass utilise la norme RSS avec l’extension Media RSS pour spécifier une ressource et ses métadonnées. Conjointement avec l’extension Media RSS, l’authentification Adobe Pass prend en charge un large éventail de métadonnées, telles que le contrôle parental (via `<media:rating>`) ou la géolocalisation (`<media:location>`).
+**Identifiant de ressource et spécification de métadonnées.** L’authentification Adobe Pass utilise la norme RSS avec l’extension Media RSS pour spécifier une ressource et ses métadonnées. Conjointement avec l’extension Media RSS, l’authentification Adobe Pass prend en charge un large éventail de métadonnées, telles que le contrôle parental (via `<media:rating>`) ou la géolocalisation (`<media:location>`).
 
 L’authentification Adobe Pass peut également prendre en charge la conversion transparente de la chaîne de canal héritée vers la ressource RSS correspondante pour les MVPD qui nécessitent RSS. Dans l’autre sens, l’authentification Adobe Pass prend en charge la conversion de RSS+MRSS en titre de canal brut, pour les fichiers MVPD de canal uniquement.
 

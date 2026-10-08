@@ -2,13 +2,14 @@
 title: Compréhension des mesures côté serveur
 description: Compréhension des mesures côté serveur
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2232'
+source-wordcount: '2262'
 ht-degree: 0%
-
 ---
-
 # Compréhension des mesures côté serveur {#understanding-server-side-metrics}
 
 >[!NOTE]
@@ -26,18 +27,18 @@ Du point de vue de l’authentification Adobe Pass côté serveur, les événeme
 
 * **Événements générés dans le flux d’authentification**(connexion réelle avec le MVPD)
 
-   * Notification de tentative d’authentification - Celle-ci est générée lorsque l’utilisateur est envoyé sur le site de connexion MVPD.
-   * Notification d’authentification en attente - Si l’utilisateur parvient à se connecter avec son MVPD, elle est générée lorsque l’utilisateur est        redirigé vers l’authentification Adobe Pass.
-   * Notification d’authentification accordée : cette notification est générée lorsque l’utilisateur est de retour sur le site du programmeur et qu’il a récupéré le jeton d’authentification auprès de l’authentification Adobe Pass.
+  * Notification de tentative d’authentification - Celle-ci est générée lorsque l’utilisateur est envoyé sur le site de connexion MVPD.
+  * Notification d’authentification en attente - Si l’utilisateur parvient à se connecter avec son MVPD, elle est générée lorsque l’utilisateur est redirigé vers l’authentification Adobe Pass.
+  * Notification d’authentification accordée : cette notification est générée lorsque l’utilisateur est de retour sur le site du programmeur et qu’il a récupéré le jeton d’authentification auprès de l’authentification Adobe Pass.
 * **Flux d’autorisation** (simplement vérifier l’autorisation avec une
 MVPD)\
   *Prérequis :* un jeton AuthN valide
-   * Notification de la tentative d’authentification
-   * Notification de l’authentification accordée
+  * Notification de la tentative d’authentification
+  * Notification de l’authentification accordée
 * **Demande de lecture réussie**\
   *Prérequis :* jetons AuthN et AuthZ valides
-   * Notification d’un contrôle avec l’authentification Adobe Pass
-   * Une demande de lecture nécessite à la fois une authentification accordée et une autorisation accordée
+  * Notification d’un contrôle avec l’authentification Adobe Pass
+  * Une demande de lecture nécessite à la fois une authentification accordée et une autorisation accordée
 
 
 Le nombre d’utilisateurs uniques est traité en détail dans la section [Utilisateurs uniques](#unique-users) ci-dessous. À titre d’aperçu, puisque les réponses d’authentification et d’autorisation accordées sont généralement mises en cache, les formules suivantes s’appliquent :
@@ -139,7 +140,7 @@ Cet événement se produit lorsque le processus de redirection vers l’authenti
 
 L’utilisateur est un abonné connu de MVPD, généralement disposant d’un abonnement à la télévision payante, mais parfois uniquement d’un accès Internet. Une authentification réussie peut se produire soit parce que l’utilisateur a saisi explicitement des informations d’identification valides avec son MVPD, soit parce qu’il a précédemment saisi des informations d’identification valides et que « se souvenir de moi » a été coché (et que la session précédente n’a pas expiré).
 
-Le MVPD envoie donc une réponse positive à la demande d’authentification lors de l’authentification Adobe Pass Adobe Pass, puis crée un jeton *AuthN*.
+Le MVPD envoie donc une réponse positive à la demande d’authentification lors de l’authentification Adobe Pass, puis crée un jeton *AuthN*.
 
 * L’authentification est généralement mise en cache pendant une longue période (un mois ou plus). Pour cette raison, les événements d’authentification ne seront plus présents jusqu’à l’expiration du jeton et le redémarrage du flux.
 * Venir d’un autre site/application via l’authentification unique ne déclenchera pas d’événements d’authentification.
@@ -238,10 +239,10 @@ L’utilisateur XYZ se rend sur le site pour regarder une vidéo.
 
 * Tentative d’authentification (aucun utilisateur unique pour le moment)
 * Authentification accordée
-   * à ce stade, nous identifions de manière unique l’utilisateur en fonction de ce que le MVPD renvoie. le nombre d’utilisateurs uniques quotidiens est donc augmenté de 1
-   * le jeton AuthN est mis en cache pendant 30 jours.
+  * à ce stade, nous identifions de manière unique l’utilisateur en fonction de ce que le MVPD renvoie. le nombre d’utilisateurs uniques quotidiens est donc augmenté de 1
+  * le jeton AuthN est mis en cache pendant 30 jours.
 * Tentative d’authentification / événement accordé
-   * Jeton AuthZ mis en cache pendant 1 jour
+  * Jeton AuthZ mis en cache pendant 1 jour
 * Événement de demande de lecture réussi
 
 #### Jour 1 (Ultérieur) {#day1-later-on}
@@ -260,7 +261,7 @@ L’utilisateur XYZ regarde une autre vidéo.
 Événements déclenchés :
 
 * Tentative d’authentification / événement accordé
-   * Depuis 1 jour de mise en cache à partir du jour 1 expiré
+  * Depuis 1 jour de mise en cache à partir du jour 1 expiré
 * Événement de demande de lecture réussi (les autres sont mis en cache)
 * Utilisateurs uniques quotidiens augmentés de 1 ; les utilisateurs uniques mensuels sont toujours 1
 

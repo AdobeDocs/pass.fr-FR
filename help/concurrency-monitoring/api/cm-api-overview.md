@@ -2,13 +2,14 @@
 title: Exemples d’utilisation de l’API
 description: Utilisation du point d’entrée de l’API pour la surveillance de la simultanéité
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2083'
 ht-degree: 0%
-
 ---
-
 # Présentation de l’API {#api-overview}
 
 Consultez la [documentation des API en ligne](https://streams-stage.adobeprimetime.com/swagger-ui/index.html) pour plus d’informations.
@@ -188,7 +189,10 @@ Lorsque vous passez l’appel , vous obtenez la réponse suivante :
 
 Pour chaque session, un utilisateur obtient le **terminationCode** et complète les métadonnées.
 
-Notez l’en-tête **Expires**. Il s’agit de l’heure à laquelle la première session doit expirer, sauf si une pulsation est envoyée.Le champ de métadonnées est renseigné avec toutes les métadonnées envoyées au démarrage de la session. Nous ne le filtrons pas, vous recevrez tout ce que vous avez envoyé.La réponse inclut tous les flux s’exécutant sur les applications d’autres clients tant que les applications partagent la même politique.Si aucune session n’est en cours pour un utilisateur spécifique lorsque vous passez l’appel, vous obtenez la réponse suivante :
+Notez l’en-tête **Expires**. Il s’agit de l’heure à laquelle la première session doit expirer, sauf si une pulsation est envoyée.
+Le champ de métadonnées est renseigné avec toutes les métadonnées envoyées au démarrage de la session. Nous ne le filtrons pas, vous recevrez tout ce que vous avez envoyé.
+La réponse inclut tous les flux s’exécutant sur les applications d’autres clients tant que les applications partagent la même politique.
+Si aucune session n’est en cours pour un utilisateur spécifique lorsque vous passez l’appel, vous obtenez la réponse suivante :
 
 ```http
 # Response Code

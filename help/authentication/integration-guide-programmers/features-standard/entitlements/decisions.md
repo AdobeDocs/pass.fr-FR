@@ -2,13 +2,14 @@
 title: Décisions
 description: Décisions
 exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
-source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1014'
 ht-degree: 0%
-
 ---
-
 # Décisions {#decisions}
 
 >[!IMPORTANT]
@@ -88,10 +89,10 @@ Les ressources protégées font référence au contenu en flux continu, identifi
 Les ressources protégées suivent une structure arborescente hiérarchique, chaque niveau offrant une plus grande granularité pour l’autorisation du contenu :
 
 * Réseau
-   * Canal
-      * Afficher
-         * Épisode
-            * Ressource
+  * Canal
+    * Afficher
+      * Épisode
+        * Ressource
 
 >[!IMPORTANT]
 >
@@ -148,4 +149,5 @@ Pour plus d’informations sur comment et à quel moment intégrer les API ci-de
 
 >[!MORELIKETHIS]
 >
-> [FAQ sur la phase de préautorisationFAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
+> [FAQ sur la phase de préautorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [FAQ sur la phase d’autorisation](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

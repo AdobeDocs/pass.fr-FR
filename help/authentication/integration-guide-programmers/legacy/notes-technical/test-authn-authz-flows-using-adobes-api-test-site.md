@@ -2,13 +2,14 @@
 title: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe
 description: Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '368'
+source-wordcount: '376'
 ht-degree: 0%
-
 ---
-
 # (Hérité) Comment tester les flux d’authentification et d’autorisation à l’aide du site de test de l’API Adobe {#How-to-test-auth-flows}
 
 >[!NOTE]
@@ -19,7 +20,7 @@ ht-degree: 0%
 >
 > Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
-Afin de tester les flux AuthN et AuthZ, nous avons préparé un site de test **API** à votre disposition. Notre équipe d&#39;assistance se fera un plaisir de vous fournir les informations d&#39;identification. Vous pouvez nous contacter à **tve-support@adobe.com**.
+Afin de tester les flux AuthN et AuthZ, nous avons préparé un site de test **API** à votre disposition. Notre équipe d&#39;assistance se fera un plaisir de vous fournir les informations d&#39;identification. Vous pouvez nous contacter à **&#x200B;**.
 
 
 ## Première partie {#part-I}
@@ -38,8 +39,8 @@ Après avoir terminé la première partie, effectuez les étapes suivantes :
    * Cliquez ensuite sur le bouton « **Charger l’activateur d’accès** ».
 1. Définissez maintenant la valeur de l’ID du demandeur sur « **requestorID** » et cliquez sur le bouton « setRequestor ».
 1. Ensuite, appuyez sur le bouton « getAuthentication » et attendez l’affichage du sélecteur.
-1. Sélectionnez le « **MVPD** » dans le sélecteur.
-1. Saisissez vos informations d&#39;identification sur la page de connexion « **MVPD** ».
+1. Sélectionnez le « **&#x200B;**&#x200B;» dans le sélecteur.
+1. Saisissez vos informations d&#39;identification sur la page de connexion « **&#x200B;**&#x200B;».
 1. Après avoir été redirigé vers , répétez les étapes 1 à 3
 1. Après avoir rétabli l’étape 3 sur « setAuthenticationStatus », vous devriez voir la valeur « 1 ». Si l’authentification n’a pas fonctionné, la boîte de dialogue MVPD s’affiche.
 1. Pour tester l’autorisation, dans le champ de saisie situé à droite des boutons intitulés « checkAuthorization » et « getAuthorization », saisissez la **ressource** que vous souhaitez autoriser et cliquez sur le bouton « getAuthorization ».

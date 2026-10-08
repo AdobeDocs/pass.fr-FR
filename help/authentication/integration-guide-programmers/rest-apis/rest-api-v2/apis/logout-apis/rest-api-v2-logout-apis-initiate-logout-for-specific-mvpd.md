@@ -2,13 +2,14 @@
 title: Lancer la déconnexion pour un fichier mvpd spécifique
 description: API REST V2 - Lancement de la déconnexion pour un fichier mvpd spécifique
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1130'
 ht-degree: 2%
-
 ---
-
 # Lancer la déconnexion pour un fichier mvpd spécifique {#initiate-logout-for-specific-mvpd}
 
 >[!IMPORTANT]
@@ -60,8 +61,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        URL de redirection finale vers laquelle l’agent utilisateur accède une fois le flux de déconnexion pour MVPD terminé.<br/><br/>
-        La valeur doit être encodée en URL.</td>
+        URL de redirection finale vers laquelle l’agent utilisateur accède une fois le flux de déconnexion pour MVPD terminé.
+        <br/><br/>
+        La valeur doit être encodée en URL.
+      </td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
@@ -82,32 +85,43 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
-         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.<br/><br/>
-         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.<br/><br/>
-         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.</td>
+         La génération de la payload d’informations sur le périphérique est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
+         <br/><br/>
+         Il est vivement recommandé de toujours l’utiliser lorsque la plateforme d’appareil de l’application permet la fourniture explicite de valeurs valides.
+         <br/><br/>
+         Lorsqu’il est fourni, le serveur principal d’authentification Adobe Pass fusionne implicitement (par défaut) les valeurs définies explicitement avec les valeurs extraites.
+         <br/><br/>
+         Lorsqu’il n’est pas fourni, le serveur principal de l’authentification Adobe Pass utilise implicitement (par défaut) les valeurs extraites.
+      </td>
       <td><i>obligatoire</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Adresse IP de l’appareil de diffusion en continu.<br/><br/>
-         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.<br/><br/>
-         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.</td>
+         Adresse IP de l’appareil de diffusion en continu.
+         <br/><br/>
+         Il est vivement recommandé de toujours l’utiliser pour les implémentations serveur à serveur, en particulier lorsque l’appel est effectué par le service de programmation plutôt que par l’appareil de diffusion en continu.
+         <br/><br/>
+         Pour les implémentations client à serveur, l’adresse IP de l’appareil de diffusion en continu est envoyée implicitement.
+      </td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>or<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md"> Authentification unique à l’aide des flux d’identité de plateforme </a>.</td>
+        La génération de la payload d’authentification unique pour la méthode d’identité de Platform est décrite dans la documentation de l’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
+        <br/><br/>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’une identité de plateforme, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md"> Authentification unique à l’aide des flux d’identité de plateforme </a>.
+      </td>
       <td>facultatif</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Jeton de service AD</td>
       <td>
-        La génération de la payload d’authentification unique pour la méthode de jeton de service est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
-        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.</td>
+        La génération de la payload d’authentification unique pour la méthode de jeton de service est décrite dans la documentation d’en-tête <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
+        <br/><br/>
+        Pour plus d’informations sur les flux activés pour l’authentification unique à l’aide d’un jeton de service, reportez-vous à la documentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md"> Authentification unique à l’aide de flux de jetons de service </a>.
+      </td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -119,8 +133,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Accepter</td>
       <td>
-         Type de média accepté par l’application cliente.<br/><br/>
-         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.</td>
+         Type de média accepté par l’application cliente.
+         <br/><br/>
+         S’il est spécifié, il doit s’agir de application/json;charset=utf-8.
+      </td>
       <td>facultatif</td>
    </tr>
    <tr>
@@ -149,25 +165,29 @@ ht-degree: 2%
       <td>400</td>
       <td>Requête incorrecte</td>
       <td>
-        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
+        La requête n’est pas valide, le client doit la corriger et réessayer. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non Autorisé</td>
       <td>
-        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .</td>
+        Le jeton d’accès n’est pas valide, le client doit obtenir un nouveau jeton d’accès et réessayer. Pour plus d’informations, consultez la documentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md"> Présentation de l’enregistrement client dynamique </a> .
+      </td>
    </tr>
    <tr>
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Erreur de serveur interne</td>
       <td>
-        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
+        Un problème est survenu côté serveur. Le corps de la réponse peut contenir des informations d’erreur conformes à la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.
+      </td>
    </tr>
 </table>
 
@@ -197,8 +217,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">déconnexions</td>
       <td>
-         JSON contenant un mappage de paires clé-valeur.<br/><br/>
-         L'élément clé est défini par la valeur suivante :<table style="table-layout:auto">
+         JSON contenant un mappage de paires clé-valeur.
+         <br/><br/>
+         L'élément clé est défini par la valeur suivante :
+         <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valeur</th>
                <th style="background-color: #EFF2F7"></th>
@@ -219,8 +241,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux de déconnexion.<br/><br/>
-                  Les valeurs possibles sont les suivantes :<ul>
+                  Action que l’appareil de diffusion en continu doit effectuer pour terminer le flux de déconnexion.
+                  <br/><br/>
+                  Les valeurs possibles sont les suivantes :
+                  <ul>
                     <li><b>logout</b><br/>L’appareil de diffusion en continu doit ouvrir l’URL fournie dans un agent utilisateur.<br/>Cette action s’applique aux scénarios suivants : déconnexion de MVPD avec un point d’entrée de déconnexion.</li>
                     <li><b>partner_logout</b><br/>L’appareil de diffusion en continu doit informer l’utilisateur qu’il doit également se déconnecter au niveau du partenaire (système).<br/>Cette action s’applique aux scénarios suivants : déconnectez-vous de MVPD lorsque le type de profil est « appleSSO ».</li>
                     <li><b>complete</b><br/>L’appareil de diffusion en continu n’a pas besoin d’effectuer d’actions suivantes.<br/>Cette action s’applique aux scénarios suivants : déconnexion de MVPD sans point d’entrée de déconnexion (fonctionnalité de déconnexion factice), déconnexion lors d’un accès dégradé, déconnexion lors d’un accès temporaire.</li>
@@ -231,8 +255,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut « actionName ».<br/><br/>
-                  Les valeurs possibles sont les suivantes :<ul>
+                  Type d’interaction que l’appareil de diffusion en continu doit effectuer pour continuer le flux avec l’action spécifiée par l’attribut « actionName ».
+                  <br/><br/>
+                  Les valeurs possibles sont les suivantes :
+                  <ul>
                     <li><b>interactive</b><br/>Ce type s’applique aux valeurs suivantes de l’attribut « actionName » : <b>logout</b>.</li>
                     <li><b>partner_interactive</b><br/>Ce type s’applique aux valeurs suivantes de l’attribut « actionName » : <b>partner_logout</b>.</li>
                     <li><b>none</b><br/>Ce type s’applique aux valeurs suivantes de l’attribut « actionName » : <b>complete</b>, <b>invalid</b>.</li>
@@ -247,8 +273,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>
-                  URL utilisée pour effectuer le flux de déconnexion avec le point d’entrée MVPD.<br/><br/>
-                  Ce paramètre n’est pas présent pour les valeurs suivantes de l’attribut « actionName » :<ul>
+                  URL utilisée pour effectuer le flux de déconnexion avec le point d’entrée MVPD.
+                  <br/><br/>
+                  Ce paramètre n’est pas présent pour les valeurs suivantes de l’attribut « actionName » :
+                  <ul>
                     <li><b>terminé</b></li>
                     <li><b>invalide</b></li>
                   </ul>

@@ -2,20 +2,21 @@
 title: Guide de démarrage rapide du programmeur
 description: Guide de démarrage rapide du programmeur
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '777'
 ht-degree: 0%
-
 ---
-
 # Guide de démarrage rapide du programmeur {#programmer-kickstart-guide}
 
 >[!IMPORTANT]
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Ce guide de démarrage rapide est destiné aux fournisseurs de contenu (programmeurs) qui prévoient d’intégrer Adobe® Pass Authentication à leurs sites web ou applications.
+Ce guide de démarrage rapide est destiné aux fournisseurs de contenu (programmeurs) qui prévoient d’intégrer ® Pass Authentication à leurs sites web ou applications.
 
 Ce document décrit les principales étapes initiales pour garantir un démarrage fluide et efficace du processus d’intégration. Il vise à clarifier les attentes et à fournir des conseils sur la façon dont nous collaborerons avec les partenaires pour réussir les intégrations.
 
@@ -25,9 +26,9 @@ Adobe fournit diverses ressources pour vous aider à intégrer l’authentificat
 
 Le processus de configuration comprend entre autres les étapes suivantes :
 
-![Processus D’Intégration De L’Authentification Adobe® Pass](../assets/progr-flow-int-lifecycle.png)
+![Processus D’Intégration De L’Authentification ® Pass](../assets/progr-flow-int-lifecycle.png)
 
-*Processus D’Intégration De L’Authentification Adobe® Pass*
+*Processus D’Intégration De L’Authentification ® Pass*
 
 **Vous fournirez** au cours de la phase de lancement :
 
@@ -61,7 +62,7 @@ Le processus de configuration comprend entre autres les étapes suivantes :
 >
 >     Si le MVPD n’est pas intégré à Adobe, le code personnalisé doit être développé en fonction des exigences spécifiques à MVPD. Tant que ce développement ne sera pas terminé, le MVPD ne sera pas disponible et les tests de produit avec ce MVPD ne pourront pas continuer.
 >
-> * **MVPD existant**
+> * MVPD existant **&#x200B;**
 >
 >     Si le MVPD est déjà intégré à Adobe, le processus de connectivité est considérablement rationalisé. Dans la plupart des cas, la connectivité peut être établie rapidement par des ajustements de configuration plutôt que par un développement étendu.
 >
@@ -71,7 +72,7 @@ Le processus de configuration comprend entre autres les étapes suivantes :
 
 **Adobe fournira** accès à notre système de service clientèle via [Zendesk](https://tve.zendesk.com/home). Pour accéder à Zendesk, vous devez vous enregistrer et créer un compte à l’adresse https://tve.zendesk.com/home. Le nombre d’utilisateurs pouvant être enregistrés n’est pas limité. Une fois enregistré, vous pouvez afficher et partager des commentaires sur n’importe quel ticket envoyé.
 
-L’équipe d’authentification d’Adobe Pass est à votre disposition pour toute question ou problème technique que vous pourriez rencontrer au cours du processus d’intégration. Veuillez nous contacter à [tve-support@adobe.com](mailto:tve-support@adobe.com).
+L’équipe d’authentification d’Adobe Pass est à votre disposition pour toute question ou problème technique que vous pourriez rencontrer au cours du processus d’intégration. Veuillez nous contacter à [&#128279;](mailto:tve-support@adobe.com).
 
 ## Accès à la documentation {#access-documentation}
 
@@ -85,6 +86,6 @@ L’équipe d’authentification d’Adobe Pass fournit une documentation compl�
 
 ## Accès à l’outil de gestion de la configuration {#access-configuration-management-tool}
 
-**Adobe vous donnera accès** via le tableau de bord TVE d’Adobe Pass[, à un outil en libre-service pour gérer votre configuration et vos données.](https://experience.adobe.com/pass/authentication)
+**Adobe vous donnera accès** via le tableau de bord TVE d’Adobe Pass[&#128279;](https://experience.adobe.com/pass/authentication), à un outil en libre-service pour gérer votre configuration et vos données.
 
 L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [&#x200B; Guide de l’utilisateur pour le tableau de bord TVE &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.

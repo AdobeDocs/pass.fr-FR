@@ -2,13 +2,14 @@
 title: Intégrations aux tableaux de bord TVE
 description: Découvrez les intégrations entre vos canaux et les MVPD et comment gérer les intégrations.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
-
 ---
-
 # Intégrations
 
 >[!NOTE]
@@ -175,7 +176,7 @@ Pour activer ou désactiver l’authentification à domicile pour les fichiers M
 
    *Activer l’authentification à domicile pour une plateforme spécifique*
 
-   **A.** Tentative de propriété d&#39;adaptateur HBA **B.** Propriété de durée de vie AuthN de l&#39;adaptateur HBA
+   **A.** Tentative de propriété HBA **B.** Propriété de durée de vie AuthN de l&#39;adaptateur HBA
 
 1. Sélectionnez **Oui** pour activer et **Non** pour désactiver dans le menu déroulant **Tenter un adaptateur HBA**.
 
@@ -193,7 +194,7 @@ Vous pouvez ajouter les propriétés suivantes :
 
 * Pour toutes les plateformes, sélectionnez l’onglet **Par défaut pour toutes** sur la gauche.
 * Pour une catégorie de plateforme, sélectionnez l’onglet **Ordinateurs de bureau**, **Appareils mobiles** ou **Appareils connectés à la télévision** sur la gauche.
-* Pour un appareil spécifique, sélectionnez l’onglet **iOS**, **Android**, **tvOS**, **Roku** ou **FireTV** sur la gauche.
+* Pour un appareil spécifique, sélectionnez l’onglet **&#x200B;**, **Android**, **tvOS**, **Roku** ou **FireTV** sur la gauche.
 
 Voici quelques exemples de différents flux qui peuvent être activés en ajoutant ces propriétés :
 

@@ -2,13 +2,14 @@
 title: Transmission des informations client (appareil, connexion et application)
 description: Transmission des informations client (appareil, connexion et application)
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1725'
 ht-degree: 3%
-
 ---
-
 # (Hérité) Transmission des informations client (appareil, connexion et application) {#pass-client-info}
 
 >[!NOTE]
@@ -97,7 +98,8 @@ Le SDK JavaScript AccessEnabler prend en charge **en remplaçant uniquement** la
 
 >[!CAUTION]
 >
->La valeur du paramètre `applicationId` doit être une valeur de chaîne en texte brut.Si l’application de programmation décide de transmettre l’application applicationId, le reste des clés d’informations client sera toujours calculé par le SDK JavaScript AccessEnabler.
+>La valeur du paramètre `applicationId` doit être une valeur de chaîne en texte brut.
+>Si l’application de programmation décide de transmettre l’application applicationId, le reste des clés d’informations client sera toujours calculé par le SDK JavaScript AccessEnabler.
 
 #### SDK iOS/tvOS {#ios-tvos-sdk}
 

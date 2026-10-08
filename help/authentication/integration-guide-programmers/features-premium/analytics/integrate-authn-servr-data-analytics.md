@@ -2,13 +2,14 @@
 title: Intégration des données côté serveur de l’authentification Adobe Pass dans Adobe Analytics
 description: Intégration des données côté serveur de l’authentification Adobe Pass dans Adobe Analytics
 exl-id: c1f1f2a3-c98c-4aed-92ad-1f9bfd80b82b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1140'
 ht-degree: 0%
-
 ---
-
 # Intégration des données côté serveur de l’authentification Adobe Pass dans Adobe Analytics
 
 >[!NOTE]
@@ -49,8 +50,8 @@ Il n’est pas destiné à remplacer une implémentation côté client si elle e
 | Version de SDK | Version du SDK du client d’authentification Adobe Pass |
 | ID de ressource | Le titre réel de la ressource impliqué dans la demande d’autorisation (extrait de la payload MRSS comme l’élément/le titre, le cas échéant). |
 | Type d’erreur AuthZ | La raison des échecs, telle qu’elle est signalée par le <br/> d’authentification Adobe Pass Voici les valeurs les plus courantes <br/> **noAuthZ** = le MVPD a répondu que l’utilisateur n’a pas le canal dans son package<br/> **network** = nous n’avons pas pu accéder au MVPD (MVPD a un problème au moment de l’appel et n’a pas répondu)<br/> **norefreshtoken** = ceci est strictement réservé aux implémentations OAuth et peut se produire si l’utilisateur modifie son mot de passe ou si le MVPD le lui refuse pour une raison quelconque. Cela entraîne généralement une nouvelle authentification<br/> **dismatch** = si la requête est effectuée à partir d’un appareil différent de celui qui avait le jeton d’authentification. Cela peut se produire si les utilisateurs tentent de tromper le système, mais que la plupart de ces événements se sont produits dans le cadre de notre ancien SDK JavaScript où l’identifiant de l’appareil utilisait l’adresse IP dans le cadre du calcul. Si un utilisateur regardait TVE à la maison, puis au travail, cette erreur se déclencherait et il devrait s’authentifier à nouveau<br/> **non valide** = requête non valide, paramètres manquants ou non valides<br/>  **authzNone** = Les programmeurs ont la possibilité de refuser les autorisations pour une combinaison channelxMVPD spécifique. Cela est déclenché par une API principale à laquelle les programmeurs ont accès<br/> **fraude** = c&#39;est un mécanisme de protection de notre côté. Si l’utilisateur ou l’utilisatrice ne parvient pas à obtenir l’autorisation, puis la demande à nouveau plusieurs fois dans un court intervalle (secondes), nous refusons directement l’appel. Cela se produit généralement lorsqu’un programmeur présente un bug dans son implémentation qui demande constamment une autorisation en cas d’échec. |
-| Type de jeton | Lorsque des jetons sont créés en raison d’AuthZ All et AuthN All, nous devons savoir ce qui est créé par une mesure de dégradation.<br/> : <br/> « normal » = Le cas normal <br/> « authnall » = Lorsque AuthN All est activé <br/> « authzall » = Lorsque AuthZ All est activé <br/> « hba » = Lorsque HBA est activé |
-| Type d’appareil sans client | Plateforme d’appareil (alternative) actuellement utilisée pour le sans client.<br/> Les valeurs peuvent être les suivantes : <br/> S/O - l’événement n’provient pas d’un SDK sans client <br/> Inconnu - Étant donné que le paramètre deviceType d’une **API sans client** est facultatif, certains appels ne contiennent aucune valeur.<br/> Toute autre valeur envoyée par l’intermédiaire de l’**API sans client**. Par exemple, xbox, appletv et roku. |
+| Type de jeton | Lorsque des jetons sont créés en raison d’AuthZ All et d’AuthN All, nous devons savoir ce qui est créé par une mesure de dégradation.<br/> Ils sont les suivants : <br/> « normal » = Le cas normal <br/> « authnall » = Lorsque AuthN All est activé <br/> « authzall » = Lorsque AuthZ All est activé <br/> « hba » = Lorsque HBA est activé |
+| Type d’appareil sans client | La plateforme de l’appareil (alternative), actuellement utilisée pour Clientless.<br/> Les valeurs peuvent être les suivantes <br/> S.O. : l’événement n’provient pas d’un SDK sans client<br/> Inconnu : puisque le paramètre deviceType d’une **API sans client** est facultatif, certains appels ne contiennent aucune valeur<br/>. Toute autre valeur envoyée par l’intermédiaire de l’**API sans client**. Par exemple, xbox, appletv et roku. |
 | ID d’utilisateur MVPD | Remplace l’identifiant visiteur basé sur un cookie |
 
 

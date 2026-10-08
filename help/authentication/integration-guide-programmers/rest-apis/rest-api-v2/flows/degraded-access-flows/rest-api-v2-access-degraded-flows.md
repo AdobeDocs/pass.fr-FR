@@ -2,13 +2,14 @@
 title: Flux d’accès dégradés
 description: API REST V2 - Flux d’accès dégradés
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
-
 ---
-
 # Flux d’accès dégradés {#degraded-access-flows}
 
 >[!IMPORTANT]

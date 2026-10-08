@@ -2,13 +2,14 @@
 title: Présentation de l’enregistrement client dynamique
 description: Présentation de l’enregistrement client dynamique
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '809'
+source-wordcount: '835'
 ht-degree: 0%
-
 ---
-
 # Présentation de l’enregistrement client dynamique {#dynamic-client-registration-overview}
 
 >[!IMPORTANT]
@@ -20,18 +21,18 @@ L’enregistrement client dynamique représente un mécanisme d’autorisation d
 Adobe Pass fournit un service d’enregistrement client dynamique qui permet d’accéder aux API protégées suivantes :
 
 * API Adobe Pass Authentication Management :
-   * [Réinitialiser l’API Temp Pass](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [API de dégradation](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-   * [API Proxy MVPD](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [API de surveillance du service de droit](../../features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Réinitialiser l’API Temp Pass](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+  * [API de dégradation](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+  * [API Proxy MVPD](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
+  * [API de surveillance du service de droit](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * API REST d&#39;authentification Adobe Pass :
-   * [API REST V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [API REST V1 (héritée)](../../legacy/rest-api-v1/rest-api-reference.md)
+  * [API REST V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [API REST V1 (héritée)](../../legacy/rest-api-v1/rest-api-reference.md)
 * SDK d’authentification Adobe Pass :
-   * [SDK JavaScript (hérité)](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-   * [SDK iOS/tvOS (hérité)](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-   * [SDK Android (hérité)](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
-   * [SDK FireOS (hérité)](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+  * [SDK JavaScript (hérité)](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+  * [SDK iOS/tvOS (hérité)](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+  * [SDK Android (hérité)](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
+  * [SDK FireOS (hérité)](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
 
 >[!IMPORTANT]
 >

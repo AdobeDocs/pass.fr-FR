@@ -2,13 +2,14 @@
 title: Autorisation de base - Demande de Principal - Flux
 description: API REST V2 - Autorisation de base - Application de Principal - Flux
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
-
 ---
-
 # Flux d’autorisation de base exécuté dans l’application principale {#basic-authorization-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -30,9 +31,9 @@ La vérification avec la bibliothèque du vérificateur de jeton de média doit 
 Avant de récupérer des décisions d’autorisation à l’aide d’un MVPD spécifique, assurez-vous que les conditions préalables suivantes sont remplies :
 
 * L’application de diffusion en continu doit avoir un profil standard valide qui a été créé avec succès pour le MVPD à l’aide de l’un des flux d’authentification de base :
-   * [Authentification dans l’application principale](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Authentification dans l’application secondaire avec mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentification dans l’application principale](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Authentification dans l’application secondaire avec mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * L’application de diffusion en continu doit récupérer une décision d’autorisation avant de lire une ressource sélectionnée par l’utilisateur.
 
 ### Workflow {#workflow-retrieve-authorization-decisions-using-specific-mvpd}

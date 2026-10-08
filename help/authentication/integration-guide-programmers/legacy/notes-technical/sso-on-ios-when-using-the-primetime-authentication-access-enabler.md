@@ -2,13 +2,14 @@
 title: SSO sur iOS lors de l’utilisation d’Adobe Pass Authentication Access Enabler
 description: SSO sur iOS lors de l’utilisation d’Adobe Pass Authentication Access Enabler
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1216'
 ht-degree: 0%
-
 ---
-
 # Authentification unique (héritée) sur iOS lors de l’utilisation d’Adobe Pass Authentication Access Enabler {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
 
 >[!NOTE]
@@ -39,10 +40,10 @@ La connexion unique sur iOS est déterminée par les conditions suivantes :
 Le comportement de la fonction SSO est le suivant :
 
 - **iOS 6 et versions antérieures** : la connexion unique fonctionne automatiquement entre les applications développées par la même équipe ou par des équipes différentes. L’identifiant de l’appareil est calculé en fonction de l’adresse MAC (la même valeur est générée dans toutes les applications) et la zone de stockage est commune à toutes les applications (la table de montage personnalisée peut être partagée entre les applications sur iOS 6 et les versions antérieures).
-   - **Important :** notez que la version 1.9.4 d’iOS SDK a [augmenté la cible de déploiement minimale d’iOS à iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
+  - **Important :** notez que la version 1.9.4 d’iOS SDK a [augmenté la cible de déploiement minimale d’iOS à iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 et versions ultérieures** : l’authentification unique fonctionnera dans les conditions suivantes :
 
-1. Les applications sont publiées à l’aide du même profil de distribution Apple ou de profils appartenant à la même équipe. Il s’agit de la seule façon pour les applications de partager des tableaux de bord personnalisés sur iOS 7 et versions ultérieures. Dans tous les autres scénarios, la table de montage est en sandbox par application. Depuis [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html) : \+\[`UIPasteboard pasteboardWithName:create:\`] et +\[`UIPasteboard pasteboardWithUniqueName`\] attribuent désormais un nom unique au prénom pour permettre uniquement aux applications du même groupe d’applications d’accéder à la table de montage. Si le développeur tente de créer une table de montage avec un nom qui existe déjà et qu’il ne fait pas partie de la même suite d’applications, il obtiendra sa propre table de montage privée et unique. Notez que cela n’a aucune incidence sur les tableaux de bord fournis par le système, General, et Find.
+1. Les applications sont publiées à l’aide du même profil de distribution Apple ou de profils appartenant à la même équipe. Il s’agit de la seule façon pour les applications de partager des tableaux de bord personnalisés sur iOS 7 et versions ultérieures. Dans tous les autres scénarios, la table de montage est en sandbox par application. Depuis [*&#128279;*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html) : \+\[`UIPasteboard pasteboardWithName:create:\`] et +\[`UIPasteboard pasteboardWithUniqueName`\] attribuent désormais un nom unique au prénom pour permettre uniquement aux applications du même groupe d’applications d’accéder à la table de montage. Si le développeur tente de créer une table de montage avec un nom qui existe déjà et qu’il ne fait pas partie de la même suite d’applications, il obtiendra sa propre table de montage privée et unique. Notez que cela n’a aucune incidence sur les tableaux de bord fournis par le système, General, et Find.
 
 1. Les applications ont le même préfixe d’ID de lot (tous les composants sauf le dernier). Seules les applications partageant le même préfixe d’ID de lot calculeront le même ID. À partir de [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor) : sur IOS 7, tous les composants du lot, à l’exception du dernier composant, sont utilisés pour générer l’ID de fournisseur. Si l’ID de lot ne comporte qu’un seul composant, l’ID de lot entier est utilisé.
 

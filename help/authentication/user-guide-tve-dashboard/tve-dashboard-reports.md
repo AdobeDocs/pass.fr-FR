@@ -2,13 +2,14 @@
 title: Rapports
 description: Découvrez comment les données sont agrégées dans les rapports du tableau de bord TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '988'
 ht-degree: 0%
-
 ---
-
 # Rapports {#Reports}
 
 >[!NOTE]
@@ -93,9 +94,9 @@ Les rapports [AuthN TTL](#authn-ttl-reports), [AuthZ TTL Reports](#authz-ttl-rep
 
 * **Mobile**
 
-  **iOS** : affiche les valeurs appliquées à l’aide de l’authentification Adobe Pass iOS SDK.
+  **&#x200B;**&#x200B;: affiche les valeurs appliquées à l’aide de l’authentification Adobe Pass iOS SDK.
 
-  **Android** : affiche les valeurs appliquées par l’intermédiaire de l’authentification Adobe Pass Android SDK.
+  **&#x200B;**&#x200B;: affiche les valeurs appliquées par l’intermédiaire de l’authentification Adobe Pass Android SDK.
 
   **Autres** : affiche les valeurs appliquées à l’aide de l’API REST d’authentification Adobe Pass développée pour les appareils mobiles.
 
@@ -115,7 +116,7 @@ Pour en savoir plus sur le partage du type d’appareil souhaité, tel que **Rok
 
 >[!IMPORTANT]
 >
-> Les données agrégées sont basées sur la configuration spécifique de chaque environnement d’authentification Adobe Pass. Lorsque vous basculez entre différents environnements de tableaux de bord TVE, attendez-vous à des variations dans les données entre les rapports. Pour en savoir plus[&#x200B; consultez &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)Environnements d’authentification Adobe Pass .
+> Les données agrégées sont basées sur la configuration spécifique de chaque environnement d’authentification Adobe Pass. Lorsque vous basculez entre différents environnements de tableaux de bord TVE, attendez-vous à des variations dans les données entre les rapports. Pour en savoir plus[&#128279;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md) consultez Environnements d’authentification Adobe Pass .
 
 ## Sélection de canaux et de MVPD spécifiques {#selecting-specific-channels-mvpds}
 
