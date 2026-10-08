@@ -37,8 +37,8 @@ Nous reconnaissons également l’existence d’anciens navigateurs et systèmes
 
 | Système d’exploitation | Versions prises en charge |
 |---------------------|------------------------------|
-| ** | **7.0** (Nougat) ou version ultérieure |
-| ** | **14** ou version ultérieure |
+| **&#x200B; | &#x200B;** 7.0** (Nougat) ou version ultérieure |
+| **&#x200B; | &#x200B;** 14** ou version ultérieure |
 | *iPadOS* | **14** ou version ultérieure |
 | *tvOS* | **14** ou version ultérieure |
 | *Fire OS* | **5 (Android 5.1)** ou version ultérieure |

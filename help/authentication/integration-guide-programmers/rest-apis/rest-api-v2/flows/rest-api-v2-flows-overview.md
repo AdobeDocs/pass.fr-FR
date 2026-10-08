@@ -45,4 +45,4 @@ Pour commencer, consultez la documentation publique des flux qui vous intéresse
 
 ## Vous souhaitez essayer l’API REST V2 ?
 
-Vous pouvez désormais explorer l’API REST V2 via notre page dédiée aux produits sur le site web [](https://developer.adobe.com/adobe-pass/).
+Vous pouvez désormais explorer l’API REST V2 via notre page dédiée aux produits sur le site web [&#128279;](https://developer.adobe.com/adobe-pass/).

@@ -52,7 +52,7 @@ Permet l’« échange » d’un profil SSO de Platform contre un jeton Adobe.
 | demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’ID de l’appareil. |
 | mvpd | Identifiant MVPD pour lequel cette opération est valide. |
-| deviceType | Plateforme Apple pour laquelle nous tentons d’obtenir une requête de profil.  Soit **** soit **tvOS**. |
+| deviceType | Plateforme Apple pour laquelle nous tentons d’obtenir une requête de profil.  Soit **&#x200B;**&#x200B;soit **tvOS**. |
 | SAMLResponse | Profil réel renvoyé par l’authentification unique de Platform. |
 | _deviceUser_ | Identifiant utilisateur de l’appareil. |
 | _appId_ | Nom/ID de l’application. |

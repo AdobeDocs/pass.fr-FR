@@ -22,7 +22,7 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 Authentification Adobe Pass : iOS / tvOS 3.9.2
 
-Date De Publication : ****
+Date De Publication : **&#x200B;**
 
 ## Présentation de la version {#relaese-overview-392}
 

@@ -18,7 +18,7 @@ ht-degree: 1%
 
 Ce document fournit des réponses générales aux questions les plus fréquentes sur l’adoption de l’enregistrement client dynamique (DCR) d’Adobe Pass Authentication.
 
-Pour plus d’informations sur l’enregistrement client dynamique (DCR) dans son ensemble, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations sur l’enregistrement client dynamique (DCR) dans son ensemble, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Questions fréquentes d’ordre général {#general-faqs}
 
@@ -38,7 +38,7 @@ La phase d’enregistrement a pour but d’enregistrer l’application cliente p
 
 Le processus d’enregistrement client dynamique (DCR) nécessite que l’application cliente obtienne une paire d’informations d’identification client et récupère un jeton d’accès en tant qu’objectif final de la phase d’enregistrement.
 
-Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 #### &#x200B;2. La phase d’enregistrement est-elle obligatoire ? {#rest-api-v2-access-faq2}
 
@@ -54,7 +54,7 @@ L’instruction du logiciel est valide pour une durée illimitée, mais vous pou
 
 L’application cliente doit stocker l’instruction du logiciel et l’utiliser lorsque vous avez besoin de récupérer les informations d’identification du client.
 
-Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 #### &#x200B;4. Comment générer et télécharger une déclaration de logiciel ? {#rest-api-v2-access-faq4}
 

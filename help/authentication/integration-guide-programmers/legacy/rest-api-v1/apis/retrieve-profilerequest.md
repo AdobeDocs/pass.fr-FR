@@ -52,4 +52,4 @@ Cette ressource génère des requêtes de profil pour un ID de demandeur et un t
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
 | mvpd | Identifiant MVPD pour lequel cette opération est valide. |
-| deviceType | Plateforme Apple pour laquelle nous tentons d’obtenir une requête de profil.  Soit **** soit **tvOS**. |
+| deviceType | Plateforme Apple pour laquelle nous tentons d’obtenir une requête de profil.  Soit **&#x200B;**&#x200B;soit **tvOS**. |

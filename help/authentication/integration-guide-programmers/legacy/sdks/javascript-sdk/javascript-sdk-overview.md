@@ -42,7 +42,7 @@ Si vous savez déjà qui est le fournisseur du client, vous pouvez [définir le 
 
 L’exemple de code suivant montre comment découvrir et afficher le fournisseur de services pour le client actuel :
 
-**** - Cette page ajoute une section à la page qui affiche le fournisseur choisi par le client, s&#39;il est déjà connecté :
+**&#x200B;**&#x200B;- Cette page ajoute une section à la page qui affiche le fournisseur choisi par le client, s&#39;il est déjà connecté :
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 

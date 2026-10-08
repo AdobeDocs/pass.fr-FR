@@ -29,5 +29,5 @@ Harman gère les produits de publicité et de publication Primetime, tandis qu�
 
 | Guide | Description |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Authentification ](/help/authentication/home.md) | L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit. |
-| [Surveillance d’accès simultané ](/help/concurrency-monitoring/cm-home.md) | Découvrez comment définir et appliquer des limites à l’utilisation simultanée dans plusieurs applications. |
+| [Authentification &#x200B;](/help/authentication/home.md) | L’authentification Adobe Pass est une solution de droits pour TV Everywhere, qui fournit une structure modulaire afin de déterminer si une personne qui demande l’accès à une ressource y a droit. |
+| [Surveillance d’accès simultané &#x200B;](/help/concurrency-monitoring/cm-home.md) | Découvrez comment définir et appliquer des limites à l’utilisation simultanée dans plusieurs applications. |

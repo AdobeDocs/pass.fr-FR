@@ -57,7 +57,7 @@ L’API REST d’authentification Adobe Pass est régie par un [mécanisme de li
 Le tableau ci-dessous répertorie les services web disponibles pour l’approche sans client. Cliquez sur les points d’entrée des services web pour plus d’informations (exemple de requête et de réponse, paramètres d’entrée, méthodes HTTP, etc.)
 
 
-| Sr | Point d’entrée de service web | Description | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | Hébergé à | Appelé par |
+&#x200B;| Sr | Point d’entrée de service web | Description | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | Hébergé à | Appelé par |
 |-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
 | 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | Renvoie le code d’enregistrement et l’URI de page de connexion générés de manière aléatoire | 2 | Service Adobe </br>Reg Code) | Smart Device |
 | 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | Retourne l&#39;enregistrement du code d&#39;enregistrement contenant l&#39;UUID du code d&#39;enregistrement, le code d&#39;enregistrement et l&#39;ID de périphérique haché | 8 | Service Adobe </br>Reg Code) | Authentification Adobe Pass |
@@ -82,4 +82,4 @@ Le tableau ci-dessous répertorie les services web disponibles pour l’approche
 
 ## Sécurité de l’API REST {#security}
 
-Toutes les API REST d’authentification Adobe Pass doivent être appelées à l’aide du protocole HTTPS pour une communication sécurisée. En outre, la plupart des API appelées doivent contenir un jeton d’accès obtenu, comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+Toutes les API REST d’authentification Adobe Pass doivent être appelées à l’aide du protocole HTTPS pour une communication sécurisée. En outre, la plupart des API appelées doivent contenir un jeton d’accès obtenu, comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).

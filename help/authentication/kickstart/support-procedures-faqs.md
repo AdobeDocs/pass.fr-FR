@@ -52,7 +52,7 @@ Un incident de niveau de gravité 1 peut être déclenché par Adobe ou par un p
 
 1. Le partenaire identifie un incident de niveau de gravité 1 nécessitant une attention immédiate d&#39;Adobe.
 
-1. Le partenaire envoie un e-mail à **** en incluant **URGENT - INCIDENT** dans l’objet et en ajoutant les informations suivantes :
+1. Le partenaire envoie un e-mail à **&#x200B;**&#x200B;en incluant **URGENT - INCIDENT** dans l’objet et en ajoutant les informations suivantes :
    * Titre
    * Description et étapes à reproduire
    * Système d’exploitation/navigateur

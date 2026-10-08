@@ -54,7 +54,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>primaryHardwareType</td>
         <td>Type de matériel principal de l’appareil.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -111,7 +111,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td><i>obligatoire</i></td>
         <td>osName</td>
         <td>Nom du système d’exploitation (SE) de l’appareil.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -133,7 +133,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>osFamily</td>
         <td>Nom du groupe du système d’exploitation (SE) de l’appareil.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -156,7 +156,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>osVendor</td>
         <td>Fournisseur du système d’exploitation de l’appareil.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -186,7 +186,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>browserName</td>
         <td>Nom du navigateur.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -206,7 +206,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>browserVendor</td>
         <td>Société/organisation de création du navigateur.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -291,7 +291,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>connectionSecure</td>
         <td>Statut de sécurité de la connexion réseau.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -340,7 +340,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 > 
 > Les fragments de code ne sont pas exhaustifs et peuvent nécessiter des modifications supplémentaires pour fonctionner dans votre projet.
 >
-> Quelle que soit votre implémentation actuelle, l’en-tête de `X-Device-Info` doit contenir une valeur formatée comme décrit dans la section [ Directives ](#directives).
+> Quelle que soit votre implémentation actuelle, l’en-tête de `X-Device-Info` doit contenir une valeur formatée comme décrit dans la section [&#x200B; Directives &#x200B;](#directives).
 
 ### Navigateurs {#browsers}
 

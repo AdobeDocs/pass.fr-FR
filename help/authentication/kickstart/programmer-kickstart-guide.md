@@ -62,7 +62,7 @@ Le processus de configuration comprend entre autres les étapes suivantes :
 >
 >     Si le MVPD n’est pas intégré à Adobe, le code personnalisé doit être développé en fonction des exigences spécifiques à MVPD. Tant que ce développement ne sera pas terminé, le MVPD ne sera pas disponible et les tests de produit avec ce MVPD ne pourront pas continuer.
 >
-> * MVPD existant ****
+> * MVPD existant **&#x200B;**
 >
 >     Si le MVPD est déjà intégré à Adobe, le processus de connectivité est considérablement rationalisé. Dans la plupart des cas, la connectivité peut être établie rapidement par des ajustements de configuration plutôt que par un développement étendu.
 >
@@ -72,13 +72,13 @@ Le processus de configuration comprend entre autres les étapes suivantes :
 
 **Adobe fournira** accès à notre système de service clientèle via [Zendesk](https://tve.zendesk.com/home). Pour accéder à Zendesk, vous devez vous enregistrer et créer un compte à l’adresse https://tve.zendesk.com/home. Le nombre d’utilisateurs pouvant être enregistrés n’est pas limité. Une fois enregistré, vous pouvez afficher et partager des commentaires sur n’importe quel ticket envoyé.
 
-L’équipe d’authentification d’Adobe Pass est à votre disposition pour toute question ou problème technique que vous pourriez rencontrer au cours du processus d’intégration. Veuillez nous contacter à [](mailto:tve-support@adobe.com).
+L’équipe d’authentification d’Adobe Pass est à votre disposition pour toute question ou problème technique que vous pourriez rencontrer au cours du processus d’intégration. Veuillez nous contacter à [&#128279;](mailto:tve-support@adobe.com).
 
 ## Accès à la documentation {#access-documentation}
 
 **Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home), accès à notre documentation publique.
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les API disponibles dans la section [ Guide d’intégration pour les programmeurs ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les API disponibles dans la section [&#x200B; Guide d’intégration pour les programmeurs &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
 
 ## Accès à l’outil de test {#access-testing-tool}
 
@@ -86,6 +86,6 @@ L’équipe d’authentification d’Adobe Pass fournit une documentation compl�
 
 ## Accès à l’outil de gestion de la configuration {#access-configuration-management-tool}
 
-**Adobe vous donnera accès** via le tableau de bord TVE d’Adobe Pass](https://experience.adobe.com/pass/authentication), à un outil en libre-service pour gérer votre configuration et vos données.[
+**Adobe vous donnera accès** via le tableau de bord TVE d’Adobe Pass[&#128279;](https://experience.adobe.com/pass/authentication), à un outil en libre-service pour gérer votre configuration et vos données.
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [ Guide de l’utilisateur pour le tableau de bord TVE ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur l’utilisation du tableau de bord TVE dans la section [&#x200B; Guide de l’utilisateur pour le tableau de bord TVE &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.

@@ -85,9 +85,9 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 * ***N003*** - L’utilisateur a sélectionné l’option « Autre fournisseur de télévision » dans le sélecteur MVPD d’Apple.
 * ***N004*** - L’utilisateur a sélectionné un fournisseur de télévision dans le sélecteur MVPD d’Apple, qui n’est pas pris en charge (intégration ou authentification unique désactivée) par le demandeur actuel.
 * ***N005*** - L’utilisateur a décidé d’annuler le sélecteur MVPD standard ou le sélecteur Apple MVPD.
-* ****** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est refusée pour l&#39;application.
-* ****** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est indéterminée pour l&#39;application.
-* ****** - Échec de la demande de métadonnées du compte d&#39;abonné vidéo. Le champ *message* fournit plus de contexte.
+* **&#x200B;**&#x200B;** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est refusée pour l&#39;application.
+* **&#x200B;**&#x200B;** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est indéterminée pour l&#39;application.
+* **&#x200B;**&#x200B;** - Échec de la demande de métadonnées du compte d&#39;abonné vidéo. Le champ *message* fournit plus de contexte.
 * ***AAPL / APPL_ERROR*** - Échec de la demande de métadonnées du compte d’abonné à la vidéo. Le champ *détails* fournit plus de contexte.
 
 ### Authentification {#apple-sso-cookbook-iostvos-sdk-authentication}
@@ -103,8 +103,8 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 
    **Important :** cette deuxième étape peut déclencher un [code d’erreur avancé](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) spécifique au workflow SSO d’Apple, dans le cas où **l’un des scénarios suivants est vrai** :
 
-   * ****** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est refusée pour l&#39;application.
-   * ****** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est indéterminée pour l&#39;application.
+   * **&#x200B;**&#x200B;** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est refusée pour l&#39;application.
+   * **&#x200B;**&#x200B;** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est indéterminée pour l&#39;application.
    * ***APPL*** - La communication entre le SDK AccessEnabler iOS/tvOS et le framework de compte d’abonné vidéo a rencontré une erreur.
 
    Cette deuxième étape tente d’échanger silencieusement le profil SSO d’Apple contre un jeton d’authentification Adobe, au cas où **tout ce qui précède est faux** et **tout ce qui suit est vrai** :
@@ -124,10 +124,10 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 
    **Important :** cette troisième étape peut déclencher un [code d’erreur avancé](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) spécifique au workflow SSO d’Apple, dans le cas où **l’un des scénarios suivants est vrai** :
 
-   * ***** - L’utilisateur est connecté à son compte de fournisseur de télévision à l’adresse
+   * **&#x200B;*** - L’utilisateur est connecté à son compte de fournisseur de télévision à l’adresse
      niveau du système de l’appareil, mais l’autorisation Fournisseur TV de l’utilisateur est
      refusé pour l’application.
-   * ***** - L’utilisateur est connecté à son compte de fournisseur de télévision à l’adresse
+   * **&#x200B;*** - L’utilisateur est connecté à son compte de fournisseur de télévision à l’adresse
      niveau du système de l’appareil, mais autorisation du fournisseur de télévision de l’utilisateur
      est indéterminé pour l’application.
    * ***APPL\_ERROR** - L’utilisateur est connecté à son fournisseur de télévision
@@ -154,9 +154,9 @@ Pour bénéficier de l’expérience utilisateur de l’authentification unique 
 
    **Important :** cette quatrième étape peut déclencher un [code d’erreur avancé](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) spécifique au workflow SSO d’Apple, dans le cas où **l’un des scénarios suivants est vrai** :
 
-   * ****** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est refusée pour l&#39;application.
-   * ****** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est indéterminée pour l&#39;application.
-   * ****** - La communication entre le SDK AccessEnabler iOS/tvOS et le framework de compte d&#39;abonné vidéo a rencontré une erreur.
+   * **&#x200B;**&#x200B;** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est refusée pour l&#39;application.
+   * **&#x200B;**&#x200B;** - L&#39;autorisation du fournisseur de télévision de l&#39;utilisateur est indéterminée pour l&#39;application.
+   * **&#x200B;**&#x200B;** - La communication entre le SDK AccessEnabler iOS/tvOS et le framework de compte d&#39;abonné vidéo a rencontré une erreur.
    * ***N003*** - L’utilisateur a sélectionné l’option « Autre fournisseur de télévision » dans le sélecteur MVPD d’Apple.
    * ***N004*** - L’utilisateur a sélectionné un fournisseur de télévision dans le sélecteur MVPD d’Apple, qui n’est pas pris en charge (intégration ou authentification unique désactivée) par le demandeur actuel.
    * ***N005*** - L’utilisateur a décidé d’annuler le sélecteur MVPD standard ou le sélecteur Apple MVPD.

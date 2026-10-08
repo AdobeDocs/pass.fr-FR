@@ -47,15 +47,15 @@ Questions fréquentes sur les procédures de prise en charge de l’authentifica
 
 **Pour les programmeurs :**
 
-* [ Guide de démarrage rapide pour les programmeurs ](/help/authentication/kickstart/programmer-kickstart-guide.md)\
+* [&#x200B; Guide de démarrage rapide pour les programmeurs &#x200B;](/help/authentication/kickstart/programmer-kickstart-guide.md)\
   Prise en main de l’authentification Adobe Pass.
 
-* [ Guide d’intégration pour les programmeurs ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)\
+* [&#x200B; Guide d’intégration pour les programmeurs &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)\
   Découvrez comment intégrer l’authentification Adobe Pass à votre programmeur.
 
 **Pour les fichiers MVPD :**
 
-* [Guide de démarrage rapide de ](/help/authentication/kickstart/mvpd-kickstart-guide.md)\
+* [Guide de démarrage rapide de &#x200B;](/help/authentication/kickstart/mvpd-kickstart-guide.md)\
   Prise en main de l’authentification Adobe Pass.
 
 * [Guide d’intégration pour les MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)\
@@ -65,7 +65,7 @@ Questions fréquentes sur les procédures de prise en charge de l’authentifica
 
 ## Outils et bibliothèques 🛠️
 
-* [Site Web ](https://developer.adobe.com/adobe-pass/)\
+* [Site Web &#x200B;](https://developer.adobe.com/adobe-pass/)\
   Accédez au site web d’Adobe Developer pour tester les API REST d’authentification Adobe Pass.
 
 * [Vérificateur de jeton multimédia](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\

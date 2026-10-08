@@ -64,7 +64,7 @@ Pour plus d’informations, voir [Dynamic Client Registration Management](../../
 
 ### Si vous n’avez pas accès au tableau de bord Adobe TVE :
 
-Envoyez un ticket à [](mailto:tve-support@adobe.com). Incluez toutes les informations nécessaires, notamment le canal, le nom de l’application, la version et les plateformes. Un membre de notre équipe d’assistance créera alors une déclaration logicielle pour vous.
+Envoyez un ticket à [&#128279;](mailto:tve-support@adobe.com). Incluez toutes les informations nécessaires, notamment le canal, le nom de l’application, la version et les plateformes. Un membre de notre équipe d’assistance créera alors une déclaration logicielle pour vous.
 
 ## Utilisation de la déclaration de logiciel {#use}
 

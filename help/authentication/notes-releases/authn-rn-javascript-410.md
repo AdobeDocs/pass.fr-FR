@@ -22,7 +22,7 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 Authentification Adobe Pass : JavaScript 4.1.0
 
-Date De Publication : ****
+Date De Publication : **&#x200B;**
 
 ## Présentation de la version {#release-overview-410}
 

@@ -22,9 +22,9 @@ ht-degree: 0%
 > Avant d’utiliser le service web Proxy MVPD, assurez-vous que les conditions préalables suivantes sont remplies :
 >
 > * Obtenez les informations d’identification du client comme décrit dans la documentation de l’API [Récupération des informations d’identification du client](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
-> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
+> * Obtenez le jeton d’accès comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
 >
-> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) reportez-vous à la documentation [Présentation de l’enregistrement du client dynamique.
+> Pour plus d’informations sur la création d’une application enregistrée et le téléchargement de l’instruction logicielle[&#128279;](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) reportez-vous à la documentation Présentation de l’enregistrement du client dynamique.
 
 ## Vue d’ensemble {#overview-proxy-mvpd-webserv}
 
@@ -37,8 +37,8 @@ Pour mettre en œuvre la fonction ProxyMVPD, l’authentification Adobe Pass fou
 
 ## Services de MVPD proxy {#proxy-mvpd-services}
 
-- [ Récupérer les MVPD par proxy](#retriev-proxied-mvpds)
-- [ Envoyer les MVPD par proxy ](#submit-proxied-mvpds)
+- [&#x200B; Récupérer les MVPD par proxy](#retriev-proxied-mvpds)
+- [&#x200B; Envoyer les MVPD par proxy &#x200B;](#submit-proxied-mvpds)
 
 ### Récupérer les MVPD par proxy {#retriev-proxied-mvpds}
 
@@ -232,7 +232,7 @@ Adobe a défini le format accepté suivant pour la publication/récupération de
 
 Pour qu’une demande soit considérée comme valide, elle doit respecter les règles suivantes :
 
-- L’en-tête de la requête doit contenir le jeton d’accès Oauth2 de sécurité obtenu, comme décrit dans la documentation de l’API [ Récupérer le jeton d’accès ](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
+- L’en-tête de la requête doit contenir le jeton d’accès Oauth2 de sécurité obtenu, comme décrit dans la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) .
 - La requête doit provenir d’une adresse IP spécifique qui a été autorisée.
 - La requête doit être envoyée via le protocole SSL.
 
