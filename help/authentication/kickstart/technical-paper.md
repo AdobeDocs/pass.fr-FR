@@ -2,13 +2,14 @@
 title: À propos de l'authentification Adobe Pass
 description: À propos de l'authentification Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 0%
-
 ---
-
 # À Propos De L’Authentification ® Pass {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
@@ -127,7 +128,7 @@ Des conseils supplémentaires sont disponibles une fois l’intégration officie
 
 **Tâches d&#39;intégration**
 
-* Intégrez le DCR de l’API REST Adobe Pass Authentication[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+* Intégrez le DCR de l’API REST Adobe Pass Authentication](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).[
 * Intégrez l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md).
 * Intégrez l’authentification Adobe Pass [vérificateur de jeton de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 * Développez une interface utilisateur pour les workflows d’authentification, d’autorisation et de déconnexion.
@@ -156,7 +157,7 @@ L’authentification Adobe Pass peut prendre en charge efficacement la logique c
 * Pour une logique commerciale autonome appliquée par le fournisseur de télévision payante à la réception d’une demande d’autorisation, Adobe fournit les données nécessaires (par exemple, identifiant unique de l’appareil, adresse IP) pour prendre en charge l’application.
 * Pour la logique commerciale qui nécessite l’intervention de l’utilisateur ou une gestion spécifique par Adobe, les propriétés personnalisées peuvent être conservées pour chaque fournisseur de télévision payante. Ces configurations peuvent inclure des workflows prédéfinis déclenchés à des moments spécifiques du processus d’authentification.
 
-Pour plus d&#39;informations sur le processus d&#39;intégration des fournisseurs de télévision payante, consultez les documents Guide de démarrage rapide de [&#128279;](/help/authentication/kickstart/mvpd-kickstart-guide.md) et Guide d&#39;intégration de [MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md).
+Pour plus d&#39;informations sur le processus d&#39;intégration des fournisseurs de télévision payante, consultez les documents Guide de démarrage rapide de [](/help/authentication/kickstart/mvpd-kickstart-guide.md) et Guide d&#39;intégration de [MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md).
 
 ### Flux de droits {#entitlement-flow}
 
@@ -165,17 +166,17 @@ L’authentification Adobe Pass agit comme un proxy et facilite le flux de droit
 Pour les programmeurs, l’authentification Adobe Pass fournit des API dans le cadre d’un niveau **Standard** ou **Premium** :
 
 * API d’authentification Adobe Pass standard :
-   * [DCR DE L’API REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [DCR DE L’API REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API d’authentification Premium Adobe Pass :
-   * [Réinitialiser l’API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API de surveillance du service de droit](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Réinitialiser l’API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [Fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [API de surveillance du service de droit](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
-Pour plus d’informations sur le flux de droits, consultez la documentation du [&#x200B; Guide d’intégration du programmeur &#x200B;](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
+Pour plus d’informations sur le flux de droits, consultez la documentation du [ Guide d’intégration du programmeur ](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
 #### Comprendre les droits {#understanding-entitlements}
 
@@ -208,18 +209,18 @@ Les programmeurs sont chargés de concevoir et de mettre en œuvre l’interface
 Au minimum, les programmeurs doivent :
 
 * **Implémenter une interface de sélection de fournisseur**
-   * Autorisez les nouveaux utilisateurs à identifier leur fournisseur de télévision payante et à se connecter pour la première fois.
-   * Certains fournisseurs de télévision payante redirigent les utilisateurs vers une page de connexion externe, tandis que d’autres nécessitent une connexion dans un iframe. Les programmeurs doivent implémenter une fonction de rappel pour générer l’iframe si nécessaire.
+  * Autorisez les nouveaux utilisateurs à identifier leur fournisseur de télévision payante et à se connecter pour la première fois.
+  * Certains fournisseurs de télévision payante redirigent les utilisateurs vers une page de connexion externe, tandis que d’autres nécessitent une connexion dans un iframe. Les programmeurs doivent implémenter une fonction de rappel pour générer l’iframe si nécessaire.
 
 * **Gérer une liste des fournisseurs de télévision payante pris en charge**
-   * Assurez-vous que les utilisateurs et utilisatrices peuvent uniquement accéder au contenu par le biais de fournisseurs approuvés.
+  * Assurez-vous que les utilisateurs et utilisatrices peuvent uniquement accéder au contenu par le biais de fournisseurs approuvés.
 
 * **Indiquer le statut d’authentification**
-   * Indique le moment où un utilisateur est authentifié dans l’application ou sur le site Web.
+  * Indique le moment où un utilisateur est authentifié dans l’application ou sur le site Web.
 
 * **Identification des ressources protégées**
-   * Indiquez clairement quel contenu nécessite une autorisation avant l’affichage.
-   * Mettez à jour l’interface utilisateur pour refléter une autorisation réussie une fois l’accès accordé.
+  * Indiquez clairement quel contenu nécessite une autorisation avant l’affichage.
+  * Mettez à jour l’interface utilisateur pour refléter une autorisation réussie une fois l’accès accordé.
 
 ## FAQ {#faqs}
 

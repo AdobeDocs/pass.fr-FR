@@ -2,13 +2,14 @@
 title: Enregistrement de l’application iOS/tvOS
 description: Enregistrement de l’application iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '634'
 ht-degree: 0%
-
 ---
-
 
 # Enregistrement de l’application iOS/tvOS (hérité) {#iostvos-application-registration}
 
@@ -40,9 +41,9 @@ Une instruction logicielle est un jeton JWT contenant des informations sur votre
 - Accédez à `Channels` section et sélectionnez votre canal.
 - Accédez à l’onglet `Registered Applications` .
 - Cliquez sur `Add new application`.
-- Attribuez un nom et une version à votre application, puis sélectionnez le   les plateformes sur lesquelles il sera disponible. iOS/tvOS dans notre cas.
+- Attribuez un nom et une version à votre application, puis sélectionnez les plateformes sur lesquelles elle sera disponible. iOS/tvOS dans notre cas.
 - Envoyez vos modifications au serveur, puis revenez à l’onglet Applications enregistrées de votre canal.
-- Vous devriez voir une liste comportant toutes les applications enregistrées. Cliquez sur le lien   `Download` bouton sur l&#39;application que vous venez de créer. Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle soit prête à être téléchargée.
+- Vous devriez voir une liste comportant toutes les applications enregistrées. Cliquez sur le bouton `Download` de l&#39;application que vous venez de créer. Vous devrez peut-être attendre quelques minutes avant que votre déclaration logicielle soit prête à être téléchargée.
 - Un fichier texte sera téléchargé. Utilisez son contenu comme déclaration logicielle.
 
 Pour plus d&#39;informations, voir [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).

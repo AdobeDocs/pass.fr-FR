@@ -2,13 +2,14 @@
 title: Enregistrement de l’application Android
 description: Enregistrement de l’application Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '614'
 ht-degree: 0%
-
 ---
-
 # Enregistrement de l’application Android (hérité) {#android-application-registration}
 
 >[!NOTE]
@@ -41,7 +42,7 @@ Voici quelques moyens d’obtenir une déclaration logicielle.
 
 ### Si vous avez accès au tableau de bord Adobe TVE
 
-1. Ouvrez votre navigateur et accédez au tableau de bord Adobe Pass TVE [&#128279;](https://experience.adobe.com/#/pass/authentication).
+1. Ouvrez votre navigateur et accédez au tableau de bord Adobe Pass TVE [](https://experience.adobe.com/#/pass/authentication).
 
 1. Accédez à **[!UICONTROL Channels]** section, puis sélectionnez votre canal.
 

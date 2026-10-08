@@ -2,13 +2,14 @@
 title: Déconnexion unique - Flux
 description: API REST V2 - Déconnexion unique - Flux
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '599'
 ht-degree: 0%
-
 ---
-
 # Flux de déconnexion unique {#single-logout-flow}
 
 >[!IMPORTANT]
@@ -30,8 +31,8 @@ ht-degree: 0%
 Avant de lancer une déconnexion unique pour un MVPD spécifique, assurez-vous que les conditions préalables suivantes sont remplies :
 
 * La deuxième application de diffusion en continu doit avoir un profil d’authentification unique valide qui a été créé avec succès pour MVPD à l’aide de l’un des flux d’authentification unique :
-   * [Authentification par authentification unique à l’aide de l’identité de la plateforme](rest-api-v2-single-sign-on-platform-identity-flows.md)
-   * [Authentification par authentification unique à l’aide du jeton de service](rest-api-v2-single-sign-on-service-token-flows.md)
+  * [Authentification par authentification unique à l’aide de l’identité de la plateforme](rest-api-v2-single-sign-on-platform-identity-flows.md)
+  * [Authentification par authentification unique à l’aide du jeton de service](rest-api-v2-single-sign-on-service-token-flows.md)
 * La deuxième application de diffusion en continu doit lancer le flux de déconnexion unique lorsqu’elle doit se déconnecter du MVPD.
 
 >[!IMPORTANT]

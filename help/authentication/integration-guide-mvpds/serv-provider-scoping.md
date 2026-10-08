@@ -2,13 +2,14 @@
 title: Définition de la portée du fournisseur de services
 description: Définition de la portée du fournisseur de services
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
-
 ---
-
 # Définition de la portée du fournisseur de services {#service-provoider-scoping}
 
 >[!NOTE]
@@ -25,9 +26,9 @@ Avec Adobe Pass Authentication prenant le rôle de fournisseur de service pour l
 
 L’authentification Adobe Pass prend en charge les deux méthodes suivantes pour activer la portée SP des requêtes d’authentification :
 
-* **Approche de l’émetteur SAML.** Dans cette approche, l’« ID du demandeur » est ajouté à la chaîne de l’émetteur SAML dans la requête d’authentification SAML.
+* **Approche de l’émetteur SAML.**  Dans cette approche, l’« ID du demandeur » est ajouté à la chaîne de l’émetteur SAML dans la requête d’authentification SAML.
 
-* **Approche de propriété de définition de la portée personnalisée.** Dans cette approche, l’« ID du demandeur » est explicitement inclus en tant que propriété de « définition de la portée » personnalisée dans la demande d’authentification SAML.
+* **Approche de propriété de définition de la portée personnalisée.**  Dans cette approche, l’« ID du demandeur » est explicitement inclus en tant que propriété de « définition de la portée » personnalisée dans la demande d’authentification SAML.
 
 >[!NOTE]
 >

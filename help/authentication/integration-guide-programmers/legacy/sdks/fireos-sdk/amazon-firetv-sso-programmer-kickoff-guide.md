@@ -2,13 +2,14 @@
 title: Amazon fireTV SSO - Guide de lancement du programmeur
 description: Amazon fireTV SSO - Guide de lancement du programmeur
 exl-id: cf9ba614-57ad-46c3-b154-34204b38742d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '816'
 ht-degree: 0%
-
 ---
-
 # (Hérité) Amazon fireTV SSO - Guide de lancement du programmeur {#amazon-firetv-sso---programmer-kick-off-guide}
 
 >[!NOTE]
@@ -23,7 +24,7 @@ ht-degree: 0%
 
 ## Introduction {#intro}
 
-Ce document décrit les informations nécessaires pour intégrer le nouveau SDK fireTV d’Adobe Pass Authentication **&#x200B;**&#x200B;dans votre application fireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme fireTV d’Amazon, offrant ainsi la prise en charge de l’authentification unique **Single Sign On**. Pour bénéficier de l’authentification SSO, vous devez fournir quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK fireTV. Certaines modifications apportées aux flux d’authentification sont détaillées ci-dessous.
+Ce document décrit les informations nécessaires pour intégrer le nouveau SDK fireTV d’Adobe Pass Authentication **** dans votre application fireTV. Ce nouveau SDK tire parti de l’intégration au niveau du système d’exploitation sur la plateforme fireTV d’Amazon, offrant ainsi la prise en charge de l’authentification unique **Single Sign On**. Pour bénéficier de l’authentification SSO, vous devez fournir quelques efforts afin de migrer votre application de l’API sans client vers le nouveau SDK fireTV. Certaines modifications apportées aux flux d’authentification sont détaillées ci-dessous.
 
 ## Architecture de haut niveau et intégration au niveau du système d’exploitation {#high}
 

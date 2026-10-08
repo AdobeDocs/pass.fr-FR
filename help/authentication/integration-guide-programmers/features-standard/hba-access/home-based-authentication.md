@@ -2,13 +2,14 @@
 title: Authentification à domicile (HBA)
 description: Authentification à domicile (HBA)
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1396'
 ht-degree: 1%
-
 ---
-
 # Authentification à domicile (HBA) {#home-based-authentication}
 
 >[!IMPORTANT]
@@ -52,7 +53,7 @@ Pour les MVPD SAML, l’adaptateur HBA n’est activé que du côté MVPD.
 
 **MVPD OAuth2**
 
-Pour les MVPD OAuth2, l’adaptateur HBA peut être activé ou désactivé via le tableau de bord Adobe Pass TVE [&#128279;](https://experience.adobe.com/#/pass/authentication) en suivant les étapes du Guide de l’utilisateur [Intégrations du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
+Pour les MVPD OAuth2, l’adaptateur HBA peut être activé ou désactivé via le tableau de bord Adobe Pass TVE [](https://experience.adobe.com/#/pass/authentication) en suivant les étapes du Guide de l’utilisateur [Intégrations du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
 ### MVPD {#hba-support-mvpds}
 

@@ -2,13 +2,14 @@
 title: Accès à l’API CMU
 description: Accès à l’API CMU
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '437'
 ht-degree: 0%
-
 ---
-
 # Accès à l’API d’utilisation de la surveillance de simultanéité {#cmu-api-usage-access}
 
 >[!NOTE]
@@ -21,7 +22,7 @@ Nous avons mis à jour l’accès aux rapports CMU pour qu’ils soient compatib
 Pour que les applications clientes puissent utiliser l’autorisation OAuth 2.0, le serveur doit s’enregistrer de manière dynamique afin d’obtenir des informations spécifiques (informations d’identification client) et pouvoir interagir avec celles-ci. Dans le cadre du processus d’enregistrement, le client doit présenter un ensemble de métadonnées intégrées au point d’entrée d’enregistrement du client.
 Ces métadonnées sont communiquées sous la forme d&#39;une instruction logicielle, qui contient un « software_id » pour permettre à notre serveur d&#39;autorisation de corréler différentes instances d&#39;une application utilisant la même instruction logicielle.
 Une instruction de logiciel est un jeton Web JSON (JWT) qui affirme des valeurs de métadonnées sur le logiciel client sous la forme d’un lot. Lorsqu’elle est présentée au serveur d’autorisation dans le cadre d’une demande d’enregistrement du client, la déclaration du logiciel doit être signée numériquement ou MACed à l’aide de la signature web JSON (JWS). \
-Vous trouverez une explication plus détaillée des instructions de logiciel et de leur fonctionnement dans la documentation officielle <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>.
+Vous trouverez une explication plus détaillée des instructions de logiciel et de leur fonctionnement dans la documentation officielle <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[]</a>.
 Suivez les étapes des sections ci-dessous pour y accéder.
 
 ## Étapes de la procédure d’accès {#access-procedure-steps}
@@ -29,7 +30,7 @@ Suivez les étapes des sections ci-dessous pour y accéder.
 1. disposer d’une application enregistrée dans le serveur Adobe Pass DCR ; Pour cette étape, veuillez contacter notre [équipe d’assistance](mailto:tve-support@adobe.com).
 
 2. Obtenir le relevé du logiciel
-   1. Accédez au tableau de bord Adobe Pass TVE [&#128279;](https://experience.adobe.com/#/pass/authentication)
+   1. Accédez au tableau de bord Adobe Pass TVE [](https://experience.adobe.com/#/pass/authentication)
    2. Sélectionner le programmeur
    3. Accédez à l’onglet *Applications enregistrées*
    4. Sélectionner une application

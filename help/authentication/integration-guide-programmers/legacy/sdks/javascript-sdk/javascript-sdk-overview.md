@@ -2,13 +2,14 @@
 title: Présentation de JavaScript SDK
 description: Présentation de JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '515'
 ht-degree: 0%
-
 ---
-
 # Présentation de JavaScript SDK (hérité) {#javascript-sdk-overview}
 
 >[!NOTE]
@@ -41,7 +42,7 @@ Si vous savez déjà qui est le fournisseur du client, vous pouvez [définir le 
 
 L’exemple de code suivant montre comment découvrir et afficher le fournisseur de services pour le client actuel :
 
-**HTML** - Cette page ajoute une section à la page qui affiche le fournisseur choisi par le client, s&#39;il est déjà connecté :
+**** - Cette page ajoute une section à la page qui affiche le fournisseur choisi par le client, s&#39;il est déjà connecté :
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -55,7 +56,7 @@ L’exemple de code suivant montre comment découvrir et afficher le fournisseur
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_fr"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

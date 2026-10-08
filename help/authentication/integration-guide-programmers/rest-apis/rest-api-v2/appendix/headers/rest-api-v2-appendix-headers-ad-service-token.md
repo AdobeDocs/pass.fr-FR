@@ -2,13 +2,14 @@
 title: En-tête - Jeton de service AD
 description: API REST V2 - En-tête - Jeton de service AD
 exl-id: 856f76fc-cde6-4b3f-81f7-deaa0df015dc
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '266'
 ht-degree: 1%
-
 ---
-
 # En-tête - Jeton de service AD {#header-ad-service-token}
 
 >[!NOTE]
@@ -21,7 +22,7 @@ L’en-tête de requête <b>AD-Service-Token</b> contient l’identifiant utilis
 
 Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode du jeton de service.
 
-Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode du jeton de service, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux de jeton de service &#x200B;](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode du jeton de service, reportez-vous à la documentation [ Authentification unique à l’aide des flux de jeton de service ](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 ## Syntaxe {#syntax}
 

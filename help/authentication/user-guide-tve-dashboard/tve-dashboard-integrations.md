@@ -2,13 +2,14 @@
 title: Intégrations aux tableaux de bord TVE
 description: Découvrez les intégrations entre vos canaux et les MVPD et comment gérer les intégrations.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
-
 ---
-
 # Intégrations
 
 >[!NOTE]
@@ -63,7 +64,7 @@ Cette section vous permet de choisir les points d’entrée du MVPD utilisés po
 
 ### Paramètres de Platform {#platform-settings}
 
-Cette section vous permet d’afficher et de modifier les paramètres d’intégration sur toutes les [&#x200B; plateformes &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Vous pouvez modifier ces paramètres en fonction des plateformes individuelles. Par exemple, vous pouvez ajuster la durée de vie d’autorisation sur Android tout en conservant une valeur par défaut pour une autre plateforme.
+Cette section vous permet d’afficher et de modifier les paramètres d’intégration sur toutes les [ plateformes ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Vous pouvez modifier ces paramètres en fonction des plateformes individuelles. Par exemple, vous pouvez ajuster la durée de vie d’autorisation sur Android tout en conservant une valeur par défaut pour une autre plateforme.
 
 Chaque propriété des paramètres de la plateforme hérite d’une valeur par défaut définie par le MVPD, mais peut être ajustée si nécessaire.
 
@@ -175,7 +176,7 @@ Pour activer ou désactiver l’authentification à domicile pour les fichiers M
 
    *Activer l’authentification à domicile pour une plateforme spécifique*
 
-   **A.** Tentative de propriété d&#39;adaptateur HBA **B.** Propriété de durée de vie AuthN de l&#39;adaptateur HBA
+   **A.** Tentative de propriété HBA **B.** Propriété de durée de vie AuthN de l&#39;adaptateur HBA
 
 1. Sélectionnez **Oui** pour activer et **Non** pour désactiver dans le menu déroulant **Tenter un adaptateur HBA**.
 
@@ -193,7 +194,7 @@ Vous pouvez ajouter les propriétés suivantes :
 
 * Pour toutes les plateformes, sélectionnez l’onglet **Par défaut pour toutes** sur la gauche.
 * Pour une catégorie de plateforme, sélectionnez l’onglet **Ordinateurs de bureau**, **Appareils mobiles** ou **Appareils connectés à la télévision** sur la gauche.
-* Pour un appareil spécifique, sélectionnez l’onglet **iOS**, **Android**, **tvOS**, **Roku** ou **FireTV** sur la gauche.
+* Pour un appareil spécifique, sélectionnez l’onglet ****, **Android**, **tvOS**, **Roku** ou **FireTV** sur la gauche.
 
 Voici quelques exemples de différents flux qui peuvent être activés en ajoutant ces propriétés :
 
@@ -204,7 +205,7 @@ Cependant, dans les cas où les fichiers MVPD acceptent d’augmenter cette limi
 
 **Ressources maximales de contrôle en amont** ajoute un nouvel attribut dans lequel la limite convenue avec le MVPD peut être spécifiée.
 
-![Ajouter la propriété Ressources maximales de contrôle en amont &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
+![Ajouter la propriété Ressources maximales de contrôle en amont ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
 
 *Ajouter la propriété Ressources maximales de contrôle en amont*
 
@@ -305,7 +306,7 @@ Pour créer une intégration avec un nouveau MVPD sur votre configuration actuel
    >
    >Ne modifiez les points d’entrée par défaut dans aucun flux, sauf indication spécifique du MVPD.
 
-   ![Sélectionner les points d’entrée &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Sélectionner les points d’entrée ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Sélectionner des points d’entrée*
 

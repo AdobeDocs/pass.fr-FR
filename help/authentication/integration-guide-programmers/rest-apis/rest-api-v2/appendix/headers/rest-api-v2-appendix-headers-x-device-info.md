@@ -2,13 +2,14 @@
 title: En-Tête - X-Device-Info
 description: API REST V2 - En-tête - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1234'
 ht-degree: 4%
-
 ---
-
 # En-Tête - X-Device-Info {#header-x-device-info}
 
 >[!NOTE]
@@ -53,7 +54,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>primaryHardwareType</td>
         <td>Type de matériel principal de l’appareil.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -110,7 +111,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td><i>obligatoire</i></td>
         <td>osName</td>
         <td>Nom du système d’exploitation (SE) de l’appareil.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -132,7 +133,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>osFamily</td>
         <td>Nom du groupe du système d’exploitation (SE) de l’appareil.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -155,7 +156,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>osVendor</td>
         <td>Fournisseur du système d’exploitation de l’appareil.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -185,7 +186,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>browserName</td>
         <td>Nom du navigateur.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -205,7 +206,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>browserVendor</td>
         <td>Société/organisation de création du navigateur.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -290,7 +291,7 @@ Valeur `Base64-encoded` de l’élément JSON contenant au moins les attributs m
         <td></td>
         <td>connectionSecure</td>
         <td>Statut de sécurité de la connexion réseau.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Les valeurs sont limitées :
             <ul>
@@ -339,7 +340,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 > 
 > Les fragments de code ne sont pas exhaustifs et peuvent nécessiter des modifications supplémentaires pour fonctionner dans votre projet.
 >
-> Quelle que soit votre implémentation actuelle, l’en-tête de `X-Device-Info` doit contenir une valeur formatée comme décrit dans la section [&#x200B; Directives &#x200B;](#directives).
+> Quelle que soit votre implémentation actuelle, l’en-tête de `X-Device-Info` doit contenir une valeur formatée comme décrit dans la section [ Directives ](#directives).
 
 ### Navigateurs {#browsers}
 

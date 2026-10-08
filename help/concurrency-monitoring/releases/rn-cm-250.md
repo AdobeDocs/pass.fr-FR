@@ -2,13 +2,14 @@
 title: Notes de mise à jour de la surveillance simultanée 2.5.0 d’Adobe Pass
 description: Notes de mise à jour de la surveillance simultanée 2.5.0 d’Adobe Pass
 exl-id: da392b18-a2aa-4f51-a75f-2c5b65b2b073
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '288'
 ht-degree: 2%
-
 ---
-
 # Notes de mise à jour de la surveillance simultanée 2.5.0 d’Adobe Pass {#cm-250}
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version :
@@ -35,9 +36,9 @@ La version V2 unifie les appels de pulsation et de requête et simplifie consid�
 
 * Lorsque cela est logique, la réponse inclut :
 
-   * conseils associés — explication(s) détaillée(s) de l&#39;échec, à demander à l&#39;utilisateur.
+  * conseils associés — explication(s) détaillée(s) de l&#39;échec, à demander à l&#39;utilisateur.
 
-   * obligations : actions obligatoires que l’application doit effectuer (par exemple, actualisation des métadonnées, déconnexion d’Adobe Pass).
+  * obligations : actions obligatoires que l’application doit effectuer (par exemple, actualisation des métadonnées, déconnexion d’Adobe Pass).
 
 ### Métadonnées {#metadata}
 

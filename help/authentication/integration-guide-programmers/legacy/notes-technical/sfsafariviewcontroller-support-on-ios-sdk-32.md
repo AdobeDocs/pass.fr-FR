@@ -2,13 +2,14 @@
 title: Prise en charge de SFSafariViewController sur iOS SDK 3.2+
 description: Prise en charge de SFSafariViewController sur iOS SDK 3.2+
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '431'
 ht-degree: 0%
-
 ---
-
 # Prise en charge de SFSafariViewController sur iOS SDK 3.2+ (héritée) {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
@@ -39,7 +40,7 @@ Dans ce cas, la version 3.2 permet au programmeur de gérer manuellement le SVC.
 Pour gérer manuellement le SVC, l’implémentateur doit effectuer les étapes suivantes :
 
 
-1. appeler **setOptions([« handleSVC »:true])** après l&#39;initialisation d&#39;AccessEnabler (assurez-vous que cet appel est effectué avant le début de l&#39;authentification). Cela permettra une gestion « manuelle » du SVC, le SDK ne présentera pas automatiquement le SVC, mais à la place, lorsque cela sera nécessaire     appel **navigate(toUrl:*{url}* useSVC:true)**.
+1. appeler **setOptions([« handleSVC »:true])** après l&#39;initialisation d&#39;AccessEnabler (assurez-vous que cet appel est effectué avant le début de l&#39;authentification). Cela permet une gestion « manuelle » du SVC, le SDK ne présente pas automatiquement le SVC, mais au lieu de cela, le cas échéant, appelle **navigate(toUrl:*{url}* useSVC:true)**.
 
 1. implémentez le **`navigateToUrl:useSVC:`** de rappel facultatif dans l’implémentation. Vous devez créer une instance svc à l’aide de l’instance SFSafariViewController à l’aide de l’url fournie et la présenter à l’écran :
 

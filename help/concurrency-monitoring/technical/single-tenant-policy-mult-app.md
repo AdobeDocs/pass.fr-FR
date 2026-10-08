@@ -2,13 +2,14 @@
 title: Mise en œuvre de CM pour un client/une politique unique et plusieurs applications
 description: Mise en œuvre de CM pour un client/une politique unique et plusieurs applications
 exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # Mise en œuvre de CM pour un client/une politique unique et plusieurs applications {#imp-cm}
 
 

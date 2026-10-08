@@ -2,13 +2,14 @@
 title: Vérifier le jeton d’authentification
 description: Vérifier le jeton d’authentification
 exl-id: 9020f261-44d8-4bd5-b85b-a8667679f563
-source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '301'
-ht-degree: 0%
-
+source-wordcount: '331'
+ht-degree: 9%
 ---
-
 # (Hérité) Vérifier le jeton d’authentification {#check-authentication-token}
 
 >[!NOTE]
@@ -53,7 +54,7 @@ Indique si l’appareil possède un jeton d’authentification non expiré.
 | demandeur | ID de demandeur du programmeur pour lequel cette opération est valide. |
 | deviceId | Octets d’ID de l’appareil. |
 | device_info/</br></br>X-Device-Info | Informations sur l’appareil de diffusion en continu.</br></br>**Remarque** : cela PEUT être transmis à device_info en tant que paramètre d’URL, mais en raison de la taille potentielle de ce paramètre et des limitations de la longueur d’une URL GET, il DOIT être transmis en tant que X-Device-Info dans l’en-tête http. </br></br><!--See the full details in [Passing Device and Connection Information](/help/authentication/passing-client-information-device-connection-and-application.md)(/help/authentication/passing-client-information-device-connection-and-application.md)-->. |
-| _deviceType_ | Type d’appareil (Roku, PC, par exemple). </br></br>Si ce paramètre est défini correctement, ESM offre des mesures qui sont [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de l’option Sans client, de sorte que différents types d’analyses puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br>Pour plus d’informations, consultez la section [Avantages de l’utilisation du paramètre Clientless deviceType dans les mesures d’authentification d’Adobe Pass &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Remarque** : device_info remplacera ce paramètre. |
+| _deviceType_ | Type d’appareil (Roku, PC, par exemple). </br></br>Si ce paramètre est défini correctement, ESM offre des mesures qui sont [ventilées par type d’appareil](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) lors de l’utilisation de l’option Sans client, de sorte que différents types d’analyses puissent être effectués pour Roku, AppleTV, Xbox, etc.</br></br>Pour plus d’informations, consultez la section [Avantages de l’utilisation du paramètre Clientless deviceType dans les mesures d’authentification d’Adobe Pass ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Remarque** : device_info remplacera ce paramètre. |
 | _deviceUser_ | Identifiant utilisateur de l’appareil. |
 | _appId_ | L’application id/name.</br>**Remarque** : device_info remplace ce paramètre. |
 

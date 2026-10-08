@@ -2,13 +2,14 @@
 title: Authentification de base - Application Secondaire - Flux
 description: API REST V2 - Authentification de base - Application Secondaire - Flux
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2006'
+source-wordcount: '2008'
 ht-degree: 0%
-
 ---
-
 # Flux d’authentification de base effectué dans l’application secondaire {#basic-authentication-flow-performed-within-secondary-application}
 
 >[!IMPORTANT]
@@ -129,7 +130,7 @@ Suivez les étapes données pour implémenter le flux d’authentification de ba
 
    >[!IMPORTANT]
    >
-   > Reportez-vous à la documentation de l’API [&#x200B; Récupération des informations de session d’authentification &#x200B;](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) pour plus d’informations sur les informations fournies dans une réponse de validation de session.
+   > Reportez-vous à la documentation de l’API [ Récupération des informations de session d’authentification ](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) pour plus d’informations sur les informations fournies dans une réponse de validation de session.
    >
    > <br/>
    >

@@ -2,13 +2,14 @@
 title: Concepts clés
 description: Découvrez les concepts fondamentaux de la surveillance d’accès simultané, notamment les sessions, les politiques, les métadonnées, etc
 exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '702'
-ht-degree: 0%
-
+source-wordcount: '714'
+ht-degree: 2%
 ---
-
 # Concepts clés {#key-concepts}
 
 La compréhension des concepts de base de la surveillance de concurrence est essentielle pour une implémentation réussie. Ce guide explique les blocs de création fondamentaux et la manière dont ils fonctionnent ensemble.

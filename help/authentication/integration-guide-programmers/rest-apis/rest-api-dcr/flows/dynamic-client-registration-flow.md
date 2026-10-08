@@ -2,13 +2,14 @@
 title: Flux d’enregistrement client dynamique
 description: Flux d’enregistrement client dynamique
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '567'
 ht-degree: 0%
-
 ---
-
 # Flux d’enregistrement client dynamique {#dynamic-client-registration-flow}
 
 >[!IMPORTANT]
@@ -25,8 +26,8 @@ ht-degree: 0%
 
 Avant d’accéder aux API protégées d’Adobe Pass, assurez-vous que les conditions préalables suivantes sont remplies :
 
-* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [&#x200B; Gérer les applications enregistrées &#x200B;](../dynamic-client-registration-overview.md#manage-registered-applications).
-* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [&#x200B; Gérer les instructions logicielles &#x200B;](../dynamic-client-registration-overview.md#manage-software-statements).
+* Un représentant du client doit créer une application enregistrée, comme décrit dans la section [ Gérer les applications enregistrées ](../dynamic-client-registration-overview.md#manage-registered-applications).
+* Un représentant client doit télécharger et incorporer une instruction logicielle comme décrit dans la section [ Gérer les instructions logicielles ](../dynamic-client-registration-overview.md#manage-software-statements).
 
 >[!IMPORTANT]
 >
@@ -66,7 +67,7 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupération des informations d’identification du client &#x200B;](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupération des informations d’identification du client ](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#error).
 
    >[!TIP]
    >
@@ -76,7 +77,7 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
 
    >[!IMPORTANT]
    >
-   > Consultez la documentation de l’API [&#x200B; Récupération du jeton d’accès &#x200B;](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
+   > Consultez la documentation de l’API [ Récupération du jeton d’accès ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request) pour plus d’informations sur :
    >
    > * Tous les paramètres _obligatoires_ tels que `client_id`, `client_secret` et `grant_type`
    > * Tous les en-têtes _obligatoires_ tels que `Content-Type`, `X-Device-Info`
@@ -96,7 +97,7 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
    >
    > <br/>
    >
-   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [&#x200B; Récupérer le jeton d’accès &#x200B;](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Si la validation échoue, une réponse d’erreur est générée, fournissant des informations supplémentaires qui respectent la documentation de l’API [ Récupérer le jeton d’accès ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >
@@ -108,9 +109,9 @@ Suivez les étapes données pour accéder aux API protégées d’Adobe Pass, co
    >
    > Les API protégées par Adobe Pass valident le jeton d’accès pour s’assurer que les conditions de base sont remplies :
    >
-   > * Le _access_token_ doit être valide.
-   > * Le _jeton_d’accès_ doit être associé à un _client_id_ et un _client_secret_ valides.
-   > * Le _jeton_d’accès_ doit être associé à une _instruction_logicielle_ valide.
+   > * Le _access_ token_ doit être valide.
+   > * Le _jeton_ d’accès _doit être associé à un_ client _id_ et un _client_secret_ valides.
+   > * Le _jeton_ d’accès _doit être associé à une_ instruction_logicielle_ valide.
    >
    > <br/>
    >

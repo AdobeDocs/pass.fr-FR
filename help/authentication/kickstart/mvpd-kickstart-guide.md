@@ -2,20 +2,21 @@
 title: Guide de démarrage rapide de MVPD
 description: Guide de démarrage rapide de MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '965'
 ht-degree: 0%
-
 ---
-
 # Guide de démarrage rapide de MVPD {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Ce guide de démarrage rapide est destiné aux distributeurs de programmes vidéo multicanaux (MVPD) qui prévoient de s’intégrer à l’authentification Adobe® Pass.
+Ce guide de démarrage rapide est destiné aux distributeurs de programmes vidéo multicanaux (MVPD) qui prévoient de s’intégrer à l’authentification ® Pass.
 
 Ce document décrit les principales étapes initiales pour garantir un démarrage fluide et efficace du processus d’intégration. Il vise à clarifier les attentes et à fournir des conseils sur la façon dont nous collaborerons avec les partenaires pour réussir les intégrations.
 
@@ -33,9 +34,9 @@ Adobe fournit toute une gamme de ressources pour vous aider à l’intégrer à 
 
 Le processus de configuration comprend entre autres les étapes suivantes :
 
-![Processus D’Intégration De L’Authentification Adobe® Pass](../assets/mvpd-int-lifecycle.png)
+![Processus D’Intégration De L’Authentification ® Pass](../assets/mvpd-int-lifecycle.png)
 
-*Processus D’Intégration De L’Authentification Adobe® Pass*
+*Processus D’Intégration De L’Authentification ® Pass*
 
 ### Démarrage {#kickoff}
 
@@ -81,7 +82,7 @@ Le processus de configuration comprend entre autres les étapes suivantes :
 
 ### Connectivité {#connectivity}
 
-placer sur la liste autorisée **Vous allez fournir** un moyen de les adresses IP d’Adobe, car l’authentification Adobe Pass nécessite des pare-feu pour autoriser le trafic via les ports 80 et 443 afin de permettre l’accès à des ressources restreintes pendant les processus d’authentification et d’autorisation.
+**Vous allez fournir** un moyen de les adresses IP d’Adobe, car l’authentification Adobe Pass nécessite des pare-feu pour autoriser le trafic via les ports 80 et 443 afin de permettre l’accès à des ressources restreintes pendant les processus d’authentification et d’autorisation.
 
 **Vous fournirez** un déploiement dans le profil d’évaluation pour tester la connectivité.
 
@@ -121,7 +122,7 @@ placer sur la liste autorisée **Vous allez fournir** un moyen de les adresses I
 
   L’environnement de publication héberge la version de production actuelle (stable).
 
-Pour plus d’informations sur l’utilisation de ces environnements, consultez la documentation [&#x200B; Présentation des environnements Adobe &#x200B;](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md).
+Pour plus d’informations sur l’utilisation de ces environnements, consultez la documentation [ Présentation des environnements Adobe ](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md).
 
 >[!IMPORTANT]
 > 
@@ -131,13 +132,13 @@ Pour plus d’informations sur l’utilisation de ces environnements, consultez 
 
 **Adobe fournira** accès à notre système de service clientèle via [Zendesk](https://tve.zendesk.com/home). Pour accéder à Zendesk, vous devez vous enregistrer et créer un compte à l’adresse https://tve.zendesk.com/home.
 
-L’équipe d’authentification d’Adobe Pass est disponible pour répondre à toutes les questions ou problèmes techniques que nous pouvons rencontrer pendant le processus d’intégration. Veuillez nous contacter à [tve-support@adobe.com](mailto:tve-support@adobe.com).
+L’équipe d’authentification d’Adobe Pass est disponible pour répondre à toutes les questions ou problèmes techniques que nous pouvons rencontrer pendant le processus d’intégration. Veuillez nous contacter à [](mailto:tve-support@adobe.com).
 
 ## Accès à la documentation {#access-documentation}
 
-**Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/fr/docs/pass/authentication/home), accès à notre documentation publique.
+**Adobe donnera** par le biais d’[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home), accès à notre documentation publique.
 
-L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les workflows disponibles dans la section [&#x200B; Guide d’intégration pour les fichiers MVPD &#x200B;](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
+L’équipe d’authentification d’Adobe Pass fournit une documentation complète sur les fonctionnalités et les workflows disponibles dans la section [ Guide d’intégration pour les fichiers MVPD ](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Reportez-vous à la table des matières de cette section pour obtenir des liens vers des informations détaillées sur chaque sujet.
 
 ## Accès à l’outil de test {#access-testing-tool}
 

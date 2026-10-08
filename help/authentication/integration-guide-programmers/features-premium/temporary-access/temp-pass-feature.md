@@ -2,13 +2,14 @@
 title: Fonction TempPass
 description: Fonction TempPass
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2203'
+source-wordcount: '2245'
 ht-degree: 0%
-
 ---
-
 # Fonction TempPass {#temp-pass-feature}
 
 >[!IMPORTANT]
@@ -62,7 +63,7 @@ Par exemple, pour proposer une première session gratuite de 4 heures suivie de 
 * **TempPass1** : configuré avec une durée de vie (TTL) de 4 heures pour couvrir la période d’accès gratuit initiale.
 * **TempPass2** : configuré avec une durée de vie (TTL) de 10 minutes pour les intervalles d’accès libre quotidiens suivants.
 
-Pour garantir un accès quotidien correct, TempPass2 doit être réinitialisé pour tous les appareils à 00:00 heures chaque jour.
+Pour garantir un accès quotidien correct, TempPass2 doit être réinitialisé pour tous les appareils à 00h00 chaque jour.
 
 ### Détails des fonctionnalités {#basic-temp-pass-feature-details}
 
@@ -138,7 +139,7 @@ La fonction Promotionnel TempPass utilise le hachage de l&#39;identifiant fourni
 >
 > La validation et le hachage de l’identifiant fourni par l’utilisateur sont gérés par le programmeur, et non par Adobe. Adobe ne stocke aucune information d’identification personnelle (PII). À ce titre, le programmeur est chargé de générer et d’envoyer un hachage de l’identifiant unique fourni par l’utilisateur lors de l’interaction avec les API d’authentification d’Adobe Pass.
 
-Adobe recommande d’utiliser la famille **SHA-2** ou ses fonctions **SHA-256**, **SHA-512** spécifiques sur les données avant leur envoi à Adobe. Par exemple, la mention **SHA-256** sous **»user@domain.com »** est **« f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7 »**.
+Adobe recommande d’utiliser la famille **SHA-2** ou ses fonctions **SHA-256**, **SHA-512** spécifiques sur les données avant leur envoi à Adobe. Par exemple, la mention **SHA-256** sous **« user@domain.com«** est **« f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7 »**.
 
 Le tableau suivant vous aide à comprendre comment les paramètres d’identification des utilisateurs influencent l’expérience d’évaluation des utilisateurs :
 
@@ -190,7 +191,7 @@ Pendant le flux promotionnel de TempPass, les données de suivi utilisent une ve
 
 Avant d’accéder à l’API Reset TempPass, vous devez suivre les étapes requises dans le processus d’enregistrement client dynamique (DCR). Ce processus obligatoire garantit que vous disposez du jeton d’accès nécessaire pour interagir avec l’API Reset TempPass.
 
-Pour obtenir des instructions complètes, reportez-vous à la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour obtenir des instructions complètes, reportez-vous à la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Réinitialiser l’API TempPass - DELETE /reset-tempass/v3/reset {#reset-tempass-v3-reset}
 

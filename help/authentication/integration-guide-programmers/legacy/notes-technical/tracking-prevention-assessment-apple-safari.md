@@ -2,13 +2,14 @@
 title: Évaluation de la prévention du suivi dans Apple Safari
 description: Évaluation de la prévention du suivi dans Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1849'
+source-wordcount: '1887'
 ht-degree: 0%
-
 ---
-
 # Évaluation de la prévention du suivi (hérité) - Apple Safari {#tracking-prevention-assessment-apple-safari}
 
 >[!NOTE]
@@ -83,7 +84,7 @@ Cette section décrit les problèmes de compatibilité de **AccessEnabler JavaSc
 
 >[!NOTE]
 >
->Gardez à l’esprit que dans le cas des versions 2.x et 3.x d’AccessEnabler JavaScript SDK JavaScript SDK, les deux utilisent des cookies tiers pour les processus d’authentification. En raison des politiques ITP et de cookies tiers commençant par Safari 11, l’expérience d’authentification de l’utilisateur peut être inattendue et non définie, allant de l’impossibilité de se connecter à une durée d’authentification plus courte que prévu.
+>Gardez à l’esprit que dans le cas des versions 2.x et 3.x d’AccessEnabler JavaScript SDK, les deux utilisent des cookies tiers pour les processus d’authentification. En raison des politiques ITP et de cookies tiers commençant par Safari 11, l’expérience d’authentification de l’utilisateur peut être inattendue et non définie, allant de l’impossibilité de se connecter à une durée d’authentification plus courte que prévu.
 
 
 ### Fonctionnalité certifiée d’AccessEnabler JavaScript SDK v4 (versions 4.x) sur Safari 12 {#certified-functionality-of-accessenabler-javacscript=sdk-v4}
@@ -100,11 +101,11 @@ Les opérations **Autorisation/Contrôle en amont/Métadonnées utilisateur** so
 
 * SSO et SLO
 
-   * En raison de la manière dont le localStorage est implémenté dans Safari à partir de Safari 10, le SDK JS ne peut plus partager l’état de connexion via un iFrame de domaine commun. Cela signifie que l’utilisateur doit se connecter à chaque site qui utilise AccessEnabler JavaScript SDK. La déconnexion ne supprime pas non plus les jetons d’authentification sur plusieurs sites. L’utilisateur doit donc se déconnecter de chaque site web auquel l’authentification Adobe Pass est activée.
+  * En raison de la manière dont le localStorage est implémenté dans Safari à partir de Safari 10, le SDK JS ne peut plus partager l’état de connexion via un iFrame de domaine commun. Cela signifie que l’utilisateur doit se connecter à chaque site qui utilise AccessEnabler JavaScript SDK. La déconnexion ne supprime pas non plus les jetons d’authentification sur plusieurs sites. L’utilisateur doit donc se déconnecter de chaque site web auquel l’authentification Adobe Pass est activée.
 
 * Temp Pass
 
-   * Pour les passes temporaires, le SDK JavaScript AccessEnabler utilise un mécanisme d’individualisation afin de verrouiller un jeton d’authentification sur un appareil spécifique (instance de navigateur). En raison des nouveaux mécanismes de Safari 12 conçus pour empêcher le suivi, l’empreinte que nous calculons et utilisons dans le mécanisme d’individualisation **sera la même pour tous les utilisateurs qui ont la même adresse IP**. Nous prenons l’adresse IP du client en considération à des fins d’individualisation, mais même ainsi, l’impact se fait sentir sur les utilisateurs qui partagent la même adresse IP publique. Pour ces utilisateurs, nous allons calculer le même identifiant d’individualisation, et le laissez-passer temporaire sera lié à celui-ci. Cela signifie qu’une fois qu’un tel utilisateur utilise un pass temporaire, personne d’autre n’y aura accès \! Cela a un impact en particulier sur les utilisateurs d’entreprise, les établissements d’enseignement ou toute autre organisation dont plusieurs utilisateurs utilisent la technique NAT ou un proxy commun pour accéder à Internet.
+  * Pour les passes temporaires, le SDK JavaScript AccessEnabler utilise un mécanisme d’individualisation afin de verrouiller un jeton d’authentification sur un appareil spécifique (instance de navigateur). En raison des nouveaux mécanismes de Safari 12 conçus pour empêcher le suivi, l’empreinte que nous calculons et utilisons dans le mécanisme d’individualisation **sera la même pour tous les utilisateurs qui ont la même adresse IP**. Nous prenons l’adresse IP du client en considération à des fins d’individualisation, mais même ainsi, l’impact se fait sentir sur les utilisateurs qui partagent la même adresse IP publique. Pour ces utilisateurs, nous allons calculer le même identifiant d’individualisation, et le laissez-passer temporaire sera lié à celui-ci. Cela signifie qu’une fois qu’un tel utilisateur utilise un pass temporaire, personne d’autre n’y aura accès \! Cela a un impact en particulier sur les utilisateurs d’entreprise, les établissements d’enseignement ou toute autre organisation dont plusieurs utilisateurs utilisent la technique NAT ou un proxy commun pour accéder à Internet.
 
 >[!NOTE]
 >
@@ -112,7 +113,7 @@ Les opérations **Autorisation/Contrôle en amont/Métadonnées utilisateur** so
 
 * Flux automatiques
 
-   * Les flux d’authentification tentés en mode automatisé, sans interaction de l’utilisateur, ne réussiront pas dans Safari 12 lors de l’utilisation de JS SDK 4.0. Notez que la version 4.1 de JS SDK à venir corrige tous les problèmes liés aux flux automatisés.
+  * Les flux d’authentification tentés en mode automatisé, sans interaction de l’utilisateur, ne réussiront pas dans Safari 12 lors de l’utilisation de JS SDK 4.0. Notez que la version 4.1 de JS SDK à venir corrige tous les problèmes liés aux flux automatisés.
 
 Cas d’utilisation concernés par ce problème :
 

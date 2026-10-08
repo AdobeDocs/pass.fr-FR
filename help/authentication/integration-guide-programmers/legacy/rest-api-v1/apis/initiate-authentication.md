@@ -2,13 +2,14 @@
 title: Lancer l’authentification
 description: Lancer l’authentification
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '316'
 ht-degree: 0%
-
 ---
-
 # (Hérité) Lancer l’authentification {#initiate-authentication}
 
 >[!NOTE]
@@ -44,9 +45,9 @@ Lance le processus d’authentification en signalant un événement de sélectio
 
 
 
-| Point d’entrée | Appelé </br>Par | Entrée   </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
+| Point d’entrée | Appelé </br>Par | Input </br>Params | HTTP </br>Méthode | Réponse | HTTP </br>Réponse |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authenticate | Module AuthN | &#x200B;1. requestor_id (obligatoire)</br>2.  mso_id (obligatoire)</br>3.  reg_code (obligatoire)</br>4.  domain_name (obligatoire)</br>5.  noflash=true - </br>    (Obligatoire, paramètre résiduel)</br>6.  no_iframe=true (obligatoire, paramètre résiduel)</br>7.  paramètres supplémentaires (facultatif)</br>8.  redirect_url (obligatoire) | GET | L’application web de connexion est redirigée vers la page de connexion de MVPD. | 302 pour les implémentations de redirection complètes |
+| &lt;SP_FQDN>/api/v1/authenticate | Module AuthN | &#x200B;1.  requestor_id (obligatoire)</br>2.  mso_id (obligatoire)</br>3.  reg_code (obligatoire)</br>4.  domain_name (obligatoire)</br>5.  noflash=true - </br> (obligatoire, paramètre résiduel)</br>6.  no_iframe=true (obligatoire, paramètre résiduel)</br>7.  paramètres supplémentaires (facultatif)</br>8.  redirect_url (obligatoire) | GET | L’application web de connexion est redirigée vers la page de connexion de MVPD. | 302 pour les implémentations de redirection complètes |
 
 {style="table-layout:auto"}
 

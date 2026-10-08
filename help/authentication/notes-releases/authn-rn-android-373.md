@@ -2,13 +2,14 @@
 title: Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3
 description: Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3
 exl-id: f335357e-c209-428d-af2a-2181551447d4
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '160'
 ht-degree: 0%
-
 ---
-
 # Notes de mise à jour de l’authentification Adobe Pass Android 3.7.3 {#android-sdk-373-rn}
 
 >[!IMPORTANT]
@@ -21,14 +22,14 @@ Cette page décrit les nouvelles fonctionnalités, les modifications et les prob
 
 Authentification Adobe Pass : Android 3.7.3
 
-Date De Publication : **09/19/2023**
+Date De Publication : ****
 
 ## Présentation de la version {#release-overview-373}
 
 * Modifications pour prendre en charge Android 14 et les applications ciblant le niveau API 34
-   * Ajoutez l&#39;indicateur requis par les récepteurs de diffusions enregistrés à l&#39;exécution d&#39;Android 14 [&#128279;](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
+  * Ajoutez l&#39;indicateur requis par les récepteurs de diffusions enregistrés à l&#39;exécution d&#39;Android 14 [](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
 * Correction de l’absence d’ouverture de ChromeCustomTabs pour la connexion à MVPD sur l’API d’émulateur 32+
-   * Remarque : une solution à ce problème sur SDK &lt;3.7.3 consiste à ouvrir l’application Chrome sur l’émulateur et à terminer sa configuration avant d’essayer d’ouvrir une session MVPD
+  * Remarque : une solution à ce problème sur SDK &lt;3.7.3 consiste à ouvrir l’application Chrome sur l’émulateur et à terminer sa configuration avant d’essayer d’ouvrir une session MVPD
 
 ## Package de version {#release-package-373}
 

@@ -2,20 +2,21 @@
 title: Métadonnées utilisateur
 description: Métadonnées utilisateur
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1902'
-ht-degree: 0%
-
+source-wordcount: '1936'
+ht-degree: 1%
 ---
-
 # Métadonnées utilisateur {#user-metadata}
 
 >[!IMPORTANT]
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Les métadonnées utilisateur font référence à des [attributs](#attributes) spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) qui sont gérés par les MVPD et fournis aux programmeurs via l’API Adobe Pass Authentication [API REST V2](#apis).
+Les métadonnées utilisateur font référence à des [attributs](#attributes) spécifiques à l’utilisateur (par exemple, codes postaux, évaluations parentales, ID utilisateur, etc.) qui sont gérées par les MVPD et fournies aux programmeurs via l’API REST [API REST V2](#apis) d’Adobe Pass Authentication.
 
 Les métadonnées de l’utilisateur sont disponibles une fois le flux d’authentification terminé, mais certains attributs de métadonnées peuvent être mis à jour pendant le flux d’autorisation, selon le MVPD et l’attribut de métadonnées spécifique en question.
 
@@ -35,12 +36,12 @@ Le tableau suivant répertorie certains attributs de métadonnées utilisateur m
 | `upstreamUserID` | String | « 1o7241p » | Non | Identifiant de compte pour la surveillance de simultanéité. | La valeur d’attribut peut être utilisée pour appliquer des limites d’accès simultané sur les sites et applications MVPD et Programmer . La valeur `upstreamUserID` est identique à la valeur `userID` pour la plupart des MVPD. |
 | `householdID` | String | « 1o7241p » | Non | Identifiant du compte pour le contrôle parental. | La valeur d’attribut peut être utilisée pour différencier l’utilisation des ménages et des sous-comptes. Parfois, il peut être utilisé comme un substitut du contrôle parental si les vraies notes ne sont pas disponibles, si l&#39;utilisateur a été connecté avec le compte du ménage, il peut regarder, sinon le contenu noté ne s&#39;afficherait pas. La représentation de ce paramètre varie beaucoup d’une MVPD à l’autre (par exemple, identifiant utilisateur de ménage, identifiant de ménage, indicateur de chef de ménage, etc.). Si le MVPD ne prend pas en charge les sous-comptes, la représentation sera identique à celle de `userID`. |
 | `primaryOID` | String | « uuidd1e19ec9-012c-124f-b520-acaf118d16a0 » | Non | Identifiant du compte. | L’attribut est spécifique à AT&amp;T. La valeur `primaryOID` est identique à la valeur `userID` lorsque la valeur `typeID` est définie sur « Principal ». |
-| `typeID` | String |  »Principal » | Non | Attribut qui indique si l’utilisateur actuel est un titulaire de compte principal ou secondaire. | L’attribut est spécifique à AT&amp;T. La valeur `primaryOID` est identique à la valeur `userID` lorsque la valeur `typeID` est définie sur « Principal ». |
-| `is_hoh` | String | « 1 » | Non | Attribut qui indique si l’utilisateur actuel est le chef de ménage ou non. | L&#39;attribut est spécifique à Synacor. |
+| `typeID` | String | « Principal » | Non | Attribut qui indique si l’utilisateur actuel est un titulaire de compte principal ou secondaire. | L’attribut est spécifique à AT&amp;T. La valeur `primaryOID` est identique à la valeur `userID` lorsque la valeur `typeID` est définie sur « Principal ». |
+| `is_hoh` | String | &quot;1&quot; | Non | Attribut qui indique si l’utilisateur actuel est le chef de ménage ou non. | L&#39;attribut est spécifique à Synacor. |
 | `hba_status` | Booléen | « true » | Non | Attribut qui indique si l&#39;utilisateur actuel s&#39;est authentifié via l&#39;adaptateur HBA ou non. |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `allowMirroring` | Booléen | « true » | Non | Attribut qui indique si l’appareil actuel peut ou non mettre en miroir l’écran. | L&#39;attribut est spécifique au spectre. |
-| `zip` | Tableau | \[ »77754 », « 12345« \] | Oui | Code postal de l’utilisateur. | La valeur d’attribut peut être utilisée pour diffuser des actualités localisées, des mises à jour météorologiques ou des événements sportifs. La valeur `zip` représente les données sensibles qui nécessitent des accords juridiques avec le MVPD. Lorsqu’elle est chiffrée, la représentation de la clé `zip` sera un `String` au lieu d’un `Array`. |
-| `encryptedZip` | String | « » | Oui | Code postal chiffré de l’utilisateur. | L’attribut est spécifique à Comcast. |
+| `zip` | Tableau | \[&quot;77754&quot;, &quot;12345&quot;\] | Oui | Code postal de l’utilisateur. | La valeur d’attribut peut être utilisée pour diffuser des actualités localisées, des mises à jour météorologiques ou des événements sportifs. La valeur `zip` représente les données sensibles qui nécessitent des accords juridiques avec le MVPD. Lorsqu’elle est chiffrée, la représentation de la clé `zip` sera un `String` au lieu d’un `Array`. |
+| `encryptedZip` | String | &quot;&quot; | Oui | Code postal chiffré de l’utilisateur. | L’attribut est spécifique à Comcast. |
 | `channelID` | Tableau | \[« channel-1 », « channel-2 »\] | Non | Liste des canaux que l’utilisateur est autorisé à consulter. | La valeur d’attribut peut être utilisée pour filtrer différents canaux des portails qui agrègent plusieurs réseaux. Nous vous recommandons d’utiliser l’API [Preauthorize](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) au lieu de cet attribut de métadonnées utilisateur pour filtrer les canaux qui ne sont pas disponibles pour l’utilisateur. |
 | `maxRating` | Objet | { MPAA : « NR », VCHIP : « X », URL : « http://manage.my/parental » } | Non | Évaluation parentale maximale pour l’utilisateur actuel. | La valeur d’attribut peut être utilisée pour filtrer le contenu qui n’est pas adapté à l’utilisateur actuel en fonction des évaluations « MPAA » ou « VCHIP ». |
 | `language` | String | « Anglais » | Non | Paramètres de langue. | La valeur d’attribut peut être utilisée pour afficher des messages en fonction des préférences linguistiques de l’utilisateur ou de l’utilisatrice. |
@@ -154,7 +155,7 @@ Suivez les étapes ci-dessous pour vous assurer que le certificat est généré 
 >
 > Si vous n’avez pas accès au tableau de bord Adobe Pass TVE, créez un ticket via notre [Zendesk](https://adobeprimetime.zendesk.com) et demandez à votre gestionnaire de compte technique (TAM) d’apporter les modifications appropriées pour vous.
 
-Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [&#128279;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md).
+Le tableau de bord Adobe Pass TVE est un outil permettant aux clients du service d’authentification d’Adobe Pass (les programmeurs) de gérer leur configuration et leurs données. Ce tableau de bord en libre-service active un éventail de fonctionnalités qui sont décrites dans la documentation Guide de l’utilisateur du tableau de bord TVE d’Adobe Pass [](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md).
 
 Pour passer en revue et gérer les attributs de métadonnées utilisateur rendus disponibles par un MVPD, suivez les étapes de la documentation du [Guide d’utilisation du tableau de bord TVE pour les intégrations](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#user-metadata) .
 

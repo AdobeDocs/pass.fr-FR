@@ -2,13 +2,14 @@
 title: Référence de l’API du client natif Amazon FireOS
 description: Référence de l’API du client natif Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
-
 ---
-
 # Référence de l’API client natif Amazon FireOS (héritée) {#amazon-fireos-native-client-api-reference}
 
 >[!NOTE]
@@ -146,10 +147,10 @@ Si une valeur est fournie pour le paramètre *urls*, l’appel réseau résultan
 **Paramètres:**
 
 - *status* : peut prendre l&#39;une des valeurs suivantes :
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - Configuration
-la phase s’est terminée avec succès
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - Configuration
-échec de la phase
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - Configuration
+    la phase s’est terminée avec succès
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - Configuration
+    échec de la phase
 
 **Déclenché par :** `setRequestor()`
 
@@ -173,9 +174,9 @@ Les valeurs seront transmises au serveur indépendamment du flux actuel (authent
 **Paramètres:**
 
 - *options* : mappage\&lt;chaîne, chaîne\> contenant des options SDK globales. Actuellement, les options suivantes sont disponibles :
-   - **applicationProfile** - Peut être utilisé pour effectuer des configurations de serveur en fonction de cette valeur.
-   - **ap\_vi** - Service Experience Cloud ID. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
-   - **device\_info** - Informations sur l’appareil, comme décrit dans **Guide pas à pas des informations sur l’appareil**
+  - **applicationProfile** - Peut être utilisé pour effectuer des configurations de serveur en fonction de cette valeur.
+  - **ap\_vi** - Service Experience Cloud ID. Cette valeur peut être utilisée ultérieurement pour les rapports d’analyse avancée.
+  - **device\_info** - Informations sur l’appareil, comme décrit dans **Guide pas à pas des informations sur l’appareil**
 
 </br>
 
@@ -259,12 +260,12 @@ Une fois que l’utilisateur a sélectionné le MVPD souhaité, l’application 
 | `public void setSelectedProvider(String mvpdId)` |
 
 
-**Disponibilité :**&#x200B;v 1.0+
+**Disponibilité :**v 1.0+
 
 **Paramètres:** Aucun
 
-**Rappels déclenchés :** 
-
+**Rappels déclenchés :** `setAuthenticationStatus(), sendTrackingData()`
+</br>
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -317,14 +318,14 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 **Paramètres:**
 
 - *status* : peut prendre l&#39;une des valeurs suivantes :
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - flux d’authentification terminé avec succès
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - échec du flux d’authentification
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` - déconnexion
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - flux d’authentification terminé avec succès
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - échec du flux d’authentification
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` - déconnexion
 - *code* : motif du statut présenté. Si *status* est `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS`, alors *code* est une chaîne vide (c’est-à-dire définie par la constante `AccessEnabler.USER_AUTHENTICATED`). S’il n’est pas authentifié, ce paramètre peut prendre l’une des valeurs suivantes :
-   - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` - L’utilisateur n’est pas authentifié. En réponse à l’appel de la méthode *checkAuthentication()* lorsqu’il n’existe aucun jeton d’authentification valide dans le cache de jetons local.
-   - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` - L’AccessEnabler a réinitialisé l’ordinateur d’état d’authentification après que l’application de couche supérieure a transmis *null* à `setSelectedProvider()` pour abandonner le flux d’authentification.  L’utilisateur a probablement annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton « Précédent »).
-   - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` - Le flux d’authentification a échoué pour des raisons telles que l’indisponibilité du réseau ou l’annulation explicite du flux d’authentification.
-   - `AccessEnabler.LOGOUT` - L’utilisateur n’est pas authentifié en raison d’une action de déconnexion.
+  - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` - L’utilisateur n’est pas authentifié. En réponse à l’appel de la méthode *checkAuthentication()* lorsqu’il n’existe aucun jeton d’authentification valide dans le cache de jetons local.
+  - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` - L’AccessEnabler a réinitialisé l’ordinateur d’état d’authentification après que l’application de couche supérieure a transmis *null* à `setSelectedProvider()` pour abandonner le flux d’authentification.  L’utilisateur a probablement annulé le flux d’authentification (c’est-à-dire qu’il a appuyé sur le bouton « Précédent »).
+  - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` - Le flux d’authentification a échoué pour des raisons telles que l’indisponibilité du réseau ou l’annulation explicite du flux d’authentification.
+  - `AccessEnabler.LOGOUT` - L’utilisateur n’est pas authentifié en raison d’une action de déconnexion.
 
 **Déclenché par :** `checkAuthentication(), getAuthentication(), checkAuthorization()`
 
@@ -354,7 +355,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**Disponibilité :**&#x200B;v 1.0+
+**Disponibilité :**v 1.0+
 
 **Paramètres :** le paramètre `resources` est un tableau de ressources que l’utilisateur est déjà autorisé à afficher.
 
@@ -426,7 +427,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 | --- |
 | `public void setToken(String token, String resourceId)` |
 
-**Disponibilité :**&#x200B;v 1.0+
+**Disponibilité :**v 1.0+
 
 **Paramètres:**
 
@@ -451,7 +452,7 @@ Ce rappel signale également que le flux de déconnexion est terminé.
 
 - *resourceId* : ressource pour laquelle l’autorisation a été obtenue
 - *errorCode* : code d’erreur associé au scénario d’échec. Valeurs possibles :
-   - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` - L’utilisateur n’a pas pu autoriser pour la ressource donnée.
+  - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` - L’utilisateur n’a pas pu autoriser pour la ressource donnée.
 - *errorDescription* : informations supplémentaires sur le scénario d’échec. Si cette chaîne descriptive n’est disponible pour aucune raison, l’authentification Adobe Pass envoie une chaîne vide >**(«  »)**.  Cette chaîne peut être utilisée par un MVPD pour transmettre des messages d’erreur personnalisés ou des messages liés aux ventes. Par exemple, si l’autorisation d’accès à une ressource est refusée à un abonné, le MVPD peut envoyer un message du type : « Vous n’avez pas accès à ce canal dans votre package. Si vous souhaitez mettre à niveau votre package, cliquez ici. » Le message est transmis par l’authentification Adobe Pass via ce rappel au programmeur, qui a la possibilité de l’afficher ou de l’ignorer. L’authentification Adobe Pass peut également utiliser ce paramètre pour fournir une notification de la condition qui a pu entraîner une erreur. Par exemple, « Une erreur réseau s’est produite lors de la communication avec le service d’autorisation du fournisseur ».
 
 **Déclenché par :** `checkAuthorization(), getAuthorization()`
@@ -526,15 +527,15 @@ Les programmeurs ont accès à deux types de métadonnées :
 **Paramètres:**
 
 - *metadataKey* : structure de données qui encapsule une clé et une variable args, avec la signification suivante :
-   - Si la clé est `METADATA_KEY_TTL_AUTHN`, la requête est effectuée pour obtenir le délai d’expiration du jeton d’authentification.
-   - Si la clé est `METADATA_KEY_TTL_AUTHZ` et que les arguments contiennent un objet SerializableNameValuePair avec le nom = `METADATA_ARG_RESOURCE_ID` et la valeur = `[resource_id]`, la requête est exécutée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
-   - Si la clé est `METADATA_KEY_DEVICE_ID`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
-   - Si la clé est `METADATA_KEY_USER_META` et que les arguments contiennent un objet SerializableNameValuePair avec le nom = `METADATA_KEY_USER_META` et la valeur = `[metadata_name]`, la requête porte sur les métadonnées de l’utilisateur. Liste actuelle des types de métadonnées utilisateur disponibles :
-      - `zip` - Code postal
-      - `householdID` - Identifiant du ménage. Si un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à `userID`.
-      - `maxRating` - Évaluation parentale maximale pour l&#39;utilisateur
-      - `userID` - Identifiant de l’utilisateur. Si un MVPD prend en charge les sous-comptes et que l’utilisateur n’est pas le compte principal,
-      - `channelID` - Liste des canaux que l’utilisateur est autorisé à afficher
+  - Si la clé est `METADATA_KEY_TTL_AUTHN`, la requête est effectuée pour obtenir le délai d’expiration du jeton d’authentification.
+  - Si la clé est `METADATA_KEY_TTL_AUTHZ` et que les arguments contiennent un objet SerializableNameValuePair avec le nom = `METADATA_ARG_RESOURCE_ID` et la valeur = `[resource_id]`, la requête est exécutée pour obtenir le délai d’expiration du jeton d’autorisation associé à la ressource spécifiée.
+  - Si la clé est `METADATA_KEY_DEVICE_ID`, la requête est effectuée pour obtenir l’identifiant d’appareil actuel. Notez que cette fonctionnalité est désactivée par défaut et les programmeurs doivent contacter Adobe pour plus d’informations sur l’activation et les frais.
+  - Si la clé est `METADATA_KEY_USER_META` et que les arguments contiennent un objet SerializableNameValuePair avec le nom = `METADATA_KEY_USER_META` et la valeur = `[metadata_name]`, la requête porte sur les métadonnées de l’utilisateur. Liste actuelle des types de métadonnées utilisateur disponibles :
+    - `zip` - Code postal
+    - `householdID` - Identifiant du ménage. Si un MVPD ne prend pas en charge les sous-comptes, celui-ci est identique à `userID`.
+    - `maxRating` - Évaluation parentale maximale pour l&#39;utilisateur
+    - `userID` - Identifiant de l’utilisateur. Si un MVPD prend en charge les sous-comptes et que l’utilisateur n’est pas le compte principal,
+    - `channelID` - Liste des canaux que l’utilisateur est autorisé à afficher
 
 Les métadonnées d’utilisateur réellement disponibles pour un programmeur dépendent de ce qu’un MVPD rend disponible.  Cette liste sera complétée à mesure que de nouvelles métadonnées seront disponibles et ajoutées au système d’authentification Adobe Pass.
 
@@ -558,42 +559,42 @@ Les métadonnées d’utilisateur réellement disponibles pour un programmeur d�
 
 - *key* : objet MetadataKey contenant la clé pour laquelle la valeur de métadonnées est demandée et les paramètres associés (voir l’application de démonstration pour une implémentation de référence).
 - *result* : objet composite contenant les métadonnées demandées. L’objet comporte les champs suivants :
-   - *simpleResult* : une chaîne qui représente la valeur des métadonnées au moment où la demande a été faite pour la TTL d’authentification, la TTL d’autorisation ou l’ID d’appareil. Cette valeur est nulle si la demande porte sur les métadonnées de l’utilisateur.
+  - *simpleResult* : une chaîne qui représente la valeur des métadonnées au moment où la demande a été faite pour la TTL d’authentification, la TTL d’autorisation ou l’ID d’appareil. Cette valeur est nulle si la demande porte sur les métadonnées de l’utilisateur.
 
-   - *userMetadataResult* : objet contenant la représentation Java d’une payload de métadonnées d’utilisateur JSON. Par exemple :
+  - *userMetadataResult* : objet contenant la représentation Java d’une payload de métadonnées d’utilisateur JSON. Par exemple :
 
-     ```json
-     {
-     "street": "Main Avenue",
-     "buildings": ["150", "320"]
-     }
-     ```
+    ```json
+    {
+    "street": "Main Avenue",
+    "buildings": ["150", "320"]
+    }
+    ```
 
-     est traduit en Java comme suit :
+    est traduit en Java comme suit :
 
-     ```java
-     Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
-     ```
+    ```java
+    Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
+    ```
 
-     **La structure réelle des objets de métadonnées utilisateur est similaire à ce qui suit :**
+    **La structure réelle des objets de métadonnées utilisateur est similaire à ce qui suit :**
 
-     ```json
-     {
-         updated: 1334243471,
-         encrypted: ["encryptedProp"],
-         data: {
-             zip: ["12345", "34567"],
-             maxRating: { 
-                 "MPAA": "PG-13",
-                 "VCHIP": "TV-Y", 
-                 "URL": "http://exam.pl/e/manage/ratings"
-             },
-             householdID: "3456",
-             userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
-             channelID: ["channel-1", "channel-2"]
-         }
-     }
-     ```
+    ```json
+    {
+        updated: 1334243471,
+        encrypted: ["encryptedProp"],
+        data: {
+            zip: ["12345", "34567"],
+            maxRating: { 
+                "MPAA": "PG-13",
+                "VCHIP": "TV-Y", 
+                "URL": "http://exam.pl/e/manage/ratings"
+            },
+            householdID: "3456",
+            userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
+            channelID: ["channel-1", "channel-2"]
+        }
+    }
+    ```
 
 
 Cette valeur est nulle lorsque la demande porte sur des métadonnées simples (TTL d’authentification, TTL d’autorisation ou ID d’appareil).
@@ -627,19 +628,19 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
 > Le type d’appareil et le système d’exploitation sont dérivés à l’aide d’une bibliothèque Java publique (http://java.net/projects/user-agent-utils) et de la chaîne de l’agent utilisateur. Notez que ces informations ne sont fournies qu’à titre indicatif pour ventiler les mesures opérationnelles en catégories d’appareils, mais qu’Adobe ne peut assumer aucune responsabilité pour les résultats incorrects. Veuillez utiliser la nouvelle fonctionnalité en conséquence.
 
 - Valeurs possibles pour le type d’appareil :
-   - `computer`
-   - `tablet`
-   - `mobile`
-   - `gameconsole`
-   - `unknown`
+  - `computer`
+  - `tablet`
+  - `mobile`
+  - `gameconsole`
+  - `unknown`
 
 - Valeurs possibles pour le type de client Access Enabler :
-   - `flash`
-   - `html5`
-   - `ios`
-   - `tvos`
-   - `android`
-   - `firetv`
+  - `flash`
+  - `html5`
+  - `ios`
+  - `tvos`
+  - `android`
+  - `firetv`
 
 | Rappel : suivi des événements |
 | --- |
@@ -650,38 +651,38 @@ Access Enabler déclenche un rappel supplémentaire qui n’est pas nécessairem
 **Paramètres:**
 
 - *event* : l’événement qui fait l’objet d’un suivi. Il existe trois types d&#39;événements de tracking possibles :
-   - **authorizationDetection :** chaque fois qu’une demande de jeton d’autorisation est renvoyée (type d’événement `EVENT_AUTHZ_DETECTION`)
-   - **authenticationDetection :** à chaque vérification de l’authentification (le type d’événement est `EVENT_AUTHN_DETECTION`)
-   - **mvpdSelection :** lorsque l’utilisateur sélectionne un MVPD dans le formulaire de sélection MVPD (le type d’événement est `EVENT_MVPD_SELECTION`)
+  - **authorizationDetection :** chaque fois qu’une demande de jeton d’autorisation est renvoyée (type d’événement `EVENT_AUTHZ_DETECTION`)
+  - **authenticationDetection :** à chaque vérification de l’authentification (le type d’événement est `EVENT_AUTHN_DETECTION`)
+  - **mvpdSelection :** lorsque l’utilisateur sélectionne un MVPD dans le formulaire de sélection MVPD (le type d’événement est `EVENT_MVPD_SELECTION`)
 - *data* : données supplémentaires associées à l’événement signalé. Ces données sont présentées sous la forme d’une liste de valeurs.
 
 Vous trouverez ci-dessous des instructions pour interpréter les valeurs du tableau *data* :
 
 - Pour le type d’événement *`EVENT_AUTHN_DETECTION`:*
-   - **0** - Indique si la demande de jeton a réussi (true/false) et si ce qui précède est vrai :
-   - **1** - Chaîne d’identifiant MVPD
-   - **2** - GUID (md5 haché)
-   - **3** - Jeton déjà présent dans le cache (true/false)
-   - **4** - Type d’appareil
-   - **5** - Type de client Access Enabler
-   - **6** - Type de système d’exploitation
+  - **0** - Indique si la demande de jeton a réussi (true/false) et si ce qui précède est vrai :
+  - **1** - Chaîne d’identifiant MVPD
+  - **2** - GUID (md5 haché)
+  - **3** - Jeton déjà présent dans le cache (true/false)
+  - **4** - Type d’appareil
+  - **5** - Type de client Access Enabler
+  - **6** - Type de système d’exploitation
 
 - Pour le type d’événement `EVENT_AUTHZ_DETECTION`
-   - **0** - Indique si la demande de jeton a réussi (true/false) et, si elle a réussi :
-   - **1** - MVPD ID
-   - **2** - GUID (md5 haché)
-   - **3** - Jeton déjà présent dans le cache (true/false)
-   - **4** - Erreur
-   - **5** - Détails
-   - **6** - Type d’appareil
-   - **7** - Type de client Access Enabler
-   - **8** - Type de système d’exploitation
+  - **0** - Indique si la demande de jeton a réussi (true/false) et, si elle a réussi :
+  - **1** - MVPD ID
+  - **2** - GUID (md5 haché)
+  - **3** - Jeton déjà présent dans le cache (true/false)
+  - **4** - Erreur
+  - **5** - Détails
+  - **6** - Type d’appareil
+  - **7** - Type de client Access Enabler
+  - **8** - Type de système d’exploitation
 
 - Pour le type d’événement `EVENT_MVPD_SELECTION`
-   - **0** - ID du MVPD actuellement sélectionné
-   - **1** - Type d’appareil
-   - **2** - Type de client Access Enabler
-   - **3** - Type de système d’exploitation
+  - **0** - ID du MVPD actuellement sélectionné
+  - **1** - Type d’appareil
+  - **2** - Type de client Access Enabler
+  - **3** - Type de système d’exploitation
 
 **Déclenché par :** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
 

@@ -2,13 +2,14 @@
 title: Notes De Mise À Jour De Concurrency Monitoring Services 3.0
 description: Notes De Mise À Jour De Concurrency Monitoring Services 3.0
 exl-id: 247e310f-35a2-4078-a3d7-53b44ef08ad9
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '93'
+source-wordcount: '96'
 ht-degree: 3%
-
 ---
-
 # Notes De Mise À Jour De Concurrency Monitoring Services 3.0 {#cms-rn-30}
 
 Cette page décrit les nouvelles fonctionnalités, les modifications et les problèmes connus de cette version.

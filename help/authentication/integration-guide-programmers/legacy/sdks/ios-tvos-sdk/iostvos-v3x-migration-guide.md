@@ -2,13 +2,14 @@
 title: Guide de migration d’iOS/tvOS v3.x
 description: Guide de migration d’iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '584'
 ht-degree: 0%
-
 ---
-
 # Guide de migration d’iOS/tvOS v3.x (hérité) {#iostvos-v3x-migration-guide}
 
 >[!NOTE]
@@ -38,7 +39,7 @@ Cette version contient des fonctionnalités écrites en langage SWIFT. Si votre 
 
 > Pour plus d&#39;informations sur la façon d&#39;obtenir votre relevé de logiciel, rendez-vous sur
 > page :
-> [Enregistrement de la demande &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
+> [Enregistrement de la demande ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
 
 Une fois que vous disposez de votre déclaration logicielle, nous vous recommandons de l’héberger sur un serveur distant afin de pouvoir facilement la révoquer ou la modifier sans déployer une nouvelle version de l’application dans App Store. Lorsque l’application démarre, obtenez votre instruction logicielle à partir de l’emplacement distant et transmettez-la dans le constructeur AccessEnabler :
 

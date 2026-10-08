@@ -2,13 +2,14 @@
 title: 'En-Tête : Adobe-Subject-Token.'
 description: API REST V2 - En-tête - Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '179'
 ht-degree: 2%
-
 ---
-
 # En-Tête : Adobe-Subject-Token. {#header-adobe-subject-token}
 
 >[!NOTE]
@@ -21,13 +22,13 @@ L’en-tête de requête <b>Adobe-Subject-Token</b> contient l’identifiant uni
 
 Cet en-tête est conçu pour être utilisé dans les flux activés pour l’authentification unique (SSO) qui utilisent la méthode d’identification Platform.
 
-Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode d’identité de Platform, reportez-vous à la documentation [&#x200B; Authentification unique à l’aide des flux d’identité de Platform &#x200B;](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
+Pour plus d’informations sur les flux activés pour l’authentification unique (SSO) utilisant la méthode d’identité de Platform, reportez-vous à la documentation [ Authentification unique à l’aide des flux d’identité de Platform ](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
 
 ## Syntaxe {#syntax}
 
 <table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>Jeton-Objet-Adobe</b> : &lt;unique_platform_identifier&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Jeton-Objet-</b> : &lt;unique_platform_identifier&gt;</td>
    </tr>
    <tr>
       <td>Type d’en-tête</td>

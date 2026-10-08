@@ -2,13 +2,14 @@
 title: Fonctionnalité de dégradation
 description: Fonctionnalité de dégradation
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '493'
 ht-degree: 0%
-
 ---
-
 # Fonctionnalité de dégradation {#degradation-feature}
 
 >[!IMPORTANT]
@@ -37,7 +38,7 @@ Conçue pour être utilisée avec une [API de surveillance de l’utilisation](/
 
 Avant d’accéder à l’[API de dégradation](#degradation-api), vous devez suivre les étapes requises dans le processus d’enregistrement client dynamique (DCR). Ce processus obligatoire garantit que vous disposez du jeton d’accès nécessaire pour interagir avec l’API de dégradation.
 
-Pour obtenir des instructions complètes, reportez-vous à la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour obtenir des instructions complètes, reportez-vous à la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## API de dégradation {#degradation-api}
 

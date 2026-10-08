@@ -2,13 +2,14 @@
 title: Mécanisme de vérification de l’intégrité du stockage iOS/tvOS
 description: Mécanisme de vérification de l’intégrité d’iOS/tvOS
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '345'
 ht-degree: 2%
-
 ---
-
 # Mécanisme de vérification de l’intégrité iOS/tvOS (hérité) {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]

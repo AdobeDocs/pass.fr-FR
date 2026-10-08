@@ -2,13 +2,14 @@
 title: Comment migrer la page de connexion MVPD d’iFrame vers une fenêtre contextuelle
 description: Comment migrer la page de connexion MVPD d’iFrame vers une fenêtre contextuelle
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 0%
-
 ---
-
 # (Hérité) Comment migrer la page de connexion MVPD d’iFrame vers une fenêtre contextuelle {#migr-mvpd-login-iframe-popup}
 
 >[!NOTE]
@@ -54,7 +55,7 @@ Les exemples de code précédents illustraient une page HTML contenant la balise
 </body>
 ```
 
-Voici le code **&#x200B;**&#x200B;associé :
+Voici le code **** associé :
 
 ```JavaScript
 /*

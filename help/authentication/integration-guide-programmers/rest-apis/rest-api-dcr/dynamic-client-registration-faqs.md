@@ -2,13 +2,14 @@
 title: FAQ sur Dynamic Client Registration (DCR)
 description: FAQ sur Dynamic Client Registration (DCR)
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
-source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 0%
-
+source-wordcount: '1147'
+ht-degree: 1%
 ---
-
 # FAQ sur Dynamic Client Registration (DCR) {#rest-api-dcr-faqs}
 
 >[!IMPORTANT]
@@ -17,7 +18,7 @@ ht-degree: 0%
 
 Ce document fournit des réponses générales aux questions les plus fréquentes sur l’adoption de l’enregistrement client dynamique (DCR) d’Adobe Pass Authentication.
 
-Pour plus d’informations sur l’enregistrement client dynamique (DCR) dans son ensemble, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations sur l’enregistrement client dynamique (DCR) dans son ensemble, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Questions fréquentes d’ordre général {#general-faqs}
 
@@ -37,7 +38,7 @@ La phase d’enregistrement a pour but d’enregistrer l’application cliente p
 
 Le processus d’enregistrement client dynamique (DCR) nécessite que l’application cliente obtienne une paire d’informations d’identification client et récupère un jeton d’accès en tant qu’objectif final de la phase d’enregistrement.
 
-Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 #### &#x200B;2. La phase d’enregistrement est-elle obligatoire ? {#rest-api-v2-access-faq2}
 
@@ -53,7 +54,7 @@ L’instruction du logiciel est valide pour une durée illimitée, mais vous pou
 
 L’application cliente doit stocker l’instruction du logiciel et l’utiliser lorsque vous avez besoin de récupérer les informations d’identification du client.
 
-Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 #### &#x200B;4. Comment générer et télécharger une déclaration de logiciel ? {#rest-api-v2-access-faq4}
 
@@ -61,7 +62,7 @@ Cette opération peut être effectuée via le tableau de bord Adobe Pass [TVE Da
 
 Pour plus d’informations, reportez-vous à la documentation [Guide de l’utilisateur des canaux du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications) ou [Guide de l’utilisateur des programmeurs du tableau de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications).
 
-#### &#x200B;5. Que se passe-t-il si une déclaration de logiciel est révoquée ? {#rest-api-v2-access-faq5}
+#### &#x200B;5. Que se passe-t-il si une instruction de logiciel est révoquée ? {#rest-api-v2-access-faq5}
 
 Lorsque l’instruction du logiciel est révoquée, il existe une conséquence importante à prendre en compte :
 
@@ -79,7 +80,7 @@ L’application cliente doit stocker les informations d’identification du clie
 
 Pour plus d’informations, consultez la documentation [Récupération des informations d’identification client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-#### &#x200B;7. Comment gérer les informations d’identification du client ? {#rest-api-v2-access-faq7}
+#### &#x200B;7. Comment gérer les informations d’identification client ? {#rest-api-v2-access-faq7}
 
 Nous recommandons à l’application cliente de gérer une paire unique d’informations d’identification client pour chaque instance d’application utilisateur dans le cas des intégrations client à serveur et serveur à serveur avec l’authentification Adobe Pass.
 

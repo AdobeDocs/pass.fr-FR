@@ -2,13 +2,14 @@
 title: Authentification dans l’agent utilisateur
 description: API REST V2 - Authentification dans l’agent utilisateur
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 6%
-
 ---
-
 # Authentification dans l’agent utilisateur {#perform-authentication-in-user-agent}
 
 >[!IMPORTANT]
@@ -94,7 +95,8 @@ ht-degree: 6%
       <td>405</td>
       <td>Méthode Non Autorisée</td>
       <td>
-        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.</td>
+        La méthode HTTP n’est pas valide, le client doit utiliser une méthode HTTP autorisée pour la ressource demandée et réessayer. Pour plus d’informations, consultez la section <a href="#request">Requête</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>

@@ -2,7 +2,10 @@
 title: Stratégies LIFO vs FIFO
 description: Comprendre la différence entre les stratégies LIFO et FIFO et quand utiliser chaque approche
 exl-id: 2d7c4bc8-0491-429b-8471-3b5629aa76a6
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '686'
 ht-degree: 0%
@@ -42,7 +45,7 @@ En mode LIFO, lorsqu&#39;un utilisateur tente de démarrer un nouveau flux et at
 
 ### Diagramme de flux LIFO
 
-![&#x200B; Diagramme de flux LIFO &#x200B;](../assets/lifo-flow-diagram.png)
+![ Diagramme de flux LIFO ](../assets/lifo-flow-diagram.png)
 
 *Image : flux de stratégie LIFO (Last In, First Out) : les nouvelles sessions sont bloquées lorsque les limites sont atteintes, ce qui nécessite l’arrêt manuel des sessions existantes.*
 
@@ -71,7 +74,7 @@ En mode FIFO, lorsqu&#39;un utilisateur tente de démarrer un nouveau flux et at
 
 ### Diagramme de flux FIFO
 
-![&#x200B; Diagramme de flux FIFO &#x200B;](../assets/fifo-flow-diagram.png)
+![ Diagramme de flux FIFO ](../assets/fifo-flow-diagram.png)
 
 *Image : flux de stratégie FIFO (First In, First Out) : les nouvelles sessions peuvent commencer par mettre fin aux sessions existantes avec une sélection de l’utilisateur.*
 

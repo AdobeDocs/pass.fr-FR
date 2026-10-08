@@ -2,13 +2,14 @@
 title: Présentation des environnements Adobe
 description: Présentation des environnements Adobe
 exl-id: bb6cf37f-48cd-47bb-b3c2-f7a96e49b12d
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '214'
 ht-degree: 0%
-
 ---
-
 # Présentation des environnements Adobe {#understanding-the-adobe-environments}
 
 >[!NOTE]
@@ -32,6 +33,6 @@ Chaque environnement comporte deux profils : **évaluation** et **production**.
 
 La raison d’être de ces deux profils est que, sur le profil d’évaluation, nous préparons de nouveaux partenaires à passer en ligne. Ils souhaitent tester le système avec le build à venir (préqualification) ou avec le build de publication (plus stable).
 
-Si un partenaire souhaite tester la nouvelle version, quelques étapes supplémentaires doivent être effectuées. Voir [&#x200B; Configuration de votre environnement et test dans Pre-qual](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
+Si un partenaire souhaite tester la nouvelle version, quelques étapes supplémentaires doivent être effectuées. Voir [ Configuration de votre environnement et test dans Pre-qual](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md).
 
 En suivant les étapes ci-dessus, vous êtes assuré que la prochaine version sera testée dans l’environnement de préqualification.

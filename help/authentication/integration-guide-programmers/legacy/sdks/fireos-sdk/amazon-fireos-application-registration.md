@@ -2,13 +2,14 @@
 title: Enregistrement de l’application Amazon FireOS
 description: Enregistrement de l’application Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '541'
 ht-degree: 0%
-
 ---
-
 # Enregistrement de l’application Amazon FireOS (héritée) {#amazon-fireos-application-registration}
 
 >[!NOTE]
@@ -63,7 +64,7 @@ Pour plus d’informations, voir [Dynamic Client Registration Management](../../
 
 ### Si vous n’avez pas accès au tableau de bord Adobe TVE :
 
-Envoyez un ticket à [tve-support@adobe.com](mailto:tve-support@adobe.com). Incluez toutes les informations nécessaires, notamment le canal, le nom de l’application, la version et les plateformes. Un membre de notre équipe d’assistance créera alors une déclaration logicielle pour vous.
+Envoyez un ticket à [](mailto:tve-support@adobe.com). Incluez toutes les informations nécessaires, notamment le canal, le nom de l’application, la version et les plateformes. Un membre de notre équipe d’assistance créera alors une déclaration logicielle pour vous.
 
 ## Utilisation de la déclaration de logiciel {#use}
 

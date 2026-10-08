@@ -2,13 +2,14 @@
 title: SDK Amazon FireOS avec enregistrement client dynamique
 description: SDK Amazon FireOS avec enregistrement client dynamique
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
-
 ---
-
 
 # SDK Amazon FireOS avec enregistrement client dynamique (hérité) {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -123,8 +124,8 @@ Obsolète :
 
   Le SDK va effectuer les opérations suivantes :
 
-   - enregistrer l’application : à l’aide de **software\_statement**, le SDK obtiendra un **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Ces informations seront stockées dans le stockage interne de l’application.
-   - obtenez un **access\_token** à l’aide de client\_id, client\_secret et grant\_type=« client\_credentials » . Ce jeton d’accès sera utilisé à chaque appel effectué par le SDK vers les serveurs Adobe Pass.
+  - enregistrer l’application : à l’aide de **software\_statement**, le SDK obtiendra un **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Ces informations seront stockées dans le stockage interne de l’application.
+  - obtenez un **access\_token** à l’aide de client\_id, client\_secret et grant\_type=« client\_credentials » . Ce jeton d’accès sera utilisé à chaque appel effectué par le SDK vers les serveurs Adobe Pass.
 
 | Réponses d&#39;erreur de jeton : |  |  |
 |--- | --- | --- |
@@ -136,21 +137,21 @@ Obsolète :
 
 - b. checkAuthentication()
 
-   - *true* : accédez à Autorisation .
-   - *false* : accédez à Sélectionner le MVPD .
+  - *true* : accédez à Autorisation .
+  - *false* : accédez à Sélectionner le MVPD .
 
 - c. getAuthentication : le SDK inclura **access_token** dans les paramètres d’appel
 
-   - mvpd mémorisé : accéder à setSelectedProvider(mvpd\_id)
-   - mvpd non sélectionné : displayProviderDialog
-   - mvpd selected : accédez à setSelectedProvider(mvpd\_id).
+  - mvpd mémorisé : accéder à setSelectedProvider(mvpd\_id)
+  - mvpd non sélectionné : displayProviderDialog
+  - mvpd selected : accédez à setSelectedProvider(mvpd\_id).
 
 - d. setSelectedProvider
 
-   - L’URL d’authentification mvpd\_id est chargée dans ChromeCustomTabs.
-   - connexion réussie : delegate.setAuthenticationStatus ( SUCCESS )
-   - connexion annulée : réinitialiser la sélection MVPD
-   - Le schéma d’URL est établi sous la forme « adobepass://android.app » pour capturer une fois l’authentification terminée
+  - L’URL d’authentification mvpd\_id est chargée dans ChromeCustomTabs.
+  - connexion réussie : delegate.setAuthenticationStatus ( SUCCESS )
+  - connexion annulée : réinitialiser la sélection MVPD
+  - Le schéma d’URL est établi sous la forme « adobepass://android.app » pour capturer une fois l’authentification terminée
 
 - e. get/checkAuthorization : le SDK inclura **access\_token** dans l’en-tête en tant qu’autorisation : porteur **access\_token**
 
@@ -158,10 +159,10 @@ Obsolète :
 
 - f. déconnexion :
 
-   - SDK supprimera le jeton valide pour le demandeur actuel (les authentifications obtenues par d’autres applications et non par SSO resteront valides).
-   - SDK ouvrira les onglets personnalisés Chrome pour atteindre le point d’entrée de connexion mvpd\_id. Une fois l’opération terminée, les onglets personnalisés de Chrome seront fermés
-   - Le schéma d’URL est établi en tant que « adobepass://logout » pour capturer le moment où la déconnexion est terminée
-   - la déconnexion déclenche une action sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) et un rappel : setAuthenticationStatus(0,« Logout »)
+  - SDK supprimera le jeton valide pour le demandeur actuel (les authentifications obtenues par d’autres applications et non par SSO resteront valides).
+  - SDK ouvrira les onglets personnalisés Chrome pour atteindre le point d’entrée de connexion mvpd\_id. Une fois l’opération terminée, les onglets personnalisés de Chrome seront fermés
+  - Le schéma d’URL est établi en tant que « adobepass://logout » pour capturer le moment où la déconnexion est terminée
+  - la déconnexion déclenche une action sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) et un rappel : setAuthenticationStatus(0,« Logout »)
 
 
 

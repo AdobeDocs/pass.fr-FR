@@ -2,13 +2,14 @@
 title: Manuel de l’API REST (client à serveur)
 description: Client de guide pas à pas de l’API REST au serveur.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 0%
-
 ---
-
 # Manuel de l’API REST (hérité) (client à serveur) {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
@@ -49,7 +50,7 @@ Dans une solution client à serveur opérationnelle, les composants suivants son
 
 ### Enregistrement de client dynamique (DCR)
 
-Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [&#x200B; Présentation de l’enregistrement du client dynamique &#x200B;](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilise le DCR pour sécuriser les communications client entre une application ou un serveur de programmation et les services Adobe Pass. Le flux DCR est distinct et est décrit dans la documentation [ Présentation de l’enregistrement du client dynamique ](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Flux D’Applications De Diffusion En Continu (Smart Device)
@@ -84,7 +85,7 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
 
 1. L’utilisateur revient de l’application du deuxième écran et appuie sur le bouton « Continuer » sur votre appareil. Vous pouvez également implémenter un mécanisme d’interrogation pour vérifier le statut de l’authentification, mais l’Authentification Adobe Pass recommande la méthode du bouton Continuer plutôt que l’interrogation. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Par exemple : [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
-2. Envoyez une requête GET au service d’autorisation Authentification Adobe Pass pour lancer l’autorisation. Par exemple : `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+2. Envoyez une requête GET au service d’autorisation d’authentification Adobe Pass pour lancer l’autorisation. Par exemple : `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
@@ -92,11 +93,11 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
 
 * Si la réponse indique un échec : examinez l’exception renvoyée pour déterminer son type (AuthN, AuthZ ou autre chose) :
 
-   * S’il s’agissait d’une erreur d’authentification, redémarrez le flux d’enregistrement.
+  * S’il s’agissait d’une erreur d’authentification, redémarrez le flux d’enregistrement.
 
-   * S’il s’agissait d’une erreur AuthZ, l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
+  * S’il s’agissait d’une erreur AuthZ, l’utilisateur n’est pas autorisé à regarder le média demandé et un message d’erreur doit s’afficher à l’intention de l’utilisateur.
 
-   * S’il y a eu une autre erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
+  * S’il y a eu une autre erreur (erreur de connexion, erreur réseau, etc.) affichez ensuite un message d’erreur approprié à l’intention de l’utilisateur.
 
 
 
@@ -109,10 +110,10 @@ Adobe Pass utilise le DCR pour sécuriser les communications client entre une ap
    a.  Votre application vérifie si le média est protégé.
 
    b.  Si le média est protégé, votre application lance l’autorisation.
-(AuthZ) Flux ci-dessus.
+   (AuthZ) Flux ci-dessus.
 
    c.  Si le média n’est pas protégé, lisez le média pour le
-utilisateur.
+   utilisateur.
 
 3. Lire le média.
 

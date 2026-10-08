@@ -2,13 +2,14 @@
 title: Chrome de l’évaluation de la prévention du suivi de Google
 description: Chrome de l’évaluation de la prévention du suivi de Google
 exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '812'
 ht-degree: 0%
-
 ---
-
 # Évaluation de la prévention du suivi (hérité) - Google Chrome {#tracking-prevention-assessment-google-chrome}
 
 >[!NOTE]
@@ -31,10 +32,10 @@ Vous trouverez ci-dessous une liste de ressources agrégées à partir du site w
 
 * [Étape suivante vers la suppression progressive des cookies tiers dans Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
 * [Documentation destinée aux développeurs pour Privacy Sandbox](https://developers.google.com/privacy-sandbox)
-* [Préparation aux restrictions des cookies tiers](https://developers.google.com/privacy-sandbox/3pcd)
+* [Préparation aux restrictions relatives aux cookies tiers](https://developers.google.com/privacy-sandbox/3pcd)
 * [Se préparer à l’élimination progressive des cookies tiers](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
 * [Préparation à la fin des cookies tiers](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
-* [Les cookies tiers sont restreints par défaut pour 1 % des utilisateurs de Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
+* [Cookies tiers limités par défaut à 1 % des utilisateurs de Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## Chronologie
 

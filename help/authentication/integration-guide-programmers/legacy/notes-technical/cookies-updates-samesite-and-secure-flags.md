@@ -2,13 +2,14 @@
 title: Mises à jour des cookies - Indicateurs SameSite et Secure
 description: Mises à jour des cookies - Indicateurs SameSite et Secure
 exl-id: cc1f60fd-fa64-48cb-a185-dba562a54c33
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '973'
 ht-degree: 0%
-
 ---
-
 # Mises à jour des cookies (hérités) - Indicateurs SameSite et Secure {#cookies-updates---samesite-and-secure-flags}
 
 >[!NOTE]
@@ -58,13 +59,13 @@ Lorsque vous parcourez cette section, gardez à l’esprit que tous les cookies 
 1. Il est important de noter que les cookies dotés de l’attribut *Secure* doivent être envoyés via *HTTPS*, sinon le cookie n’atteindra pas le service d’authentification Adobe Pass.
 
    - SDK JavaScript AccessEnabler :
-      - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour les versions *2.35* et *3.5.0*, avant d’introduire l’enregistrement client dynamique.
+     - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour les versions *2.35* et *3.5.0*, avant d’introduire l’enregistrement client dynamique.
    - SDK AccessEnabler iOS/tvOS :
-      - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour les versions antérieures à *3.0.0*, avant d’introduire l’enregistrement client dynamique.
+     - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour les versions antérieures à *3.0.0*, avant d’introduire l’enregistrement client dynamique.
    - AccessEnabler Android SDK :
-      - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour les versions antérieures à *3.0.0*, avant d’introduire l’enregistrement client dynamique.
+     - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour les versions antérieures à *3.0.0*, avant d’introduire l’enregistrement client dynamique.
    - SDK FireOS AccessEnabler :
-      - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour la version *2.0.4*.
+     - Obligatoire pour que la communication avec *sp.auth.adobe.com* utilise *HTTPS* pour la version *2.0.4*.
 
 </br>
 

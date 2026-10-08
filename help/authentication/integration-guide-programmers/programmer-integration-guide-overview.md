@@ -2,13 +2,14 @@
 title: Guide d’intégration du programmeur
 description: Guide d’intégration du programmeur
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2152'
 ht-degree: 0%
-
 ---
-
 # Guide d’intégration du programmeur {#programmer-integration-guide}
 
 >[!IMPORTANT]
@@ -43,15 +44,15 @@ L’authentification Adobe Pass agit comme un proxy et facilite le flux de droit
 Pour les programmeurs, l’authentification Adobe Pass fournit des API dans le cadre d’un niveau **Standard** ou **Premium** :
 
 * API d’authentification Adobe Pass standard :
-   * [DCR DE L’API REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [DCR DE L’API REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API d’authentification Premium Adobe Pass :
-   * [Réinitialiser l’API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API de surveillance du service de droit](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Réinitialiser l’API Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [Fonction TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [API de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [Fonctionnalité de dégradation](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [API de surveillance du service de droit](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Cas d’utilisation {#use-cases}
 
@@ -73,22 +74,22 @@ Cette section décrit plus en détail les cas d’utilisation de l’intégratio
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Authentification** | **Élevé** | Authentification | Pour plus d’informations, reportez-vous aux documents agrégés dans la section [Phase d’authentification](#authentication-phase). |
 |                      | **Élevé** | Authentification à domicile (HBA) | Pour plus d’informations, reportez-vous à la section [Authentification basée sur l’accueil](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md). |
-|                      | **Élevé** | Authentification unique (SSO) | Pour plus d&#39;informations, reportez-vous aux documents agrégés sous la section [&#x200B; Authentification unique (SSO)](#sso). |
+|                      | **Élevé** | Authentification unique (SSO) | Pour plus d&#39;informations, reportez-vous aux documents agrégés sous la section [ Authentification unique (SSO)](#sso). |
 |                      | **Élevé** | Sélectionner le MVPD | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de configuration](#configuration-phase). |
-|                      | **&#x200B;**&#x200B;| Page de connexion à Brand MVPD | Permet aux MVPD de fournir aux pages de connexion des marques spécifiques au programmeur ou au fournisseur de services, y compris la prise en charge des préférences linguistiques par défaut. |
+|                      | **** | Page de connexion à Brand MVPD | Permet aux MVPD de fournir aux pages de connexion des marques spécifiques au programmeur ou au fournisseur de services, y compris la prise en charge des préférences linguistiques par défaut. |
 |                      | **Élevé** | Configurer les valeurs de durée de vie (TTL) par plateforme | Pour plus d’informations, consultez le [Guide de l’utilisateur des intégrations de tableaux de bord TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows). |
 | **Préautorisation** | **Faible** | Autorisation préalable (autorisation de contrôle en amont) | Pour plus d’informations, reportez-vous aux documents agrégés dans la section [Phase de préautorisation](#preauthorization-phase). |
-|                      | **&#x200B;**&#x200B;| Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
+|                      | **** | Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
 | **Autorisation** | **Élevé** | Autorisation | Pour plus d’informations, reportez-vous aux documents agrégés dans la section [Phase d’autorisation](#authorization-phase). |
 |                      | **Élevé** | Autorisation de canal distinct | Permet aux utilisateurs d’accéder au contenu de plusieurs réseaux à travers une seule application TVE. Les programmeurs peuvent effectuer des appels d’autorisation spécifiques au canal pour vérifier les droits. |
 |                      | **Faible** | Autorisation au niveau des ressources | Permet aux MVPD de collecter des analyses détaillées pour des ressources de contenu individuelles pendant l’autorisation. |
-|                      | **&#x200B;**&#x200B;| Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
+|                      | **** | Codes d’erreur améliorés | Pour plus d’informations, consultez la section [Codes d’erreur améliorés](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md). |
 |                      | **Élevé** | Programmer Federated Player - Avec Autorisation Au Niveau De La Page | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
-|                      | **&#x200B;**&#x200B;| Programmer Federated Player - Avec Autorisation Interne Du Lecteur | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
+|                      | **** | Programmer Federated Player - Avec Autorisation Interne Du Lecteur | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
 |                      | **Élevé** | Lecteur syndiqué : hébergé sur le portail MVPD avec une autorisation au niveau de la page | Pour plus d’informations, reportez-vous à la section [Jetons de média](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md). |
 |                      | **Faible** | Contrôle parental - Notation du contenu dans les demandes d’autorisation | Permet au programmeur d’inclure des évaluations de contenu dans le cadre de la demande d’autorisation au MVPD qui sont utiles pour l’autorisation au niveau des ressources. |
 |                      | **Faible** | Contrôle parental - Filtrage du contenu en fonction des attributs de l’utilisateur | Permet au programmeur de vérifier la note maximale autorisée pour un utilisateur et de filtrer le contenu disponible en conséquence. |
-| **Déconnexion** | **&#x200B;**&#x200B;| Déconnexion | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de déconnexion](#logout-phase). |
+| **Déconnexion** | **** | Déconnexion | Pour plus d’informations, reportez-vous aux documents agrégés sous la section [Phase de déconnexion](#logout-phase). |
 
 ## Flux de droits {#entitlement-flow}
 

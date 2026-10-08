@@ -2,13 +2,14 @@
 title: Notes De Mise À Jour De L’Authentification Adobe Pass 2.65.1
 description: Notes De Mise À Jour De L’Authentification Adobe Pass 2.65.1
 exl-id: 28d112db-b038-4d11-93c5-d6ab67a29700
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '178'
+source-wordcount: '179'
 ht-degree: 0%
-
 ---
-
 # Notes De Mise À Jour De L’Authentification Adobe Pass 2.65.1 {#authn-2651-rn}
 
 >[!IMPORTANT]

@@ -2,13 +2,14 @@
 title: Glossaire de Dynamic Client Registration (DCR)
 description: Glossaire de Dynamic Client Registration (DCR)
 exl-id: 4ce67fa5-b0e5-4967-b83d-c682426d9329
-source-git-commit: ae02f53afc58b7d31f57bcc1e4dd1328f12abc3e
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '299'
+source-wordcount: '307'
 ht-degree: 0%
-
 ---
-
 # Glossaire de Dynamic Client Registration (DCR) {#rest-api-dcr-glossary}
 
 >[!IMPORTANT]
@@ -47,7 +48,7 @@ L’enregistrement client dynamique (DCR) est un mécanisme d’autorisation dé
 
 Le DCR est fourni à un [programmeur](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer) en tant que service d’authentification Adobe Pass pouvant autoriser l’accès aux API protégées.
 
-Pour plus d’informations, consultez la documentation [&#x200B; Présentation de l’enregistrement client dynamique &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Pour plus d’informations, consultez la documentation [ Présentation de l’enregistrement client dynamique ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ### R {#r}
 

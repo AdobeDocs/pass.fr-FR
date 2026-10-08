@@ -2,13 +2,14 @@
 title: FAQ sur les procédures d’assistance
 description: FAQ sur les procédures d’assistance
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '790'
 ht-degree: 0%
-
 ---
-
 # FAQ sur les procédures d’assistance {#support-procedures-faqs}
 
 >[!IMPORTANT]
@@ -51,7 +52,7 @@ Un incident de niveau de gravité 1 peut être déclenché par Adobe ou par un p
 
 1. Le partenaire identifie un incident de niveau de gravité 1 nécessitant une attention immédiate d&#39;Adobe.
 
-1. Le partenaire envoie un e-mail à **tve-support@adobe.com** en incluant **URGENT - INCIDENT** dans l’objet et en ajoutant les informations suivantes :
+1. Le partenaire envoie un e-mail à **** en incluant **URGENT - INCIDENT** dans l’objet et en ajoutant les informations suivantes :
    * Titre
    * Description et étapes à reproduire
    * Système d’exploitation/navigateur
@@ -67,7 +68,7 @@ Un incident de niveau de gravité 1 peut être déclenché par Adobe ou par un p
 >
 > Si vous n&#39;incluez pas « URGENT-INCIDENT » dans le titre du billet, il ne sera pas repris par notre système de notification.
 
-**flux initié par Adobe**
+**flux initié par**
 
 Pour un problème d’authentification Adobe Pass :
 
@@ -93,6 +94,6 @@ Certaines situations avec des actions par défaut qui seront effectuées si le s
 
 |    | Scénario | Description | Actions |
 |----|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| S1 | Adobe identifie un problème lié à une intégration de MVPD lors des opérations de production normales. | Lors des opérations normales de production, Adobe identifie un problème avec l’un des MVPD qui rend impossible l’exécution des flux d’authentification/autorisation (par exemple, certificats expirés, réponses SAML expirées, ports fermés, paramètres modifiés, etc.) | Adobe avertira les MVPD et les programmeurs concernés.  </br></br> Adobe désactivera ce MVPD pour tous les programmeurs concernés. </br></br> Adobe ouvrira un ticket auprès du MVPD selon la procédure d’assistance convenue avec ce MVPD |
-| S2 | Adobe active un nouveau MVPD pour un programmeur et le programmeur autorise le MVPD avant la date de lancement. | Adobe active un nouveau MVPD pour le site d’un programmeur et le site affiche déjà le nouveau MVPD dans le sélecteur, même s’il n’était pas censé le faire. | Adobe avertira le programmeur du nouveau MVPD apparaissant dans le sélecteur avant la date planifiée. </br></br> programmeur prendra des mesures pour le supprimer du sélecteur si nécessaire. |
+| S1 | Adobe identifie un problème lié à une intégration de MVPD lors des opérations de production normales. | Lors des opérations normales de production, Adobe identifie un problème avec l’un des MVPD qui rend impossible l’exécution des flux d’authentification/autorisation (par exemple, certificats expirés, réponses SAML expirées, ports fermés, paramètres modifiés, etc.) | Adobe avertira les MVPD et les programmeurs concernés.  </br></br> Adobe désactivera ce MVPD pour tous les programmeurs concernés. </br></br> Adobe ouvrira un ticket auprès du MVPD en suivant la procédure d’assistance convenue avec ce MVPD |
+| S2 | Adobe active un nouveau MVPD pour un programmeur et le programmeur autorise le MVPD avant la date de lancement. | Adobe active un nouveau MVPD pour le site d’un programmeur et le site affiche déjà le nouveau MVPD dans le sélecteur, même s’il n’était pas censé le faire. | Adobe avertira le programmeur du nouveau MVPD apparaissant dans le sélecteur avant la date planifiée. </br></br>  Le programmeur prendra des mesures pour le supprimer du sélecteur si nécessaire. |
 | S3 | Adobe active un nouveau MVPD pour un programmeur même si le MVPD n’est pas prêt pour la production | Adobe active un nouveau MVPD pour un programmeur, mais le MVPD n’a pas encore déployé la prise en charge de l’intégration, de sorte que les flux d’authentification/autorisation ne peuvent pas être effectués | Adobe effectue le déploiement uniquement si le programmeur le demande. </br></br> Le programmeur est chargé de s’assurer que l’autorisation du MVPD est obtenue une fois tous les tests effectués. |

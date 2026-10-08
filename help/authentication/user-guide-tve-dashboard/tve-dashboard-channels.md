@@ -2,13 +2,14 @@
 title: Canaux
 description: Découvrez les canaux et leurs différentes configurations dans le tableau de bord TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1641'
 ht-degree: 0%
-
 ---
-
 # Canaux {#channels}
 
 >[!NOTE]
@@ -88,9 +89,9 @@ Une nouvelle modification de configuration a été créée et est prête pour la
 
 ### Intégrations {#integrations}
 
-Cet onglet affiche la liste des intégrations disponibles entre le canal actuellement sélectionné et les MVPD. La liste présente chaque intégration avec son statut, en indiquant si elle est activée ou non. Sélectionnez une intégration spécifique dans cette liste pour accéder à des informations détaillées dans la section [&#x200B; Intégrations &#x200B;](tve-dashboard-integrations.md).
+Cet onglet affiche la liste des intégrations disponibles entre le canal actuellement sélectionné et les MVPD. La liste présente chaque intégration avec son statut, en indiquant si elle est activée ou non. Sélectionnez une intégration spécifique dans cette liste pour accéder à des informations détaillées dans la section [ Intégrations ](tve-dashboard-integrations.md).
 
-![&#x200B; Liste des intégrations disponibles &#x200B;](../assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
+![ Liste des intégrations disponibles ](../assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
 
 *Liste des intégrations disponibles*
 
@@ -322,7 +323,7 @@ Le schéma personnalisé peut être utilisé dans le fichier `info.plist` de vot
 
 Les sociétés de médias définissent ces schémas personnalisés à leur propre niveau. Tous les canaux associés à la même société de médias peuvent utiliser ces schémas personnalisés.
 
-![&#x200B; Schémas personnalisés hérités &#x200B;](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+![ Schémas personnalisés hérités ](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
 
 *Schémas personnalisés hérités*
 

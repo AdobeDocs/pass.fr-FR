@@ -2,13 +2,14 @@
 title: Glossaire
 description: Glossaire des termes dans la surveillance de simultanéité
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '766'
 ht-degree: 0%
-
 ---
-
 # Glossaire {#glossary}
 
 ## ID de compte {#accid-defn}
@@ -66,8 +67,8 @@ ht-degree: 0%
 ## Point d’information sur les politiques (PIP) {#policy-info-pt-defn}
 
 * Source de valeurs d’attribut. La surveillance de la simultanéité sert de point d’information en fournissant les éléments suivants :
-   * métadonnées de flux de transmission.
-   * mesures d’activité concernant les flux simultanés.
+  * métadonnées de flux de transmission.
+  * mesures d’activité concernant les flux simultanés.
 
 ## Programmeur {#programmer-defn}
 
@@ -94,7 +95,7 @@ ht-degree: 0%
 
 ## Objet {#subj-defn}
 
-* Consommateur du contenu (vidéo) sur Internet. Nous évitons délibérément le terme _&#x200B;**utilisateur**&#x200B;_, car la surveillance de simultanéité traite généralement des ID de compte MVPD (qui impliquent plusieurs utilisateurs réels partageant le même contrat, par exemple des membres de la famille d’un foyer).
+* Consommateur du contenu (vidéo) sur Internet. Nous évitons délibérément le terme _**utilisateur**_, car la surveillance de simultanéité traite généralement des ID de compte MVPD (qui impliquent plusieurs utilisateurs réels partageant le même contrat, par exemple des membres de la famille d’un foyer).
 
 * Pour chaque flux, le sujet peut être amélioré avec des attributs liés à la personne réelle utilisant le service, à son appareil connecté au réseau, etc.
 

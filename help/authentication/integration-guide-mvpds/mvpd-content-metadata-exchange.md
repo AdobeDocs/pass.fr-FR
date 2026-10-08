@@ -2,13 +2,14 @@
 title: Échange de métadonnées de contenu MVPD
 description: Échange de métadonnées de contenu MVPD
 exl-id: d17e60dc-6c61-4ca2-bad8-1840c95261e0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '413'
 ht-degree: 0%
-
 ---
-
 # Échange de métadonnées de contenu MVPD
 
 >[!NOTE]

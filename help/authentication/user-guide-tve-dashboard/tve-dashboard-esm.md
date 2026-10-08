@@ -2,13 +2,14 @@
 title: Tableau de bord ESM
 description: Découvrez comment utiliser le tableau de bord ESM pour surveiller les données de droits et d’événements entre les partenaires MVPD.
 exl-id: ac5f289a-c26d-4156-bc56-7968c49c100f
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 1%
-
 ---
-
 # Tableau de bord ESM {#esm-dashboard}
 
 >[!NOTE]
@@ -25,7 +26,7 @@ Le tableau de bord ESM fournit une vue unifiée des données de droits et d’é
 - Comparaison des performances de MVPD
 - Comprendre l’utilisation des clients par application
 
-Vous trouverez plus d’informations sur les données et les événements ESM dans la section [Présentation de la surveillance du service de droit](https://experienceleague.adobe.com/fr/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Vous trouverez plus d’informations sur les données et les événements ESM dans la section [Présentation de la surveillance du service de droit](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Rapports {#reports}
 
@@ -94,7 +95,7 @@ Vous pouvez télécharger les données brutes :
 Utilisez des filtres pour affiner le jeu de données et cibler l’analyse. Les filtres suivants sont disponibles :
 
 - **Canal** : inclut tous les canaux (marques) disponibles
-- **&#x200B;**&#x200B;: sélection sur un ou plusieurs fournisseurs
+- **** : sélection sur un ou plusieurs fournisseurs
 - **Plateforme** : web, mobile, télévision connectée ou famille d’appareils
 
 Pour ajouter un nouveau filtre, sélectionnez le bouton « Ajouter des filtres ».

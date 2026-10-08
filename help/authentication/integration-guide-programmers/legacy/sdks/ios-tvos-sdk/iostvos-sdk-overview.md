@@ -2,13 +2,14 @@
 title: Présentation d’iOS/tvOS SDK
 description: Présentation d’iOS/tvOS SDK
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3801'
 ht-degree: 0%
-
 ---
-
 # Présentation d’iOS/tvOS SDK (hérité) {#iostvos-sdk-overview}
 
 >[!NOTE]
@@ -187,7 +188,8 @@ Une fois qu’un jeton particulier est placé dans le cache de jetons, sa validi
 
 **Modifications de la table de montage d’iOS 7 -** En raison de modifications dans le fonctionnement des tables de montage sur iOS 7, l’authentification unique (Cross-SSO) entre les applications s’exécutant sur iOS 7 sera limitée. Les applications ayant le même `<Bundle Seed ID>` (également appelées `<Team ID>`) partagent des jetons, ce qui signifie que les applications A1 et A2 du même programmeur X partagent des jetons, tandis que l’application A1 (programmeur X) et l’application A3 (programmeur Y) ne partagent pas de jetons.
 
-- L’ID de contrôle/ID d’équipe de bundle est le même entre 2 applications si elles sont générées par le même profil d’approvisionnement. Pour plus d’informations, cliquez sur ce lien :  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
+- L’ID de contrôle/ID d’équipe de bundle est le même entre 2 applications si elles sont générées par le même profil d’approvisionnement. Pour plus d’informations, cliquez sur ce lien :
+  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
 - Cette limitation « Cross-SSO » sera présente dans iOS 7, quelle que soit la SDK d’authentification Adobe Pass utilisée.
 
 Veuillez lire cette note technique pour plus d’informations sur la configuration de la connexion unique sur iOS 7 et versions ultérieures (la note technique s’applique à Access Enabler version 1.8 et versions ultérieures) : <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>

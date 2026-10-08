@@ -2,13 +2,14 @@
 title: Manuel d’iOS/tvOS
 description: Manuel d’iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2436'
 ht-degree: 0%
-
 ---
-
 # Manuel SDK d’iOS/tvOS (hérité) {#iostvos-sdk-cookbook}
 
 >[!NOTE]
@@ -48,7 +49,7 @@ L’activité réseau d’AccessEnabler a lieu dans son propre thread, de sorte 
 
 ## Configuration du service Experience Cloud ID (identifiant visiteur) {#visitorIDSetup}
 
-La configuration de la valeur [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=fr) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
+La configuration de la valeur [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) est importante du point de vue [!DNL Analytics]. Une fois qu’une valeur de `visitorID` est définie, le SDK envoie ces informations avec chaque appel réseau et le serveur d’authentification [!DNL Adobe Pass] collecte ces informations. Vous pouvez mettre en corrélation les analyses du service d’authentification Adobe Pass avec tout autre rapport d’analyse que vous pouvez avoir à partir d’autres applications ou sites web. Vous trouverez des informations sur la configuration de l’identifiant visiteur [ici](#setOptions).
 
 ## Flux de droits {#entitlement}
 
@@ -57,9 +58,9 @@ B.  [Flux de démarrage](#startup_flow) </br>
 C.  [Flux d’authentification avec le SSO d’Apple](#authn_flow_wo_applesso)  </br>
 D.  [Flux d’authentification avec l’authentification unique Apple sur iOS](#authn_flow_with_applesso) </br>
 E.  [Flux d’authentification avec SSO Apple sur tvOS](#authn_flow_with_applesso_tvOS) </br>
-F.  [&#x200B; Flux d’autorisation &#x200B;](#authz_flow) </br>
+F.  [ Flux d’autorisation ](#authz_flow) </br>
 G.  [Afficher le flux multimédia](#media_flow) </br>
-H.  [&#x200B; Flux de déconnexion sans SSO Apple &#x200B;](#logout_flow_wo_AppleSSO) </br>
+H.  [ Flux de déconnexion sans SSO Apple ](#logout_flow_wo_AppleSSO) </br>
 I.  [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_with_AppleSSO) </br>
 
 
@@ -130,7 +131,7 @@ I.  [Flux de déconnexion avec l’authentification unique Apple](#logout_flow_w
    a.  Appelez [`init`](#$init) pour créer une instance unique d’Adobe Pass Authentication AccessEnabler.
    * **Dépendance :** Bibliothèque iOS/tvOS native d’authentification Adobe Pass (AccessEnabler)
 
-   b.  Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations[&#128279;](#create_dev) consultez la documentation relative à Clientless .
+   b.  Appelez `setRequestor()` pour établir l’identité du programmeur ; transmettez le `requestorID` du programmeur et (éventuellement) un tableau de points d’entrée d’authentification Adobe Pass. Pour tvOS, vous devrez également fournir la clé publique et le secret. Pour plus d’informations](#create_dev) consultez la [documentation relative à Clientless .
 
    * **Dépendance :** ID de demandeur d’authentification Adobe Pass valide (utilisez votre compte d’authentification Adobe Pass)
      Manager pour organiser cela).

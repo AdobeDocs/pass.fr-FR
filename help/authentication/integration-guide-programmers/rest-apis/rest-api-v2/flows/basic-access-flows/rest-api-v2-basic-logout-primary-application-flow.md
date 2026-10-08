@@ -2,13 +2,14 @@
 title: Déconnexion de base - Application en Principal - Flux
 description: API REST V2 - Déconnexion de base - Application en Principal - Flux
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
-
 ---
-
 # Flux de déconnexion de base effectué dans l’application principale {#basic-logout-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -36,9 +37,9 @@ Le flux de déconnexion de base vous permet de rechercher les scénarios suivant
 Avant de lancer la déconnexion pour un MVPD spécifique avec un point d’entrée de déconnexion, assurez-vous que les conditions préalables suivantes sont remplies :
 
 * L’application de diffusion en continu doit avoir un profil standard valide qui a été créé avec succès pour le MVPD à l’aide de l’un des flux d’authentification de base :
-   * [Authentification dans l’application principale](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Authentification dans l’application secondaire avec mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentification dans l’application principale](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Authentification dans l’application secondaire avec mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * L’application de diffusion en continu doit lancer le flux de déconnexion lorsqu’elle doit se déconnecter du MVPD.
 
 >[!IMPORTANT]
@@ -102,9 +103,9 @@ Suivez les étapes données pour implémenter le flux de déconnexion de base po
 Avant de lancer la déconnexion pour un MVPD spécifique sans point d’entrée de déconnexion, assurez-vous que les conditions préalables suivantes sont remplies :
 
 * L’application de diffusion en continu doit avoir un profil standard valide qui a été créé avec succès pour le MVPD à l’aide de l’un des flux d’authentification de base :
-   * [Authentification dans l’application principale](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Authentification dans l’application secondaire avec mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentification dans l’application principale](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Authentification dans l’application secondaire avec mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Effectuer l’authentification dans l’application secondaire sans mvpd présélectionné](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * L’application de diffusion en continu doit lancer le flux de déconnexion lorsqu’elle doit se déconnecter du MVPD.
 
 >[!IMPORTANT]

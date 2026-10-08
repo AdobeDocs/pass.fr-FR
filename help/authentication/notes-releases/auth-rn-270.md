@@ -2,13 +2,14 @@
 title: Notes de mise à jour de l’authentification Adobe Pass 2.70
 description: Notes de mise à jour de l’authentification Adobe Pass 2.70
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '141'
 ht-degree: 0%
-
 ---
-
 # Notes de mise à jour de l’authentification Adobe Pass 2.70 {#authn-270-rn}
 
 >[!IMPORTANT]
@@ -34,11 +35,11 @@ Date de publication : **04/23/2024 - 04/25/2024**
 
 * Correctifs de vulnérabilités de sécurité.
 * Améliorations apportées au service d’API de dégradation.
-   * Utilisez le DCR comme mécanisme de sécurité pour l’API de dégradation.
-   * Vous trouverez plus d’informations ici : [Fonctionnalité de dégradation](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * Utilisez le DCR comme mécanisme de sécurité pour l’API de dégradation.
+  * Vous trouverez plus d’informations ici : [Fonctionnalité de dégradation](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
 
 #### API REST
 
 * Développement en cours des nouvelles API REST.
-   * Une prochaine version dédiée introduira de nouveaux points d’entrée et flux, qui seront annoncés dans une notification distincte.
-   * Mise à jour de la documentation pour l’utilisation de ces nouvelles API en cours.
+  * Une prochaine version dédiée introduira de nouveaux points d’entrée et flux, qui seront annoncés dans une notification distincte.
+  * Mise à jour de la documentation pour l’utilisation de ces nouvelles API en cours.

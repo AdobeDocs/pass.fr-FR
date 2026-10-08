@@ -2,13 +2,14 @@
 title: Authentification Unique - Identité De La Plateforme - Flux
 description: API REST V2 - Authentification unique - Identité de plateforme - Flux
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1944'
 ht-degree: 0%
-
 ---
-
 # Authentification unique à l’aide des flux d’identité de plateforme {#single-sign-on-platform-identity-full-flows}
 
 >[!IMPORTANT]
@@ -33,7 +34,7 @@ Pour plus d’informations sur l’en-tête `Adobe-Subject-Token` / `X-Roku-Rese
 
 >[!MORELIKETHIS]
 > 
-> * [Manuel de l’authentification unique &#x200B;](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Manuel de l’authentification unique ](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 > * [Guide pas à pas Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Authentification par authentification unique à l’aide de l’identité de la plateforme {#perform-authentication-through-single-sign-on-using-platform-identity}

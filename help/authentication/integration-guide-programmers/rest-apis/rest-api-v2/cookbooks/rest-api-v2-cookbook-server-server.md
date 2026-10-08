@@ -2,13 +2,14 @@
 title: Guide pas à pas API REST V2 (serveur à serveur)
 description: Guide pas à pas API REST V2 (serveur à serveur)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2524'
 ht-degree: 0%
-
 ---
-
 # Guide pas à pas API REST V2 (serveur à serveur) {#rest-api-v2-cookbook-server-to-server}
 
 >[!IMPORTANT]
@@ -19,7 +20,7 @@ ht-degree: 0%
 >
 > L’implémentation de l’API REST V2 est limitée par la documentation [Mécanisme de limitation](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)  dans leurs applications de streaming avec une architecture de serveur à serveur (S2S).
+Ce document est destiné aux développeurs qui intègrent l’API REST d’authentification Adobe Pass V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) [ dans leurs applications de streaming avec une architecture de serveur à serveur (S2S).
 
 ## Conditions préalables {#prerequisites}
 
@@ -75,11 +76,11 @@ L’environnement de production doit être hautement disponible et mis à l’é
 
 * Le service Adobe Pass fonctionne sur plusieurs centres de données géographiquement dispersés aux États-Unis afin d’optimiser les performances et de minimiser la latence.
 
-   * Le service de programmation doit adopter une stratégie d’infrastructure similaire, afin d’assurer des temps de réponse de faible latence de la part d’Adobe Pass.
+  * Le service de programmation doit adopter une stratégie d’infrastructure similaire, afin d’assurer des temps de réponse de faible latence de la part d’Adobe Pass.
 
 * Le programmeur doit fournir la plage d’adresses IP publique de son environnement de production.
 
-   * Ces adresses IP seront ajoutées à une liste autorisée dans l’infrastructure Adobe Pass.
+  * Ces adresses IP seront ajoutées à une liste autorisée dans l’infrastructure Adobe Pass.
 
 * Le service de programmation doit limiter la mise en cache DNS à un maximum de 30 secondes afin de permettre un réacheminement dynamique au cas où Adobe devrait rediriger le trafic en raison de l’indisponibilité d’un centre de données.
 
@@ -93,9 +94,9 @@ L’environnement d’évaluation peut être minimal mais doit refléter la prod
 
 * Idéalement, l’environnement d’évaluation doit être connecté aux environnements de test Adobe Pass afin de :
 
-   * Permet aux programmeurs de tester l’infrastructure d’Adobe.
+  * Permet aux programmeurs de tester l’infrastructure d’Adobe.
 
-   * Activez Adobe pour faciliter les tests et le dépannage si nécessaire.
+  * Activez Adobe pour faciliter les tests et le dépannage si nécessaire.
 
 ## Workflow {#workflow}
 
@@ -134,12 +135,12 @@ Questions fréquentes :
 
 * Récupérer les informations d’identification du client : le service de programmation récupère les informations d’identification du client en appelant le point d’entrée [**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-   * Le service de programmation ou l’application de programmation doivent stocker les informations d’identification du client et les utiliser indéfiniment lorsqu’ils doivent récupérer un jeton d’accès.
+  * Le service de programmation ou l’application de programmation doivent stocker les informations d’identification du client et les utiliser indéfiniment lorsqu’ils doivent récupérer un jeton d’accès.
 
 
 * Récupérer le jeton d’accès : le service de programmation récupère le jeton d’accès en appelant le point d’entrée [**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
-   * Le service ou l’application de programmation doit stocker et utiliser le jeton d’accès jusqu’à son expiration, puis le supprimer et en obtenir un nouveau.
+  * Le service ou l’application de programmation doit stocker et utiliser le jeton d’accès jusqu’à son expiration, puis le supprimer et en obtenir un nouveau.
 
 ## B. Phase d’authentification {#authentication-phase}
 
@@ -185,54 +186,54 @@ Questions fréquentes
 
 * **Scénario 3 :** il n’existe aucun profil, le service de programmation peut procéder à la fourniture d’un accès temporaire à l’utilisateur par le biais de la fonctionnalité [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) consultez la documentation  Flux d’accès temporaires .
+  * Ce scénario n’entre pas dans le cadre de ce document. Pour plus d’informations](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) consultez la documentation [ Flux d’accès temporaires .
 
 ### Étape 3 : Authentifier l’utilisateur {#step-3-authenticate-the-user}
 
 * **Récupérer la configuration :** le service de programmation récupère la liste des MVPD disponibles en appelant le point d’entrée [**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-   * Le service de programmation peut mettre en œuvre un mécanisme de filtrage personnalisé pour affiner la liste des MVPD à partir de la réponse de configuration, de sorte que l’application de diffusion en continu affiche uniquement les fournisseurs prévus tout en masquant les autres (par exemple, les MVPD en cours de développement, les MVPD de test, TempPass). Cela permet de s’assurer que les utilisateurs disposent d’une sélection organisée lors du choix de leur fournisseur de télévision.
+  * Le service de programmation peut mettre en œuvre un mécanisme de filtrage personnalisé pour affiner la liste des MVPD à partir de la réponse de configuration, de sorte que l’application de diffusion en continu affiche uniquement les fournisseurs prévus tout en masquant les autres (par exemple, les MVPD en cours de développement, les MVPD de test, TempPass). Cela permet de s’assurer que les utilisateurs disposent d’une sélection organisée lors du choix de leur fournisseur de télévision.
 
 
 * **Créer une session d’authentification :** le service de programmation lance une session d’authentification en appelant le point d’entrée [**/api/v2/{serviceProvider}/sessions**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-   * Le service de programmation doit renvoyer les `code` et les `url` à l’application de diffusion en continu.
+  * Le service de programmation doit renvoyer les `code` et les `url` à l’application de diffusion en continu.
 
 
 * **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` d’authentification.
 
-   * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
+  * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
 
 
 * **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Elle doit donc afficher le `code` d’authentification. Une application web distincte est nécessaire pour inviter l’utilisateur à saisir le `code`, à créer le `url` d’authentification et à l’ouvrir : [**/api/v2/authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
-   * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
+  * L’utilisateur envoie son nom d’utilisateur et son mot de passe dans la page de connexion de MVPD. Une fois l’authentification réussie, la redirection finale affiche une page de réussite.
 
 ### Étape 4 : rechercher des profils authentifiés {#step-4-check-for-authenticated-profiles}
 
 * **Récupérer le profil pour un code spécifique :** le service de programmation doit implémenter un mécanisme d’interrogation à l’aide de l’`code` pour vérifier si le profil a été généré et enregistré avec succès en appelant le point d’entrée [**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md).
 
-   * Le service de programmation doit **démarrer le mécanisme d’interrogation** dans les conditions suivantes :
+  * Le service de programmation doit **démarrer le mécanisme d’interrogation** dans les conditions suivantes :
 
-      * **Authentification effectuée dans l’application principale (écran) :** le service de programmation doit lancer l’interrogation lorsque l’utilisateur atteint la page de destination finale, une fois que le composant de navigateur charge l’URL spécifiée pour le paramètre `redirectUrl` dans la requête de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+    * **Authentification effectuée dans l’application principale (écran) :** le service de programmation doit lancer l’interrogation lorsque l’utilisateur atteint la page de destination finale, une fois que le composant de navigateur charge l’URL spécifiée pour le paramètre `redirectUrl` dans la requête de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-      * **Authentification effectuée dans une application secondaire (écran) :** l’application du service de programmation doit lancer l’interrogation dès que l’utilisateur lance le processus d’authentification, juste après avoir reçu la réponse du point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) et affiché le code d’authentification à l’utilisateur.
+    * **Authentification effectuée dans une application secondaire (écran) :** l’application du service de programmation doit lancer l’interrogation dès que l’utilisateur lance le processus d’authentification, juste après avoir reçu la réponse du point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) et affiché le code d’authentification à l’utilisateur.
 
-   * Le service de programmation doit **arrêter le mécanisme d’interrogation** dans les conditions suivantes :
+  * Le service de programmation doit **arrêter le mécanisme d’interrogation** dans les conditions suivantes :
 
-      * **Authentification réussie :** les informations de profil de l’utilisateur sont récupérées avec succès, confirmant leur statut d’authentification. À ce stade, l’interrogation n’est plus nécessaire.
+    * **Authentification réussie :** les informations de profil de l’utilisateur sont récupérées avec succès, confirmant leur statut d’authentification. À ce stade, l’interrogation n’est plus nécessaire.
 
-      * **Session d’authentification et expiration du code :** la session d’authentification et le code expirent, comme indiqué par la date et l’heure `notAfter` (par exemple, 30 minutes) dans la réponse de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Si cela se produit, l’utilisateur ou l’utilisatrice doit redémarrer le processus d’authentification et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
+    * **Session d’authentification et expiration du code :** la session d’authentification et le code expirent, comme indiqué par la date et l’heure `notAfter` (par exemple, 30 minutes) dans la réponse de point d’entrée [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). Si cela se produit, l’utilisateur ou l’utilisatrice doit redémarrer le processus d’authentification et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
 
-      * **Nouveau code d’authentification généré :** si l’utilisateur demande un nouveau code d’authentification sur l’appareil principal (écran), la session existante n’est plus valide et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
+    * **Nouveau code d’authentification généré :** si l’utilisateur demande un nouveau code d’authentification sur l’appareil principal (écran), la session existante n’est plus valide et l’interrogation à l’aide du code d’authentification précédent doit être arrêtée immédiatement.
 
-   * Le service de programmation doit **configurer la fréquence du mécanisme d’interrogation** dans les conditions suivantes :
+  * Le service de programmation doit **configurer la fréquence du mécanisme d’interrogation** dans les conditions suivantes :
 
-      * **Authentification effectuée dans l’application principale (écran) :** le service de programmation doit effectuer une interrogation toutes les 3 à 5 secondes ou plus.
+    * **Authentification effectuée dans l’application principale (écran) :** le service de programmation doit effectuer une interrogation toutes les 3 à 5 secondes ou plus.
 
-      * **Authentification effectuée dans une application secondaire (écran) :** le service de programmation doit interroger toutes les 3 à 5 secondes ou plus.
+    * **Authentification effectuée dans une application secondaire (écran) :** le service de programmation doit interroger toutes les 3 à 5 secondes ou plus.
 
-   * Le service de programmation doit mettre en cache certaines parties des informations de profil de l’utilisateur dans un stockage persistant afin d’éviter les requêtes inutiles et d’améliorer l’expérience de l’utilisateur.
+  * Le service de programmation doit mettre en cache certaines parties des informations de profil de l’utilisateur dans un stockage persistant afin d’éviter les requêtes inutiles et d’améliorer l’expérience de l’utilisateur.
 
 ## C. (Facultatif) Phase De Préautorisation {#preauthorization-phase}
 
@@ -262,13 +263,13 @@ Questions fréquentes
 
 * **Récupérer les décisions de préautorisation :** le service de programmation récupère les décisions de préautorisation pour une liste de ressources en appelant le point d’entrée [**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md).
 
-   * Le service de programmation doit transmettre la liste des décisions d’autorisation et de refus de préautorisation à l’application de diffusion en continu.
+  * Le service de programmation doit transmettre la liste des décisions d’autorisation et de refus de préautorisation à l’application de diffusion en continu.
 
-   * Le service de programmation n’est pas nécessaire pour stocker les décisions de préautorisation dans un stockage persistant. Cependant, il est recommandé de mettre en cache les décisions d’autorisation en mémoire pour améliorer l’expérience de l’utilisateur. Cela permet d’éviter les appels inutiles de ressources déjà préautorisées, ce qui réduit la latence et améliore les performances.
+  * Le service de programmation n’est pas nécessaire pour stocker les décisions de préautorisation dans un stockage persistant. Cependant, il est recommandé de mettre en cache les décisions d’autorisation en mémoire pour améliorer l’expérience de l’utilisateur. Cela permet d’éviter les appels inutiles de ressources déjà préautorisées, ce qui réduit la latence et améliore les performances.
 
-   * Le service de programmation peut déterminer la raison d’un refus de décision de préautorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+  * Le service de programmation peut déterminer la raison d’un refus de décision de préautorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée de préautorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande de préautorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions de préautorisation ne génère pas de boucle sans fin si la décision de préautorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
 
-   * Le service de programmation peut obtenir une décision de préautorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 5, en raison des conditions imposées par les MVPD. Ce nombre maximal de ressources peut être consulté et modifié après accord avec les MVPD via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre entreprise ou par un représentant Adobe Pass Authentication agissant en votre nom.
+  * Le service de programmation peut obtenir une décision de préautorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 5, en raison des conditions imposées par les MVPD. Ce nombre maximal de ressources peut être consulté et modifié après accord avec les MVPD via le tableau de bord Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) par l’un des administrateurs de votre entreprise ou par un représentant Adobe Pass Authentication agissant en votre nom.
 
 ## D. Phase d’autorisation {#authorization-phase}
 
@@ -296,15 +297,15 @@ Questions fréquentes
 
 * **Récupérer la décision d’autorisation :** le service de programmation récupère la décision d’autorisation pour une ressource spécifique transmise par l’application de diffusion en continu en appelant le point d’entrée [**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md).
 
-   * Le service de programmation n’est pas nécessaire pour stocker les décisions d’autorisation dans un stockage persistant.
+  * Le service de programmation n’est pas nécessaire pour stocker les décisions d’autorisation dans un stockage persistant.
 
-   * Le service de programmation peut déterminer la raison d’un refus d’autorisation en examinant le [&#x200B; code d’erreur et le message &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée d’autorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application de diffusion en continu. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
+  * Le service de programmation peut déterminer la raison d’un refus d’autorisation en examinant le [ code d’erreur et le message ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclus dans la réponse à partir du point d’entrée d’autorisation des décisions . Ces détails fournissent à insight la raison spécifique pour laquelle la demande d’autorisation a été refusée, ce qui permet d’informer l’expérience utilisateur ou de déclencher toute gestion nécessaire dans l’application de diffusion en continu. Assurez-vous que tout mécanisme de reprise implémenté pour récupérer les décisions d’autorisation ne génère pas de boucle sans fin si la décision d’autorisation est refusée. Envisagez de limiter les reprises à un nombre raisonnable et de gérer les refus de manière élégante en présentant des commentaires clairs à l’utilisateur.
 
-   * Le service de programmation peut évaluer d&#39;autres règles métier et renvoyer une décision d&#39;autorisation appropriée à l&#39;application de streaming.
+  * Le service de programmation peut évaluer d&#39;autres règles métier et renvoyer une décision d&#39;autorisation appropriée à l&#39;application de streaming.
 
-   * Le service de programmation n’est pas nécessaire pour actualiser un jeton de média expiré pendant que le flux est en cours de lecture. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire une ressource.
+  * Le service de programmation n’est pas nécessaire pour actualiser un jeton de média expiré pendant que le flux est en cours de lecture. Si le jeton de média expire pendant la lecture, le flux doit pouvoir continuer sans interruption. Cependant, le client doit demander une nouvelle décision d’autorisation et obtenir un nouveau jeton de média la prochaine fois que l’utilisateur tente de lire une ressource.
 
-   * Le service de programmation peut obtenir une décision d’autorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 1, en raison des conditions imposées par les MVPD.
+  * Le service de programmation peut obtenir une décision d’autorisation pour un nombre limité de ressources dans une seule requête API, généralement jusqu’à 1, en raison des conditions imposées par les MVPD.
 
 ## E. Phase de déconnexion {#logout-phase}
 
@@ -332,12 +333,12 @@ Questions fréquentes
 
 * Lancer la déconnexion d’Adobe Pass : le service de programmation lance le flux de déconnexion comme demandé par l’application de diffusion en continu en appelant le point d’entrée [/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md).
 
-   * Le service de programmation peut nettoyer toutes les informations qu’il stocke sur l’utilisateur authentifié.
+  * Le service de programmation peut nettoyer toutes les informations qu’il stocke sur l’utilisateur authentifié.
 
-   * Le service de programmation doit suivre les instructions fournies dans les attributs `actionName` et `actionType` de la réponse de point d’entrée de déconnexion pour s’assurer que le processus de déconnexion est correctement terminé.
+  * Le service de programmation doit suivre les instructions fournies dans les attributs `actionName` et `actionType` de la réponse de point d’entrée de déconnexion pour s’assurer que le processus de déconnexion est correctement terminé.
 
-      * Si l’attribut `actionType` dans la réponse est défini sur « interactif », le service de programmation doit renvoyer la valeur de l’attribut `url` à l’application de diffusion en continu.
+    * Si l’attribut `actionType` dans la réponse est défini sur « interactif », le service de programmation doit renvoyer la valeur de l’attribut `url` à l’application de diffusion en continu.
 
-         * **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` de déconnexion.
+      * **Scénario 1 :** l’application de diffusion en continu peut ouvrir un navigateur ou une vue web. Elle doit donc charger le `url` de déconnexion.
 
-         * **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Par conséquent, le processus de déconnexion peut être arrêté, car la session MVPD n’a pas été conservée dans le cache du navigateur d’un appareil de diffusion en continu.
+      * **Scénario 2 :** l’application de diffusion en continu ne peut pas ouvrir de navigateur. Par conséquent, le processus de déconnexion peut être arrêté, car la session MVPD n’a pas été conservée dans le cache du navigateur d’un appareil de diffusion en continu.

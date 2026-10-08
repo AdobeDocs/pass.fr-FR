@@ -2,13 +2,14 @@
 title: Attributs de métadonnées standard
 description: Attributs de métadonnées standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1295'
 ht-degree: 3%
-
 ---
-
 # Attributs de métadonnées standard {#std-metadata-attributes}
 
 Cette page vise à fournir une liste exhaustive des attributs de métadonnées que le service de surveillance simultanée peut traiter et qui peuvent être utilisés comme base pour les politiques qui peuvent être mises en œuvre. Les attributs de métadonnées standard peuvent être classés comme suit :
@@ -41,7 +42,7 @@ Avec [API v2.0](https://streams-stage.adobeprimetime.com/swagger-ui/index.html),
 |                 | assetId | chaîne | Titre « convivial » ou lisible par le consommateur à présenter pour ce contenu | [Référence des champs de données EIDR 2.0](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/EIDR_2_0_Data_Fields.pdf){target=_blank} | Ben-Hur |                                                                                   |
 |                 | type | énumération | Valeur décrivant le type général de contenu représenté par TveItem. Les valeurs énumérées incluent : film broadcastÉpisode nonDiffusionMusique d&#39;épisodePrix vidéoMontrer clip concert conférence newsÉvénement sportifBande-annonce d&#39;événement | [Pratique recommandée pour les flux de métadonnées OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | broadcastEpisode | Le champ doit correspondre à l’un des éléments de l’énumération . |
 |                 | contentType | chaîne | Ce champ détermine si le contenu demandé est en ligne ou VOD. | S/O | live, vod | live ou vod |
-|                 | genre | chaîne | Genre du contenu diffusé en continu. Décrit le type de programmation général | [Flux de métadonnées OATC recommandé &#x200B;](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} pratique | Comédie | Type de genre valide |
+|                 | genre | chaîne | Genre du contenu diffusé en continu. Décrit le type de programmation général | [Flux de métadonnées OATC recommandé ](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} pratique | Comédie | Type de genre valide |
 |                 | durée | nombre | Durée de l’élément média en secondes | [Pratique recommandée pour les flux de métadonnées OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230803T144225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | 1800 | souche de numéros |
 | Appareil/Navigateur | deviceId | chaîne | Identifiant d’appareil unique. | [Propriétés de Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | 2b6f0cc904d137be2e1730235f5664094b831186 |                                                                                   |
 |                 | deviceName | chaîne | Nom convivial de cet appareil. |                                                   | IPad de Joe |                                                                                   |
@@ -73,11 +74,11 @@ Les champs de métadonnées standard peuvent être utilisés pour définir des p
 
 * Vous pouvez configurer une politique pour qu’elle s’applique uniquement à des valeurs de champ spécifiques (par exemple, une politique iOS dédiée : où `osType` est `iOS`)
 * Vous pouvez limiter le nombre de valeurs distinctes pour un champ donné. Voici quelques exemples :
-   * pas plus de X appareils distincts : `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * pas plus de X codes postaux distincts : `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * pas plus de X appareils distincts : `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * pas plus de X codes postaux distincts : `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Vous pouvez limiter le nombre de flux actifs par valeur de champ. Voici quelques exemples :
-   * pas plus de X flux actifs pour un seul type d’appareil : `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * pas plus de X flux actifs pour les flux de contenu en direct : `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * pas plus de X flux actifs pour un seul type d’appareil : `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * pas plus de X flux actifs pour les flux de contenu en direct : `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
 Contactez l’équipe de surveillance de l’accès simultané en [créant un ticket dans Zendesk](mailto:tve-support@adobe.com) et indiquez les politiques que vous souhaitez mettre en œuvre.
 

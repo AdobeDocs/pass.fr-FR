@@ -2,13 +2,14 @@
 title: Présentation de l’API REST
 description: Présentation des API REST
 exl-id: 5533d852-f644-417e-bf80-6f7aa1edd6b2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1659'
 ht-degree: 0%
-
 ---
-
 # Présentation de l’API REST (héritée) {#rest-api-overview}
 
 >[!NOTE]
@@ -21,7 +22,7 @@ ht-degree: 0%
 
 ## Vue d’ensemble {#over}
 
-L’API REST d’authentification Adobe Pass fournit un accès direct aux services d’authentification et d’autorisation TV Everywhere (TVE). Cette API prend en charge deux architectures principales : les applications serveur à serveur ou les appareils connectés (par exemple, consoles de jeux, téléviseurs intelligents, décodeurs, etc.) qui ne disposent pas de fonctionnalités de navigation web.
+L’API REST d’authentification Adobe Pass fournit un accès direct aux services d’authentification et d’autorisation TV Everywhere (TVE). Cette API prend en charge deux architectures principales : serveur à serveur ou appareils connectés (par exemple consoles de jeux, téléviseurs intelligents, décodeurs, etc.) les applications qui ne disposent pas de fonctionnalités de navigation web.
 
 ### Mécanisme de limitation
 

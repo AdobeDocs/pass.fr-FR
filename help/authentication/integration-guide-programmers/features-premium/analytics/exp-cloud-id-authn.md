@@ -2,13 +2,14 @@
 title: Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass
 description: Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '428'
 ht-degree: 0%
-
 ---
-
 # Utilisation de l’Experience Cloud ID dans l’authentification Adobe Pass
 
 >[!NOTE]
@@ -17,11 +18,11 @@ ht-degree: 0%
 
 ## Qu’est-ce qu’Experience Cloud ID et comment l’obtenir ? {#what-exp-cloud-id-obtain}
 
-L’Experience Cloud ID (ECID, en abrégé) est un identifiant unique généré par Adobe Experience Cloud pour chaque utilisateur de votre application/site web. L’ECID est fortement utilisé dans tous les rapports Experience Cloud utilisés pour lier les informations sur un utilisateur spécifique dans plusieurs applications/sites web.
+L’Experience Cloud ID (ECID, en abrégé) est un identifiant unique généré par Adobe Experience Cloud pour chaque utilisateur de votre application/site web. L’ECID est fortement utilisé dans tous les rapports Experience Cloud pour lier les informations sur un utilisateur spécifique dans plusieurs applications/sites web.
 
 Si vous avez déjà mis en place un système qui fournit un identifiant visiteur, vous devez utiliser le même identifiant pour la portée de ce document.
 
-L’une des manières d’obtenir l’ECID consiste à utiliser le service Experience Cloud ID. Vous pouvez utiliser le type d’implémentation de votre choix, basé sur TDM, la bibliothèque JS, le côté serveur, l’intégration directe ou les bibliothèques natives pour les plateformes mobiles. Pour une vue d’ensemble complète des services, bibliothèques, guides de SDK et de mise en œuvre disponibles, consultez : <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html?lang=fr>
+L’une des manières d’obtenir l’ECID consiste à utiliser le service Experience Cloud ID. Vous pouvez utiliser le type d’implémentation de votre choix, basé sur TDM, la bibliothèque JS, le côté serveur, l’intégration directe ou les bibliothèques natives pour les plateformes mobiles. Pour une vue d’ensemble complète des services, bibliothèques, guides de SDK et de mise en œuvre disponibles, consultez : <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## Quel est l’avantage d’utiliser l’Experience Cloud ID dans l’authentification Adobe Pass ? {#benefit-ex-cloud-id}
 

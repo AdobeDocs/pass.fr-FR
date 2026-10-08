@@ -2,13 +2,14 @@
 title: Prise en charge de WKWebView sur iOS SDK 3.1+
 description: Prise en charge de WKWebView sur iOS SDK 3.1+
 exl-id: 90062be0-1a0a-44ae-8d8e-f4d97a92b17a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '334'
 ht-degree: 0%
-
 ---
-
 # Prise en charge de WKWebView sur iOS SDK 3.1+ (héritée) {#wkwebview-support-on-ios-sdk-3.1}
 
 >[!NOTE]
@@ -31,7 +32,7 @@ Notez que la migration impliquerait simplement de changer la classe UIWebView av
 
 ## Problèmes connus {#known-issues}
 
-Adobe AccessEnabler a utilisé une instance UIWebView interne masquée pour effectuer une « authentification [&#x200B; passive »](/help/authentication/integration-guide-programmers/legacy/sso-access/sso-passive-authn.md) pour certains MVPD. Le flux « passif » était utile pour les MVPD qui nécessitent une authentification pour chaque ID de demandeur. De ce flux, les programmeurs qui utilisaient le même ID d’équipe dans plusieurs applications iOS ont bénéficié de ce flux afin de simuler une expérience SSO (SSO Adobe). Cette fonctionnalité est actuellement utilisée par un nombre limité de MVPD.
+Adobe AccessEnabler a utilisé une instance UIWebView interne masquée pour effectuer une « authentification [ passive »](/help/authentication/integration-guide-programmers/legacy/sso-access/sso-passive-authn.md) pour certains MVPD. Le flux « passif » était utile pour les MVPD qui nécessitent une authentification pour chaque ID de demandeur. De ce flux, les programmeurs qui utilisaient le même ID d’équipe dans plusieurs applications iOS ont bénéficié de ce flux afin de simuler une expérience SSO (SSO Adobe). Cette fonctionnalité est actuellement utilisée par un nombre limité de MVPD.
 
 Cette fonction utilisait un comportement de l’UIWebView qui permettait à Adobe de capturer les cookies d’authentification et de les relire pendant le flux « passif ». WKWebView offre une sécurité renforcée qui empêche Adobe de capturer les cookies définis lors de la connexion et de les relire à l’aide d’une instance masquée de WKWebView. En raison de cette amélioration de la sécurité et compte tenu du fait que le flux « passif » n’a bénéficié qu’à un nombre très limité de MVPD dans un scénario d’implémentation très spécifique (plusieurs applications utilisant le même identifiant d’équipe), Adobe a supprimé la fonction d’« authentification passive » pour les MVPD qui utilisaient des vues web pour s’authentifier.
 
