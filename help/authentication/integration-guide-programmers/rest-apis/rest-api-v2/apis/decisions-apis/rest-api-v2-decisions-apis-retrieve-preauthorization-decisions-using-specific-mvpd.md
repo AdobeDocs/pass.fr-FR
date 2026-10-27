@@ -5,9 +5,9 @@ exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: af03be1d866ad60b601f0fbe8799bd1b87e5c9b6
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '1037'
 ht-degree: 2%
 ---
 # Récupérer des décisions de préautorisation à l’aide de mvpd spécifiques {#retrieve-preauthorization-decisions-using-specific-mvpd}
@@ -272,6 +272,13 @@ ht-degree: 2%
                <td><i>obligatoire</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">userMetadata</td>
+               <td>
+                  UserMetadata facultatif partagé par le MVPD. Les clés disponibles dépendent de la configuration de MVPD. Chaque clé de métadonnées est renvoyée sous la forme d’un objet contenant <b>value</b> et <b>state</b>. Par exemple, Spectrum peut renvoyer des <code>packageType</code>. Les métadonnées sont renvoyées uniquement lorsque le MVPD les fournit dans la réponse de préautorisation.
+               </td>
+               <td>facultatif</td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">erreur</td>
                <td>L’erreur fournit des informations supplémentaires sur la décision « Refuser » qui respecte la documentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codes d’erreur améliorés</a>.</td>
                <td>facultatif</td>
@@ -363,14 +370,26 @@ Content-Type: application/json;charset=UTF-8
          "serviceProvider": "REF30",
          "mvpd": "Cablevision",
          "source": "mvpd",
-         "authorized": true
+         "authorized": true,
+         "userMetadata": {
+            "packageType": {
+               "value": "INCLUSION",
+               "state": "plain"
+            }
+         }
       },
       {
          "resource": "resource2",
          "serviceProvider": "REF30",
          "mvpd": "Cablevision",
          "source": "mvpd",
-         "authorized": true
+         "authorized": true,
+         "userMetadata": {
+            "packageType": {
+               "value": "INCLUSION",
+               "state": "plain"
+            }
+         }
       },
       {
          "resource": "resource3",
