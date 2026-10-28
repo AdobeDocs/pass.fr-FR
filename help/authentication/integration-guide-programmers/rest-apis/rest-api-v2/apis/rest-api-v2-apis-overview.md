@@ -5,9 +5,9 @@ exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: 297578d3b311fbc2a5702f1bcc947e94463fb884
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '266'
 ht-degree: 0%
 ---
 # Présentation des API REST API V2 {#rest-api-v2-apis-overview}
@@ -17,6 +17,19 @@ ht-degree: 0%
 > Veillez à rester informé des dernières annonces de produits Authentification Adobe Pass et des délais de désactivation agrégés dans la page [Annonces de produits](/help/authentication/product-announcements.md).
 
 Pour commencer, consultez la documentation publique des API qui vous intéressent dans la liste ci-dessous.
+
+## URL de base {#rest-api-v2-apis-base-urls}
+
+Utilisez l’URL de base spécifique à un environnement ci-dessous pour les requêtes API REST V2. Ajoutez les `path` relatives documentées pour chaque API à cette URL de base.
+
+Certaines réponses d’API renvoient des URL interactives que l’appareil de diffusion en continu doit ouvrir dans un navigateur ou un agent utilisateur. Par exemple, l’attribut `url` renvoyé par [Lancer la déconnexion pour un fichier mvpd spécifique](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) et la redirection `Location` renvoyée par [Effectuer l’authentification dans l’agent utilisateur](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
+
+Ces URL interactives utilisent le même hôte de fournisseur de services (SP) Adobe Pass. Ouvrez une URL interactive absolue telle qu’elle est renvoyée. Si Adobe Pass renvoie une URL interactive relative commençant par `/adobe-services/`, résolvez-la sur l’hôte SP de l’environnement cible :
+
+| Environnement | API REST V2 et URL de base interactive |
+| --- |--------------------------------------|
+| Production | `https://sp.auth.adobe.com` |
+| Évaluation | `https://sp.auth-staging.adobe.com` |
 
 ## Configuration {#rest-api-v2-apis-configuration}
 
