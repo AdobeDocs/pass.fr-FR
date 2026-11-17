@@ -58,7 +58,7 @@ La distribution du vérificateur de jetons multimédia comprend :
 
 L&#39;interface `ITokenVerifier` définit les méthodes suivantes :
 
-* Méthode `isValid()` utilisée pour valider le jeton de média. Il accepte un seul argument, l’identifiant de ressource [](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Si l’identifiant de ressource fourni est `null`, la méthode valide uniquement l’authenticité et la période de validité du jeton de média.
+* Méthode `isValid()` utilisée pour valider le jeton de média. Il accepte un seul argument, l’identifiant de ressource [&#128279;](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Si l’identifiant de ressource fourni est `null`, la méthode valide uniquement l’authenticité et la période de validité du jeton de média.
 
   La méthode `isValid()` renvoie l&#39;une des valeurs de statut suivantes :
 
