@@ -5,9 +5,9 @@ exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: 6fdd77e300d01269357d7917702f31aef35d6751
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '726'
 ht-degree: 0%
 ---
 # Jetons de média {#media-tokens}
@@ -16,70 +16,76 @@ ht-degree: 0%
 >
 > Le contenu de cette page est fourni à titre d’information uniquement. L’utilisation de cette API nécessite une licence Adobe actuelle. Aucune utilisation non autorisée n’est autorisée.
 
-Le jeton multimédia est un jeton généré par l’authentification Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) à la suite d’une décision d’autorisation censée fournir un accès en lecture seule au contenu protégé (ressource).
+Le jeton média est un jeton généré par l’API REST d’authentification Adobe Pass [V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) après une décision d’autorisation censée fournir un accès en lecture seule au contenu protégé (ressource).
 
 Le jeton de média est valide pendant une période limitée et courte (7 minutes par défaut) spécifiée au moment de l’émission, indiquant le délai avant qu’il ne doive être vérifié et utilisé par l’application cliente. Le jeton média est limité à une utilisation unique et ne doit jamais être mis en cache.
 
 Le jeton de média se compose d’une chaîne signée basée sur l’infrastructure à clé publique (PKI) envoyée en texte clair. Avec la protection basée sur l’ICP, le jeton est signé à l’aide d’une clé asymétrique émise vers Adobe par une autorité de certification (CA).
 
-Le jeton multimédia est transmis au programmeur, qui peut ensuite le valider à l’aide du vérificateur de jeton multimédia avant de démarrer le flux vidéo afin de garantir la sécurité de l’accès à cette ressource.
+Le jeton multimédia est transmis au programmeur, qui le valide à l’aide du vérificateur de jeton multimédia avant de démarrer le flux vidéo afin de garantir la sécurité de l’accès à cette ressource.
 
-Le vérificateur de jeton multimédia est une bibliothèque distribuée par l’authentification Adobe Pass qui est chargée de vérifier l’authenticité d’un jeton multimédia.
+Le vérificateur de jeton multimédia est une bibliothèque distribuée par l’authentification Adobe Pass qui vérifie l’authenticité d’un jeton multimédia.
 
 ## Vérificateur de jeton de média {#media-token-verifier}
 
-L’authentification Adobe Pass recommande aux programmeurs d’envoyer le jeton multimédia à leur propre service principal en intégrant la bibliothèque du vérificateur de jeton multimédia pour garantir un accès sécurisé avant de lancer le flux vidéo. La durée de vie (TTL) du jeton multimédia est conçue pour tenir compte des problèmes potentiels de synchronisation des horloges entre le serveur de génération de jetons et le serveur de validation.
+Pour garantir un accès sécurisé avant de lancer le flux vidéo, l’authentification Adobe Pass recommande aux programmeurs d’envoyer le jeton multimédia à leur propre service principal en intégrant la bibliothèque du vérificateur de jeton multimédia. La durée de vie (TTL) du jeton multimédia est conçue pour tenir compte des problèmes potentiels de synchronisation des horloges entre le serveur de génération de jetons et le serveur de validation.
 
 L’authentification Adobe Pass déconseille vivement d’analyser le jeton multimédia et d’extraire directement ses données, car le format du jeton n’est pas garanti et peut changer à l’avenir. La bibliothèque du vérificateur de jeton de média doit être le seul outil utilisé pour analyser le contenu du jeton.
 
-La bibliothèque du vérificateur de jetons multimédia peut être téléchargée à l’aide du lien suivant :
+Téléchargez la bibliothèque du vérificateur de jetons multimédia via le lien suivant :
 
 * https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library
 
-La bibliothèque du vérificateur de jeton de média nécessite la version 1.5 du JDK ou une version ultérieure et prend en charge l’utilisation d’un fournisseur préféré d’extension de chiffrement Java (JCE) pour l’algorithme de signature (`SHA256WithRSA`).
+La bibliothèque du vérificateur de jeton de média nécessite Java version 8 ou ultérieure et prend en charge l’utilisation d’un fournisseur préféré d’extension de chiffrement Java (JCE) pour l’algorithme de signature (`SHA256WithRSA`).
 
-La bibliothèque du vérificateur de jetons multimédia représentée par l’archive Java `mediatoken-verifier-VERSION.jar` comprend les éléments suivants :
+La distribution du vérificateur de jetons multimédia comprend :
 
 * Clé publique Adobe.
 * API de vérification des jetons (`ITokenVerifier.java`).
 * Implémentation de référence (`com.adobe.entitlement.test.EntitlementVerifierTest.java`).
-* Dépendances et fichiers de stockage des clés de certificat.
+* Fichier de stockage des clés de certificat (`media_token_keystore.jks`).
+* Dépendances d&#39;exécution dans `mediatoken-verifier-VERSION-application-with-dependencies.jar`. L&#39;élément `mediatoken-verifier-VERSION.jar` nécessite ces dépendances séparément.
 
 >[!IMPORTANT]
 > 
-> Le mot de passe par défaut du fichier de stockage des clés de certificat inclus est `123456`.
+> Le mot de passe par défaut pour le fichier de stockage des clés de certificat inclus est `123456`.
+
+>[!IMPORTANT]
+>
+> Le `serializedToken` renvoyé par l’API REST V1 et V2 est codé en Base64. Décodez-le en tant que UTF-8 avant de le transmettre à `getInstance(...)` ; sinon, la vérification renvoie `INVALID_SIGNATURE`. L’exemple ci-dessous accepte la valeur codée et effectue ce décodage.
 
 ### Méthodes {#methods}
 
-La classe `ITokenVerifier` définit les méthodes suivantes :
+L&#39;interface `ITokenVerifier` définit les méthodes suivantes :
 
-* Méthode `isValid()` utilisée pour valider le jeton de média. Elle accepte un seul argument, l’[identifiant de ressource](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Si l’identifiant de ressource fourni est `null`, la méthode valide uniquement l’authenticité et la période de validité du jeton multimédia.
+* Méthode `isValid()` utilisée pour valider le jeton de média. Il accepte un seul argument, l’identifiant de ressource [](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Si l’identifiant de ressource fourni est `null`, la méthode valide uniquement l’authenticité et la période de validité du jeton de média.
 
-  La méthode `isValid()` renvoie l’une des valeurs de statut suivantes :
+  La méthode `isValid()` renvoie l&#39;une des valeurs de statut suivantes :
 
-  | VALID_TOKEN | Validations des jetons réussies |
+  | Etat | Signification |
   |----------------------|-------------------------------------------|
+  | VALID_TOKEN | Validations des jetons réussies |
   | INVALID_TOKEN_FORMAT | Format de jeton non valide |
   | INVALID_SIGNATURE | Impossible de valider l’authenticité du jeton |
   | TOKEN_EXPIRED | TTL de jeton non valide |
   | INVALID_RESOURCE_ID | Jeton non valide pour la ressource donnée |
   | ERROR_UNKNOWN | Le jeton n’a pas encore été validé |
 
-* Méthode `getResourceID()` utilisée pour récupérer l’identifiant de ressource associé au jeton de média et le comparer à l’identifiant renvoyé par la réponse de décision d’autorisation.
+* La méthode `getResourceID()` utilisée pour récupérer l’identifiant de ressource associé au jeton de média et le comparer à l’identifiant renvoyé par la réponse de décision d’autorisation.
 
 * Méthode `getTimeIssued()` utilisée pour récupérer l’heure d’émission du jeton de média.
 
-* Méthode `getTimeToLive()` utilisée pour récupérer la durée de vie du jeton de média.
+* Méthode `getTimeToLive()` utilisée pour récupérer la durée de vie du jeton de média en millisecondes.
 
 * Méthode `getUserSessionGUID()` utilisée pour récupérer un GUID anonymisé défini par le MVPD.
 
-* Méthode `getMvpdId()` utilisée pour récupérer l’identifiant du MVPD qui a authentifié l’utilisateur.
+* Méthode `getMvpdId()` utilisée pour récupérer l&#39;identifiant du MVPD qui a authentifié l&#39;utilisateur.
 
-* Méthode `getProxyMvpdId()` utilisée pour récupérer l’identifiant du MVPD proxy qui a authentifié l’utilisateur.
+* Méthode `getProxyMvpdId()` utilisée pour récupérer l&#39;identifiant du MVPD proxy qui a authentifié l&#39;utilisateur.
 
 ### Sample {#sample}
 
-L’archive du vérificateur de jeton de média contient une implémentation de référence (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) et un exemple d’appel de l’API avec la classe de test. Cet exemple (`com.adobe.entitlement.text.EntitlementVerifierTest.java`) illustre l’intégration de la bibliothèque du vérificateur de jetons multimédia dans un serveur de médias.
+L’archive du vérificateur de jeton de média contient une implémentation de référence (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) et un exemple d’appel de l’API avec la classe de test. Cet exemple (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) illustre l&#39;intégration de la bibliothèque du vérificateur de jeton de média dans un serveur de média.
 
 ```JAVA
 package com.adobe.entitlement.test;
@@ -88,8 +94,10 @@ import com.adobe.entitlement.verifier.CryptoDataHolder;
 import com.adobe.entitlement.verifier.ITokenVerifier;
 import com.adobe.entitlement.verifier.ITokenVerifierFactory;
 import com.adobe.entitlement.verifier.SimpleTokenPKISignatureVerifierFactory;
-import com.adobe.tve.crypto.SignatureVerificationCredential; 
+import com.adobe.entitlement.verifier.SignatureVerificationCredential;
 import java.io.InputStream; 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 public class EntitlementVerifierTest { 
     String mRequestorID = null;
@@ -113,11 +121,11 @@ public class EntitlementVerifierTest {
             System.out.println("One or more arguments is null");
             return;
         } 
+        tokenToVerify = new String(Base64.getDecoder().decode(tokenToVerify),
+                StandardCharsets.UTF_8);
         System.out.println("RequestorID: " + requestorID);
-        System.out.println("token: " + tokenToVerify);
         System.out.println("cert: " + pathToCertificate);
         System.out.println("keystoretype: " + keystoreType);
-        System.out.println("keystore passwd: " + keystorePasswd);
         String resourceID = null;
         if (args.length > 2) {
             resourceID = args[2];
@@ -171,10 +179,9 @@ public class EntitlementVerifierTest {
                                                                                    String keystorePasswd) {
         SignatureVerificationCredential cred = null; 
         if (keystoreFile != null){
-            try {
+            try (InputStream certInputStream =
+                    EntitlementVerifierTest.class.getClassLoader().getResourceAsStream(keystoreFile)) {
                 // load the keystore file 
-                ClassLoader loader = EntitlementVerifierTest.class.getClassLoader();
-                InputStream certInputStream =  loader.getResourceAsStream(keystoreFile);
                 if (certInputStream != null) {
                     cred = new SignatureVerificationCredential(certInputStream, keystorePasswd, keystoreType);          
                 }
@@ -183,8 +190,8 @@ public class EntitlementVerifierTest {
                 System.out.println("Error creating short token server credentials: " + e.getMessage());
             }
         }
-        if (cred == null) {
-            System.out.println("Error creating short token server credentials");
+        if (cred == null || !cred.isValid()) {
+            throw new IllegalStateException("Error creating short token server credentials");
         } 
         return cred;
     } 
@@ -201,7 +208,7 @@ Reportez-vous aux sections **Réponse** et **Exemples** de l’API ci-dessus pou
 
 >[!IMPORTANT]
 >
-> L’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les [jetons multimédia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md), car ils sont déjà inclus dans les décisions d’autorisation qui autorisent l’accès utilisateur.
+> L’application cliente n’a pas besoin d’interroger un point d’entrée distinct pour récupérer les [jetons multimédias](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md), car ils sont déjà inclus dans les décisions d’autorisation qui autorisent l’accès utilisateur.
 
 Pour plus d’informations sur comment et à quel moment intégrer l’API ci-dessus, reportez-vous au document suivant :
 
